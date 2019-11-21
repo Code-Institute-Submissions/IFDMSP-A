@@ -1,24 +1,86 @@
-
- 
 body{
-
     background-color: rgb(7, 51, 77);
-
     font-family: "Calistoga", "sans-serif";
-
-    --main-bg-color:blue; /* Main background color */
+    --main-bg-color:rgb(37, 37, 107); /* Main background color */
+    --main-fc-color:wheat; /* Main Foreground Color */
 }
+
+
+
+
+/* Burger Nav */
+.nav-item{
+    color:var(--main-fc-color);
+}
+
+.dropdown-item{
+    color:var(--main-bg-color);
+}
+
 
 
 /* Title-block */
 .title-block{
-
-color: white;
+color: var(--main-fc-color);
 background-color: var(--main-bg-color);
-
 padding-left: 10px;
 padding-right: 10px;
-
-font-size: 6rem;
 margin-top:10px;
+border-radius:10px;
+}
+.title-block p{
+    text-align: center;
+}
+.title-block h1{
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 3px 3px red;
+}
+
+
+
+
+.mainCarousel{
+    margin-left: auto;
+    margin-right: auto;
+    width:600px;
+    height:auto; 
+}
+.mainCarousel img{
+border-radius: 10px;
+width: auto;
+height:auto;
+}
+
+
+.img {
+
+    margin-left: auto;
+    margin-right:auto;
+
+    width: 100vh;
+    height: auto;
+}
+
+
+
+.faces {
+border-radius: 10px;
+height: 50vh;
+width: 100px;
+}
+
+
+
+.start-game{
+ 
+    left:auto;
+}
+
+
+.footer{
+    margin-top:10px;
+    text-align: center;
+    bottom: 0px;
+    color: var(--main-fc-color);
 }
