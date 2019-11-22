@@ -163,3 +163,16 @@ body {
     padding-right: 5px;
     border-radius: 10px;
 }
+
+
+.advert{
+
+color: var(--main-fc-color);
+background-color: rgb(161, 41, 41);
+
+padding: 10px 10px 10px 10px;
+margin-left:auto;
+margin-right:auto;
+
+border-radius:10px;
+}
