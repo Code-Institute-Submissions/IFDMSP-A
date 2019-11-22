@@ -13,6 +13,7 @@ body {
 
 /* Burger Nav */
 .nav-item {
+    
     color: var(--main-fc-color);
 }
 
@@ -20,7 +21,7 @@ body {
     color: var(--main-bg-color);
 }
 
-
+ 
 
 
 
@@ -56,8 +57,14 @@ body {
 
 
 
+/* Font Awsome Images */
+.font-awsome{
 
-
+    font-size: 2rem;
+    color: var(--main-fc-color);
+margin-left: 10px;
+margin-right: 10px;
+}
 
 
 /* Footer stuff */
