@@ -11,7 +11,7 @@ body {
 
 .nav-item {
     color: var(--main-fc-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .dropdown-item {
