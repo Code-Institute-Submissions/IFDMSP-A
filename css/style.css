@@ -7,8 +7,11 @@ body {
     /* Main Foreground Color */
 }
 
-/* Burger Nav */
 
+
+
+
+/* Burger Nav */
 .nav-item {
     color: var(--main-fc-color);
 }
@@ -17,8 +20,11 @@ body {
     color: var(--main-bg-color);
 }
 
-/* Title-block */
 
+
+
+
+/* Title-block */
 .title-block {
     color: var(--main-fc-color);
     background-color: var(--main-bg-color);
@@ -38,16 +44,23 @@ body {
     text-shadow: 3px 3px red;
 }
 
-/* Burger */
 
+
+
+/* Burger Stuff */
 .burger ul, li {
     margin: 0px;
     text-decoration: none;
     list-style: none;
 }
 
-/* Footer stuff */
 
+
+
+
+
+
+/* Footer stuff */
 .footer {
     margin-top: 10px;
     text-align: center;
