@@ -38,6 +38,18 @@ body {
     text-shadow: 3px 3px red;
 }
 
+
+
+
+ 
+
+
+
+
+
+
+
+
 /* Burger Stuff */
 
 .burger ul, li {
@@ -50,10 +62,11 @@ body {
 
 
 /* Main Content */
+
 .globe {
     text-align: center;
     color: var(--main-fc-color);
-    font-size: 15rem;
+    font-size: 12rem;
 }
 
 
@@ -80,6 +93,10 @@ body {
     bottom: 0px;
     color: var(--main-fc-color);
 }
+
+
+
+
 
 /* Make Colours */
 
