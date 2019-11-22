@@ -6,20 +6,15 @@ body {
     --main-fc-color: wheat;
     /* Main Foreground Color */
 }
-
 /* Burger Nav */
-
 .nav-item {
     color: var(--main-fc-color);
     font-size: 1.5rem;
 }
-
 .dropdown-item {
     color: var(--main-bg-color);
 }
-
 /* Title-block */
-
 .title-block {
     color: var(--main-fc-color);
     background-color: var(--main-bg-color);
@@ -28,53 +23,26 @@ body {
     margin-top: 10px;
     border-radius: 10px;
 }
-
 .title-block p {
     text-align: center;
 }
-
 .title-block h1 {
     text-align: center;
     font-size: 3rem;
     text-shadow: 3px 3px red;
 }
-
-
-
-
- 
-
-
-
-
-
-
-
-
 /* Burger Stuff */
-
 .burger ul, li {
     margin: 0px;
     text-decoration: none;
     list-style: none;
 }
-
-
-
-
 /* Main Content */
-
 .globe {
     text-align: center;
     color: var(--main-fc-color);
     font-size: 12rem;
 }
-
-
-
-
-
-
 /* Font Awsome Images */
 .font-awsome {
     font-size: 2rem;
@@ -82,11 +50,6 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 }
-
-
-
-
-
 /* Footer stuff */
 .footer {
     margin-top: 10px;
@@ -94,60 +57,40 @@ body {
     bottom: 0px;
     color: var(--main-fc-color);
 }
-
-
-
-
-
 /* Make Colours */
-
 .makeRed {
     color: red;
 }
-
 .makeBlue {
     color: blue;
 }
-
 .makeYellow {
     color: yellow;
 }
-
 .makeGreen {
     color: greenyellow;
 }
-
-
-
-
 /* Title Stuff */
 .main-title {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
-
 .subtitle-1, h1 {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
-
 .subtitle-2, h1 {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
-
 .subtitle-3, h1 {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
-
-
-
-
 /* Candidate images on front page */
 .candidates img {
     border: solid 2px var(--main-fc-color);
@@ -155,7 +98,6 @@ body {
     width: 100px;
     height: auto;
 }
-
 .candidates h1 {
     margin-top: 5px;
     text-align: center;
@@ -164,16 +106,25 @@ body {
     padding-right: 5px;
     border-radius: 10px;
 }
+.advert {
+    color: var(--main-fc-color);
+    background-color: rgb(161, 41, 41);
+    padding: 10px 10px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.flashOn{
+
+    color: white;
+    background-color: black;
+
+}
 
 
-.advert{
-
-color: var(--main-fc-color);
-background-color: rgb(161, 41, 41);
-
-padding: 10px 10px 10px 10px;
-margin-left:auto;
-margin-right:auto;
-
-border-radius:10px;
+#political-sway h1
+{
+    color: white;
+    background-color: black;
 }
