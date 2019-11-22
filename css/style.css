@@ -7,13 +7,9 @@ body {
     /* Main Foreground Color */
 }
 
-
-
-
-
 /* Burger Nav */
+
 .nav-item {
-    
     color: var(--main-fc-color);
 }
 
@@ -21,11 +17,8 @@ body {
     color: var(--main-bg-color);
 }
 
- 
-
-
-
 /* Title-block */
+
 .title-block {
     color: var(--main-fc-color);
     background-color: var(--main-bg-color);
@@ -45,10 +38,8 @@ body {
     text-shadow: 3px 3px red;
 }
 
-
-
-
 /* Burger Stuff */
+
 .burger ul, li {
     margin: 0px;
     text-decoration: none;
@@ -57,14 +48,29 @@ body {
 
 
 
-/* Font Awsome Images */
-.font-awsome{
 
+/* Main Content */
+.globe {
+    text-align: center;
+    color: var(--main-fc-color);
+    font-size: 15rem;
+}
+
+
+
+
+
+
+/* Font Awsome Images */
+.font-awsome {
     font-size: 2rem;
     color: var(--main-fc-color);
-margin-left: 10px;
-margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
+
+
+
 
 
 /* Footer stuff */
@@ -93,8 +99,10 @@ margin-right: 10px;
     color: greenyellow;
 }
 
-/* Title Stuff */
 
+
+
+/* Title Stuff */
 .main-title {
     border-radius: 10px;
     background-color: black;
@@ -121,11 +129,10 @@ margin-right: 10px;
 
 
 
+
 /* Candidate images on front page */
 .candidates img {
-    
     border: solid 2px var(--main-fc-color);
-
     border-radius: 50%;
     width: 100px;
     height: auto;
@@ -135,8 +142,7 @@ margin-right: 10px;
     margin-top: 5px;
     text-align: center;
     font-size: 2rem;
-
     padding-left: 5px;
-    padding-right:5px;
+    padding-right: 5px;
     border-radius: 10px;
 }
