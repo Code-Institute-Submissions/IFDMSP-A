@@ -6,11 +6,24 @@ body {
     --main-fc-color: wheat;
     /* Main Foreground Color */
 }
+
+
+
 /* Burger Nav */
 .nav-item {
     color: var(--main-fc-color);
     font-size: 1.5rem;
 }
+
+.nav-item a {
+
+/* margin:0px; */
+
+}
+
+
+
+
 .dropdown-item {
     color: var(--main-bg-color);
 }
