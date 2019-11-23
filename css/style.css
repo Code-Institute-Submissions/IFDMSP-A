@@ -56,7 +56,6 @@ body {
 }
 
 /* Font Awsome Images */
-
 .font-awsome {
     font-size: 2rem;
     color: var(--main-fc-color);
@@ -206,28 +205,17 @@ h2 {
 }
  
 
-th tr {
-    width: 100%;
-    border: 1px solid var(--main-fc-color); 
-}
 
-
-
-h2 td{
- 
-    width: 100%;
-    border: 2px solid var(--main-fc-color);
-}
-
-
-h2 table th tr{
-
-    /* width: 100%; */
-    border: 2px solid var(--main-fc-color);
-}
 
 
 table, th, td {
     width:100%;
-    border: 1px double yellow;
+    border: 1px double var(--main-bg-color);
   }
+
+
+.colorTable
+{
+    background-color: var(--main-fc-color);
+    color:var(--main-bg-color);
+}

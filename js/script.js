@@ -1,32 +1,28 @@
 // ------- DATA ----------- 
 var flashState = true;
 var globeShake = true;
-
 var cCp = 0;
 var noOfCountriesMax = 11;
-
 var gDPMax = 1000;
 var popMax = 500;
 var healthMax = 100;
-
 var cGdp = 0;
 var cPop = 0;
 var cHealth = 0;
-
 var roundDownDigit = 4;
+
+
+
 
 // World data
 var worldEconomy = [];
-
-
-
-
 var candidates = {
     'Cara Leyton': 'Coservative',
     'Chris Wells': 'Labour',
     'Christian Bell': 'Lib-Dem',
     'Julie Greenwood': 'Other'
 };
+
 
 
 // Game Session Data
@@ -41,7 +37,6 @@ var gameData = {
 
 
 
-
 // ---------------------------------------Functions---------
 function saveGameSessionData() {
     // Save political sway
@@ -51,10 +46,6 @@ function saveGameSessionData() {
     var politician = $('').text;
     sessionStorage.setItem("politician", politician);
 }
-
-
-
-
 // Generate world control variables
 //  and push into array
 $(document).ready(function () {
@@ -70,36 +61,16 @@ $(document).ready(function () {
         }
     }
 })
-
-
-
-
-
-
 $('#genbutton').click(function () {
-
-
     alert("pop!");
-
     // generateWorldEconomy();
-
-
 })
-
-
-
-
-
 // Save Session Data
 function saveSession() {
 }
-
-
 // Reset Session Data
 function resetSessionData() {
 }
-
-
 // Populate Political Sway 
 $(document).ready(function () {
     $(".candidates").click(function () {
@@ -107,9 +78,6 @@ $(document).ready(function () {
         $('#political-sway').html('<h1>' + candidates[party] + '</h1>')
     })
 });
-
-
-
 // Flash
 function flasher() {
     // alert(flashState);
@@ -126,43 +94,42 @@ function flasher() {
 }
 
 
-function globeRotate() {
 
+
+// Populate Global Economy Table
+function populateTable() {
     // alert(flashState);
     if (globeShake === true) {
         globeShake = false;
         $('.globe').addClass('globeShake');
         // return;
     }
-
     if (globeShake === false) {
         globeShake = true;
         $('.globe').removeClass('globeShake');
         // return;
     }
- 
+
+    var worldEconomy = [];
+
     // Country Number Ticker
     cCp = cCp + 1;
     // cCp = cCp.toFixed(roundDownDigit);
-
     var num = (Math.random() * gDPMax);
     cGdp = num.toFixed(roundDownDigit)
-
     var num = (Math.random() * healthMax);
     cHealth = num.toFixed(roundDownDigit)
-
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
 
 
+    
 
 
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr><td>" + cCp + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
     }
 
-
-
-
+    $('td').addClass('colorTable');
 
 }
