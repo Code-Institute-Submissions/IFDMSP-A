@@ -14,7 +14,7 @@ var candidates = {
 // Game Session Data
 var gameData = {
     "party": "none",
-    "politician": "none",
+    "pName": "none",
     "total votes": 0,
     "canvassed districts": 0,
     "popularity rating": 0,
@@ -91,17 +91,9 @@ function resetSessionData() {
 $(document).ready(function () {
 
     $(".candidates").click(function () {
-        
-        var politician = $(this).text();
-
-        $('#politician').html('<h1>' + candidates[politician] + '</h1>')
-    })
-
-    $(".candidates").click(function () {
         var party = $(this).children('h1').text();
         $('#political-sway').html('<h1>' + candidates[party] + '</h1>')
     })
-
 
 
 });

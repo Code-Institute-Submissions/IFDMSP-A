@@ -144,3 +144,8 @@ body {
 }
 
 
+div .ribbon h1{
+
+    color: red; 
+    font-size: 4rem;
+}
