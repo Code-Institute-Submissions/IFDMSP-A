@@ -3,7 +3,7 @@ var flashState = true;
 var globeShake = true;
 
 var cCp = 0;
-var noOfCountriesMax = 10;
+var noOfCountriesMax = 11;
 
 var gDPMax = 1000;
 var popMax = 500;
@@ -13,7 +13,7 @@ var cGdp = 0;
 var cPop = 0;
 var cHealth = 0;
 
-var roundDownDigit = 0;
+var roundDownDigit = 4;
 
 // World data
 var worldEconomy = [];
