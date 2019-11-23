@@ -121,8 +121,8 @@
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
-                <div class="title-block main-title flash1">
-                    <h1>ELECTION FEVER</h1>
+                <div class="title-block main-title">
+                    <h1 class="flashIt">ELECTION FEVER</h1>
                 </div>
                 <div class="sub-title-1">
                     <h1>PICK YOUR PARTY</h1>
@@ -224,11 +224,13 @@
 
     <script>
         $(document).ready(function () {
+
             setInterval(function () {
 
-                // flasher;
+                flasher();
 
-            }, 3000)
+            }, 1000)
+
         })
     </script>
 

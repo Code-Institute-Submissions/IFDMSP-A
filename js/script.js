@@ -1,4 +1,7 @@
 // alert("pop");
+
+var flashState = true;
+
 var candidates = {
     'Cara Leyton': 'Coservative',
     'Chris Wells': 'Labour',
@@ -20,3 +23,34 @@ $(document).ready(function () {
         $('#political-sway').html('<h1>' + candidates[candidateName] + '</h1>')
     })
 });
+
+
+
+
+
+// Flash
+function flasher(){
+   
+// alert(flashState);
+
+
+if (flashState === true){
+    flashState = false;
+    $('.flashIt').addClass('flashNow');
+   
+    return;
+}
+
+
+if(flashState === false){
+    flashState=true;
+    $('.flashIt').removeClass('flashNow');
+   
+    return
+}
+
+
+
+
+
+}
