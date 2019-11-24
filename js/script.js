@@ -1,5 +1,8 @@
 // ------- DATA ----------- 
 var flashState = true;
+var flashHandState=true;
+
+
 var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195;
@@ -276,6 +279,24 @@ function flasher() {
 }
 
 
+// Flash HAND !!
+function flashHand() {
+    // alert(flashState);
+    if (flashHandState === true) {
+        flashHandState = false;
+        $('.point-hand').addClass('flashHandNow');
+        return;
+    }
+    if (flashHandState === false) {
+        flashHandState = true;
+        $('.point-hand').removeClass('flashHandNow');
+        return
+    }
+}
+
+
+
+
 
 
 // Populate ECONOMY TABLE
@@ -311,7 +332,7 @@ function populateTable() {
 
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
-        $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] +"#"+ "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
+        $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] +"#"+ "</td><td>" + cGdp +","+ "</td><td>" + cHealth+"," + "</td><td>" + cPop + "</td></tr>");
     }
 
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;

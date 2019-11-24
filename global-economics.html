@@ -37,11 +37,11 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        
+
                         <div class="point-hand">
-                                <span class="far fa-hand-point-left"></span>
+                            <span class="far fa-hand-point-left"></span>
                         </div>
-        
+
                     </nav>
                     <div class="collapse" id="navbarToggleExternalContent">
                         <div class="bg-blue p-4">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-             
+
 
             </div>
         </div>
@@ -165,7 +165,20 @@
                 populateTable();
             }, 10)
         })
+   
+        $(document).ready(function () {
+
+            setInterval(function () {
+
+                flashHand();
+
+            }, 10)
+
+        })
     </script>
+
+
+
 
 </body>
 
