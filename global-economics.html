@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -65,7 +67,7 @@
                         <a class="nav-link active" href="index.html">A - Homepage </a>
                     </li>
                     <div class="point-hand">
-                            <span class="far fa-hand-point-left"></span>
+                        <span class="far fa-hand-point-left"></span>
                     </div>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
@@ -90,64 +92,69 @@
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
+                
                 <div class="title-block main-title">
                     <h1>GLOBAL ECONOMY</h1>
                 </div>
+
                 <div class="fantasy-sub-heading">
-                    <h1>Press the button below, to generate <span class="highLight">fantasy</span> global economy
-                        statistics</h1>
+                    <!-- <h1>Press the button below, to generate <span class="highLight">fantasy</span> global economy
+                        statistics</h1> -->
+
+                    <div class="globeicon">
+                        <span class="fas fa-globe-americas"></span>
+                    </div>
+
                 </div>
             </div>
+
         </div>
-        <!-- Main Content -->
-        <!-- Button to generate Stats -->
-        <div class="row">
+    </div>
+    <!-- Main Content -->
+    <!-- Button to generate Stats -->
+    <div class="row">
 
-            <div class="col-6 text-center">
+        <div class="col-6 text-center">
 
-                <div id="genbutton">
-                    <a href="global-economics.html" class="btn btn-primary btn-lg " tabindex="-1" role="button"
-                        aria-disabled="true">1. Update Stats</a>
-                   
-                </div>
-
-           
-
-            </div>
-
-            <col-6 class="gen-districts">
             <div id="genbutton">
-                    <a href="uk-statistics.html" class="btn btn-success btn-lg " tabindex="-1" role="button"
-                        aria-disabled="true">2. UK Districts</a>
-                   
-                </div>
+                <a href="global-economics.html" class="btn btn-primary btn-lg " tabindex="-1" role="button"
+                    aria-disabled="true">1. Update Stats</a>
 
-            </div
+            </div>
+
 
 
         </div>
-        <!-- Table section -->
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2>
-                    <table id="global-table">
-                        <th>
-                            <tr>Country / </tr>
-                            <tr>GDP(mil) / </tr>
-                            <tr>Health(%) / </tr>
-                            <tr>Populus(mil) / </tr>
-                        </th>
-                    </table>
-                </h2>
+
+        <col-6 class="gen-districts">
+            <div id="genbutton">
+                <a href="uk-statistics.html" class="btn btn-success btn-lg " tabindex="-1" role="button"
+                    aria-disabled="true">2. UK Districts</a>
+
             </div>
+
+    </div </div> <!-- Table section -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>
+                <table id="global-table">
+                    <th>
+                        <tr>Country / </tr>
+                        <tr>GDP(mil) / </tr>
+                        <tr>Health(%) / </tr>
+                        <tr>Populus(mil) / </tr>
+                    </th>
+                </table>
+            </h2>
         </div>
-        <!-- Footer -->
-        <section>
-            <div class="footer">
-                <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
-            </div>
-        </section>
-        <!-- End of container -->
+    </div>
+    <!-- Footer -->
+    <section>
+        <div class="footer">
+            <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
+        </div>
+    </section>
+    <!-- End of container -->
     </div>
     <!--Load Bootstrap Javscript components  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -167,4 +174,5 @@
         })
     </script>
 </body>
+
 </html>
