@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,30 +17,22 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-
 <body>
-
-
-
     <div class="container-fluid">
         <!-- Main Container -->
-
         <!-- Burgur Menu -->
         <div class="row burger">
             <div class="col-12  d-md-none nopadding">
                 <div class="pos-f-t">
                     <nav class="navbar navbar-dark bg-blue">
-
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
                         <div class="point-hand">
                             <span class="far fa-hand-point-left"></span>
                         </div>
-
                     </nav>
                     <div class="collapse" id="navbarToggleExternalContent">
                         <div class="bg-blue p-4">
@@ -64,13 +55,8 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
-
-
         <!-- Navbar Normal -->
         <div class="row no-gutters">
             <div class="d-none d-md-inline">
@@ -78,12 +64,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">A - Homepage </a>
                     </li>
-                    
                     <div class="point-hand">
                             <span class="far fa-hand-point-left"></span>
                     </div>
-                    
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">B - Setup Game</a>
@@ -104,8 +87,6 @@
                 </ul>
             </div>
         </div>
-
-
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
@@ -118,17 +99,32 @@
                 </div>
             </div>
         </div>
-
         <!-- Main Content -->
         <!-- Button to generate Stats -->
         <div class="row">
-            <div class="col-12 text-center">
+
+            <div class="col-6 text-center">
+
                 <div id="genbutton">
                     <a href="global-economics.html" class="btn btn-primary btn-lg " tabindex="-1" role="button"
-                        aria-disabled="true">Generate Stats</a>
-                    <!-- <button type="button" href="global-economics.html" class="btn btn-success">GENERATE</button> -->
+                        aria-disabled="true">1. Update Stats</a>
+                   
                 </div>
+
+           
+
             </div>
+
+            <col-6 class="gen-districts">
+            <div id="genbutton">
+                    <a href="uk-statistics.html" class="btn btn-success btn-lg " tabindex="-1" role="button"
+                        aria-disabled="true">2. Generate UK Districts</a>
+                   
+                </div>
+
+            </div
+
+
         </div>
         <!-- Table section -->
         <div class="row">
@@ -145,14 +141,12 @@
                 </h2>
             </div>
         </div>
-
         <!-- Footer -->
         <section>
             <div class="footer">
                 <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
             </div>
         </section>
-
         <!-- End of container -->
     </div>
     <!--Load Bootstrap Javscript components  -->
@@ -160,29 +154,17 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
     <script>
         $(document).ready(function () {
             setInterval(function () {
                 populateTable();
             }, 10)
         })
-   
         $(document).ready(function () {
-
             setInterval(function () {
-
                 flashHand();
-
             }, 10)
-
         })
     </script>
-
-
-
-
 </body>
-
 </html>

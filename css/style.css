@@ -7,14 +7,10 @@ body {
     /* Main Foreground Color */
 }
 
-
-
-
 /* Burger Nav */
-.nav-item {
-    
-    margin-right:10px;
 
+.nav-item {
+    margin-right: 10px;
     color: var(--main-fc-color);
     font-size: 1.5rem;
 }
@@ -23,16 +19,13 @@ body {
     color: var(--main-bg-color);
 }
 
-
-.point-hand{
+.point-hand {
     color: var(--main-fc-color);
     font-size: 2rem;
 }
 
-
-
-
 /* Title-block */
+
 .title-block {
     color: var(--main-fc-color);
     background-color: var(--main-bg-color);
@@ -68,9 +61,6 @@ body {
     font-size: 12rem;
 }
 
-
-
-
 /* Font Awsome Images */
 
 .font-awsome {
@@ -79,10 +69,6 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 }
-
-
-
-
 
 /* Footer stuff */
 
@@ -144,22 +130,16 @@ body {
     border-radius: 10px;
 }
 
-
-
-
 /* Make Things Flash */
+
 .flashNow {
     color: orange;
     background-color: black;
 }
 
 .flashHandNow {
- 
- color: red;
-    
+    color: red;
 }
-
-
 
 #political-sway h1 {
     color: white;
@@ -172,21 +152,15 @@ div .ribbon h1 {
     font-size: 4rem;
 }
 
- 
-
-
- 
-
 /* Generate World Stats Button */
+
 #genbutton {
     margin-top: 5px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
-
-
-
 /* Global Table Stuff */
+
 h2 {
     border: 4px double red;
     color: white;
@@ -207,18 +181,15 @@ table, th, td {
 
 .highLight {
     border-radius: 10px;
-
     padding-left: 5px;
     padding-right: 5px;
-
     padding-top: 2px;
     padding-bottom: 2px;
-    
     background-color: yellow;
     color: black;
 }
 
-.fantasy-sub-heading h1{
+.fantasy-sub-heading h1 {
     font-size: 2rem;
-    padding:5px;
+    padding: 5px;
 }
