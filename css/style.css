@@ -56,6 +56,7 @@ body {
 }
 
 /* Font Awsome Images */
+
 .font-awsome {
     font-size: 2rem;
     color: var(--main-fc-color);
@@ -74,7 +75,7 @@ body {
 
 /* Make Colours */
 
-.makeRed {
+/* .makeRed {
     color: red;
 }
 
@@ -88,7 +89,7 @@ body {
 
 .makeGreen {
     color: greenyellow;
-}
+} */
 
 /* Title Stuff */
 
@@ -161,19 +162,11 @@ div .ribbon h1 {
     font-size: 4rem;
 }
 
-.globe img {
-    /* border-radius: 200px; */
-    height: auto;
-    width: 300px;
-    color: white;
-}
+ 
 
-.globeShake {
-    width: 75%;
-}
+
 
 /* Global Data */
-
 .a-data {
     font-size: .25rem;
 }
@@ -188,34 +181,30 @@ div .ribbon h1 {
     margin-top: 20px;
 }
 
-
-
-
 /* Global Table Stuff */
- 
+
 h2 {
-
     border: 4px double red;
-
     color: white;
     margin-top: 5px;
     /* width: 100%; */
-    
     font-size: 1rem;
 }
- 
-
-
-
 
 table, th, td {
-    width:100%;
+    width: 100%;
     border: 1px double var(--main-bg-color);
-  }
+}
 
-
-.colorTable
-{
+.colorTable {
     background-color: var(--main-fc-color);
-    color:var(--main-bg-color);
+    color: var(--main-bg-color);
+}
+
+.highLight {
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: yellow;
+    color: black;
 }
