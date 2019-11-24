@@ -215,7 +215,7 @@ var countries = {
 
 // Candidate Names
 var candidates = {
-    'Cara Leyton': 'Coservative',
+    'Cara Leyton': 'Conservative',
     'Chris Wells': 'Labour',
     'Christian Bell': 'Lib-Dem',
     'Julie Greenwood': 'Green'
