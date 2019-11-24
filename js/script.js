@@ -5,7 +5,7 @@ var cCp = 0;
 var noOfCountriesMax = 195;
 
 var gDPMax = 10;
-var popMax = 100;
+var popMax = 10;
 var healthMax = 100;
 
 var cGdp = 0;
@@ -24,44 +24,44 @@ var worldEconomy = [];
 // Country data
 var countries = {
 
-    '1':'Afghanistan',
-    '2':'Albania',
-    '3':'Algeria',
-    '4':'Andorra',
-    '5':'Angola',
-    '6':'Antigua and Barbuda',
-    '7':'Argentina',
-    '8':'Armenia',
-    '9':'Australia',
-    '10':'Austria',
-    '11':'Azerbaijan',
-    '12':'Bahamas',
-    '13':'Bahrain',
-    '14':'Bangladesh',
-    '15':'Barbados',
-    '16':'Belarus',
-    '17':'Belgium',
-    '18':'Belize',
-    '19':'Benin',
-    '20':'Bhutan',
-    '21':'Bolivia',
-    '22':'Bosnia and Herzegovina',
-    '23':'Botswana',
-    '24':'Brazil',
-    '25':'Brunei',
-    '26':'Bulgaria',
-    '27':'Burkina Faso',
-    '28':'Burundi',
-    '29':'Côte dIvoire',
-    '30':'Cabo Verde',
-    '31':'Cambodia',
-    '32':'Cameroon',
-    '33':'Canada',
-    '34':'Central African Republic',
-    '35':'Chad',
-    '36':'Chile',
-    '37':'China',
-    '38':'Colombia',
+    '1': 'Afghanistan',
+    '2': 'Albania',
+    '3': 'Algeria',
+    '4': 'Andorra',
+    '5': 'Angola',
+    '6': 'Antigua and Barbuda',
+    '7': 'Argentina',
+    '8': 'Armenia',
+    '9': 'Australia',
+    '10': 'Austria',
+    '11': 'Azerbaijan',
+    '12': 'Bahamas',
+    '13': 'Bahrain',
+    '14': 'Bangladesh',
+    '15': 'Barbados',
+    '16': 'Belarus',
+    '17': 'Belgium',
+    '18': 'Belize',
+    '19': 'Benin',
+    '20': 'Bhutan',
+    '21': 'Bolivia',
+    '22': 'Bosnia and Herzegovina',
+    '23': 'Botswana',
+    '24': 'Brazil',
+    '25': 'Brunei',
+    '26': 'Bulgaria',
+    '27': 'Burkina Faso',
+    '28': 'Burundi',
+    '29': 'Côte dIvoire',
+    '30': 'Cabo Verde',
+    '31': 'Cambodia',
+    '32': 'Cameroon',
+    '33': 'Canada',
+    '34': 'Central African Republic',
+    '35': 'Chad',
+    '36': 'Chile',
+    '37': 'China',
+    '38': 'Colombia',
     '39': 'Comoros',
     '40': 'Congo (Congo-Brazzaville)',
     '41': 'Costa Rica',
@@ -326,20 +326,30 @@ function populateTable() {
     // Country Number Ticker
     cCp = cCp + 1;
     // cCp = cCp.toFixed(roundDownDigit);
+
     var num = (Math.random() * gDPMax);
-    cGdp = num.toFixed(roundDownDigit)
+    cGdp = num.toFixed(roundDownDigit);
+
     var num = (Math.random() * healthMax);
-    cHealth = num.toFixed(roundDownDigit)
+    cHealth = num.toFixed(roundDownDigit);
+
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
 
 
 
-
-
     if (cCp < noOfCountriesMax) {
-        $('#global-table').append("<tr><td>" +countries[cCp] + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
+        $('#global-table').append("<tr><td>" + countries[cCp] + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
     }
+
+    var cstrng=countries[cCp]+","+cGdp+","+cHealth+","+cPop;
+
+     
+    sessionStorage.setItem(cCp,cstrng);
+ 
+
+
+
 
     $('td').addClass('colorTable');
 
