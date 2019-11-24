@@ -3,27 +3,19 @@ var flashState = true;
 var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195;
-
 var gDPMax = 10;
 var popMax = 10;
 var healthMax = 100;
-
 var cGdp = 0;
 var cPop = 0;
 var cHealth = 0;
 var roundDownDigit = 0;
-
-
-
-
-// World data
+// Setup World data 
 var worldEconomy = [];
-
 
 
 // Country data
 var countries = {
-
     '1': 'Afghanistan',
     '2': 'Albania',
     '3': 'Algeria',
@@ -219,22 +211,15 @@ var countries = {
     '193': 'Yemen',
     '194': 'Zambia',
     '195': 'Zimbabwe',
-
 };
-
-
-
-
 
 // Candidate Names
 var candidates = {
     'Cara Leyton': 'Coservative',
     'Chris Wells': 'Labour',
     'Christian Bell': 'Lib-Dem',
-    'Julie Greenwood': 'Other'
+    'Julie Greenwood': 'Green'
 };
-
-
 
 // Game Session Data
 var gameData = {
@@ -248,48 +233,31 @@ var gameData = {
 
 
 
+
 // ---------------------------------------Functions---------
-function saveGameSessionData() {
-    // Save political sway
-    var party = $('political-sway').text;
-    sessionStorage.setItem("party", party);
-    // Save Politicians Name
-    var politician = $('').text;
-    sessionStorage.setItem("politician", politician);
-}
-// Generate world control variables
-//  and push into array
-$(document).ready(function () {
-    function generateWorldEconomy() {
-        var numberOfCountries = 195;
-        var gdp = 0;
-        var populus = 0;
-        var health = 0;
-        var affluence = 0;
-        for (let i = 0; i < numberOfCountries; i++) {
-            gdp = (Math.random() * 1000);
-            console.log(i, ":", gdp, ":", populus, ":", health, ":", affluence);
-        }
-    }
-})
-$('#genbutton').click(function () {
-    alert("pop!");
-    // generateWorldEconomy();
-})
 // Save Session Data
 function saveSession() {
 }
 // Reset Session Data
 function resetSessionData() {
 }
-// Populate Political Sway 
+// Get & Save  Political candidate & Party Affiliation
 $(document).ready(function () {
     $(".candidates").click(function () {
-        var party = $(this).children('h1').text();
-        $('#political-sway').html('<h1>' + candidates[party] + '</h1>')
+        // Save Politicians SELECTION
+        var mypolitician = $(this).children('h1').text();
+        $('#political-sway').html('<h1>' + candidates[mypolitician] + '</h1>')
+        sessionStorage.setItem("myPolitician", mypolitician);
+        // Save PARTY SELECTION
+        var myParty = $('#political-sway').text();
+        // $('#political-sway').html('<h1>' + candidates[mypolitician] + '</h1>')
+        sessionStorage.setItem("myParty", myParty);
     })
 });
-// Flash
+
+
+
+// Flash Title!!
 function flasher() {
     // alert(flashState);
     if (flashState === true) {
@@ -307,7 +275,7 @@ function flasher() {
 
 
 
-// Populate Global Economy Table
+// Populate ECONOMY TABLE
 function populateTable() {
     // alert(flashState);
     if (globeShake === true) {
@@ -321,36 +289,24 @@ function populateTable() {
         // return;
     }
 
+
+
+
+    // Reset World Economy Stats
     var worldEconomy = [];
-
-    // Country Number Ticker
     cCp = cCp + 1;
-    // cCp = cCp.toFixed(roundDownDigit);
-
     var num = (Math.random() * gDPMax);
     cGdp = num.toFixed(roundDownDigit);
-
     var num = (Math.random() * healthMax);
     cHealth = num.toFixed(roundDownDigit);
-
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
-
-
-
+    // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr><td>" + countries[cCp] + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
     }
-
-    var cstrng=countries[cCp]+","+cGdp+","+cHealth+","+cPop;
-
-     
-    sessionStorage.setItem(cCp,cstrng);
- 
-
-
-
-
+    var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
+    //  Store Info in Session Memory
+    sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
-
 }

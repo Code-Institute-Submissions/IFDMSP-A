@@ -152,22 +152,25 @@ div .ribbon h1 {
 
 
 
-/* Global Data */
+/* Global Data
 .a-data {
     font-size: .25rem;
 }
 
 .b-data {
     font-size: .25rem;
-}
+} */
 
 /* Generate World Stats Button */
 #genbutton {
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom:10px;
 }
 
-/* Global Table Stuff */
 
+
+
+/* Global Table Stuff */
 h2 {
     border: 4px double red;
     color: white;
@@ -188,6 +191,7 @@ table, th, td {
 
 .highLight {
     border-radius: 10px;
+    
     padding-left: 5px;
     padding-right: 5px;
 
