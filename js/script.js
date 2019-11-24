@@ -13,6 +13,7 @@ var roundDownDigit = 0;
 // Setup World data 
 var worldEconomy = [];
 
+var threeCountriesSelected = false;
 
 // Country data
 var countries = {
@@ -294,24 +295,52 @@ function populateTable() {
 
     // Reset World Economy Stats
     var worldEconomy = [];
-    cCp = cCp + 1;
+    
+
+
+    cCp++;
     var num = (Math.random() * gDPMax);
     cGdp = num.toFixed(roundDownDigit);
     var num = (Math.random() * healthMax);
     cHealth = num.toFixed(roundDownDigit);
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
-    
-    
+
+
     // Create row of Country Data
-    if (cCp < noOfCountriesMax) 
-    {
+    if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr><td>" + countries[cCp] + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
     }
-    
+
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
-    
+
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
+
+
+    // Grab Three Random Countries for weighting data in district generation
+    if (threeCountriesSelected === false && cCp > noOfCountriesMax) {
+        grabThreeCountries();
+    }
+
+
+}
+
+
+// Grab Three Countries for use for Genation of Weighting on District Starts
+function grabThreeCountries() {
+    // alert("boom");
+
+    var randomCountry = (Math.random() * noOfCountriesMax);
+    rc = randomCountry.toFixed(0);
+
+
+    // var c1 = sessionStorage.getItem(countries(rc).toString());
+    // var c2 = 0;
+    // var c3 = 0;
+   
+    alert(rc);
+
+    threeCountriesSelected = true;
 }
