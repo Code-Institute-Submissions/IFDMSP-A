@@ -301,11 +301,16 @@ function populateTable() {
     cHealth = num.toFixed(roundDownDigit);
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
+    
+    
     // Create row of Country Data
-    if (cCp < noOfCountriesMax) {
+    if (cCp < noOfCountriesMax) 
+    {
         $('#global-table').append("<tr><td>" + countries[cCp] + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
     }
+    
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
+    
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');

@@ -20,8 +20,17 @@ body {
     color: var(--main-bg-color);
 }
 
-/* Title-block */
 
+
+.point-hand{
+    color: var(--main-fc-color);
+    font-size: 2rem;
+}
+
+
+
+
+/* Title-block */
 .title-block {
     color: var(--main-fc-color);
     background-color: var(--main-bg-color);
@@ -191,7 +200,7 @@ table, th, td {
 
 .highLight {
     border-radius: 10px;
-    
+
     padding-left: 5px;
     padding-right: 5px;
 
