@@ -15,6 +15,8 @@ var worldEconomy = [];
 
 var threeCountriesSelected = false;
 
+
+
 // Country data
 var countries = {
     '1': 'Afghanistan',
@@ -295,7 +297,7 @@ function populateTable() {
 
     // Reset World Economy Stats
     var worldEconomy = [];
-    
+
 
 
     cCp++;
@@ -309,7 +311,7 @@ function populateTable() {
 
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
-        $('#global-table').append("<tr><td>" + countries[cCp] + "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
+        $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] +"#"+ "</td><td>" + cGdp + "</td><td>" + cHealth + "</td><td>" + cPop + "</td></tr>");
     }
 
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
@@ -333,14 +335,31 @@ function grabThreeCountries() {
     // alert("boom");
 
     var randomCountry = (Math.random() * noOfCountriesMax);
-    rc = randomCountry.toFixed(0);
+    c1 = randomCountry.toFixed(0);
+
+    var randomCountry = (Math.random() * noOfCountriesMax);
+    c2 = randomCountry.toFixed(0);
+
+    var randomCountry = (Math.random() * noOfCountriesMax);
+    c3 = randomCountry.toFixed(0);
 
 
-    // var c1 = sessionStorage.getItem(countries(rc).toString());
-    // var c2 = 0;
-    // var c3 = 0;
-   
-    alert(rc);
 
+    // alert(c1+":"+c2+":"+c3);
+
+    var countName1 = $('#' + c1.toString()).text();
+    var countName2 = $('#' + c2.toString()).text();
+    var countName3 = $('#' + c3.toString()).text();
+
+
+    // alert(countName1 + "/" + countName2 + "/" + countName3);
+
+    sessionStorage.setItem("c1",countName1);
+    sessionStorage.setItem("c2",countName2);
+    sessionStorage.setItem("c3",countName3);
+
+
+
+    // Acknowledge 3 Random coutries have been found. No need to repeat
     threeCountriesSelected = true;
 }
