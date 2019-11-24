@@ -198,3 +198,12 @@ table, th, td {
     font-size: 6rem;
     color: white;
 }
+
+
+/* Jump to Global Economy Button on START page */
+.global-ecom-button-show {
+    display: inline-block;
+}
+.global-ecom-button-hide {
+    display: none;
+}

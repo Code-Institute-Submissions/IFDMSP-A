@@ -1,6 +1,6 @@
 // ------- DATA ----------- 
 var flashState = true;
-var flashHandState=true;
+var flashHandState = true;
 
 
 var globeShake = true;
@@ -241,6 +241,32 @@ var gameData = {
 
 
 // ---------------------------------------Functions---------
+
+
+
+// State Controller monitoring (Available buttons etc)
+function stateController() {
+
+    var picked=sessionStorage.getItem("myPolitician");
+ 
+    if ( picked === null) {
+        $('#g-gen-button').removeClass('global-ecom-button-show');
+        $('#g-gen-button').addClass('global-ecom-button-hide');
+        return;
+    }
+
+    if (picked !== null) {
+        $('#g-gen-button').addClass('global-ecom-button-show');
+        $('#g-gen-button').removeClass('global-ecom-button-hide');
+        return;
+    }
+
+}
+
+
+
+
+
 // Save Session Data
 function saveSession() {
 }
@@ -332,7 +358,7 @@ function populateTable() {
 
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
-        $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] +"#"+ "</td><td>" + cGdp +","+ "</td><td>" + cHealth+"," + "</td><td>" + cPop + "</td></tr>");
+        $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td></tr>");
     }
 
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
@@ -375,9 +401,9 @@ function grabThreeCountries() {
 
     // alert(countName1 + "/" + countName2 + "/" + countName3);
 
-    sessionStorage.setItem("c1",countName1);
-    sessionStorage.setItem("c2",countName2);
-    sessionStorage.setItem("c3",countName3);
+    sessionStorage.setItem("c1", countName1);
+    sessionStorage.setItem("c2", countName2);
+    sessionStorage.setItem("c3", countName3);
 
 
 
