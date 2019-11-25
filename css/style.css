@@ -232,3 +232,14 @@ table, th, td {
 
     font-size: 1.5rem;
 }
+
+/* Code from Stackoverflow - Philip Feldmann */
+/* Keep text from overspilling out of columns */
+.keep-insideBSol
+{
+    -moz-hyphens:auto;
+    -ms-hyphens:auto;
+    -webkit-hyphens:auto;
+    hyphens:auto;
+    word-wrap:break-word;
+ }
