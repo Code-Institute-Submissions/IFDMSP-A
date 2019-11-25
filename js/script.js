@@ -532,17 +532,21 @@ function generateDistricts() {
 
         var details = "Crime=50% Affluence=56% Health=3/10";
 
+        var gears="<div class=\"col-6 pledge-buttons\"><h1><span class=\"fas fa-cog\"></span></h1></div>"
 
 
         var districtLineOut = "<div class=\"row\">";
 
-        districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSol\">";
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + districtName + "[" + details + "]" + "</h1></div>";
+        districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + districtName + "[" + details + "]" +gears+ "</h1></div>";
+
+    
         districtLineOut = districtLineOut + "</div>";
 
+
         // Pledge Buttons
-        districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSo\">";        
-        districtLineOut = districtLineOut +"<div class=\"pledge-buttons\">"+"<h1>" + i + ":\</h1><h1>Adujst <span class=\"fas fa-cogs\"></span></h1></div>";
+        // districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSol\">";        
+        // districtLineOut = districtLineOut +"<div class=\"pledge-buttons\">"+"<h1>" + i + ":\</h1><h1><span class=\"fas fa-cogs\"></span></h1></div>";
 
         districtLineOut = districtLineOut + "</div>";
 
