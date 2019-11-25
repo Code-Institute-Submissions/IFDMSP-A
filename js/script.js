@@ -1,8 +1,6 @@
 // ------- DATA ----------- 
 var flashState = true;
 var flashHandState = true;
-
-
 var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195;
@@ -15,9 +13,105 @@ var cHealth = 0;
 var roundDownDigit = 0;
 // Setup World data 
 var worldEconomy = [];
-
 var threeCountriesSelected = false;
 
+
+// uk- Districts
+var ukdistricts = {
+    '1': 'Bath',
+    '2': 'Bedford',
+    '3': 'Berkshire',
+    '4': 'Blackburn',
+    '5': 'Blackpool',
+    '6': 'Bournemouth',
+    '7': 'Brighton',
+    '8': 'Bristol',
+    '9': 'Buckinghamshire',
+    '10': 'Cambridgeshire',
+    '11': 'Central Bedfordshire',
+    '12': 'Cheshire East',
+    '13': 'Cheshire West',
+    '14': 'Chester',
+    '15': 'Christchurch',
+    '16': 'City of London',
+    '17': 'Cleveland',
+    '18': 'Cornwall',
+    '19': 'County Durham',
+    '20': 'Cumbria',
+    '21': 'Darlington',
+    '22': 'Darwen',
+    '23': 'Derby',
+    '24': 'Derbyshire',
+    '25': 'Devon',
+    '26': 'Dorset',
+    '27': 'East Riding',
+    '28': 'East Sussex',
+    '29': 'Essex',
+    '30': 'Gloucestershire',
+    '31': 'Greater Manchester',
+    '32': 'Halton',
+    '33': 'Hampshire',
+    '34': 'Hartlepool',
+    '35': 'Herefordshire',
+    '36': 'Hertfordshire',
+    '37': 'Hove',
+    '38': 'Isle of Wight',
+    '39': 'Isles of Scilly',
+    '40': 'Kent',
+    '41': 'Kingston-upon-Hull',
+    '42': 'Lancashire',
+    '43': 'Leicester',
+    '44': 'Leicestershire',
+    '45': 'Lincolnshire',
+    '46': 'London boroughs',
+    '47': 'Luton',
+    '48': 'Medway',
+    '49': 'Merseyside',
+    '50': 'Middlesbrough',
+    '51': 'Milton Keynes',
+    '52': 'Norfolk',
+    '53': 'North East Lincolnshire',
+    '54': 'North East Somerset',
+    '55': 'North Lincolnshire',
+    '56': 'North Yorkshire',
+    '57': 'Northumberland',
+    '58': 'Nottingham',
+    '59': 'Nottinghamshire',
+    '60': 'Oxfordshire',
+    '61': 'Peterborough',
+    '62': 'Plymouth',
+    '63': 'Poole',
+    '64': 'Portsmouth',
+    '65': 'Redcar',
+    '66': 'Rutland',
+    '67': 'Shropshire',
+    '68': 'Somerset',
+    '69': 'South Gloucestershire',
+    '70': 'South Yorkshire',
+    '71': 'Southampton',
+    '72': 'Southend-on-Sea',
+    '73': 'Staffordshire',
+    '74': 'Stockton-on-Tees',
+    '75': 'Stockton-on-Tees',
+    '76': 'Stoke-on-Trent',
+    '77': 'Suffolk',
+    '78': 'Surrey',
+    '79': 'Swindon',
+    '80': 'Telford',
+    '81': 'Thurrock',
+    '82': 'Torbay',
+    '83': 'Tyne and Wear',
+    '84': 'Warrington',
+    '85': 'Warwickshire',
+    '86': 'West Midlands',
+    '87': 'West Sussex',
+    '88': 'West Yorkshire',
+    '89': 'Wiltshire',
+    '90': 'Worcestershire',
+    '91': 'Wrekin',
+    '92': 'York',
+    '93': 'Yorkshire',
+};
 
 
 // Country data
@@ -237,36 +331,22 @@ var gameData = {
     "campaign running": false,
 };
 
-
-
-
 // ---------------------------------------Functions---------
-
-
 
 // State Controller monitoring (Available buttons etc)
 function stateController() {
-
-    var picked=sessionStorage.getItem("myPolitician");
- 
-    if ( picked === null) {
+    var picked = sessionStorage.getItem("myPolitician");
+    if (picked === null) {
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
         return;
     }
-
     if (picked !== null) {
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
         return;
     }
-
 }
-
-
-
-
-
 // Save Session Data
 function saveSession() {
 }
@@ -286,9 +366,6 @@ $(document).ready(function () {
         sessionStorage.setItem("myParty", myParty);
     })
 });
-
-
-
 // Flash Title!!
 function flasher() {
     // alert(flashState);
@@ -303,8 +380,6 @@ function flasher() {
         return
     }
 }
-
-
 // Flash HAND !!
 function flashHand() {
     // alert(flashState);
@@ -319,12 +394,6 @@ function flashHand() {
         return
     }
 }
-
-
-
-
-
-
 // Populate ECONOMY TABLE
 function populateTable() {
     // alert(flashState);
@@ -339,14 +408,8 @@ function populateTable() {
         // return;
     }
 
-
-
-
     // Reset World Economy Stats
     var worldEconomy = [];
-
-
-
     cCp++;
     var num = (Math.random() * gDPMax);
     cGdp = num.toFixed(roundDownDigit);
@@ -354,59 +417,68 @@ function populateTable() {
     cHealth = num.toFixed(roundDownDigit);
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
-
-
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td></tr>");
     }
-
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
-
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
-
-
     // Grab Three Random Countries for weighting data in district generation
     if (threeCountriesSelected === false && cCp > noOfCountriesMax) {
         grabThreeCountries();
     }
-
-
 }
-
-
 // Grab Three Countries for use for Genation of Weighting on District Starts
 function grabThreeCountries() {
     // alert("boom");
-
     var randomCountry = (Math.random() * noOfCountriesMax);
     c1 = randomCountry.toFixed(0);
-
     var randomCountry = (Math.random() * noOfCountriesMax);
     c2 = randomCountry.toFixed(0);
-
     var randomCountry = (Math.random() * noOfCountriesMax);
     c3 = randomCountry.toFixed(0);
-
-
-
     // alert(c1+":"+c2+":"+c3);
-
     var countName1 = $('#' + c1.toString()).text();
     var countName2 = $('#' + c2.toString()).text();
     var countName3 = $('#' + c3.toString()).text();
-
-
     // alert(countName1 + "/" + countName2 + "/" + countName3);
-
     sessionStorage.setItem("c1", countName1);
     sessionStorage.setItem("c2", countName2);
     sessionStorage.setItem("c3", countName3);
-
-
-
     // Acknowledge 3 Random coutries have been found. No need to repeat
     threeCountriesSelected = true;
+}
+
+
+
+
+
+
+
+function generateDistricts() {
+
+
+    // alert("pop");
+
+    for (let i = 1; i < 50; i++) {
+
+
+        var districtName = ukdistricts[i];
+
+        // alert(districtName);
+
+
+        var districtLineOut = "<div class=\"row\">";
+        districtLineOut = districtLineOut + "<div class=\"col-12\">";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\">" + districtName + "</div>";
+        districtLineOut = districtLineOut + "</div>";
+        districtLineOut = districtLineOut + "</div>";
+
+
+        // alert(districtLineOut);
+
+        $('#district-list').append(districtLineOut);
+    }
 }

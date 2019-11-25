@@ -199,11 +199,21 @@ table, th, td {
     color: white;
 }
 
-
 /* Jump to Global Economy Button on START page */
+
 .global-ecom-button-show {
     display: inline-block;
 }
+
 .global-ecom-button-hide {
     display: none;
+}
+
+#district-list {
+    width: 100%;
+    min-height: 50px;
+    background-color: white;
+    color: black;
+    margin-bottom: 10px;
+    border: 1px solid;
 }
