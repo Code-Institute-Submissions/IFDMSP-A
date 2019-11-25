@@ -525,22 +525,18 @@ function generateDistricts() {
 
     for (let i = 1; i < 50; i++) {
 
-
         var districtName = ukdistricts[i];
-
-        // alert(districtName);
-
         var details = "Crime=50% Affluence=56% Health=3/10";
 
-        var gears="<div class=\"col-6 pledge-buttons\"><h1><span class=\"fas fa-cog\"></span></h1></div>"
+        // var gears="<div class=\"col-6 pledge-buttons\"><h1><span class=\"fas fa-cog\"></span></h1></div>"
 
 
         var districtLineOut = "<div class=\"row\">";
-
         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
 
-    
+        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
+       
         districtLineOut = districtLineOut + "</div>";
 
 
