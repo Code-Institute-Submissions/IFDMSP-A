@@ -217,15 +217,40 @@ table, th, td {
     margin-bottom: 10px;
 }
 
+/* plank boards hiolding each distric information */
+
 .plank h1 {
+    padding: 5px;
     width: 100%;
     min-height: 100px;
     color: black;
     background-color: var(--main-fc-color);
-    font-size: 1.5rem;
+    font-size: 1rem;
+
+    box-shadow: 5px 6px black;
+}
+
+/* Pledge Buttons */
+
+.pledge-buttons {
+    min-height: 100px;
+
+    border-radius:10px;
+    padding: 2px;
+    background-color: salmon;
+
+    text-align: center;
+}
+.pledge-buttons h1{
+   
+    padding:5px;
+}
+.pledge-buttons:hover {
+    background-color: red;
 }
 
 /* Code from Stackoverflow - Philip Feldmann */
+
 /* Keep text from overspilling out of columns */
 
 .keep-insideBSol {
@@ -236,26 +261,24 @@ table, th, td {
     word-wrap: break-word;
 }
 
-
 /* Ribbon Color Classes for Political Parties */
-.make-ribbon-red h1{
-    color:red;
-}
-.make-ribbon-blue h1{
 
-    color:blue;
+.make-ribbon-red h1 {
+    color: red;
 }
 
-.make-ribbon-yellow h1{
-    color:yellow;
+.make-ribbon-blue h1 {
+    color: blue;
 }
 
-.make-ribbon-green h1{
-
-    color:greenyellow;
+.make-ribbon-yellow h1 {
+    color: yellow;
 }
 
-.make-ribbon-grey h1{
+.make-ribbon-green h1 {
+    color: greenyellow;
+}
 
+.make-ribbon-grey h1 {
     color: grey
 }

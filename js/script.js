@@ -535,12 +535,16 @@ function generateDistricts() {
 
 
         var districtLineOut = "<div class=\"row\">";
+
         districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSo\">";
-
         districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + districtName + "[" + details + "]" + "</h1></div>";
-        // districtLineOut = districtLineOut +details;
-
         districtLineOut = districtLineOut + "</div>";
+
+
+        districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSo\">";
+        // Pledge Buttons
+        districtLineOut = districtLineOut +"<div class=\"pledge-buttons\"><h1>Adjust</h1></div>";
+
         districtLineOut = districtLineOut + "</div>";
 
 
