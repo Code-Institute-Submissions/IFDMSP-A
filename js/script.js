@@ -538,7 +538,7 @@ function generateDistricts() {
         var districtLineOut = "<div class=\"row\">";
 
         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + districtName + "[" + details + "]" +gears+ "</h1></div>";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
 
     
         districtLineOut = districtLineOut + "</div>";

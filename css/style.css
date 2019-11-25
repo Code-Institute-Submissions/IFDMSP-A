@@ -230,7 +230,13 @@ table, th, td {
     box-shadow: 5px 6px black;
 }
 
-
+.dN{
+    color: red;
+    background-color: yellow;
+    border-radius:5px;
+    padding-left:5px;
+    padding-right: 5px;
+}
 
 
 
@@ -252,7 +258,8 @@ table, th, td {
     padding:5px;
 }
 .pledge-buttons h1:hover {
-    background-color: red;
+    background-color: #0B2D44;
+    color: white;
 
    
 
