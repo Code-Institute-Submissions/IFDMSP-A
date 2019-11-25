@@ -400,10 +400,7 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-grey');
             return;
 
-
-
     }
-
 
 }
 
@@ -535,10 +532,10 @@ function generateDistricts() {
 
         var details = "Crime=50% Affluence=56% Health=3/10";
 
-        var districtLineOut = "<div class=\"row\">";
-        districtLineOut = districtLineOut + "<div class=\"col-12\">";
 
-        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"+">"   + districtName + </div>";
+
+        var districtLineOut = "<div class=\"row\">";
+        districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSo\">";
 
         districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + districtName + "[" + details + "]" + "</h1></div>";
         // districtLineOut = districtLineOut +details;

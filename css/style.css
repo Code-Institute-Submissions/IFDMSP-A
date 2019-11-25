@@ -226,7 +226,6 @@ table, th, td {
 }
 
 /* Code from Stackoverflow - Philip Feldmann */
-
 /* Keep text from overspilling out of columns */
 
 .keep-insideBSol {
@@ -237,6 +236,8 @@ table, th, td {
     word-wrap: break-word;
 }
 
+
+/* Ribbon Color Classes for Political Parties */
 .make-ribbon-red h1{
     color:red;
 }
@@ -254,7 +255,7 @@ table, th, td {
     color:greenyellow;
 }
 
-.make-ribbon-unknown h1{
+.make-ribbon-grey h1{
 
     color: grey
 }
