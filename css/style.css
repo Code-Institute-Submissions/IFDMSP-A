@@ -211,9 +211,24 @@ table, th, td {
 
 #district-list {
     width: 100%;
-    min-height: 50px;
-    background-color: white;
+    min-height: 100px;
+    
+    background-color: var(--main-bg-color);
     color: black;
+
+    padding: 5px 5px 5px 5px;
+
     margin-bottom: 10px;
-    border: 1px solid;
+    border: solid;
+}
+
+.plank h1{
+
+    width: 100%;
+    min-height: 100px;
+
+    color: black;
+    background-color: var(--main-fc-color);
+
+    font-size: 1.5rem;
 }

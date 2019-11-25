@@ -472,12 +472,17 @@ function generateDistricts() {
 
         var districtLineOut = "<div class=\"row\">";
         districtLineOut = districtLineOut + "<div class=\"col-12\">";
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\">" + districtName + "</div>";
+
+        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"+">"   + districtName + </div>";
+
+        districtLineOut = districtLineOut+ "<div id=\""+i+"\" class=\"plank\"><h1>"+i+":"+districtName+"</h1></div>";
+        
         districtLineOut = districtLineOut + "</div>";
         districtLineOut = districtLineOut + "</div>";
 
 
         // alert(districtLineOut);
+        console.log(districtLineOut);
 
         $('#district-list').append(districtLineOut);
     }
