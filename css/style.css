@@ -225,7 +225,7 @@ table, th, td {
     min-height: 110px;
     color: black;
     background-color: var(--main-fc-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
 
     box-shadow: 5px 6px black;
 }
