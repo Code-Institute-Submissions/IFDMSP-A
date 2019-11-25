@@ -2,6 +2,7 @@
 var flashState = true;
 var flashHandState = true;
 var globeShake = true;
+
 var cCp = 0;
 var noOfCountriesMax = 195;
 var gDPMax = 10;
@@ -11,9 +12,50 @@ var cGdp = 0;
 var cPop = 0;
 var cHealth = 0;
 var roundDownDigit = 0;
+
 // Setup World data 
 var worldEconomy = [];
 var threeCountriesSelected = false;
+
+// ---------------------------------------------------------------------
+
+
+// Districts Object representation
+// d-populus ; How many people in district
+// d-name ; Name of district
+// d-number; district number
+// d-affluence; 0-100000000.00
+// d-employment ; number employed (max=dpopulus)
+// d-crimes; 0-100; 0 good / 100 bad
+// d-housing; Number in housing (0 > d-populus)
+var District = {
+
+    "d-populus": 0,
+    "d-name": name,
+    "d-number": 0,
+    "d-affluence": 0,
+    "d-employment": 0,
+    "d-crime": 0,
+    "d-housing": 0,
+
+};
+
+
+
+// Person Object
+// Support: 0 - none / 1 - Conservative 2- Labour3- Lib Dem 4 - Green
+// Health: 0-100 
+// Wealth: 0 - 1000
+// Satisfaction: 0-10
+var Person = {
+
+    "health": 0,
+    "Wealth": 0,
+    "satisfaction": 0,
+    "support": 0
+};
+
+
 
 
 // uk- Districts
@@ -331,7 +373,12 @@ var gameData = {
     "campaign running": false,
 };
 
-// ---------------------------------------Functions---------
+
+
+
+
+
+// ---------------------------------------//Functions//---------
 
 // State Controller monitoring (Available buttons etc)
 function stateController() {
@@ -525,31 +572,27 @@ function generateDistricts() {
 
     for (let i = 1; i < 50; i++) {
 
-        var districtName = ukdistricts[i];
-        var details = "Crime=50% Affluence=56% Health=3/10";
+        // var districtName = ukdistricts[i];
+        // var details = "Crime=50% Affluence=56% Health=3/10";
 
         // var gears="<div class=\"col-6 pledge-buttons\"><h1><span class=\"fas fa-cog\"></span></h1></div>"
 
 
-        var districtLineOut = "<div class=\"row\">";
-        districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
+        // var districtLineOut = "<div class=\"row\">";
+        // districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
 
-        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
-       
-        districtLineOut = districtLineOut + "</div>";
+        // // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
 
-
-        // Pledge Buttons
-        // districtLineOut = districtLineOut + "<div class=\"col-6 keep-insideBSol\">";        
-        // districtLineOut = districtLineOut +"<div class=\"pledge-buttons\">"+"<h1>" + i + ":\</h1><h1><span class=\"fas fa-cogs\"></span></h1></div>";
-
-        districtLineOut = districtLineOut + "</div>";
+        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + "<span class=\"dN\">" + districtName + "</span>" + "[" + details + "]" + gears + "</h1></div>";
 
 
-        // alert(districtLineOut);
-        console.log(districtLineOut);
+        // districtLineOut = districtLineOut + "</div>";
+        // districtLineOut = districtLineOut + "</div>";
 
-        $('#district-list').append(districtLineOut);
+
+        // // alert(districtLineOut);
+        // // console.log(districtLineOut);
+
+        // $('#district-list').append(districtLineOut);
     }
 }
