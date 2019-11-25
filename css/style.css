@@ -236,18 +236,25 @@ table, th, td {
     min-height: 100px;
 
     border-radius:10px;
+    
     padding: 2px;
     background-color: salmon;
 
     text-align: center;
+    box-shadow: 3px 6px black;
 }
 .pledge-buttons h1{
-   
+   font-size: 2rem;
     padding:5px;
 }
 .pledge-buttons:hover {
     background-color: red;
+
+   
+
 }
+
+ 
 
 /* Code from Stackoverflow - Philip Feldmann */
 
