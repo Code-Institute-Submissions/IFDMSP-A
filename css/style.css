@@ -148,7 +148,7 @@ body {
 
 div .ribbon h1 {
     margin-top: 20px;
-    color: red;
+    /* color: red; */
     font-size: 4rem;
 }
 
@@ -212,34 +212,49 @@ table, th, td {
 #district-list {
     width: 100%;
     min-height: 100px;
-    
     background-color: var(--main-bg-color);
-    color: black;
-
     padding: 5px 5px 5px 5px;
-
     margin-bottom: 10px;
-    border: solid;
 }
 
-.plank h1{
-
+.plank h1 {
     width: 100%;
     min-height: 100px;
-
     color: black;
     background-color: var(--main-fc-color);
-
     font-size: 1.5rem;
 }
 
 /* Code from Stackoverflow - Philip Feldmann */
+
 /* Keep text from overspilling out of columns */
-.keep-insideBSol
-{
-    -moz-hyphens:auto;
-    -ms-hyphens:auto;
-    -webkit-hyphens:auto;
-    hyphens:auto;
-    word-wrap:break-word;
- }
+
+.keep-insideBSol {
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+}
+
+.make-ribbon-red h1{
+    color:red;
+}
+.make-ribbon-blue h1{
+
+    color:blue;
+}
+
+.make-ribbon-yellow h1{
+    color:yellow;
+}
+
+.make-ribbon-green h1{
+
+    color:greenyellow;
+}
+
+.make-ribbon-unknown h1{
+
+    color: grey
+}

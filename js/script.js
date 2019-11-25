@@ -344,9 +344,73 @@ function stateController() {
     if (picked !== null) {
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
+
+        changeRibbonColour();
         return;
     }
 }
+
+
+// Change Ribbon Color when Candidate Selected
+function changeRibbonColour() {
+
+    $('.ribbon').removeClass('make-ribbon-red');
+    $('.ribbon').removeClass('make-ribbon-blue');
+    $('.ribbon').removeClass('make-ribbon-yellow');
+    $('.ribbon').removeClass('make-ribbon-green');
+    $('.ribbon').addClass('make-ribbon-grey');
+
+    var picked = sessionStorage.getItem("myParty");
+
+    switch (picked) {
+
+        // make Labour
+        case 'Labour':
+            $('.ribbon').addClass('make-ribbon-red');
+            $('.ribbon').removeClass('make-ribbon-blue');
+            $('.ribbon').removeClass('make-ribbon-yellow');
+            $('.ribbon').removeClass('make-ribbon-green');
+            $('.ribbon').removeClass('make-ribbon-grey');
+            return;
+
+        // Make Conservative
+        case 'Conservative':
+            $('.ribbon').removeClass('make-ribbon-red');
+            $('.ribbon').addClass('make-ribbon-blue');
+            $('.ribbon').removeClass('make-ribbon-yellow');
+            $('.ribbon').removeClass('make-ribbon-green');
+            $('.ribbon').removeClass('make-ribbon-grey');
+            return;
+
+        // Make Lib Dem
+        case 'Lib-Dem':
+            $('.ribbon').removeClass('make-ribbon-red');
+            $('.ribbon').removeClass('make-ribbon-blue');
+            $('.ribbon').addClass('make-ribbon-yellow');
+            $('.ribbon').removeClass('make-ribbon-green');
+            $('.ribbon').removeClass('make-ribbon-grey');
+            return;
+
+        // Make Green Party
+        case 'Green':
+            $('.ribbon').removeClass('make-ribbon-red');
+            $('.ribbon').removeClass('make-ribbon-blue');
+            $('.ribbon').removeClass('make-ribbon-yellow');
+            $('.ribbon').addClass('make-ribbon-green');
+            $('.ribbon').removeClass('make-ribbon-grey');
+            return;
+
+
+
+    }
+
+
+}
+
+
+
+
+
 // Save Session Data
 function saveSession() {
 }
@@ -469,14 +533,16 @@ function generateDistricts() {
 
         // alert(districtName);
 
+        var details = "Crime=50% Affluence=56% Health=3/10";
 
         var districtLineOut = "<div class=\"row\">";
         districtLineOut = districtLineOut + "<div class=\"col-12\">";
 
         // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"+">"   + districtName + </div>";
 
-        districtLineOut = districtLineOut+ "<div id=\""+i+"\" class=\"plank\"><h1>"+i+":"+districtName+"</h1></div>";
-        
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + districtName + "[" + details + "]" + "</h1></div>";
+        // districtLineOut = districtLineOut +details;
+
         districtLineOut = districtLineOut + "</div>";
         districtLineOut = districtLineOut + "</div>";
 
