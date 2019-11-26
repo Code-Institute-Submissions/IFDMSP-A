@@ -78,7 +78,7 @@ var Person = {
     "Wealth": 0,
     "satisfaction": 0,
     "support": 0
-    
+
 };
 
 
@@ -482,12 +482,10 @@ function changeRibbonColour() {
 
 
 // Save Session Data
-function saveSession()
-{
+function saveSession() {
 }
 // Reset Session Data
-function resetSessionData()
-{
+function resetSessionData() {
 }
 
 
@@ -617,27 +615,59 @@ function generateDistricts() {
 
     for (let i = 1; i < 50; i++) {
 
-        // var districtName = ukdistricts[i];
-        // var details = "Crime=50% Affluence=56% Health=3/10";
+        // "d-populus": 0,
+        // "d-name": name,
+        // "d-number": 0,
+        // "d-affluence": 0,
+        // "d-employment": 0,
+        // "d-crime": 0,
+        // "d-housing": 0,
+
+
+        var districtName = ukdistricts[i];
+
+
+
+        // Grab Details Data
+        var districtDetailPopulus = "1";
+        var districtDetailName = "2";
+        var districtDetailNumber = "3";
+        var districtDetailAffluence = "4";
+        var districtDetailEmployment = "5";
+        var districtDetailCrime = "6";
+        var districtDetailHousing = "7";
+
+        // Build up District Statistics
+        var details = "<div> ";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailPopulus + "</h3></p>";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailName + "</h3></p>";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailNumber + "</h3></p>";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailAffluence + "</h3></p>";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailEmployment + "</h3></p>";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailCrime + "</h3></p>";
+        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailHousing + "</h3></p>";
+        var details = details + "</div>";
+
 
         // var gears="<div class=\"col-6 pledge-buttons\"><h1><span class=\"fas fa-cog\"></span></h1></div>"
+        var gears = "";
 
 
-        // var districtLineOut = "<div class=\"row\">";
-        // districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
+        var districtLineOut = "<div class=\"row\">";
+        districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
 
-        // // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
+        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
 
-        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + "<span class=\"dN\">" + districtName + "</span>" + "[" + details + "]" + gears + "</h1></div>";
-
-
-        // districtLineOut = districtLineOut + "</div>";
-        // districtLineOut = districtLineOut + "</div>";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + "<span class=\"dN\">" + districtName + "</span>" + details + "</h1></div>";
 
 
-        // // alert(districtLineOut);
-        // // console.log(districtLineOut);
+        districtLineOut = districtLineOut + "</div>";
+        districtLineOut = districtLineOut + "</div>";
 
-        // $('#district-list').append(districtLineOut);
+
+        // alert(districtLineOut);
+        // console.log(districtLineOut);
+
+        $('#district-list').append(districtLineOut);
     }
 }

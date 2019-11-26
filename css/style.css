@@ -7,6 +7,10 @@ body {
     --main-fc-color: wheat;
     --advert-bg-color: rgb(196, 69, 40);
     --advert-fc-color: rgb(252, 250, 250);
+    --plank-bg-color: #30A0FC;
+    --plank-fc-color: wheat;
+    --stats-fc-color: black;
+    --stats-bg-color: orange;
     /* Main Foreground Color */
 }
 
@@ -231,13 +235,14 @@ table, th, td {
     padding: 5px;
     width: 100%;
     min-height: 110px;
-    color: black;
-    background-color: var(--main-fc-color);
+    color: var(--plank-fc-color);
+    background-color: var(--plank-bg-color);
     font-size: 1.5rem;
     box-shadow: 5px 6px black;
 }
 
 .dN {
+    text-align: center;
     color: red;
     background-color: yellow;
     border-radius: 5px;
@@ -246,7 +251,21 @@ table, th, td {
     text-shadow: 2px 2px black;
 }
 
-/* Pledge Buttons */
+.stats {
+    /* Statisicts information setting */
+    display: inline;
+    font-size: 2rem;
+    
+    border-radius: 10px;
+
+    padding-left:10px;
+    padding-right:10px;
+
+    color: var(--stats-fc-color);
+    background-color: var(--stats-bg-color);
+}
+
+/* Pledge Buttons
 
 .pledge-buttons {
     min-height: 100px;
@@ -255,9 +274,9 @@ table, th, td {
     background-color: salmon;
     text-align: center;
     box-shadow: 3px 6px black;
-}
+} */
 
-.pledge-buttons h1 {
+/* .pledge-buttons h1 {
     font-size: 5rem;
     padding: 5px;
 }
@@ -265,7 +284,7 @@ table, th, td {
 .pledge-buttons h1:hover {
     background-color: rgb(35, 51, 61);
     color: white;
-}
+} */
 
 /* Code from Stackoverflow - Philip Feldmann */
 
