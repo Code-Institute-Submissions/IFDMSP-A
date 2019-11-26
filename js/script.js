@@ -39,14 +39,14 @@ var District = {
     "d-housing": 0,
 
     // Save Object Data to session store
-    save: function () {
-        sessionStorage.setItem("d-populus", this.d-populus);
-    },
+    // save: function () {
+    //     sessionStorage.setItem("d-populus", this.d-populus);
+    // },
 
     // Load Object Data from session store
-    load: function () {
-        "d-populus" = sessionStorage.getItem("d-populus");
-    },
+    // load: function () {
+    //     "d-populus" = sessionStorage.getItem("d-populus");
+    // }
 };
 
 
@@ -57,10 +57,10 @@ var District = {
 function setupDistricts() {
     // alert('kops');
 
-    let a =  District;
+    // let a =  District;
 
 
-    a.save();
+    // a.save();
 }
 
 
@@ -78,6 +78,7 @@ var Person = {
     "Wealth": 0,
     "satisfaction": 0,
     "support": 0
+    
 };
 
 
@@ -481,11 +482,16 @@ function changeRibbonColour() {
 
 
 // Save Session Data
-function saveSession() {
+function saveSession()
+{
 }
 // Reset Session Data
-function resetSessionData() {
+function resetSessionData()
+{
 }
+
+
+
 // Get & Save  Political candidate & Party Affiliation
 $(document).ready(function () {
     $(".candidates").click(function () {
@@ -499,6 +505,8 @@ $(document).ready(function () {
         sessionStorage.setItem("myParty", myParty);
     })
 });
+
+
 // Flash Title!!
 function flasher() {
     // alert(flashState);
@@ -513,9 +521,11 @@ function flasher() {
         return
     }
 }
+
 // Flash HAND !!
 function flashHand() {
     // alert(flashState);
+
     if (flashHandState === true) {
         flashHandState = false;
         $('.point-hand').addClass('flashHandNow');
@@ -527,6 +537,10 @@ function flashHand() {
         return
     }
 }
+
+
+
+
 // Populate ECONOMY TABLE
 function populateTable() {
     // alert(flashState);
@@ -540,6 +554,9 @@ function populateTable() {
         $('.globe').removeClass('globeShake');
         // return;
     }
+
+
+
 
     // Reset World Economy Stats
     var worldEconomy = [];
@@ -563,6 +580,9 @@ function populateTable() {
         grabThreeCountries();
     }
 }
+
+
+
 // Grab Three Countries for use for Genation of Weighting on District Starts
 function grabThreeCountries() {
     // alert("boom");
