@@ -38,9 +38,34 @@ var District = {
     "d-crime": 0,
     "d-housing": 0,
 
+    // Save Object Data to session store
+    save: function () {
+        sessionStorage.setItem("d-populus", this.d-populus);
+    },
+
+    // Load Object Data from session store
+    load: function () {
+        "d-populus" = sessionStorage.getItem("d-populus");
+    },
 };
 
 
+
+
+
+// Set up districts
+function setupDistricts() {
+    // alert('kops');
+
+    let a =  District;
+
+
+    a.save();
+}
+
+
+
+// ------------------------------------
 
 // Person Object
 // Support: 0 - none / 1 - Conservative 2- Labour3- Lib Dem 4 - Green
