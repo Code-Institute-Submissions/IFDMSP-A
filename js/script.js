@@ -523,15 +523,25 @@ function flasher() {
 // Flash HAND !!
 function flashHand() {
     // alert(flashState);
+    var sway=$('#political-sway h1').text();
 
     if (flashHandState === true) {
         flashHandState = false;
         $('.point-hand').addClass('flashHandNow');
+
+        if(sway ==""){
+        $('.c-name').addClass('flashHandNow');
+        }
+
         return;
     }
     if (flashHandState === false) {
         flashHandState = true;
         $('.point-hand').removeClass('flashHandNow');
+
+        if(sway==""){
+        $('.c-name').removeClass('flashHandNow');
+        }
         return
     }
 }
