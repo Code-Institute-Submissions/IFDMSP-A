@@ -7,7 +7,7 @@ body {
     --main-fc-color: wheat;
     --advert-bg-color: rgb(196, 69, 40);
     --advert-fc-color: rgb(252, 250, 250);
-    --plank-bg-color: #30A0FC;
+    --plank-bg-color: #0070FF;
 
     --plank-fc-color: wheat;
     --stats-fc-color: black;
@@ -209,7 +209,7 @@ table, th, td {
 
 .globeicon {
     font-size: 6rem;
-    color: green;
+    color: var(--plank-bg-color);
 }
 
 /* Jump to Global Economy Button on START page */
@@ -233,11 +233,16 @@ table, th, td {
 /* plank boards hiolding each distric information */
 
 .plank h1 {
+
+    
     padding: 5px;
     width: 100%;
     min-height: 110px;
+
     color: var(--plank-fc-color);
+    
     background-color: var(--plank-bg-color);
+    
     font-size: 1.5rem;
     box-shadow: 5px 6px black;
 }
