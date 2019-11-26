@@ -241,6 +241,13 @@ table, th, td {
     box-shadow: 5px 6px black;
 }
 
+.plank h1:hover{
+
+    background-color: var(--main-fc-color);
+
+}
+
+
 .dN {
     text-align: center;
     color: red;
