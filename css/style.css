@@ -214,8 +214,8 @@ table, th, td {
 }
 
 .readThis {
-    font-size: 1.5rem;
-    color: black;
+    font-size: 1rem;
+    color: var(--main-bg-color);
     background-color: var(--main-fc-color);
 }
 
