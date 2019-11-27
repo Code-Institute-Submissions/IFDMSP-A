@@ -62,10 +62,10 @@ body {
 
 /* Main Content */
 
-.globe {
+.globe-icon {
     text-align: center;
     color: var(--main-fc-color);
-    font-size: 12rem;
+    font-size: 14rem;
 }
 
 /* Font Awsome Images */
