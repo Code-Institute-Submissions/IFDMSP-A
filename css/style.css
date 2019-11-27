@@ -207,6 +207,12 @@ table, th, td {
     color: black;
 }
 
+.highLight2{
+
+    background-color: orange;
+    color:black;
+}
+
 .fantasy-sub-heading h1 {
     font-size: 2rem;
     padding: 5px;

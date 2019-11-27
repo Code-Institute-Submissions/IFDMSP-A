@@ -567,22 +567,33 @@ function populateTable() {
 
 
     // Reset World Economy Stats
+
     var worldEconomy = [];
+    var num = 0;
+
     cCp++;
-    var num = (Math.random() * gDPMax);
+
+    while (num === 0) {
+        var num = (Math.random() * gDPMax);
+    }
     cGdp = num.toFixed(roundDownDigit);
-    var num = (Math.random() * healthMax);
+    while (num === 0) {
+        var num = (Math.random() * healthMax);
+    }
+
     cHealth = num.toFixed(roundDownDigit);
-    var num = (Math.random() * popMax);
+    while (num === 0) {
+        var num = (Math.random() * popMax);
+    }
     cPop = num.toFixed(roundDownDigit)
+
+
+
 
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
-        // $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</h3>" + "</td>" + "</tr>");
-        $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</h3>" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop +"</td>" + "</tr>");
+        $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
     }
-
-
 
 
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
@@ -623,13 +634,13 @@ function grabThreeCountries() {
     var third = c3.toString();
 
 
- 
-    if (cCp == noOfCountriesMax) 
-    {
-        $("#"+first).children('td ,h3').first().addClass('highLight');
-        $("#"+second).children('td ,h3').first().addClass('highLight');
-        $("#"+third).children('td ,h3').first().addClass('highLight');
- 
+
+    if (cCp == noOfCountriesMax) {
+
+        $("#" + first).children('td ,h3').first().addClass('highLight2');
+        $("#" + second).children('td ,h3').first().addClass('highLight2');
+        $("#" + third).children('td ,h3').first().addClass('highLight2');
+
     }
 
 
