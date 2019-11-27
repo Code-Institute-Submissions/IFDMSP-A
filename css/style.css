@@ -8,7 +8,6 @@ body {
     --advert-bg-color: rgb(196, 69, 40);
     --advert-fc-color: rgb(252, 250, 250);
     --plank-bg-color: #0070FF;
-
     --plank-fc-color: wheat;
     --stats-fc-color: black;
     --stats-bg-color: orange;
@@ -154,9 +153,6 @@ body {
     color: red;
 }
 
- 
-
-
 #political-sway h1 {
     color: white;
     background-color: black;
@@ -190,8 +186,6 @@ table, th, td {
     border: 1px double var(--main-bg-color);
 }
 
- 
-
 .colorTable {
     background-color: var(--main-fc-color);
     color: var(--main-bg-color);
@@ -207,10 +201,9 @@ table, th, td {
     color: black;
 }
 
-.highLight2{
-
+.highLight2 {
     background-color: orange;
-    color:black;
+    color: black;
 }
 
 .fantasy-sub-heading h1 {
@@ -244,26 +237,18 @@ table, th, td {
 /* plank boards hiolding each distric information */
 
 .plank h1 {
-
-    
     padding: 5px;
     width: 100%;
     min-height: 110px;
-
     color: var(--plank-fc-color);
-    
     background-color: var(--plank-bg-color);
-    
     font-size: 1.5rem;
     box-shadow: 5px 6px black;
 }
 
-.plank h1:hover{
-
+.plank h1:hover {
     background-color: var(--stats-bg-color);
-
 }
-
 
 .dN {
     text-align: center;
@@ -279,40 +264,39 @@ table, th, td {
     /* Statisicts information setting */
     display: inline;
     font-size: 2rem;
-    
     border-radius: 10px;
-
-    padding-left:10px;
-    padding-right:10px;
-
+    padding-left: 10px;
+    padding-right: 10px;
     color: var(--stats-fc-color);
     background-color: var(--stats-bg-color);
-
-    text-shadow:2px 2px var(--main-fc-color);
+    text-shadow: 2px 2px var(--main-fc-color);
 }
-
-
 
 /* District Stuff */
 
 /* Buttons */
 
-.district-population-b1 h1{
-
-    padding-left: 10px;
-    padding-right:10px;
-    background-color: red;
-    color: var(--main-fc-color);
-
-}
-.district-population-b2 h1{
-
+.district-population-b1 h1 {
     padding-left: 10px;
     padding-right: 10px;
-    background-color:green;
+    background-color: rgb(231, 71, 71);
     color: var(--main-fc-color);
-
+    text-shadow: 1px 1px black;
 }
+
+.district-population-b2 h1 {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(94, 163, 94);
+    color: var(--main-fc-color);
+    text-shadow: 1px 1px black;
+}
+
+.button-icons{
+    color: wheat;
+    font-size: 4rem;
+}
+
 
 
 /* Code from Stackoverflow - Philip Feldmann */

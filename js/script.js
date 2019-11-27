@@ -5,6 +5,8 @@ var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
+var noOfDistricts =21;
+
 var gDPMax = 10;
 var popMax = 10;
 var healthMax = 100;
@@ -417,6 +419,21 @@ function stateController() {
 
     });
 
+
+
+
+    // Check for double-clik to move to top of District Page
+    $('div').dblclick(function () {
+
+
+        alert("pow");
+
+        window.location.href = "country-districts.html";
+
+    });
+
+
+
     // Check if to show jump to Global Econmy Button
     // After Party has been selected
 
@@ -568,16 +585,16 @@ function flashHand() {
 // Populate ECONOMY TABLE
 function populateTable() {
     // alert(flashState);
-    if (globeShake === true) {
-        globeShake = false;
-        $('.globe').addClass('globeShake');
-        // return;
-    }
-    if (globeShake === false) {
-        globeShake = true;
-        $('.globe').removeClass('globeShake');
-        // return;
-    }
+    // if (globeShake === true) {
+    //     globeShake = false;
+    //     $('.globe').addClass('globeShake');
+    //     // return;
+    // }
+    // if (globeShake === false) {
+    //     globeShake = true;
+    //     $('.globe').removeClass('globeShake');
+    //     // return;
+    // }
 
 
 
@@ -680,7 +697,7 @@ function generateDistricts() {
 
     // alert("pop");
 
-    for (let i = 1; i < 50; i++) {
+    for (let i = 1; i < noOfDistricts; i++) {
 
         // "d-populus": 0,
         // "d-name": name,
@@ -722,15 +739,16 @@ function generateDistricts() {
 
         // Build up HTML Buttons
 
-        // Button to View Populus
+        // Button to View-Populus
         var button1 ="";
         button1 = button1 + "<div class=\"district-population-b1\">";
         button1 = button1 + "";
-        button1 = button1 + "<a href=\"generate-populus.html\"><h1>VIEW POPULUS STATS</h1></a>";
-        button1 = button1 + "";
+        button1 = button1 + "<a href=\"generate-populus.html\"><h1>VIEW POPULUS STATISTICS</h1></a>";
+       
+        button1=button1+""
         button1 = button1 + "</div>";
 
-        // Button to Adjust Prioritize Pledges
+        // Button to - Adjust Prioritize Pledges
         var button2 ="";
         button2 = button2 + "<div class=\"district-population-b2\">";
         button2 = button2 + "";
@@ -743,9 +761,7 @@ function generateDistricts() {
         var districtLineOut = "<div class=\"row\">";
         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
 
-        // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
-
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + "<span class=\"dN\">" + districtName + "</span>" + details +button1+button2+ "</h1></div>";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i +"/"+noOfDistricts+ " : " + "<span class=\"dN\">" + districtName + "</span>" + details +button1+button2+ "</h1></div>";
 
 
 
