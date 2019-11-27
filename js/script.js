@@ -555,6 +555,7 @@ function flasher() {
 // Flash HAND !!
 function flashHand() {
     // alert(flashState);
+    // sway = political sway .e party
     var sway = $('#political-sway h1').text();
 
     if (flashHandState === true) {
@@ -673,6 +674,9 @@ function grabThreeCountries() {
         $("#" + first).children('td ,h3').first().addClass('highLight2');
         $("#" + second).children('td ,h3').first().addClass('highLight2');
         $("#" + third).children('td ,h3').first().addClass('highLight2');
+
+      
+
 
     }
 

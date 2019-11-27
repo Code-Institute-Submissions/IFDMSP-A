@@ -64,8 +64,9 @@ body {
 
 .globe-icon {
     text-align: center;
-    color: var(--main-fc-color);
-    font-size: 14rem;
+    /* color: var(--main-fc-color); */
+    color: white;
+    font-size: 12rem;
 }
 
 /* Font Awsome Images */
@@ -204,6 +205,7 @@ table, th, td {
 .highLight2 {
     background-color: orange;
     color: black;
+    text-shadow: 2px 2px yellow;
 }
 
 .fantasy-sub-heading h1 {
@@ -211,7 +213,13 @@ table, th, td {
     padding: 5px;
 }
 
-.globeicon {
+.readThis {
+    font-size: 1.5rem;
+    color: black;
+    background-color: var(--main-fc-color);
+}
+
+.globe-icon {
     font-size: 6rem;
     color: var(--plank-bg-color);
 }
@@ -292,12 +300,10 @@ table, th, td {
     text-shadow: 1px 1px black;
 }
 
-.button-icons{
+.button-icons {
     color: wheat;
     font-size: 4rem;
 }
-
-
 
 /* Code from Stackoverflow - Philip Feldmann */
 
