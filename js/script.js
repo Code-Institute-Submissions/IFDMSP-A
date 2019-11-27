@@ -523,14 +523,14 @@ function flasher() {
 // Flash HAND !!
 function flashHand() {
     // alert(flashState);
-    var sway=$('#political-sway h1').text();
+    var sway = $('#political-sway h1').text();
 
     if (flashHandState === true) {
         flashHandState = false;
         $('.point-hand').addClass('flashHandNow');
 
-        if(sway ==""){
-        $('.c-name').addClass('flashHandNow');
+        if (sway == "") {
+            $('.c-name').addClass('flashHandNow');
         }
 
         return;
@@ -539,8 +539,8 @@ function flashHand() {
         flashHandState = true;
         $('.point-hand').removeClass('flashHandNow');
 
-        if(sway==""){
-        $('.c-name').removeClass('flashHandNow');
+        if (sway == "") {
+            $('.c-name').removeClass('flashHandNow');
         }
         return
     }
@@ -575,17 +575,28 @@ function populateTable() {
     cHealth = num.toFixed(roundDownDigit);
     var num = (Math.random() * popMax);
     cPop = num.toFixed(roundDownDigit)
+
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
-        $('#global-table').append("<tr id=\"" + cCp + "\"><td>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td></tr>");
+        // $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</h3>" + "</td>" + "</tr>");
+        $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</h3>" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop +"</td>" + "</tr>");
     }
+
+
+
+
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
+
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
+
+
+
     // Grab Three Random Countries for weighting data in district generation
-    if (threeCountriesSelected === false && cCp > noOfCountriesMax) {
+    if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
         grabThreeCountries();
+
     }
 }
 
@@ -604,6 +615,24 @@ function grabThreeCountries() {
     var countName1 = $('#' + c1.toString()).text();
     var countName2 = $('#' + c2.toString()).text();
     var countName3 = $('#' + c3.toString()).text();
+
+
+    // Get Table entry to Highlight & Add c-name class, to flash in unison with flashing hand
+    var first = c1.toString();
+    var second = c2.toString();
+    var third = c3.toString();
+
+
+ 
+    if (cCp == noOfCountriesMax) 
+    {
+        $("#"+first).children('td ,h3').first().addClass('highLight');
+        $("#"+second).children('td ,h3').first().addClass('highLight');
+        $("#"+third).children('td ,h3').first().addClass('highLight');
+ 
+    }
+
+
     // alert(countName1 + "/" + countName2 + "/" + countName3);
     sessionStorage.setItem("c1", countName1);
     sessionStorage.setItem("c2", countName2);
