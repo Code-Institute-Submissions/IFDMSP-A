@@ -408,6 +408,26 @@ var gameData = {
 
 // State Controller monitoring (Available buttons etc)
 function stateController() {
+
+
+
+    // Check for double clik to move to top of Global Econnomy page
+    $('table').dblclick(function () {
+
+        window.location.href = "global-economics.html";
+
+    });
+
+
+
+
+
+
+
+
+    // Check if to show jump to Global Econmy Button
+    // After Party has been selected
+
     var picked = sessionStorage.getItem("myPolitician");
     if (picked === null) {
         $('#g-gen-button').removeClass('global-ecom-button-show');
@@ -421,6 +441,9 @@ function stateController() {
         changeRibbonColour();
         return;
     }
+
+
+
 }
 
 

@@ -173,7 +173,7 @@
     </div>
 
 
- 
+
 
 
 
@@ -186,19 +186,36 @@
 
 
 
-    <!-- Start Flashing / pulsing scripts on Timer -->
+
     <script>
+
+
+        // Run Flasher for TitleBar
         $(document).ready(function () {
             setInterval(function () {
                 populateTable();
             }, 10)
         })
 
+
+        // Run FlashingHand
         $(document).ready(function () {
             setInterval(function () {
                 flashHand();
             }, 10)
         })
+
+
+        // Run State Controller
+        $(document).ready(function () {
+            setInterval(function () {
+
+                stateController();
+
+            }, 10)
+        })
+
+
     </script>
 </body>
 
