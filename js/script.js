@@ -5,7 +5,7 @@ var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
-var noOfDistricts =21;
+var noOfDistricts = 21;
 
 var gDPMax = 10;
 var popMax = 10;
@@ -20,6 +20,47 @@ var worldEconomy = [];
 var threeCountriesSelected = false;
 
 // ---------------------------------------------------------------------
+
+var ConservativePledges = {
+// Areas covered
+// Health, Wealth, Employment,Crime,Housing
+// Five pleges per area
+
+// Health
+"A:":"Provide More Funding For Hospitals",
+"B:":"Free Car Parks at Hospitals",
+"C:":"Cutting Down Waiting List by 50%",
+"D:":"Cheaper Prescriptions For All",
+"E:":"Free Dental Care For All",
+// Wealth
+"F":"Lower Tax bracket by 10%",
+"G":"Provide Mortgage Releif 10% for First Time Buyer",
+"H":"Business Rates Reduction by 5%",
+"I":"Capping University Fees",
+"J":"Personal Allowance Before Tax Increase 2.5%",
+// Employment
+"K":"Specail Business Grants For Small Businesses",
+"L":"Grants for Adult Education 33%",
+"M":"Apprenteship Government Support for Business",
+"O":"Lower Intrest rates for companies With >20 Emplyees",
+"P":"Child Care Allowance for Sigle Parents to help return to Work",
+// Crime
+"Q":"Tougher Sentences on violent offender",
+"R":"Funding for more police & PCO's, 20,0000",
+"S":"reduced parole possibility for repeat Offenders",
+"T":"Opening more Police Stations",
+"U":"More money put in Forensic Technology and Neighbourhood Crime",
+// Housing
+"V":"Commited to building 100,000 over next 5 years",
+"W":"More Allowance support for Married People",
+"X":"Support good Landlords & offset tax allowance on repairs",
+"Y":"Build more council & affordable housing for 1st time buyers",
+"Z":"Raising minimum wage",
+
+}
+
+
+
 
 
 // Districts Object representation
@@ -54,36 +95,10 @@ var District = {
 
 
 
-
-// Set up districts
-function setupDistricts() {
-    // alert('kops');
-
-    // let a =  District;
+ 
 
 
-    // a.save();
-}
-
-
-
-// ------------------------------------
-
-// Person Object
-// Support: 0 - none / 1 - Conservative 2- Labour3- Lib Dem 4 - Green
-// Health: 0-100 
-// Wealth: 0 - 1000
-// Satisfaction: 0-10
-var Person = {
-
-    "health": 0,
-    "Wealth": 0,
-    "satisfaction": 0,
-    "support": 0
-
-};
-
-
+ 
 
 
 // uk- Districts
@@ -402,35 +417,24 @@ var gameData = {
 };
 
 
-
-
-
-
 // ---------------------------------------//Functions//---------
 
 // State Controller monitoring (Available buttons etc)
 function stateController() {
 
-
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
-
         window.location.href = "global-economics.html";
-
     });
 
 
-
-
     // Check for double-clik to move to top of District Page
-    // $('div ,p .colorTable').dblclick(function () {
+    $('div ,p .colorTable').dblclick(function () {
 
+        // alert("pow");
+        window.location.href = "country-districts.html";
 
-    //     alert("pow");
-    //     window.location.href = "country-districts.html";
-
-    // });
-
+    });
 
 
     // Check if to show jump to Global Econmy Button
@@ -450,8 +454,6 @@ function stateController() {
         changeRibbonColour();
         return;
     }
-
-
 
 }
 
@@ -510,16 +512,12 @@ function changeRibbonColour() {
 }
 
 
-
-
-
 // Save Session Data
 function saveSession() {
 }
 // Reset Session Data
 function resetSessionData() {
 }
-
 
 
 // Get & Save  Political candidate & Party Affiliation
@@ -584,20 +582,6 @@ function flashHand() {
 
 // Populate ECONOMY TABLE
 function populateTable() {
-    // alert(flashState);
-    // if (globeShake === true) {
-    //     globeShake = false;
-    //     $('.globe').addClass('globeShake');
-    //     // return;
-    // }
-    // if (globeShake === false) {
-    //     globeShake = true;
-    //     $('.globe').removeClass('globeShake');
-    //     // return;
-    // }
-
-
-
 
     // Reset World Economy Stats
     // Also eliminate values of 0
@@ -629,14 +613,11 @@ function populateTable() {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
     }
 
-
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
 
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
-
-
 
     // Grab Three Random Countries for weighting data in district generation
     if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
@@ -667,15 +648,11 @@ function grabThreeCountries() {
     var second = c2.toString();
     var third = c3.toString();
 
-
-
     if (cCp == noOfCountriesMax) {
 
         $("#" + first).children('td ,h3').first().addClass('highLight2');
         $("#" + second).children('td ,h3').first().addClass('highLight2');
         $("#" + third).children('td ,h3').first().addClass('highLight2');
-
-      
 
 
     }
@@ -697,7 +674,6 @@ function grabThreeCountries() {
 
 function generateDistricts() {
 
-
     // alert("pop");
 
     for (let i = 1; i < noOfDistricts; i++) {
@@ -709,11 +685,7 @@ function generateDistricts() {
         // "d-employment": 0,
         // "d-crime": 0,
         // "d-housing": 0,
-
-
         var districtName = ukdistricts[i];
-
-
 
         // Grab Details Data
         var districtDetailPopulus = "1";
@@ -735,24 +707,21 @@ function generateDistricts() {
         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailHousing + "</h3></p>";
         var details = details + "</div>";
 
-
-        // var gears="<div class=\"col-6 pledge-buttons\"><h1><span class=\"fas fa-cog\"></span></h1></div>"
         var gears = "";
 
 
         // Build up HTML Buttons
-
         // Button to View-Populus
-        var button1 ="";
+        var button1 = "";
         button1 = button1 + "<div class=\"district-population-b1\">";
         button1 = button1 + "";
         button1 = button1 + "<a href=\"generate-populus.html\"><h1>VIEW POPULUS STATISTICS</h1></a>";
-       
-        button1=button1+""
+
+        button1 = button1 + ""
         button1 = button1 + "</div>";
 
         // Button to - Adjust Prioritize Pledges
-        var button2 ="";
+        var button2 = "";
         button2 = button2 + "<div class=\"district-population-b2\">";
         button2 = button2 + "";
         button2 = button2 + "<a href=\"pledge-priority.html\"><h1>ADJUST DISTRICT PLEDGE</h1></a>";
@@ -760,36 +729,28 @@ function generateDistricts() {
         button2 = button2 + "</div>";
 
 
-
         var districtLineOut = "<div class=\"row\">";
         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
-
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i +"/"+noOfDistricts+ " : " + "<span class=\"dN\">" + districtName + "</span>" + details +button1+button2+ "</h1></div>";
-
-
-
-
-
-
-        // <div class="col-12">
-        //     <div  class="c-name">
-
-        //         <a href="global-economics.html" class="btn btn-success btn-lg" tabindex="-1" role="button"
-        //             aria-disabled="true">POPULATION
-        //                         </a>
-
-        //     </div>
-        // </div>
-
-
-
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + "/" + noOfDistricts + " : " + "<span class=\"dN\">" + districtName + "</span>" + details + button1 + button2 + "</h1></div>";
         districtLineOut = districtLineOut + "</div>";
         districtLineOut = districtLineOut + "</div>";
-
-
-        // alert(districtLineOut);
-        // console.log(districtLineOut);
 
         $('#district-list').append(districtLineOut);
     }
+}
+
+
+
+
+// ////////////////////////////////
+// MAIN GAME ENGINE & LOGIC      //
+// ////////////////////////////////
+function mainGameEngine() {
+
+
+
+
+
+
+return;
 }

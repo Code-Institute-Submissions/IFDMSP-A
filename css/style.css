@@ -286,6 +286,9 @@ table, th, td {
 /* Buttons */
 
 .district-population-b1 h1 {
+
+    text-decoration: none;
+
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(231, 71, 71);
@@ -294,6 +297,8 @@ table, th, td {
 }
 
 .district-population-b2 h1 {
+    text-decoration: none;
+
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(94, 163, 94);
@@ -338,4 +343,22 @@ table, th, td {
 
 .make-ribbon-grey h1 {
     color: grey
+}
+
+
+
+
+
+
+/* To be deleted- for test bottom bar */
+.list-item-bottom
+{
+    font-size: 1rem;
+    display: inline-block;
+    text-decoration: none;
+}
+.list-item-bottom a
+{
+    font-size: .75rem;
+    
 }

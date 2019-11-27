@@ -125,7 +125,7 @@
 
 
 
-                
+
 
 
 
@@ -135,6 +135,22 @@
                     <div class="footer">
                         <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
                     </div>
+
+                    <!--  Note this  should be remove once game is completed -->
+                    <!-- For Testing Purposes Only -->
+                    <ul>
+                        <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
+                        <li class="list-item-bottom"><a href="global-economics.html">|Global Economy</a></li>
+                        <li class="list-item-bottom"><a href="country-districts.html">|Country District</a></li>
+                        <li class="list-item-bottom"><a href="generate-populus.html">|View Population</a></li>
+                        <li class="list-item-bottom"><a href="create-manifesto.html">|Create Manifesto</a></li>
+                        <li class="list-item-bottom"><a href="pledge-prioritize.html">|Prioritize Pledges</a></li>
+                        <li class="list-item-bottom"><a href="election-day.html">|Election Results</a></li>
+                        <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a></li>
+                    </ul>
+
+
+
                 </section>
 
 
@@ -172,10 +188,10 @@
         var polState = sessionStorage.getItem("myPolitician");
         if (polState == null) {
             // alert(polState);
-            window.location.replace( "index.html");
+            window.location.replace("index.html");
         }
- 
- 
+
+
         // Run Flasher for TitleBar
         $(document).ready(function () {
             setInterval(function () {
