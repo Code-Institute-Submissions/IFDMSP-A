@@ -720,12 +720,48 @@ function generateDistricts() {
         var gears = "";
 
 
+        // Build up HTML Buttons
+
+        // Button to View Populus
+        var button1 ="";
+        button1 = button1 + "<div class=\"district-population-b1\">";
+        button1 = button1 + "";
+        button1 = button1 + "<a href=\"generate-populus.html\"><h1>VIEW POPULUS STATS</h1></a>";
+        button1 = button1 + "";
+        button1 = button1 + "</div>";
+
+        // Button to Adjust Prioritize Pledges
+        var button2 ="";
+        button2 = button2 + "<div class=\"district-population-b2\">";
+        button2 = button2 + "";
+        button2 = button2 + "<a href=\"pledge-priority.html\"><h1>ADJUST DISTRICT PLEDGE</h1></a>";
+        button2 = button2 + "";
+        button2 = button2 + "</div>";
+
+
+
         var districtLineOut = "<div class=\"row\">";
         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
 
         // districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" +"<span class=\"dN\">"+ districtName +"</span>"+ "[" + details + "]" +gears+ "</h1></div>";
 
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + "<span class=\"dN\">" + districtName + "</span>" + details + "</h1></div>";
+        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + ":" + "<span class=\"dN\">" + districtName + "</span>" + details +button1+button2+ "</h1></div>";
+
+
+
+
+
+
+        // <div class="col-12">
+        //     <div  class="c-name">
+
+        //         <a href="global-economics.html" class="btn btn-success btn-lg" tabindex="-1" role="button"
+        //             aria-disabled="true">POPULATION
+        //                         </a>
+
+        //     </div>
+        // </div>
+
 
 
         districtLineOut = districtLineOut + "</div>";

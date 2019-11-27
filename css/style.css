@@ -293,6 +293,28 @@ table, th, td {
 
 
 
+/* District Stuff */
+
+/* Buttons */
+
+.district-population-b1 h1{
+
+    padding-left: 10px;
+    padding-right:10px;
+    background-color: red;
+    color: var(--main-fc-color);
+
+}
+.district-population-b2 h1{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:green;
+    color: var(--main-fc-color);
+
+}
+
+
 /* Code from Stackoverflow - Philip Feldmann */
 
 /* Keep text from overspilling out of columns */
