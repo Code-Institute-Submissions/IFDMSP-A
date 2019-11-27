@@ -410,7 +410,6 @@ var gameData = {
 function stateController() {
 
 
-
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
 
@@ -418,17 +417,11 @@ function stateController() {
 
     });
 
-
-
-
-
-
-
-
     // Check if to show jump to Global Econmy Button
     // After Party has been selected
 
     var picked = sessionStorage.getItem("myPolitician");
+
     if (picked === null) {
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
