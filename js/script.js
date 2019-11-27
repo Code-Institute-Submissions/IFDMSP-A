@@ -59,6 +59,128 @@ var ConservativePledges = {
 
 }
 
+var LabourPledges = {
+    // Areas covered
+    // Health, Wealth, Employment,Crime,Housing
+    // Five pleges per area
+    
+    // Health
+    "A:":"Provide More Funding For Hospitals",
+    "B:":"Free Car Parks at Hospitals",
+    "C:":"Cutting Down Waiting List by 50%",
+    "D:":"Cheaper Prescriptions For All",
+    "E:":"Free Dental Care For All",
+    // Wealth
+    "F":"Lower Tax bracket by 10%",
+    "G":"Provide Mortgage Releif 10% for First Time Buyer",
+    "H":"Business Rates Reduction by 5%",
+    "I":"Capping University Fees",
+    "J":"Personal Allowance Before Tax Increase 2.5%",
+    // Employment
+    "K":"Specail Business Grants For Small Businesses",
+    "L":"Grants for Adult Education 33%",
+    "M":"Apprenteship Government Support for Business",
+    "O":"Lower Intrest rates for companies With >20 Emplyees",
+    "P":"Child Care Allowance for Sigle Parents to help return to Work",
+    // Crime
+    "Q":"Tougher Sentences on violent offender",
+    "R":"Funding for more police & PCO's, 20,0000",
+    "S":"reduced parole possibility for repeat Offenders",
+    "T":"Opening more Police Stations",
+    "U":"More money put in Forensic Technology and Neighbourhood Crime",
+    // Housing
+    "V":"Commited to building 100,000 over next 5 years",
+    "W":"More Allowance support for Married People",
+    "X":"Support good Landlords & offset tax allowance on repairs",
+    "Y":"Build more council & affordable housing for 1st time buyers",
+    "Z":"Raising minimum wage",
+    
+    }
+
+
+    var LibDemPledges = {
+        // Areas covered
+        // Health, Wealth, Employment,Crime,Housing
+        // Five pleges per area
+        
+        // Health
+        "A:":"Provide More Funding For Hospitals",
+        "B:":"Free Car Parks at Hospitals",
+        "C:":"Cutting Down Waiting List by 50%",
+        "D:":"Cheaper Prescriptions For All",
+        "E:":"Free Dental Care For All",
+        // Wealth
+        "F":"Lower Tax bracket by 10%",
+        "G":"Provide Mortgage Releif 10% for First Time Buyer",
+        "H":"Business Rates Reduction by 5%",
+        "I":"Capping University Fees",
+        "J":"Personal Allowance Before Tax Increase 2.5%",
+        // Employment
+        "K":"Specail Business Grants For Small Businesses",
+        "L":"Grants for Adult Education 33%",
+        "M":"Apprenteship Government Support for Business",
+        "O":"Lower Intrest rates for companies With >20 Emplyees",
+        "P":"Child Care Allowance for Sigle Parents to help return to Work",
+        // Crime
+        "Q":"Tougher Sentences on violent offender",
+        "R":"Funding for more police & PCO's, 20,0000",
+        "S":"reduced parole possibility for repeat Offenders",
+        "T":"Opening more Police Stations",
+        "U":"More money put in Forensic Technology and Neighbourhood Crime",
+        // Housing
+        "V":"Commited to building 100,000 over next 5 years",
+        "W":"More Allowance support for Married People",
+        "X":"Support good Landlords & offset tax allowance on repairs",
+        "Y":"Build more council & affordable housing for 1st time buyers",
+        "Z":"Raising minimum wage",
+        
+        }
+
+
+        var GreenPledges = {
+            // Areas covered
+            // Health, Wealth, Employment,Crime,Housing
+            // Five pleges per area
+            
+            // Health
+            "A:":"Provide More Funding For Hospitals",
+            "B:":"Free Car Parks at Hospitals",
+            "C:":"Cutting Down Waiting List by 50%",
+            "D:":"Cheaper Prescriptions For All",
+            "E:":"Free Dental Care For All",
+            // Wealth
+            "F":"Lower Tax bracket by 10%",
+            "G":"Provide Mortgage Releif 10% for First Time Buyer",
+            "H":"Business Rates Reduction by 5%",
+            "I":"Capping University Fees",
+            "J":"Personal Allowance Before Tax Increase 2.5%",
+            // Employment
+            "K":"Specail Business Grants For Small Businesses",
+            "L":"Grants for Adult Education 33%",
+            "M":"Apprenteship Government Support for Business",
+            "O":"Lower Intrest rates for companies With >20 Emplyees",
+            "P":"Child Care Allowance for Sigle Parents to help return to Work",
+            // Crime
+            "Q":"Tougher Sentences on violent offender",
+            "R":"Funding for more police & PCO's, 20,0000",
+            "S":"reduced parole possibility for repeat Offenders",
+            "T":"Opening more Police Stations",
+            "U":"More money put in Forensic Technology and Neighbourhood Crime",
+            // Housing
+            "V":"Commited to building 100,000 over next 5 years",
+            "W":"More Allowance support for Married People",
+            "X":"Support good Landlords & offset tax allowance on repairs",
+            "Y":"Build more council & affordable housing for 1st time buyers",
+            "Z":"Raising minimum wage",
+            
+            }
+
+
+
+
+
+
+
 
 
 

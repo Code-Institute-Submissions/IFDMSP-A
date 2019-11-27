@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ELECTION FEVER |Country Districts</title>
+    <title>ELECTION FEVER |COUNTRY DISTRICTS</title>
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Load up FontAwsome -->
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -40,7 +38,7 @@
                         <div class="bg-blue p-2">
                             <ul>
                                 <li><a class="nav-item" href="index.html"><span class="fas fa-sync-alt"></span> A -
-                                        RESET</a>
+                                        START HERE</a>
                                 </li>
                                 <li><a class="nav-item" href="global-economics.html"><span class="fas fa-globe"></span>
                                         B1-Global Economy - Gen</a>
@@ -65,7 +63,7 @@
             <div class="d-none d-md-inline">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">A - RESET </a>
+                        <a class="nav-link active" href="index.html">A - START HERE </a>
                     </li>
                     <div class="point-hand">
                         <span class="far fa-hand-point-left"></span>
@@ -98,73 +96,37 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
         <!-- Main Content -->
-
         <div class="row">
             <div class="col-12">
-
                 <div id="district-list"></div>
-
                 </</div> <div class="row">
                 <div class="col-12 plank text-center">
                     <h1>Districts To Campaign</h1>
                 </div>
-
-
                 <!-- list of districts -->
                 <div id="district-list"></div>
-
-
-
-                 
-
             </div>
-
-
-
-
-
-
             <!-- Footer -->
             <section>
                 <div class="footer">
                     <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
                 </div>
-
-
-
- <!--  Note this  should be remove once game is completed -->
+                <!--  Note this  should be remove once game is completed -->
                 <!-- For Testing Purposes Only -->
                 <ul>
-                        <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
-                        <li class="list-item-bottom"><a href="global-economics.html">|Global Economy</a></li>
-                        <li class="list-item-bottom"><a href="country-districts.html">|Country District</a></li>
-                        <li class="list-item-bottom"><a href="generate-populus.html">|View Population</a></li>
-                        <li class="list-item-bottom"><a href="create-manifesto.html">|Create Manifesto</a></li>
-                        <li class="list-item-bottom"><a href="pledge-prioritize.html">|Prioritize Pledges</a></li>
-                        <li class="list-item-bottom"><a href="election-day.html">|Election Results</a></li>
-                        <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a></li>
-                    </ul>
-
-
-
+                    <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
+                    <li class="list-item-bottom"><a href="global-economics.html">|Global Economy</a></li>
+                    <li class="list-item-bottom"><a href="country-districts.html">|Country District</a></li>
+                    <li class="list-item-bottom"><a href="generate-populus.html">|View Population</a></li>
+                    <li class="list-item-bottom"><a href="create-manifesto.html">|Create Manifesto</a></li>
+                    <li class="list-item-bottom"><a href="pledge-prioritize.html">|Prioritize Pledges</a></li>
+                    <li class="list-item-bottom"><a href="election-day.html">|Election Results</a></li>
+                    <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a></li>
+                </ul>
             </section>
-
         </div>
     </div>
-
-
-
-
-
-
-
-
     <!-- End of container -->
     </div>
     <!--Load Bootstrap Javscript components  -->
@@ -172,64 +134,34 @@
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
-
-
-
     <script>
-
-
-
         //  Check a Party is selected or jump back to main screen
         //  Until a Political Party has been selected
         var polState = sessionStorage.getItem("myPolitician");
         if (polState == null) {
             // alert(polState);
-            window.location.replace( "index.html");
+            window.location.replace("index.html");
         }
- 
-
-
-
-
-
         $(document).ready(function () {
             setInterval(function () {
                 flasher();
             }, 500)
         })
-
-
-
         $(document).ready(function () {
             setInterval(function () {
                 flashHand();
             }, 10)
         })
-
-
-
         // Run State Controller
         $(document).ready(function () {
             setInterval(function () {
-
                 stateController();
-
             }, 10)
         })
-
     </script>
-
-
-
-
     <script>
         // Load up districts data
         generateDistricts();
     </script>
-
-
 </body>
-
 </html>
