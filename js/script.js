@@ -423,14 +423,13 @@ function stateController() {
 
 
     // Check for double-clik to move to top of District Page
-    $('div').dblclick(function () {
+    // $('div ,p .colorTable').dblclick(function () {
 
 
-        alert("pow");
+    //     alert("pow");
+    //     window.location.href = "country-districts.html";
 
-        window.location.href = "country-districts.html";
-
-    });
+    // });
 
 
 
