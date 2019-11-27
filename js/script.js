@@ -567,25 +567,26 @@ function populateTable() {
 
 
     // Reset World Economy Stats
-
+    // Also eliminate values of 0
     var worldEconomy = [];
     var num = 0;
 
     cCp++;
 
-    while (num === 0) {
+    do {
         var num = (Math.random() * gDPMax);
-    }
-    cGdp = num.toFixed(roundDownDigit);
-    while (num === 0) {
-        var num = (Math.random() * healthMax);
-    }
+        cGdp = num.toFixed(roundDownDigit);
+    } while (cGdp < 1);
 
-    cHealth = num.toFixed(roundDownDigit);
-    while (num === 0) {
+    do {
+        var num = (Math.random() * healthMax);
+        cHealth = num.toFixed(roundDownDigit);
+    } while (cHealth < 1);
+
+    do {
         var num = (Math.random() * popMax);
-    }
-    cPop = num.toFixed(roundDownDigit)
+        cPop = num.toFixed(roundDownDigit)
+    } while (cPop < 1);
 
 
 
