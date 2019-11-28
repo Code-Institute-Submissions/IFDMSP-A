@@ -283,6 +283,7 @@ table, th, td h3 {
 
 .plank h1:hover {
     background-color: var(--stats-bg-color);
+    text-decoration: none;
 }
 
 .dN {
@@ -391,6 +392,8 @@ table, th, td h3 {
     color: var(--pledge-content-fc-color);
     text-shadow: 1px 1px yellow;
     padding: 10px;
+
+   
 }
 
 .pledge-controller h3 button {
@@ -405,6 +408,11 @@ table, th, td h3 {
     font-size: .50rem;
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
+}
+
+.pledge-title-bar{
+    background-color: orange;
+    color: white;
 }
 
 #PTV {
@@ -431,6 +439,20 @@ color: yellow;
     color: white;
 }
 
-.list-item-bottom a {
+
+
+.list-item-bottom a 
+{
     font-size: .75rem;
+}
+
+.district-population-b1 a {
+
+    text-decoration: none;
+
+}
+.district-population-b2 a {
+
+    text-decoration: none;
+
 }
