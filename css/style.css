@@ -386,7 +386,7 @@ table, th, td h3 {
 }
 
 .pledge-content h3 {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-size: .75rem;
     background-color: var(--pledge-content-bg-color);
     color: var(--pledge-content-fc-color);
@@ -397,14 +397,14 @@ table, th, td h3 {
 }
 
 .pledge-controller h3 button {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-size: .75rem;
     background-color: var(--pledge-controller-bg-color);
     color: var(--pledge-controller-fc-color);
 }
 
 #pledge-value h3 {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-size: .50rem;
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
@@ -416,7 +416,7 @@ table, th, td h3 {
 }
 
 #PTV {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     text-align: center;
     color: white;
     background-color: orange;
