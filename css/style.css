@@ -383,26 +383,29 @@ table, th, td {
     border-radius: 10px;
     background-color:var(--main-page-body-color);
     color:var(--main-fc-color);
-    /* font-size: 2rem; */
+    
+    
 }
 
 .pledge-content h3 {
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: .75rem;
     background-color: var(--pledge-content-bg-color);
     color: var(--pledge-content-fc-color);
+
+    padding:10px;
 }
 
 .pledge-controller h3 button {
     border-radius:10px;
-    font-size: 1.5rem;
+    font-size: .75rem;
     background-color: var(--pledge-controller-bg-color);
     color: var(--pledge-controller-fc-color);
 }
 
 #pledge-value h3 {
     border-radius:10px;
-    font-size: 1.5rem;
+    font-size: .75rem;
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
 }

@@ -650,6 +650,7 @@ function thumbWheel(direction, pledgeNumber, value) {
 
 function pledgePrioritizeControlls(){
     loadUpYourPledgePriorityPage;
+    thumbWheel("u",1,0);
 }
 
 
