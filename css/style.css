@@ -9,10 +9,11 @@ body {
     --advert-bg-color: rgb(196, 69, 40);
     --advert-fc-color: rgb(252, 250, 250);
     /* Plank for Global Economy Page */
-    --plank-bg-color: #0070FF;
-    --plank-fc-color: wheat;
+    --plank-bg-color: rgb(185, 201, 223);
+    --plank-fc-color: rgb(85, 78, 64);
+    
     --stats-fc-color: black;
-    --stats-bg-color: orange;
+    --stats-bg-color: rgb(241, 197, 114);
     /* Pledge Prioritization page */
     --pledge-content-bg-color: wheat;
     --pledge-content-fc-color: rgb(10, 10, 70);
@@ -264,6 +265,10 @@ table, th, td h3 {
     margin-bottom: 10px;
 }
 
+
+
+
+
 /* plank boards hiolding each distric information */
 
 .plank h1 {
@@ -299,18 +304,23 @@ table, th, td h3 {
     padding-right: 10px;
     color: var(--stats-fc-color);
     background-color: var(--stats-bg-color);
+    
     text-shadow: 2px 2px var(--main-fc-color);
 }
 
-/* District Stuff */
 
+
+
+
+
+/* District Stuff */
 /* Buttons on district page */
 
 .district-population-b1 h1 {
     text-decoration: none;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: rgb(231, 71, 71);
+    background-color: rgb(236, 175, 175);
     color: var(--main-fc-color);
     text-shadow: 1px 1px black;
 }
@@ -319,18 +329,21 @@ table, th, td h3 {
     text-decoration: none;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: rgb(94, 163, 94);
+    background-color: rgb(164, 199, 164);
     color: var(--main-fc-color);
     text-shadow: 1px 1px black;
 }
 
 .button-icons {
-    color: wheat;
+    color: rgb(194, 183, 161);
     font-size: 4rem;
 }
 
-/* Code from Stackoverflow - Philip Feldmann */
 
+
+
+
+/* Code from Stackoverflow - Philip Feldmann */
 /* Keep text from overspilling out of columns */
 
 .keep-insideBSol {
