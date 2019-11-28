@@ -39,12 +39,12 @@ var manifesto = {
     "V5": 0,
     "V6": 0,
     "V7": 0,
-
 }
 
 
-// Load up your Manifesto!!
-function loadUpYourPledgePriority() {
+
+// Load up your Manifesto (Pledge Priority Page)!!
+function loadUpYourPledgePriorityPage() {
 
     var spacer = "    ";
     $("#pledge-1 h3").text("A:" + spacer + manifesto["1"]);
@@ -64,8 +64,6 @@ function loadUpYourPledgePriority() {
     $("#pledge-value-7 h3").text(manifesto["V7"]);
 
 }
-
-
 
 
 
@@ -252,15 +250,6 @@ var District = {
     "d-crime": 0,
     "d-housing": 0,
 
-    // Save Object Data to session store
-    // save: function () {
-    //     sessionStorage.setItem("d-populus", this.d-populus);
-    // },
-
-    // Load Object Data from session store
-    // load: function () {
-    //     "d-populus" = sessionStorage.getItem("d-populus");
-    // }
 };
 
 
@@ -620,9 +609,8 @@ function thumbWheel(direction, pledgeNumber, value) {
                 break;
 
         }
-
-
     }
+   
     if (direction == "u") {
         // Increment Stuff
 
@@ -652,70 +640,20 @@ function thumbWheel(direction, pledgeNumber, value) {
 
         }
 
-
-
-
-
-
-
-
     }
 
-    // Load uP Pledges
-    loadUpYourPledgePriority();
-
-    // var num = manifesto["V1"];
-    //     num--;
-    //     manifesto["V1"] = num;
-    //     loadUpYourPledgePriority();
-
+    loadUpYourPledgePriorityPage();
 }
 
 
 
 
-
-
-
-
-
-function thumbWheel1Up() {
-
-    var num = manifesto["V1"];
-    num++;
-    manifesto["V1"] = num;
-    loadUpYourPledgePriority();
-
+function pledgePrioritizeControlls(){
+    loadUpYourPledgePriorityPage;
 }
 
 
 
-// function pledgePrioritizeControlls() {
-//     // Pledge prioritize page controllers
-//     // 
-
-//     alert(pop);
-//     // $('button, #pledge-up-1').click(function () {
-
-//     //     var num = manifesto["V1"];
-//     //    num=num+1;
-//     //     manifesto["V1"] = num;
-//     //     loadUpYourPledgePriority();
-//     //     return;
-
-
-//     // $('#pledge-down-1 ,button').click(function () {
-
-//     //     var num = manifesto["V1"];
-//     //     num--;
-//     //     manifesto["V1"] = num;
-//     //     // loadUpYourPledgePriority();
-//     //     return;
-//     // })
-
-//     // loadUpYourPledgePriority();
-
-// }
 
 
 
@@ -728,8 +666,6 @@ function stateController() {
 
     // Call Pledge Priorotize Controlls Check
     pledgePrioritizeControlls();
-
-
 
 
     // Check for double clik to move to top of Global Econnomy page
@@ -750,11 +686,13 @@ function stateController() {
 
     var picked = sessionStorage.getItem("myPolitician");
 
+
     if (picked === null) {
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
         return;
     }
+
     if (picked !== null) {
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
@@ -768,7 +706,7 @@ function stateController() {
 
 // Change Ribbon Color when Candidate Selected
 function changeRibbonColour() {
-
+    
     $('.ribbon').removeClass('make-ribbon-red');
     $('.ribbon').removeClass('make-ribbon-blue');
     $('.ribbon').removeClass('make-ribbon-yellow');
@@ -833,6 +771,7 @@ $(document).ready(function () {
     $(".candidates").click(function () {
         // Save Politicians SELECTION
         var mypolitician = $(this).children('h1').text();
+
         $('#political-sway').html('<h1>' + candidates[mypolitician] + '</h1>')
         sessionStorage.setItem("myPolitician", mypolitician);
         // Save PARTY SELECTION
