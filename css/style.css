@@ -281,14 +281,13 @@ table, th, td {
     text-shadow: 2px 2px var(--main-fc-color);
 }
 
+
+
+
 /* District Stuff */
-
-/* Buttons */
-
+/* Buttons on district page */
 .district-population-b1 h1 {
-
     text-decoration: none;
-
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(231, 71, 71);
@@ -298,7 +297,6 @@ table, th, td {
 
 .district-population-b2 h1 {
     text-decoration: none;
-
     padding-left: 10px;
     padding-right: 10px;
     background-color: rgb(94, 163, 94);
@@ -350,15 +348,56 @@ table, th, td {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* Pledge Priority  */
+#pledge-priority h3 {
+    font-size: 1rem;
+    color: var(--main-bg-color);
+    background-color: orange;
+    
+}
+
+#pledge-value h3{
+    font-size: 1rem;
+    background-color: var(--main-fc-color);
+    color: orange;
+    
+}
+
+.p-index{
+background-color: red;
+color: yellow;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 /* To be deleted- for test bottom bar */
-.list-item-bottom
-{
+.list-item-bottom {
     font-size: 1rem;
     display: inline-block;
     text-decoration: none;
+    color:white;
 }
-.list-item-bottom a
-{
+
+.list-item-bottom a {
     font-size: .75rem;
-    
 }
