@@ -15,7 +15,7 @@ body {
     --stats-bg-color: orange;
     /* Pledge Prioritization page */
     --pledge-content-bg-color: wheat;
-    --pledge-content-fc-color: green;
+    --pledge-content-fc-color: rgb(10, 10, 70);
     --pledge-controller-bg-color: yellow;
     --pledge-controller-fc-color: black;
     --pledge-value-bg-color: yellow;
@@ -174,12 +174,19 @@ div .ribbon h1 {
     font-size: 4rem;
 }
 
-/* Generate World Stats Button */
 
+
+
+/* Generate World Stats Button */
 #genbutton {
     margin-top: 5px;
     margin-bottom: 10px;
 }
+
+
+
+
+
 
 /* Global Table Stuff */
 
@@ -187,18 +194,22 @@ h2 {
     border: 4px double red;
     color: white;
     margin-top: 5px;
-    /* width: 100%; */
+    
     font-size: 1rem;
 }
 
-table, th, td {
+table, th, td h3 {
     width: 100%;
     border: 1px double var(--main-bg-color);
+    font-size: 1rem;
 }
 
-.colorTable {
-    background-color: var(--main-fc-color);
-    color: var(--main-bg-color);
+.colorTable h3 {
+
+    background-color: rgb(201, 122, 139);
+    color: black;
+    border:none;
+    
 }
 
 .highLight {
@@ -211,7 +222,7 @@ table, th, td {
     color: black;
 }
 
-.highLight2 {
+.highLight2 h3{
     background-color: orange;
     color: black;
     text-shadow: 2px 2px yellow;
@@ -232,6 +243,7 @@ table, th, td {
 .globe-icon {
     font-size: 6rem;
     color: var(--plank-bg-color);
+    text-shadow: 4px 4px black;
 }
 
 /* Jump to Global Economy Button on START page */
@@ -377,9 +389,18 @@ table, th, td {
 
 #pledge-value h3 {
     border-radius: 10px;
-    /* font-size: .75rem; */
+    font-size: .50rem;
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
+}
+
+#PTV {
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    background-color: orange;
+
+    margin-bottom: 10px;
 }
 
 /* .p-index{

@@ -39,6 +39,9 @@ var manifesto = {
     "V5": 0,
     "V6": 0,
     "V7": 0,
+
+    "PledgeAvailableTotalValue": 10,
+    "PledgeAvailableTotalCapacity": 10,
 }
 
 
@@ -62,6 +65,11 @@ function loadUpYourPledgePriorityPage() {
     $("#pledge-value-5 h3").text(manifesto["V5"]);
     $("#pledge-value-6 h3").text(manifesto["V6"]);
     $("#pledge-value-7 h3").text(manifesto["V7"]);
+
+
+    // Loadup Total Pledge Value Units Available
+    $("#PTV").text(manifesto["PledgeAvailableTotalValue"]);
+
 
 }
 
@@ -582,60 +590,90 @@ var gameData = {
 function thumbWheel(direction, pledgeNumber, value) {
 
     if (direction == "d") {
-        // Decrement Stuff
-
+        // (DOWN)--- Decrement Stuff
+        //  Pledgenumber is used to reference each line of the manifesto...
         switch (pledgeNumber) {
 
             case 1:
-                manifesto["V1"] = manifesto["V1"] - value;
+                if (manifesto["V1"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V1"] = manifesto["V1"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
             case 2:
-                manifesto["V2"] = manifesto["V2"] - value;
+                if (manifesto["V2"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V2"] = manifesto["V2"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
             case 3:
-                manifesto["V3"] = manifesto["V3"] - value;
+                if (manifesto["V3"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V3"] = manifesto["V3"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
             case 4:
-                manifesto["V4"] = manifesto["V4"] - value;
+                if (manifesto["V4"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V4"] = manifesto["V4"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
             case 5:
-                manifesto["V5"] = manifesto["V5"] - value;
+                if (manifesto["V5"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V5"] = manifesto["V5"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
             case 6:
-                manifesto["V6"] = manifesto["V6"] - value;
+                if (manifesto["V6"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V6"] = manifesto["V6"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
             case 7:
-                manifesto["V7"] = manifesto["V7"] - value;
+                if (manifesto["V7"] > 0 && manifesto["PledgeAvailableTotalValue"] > 0) {
+                    manifesto["V7"] = manifesto["V7"] - value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
+                }
                 break;
 
         }
     }
-   
+
     if (direction == "u") {
-        // Increment Stuff
+        // (UP) -- Increment Stuff
 
         switch (pledgeNumber) {
 
             case 1:
-                manifesto["V1"] = manifesto["V1"] + value;
+                if ((manifesto["V1"] < manifesto["PledgeAvailableTotalCapacity"]) && (manifesto["V1"] < manifesto["PledgeAvailableTotalValue"]) ) {
+                    manifesto["V1"] = manifesto["V1"] + value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
+                }
                 break;
             case 2:
-                manifesto["V2"] = manifesto["V2"] + value;
-                break;
+                    manifesto["V2"] = manifesto["V2"] + value;
+                    manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
+                    break;
             case 3:
                 manifesto["V3"] = manifesto["V3"] + value;
+                manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
                 break;
             case 4:
                 manifesto["V4"] = manifesto["V4"] + value;
+                manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
                 break;
             case 5:
                 manifesto["V5"] = manifesto["V5"] + value;
+                manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
                 break;
             case 6:
                 manifesto["V6"] = manifesto["V6"] + value;
+                manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
                 break;
             case 7:
                 manifesto["V7"] = manifesto["V7"] + value;
+                manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] - value;
                 break;
 
         }
@@ -648,9 +686,9 @@ function thumbWheel(direction, pledgeNumber, value) {
 
 
 
-function pledgePrioritizeControlls(){
+function pledgePrioritizeControlls() {
     loadUpYourPledgePriorityPage;
-    thumbWheel("u",1,0);
+    thumbWheel("u", 1, 0);
 }
 
 
@@ -707,7 +745,7 @@ function stateController() {
 
 // Change Ribbon Color when Candidate Selected
 function changeRibbonColour() {
-    
+
     $('.ribbon').removeClass('make-ribbon-red');
     $('.ribbon').removeClass('make-ribbon-blue');
     $('.ribbon').removeClass('make-ribbon-yellow');
