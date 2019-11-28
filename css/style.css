@@ -1,24 +1,18 @@
 body {
     /* SETUP VARIABLES */
-    --main-page-body-color:#202936;
-    background-color:var(--main-page-body-color);
-
+    --main-page-body-color: #202936;
+    background-color: var(--main-page-body-color);
     font-family: "Calistoga", "sans-serif";
-
     --main-bg-color: rgb(37, 37, 107);
     /* Main background color */
     --main-fc-color: wheat;
     --advert-bg-color: rgb(196, 69, 40);
     --advert-fc-color: rgb(252, 250, 250);
-
-
     /* Plank for Global Economy Page */
     --plank-bg-color: #0070FF;
     --plank-fc-color: wheat;
     --stats-fc-color: black;
     --stats-bg-color: orange;
-
-
     /* Pledge Prioritization page */
     --pledge-content-bg-color: wheat;
     --pledge-content-fc-color: green;
@@ -29,13 +23,8 @@ body {
     /* Main Foreground Color */
 }
 
-
-
-
-
-
-
 /* Burger Nav */
+
 .nav-item {
     margin-right: 10px;
     color: var(--main-fc-color);
@@ -340,10 +329,6 @@ table, th, td {
     word-wrap: break-word;
 }
 
-
-
-
-
 /* Ribbon Color Classes for Political Parties */
 
 .make-ribbon-red h1 {
@@ -366,25 +351,12 @@ table, th, td {
     color: grey
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* Pledge Priority Page  */
 
 #pledge-priority {
     border-radius: 10px;
-    background-color:var(--main-page-body-color);
-    color:var(--main-fc-color);
-    
-    
+    background-color: var(--main-page-body-color);
+    color: var(--main-fc-color);
 }
 
 .pledge-content h3 {
@@ -392,33 +364,23 @@ table, th, td {
     font-size: .75rem;
     background-color: var(--pledge-content-bg-color);
     color: var(--pledge-content-fc-color);
-
-    padding:10px;
+    text-shadow: 1px 1px yellow;
+    padding: 10px;
 }
 
 .pledge-controller h3 button {
-    border-radius:10px;
+    border-radius: 10px;
     font-size: .75rem;
     background-color: var(--pledge-controller-bg-color);
     color: var(--pledge-controller-fc-color);
 }
 
 #pledge-value h3 {
-    border-radius:10px;
-    font-size: .75rem;
+    border-radius: 10px;
+    /* font-size: .75rem; */
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
 }
-
-
-
-
-
-
-
-
-
-
 
 /* .p-index{
 background-color: red;
