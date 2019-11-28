@@ -389,7 +389,7 @@ table, th, td {
     color: var(--pledge-content-fc-color);
 }
 
-.pledge-controller h3 {
+.pledge-controller h3 button {
     border-radius:10px;
     font-size: 1.5rem;
     background-color: var(--pledge-controller-bg-color);

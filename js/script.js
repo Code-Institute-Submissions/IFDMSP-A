@@ -45,8 +45,7 @@ var manifesto = {
 
 // Load up your Manifesto!!
 function loadUpYourPledgePriority() {
-    // Load up your Manifesto
-    var pposition = 0;
+
     var spacer = "    ";
     $("#pledge-1 h3").text("A:" + spacer + manifesto["1"]);
     $("#pledge-2 h3").text("B:" + spacer + manifesto["2"]);
@@ -590,20 +589,145 @@ var gameData = {
 
 
 // ---------------------------------------//Functions//---------
+
+function thumbWheel(direction, pledgeNumber, value) {
+
+    if (direction == "d") {
+        // Decrement Stuff
+
+        switch (pledgeNumber) {
+
+            case 1:
+                manifesto["V1"] = manifesto["V1"] - value;
+                break;
+            case 2:
+                manifesto["V2"] = manifesto["V2"] - value;
+                break;
+            case 3:
+                manifesto["V3"] = manifesto["V3"] - value;
+                break;
+            case 4:
+                manifesto["V4"] = manifesto["V4"] - value;
+                break;
+            case 5:
+                manifesto["V5"] = manifesto["V5"] - value;
+                break;
+            case 6:
+                manifesto["V6"] = manifesto["V6"] - value;
+                break;
+            case 7:
+                manifesto["V7"] = manifesto["V7"] - value;
+                break;
+
+        }
+
+
+    }
+    if (direction == "u") {
+        // Increment Stuff
+
+        switch (pledgeNumber) {
+
+            case 1:
+                manifesto["V1"] = manifesto["V1"] + value;
+                break;
+            case 2:
+                manifesto["V2"] = manifesto["V2"] + value;
+                break;
+            case 3:
+                manifesto["V3"] = manifesto["V3"] + value;
+                break;
+            case 4:
+                manifesto["V4"] = manifesto["V4"] + value;
+                break;
+            case 5:
+                manifesto["V5"] = manifesto["V5"] + value;
+                break;
+            case 6:
+                manifesto["V6"] = manifesto["V6"] + value;
+                break;
+            case 7:
+                manifesto["V7"] = manifesto["V7"] + value;
+                break;
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+    // Load uP Pledges
+    loadUpYourPledgePriority();
+
+    // var num = manifesto["V1"];
+    //     num--;
+    //     manifesto["V1"] = num;
+    //     loadUpYourPledgePriority();
+
+}
+
+
+
+
+
+
+
+
+
+function thumbWheel1Up() {
+
+    var num = manifesto["V1"];
+    num++;
+    manifesto["V1"] = num;
+    loadUpYourPledgePriority();
+
+}
+
+
+
+// function pledgePrioritizeControlls() {
+//     // Pledge prioritize page controllers
+//     // 
+
+//     alert(pop);
+//     // $('button, #pledge-up-1').click(function () {
+
+//     //     var num = manifesto["V1"];
+//     //    num=num+1;
+//     //     manifesto["V1"] = num;
+//     //     loadUpYourPledgePriority();
+//     //     return;
+
+
+//     // $('#pledge-down-1 ,button').click(function () {
+
+//     //     var num = manifesto["V1"];
+//     //     num--;
+//     //     manifesto["V1"] = num;
+//     //     // loadUpYourPledgePriority();
+//     //     return;
+//     // })
+
+//     // loadUpYourPledgePriority();
+
+// }
+
+
+
+
+
 // ######################################################
 // State Controller monitoring (Available buttons etc)
 function stateController() {
 
-    $('#pledge-up-1').click(function(){
-        
-        var num=manifesto["V1"];
-        num++;
 
-        manifesto.setItem["V1",num];
-       
-        // manifesto["V1"] = manifesto["V1"];
-    })
-
+    // Call Pledge Priorotize Controlls Check
+    pledgePrioritizeControlls();
 
 
 
@@ -615,13 +739,13 @@ function stateController() {
 
 
     // Check for double-clik to move to top of District Page
-    $('div ,p .colorTable').dblclick(function () {
-        window.location.href = "country-districts.html";
+    // $('div ,p .colorTable').dblclick(function () {
+    //     window.location.href = "country-districts.html";
 
-    });
+    // });
 
 
-    // Check if to show jump to Global Econmy Button
+    // Check if to display "jump to Global Econmy" Button
     // After Party has been selected
 
     var picked = sessionStorage.getItem("myPolitician");
