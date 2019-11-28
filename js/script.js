@@ -43,6 +43,7 @@ var manifesto = {
 }
 
 
+// Load up your Manifesto!!
 function loadUpYourPledgePriority() {
     // Load up your Manifesto
     var pposition = 0;
@@ -589,9 +590,23 @@ var gameData = {
 
 
 // ---------------------------------------//Functions//---------
-
+// ######################################################
 // State Controller monitoring (Available buttons etc)
 function stateController() {
+
+    $('#pledge-up-1').click(function(){
+        
+        var num=manifesto["V1"];
+        num++;
+
+        manifesto.setItem["V1",num];
+       
+        // manifesto["V1"] = manifesto["V1"];
+    })
+
+
+
+
 
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
@@ -601,8 +616,6 @@ function stateController() {
 
     // Check for double-clik to move to top of District Page
     $('div ,p .colorTable').dblclick(function () {
-
-        // alert("pow");
         window.location.href = "country-districts.html";
 
     });
