@@ -1035,7 +1035,49 @@ function generateDistricts() {
 // ////////////////////////////////
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
-function mainGameEngine() {
+
+
+// Create People Objects
+var Person = 
+{
+
+// Properties
+
+
+// Function
+
+}
+
+
+
+// Create Districts
+var District = {
+
+
+// Properties
+
+
+
+// Function
+
+
+}
+
+
+
+
+
+
+
+
+
+function mainGameEngine(run_function) {
+
+
+
+
+
+
 
 
 
