@@ -25,11 +25,11 @@ var manifesto = {
     // Your Politicions Manifesto
     "1": "Provide More Funding For Hospitals",
     "2": "Free Car Parks at Hospitals",
-    "3": "A7CD",
-    "4": "AHCD",
-    "5": "AOCD",
-    "6": "A9CD",
-    "7": "AWCD",
+    "3": "Business Rates Reduction by 5%",
+    "4": "Apprenteship Government Support for Business",
+    "5": "Support good Landlords & offset tax allowance on repairs",
+    "6": "Funding for more police & PCO's, 20,0000",
+    "7": "Build more council & affordable housing for 1st time buyers",
 
     // Values of each pledge
     "V1": 0,
