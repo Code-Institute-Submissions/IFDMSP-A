@@ -708,7 +708,6 @@ function pledgePrioritizeControlls() {
 // State Controller monitoring (Available buttons etc)
 function stateController() {
 
-
     // Call Pledge Priorotize Controlls Check
     pledgePrioritizeControlls();
 
@@ -819,10 +818,6 @@ function changeRibbonColour() {
 }
 
 
-// Save Session Data
-function saveSession() {}
-// Reset Session Data
-function resetSessionData() {}
 
 
 // Get & Save  Political candidate & Party Affiliation
@@ -888,31 +883,23 @@ function flashHand() {
 
 // Populate ECONOMY TABLE
 function populateTable() {
-
     // Reset World Economy Stats
     // Also eliminate values of 0
     var worldEconomy = [];
     var num = 0;
-
     cCp++;
-
     do {
         var num = (Math.random() * gDPMax);
         cGdp = num.toFixed(roundDownDigit);
     } while (cGdp < 1);
-
     do {
         var num = (Math.random() * healthMax);
         cHealth = num.toFixed(roundDownDigit);
     } while (cHealth < 1);
-
     do {
         var num = (Math.random() * popMax);
         cPop = num.toFixed(roundDownDigit)
     } while (cPop < 1);
-
-
-
 
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
@@ -920,7 +907,6 @@ function populateTable() {
     }
 
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
-
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
@@ -948,7 +934,6 @@ function grabThreeCountries() {
     var countName2 = $('#' + c2.toString()).text();
     var countName3 = $('#' + c3.toString()).text();
 
-
     // Get Table entry to Highlight & Add c-name class, to flash in unison with flashing hand
     var first = c1.toString();
     var second = c2.toString();
@@ -960,9 +945,7 @@ function grabThreeCountries() {
         $("#" + second).children('td ,h3').first().addClass('highLight2');
         $("#" + third).children('td ,h3').first().addClass('highLight2');
 
-
     }
-
 
     // alert(countName1 + "/" + countName2 + "/" + countName3);
     sessionStorage.setItem("c1", countName1);
@@ -971,11 +954,6 @@ function grabThreeCountries() {
     // Acknowledge 3 Random coutries have been found. No need to repeat
     threeCountriesSelected = true;
 }
-
-
-
-
-
 
 
 function generateDistricts() {
@@ -991,7 +969,7 @@ function generateDistricts() {
         // "d-employment": 0,
         // "d-crime": 0,
         // "d-housing": 0,
-        var districtName = ukdistricts[i];
+        var districtName = countryDistricts[i];
 
         // Grab Details Data
         var districtDetailPopulus = "1";
@@ -1105,7 +1083,7 @@ function resetGame(runProcess) {
 function setupGame() {
     
 // Create Districts
-
+generateDistricts();
 
 
 
