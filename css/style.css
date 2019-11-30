@@ -458,3 +458,10 @@ color: yellow;
     text-decoration: none;
 
 }
+
+.card{
+
+background-color: var(--main-page-body-color);
+color: wheat;
+
+}

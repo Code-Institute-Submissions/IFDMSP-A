@@ -1068,7 +1068,14 @@ function generateDistricts() {
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
 
-
+// Set Flag to Reset The Game
+// All Game data will be lost!!!!
+// The Go Back to main Page
+function clearGameData(){
+    localStorage.setItem("newGame",0);
+    sessionStorage.clear("myParty");
+    window.location.assign("index.html")
+}
 
 
 function resetGame(runProcess) {
@@ -1096,7 +1103,12 @@ function resetGame(runProcess) {
 
 // Setup Game
 function setupGame() {
-    alert("Game Reset");
+    
+
+
+
+
+
 
 
 
