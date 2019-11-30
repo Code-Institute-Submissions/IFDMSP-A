@@ -957,9 +957,6 @@ function grabThreeCountries() {
 
 
 function generateDistricts() {
-
-    // alert("pop");
-
     for (let i = 1; i < noOfDistricts; i++) {
 
         // "d-populus": 0,
@@ -1046,6 +1043,29 @@ function generateDistricts() {
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
 
+
+
+// Generate Districts Object
+// This Object will generate the districts
+var generateDistricts = {
+
+ 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 // Set Flag to Reset The Game
 // All Game data will be lost!!!!
 // The Go Back to main Page
@@ -1055,7 +1075,10 @@ function clearGameData(){
     window.location.assign("index.html")
 }
 
-
+// This routine checks a flag to see if a request has been issued
+// To reset the Game. If so it calls the  setupGame routine
+// Then it resets the flag , so its not repeated again
+// Untill requested
 function resetGame(runProcess) {
     if (localStorage.getItem("newGame") === "1") {
         // Do not Reset again
@@ -1064,10 +1087,6 @@ function resetGame(runProcess) {
 
     else{
         // Main Code Here...
-
-
-
-
         setupGame();
         // Set Reset Flag To show Game has been Reset;
         localStorage.setItem("newGame", "1");
@@ -1075,20 +1094,12 @@ function resetGame(runProcess) {
 }
 
 
-
-
-
-
-// Setup Game
+// Main Setup Game Setup Routine
+// This routine will set up basic structures
 function setupGame() {
     
 // Create Districts
-generateDistricts();
+ 
 
-
-
-
-
-
-
+ 
 }

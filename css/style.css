@@ -387,7 +387,7 @@ table, th, td h3 {
 
 .pledge-content h3 {
     /* border-radius: 10px; */
-    font-size: .75rem;
+    font-size: 1rem;
     background-color: var(--pledge-content-bg-color);
     color: var(--pledge-content-fc-color);
     text-shadow: 1px 1px yellow;
@@ -398,7 +398,7 @@ table, th, td h3 {
 
 .pledge-controller h3 button {
     /* border-radius: 10px; */
-    font-size: .75rem;
+    font-size: 1rem;
     background-color: var(--pledge-controller-bg-color);
     color: var(--pledge-controller-fc-color);
 
@@ -407,7 +407,7 @@ table, th, td h3 {
 
 #pledge-value h3 {
     /* border-radius: 10px; */
-    font-size: .50rem;
+    font-size: 1rem;
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
 }
