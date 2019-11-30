@@ -1047,7 +1047,7 @@ function generateDistricts() {
 
 // Generate Districts Object
 // This Object will generate the districts
-var generateDistricts = {
+var DistrictObject = {
 
  
 
