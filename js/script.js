@@ -5,7 +5,7 @@ var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
-var noOfDistricts = 21;
+var noOfDistricts = 10;
 
 var gDPMax = 10;
 var popMax = 10;
@@ -270,7 +270,7 @@ var District = {
 
 
 // uk- Districts
-var ukdistricts = {
+var countryDistricts = {
     '1': 'Bath',
     '2': 'Bedford',
     '3': 'Berkshire',
@@ -769,6 +769,10 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-yellow');
             $('.ribbon').removeClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
+
+            // Reset Game
+            resetGame();
+
             return;
 
             // Make Conservative
@@ -778,6 +782,10 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-yellow');
             $('.ribbon').removeClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
+
+            // Reset Game
+            resetGame();
+
             return;
 
             // Make Lib Dem
@@ -787,6 +795,10 @@ function changeRibbonColour() {
             $('.ribbon').addClass('make-ribbon-yellow');
             $('.ribbon').removeClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
+
+            // Reset Game
+            resetGame();
+
             return;
 
             // Make Green Party
@@ -796,6 +808,10 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-yellow');
             $('.ribbon').addClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
+
+            // Reset Game
+            resetGame();
+
             return;
 
     }
@@ -1032,35 +1048,45 @@ function generateDistricts() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ////////////////////////////////
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
 
 
-// Create People Objects
-var Person = 
-{
-
-// Properties
 
 
-// Function
+function resetGame(runProcess) {
+    if (localStorage.getItem("newGame") === "1") {
+        // Do not Reset again
+        return;
+    }
 
-}
-
-
-
-// Create Districts
-var District = {
-
-
-// Properties
+    else{
+        // Main Code Here...
 
 
 
-// Function
 
-
+        setupGame();
+        // Set Reset Flag To show Game has been Reset;
+        localStorage.setItem("newGame", "1");
+    }
 }
 
 
@@ -1068,21 +1094,10 @@ var District = {
 
 
 
+// Setup Game
+function setupGame() {
+    alert("Game Reset");
 
 
 
-function mainGameEngine(run_function) {
-
-
-
-
-
-
-
-
-
-
-
-
-    return;
 }
