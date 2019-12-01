@@ -1,11 +1,15 @@
 // ------- DATA ----------- 
+var cDO = [];
+
 var flashState = true;
 var flashHandState = true;
 var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
-var noOfDistricts = 10;
+var noOfDistricts = 20;
+var noOfProblems = 5;
+
 
 var gDPMax = 10;
 var popMax = 10;
@@ -73,6 +77,74 @@ function loadUpYourPledgePriorityPage() {
 
 }
 
+// Problems in districts
+var districtProblems = {
+
+    1: "P01,People are complaining the waiting list are too lomg in the hospital,S01,35",
+    2: "P02,Peoples Prescriptions are too Expensive,S02,45",
+    3: "P03,Outbreak of Serious Flu,S03,45",
+    4: "P04,Medical Equipment in dire state,S04,50",
+    5: "P05, Dr's Complain of overwork & Stress,S05,50",
+
+    6: "P06,...,S06,35",
+    7: "P07,....,S07,45",
+    8: "P08,....,S08,45",
+    9: "P09,....,S09,50",
+    10: "P010,....,S10,50",
+
+    11: "P11,....,S11,35",
+    12: "P12,....,S12,45",
+    13: "P13,....,S13,45",
+    14: "P14,....,S14,50",
+    15: "P15,....,S15,50",
+
+    16: "P16,....,S16,35",
+    17: "P17,....,S17,45",
+    18: "P18,....,S18,45",
+    19: "P19,....,S19,50",
+    20: "P20,....,S20,50",
+
+    21: "P21,....,S21,35",
+    22: "P22,....,S22,45",
+    23: "P23,....,S23,45",
+    24: "P24,....,S24,50",
+    25: "P25,....,S25,50",
+
+};
+
+var districtSolutions = {
+
+    1: "S01,We promise we shall Invest 55Mil in the Health Service",
+    2: "S02,Peoples Prescriptions are too Expensive",
+    3: "S03,We shall import as a matter of Urgency 100k of Tami-Flu",
+    4: "S04,Invest more in Technical Support Staff for our Hospitals",
+    5: "P05, Invest in Hiring 2000 More Doctors & Medical Practitioners over 5years,",
+
+    6: "S06,...,",
+    7: "S07,....,",
+    8: "S08,....,",
+    9: "S09,....,",
+    10: "S010,....",
+
+    11: "S11,....,",
+    12: "S12,....,",
+    13: "S13,....",
+    14: "S14,....,",
+    15: "S15,....",
+
+    16: "S16,....",
+    17: "S17,....",
+    18: "S18,....",
+    19: "S19,....",
+    20: "S20,....",
+
+    21: "S21,....",
+    22: "S22,....",
+    23: "S23,....",
+    24: "S24,....",
+    25: "S25,....",
+
+};
 
 
 
@@ -98,7 +170,7 @@ var ConservativePledges = {
     "L": "Grants for Adult Education 33%",
     "M": "Apprenteship Government Support for Business",
     "O": "Lower Intrest rates for companies With >20 Emplyees",
-    "P": "Child Care Allowance for Sigle Parents to help return to Work",
+    "P": "Child Care Allowance for Single Parents to help return to Work",
     // Crime
     "Q": "Tougher Sentences on violent offender",
     "R": "Funding for more police & PCO's, 20,0000",
@@ -956,72 +1028,83 @@ function grabThreeCountries() {
 }
 
 
-function generateDistricts() {
-    for (let i = 1; i < noOfDistricts; i++) {
+// function generateDistricts() {
+//     for (let i = 1; i < noOfDistricts; i++) {
 
-        // "d-populus": 0,
-        // "d-name": name,
-        // "d-number": 0,
-        // "d-affluence": 0,
-        // "d-employment": 0,
-        // "d-crime": 0,
-        // "d-housing": 0,
-        var districtName = countryDistricts[i];
+//         // "d-populus": 0,
+//         // "d-name": name,
+//         // "d-number": 0,
+//         // "d-affluence": 0,
+//         // "d-employment": 0,
+//         // "d-crime": 0,
+//         // "d-housing": 0,
+//         var districtName = countryDistricts[i];
 
-        // Grab Details Data
-        var districtDetailPopulus = "1";
-        var districtDetailName = "2";
-        var districtDetailNumber = "3";
-        var districtDetailAffluence = "4";
-        var districtDetailEmployment = "5";
-        var districtDetailCrime = "6";
-        var districtDetailHousing = "7";
+//         // Grab Details Data
+//         var districtDetailPopulus = "1";
+//         var districtDetailName = "2";
+//         var districtDetailNumber = "3";
+//         var districtDetailAffluence = "4";
+//         var districtDetailEmployment = "5";
+//         var districtDetailCrime = "6";
+//         var districtDetailHousing = "7";
 
-        // Build up District Statistics
-        var details = "<div> ";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailPopulus + "</h3></p>";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailName + "</h3></p>";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailNumber + "</h3></p>";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailAffluence + "</h3></p>";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailEmployment + "</h3></p>";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailCrime + "</h3></p>";
-        var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailHousing + "</h3></p>";
-        var details = details + "</div>";
+//         // Build up District Statistics
+//         var details = "<div > ";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailPopulus + "</h3></p>";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailName + "</h3></p>";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailNumber + "</h3></p>";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailAffluence + "</h3></p>";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailEmployment + "</h3></p>";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailCrime + "</h3></p>";
+//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailHousing + "</h3></p>";
+//         var details = details + "</div>";
 
-        var gears = "";
-
-
-        // Build up HTML Buttons
-        // Button to View-Populus
-        var button1 = "";
-        button1 = button1 + "<div class=\"district-population-b1\">";
-        button1 = button1 + "";
-        button1 = button1 + "<a href=\"generate-populus.html\"><h1>VIEW POPULUS STATISTICS</h1></a>";
-
-        button1 = button1 + ""
-        button1 = button1 + "</div>";
-
-        // Button to - Adjust Prioritize Pledges
-        var button2 = "";
-        button2 = button2 + "<div class=\"district-population-b2\">";
-        button2 = button2 + "";
-        button2 = button2 + "<a href=\"pledge-priority.html\"><h1>ADJUST DISTRICT PLEDGE</h1></a>";
-        button2 = button2 + "";
-        button2 = button2 + "</div>";
+//         var gears = "";
 
 
-        var districtLineOut = "<div class=\"row\">";
-        districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
-        districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + "/" + noOfDistricts + " : " + "<span class=\"dN\">" + districtName + "</span>" + details + button1 + button2 + "</h1></div>";
-        districtLineOut = districtLineOut + "</div>";
-        districtLineOut = districtLineOut + "</div>";
+//         // Build up HTML Buttons
+//         // Button to View-Populus
+//         var button1 = "";
+//         button1 = button1 + "<div  class=\"district-population-b1\">";
+//         button1 = button1 + "";
+//         button1 = button1 + "<a href=\"generate-populus.html\"><h1 id=\"j1\">"+i+":VIEW POPULUS STATISTICS</h1></a>";
 
-        $('#district-list').append(districtLineOut);
-    }
+//         button1 = button1 + ""
+//         button1 = button1 + "</div>";
+
+//         // Button to - Adjust Prioritize Pledges
+//         var button2 = "";
+//         button2 = button2 + "<div  class=\"district-population-b2\">";
+//         button2 = button2 + "";
+
+//         // Saving Current district before jumping to adjust
+//         button2 = button2 + "<a href=\"pledge-priority.html\"><h1 id=\"j2\" onclick=\"saveCurrentDistrict()\">"+i+":\ ADJUST DISTRICT PLEDGE</h1></a>";
+//         button2 = button2 + "";
+//         button2 = button2 + "</div>";
+
+
+//         var districtLineOut = "<div class=\"row\">";
+//         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
+//         districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + "/" + noOfDistricts + " : " + "<span class=\"dN\">" + districtName + "</span>" + details + button1 + button2 + "</h1></div>";
+//         districtLineOut = districtLineOut + "</div>";
+//         districtLineOut = districtLineOut + "</div>";
+
+//         $('#district-list').append(districtLineOut);
+//     }
+// }
+
+
+function viewDistricts() {
+
+    alert("View Districts");
+
+
+
+
+
+
 }
-
-
-
 
 
 
@@ -1045,11 +1128,48 @@ function generateDistricts() {
 
 
 
-// Generate Districts Object
+// Generate Districts  
 // This Object will generate the districts
-var DistrictObject = {
 
- 
+function getRandom(limit) {
+    rn = (Math.floor(Math.random() * limit)) + 1;
+    return rn;
+}
+
+function CreateDistricts() {
+    // District Array
+    for (var i = 1; i < noOfDistricts - 1; i++) {
+
+        var districtId = i;
+        var districtName = countryDistricts[i];
+        var districtPopulation = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 1000;
+
+        var rnum = getRandom(noOfProblems);
+        var dpa = districtProblems[rnum];
+        var rnum = getRandom(noOfProblems);
+        var dpb = districtProblems[rnum];
+        var rnum = getRandom(noOfProblems);
+        var dpc = districtProblems[rnum];
+        var rnum = getRandom(noOfProblems);
+        var dpd = districtProblems[rnum];
+        var rnum = getRandom(noOfProblems);
+        var dpe = districtProblems[rnum];
+
+        // store in array;
+        lineOut = districtId + "," + districtName + "," + districtPopulation + "," + dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
+        cDO.push(lineOut);
+
+
+
+
+        // SAVE OUT DISTRICTS
+        for (let i = 0; i < noOfDistricts; i++) {
+
+
+
+        }
+    }
+
 
 
 
@@ -1069,8 +1189,8 @@ var DistrictObject = {
 // Set Flag to Reset The Game
 // All Game data will be lost!!!!
 // The Go Back to main Page
-function clearGameData(){
-    localStorage.setItem("newGame",0);
+function clearGameData() {
+    localStorage.setItem("newGame", 0);
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
 }
@@ -1083,9 +1203,7 @@ function resetGame(runProcess) {
     if (localStorage.getItem("newGame") === "1") {
         // Do not Reset again
         return;
-    }
-
-    else{
+    } else {
         // Main Code Here...
         setupGame();
         // Set Reset Flag To show Game has been Reset;
@@ -1097,9 +1215,23 @@ function resetGame(runProcess) {
 // Main Setup Game Setup Routine
 // This routine will set up basic structures
 function setupGame() {
-    
-// Create Districts
- 
 
- 
+    // Create Districts
+    CreateDistricts();
+
 }
+
+
+
+// // Save Current District prior to
+// // Changing Pledges
+// function saveCurrentDistrict() {
+
+//     // var bb = $('#j2').this.text();
+//     var bb = $(this).this('#j2').next().text();
+
+
+
+//    alert(bb);
+
+// }
