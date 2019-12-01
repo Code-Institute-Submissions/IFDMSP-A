@@ -8,7 +8,7 @@ var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195;
 var noOfDistricts = 20;
-var noOfProblems = 5;
+var noOfProblems = 20;
 
 
 var gDPMax = 10;
@@ -80,69 +80,56 @@ function loadUpYourPledgePriorityPage() {
 // Problems in districts
 var districtProblems = {
 
-    1: "P01,People are complaining the waiting list are too lomg in the hospital,S01,35",
-    2: "P02,Peoples Prescriptions are too Expensive,S02,45",
-    3: "P03,Outbreak of Serious Flu,S03,45",
-    4: "P04,Medical Equipment in dire state,S04,50",
-    5: "P05, Dr's Complain of overwork & Stress,S05,50",
-
-    6: "P06,...,S06,35",
-    7: "P07,....,S07,45",
-    8: "P08,....,S08,45",
-    9: "P09,....,S09,50",
-    10: "P010,....,S10,50",
-
-    11: "P11,....,S11,35",
-    12: "P12,....,S12,45",
-    13: "P13,....,S13,45",
-    14: "P14,....,S14,50",
-    15: "P15,....,S15,50",
-
-    16: "P16,....,S16,35",
-    17: "P17,....,S17,45",
-    18: "P18,....,S18,45",
-    19: "P19,....,S19,50",
-    20: "P20,....,S20,50",
-
-    21: "P21,....,S21,35",
-    22: "P22,....,S22,45",
-    23: "P23,....,S23,45",
-    24: "P24,....,S24,50",
-    25: "P25,....,S25,50",
+    // Questions		
+    1: "	A	*	People are complaining waiting list are too long in the hospital	",
+    2: "	A	*	Peoples Prescriptions are too Expensive	",
+    3: "	A	*	Outbreak of Serious Flu	",
+    4: "	A	*	Medical Equipment in dire state	",
+    5: "	A	*	Dr's Complain of overwork & Stress	",
+    6: "	B	*	Mugging increase on the streets	",
+    7: "	B	*	Increase of pick-pockets in Area	",
+    8: "	B	*	Increase drug & sales use in the area	",
+    9: "	B	*	Violent assaults in the area are on the increase	",
+    10: "	B	*	Unruly behavior in the local parks	",
+    11: "	B	*	Street Drunks on the increase	",
+    12: "	C	*	Cost of living on the increase	",
+    13: "	D	*	Employment on the rise in the area	",
+    14: "	D	*	Teen unemployment n the increase	",
+    15: "	C	*	Unemployment benefit too small and ineffective	",
+    16: "	C	*	Living wage poor	",
+    17: "	E	*	Rise in clinical depression	",
+    18: "	E	*	Lots of people report unhappines with their Job	",
+    19: "	B	*	Terrorist activity on the rise	",
+    20: "	C	*	Transport Cost skk-rocketing	",
+    21: "	D	*	Child cost too high & mothers enable to work	",
 
 };
 
 var districtSolutions = {
 
-    1: "S01,We promise we shall Invest 55Mil in the Health Service",
-    2: "S02,Peoples Prescriptions are too Expensive",
-    3: "S03,We shall import as a matter of Urgency 100k of Tami-Flu",
-    4: "S04,Invest more in Technical Support Staff for our Hospitals",
-    5: "P05, Invest in Hiring 2000 More Doctors & Medical Practitioners over 5years,",
+    // Solutions		
+    1: "	A	*	We promise we shall Invest 55Milion in the Health Service	",
+    2: "	A	*	We Promise 50% Prescriptions discounts for all	",
+    3: "	A	*	We shall import as a matter of Urgency 100k of Tami-Flu	",
+    4: "	A	*	Invest more in Technical Support Staff for our Hospitals	",
+    5: "	A	*	Invest in Hiring 2000 More Doctors & Medical Practitioners over 5years	",
+    6: "	B	*	We shall recruit 2000 more PCO's within 2years	",
+    7: "	B	*	Harsher sentences for street crime	",
+    8: "	B	*	Increase in 'stop and search' In the area	",
+    9: "	B	*	We pledge to Place more physical police precence on the street	",
+    10: "	B	*	We will introduce more ASBO's accros the board	",
+    11: "	B	*	We will introduce limit of alchol sales to categories of people	",
+    12: "	C	*	We pledge to increase personal allowance per person by 3.5%	",
+    13: "	D	*	We will lower business rates to incenticise businesses	",
+    14: "	D	*	We will introduce finacial incentives for cpmpanies offering apprenteships	",
+    15: "	C	*	We will raise  snadard unemployment benefit by 2.50 per week	",
+    16: "	C	*	Will will raise allowance for Married Couples	",
+    17: "	E	*	Pledge to invest in pyschatric medical treatments	",
+    18: "	E	*	Will introduce benefits for companies that provide training for their employees	",
+    19: "	B	*	Increase in armed police to be made	",
+    20: "	C	*	Force freeze on fare rises for net 5 years	",
+    21: "	D	*	Extra support for child care to be offered	",
 
-    6: "S06,...,",
-    7: "S07,....,",
-    8: "S08,....,",
-    9: "S09,....,",
-    10: "S010,....",
-
-    11: "S11,....,",
-    12: "S12,....,",
-    13: "S13,....",
-    14: "S14,....,",
-    15: "S15,....",
-
-    16: "S16,....",
-    17: "S17,....",
-    18: "S18,....",
-    19: "S19,....",
-    20: "S20,....",
-
-    21: "S21,....",
-    22: "S22,....",
-    23: "S23,....",
-    24: "S24,....",
-    25: "S25,....",
 
 };
 
@@ -1137,37 +1124,93 @@ function getRandom(limit) {
 }
 
 function CreateDistricts() {
-    // District Array
-    for (var i = 1; i < noOfDistricts - 1; i++) {
+    // Create District & Population
+    for (var i = 1; i < noOfDistricts; i++) {
 
-        var districtId = i;
-        var districtName = countryDistricts[i];
-        var districtPopulation = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 1000;
+        // create district ID
+        dID = "D" + "," + i;
 
+
+        // PROB1
         var rnum = getRandom(noOfProblems);
         var dpa = districtProblems[rnum];
+        var spa = districtSolutions[rnum];
+
+        // PROB2
         var rnum = getRandom(noOfProblems);
         var dpb = districtProblems[rnum];
+        var spb = districtSolutions[rnum];
+
+        // PROB3
         var rnum = getRandom(noOfProblems);
         var dpc = districtProblems[rnum];
+        var spc = districtSolutions[rnum];
+
+        // PROB4
         var rnum = getRandom(noOfProblems);
         var dpd = districtProblems[rnum];
+        var spd = districtSolutions[rnum];
+
+        // PROB5
         var rnum = getRandom(noOfProblems);
         var dpe = districtProblems[rnum];
+        var spe = districtSolutions[rnum];
 
-        // store in array;
-        lineOut = districtId + "," + districtName + "," + districtPopulation + "," + dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
-        cDO.push(lineOut);
+        var PRB = dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
+        var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
 
+        var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 1000;
 
-
-
-        // SAVE OUT DISTRICTS
-        for (let i = 0; i < noOfDistricts; i++) {
-
-
-
+        var partyAffiliantNumber = (Math.floor(Math.random() * 4))+1;
+        var partyNames = {
+            1: "Conservative",
+            2: "Labour",
+            3: "Lib-Dem",
+            4: "Green",
         }
+        var pAf = partyNames[partyAffiliantNumber];
+
+
+
+        // var districtName = countryDistricts[i];
+        // var districtPopulation = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 1000;
+        // var rnum = getRandom(noOfProblems);
+        // var dpa = districtProblems[rnum];
+        // var rnum = getRandom(noOfProblems);
+        // var dpb = districtProblems[rnum];
+        // var rnum = getRandom(noOfProblems);
+        // var dpc = districtProblems[rnum];
+        // var rnum = getRandom(noOfProblems);
+        // var dpd = districtProblems[rnum];
+        // var rnum = getRandom(noOfProblems);
+        // var dpe = districtProblems[rnum];
+
+        // // store in array;
+        // lineOut = districtId + "," + districtName + "," + districtPopulation + "," + dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
+        // cDO.push(lineOut);
+
+        var DI = dID;
+        var PRB = PRB;
+        var dPop = dPop;
+        var pAf = pAf;
+
+    
+        // Packed - StringOut to Save to SessionVariable
+        var LO = PRB + '#' + SOL + '#' + dPop + "#"+pAf+"#";
+
+
+
+
+
+        console.log(DI + "/" + LO);
+
+
+        // // SAVE OUT DISTRICTS
+        // for (let i = 0; i < noOfDistricts; i++) {
+
+
+
+        // }
     }
 
 
