@@ -1097,7 +1097,7 @@ function grabThreeCountries() {
 
 function viewDistricts() {
 
-    alert("View Districts");
+    // alert("View Districts");
 
 
 
