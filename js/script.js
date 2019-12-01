@@ -1130,6 +1130,7 @@ function CreateDistricts() {
         // create district ID
         dID = "D" + "," + i;
 
+        // Create Random Problems & Solutions For Every Area
 
         // PROB1
         var rnum = getRandom(noOfProblems);
@@ -1156,49 +1157,148 @@ function CreateDistricts() {
         var dpe = districtProblems[rnum];
         var spe = districtSolutions[rnum];
 
+        // Create Problem and Solution as a Packed String
         var PRB = dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
         var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
 
-        var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 1000;
 
-        var partyAffiliantNumber = (Math.floor(Math.random() * 4))+1;
-        var partyNames = {
-            1: "Conservative",
-            2: "Labour",
-            3: "Lib-Dem",
-            4: "Green",
+        // Generate Population Count in District
+        var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 100;
+
+
+        // Create people for District
+        var people = "[";
+
+        for (let i = 1; i < dPop; i++)
+
+        {
+
+            // Generate Initial Party Affiliation
+            var partyAffiliantNumber = (Math.floor(Math.random() * 4)) + 1;
+            var partyNames = {
+                1: "Conservative",
+                2: "Labour",
+                3: "Lib-Dem",
+                4: "Green",
+            }
+            var pAf = partyNames[partyAffiliantNumber];
+
+
+
+
+            var fNames = {
+                // First Name Pool
+                1: "Mark",
+                2: "Paul",
+                3: "Fred",
+                5: "Ashwin",
+                6: "Brian",
+                7: "Barry",
+                8: "Walter",
+                9: "Matthew",
+                10: "Carol",
+                11: "Betty",
+                12: "Marcus",
+                13: "Duane",
+                14: "Jack",
+                15: "Patrick",
+                16: "Seamus",
+                17: "Michale",
+                18: "Michelle",
+                19: "Donald",
+                20: "Gregg",
+
+            }
+
+
+            var initials = {
+                // Initials Pool
+                1: "A",
+                2: "B",
+                3: "C",
+                4: "D",
+                5: "E",
+                6: "F",
+                7: "G",
+                8: "H",
+                9: "I",
+                10: "J",
+                11: "K",
+                12: "L",
+                13: "M",
+                14: "N",
+                15: "O",
+                16: "P",
+                18: "Q",
+                19: "R",
+                20: "S",
+
+            }
+
+            var sNames = {
+                // Surnames Pool
+                1: "Martins",
+                2: "Flannagan",
+                3: "Murray",
+                4: "Childs",
+                5: "Winterbourne",
+                6: "PennyWise",
+                7: "Harrison",
+                8: "Ruben",
+                9: "Sherman",
+                10: "Davidson",
+                11: "Mcarthy",
+                12: "Macmanus",
+                13: "White",
+                14: "Beal",
+                15: "Jameson",
+                16: "Bell",
+                17: "Green",
+                18: "Cambridge",
+                19: "Henry",
+                20: "O'mally",
+
+            }
+
+            // Make Random Name Combination
+            var fName = [fNames[getRandom(20)]];
+            var initial = [initials[getRandom(20)]];;
+            var surName = [sNames[getRandom(20)]];;
+
+            var PersonName = fName + "." + initial + "." + surName;
+
+            // Persons Main Concern
+            var pConcern = getRandom(4);
+
+            // TipOver amount of concerns politican sucessfully addreses
+            // To swing my Vote
+            var tiPOver = getRandom(5);
+
+
+        people =people+i+"/"+pConcern+"/"+PersonName+"/"+tiPOver+"/"+pAf+"]";
+
+
+
         }
-        var pAf = partyNames[partyAffiliantNumber];
 
 
 
-        // var districtName = countryDistricts[i];
-        // var districtPopulation = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 1000;
-        // var rnum = getRandom(noOfProblems);
-        // var dpa = districtProblems[rnum];
-        // var rnum = getRandom(noOfProblems);
-        // var dpb = districtProblems[rnum];
-        // var rnum = getRandom(noOfProblems);
-        // var dpc = districtProblems[rnum];
-        // var rnum = getRandom(noOfProblems);
-        // var dpd = districtProblems[rnum];
-        // var rnum = getRandom(noOfProblems);
-        // var dpe = districtProblems[rnum];
 
-        // // store in array;
-        // lineOut = districtId + "," + districtName + "," + districtPopulation + "," + dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
-        // cDO.push(lineOut);
 
+
+
+
+
+
+
+        // Allvariables Ready
         var DI = dID;
         var PRB = PRB;
         var dPop = dPop;
         var pAf = pAf;
 
-    
         // Packed - StringOut to Save to SessionVariable
-        var LO = PRB + '#' + SOL + '#' + dPop + "#"+pAf+"#";
-
-
+        var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#"+people;
 
 
 
