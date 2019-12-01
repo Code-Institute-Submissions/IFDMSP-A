@@ -1119,19 +1119,18 @@ function viewDistricts() {
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 \">";
-
-        // outputDistrictHtml + outputDistrictHtml + "<h3 class=\"district-data\">";
-        // 
         outputDistrictHtml = outputDistrictHtml + "<h3>";
 
         outputDistrictHtml = outputDistrictHtml + dInfo;
-        
-        outputDistrictHtml = outputDistrictHtml + "</h3>";
-        // 
-        // outputDistrictHtml + outputDistrictHtml + "</h3>";
+ 
+        outputDistrictHtml = outputDistrictHtml + "<button type=\"button\" class=\"btn btn-primary  w-100\">Population Info</button>";
 
+        outputDistrictHtml = outputDistrictHtml + "<button type=\"button\" class=\"btn btn-success w-100\">Pledge Priority</button>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
+  
 
         $("#district-list").append(outputDistrictHtml);
 
