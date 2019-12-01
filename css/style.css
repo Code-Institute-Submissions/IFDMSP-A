@@ -459,6 +459,7 @@ color: yellow;
 
 }
 
+/* For Game Reset Page Image */
 .card{
 
 background-color: var(--main-page-body-color);
@@ -473,7 +474,7 @@ color: wheat;
 {
 border-radius: 10px;
 font-size: 1.25rem;
-background-color:wheat;
+background-color:orange;
 color: var(--main-bg-color);
 margin-bottom: 10px;
 }
@@ -481,6 +482,8 @@ margin-bottom: 10px;
 
 .district-page-action-button{
 
+    background-color: orange;
+    
     margin-top: 5px;
 
 }

@@ -1097,6 +1097,8 @@ function viewDistricts() {
 
         var dInfo = sessionStorage.getItem("D," + districtNumber);
 
+        var TP = [] = dInfo.split('@');
+
 
         // var topData = dInfo.split("@");
         // var issues = topData.split("#");
@@ -1121,16 +1123,19 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 \">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
 
-        outputDistrictHtml = outputDistrictHtml + dInfo;
- 
-        outputDistrictHtml = outputDistrictHtml + "<button type=\"button\" class=\"btn btn-primary  w-100\">Population Info</button>";
+        outputDistrictHtml = outputDistrictHtml + TP[0];
 
-        outputDistrictHtml = outputDistrictHtml + "<button type=\"button\" class=\"btn btn-success w-100\">Pledge Priority</button>";
+        outputDistrictHtml =outputDistrictHtml+"<p></p>";
+
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active\" role=\"button\" aria-pressed=\"true\">Population</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active\" role=\"button\" aria-pressed=\"true\">Adjust Pledge-Priority</a>";
+
+
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
-  
+
 
         $("#district-list").append(outputDistrictHtml);
 
