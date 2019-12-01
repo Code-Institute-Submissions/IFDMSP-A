@@ -7,7 +7,7 @@ var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
-var noOfDistricts = 20;
+var noOfDistricts = 21;
 var noOfProblems = 20;
 
 
