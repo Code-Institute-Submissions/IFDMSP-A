@@ -7,7 +7,7 @@ var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
-var noOfDistricts = 20;
+var noOfDistricts = 4;
 var noOfProblems = 20;
 
 
@@ -1086,9 +1086,65 @@ function viewDistricts() {
 
     // alert("View Districts");
 
+    // List out District Number 
+
+
+    var packedDistrictInfo = "";
+
+    for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
 
 
 
+        var dInfo = sessionStorage.getItem("D," + districtNumber);
+
+
+        // var topData = dInfo.split("@");
+        // var issues = topData.split("#");
+
+        // alert(topData);
+        // alert(issues);
+
+        //  $("district-list").append(dInfo);
+
+
+
+
+
+
+        console.log(dInfo);
+
+
+
+
+        var outputDistrictHtml = "";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 \">";
+
+        // outputDistrictHtml + outputDistrictHtml + "<h3 class=\"district-data\">";
+        // 
+        outputDistrictHtml = outputDistrictHtml + "<h3>";
+
+        outputDistrictHtml = outputDistrictHtml + dInfo;
+        
+        outputDistrictHtml = outputDistrictHtml + "</h3>";
+        // 
+        // outputDistrictHtml + outputDistrictHtml + "</h3>";
+
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        $("#district-list").append(outputDistrictHtml);
+
+
+
+
+
+        // console.log(unpackedInfo);
+
+
+
+
+    }
 
 
 }
@@ -1275,47 +1331,28 @@ function CreateDistricts() {
             var tiPOver = getRandom(5);
 
 
-        people =people+i+"/"+pConcern+"/"+PersonName+"/"+tiPOver+"/"+pAf+"]";
+            people = people + "[" + i + "/" + pConcern + "/" + PersonName + "/" + tiPOver + "/" + pAf + "]";
 
 
 
         }
 
 
-
-
-
-
-
-
-
-
-
-        // Allvariables Ready
+        // All Variables Ready for use
         var DI = dID;
         var PRB = PRB;
         var dPop = dPop;
         var pAf = pAf;
 
         // Packed - StringOut to Save to SessionVariable
-        var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#"+people;
+        var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
 
+        sessionStorage.setItem(DI, LO);
 
+        // Tetspoint - can be deleted
+        // console.log(DI + "/" + LO);
 
-        console.log(DI + "/" + LO);
-
-
-        // // SAVE OUT DISTRICTS
-        // for (let i = 0; i < noOfDistricts; i++) {
-
-
-
-        // }
     }
-
-
-
-
 
 }
 

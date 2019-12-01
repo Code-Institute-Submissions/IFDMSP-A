@@ -465,3 +465,18 @@ background-color: var(--main-page-body-color);
 color: wheat;
 
 }
+
+
+
+
+.district-data ,h3
+{
+
+border-radius: 10px;
+font-size: 1.25rem;
+background-color:wheat;
+
+color: var(--main-bg-color);
+margin-bottom: 10px;
+
+}
