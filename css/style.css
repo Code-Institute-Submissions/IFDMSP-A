@@ -473,17 +473,23 @@ color: wheat;
 .district-data ,h3
 {
 border-radius: 10px;
+border:4px double;
+
 font-size: 1.25rem;
-background-color:orange;
+background-color:rgb(231, 175, 69);
 color: var(--main-bg-color);
+
+box-shadow: 3px 3px black;
+
 margin-bottom: 10px;
 }
 
 
-.district-page-action-button{
+.district-page-action-button {
 
     background-color: orange;
     
-    margin-top: 5px;
+    /* margin-top: 10px;
+    scroll-margin-bottom: 10px; */
 
 }
