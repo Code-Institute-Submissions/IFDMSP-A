@@ -219,7 +219,7 @@ table, th, td h3 {
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
-    background-color: yellow;
+    background-color: rgb(233, 233, 156);
     color: black;
 }
 
@@ -476,10 +476,10 @@ border-radius: 10px;
 border:4px double;
 
 font-size: 1rem;
-background-color:rgb(231, 175, 69);
+background-color:rgb(238, 198, 119);
 color: var(--main-bg-color);
 
-box-shadow: 3px 3px black;
+box-shadow: 3px 3px var(--main-bg-color);
 
 margin-bottom: 10px;
 }

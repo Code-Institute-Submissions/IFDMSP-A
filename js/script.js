@@ -1122,7 +1122,7 @@ function viewDistricts() {
 
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 \">";
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
 
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: "+districtNumber+" :"+countryDistricts[districtNumber]+"</p>";
