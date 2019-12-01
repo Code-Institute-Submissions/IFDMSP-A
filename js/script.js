@@ -7,7 +7,7 @@ var globeShake = true;
 
 var cCp = 0;
 var noOfCountriesMax = 195;
-var noOfDistricts = 4;
+var noOfDistricts = 20;
 var noOfProblems = 20;
 
 
@@ -1092,25 +1092,27 @@ function viewDistricts() {
     var packedDistrictInfo = "";
 
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
-
-
-
+        // Get pack district data
         var dInfo = sessionStorage.getItem("D," + districtNumber);
-
+        // Break it into two to separate Issues gfrom List of people
         var TP = [] = dInfo.split('@');
 
+        //Flatten Array so we can split it again
+        tpFlat =TP.join();
+        // Split once again to access just the issues Questions/Issues only
+        var QO = [] = tpFlat.split("#");
 
-        // var topData = dInfo.split("@");
-        // var issues = topData.split("#");
+        // Flatten the Issues section so we can grab each issue
+        issuesFlat = QO.join();
+        // Now turn each Issue into an array , so we can acces them by index
+        var ISS = [] = issuesFlat.split(",");
 
-        // alert(topData);
-        // alert(issues);
-
-        //  $("district-list").append(dInfo);
-
-
-
-
+        // Get each line of an Issue ready to push to html page
+        var l1 = ISS[0];
+        var l2 = ISS[1];
+        var l3 = ISS[2];
+        var l4 = ISS[3];
+        var l5 = ISS[4];
 
 
         console.log(dInfo);
@@ -1123,9 +1125,15 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 \">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
 
-        outputDistrictHtml = outputDistrictHtml + TP[0];
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: "+districtNumber+" :"+countryDistricts[districtNumber]+"</p>";
 
-        outputDistrictHtml =outputDistrictHtml+"<p></p>";
+        outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
+
+        outputDistrictHtml = outputDistrictHtml + "<p></p>";
 
         outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active\" role=\"button\" aria-pressed=\"true\">Population</a>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active\" role=\"button\" aria-pressed=\"true\">Adjust Pledge-Priority</a>";
