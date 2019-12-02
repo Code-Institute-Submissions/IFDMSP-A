@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <!-- Load Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
+
+    <!-- Load UP D3/DC/CROSSFILTER -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
+
+
     <!-- Load Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -107,7 +114,7 @@
                 <div id="pledge-priority">
                     <div class="row tabulator no-gutters">
 
-                        
+
                         <!-- <div class="col-6  keep-insideBSol">
                             <h3>PLEDGE</h3>
                         </div> -->
@@ -120,74 +127,85 @@
                         <div class="col-1  keep-insideBSol ">
                             <h3>V</h3>
                         </div> -->
-                    <!-- </div> -->
+                        <!-- </div> -->
 
 
 
-                   
-                                <!-- Footer -->
-                                <section>
-                                    <div class="footer">
-                                        <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
-                                        <!--  Note this  should be remove once game is completed -->
-                                        <!-- For Testing Purposes Only -->
-                                        <ul>
-                                            <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
-                                            <li class="list-item-bottom"><a href="global-economics.html">|Global
-                                                    Economy</a></li>
-                                            <li class="list-item-bottom"><a href="country-districts.html">|Country
-                                                    District</a></li>
-                                            <li class="list-item-bottom"><a href="generate-populus.html">|View
-                                                    Population</a></li>
-                                            <li class="list-item-bottom"><a href="create-manifesto.html">|Create
-                                                    Manifesto</a></li>
-                                            <li class="list-item-bottom"><a href="pledge-priority.html">|Prioritize
-                                                    Pledges</a></li>
-                                            <li class="list-item-bottom"><a href="election-day.html">|Election
-                                                    Results</a></li>
-                                            <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </section>
+
+                        <!-- Footer -->
+                        <section>
+                            <div class="footer">
+                                <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
+                                <!--  Note this  should be remove once game is completed -->
+                                <!-- For Testing Purposes Only -->
+                                <ul>
+                                    <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
+                                    <li class="list-item-bottom"><a href="global-economics.html">|Global
+                                            Economy</a></li>
+                                    <li class="list-item-bottom"><a href="country-districts.html">|Country
+                                            District</a></li>
+                                    <li class="list-item-bottom"><a href="generate-populus.html">|View
+                                            Population</a></li>
+                                    <li class="list-item-bottom"><a href="create-manifesto.html">|Create
+                                            Manifesto</a></li>
+                                    <li class="list-item-bottom"><a href="pledge-priority.html">|Prioritize
+                                            Pledges</a></li>
+                                    <li class="list-item-bottom"><a href="election-day.html">|Election
+                                            Results</a></li>
+                                    <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
+                </section>
             </div>
         </div>
-        <!--Load Bootstrap Javscript components  -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <script>
-            //  Check a Party is selected or jump back to main screen
-            //  Until a Political Party has been selected
-            var polState = sessionStorage.getItem("myPolitician");
-            if (polState == null) {
-                // alert(polState);
-                window.location.replace("index.html");
-            }
-            // Run Flasher for TitleBar
-            $(document).ready(function () {
-                setInterval(function () {
-                    populateTable();
-                }, 10)
-            })
-            // Run FlashingHand
-            $(document).ready(function () {
-                setInterval(function () {
-                    flashHand();
-                }, 10)
-            })
-            // Run State Controller
-            $(document).ready(function () {
-                setInterval(function () {
-                    stateController();
-                }, 10)
-            })
-            loadUpYourPledgePriorityPage();
-        </script>
+    </div>
+    <!--Load Bootstrap Javscript components  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+    <!-- Load Up D3 Stuff -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+
+
+    <script>
+        //  Check a Party is selected or jump back to main screen
+        //  Until a Political Party has been selected
+        var polState = sessionStorage.getItem("myPolitician");
+        if (polState == null) {
+            // alert(polState);
+            window.location.replace("index.html");
+        }
+        // Run Flasher for TitleBar
+        $(document).ready(function () {
+            setInterval(function () {
+                populateTable();
+            }, 10)
+        })
+        // Run FlashingHand
+        $(document).ready(function () {
+            setInterval(function () {
+                flashHand();
+            }, 10)
+        })
+        // Run State Controller
+        $(document).ready(function () {
+            setInterval(function () {
+                stateController();
+            }, 10)
+        })
+        loadUpYourPledgePriorityPage();
+    </script>
 </body>
+
 </html>

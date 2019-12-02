@@ -609,8 +609,6 @@ function populateTable() {
         grabThreeCountries();
     }
 }
-
-
 // Grab Three Countries for use for Genation of Weighting on District Starts
 // 
 function grabThreeCountries() {
@@ -643,6 +641,7 @@ function grabThreeCountries() {
 }
 
 
+
 // Assemble View District Information
 // 
 function viewDistricts() {
@@ -650,6 +649,13 @@ function viewDistricts() {
     // List out District Number 
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
+        // Reset Variables to count up Issue Weighting
+        var issueWeightingTotal = 0;
+        var distHealth = 0;
+        var distCrime = 0;
+        var distWealth = 0;
+        var distEmployment = 0;
+        var distSatis = 0;
         // Get pack district data
         var dInfo = sessionStorage.getItem("D," + districtNumber);
         // Break it into two to separate Issues gfrom List of people
@@ -674,20 +680,20 @@ function viewDistricts() {
         var s3 = ISS[7];
         var s4 = ISS[8];
         var s5 = ISS[9];
-
-
-        // Reset Variables to count up Issue Weighting
-        var issueWeightingTotal = 0;
-        var districtHealth = 0;
-        var districtCrime = 0;
-        var districtWealth = 0;
-        var districtEmplyment = 0;
-        var districtSatisfaction = 0;
-
-        console.log(l1);
-
-
-
+        // Get 1st Character of Issue, to determin class of issue
+        var aa = l1.slice(0, 2).trim();
+        var bb = l2.slice(0, 2).trim();
+        var cc = l3.slice(0, 2).trim();
+        var dd = l4.slice(0, 2).trim();
+        var ee = l5.slice(0, 2).trim();
+        // Place Values of Issue Volumes in approproiate Variables
+        distCrime = (countUpIssues("C", aa, bb, cc, dd, ee));
+        distHealth = (countUpIssues("H", aa, bb, cc, dd, ee));
+        distWealth = (countUpIssues("W", aa, bb, cc, dd, ee));
+        distEmployment = (countUpIssues("E", aa, bb, cc, dd, ee));
+        distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
+        console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":");
+        // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
@@ -698,24 +704,19 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ District Main Concerns </p>";
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ District Headline - Concerns </p>";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"anw\">";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
-        
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"answers\">" + s3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
         // Box DIV for graphics
-
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"graphic-stats-"+districtNumber+"\">";
-        outputDistrictHtml =outputDistrictHtml+"<h3>";
-        outputDistrictHtml =outputDistrictHtml+"</h3>";
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"graphic-stats-" + districtNumber + "\">";
+        outputDistrictHtml = outputDistrictHtml + "<h3>";
+        outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
-
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active\" role=\"button\" aria-pressed=\"true\">Population</a>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active\" role=\"button\" aria-pressed=\"true\">Adjust Pledge-Priority</a>";
@@ -727,6 +728,45 @@ function viewDistricts() {
         // console.log(unpackedInfo);
     }
 }
+// Count UP Issues
+// i1-5 = question number 1st charcater, 
+// Issue = character looking for..ie issue type 
+function countUpIssues(issue, i1, i2, i3, i4, i5) {
+    var issueTotal = 0;
+    switch (i1) {
+        case issue:
+            issueTotal++;
+    }
+    switch (i2) {
+        case issue:
+            issueTotal++;
+    }
+    switch (i3) {
+        case issue:
+            issueTotal++;
+    }
+    switch (i4) {
+        case issue:
+            issueTotal++;
+    }
+    switch (i5) {
+        case issue:
+            issueTotal++;
+    }
+    // console.log(issueTotal);
+    return issueTotal;
+}
+
+
+
+// Strip Trim Characters
+function myTrim(x) {
+    return x.replace(/^\s+|\s+$/gm, ' ');
+}
+
+
+
+
 // ////////////////////////////////
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
@@ -736,7 +776,6 @@ function getRandom(limit) {
     rn = (Math.floor(Math.random() * limit)) + 1;
     return rn;
 }
-
 function CreateDistricts() {
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
