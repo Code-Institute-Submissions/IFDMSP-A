@@ -439,38 +439,12 @@ var gameData = {
     "popularity rating": 0,
     "campaign running": false,
 };
-
-
-
-
-
 // ---------------------------------------//Functions//---------
 // -------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ######################################################
 // State Controller monitoring (Available buttons etc)
 function stateController() {
     // Call Pledge Priorotize Controlls Check
-   
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
         window.location.href = "global-economics.html";
@@ -483,9 +457,6 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
-
-
-
     // Check for double-clik to move to top of District Page
     // $('div ,p .colorTable').dblclick(function () {
     //     window.location.href = "country-districts.html";
@@ -505,8 +476,6 @@ function stateController() {
         return;
     }
 }
-
-
 // Change Ribbon Color when Candidate Selected
 // 
 function changeRibbonColour() {
@@ -640,7 +609,10 @@ function populateTable() {
         grabThreeCountries();
     }
 }
+
+
 // Grab Three Countries for use for Genation of Weighting on District Starts
+// 
 function grabThreeCountries() {
     // alert("boom");
     var randomCountry = (Math.random() * noOfCountriesMax);
@@ -670,6 +642,9 @@ function grabThreeCountries() {
     threeCountriesSelected = true;
 }
 
+
+// Assemble View District Information
+// 
 function viewDistricts() {
     // alert("View Districts");
     // List out District Number 
@@ -699,6 +674,8 @@ function viewDistricts() {
         var s3 = ISS[7];
         var s4 = ISS[8];
         var s5 = ISS[9];
+
+
         // Reset Variables to count up Issue Weighting
         var issueWeightingTotal = 0;
         var districtHealth = 0;
@@ -706,11 +683,11 @@ function viewDistricts() {
         var districtWealth = 0;
         var districtEmplyment = 0;
         var districtSatisfaction = 0;
-        // Get Issue type, by extracting first character of question
-        // var issueType = l1.join();
-        // var IT = issueType.slice(0, 1);
-        // alert(issueType);
-        // console.log(dInfo);
+
+        console.log(l1);
+
+
+
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
@@ -724,12 +701,21 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ District Main Concerns </p>";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"anw\">";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
-        // sessionStorage.setItem(districtNumber+":"+"PS:1","-")|0;
+        
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"answers\">" + s3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        // Box DIV for graphics
+
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"graphic-stats-"+districtNumber+"\">";
+        outputDistrictHtml =outputDistrictHtml+"<h3>";
+        outputDistrictHtml =outputDistrictHtml+"</h3>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active\" role=\"button\" aria-pressed=\"true\">Population</a>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active\" role=\"button\" aria-pressed=\"true\">Adjust Pledge-Priority</a>";
@@ -794,7 +780,6 @@ function CreateDistricts() {
                 4: "Green",
             }
             var pAf = partyNames[partyAffiliantNumber];
-
             // Setup Name Pools
             var fNames = {
                 // First Name Pool
@@ -875,13 +860,11 @@ function CreateDistricts() {
             var tiPOver = getRandom(5);
             people = people + "[" + i + "/" + pConcern + "/" + PersonName + "/" + tiPOver + "/" + pAf + "]";
         }
-
         // All Variables Ready for use
         var DI = dID;
         var PRB = PRB;
         var dPop = dPop;
         var pAf = pAf;
-
         // Packed - StringOut to Save to SessionVariable
         var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
         sessionStorage.setItem(DI, LO);
@@ -889,8 +872,6 @@ function CreateDistricts() {
         // console.log(DI + "/" + LO);
     }
 }
-
-
 // Set Flag to Reset The Game
 // All Game data will be lost!!!!
 // The Go Back to main Page
@@ -914,11 +895,6 @@ function resetGame(runProcess) {
         localStorage.setItem("newGame", "1");
     }
 }
-
-
-
-
-
 // Main Setup Game Setup Routine
 // This routine will set up basic structures
 // Entry call - Index.html - Reset Game 
@@ -929,25 +905,19 @@ function setupGame() {
     WipeOutOldDistrictPledges();
 }
 // }
-
-
-
 // Wipe Out Old Dsitrict Pledges Made.
 // Ready for new Game
 // NOTE: ** Access with "sessionStorage.getItem(Dn:PS:sn(1-5)""
 function WipeOutOldDistrictPledges() {
     for (let i = 1; i < noOfDistricts; i++) {
-        sessionStorage.setItem(i + ":" + "PS:1", "-") ;
-        sessionStorage.setItem(i + ":" + "PS:2", "-") ;
-        sessionStorage.setItem(i + ":" + "PS:3", "-") ;
-        sessionStorage.setItem(i + ":" + "PS:4", "-") ;
-        sessionStorage.setItem(i + ":" + "PS:5", "-") ;
+        sessionStorage.setItem(i + ":" + "PS:1", "-");
+        sessionStorage.setItem(i + ":" + "PS:2", "-");
+        sessionStorage.setItem(i + ":" + "PS:3", "-");
+        sessionStorage.setItem(i + ":" + "PS:4", "-");
+        sessionStorage.setItem(i + ":" + "PS:5", "-");
     }
     // alert("Previous Entries Erased!");
 }
-
-
-
 // Flash Unaddressed Issue in Country Districts
 // Entry call = country-district.html
 function flashUnaddressedIssue() {
