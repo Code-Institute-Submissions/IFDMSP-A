@@ -937,11 +937,11 @@ function setupGame() {
 // NOTE: ** Access with "sessionStorage.getItem(Dn:PS:sn(1-5)""
 function WipeOutOldDistrictPledges() {
     for (let i = 1; i < noOfDistricts; i++) {
-        sessionStorage.setItem(i + ":" + "PS:1", "-") | 0;
-        sessionStorage.setItem(i + ":" + "PS:2", "-") | 0;
-        sessionStorage.setItem(i + ":" + "PS:3", "-") | 0;
-        sessionStorage.setItem(i + ":" + "PS:4", "-") | 0;
-        sessionStorage.setItem(i + ":" + "PS:5", "-") | 0;
+        sessionStorage.setItem(i + ":" + "PS:1", "-") ;
+        sessionStorage.setItem(i + ":" + "PS:2", "-") ;
+        sessionStorage.setItem(i + ":" + "PS:3", "-") ;
+        sessionStorage.setItem(i + ":" + "PS:4", "-") ;
+        sessionStorage.setItem(i + ":" + "PS:5", "-") ;
     }
     // alert("Previous Entries Erased!");
 }
