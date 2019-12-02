@@ -3,6 +3,8 @@
 // Shows the district solution answers.
 var testingMode = false;
 
+var unAddressedIssueFlashState = true;
+
 var cDO = [];
 var flashState = true;
 var flashHandState = true;
@@ -86,7 +88,7 @@ var districtProblems = {
     17: "	H	*	Rise in clinical depression	",
     18: "	S	*	Lots of people report unhappines with their Job	",
     19: "	C	*	Terrorist activity on the rise	",
-    20: "	W	*	Transport Cost skk-rocketing	",
+    20: "	W	*	Transport Cost sky-rocketing	",
     21: "	E	*	Child cost too high & mothers unable to work	",
 };
 var districtSolutions = {
@@ -808,7 +810,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up\"></span>\ District Main Concerns </p>";
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ District Main Concerns </p>";
 
         outputDistrictHtml = outputDistrictHtml + "<div class=\"anw\">";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
@@ -829,6 +831,12 @@ function viewDistricts() {
         // console.log(unpackedInfo);
     }
 }
+
+
+
+
+
+
 
 
 
@@ -1008,3 +1016,22 @@ function setupGame() {
     CreateDistricts();
 }
 // }
+
+
+// Flash Unaddressed Issue in Country Districts
+function flashUnaddressedIssue() {
+   
+    if (unAddressedIssueFlashState == true) {
+        $('.far').addClass('un-addressed-issue-flasher');
+        unAddressedIssueFlashState=false;
+        return;
+    }
+
+    if (unAddressedIssueFlashState == false) {
+        $('.far').removeClass('un-addressed-issue-flasher');
+        unAddressedIssueFlashState=true;
+        return;
+    }
+
+
+}
