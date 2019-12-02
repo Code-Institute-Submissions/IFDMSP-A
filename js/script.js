@@ -543,7 +543,20 @@ function stateController() {
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
         window.location.href = "global-economics.html";
+        return;
     });
+
+
+
+    // Country Districts Page
+    // Double tap to Reload Page.. I.e Navigate to top
+    // // Refreshed
+    $('.dpanel').dblclick(function () {
+        window.location.href = "country-districts.html";
+        return;
+    });
+
+
 
     // Check for double-clik to move to top of District Page
     // $('div ,p .colorTable').dblclick(function () {
@@ -780,14 +793,14 @@ function viewDistricts() {
         // var IT = issueType.slice(0, 1);
         // alert(issueType);
 
-   
+
 
 
 
         // console.log(dInfo);
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol\">";
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + districtNumber + " :" + countryDistricts[districtNumber] + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
