@@ -1,16 +1,15 @@
 // ------- DATA ----------- 
-var cDO = [];
 
+var testingMode = false;
+
+var cDO = [];
 var flashState = true;
 var flashHandState = true;
 var globeShake = true;
-
 var cCp = 0;
 var noOfCountriesMax = 195;
 var noOfDistricts = 21;
 var noOfProblems = 20;
-
-
 var gDPMax = 10;
 var popMax = 10;
 var healthMax = 100;
@@ -19,12 +18,11 @@ var cPop = 0;
 var cHealth = 0;
 var roundDownDigit = 0;
 
+var pledgeDisplacement = 10;
 // Setup World data 
 var worldEconomy = [];
 var threeCountriesSelected = false;
-
 // ---------------------------------------------------------------------
-
 var manifesto = {
     // Your Politicions Manifesto
     "1": "Provide More Funding For Hospitals",
@@ -34,7 +32,6 @@ var manifesto = {
     "5": "Support good Landlords & offset tax allowance on repairs",
     "6": "Funding for more police & PCO's, 20,0000",
     "7": "Build more council & affordable housing for 1st time buyers",
-
     // Values of each pledge
     "V1": 0,
     "V2": 0,
@@ -43,16 +40,11 @@ var manifesto = {
     "V5": 0,
     "V6": 0,
     "V7": 0,
-
     "PledgeAvailableTotalValue": 10,
     "PledgeAvailableTotalCapacity": 50,
 }
-
-
-
 // Load up your Manifesto (Pledge Priority Page)!!
 function loadUpYourPledgePriorityPage() {
-
     var spacer = "    ";
     $("#pledge-1 h3").text("A:" + spacer + manifesto["1"]);
     $("#pledge-2 h3").text("B:" + spacer + manifesto["2"]);
@@ -61,7 +53,6 @@ function loadUpYourPledgePriorityPage() {
     $("#pledge-5 h3").text("E:" + spacer + manifesto["5"]);
     $("#pledge-6 h3").text("F:" + spacer + manifesto["6"]);
     $("#pledge-7 h3").text("G:" + spacer + manifesto["7"]);
-
     $("#pledge-value-1 h3").text(manifesto["V1"]);
     $("#pledge-value-2 h3").text(manifesto["V2"]);
     $("#pledge-value-3 h3").text(manifesto["V3"]);
@@ -69,82 +60,58 @@ function loadUpYourPledgePriorityPage() {
     $("#pledge-value-5 h3").text(manifesto["V5"]);
     $("#pledge-value-6 h3").text(manifesto["V6"]);
     $("#pledge-value-7 h3").text(manifesto["V7"]);
-
-
     // Loadup Total Pledge Value Units Available
     $("#PTV").text(manifesto["PledgeAvailableTotalValue"]);
-
-
 }
-
 // Problems in districts
 var districtProblems = {
-
     // Questions		
-    1: "	A	*	People are complaining waiting list are too long in the hospital	",
-    2: "	A	*	Peoples Prescriptions are too Expensive	",
-    3: "	A	*	Outbreak of Serious Flu	",
-    4: "	A	*	Medical Equipment in dire state	",
-    5: "	A	*	Dr's Complain of overwork & Stress	",
-    6: "	B	*	Mugging increase on the streets	",
-    7: "	B	*	Increase of pick-pockets in Area	",
-    8: "	B	*	Increase drug & sales use in the area	",
-    9: "	B	*	Violent assaults in the area are on the increase	",
-    10: "	B	*	Unruly behavior in the local parks	",
-    11: "	B	*	Street Drunks on the increase	",
-    12: "	C	*	Cost of living on the increase	",
-    13: "	D	*	Employment on the rise in the area	",
-    14: "	D	*	Teen unemployment n the increase	",
-    15: "	C	*	Unemployment benefit too small and ineffective	",
-    16: "	C	*	Living wage poor	",
-    17: "	E	*	Rise in clinical depression	",
-    18: "	E	*	Lots of people report unhappines with their Job	",
-    19: "	B	*	Terrorist activity on the rise	",
-    20: "	C	*	Transport Cost skk-rocketing	",
-    21: "	D	*	Child cost too high & mothers enable to work	",
-
+    1: "	H	*	Waiting list  too long in A&E	",
+    2: "	H	*	Prescriptions are too Expensive	",
+    3: "	H	*	Serious Flu Outbreak	",
+    4: "	H	*	Medical Equipment in dire state	",
+    5: "	H	*	Overworked Doctors complaining of stress	",
+    6: "	C	*	Increase in street-crime	",
+    7: "	C	*	Increase of pick-pockets in Area	",
+    8: "	C	*	Increase of drug & sales use in the area	",
+    9: "	C	*	Violent assaults in the area are on the increase	",
+    10: "	C	*	Unruly gang behaviour in the parks	",
+    11: "	C	*	Street Drunks on the increase	",
+    12: "	W	*	Cost of living on the increase	",
+    13: "	E	*	Employment on the rise in the area	",
+    14: "	E	*	Teen unemployment on the increase	",
+    15: "	E	*	Unemployment benefit too small and ineffective	",
+    16: "	W	*	Living wage poor	",
+    17: "	H	*	Rise in clinical depression	",
+    18: "	S	*	Lots of people report unhappines with their Job	",
+    19: "	C	*	Terrorist activity on the rise	",
+    20: "	W	*	Transport Cost skk-rocketing	",
+    21: "	E	*	Child cost too high & mothers unable to work	",
 };
-
 var districtSolutions = {
-
     // Solutions		
-    1: "	A	*	We promise we shall Invest 55Milion in the Health Service	",
-    2: "	A	*	We Promise 50% Prescriptions discounts for all	",
-    3: "	A	*	We shall import as a matter of Urgency 100k of Tami-Flu	",
-    4: "	A	*	Invest more in Technical Support Staff for our Hospitals	",
-    5: "	A	*	Invest in Hiring 2000 More Doctors & Medical Practitioners over 5years	",
-    6: "	B	*	We shall recruit 2000 more PCO's within 2years	",
-    7: "	B	*	Harsher sentences for street crime	",
-    8: "	B	*	Increase in 'stop and search' In the area	",
-    9: "	B	*	We pledge to Place more physical police precence on the street	",
-    10: "	B	*	We will introduce more ASBO's accros the board	",
-    11: "	B	*	We will introduce limit of alchol sales to categories of people	",
-    12: "	C	*	We pledge to increase personal allowance per person by 3.5%	",
-    13: "	D	*	We will lower business rates to incenticise businesses	",
-    14: "	D	*	We will introduce finacial incentives for cpmpanies offering apprenteships	",
-    15: "	C	*	We will raise  snadard unemployment benefit by 2.50 per week	",
-    16: "	C	*	Will will raise allowance for Married Couples	",
-    17: "	E	*	Pledge to invest in pyschatric medical treatments	",
-    18: "	E	*	Will introduce benefits for companies that provide training for their employees	",
-    19: "	B	*	Increase in armed police to be made	",
-    20: "	C	*	Force freeze on fare rises for net 5 years	",
-    21: "	D	*	Extra support for child care to be offered	",
-
-
+    1: "	H	*	We promise we shall Invest 55Milion in the Health Service	",
+    2: "	H	*	We Promise 50% Prescriptions discounts for all	",
+    3: "	H	*	We shall import as a matter of Urgency 100k of Tami-Flu	",
+    4: "	H	*	Invest more in Technical Support Staff for our Hospitals	",
+    5: "	H	*	Invest in Hiring 2000 More Doctors & Medical Practitioners over 5years	",
+    6: "	C	*	We shall recruit 2000 more PCO's within 2years	",
+    7: "	C	*	Harsher sentences for street crime	",
+    8: "	C	*	Increase in 'stop and search' In the area	",
+    9: "	C	*	We pledge to Place more physical police presence on the street	",
+    10: "	C	*	We will introduce more ASBO's across the board	",
+    11: "	C	*	We will introduce limit of alcohol sales to categories of people	",
+    12: "	W	*	We pledge to increase personal allowance per person by 3.5%	",
+    13: "	E	*	We will lower business rates to incentivise businesses	",
+    14: "	E	*	We will introduce financial incentives for companies offering apprenticeships	",
+    15: "	E	*	We will raise  standard unemployment benefit by 2.50 per week	",
+    16: "	W	*	We will raise allowance for Married Couples	",
+    17: "	H	*	Pledge to invest in pyschatric medical treatments	",
+    18: "	S	*	Will introduce benefits for companies that provide training for their employees	",
+    19: "	C	*	Increase in armed police to be made	",
+    20: "	W	*	Force freeze on fare rises for net 5 years	",
+    21: "	E	*	Extra support for child care to be offered	",
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Districts Object representation
 // d-populus ; How many people in district
 // d-name ; Name of district
@@ -154,7 +121,6 @@ var districtSolutions = {
 // d-crimes; 0-100; 0 good / 100 bad
 // d-housing; Number in housing (0 > d-populus)
 var District = {
-
     "d-populus": 0,
     "d-name": name,
     "d-number": 0,
@@ -162,18 +128,7 @@ var District = {
     "d-employment": 0,
     "d-crime": 0,
     "d-housing": 0,
-
 };
-
-
-
-
-
-
-
-
-
-
 // uk- Districts
 var countryDistricts = {
     '1': 'Bath',
@@ -270,8 +225,6 @@ var countryDistricts = {
     '92': 'York',
     '93': 'Yorkshire',
 };
-
-
 // Country data
 var countries = {
     '1': 'Afghanistan',
@@ -470,7 +423,6 @@ var countries = {
     '194': 'Zambia',
     '195': 'Zimbabwe',
 };
-
 // Candidate Names
 var candidates = {
     'Cara Leyton': 'Conservative',
@@ -478,7 +430,6 @@ var candidates = {
     'Christian Bell': 'Lib-Dem',
     'Julie Greenwood': 'Green'
 };
-
 // Game Session Data
 var gameData = {
     "party": "none",
@@ -491,66 +442,52 @@ var gameData = {
 
 
 // ---------------------------------------//Functions//---------
-
 function thumbWheel(direction, pledgeNumber, value) {
-
     if (direction == "d") {
         // (DOWN)--- Decrement Stuff
         //  Pledgenumber is used to reference each line of the manifesto...
         switch (pledgeNumber) {
-
             case 1:
                 if (manifesto["V1"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V1"] = manifesto["V1"] - value;
                     // manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
                 }
                 break;
-
             case 2:
                 if (manifesto["V2"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V2"] = manifesto["V2"] - value;
-
                 }
                 break;
             case 3:
                 if (manifesto["V3"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V3"] = manifesto["V3"] - value;
-
                 }
                 break;
             case 4:
                 if (manifesto["V4"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V4"] = manifesto["V4"] - value;
-
                 }
                 break;
             case 5:
                 if (manifesto["V5"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V5"] = manifesto["V5"] - value;
-
                 }
                 break;
             case 6:
                 if (manifesto["V6"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V6"] = manifesto["V6"] - value;
-
                 }
                 break;
             case 7:
                 if (manifesto["V7"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V7"] = manifesto["V7"] - value;
-
                 }
                 break;
-
         }
     }
-
     if (direction == "u") {
         // (UP) -- Increment Stuff
-
         switch (pledgeNumber) {
-
             case 1:
                 if (manifesto["V1"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
                     manifesto["V1"] = manifesto["V1"] + value;
@@ -586,16 +523,10 @@ function thumbWheel(direction, pledgeNumber, value) {
                     manifesto["V7"] = manifesto["V7"] + value;
                 }
                 break;
-
         }
-
     }
-
     loadUpYourPledgePriorityPage();
 }
-
-
-
 
 function pledgePrioritizeControlls() {
     loadUpYourPledgePriorityPage;
@@ -603,69 +534,46 @@ function pledgePrioritizeControlls() {
 }
 
 
-
-
-
-
-
-
 // ######################################################
 // State Controller monitoring (Available buttons etc)
 function stateController() {
-
     // Call Pledge Priorotize Controlls Check
     pledgePrioritizeControlls();
-
-
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
         window.location.href = "global-economics.html";
     });
 
-
     // Check for double-clik to move to top of District Page
     // $('div ,p .colorTable').dblclick(function () {
     //     window.location.href = "country-districts.html";
-
     // });
-
-
     // Check if to display "jump to Global Econmy" Button
     // After Party has been selected
-
     var picked = sessionStorage.getItem("myPolitician");
-
-
     if (picked === null) {
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
         return;
     }
-
     if (picked !== null) {
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
-
         changeRibbonColour();
         return;
     }
-
 }
 
 
 // Change Ribbon Color when Candidate Selected
 function changeRibbonColour() {
-
     $('.ribbon').removeClass('make-ribbon-red');
     $('.ribbon').removeClass('make-ribbon-blue');
     $('.ribbon').removeClass('make-ribbon-yellow');
     $('.ribbon').removeClass('make-ribbon-green');
     $('.ribbon').addClass('make-ribbon-grey');
-
     var picked = sessionStorage.getItem("myParty");
-
     switch (picked) {
-
         // make Labour
         case 'Labour':
             $('.ribbon').addClass('make-ribbon-red');
@@ -673,12 +581,9 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-yellow');
             $('.ribbon').removeClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
-
             // Reset Game
             resetGame();
-
             return;
-
             // Make Conservative
         case 'Conservative':
             $('.ribbon').removeClass('make-ribbon-red');
@@ -686,12 +591,9 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-yellow');
             $('.ribbon').removeClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
-
             // Reset Game
             resetGame();
-
             return;
-
             // Make Lib Dem
         case 'Lib-Dem':
             $('.ribbon').removeClass('make-ribbon-red');
@@ -699,12 +601,9 @@ function changeRibbonColour() {
             $('.ribbon').addClass('make-ribbon-yellow');
             $('.ribbon').removeClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
-
             // Reset Game
             resetGame();
-
             return;
-
             // Make Green Party
         case 'Green':
             $('.ribbon').removeClass('make-ribbon-red');
@@ -712,25 +611,17 @@ function changeRibbonColour() {
             $('.ribbon').removeClass('make-ribbon-yellow');
             $('.ribbon').addClass('make-ribbon-green');
             $('.ribbon').removeClass('make-ribbon-grey');
-
             // Reset Game
             resetGame();
-
             return;
-
     }
-
 }
-
-
-
 
 // Get & Save  Political candidate & Party Affiliation
 $(document).ready(function () {
     $(".candidates").click(function () {
         // Save Politicians SELECTION
         var mypolitician = $(this).children('h1').text();
-
         $('#political-sway').html('<h1>' + candidates[mypolitician] + '</h1>')
         sessionStorage.setItem("myPolitician", mypolitician);
         // Save PARTY SELECTION
@@ -739,7 +630,6 @@ $(document).ready(function () {
         sessionStorage.setItem("myParty", myParty);
     })
 });
-
 
 // Flash Title!!
 function flasher() {
@@ -761,30 +651,23 @@ function flashHand() {
     // alert(flashState);
     // sway = political sway .e party
     var sway = $('#political-sway h1').text();
-
     if (flashHandState === true) {
         flashHandState = false;
         $('.point-hand').addClass('flashHandNow');
-
         if (sway == "") {
             $('.c-name').addClass('flashHandNow');
         }
-
         return;
     }
     if (flashHandState === false) {
         flashHandState = true;
         $('.point-hand').removeClass('flashHandNow');
-
         if (sway == "") {
             $('.c-name').removeClass('flashHandNow');
         }
         return
     }
 }
-
-
-
 
 // Populate ECONOMY TABLE
 function populateTable() {
@@ -805,26 +688,19 @@ function populateTable() {
         var num = (Math.random() * popMax);
         cPop = num.toFixed(roundDownDigit)
     } while (cPop < 1);
-
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
     }
-
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
-
     // Grab Three Random Countries for weighting data in district generation
     if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
         grabThreeCountries();
-
     }
 }
-
-
-
 // Grab Three Countries for use for Genation of Weighting on District Starts
 function grabThreeCountries() {
     // alert("boom");
@@ -838,20 +714,15 @@ function grabThreeCountries() {
     var countName1 = $('#' + c1.toString()).text();
     var countName2 = $('#' + c2.toString()).text();
     var countName3 = $('#' + c3.toString()).text();
-
     // Get Table entry to Highlight & Add c-name class, to flash in unison with flashing hand
     var first = c1.toString();
     var second = c2.toString();
     var third = c3.toString();
-
     if (cCp == noOfCountriesMax) {
-
         $("#" + first).children('td ,h3').first().addClass('highLight2');
         $("#" + second).children('td ,h3').first().addClass('highLight2');
         $("#" + third).children('td ,h3').first().addClass('highLight2');
-
     }
-
     // alert(countName1 + "/" + countName2 + "/" + countName3);
     sessionStorage.setItem("c1", countName1);
     sessionStorage.setItem("c2", countName2);
@@ -860,179 +731,66 @@ function grabThreeCountries() {
     threeCountriesSelected = true;
 }
 
-
-// function generateDistricts() {
-//     for (let i = 1; i < noOfDistricts; i++) {
-
-//         // "d-populus": 0,
-//         // "d-name": name,
-//         // "d-number": 0,
-//         // "d-affluence": 0,
-//         // "d-employment": 0,
-//         // "d-crime": 0,
-//         // "d-housing": 0,
-//         var districtName = countryDistricts[i];
-
-//         // Grab Details Data
-//         var districtDetailPopulus = "1";
-//         var districtDetailName = "2";
-//         var districtDetailNumber = "3";
-//         var districtDetailAffluence = "4";
-//         var districtDetailEmployment = "5";
-//         var districtDetailCrime = "6";
-//         var districtDetailHousing = "7";
-
-//         // Build up District Statistics
-//         var details = "<div > ";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailPopulus + "</h3></p>";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailName + "</h3></p>";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailNumber + "</h3></p>";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailAffluence + "</h3></p>";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailEmployment + "</h3></p>";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailCrime + "</h3></p>";
-//         var details = details + "<p><h3 class=\"stats keep-insideBSol\">" + districtDetailHousing + "</h3></p>";
-//         var details = details + "</div>";
-
-//         var gears = "";
-
-
-//         // Build up HTML Buttons
-//         // Button to View-Populus
-//         var button1 = "";
-//         button1 = button1 + "<div  class=\"district-population-b1\">";
-//         button1 = button1 + "";
-//         button1 = button1 + "<a href=\"generate-populus.html\"><h1 id=\"j1\">"+i+":VIEW POPULUS STATISTICS</h1></a>";
-
-//         button1 = button1 + ""
-//         button1 = button1 + "</div>";
-
-//         // Button to - Adjust Prioritize Pledges
-//         var button2 = "";
-//         button2 = button2 + "<div  class=\"district-population-b2\">";
-//         button2 = button2 + "";
-
-//         // Saving Current district before jumping to adjust
-//         button2 = button2 + "<a href=\"pledge-priority.html\"><h1 id=\"j2\" onclick=\"saveCurrentDistrict()\">"+i+":\ ADJUST DISTRICT PLEDGE</h1></a>";
-//         button2 = button2 + "";
-//         button2 = button2 + "</div>";
-
-
-//         var districtLineOut = "<div class=\"row\">";
-//         districtLineOut = districtLineOut + "<div class=\"col-12 keep-insideBSol\">";
-//         districtLineOut = districtLineOut + "<div id=\"" + i + "\" class=\"plank\"><h1>" + i + "/" + noOfDistricts + " : " + "<span class=\"dN\">" + districtName + "</span>" + details + button1 + button2 + "</h1></div>";
-//         districtLineOut = districtLineOut + "</div>";
-//         districtLineOut = districtLineOut + "</div>";
-
-//         $('#district-list').append(districtLineOut);
-//     }
-// }
-
-
 function viewDistricts() {
-
     // alert("View Districts");
-
     // List out District Number 
-
-
     var packedDistrictInfo = "";
-
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
         // Get pack district data
         var dInfo = sessionStorage.getItem("D," + districtNumber);
         // Break it into two to separate Issues gfrom List of people
         var TP = [] = dInfo.split('@');
-
         //Flatten Array so we can split it again
         tpFlat = TP.join();
         // Split once again to access just the issues Questions/Issues only
         var QO = [] = tpFlat.split("#");
-
         // Flatten the Issues section so we can grab each issue
         issuesFlat = QO.join();
         // Now turn each Issue into an array , so we can access them by index
         var ISS = [] = issuesFlat.split(",");
-
         // Get each line of an Issue ready to push to html page
         var l1 = ISS[0];
         var l2 = ISS[1];
         var l3 = ISS[2];
         var l4 = ISS[3];
         var l5 = ISS[4];
-
         var s1 = ISS[5];
         var s2 = ISS[6];
         var s3 = ISS[7];
         var s4 = ISS[8];
         var s5 = ISS[9];
-
         // console.log(dInfo);
-
-
-
-
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
-
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + districtNumber + " :" + countryDistricts[districtNumber] + "</p>";
-
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
-
         outputDistrictHtml = outputDistrictHtml + "<p>-//-</p>";
-        
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"solutions\">" + s1 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"solutions\">" + s2 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"solutions\">" + s3 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"solutions\">" + s4 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"solutions\">" + s5 + "</p>";
-        
+
+        outputDistrictHtml=outputDistrictHtml+"<div class=\"anw\">";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"answers\">" + s3 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
+        outputDistrictHtml=outputDistrictHtml+"</div>";
 
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
-
         outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active\" role=\"button\" aria-pressed=\"true\">Population</a>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active\" role=\"button\" aria-pressed=\"true\">Adjust Pledge-Priority</a>";
-
-
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
-
         $("#district-list").append(outputDistrictHtml);
-
-
-
-
-
         // console.log(unpackedInfo);
-
-
-
-
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1040,67 +798,48 @@ function viewDistricts() {
 // ////////////////////////////////
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
-
-
-
 // Generate Districts  
 // This Object will generate the districts
-
 function getRandom(limit) {
     rn = (Math.floor(Math.random() * limit)) + 1;
     return rn;
 }
 
+
 function CreateDistricts() {
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
-
         // create district ID
         dID = "D" + "," + i;
-
         // Create Random Problems & Solutions For Every Area
-
         // PROB1
         var rnum = getRandom(noOfProblems);
         var dpa = districtProblems[rnum];
         var spa = districtSolutions[rnum];
-
         // PROB2
         var rnum = getRandom(noOfProblems);
         var dpb = districtProblems[rnum];
         var spb = districtSolutions[rnum];
-
         // PROB3
         var rnum = getRandom(noOfProblems);
         var dpc = districtProblems[rnum];
         var spc = districtSolutions[rnum];
-
         // PROB4
         var rnum = getRandom(noOfProblems);
         var dpd = districtProblems[rnum];
         var spd = districtSolutions[rnum];
-
         // PROB5
         var rnum = getRandom(noOfProblems);
         var dpe = districtProblems[rnum];
         var spe = districtSolutions[rnum];
-
         // Create Problem and Solution as a Packed String
         var PRB = dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
         var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
-
-
         // Generate Population Count in District
         var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 100;
-
-
         // Create people for District
         var people = "[";
-
-        for (let i = 1; i < dPop; i++)
-
-        {
-
+        for (let i = 1; i < dPop; i++) {
             // Generate Initial Party Affiliation
             var partyAffiliantNumber = (Math.floor(Math.random() * 4)) + 1;
             var partyNames = {
@@ -1110,10 +849,6 @@ function CreateDistricts() {
                 4: "Green",
             }
             var pAf = partyNames[partyAffiliantNumber];
-
-
-
-
             var fNames = {
                 // First Name Pool
                 1: "Mark",
@@ -1135,10 +870,7 @@ function CreateDistricts() {
                 18: "Michelle",
                 19: "Donald",
                 20: "Gregg",
-
             }
-
-
             var initials = {
                 // Initials Pool
                 1: "A",
@@ -1160,9 +892,7 @@ function CreateDistricts() {
                 18: "Q",
                 19: "R",
                 20: "S",
-
             }
-
             var sNames = {
                 // Surnames Pool
                 1: "Martins",
@@ -1185,59 +915,31 @@ function CreateDistricts() {
                 18: "Cambridge",
                 19: "Henry",
                 20: "O'mally",
-
             }
-
             // Make Random Name Combination
             var fName = [fNames[getRandom(20)]];
             var initial = [initials[getRandom(20)]];;
             var surName = [sNames[getRandom(20)]];;
-
             var PersonName = fName + "." + initial + "." + surName;
-
             // Persons Main Concern
             var pConcern = getRandom(4);
-
             // TipOver amount of concerns politican sucessfully addreses
             // To swing my Vote
             var tiPOver = getRandom(5);
-
-
             people = people + "[" + i + "/" + pConcern + "/" + PersonName + "/" + tiPOver + "/" + pAf + "]";
-
-
-
         }
-
-
         // All Variables Ready for use
         var DI = dID;
         var PRB = PRB;
         var dPop = dPop;
         var pAf = pAf;
-
         // Packed - StringOut to Save to SessionVariable
         var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
-
         sessionStorage.setItem(DI, LO);
-
         // Tetspoint - can be deleted
         // console.log(DI + "/" + LO);
-
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
 // Set Flag to Reset The Game
 // All Game data will be lost!!!!
 // The Go Back to main Page
@@ -1246,7 +948,6 @@ function clearGameData() {
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
 }
-
 // This routine checks a flag to see if a request has been issued
 // To reset the Game. If so it calls the  setupGame routine
 // Then it resets the flag , so its not repeated again
@@ -1262,28 +963,10 @@ function resetGame(runProcess) {
         localStorage.setItem("newGame", "1");
     }
 }
-
-
 // Main Setup Game Setup Routine
 // This routine will set up basic structures
 function setupGame() {
-
     // Create Districts
     CreateDistricts();
-
 }
-
-
-
-// // Save Current District prior to
-// // Changing Pledges
-// function saveCurrentDistrict() {
-
-//     // var bb = $('#j2').this.text();
-//     var bb = $(this).this('#j2').next().text();
-
-
-
-//    alert(bb);
-
 // }

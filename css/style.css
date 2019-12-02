@@ -11,7 +11,6 @@ body {
     /* Plank for Global Economy Page */
     --plank-bg-color: rgb(185, 201, 223);
     --plank-fc-color: rgb(85, 78, 64);
-    
     --stats-fc-color: black;
     --stats-bg-color: rgb(241, 197, 114);
     /* Pledge Prioritization page */
@@ -22,8 +21,7 @@ body {
     --pledge-value-bg-color: yellow;
     --pledge-value-fc-color: black;
     /* Main Foreground Color */
-
-    --myRed:#E0473A;
+    --myRed: #E0473A;
 }
 
 /* Burger Nav */
@@ -177,19 +175,12 @@ div .ribbon h1 {
     font-size: 4rem;
 }
 
-
-
-
 /* Generate World Stats Button */
+
 #genbutton {
     margin-top: 5px;
     margin-bottom: 10px;
 }
-
-
-
-
-
 
 /* Global Table Stuff */
 
@@ -197,7 +188,6 @@ h2 {
     border: 4px double var(--myRed);
     color: white;
     margin-top: 5px;
-    
     font-size: 1rem;
 }
 
@@ -208,11 +198,9 @@ table, th, td h3 {
 }
 
 .colorTable h3 {
-
     background-color: rgb(201, 122, 139);
     color: black;
-    border:none;
-    
+    border: none;
 }
 
 .highLight {
@@ -225,7 +213,7 @@ table, th, td h3 {
     color: black;
 }
 
-.highLight2 h3{
+.highLight2 h3 {
     background-color: orange;
     color: black;
     text-shadow: 2px 2px yellow;
@@ -267,10 +255,6 @@ table, th, td h3 {
     margin-bottom: 10px;
 }
 
-
-
-
-
 /* plank boards hiolding each distric information */
 
 .plank h1 {
@@ -290,7 +274,7 @@ table, th, td h3 {
 
 .dN {
     text-align: center;
-    color:var(--myRed);
+    color: var(--myRed);
     background-color: yellow;
     border-radius: 5px;
     padding-left: 5px;
@@ -307,16 +291,11 @@ table, th, td h3 {
     padding-right: 10px;
     color: var(--stats-fc-color);
     background-color: var(--stats-bg-color);
-    
     text-shadow: 2px 2px var(--main-fc-color);
 }
 
-
-
-
-
-
 /* District Stuff */
+
 /* Buttons on district page */
 
 .district-population-b1 h1 {
@@ -342,11 +321,8 @@ table, th, td h3 {
     font-size: 4rem;
 }
 
-
-
-
-
 /* Code from Stackoverflow - Philip Feldmann */
+
 /* Keep text from overspilling out of columns */
 
 .keep-insideBSol {
@@ -360,7 +336,7 @@ table, th, td h3 {
 /* Ribbon Color Classes for Political Parties */
 
 .make-ribbon-red h1 {
-    color:var(--myRed);
+    color: var(--myRed);
 }
 
 .make-ribbon-blue h1 {
@@ -394,8 +370,6 @@ table, th, td h3 {
     color: var(--pledge-content-fc-color);
     text-shadow: 1px 1px yellow;
     padding: 10px;
-
-   
 }
 
 .pledge-controller h3 button {
@@ -403,7 +377,6 @@ table, th, td h3 {
     font-size: 1rem;
     background-color: var(--pledge-controller-bg-color);
     color: var(--pledge-controller-fc-color);
-
     padding: 5px;
 }
 
@@ -414,7 +387,7 @@ table, th, td h3 {
     color: var(--pledge-value-fc-color);
 }
 
-.pledge-title-bar{
+.pledge-title-bar {
     background-color: orange;
     color: white;
 }
@@ -424,7 +397,6 @@ table, th, td h3 {
     text-align: center;
     color: white;
     background-color: orange;
-
     margin-bottom: 10px;
 }
 
@@ -443,67 +415,55 @@ color: yellow;
     color: white;
 }
 
-
-
-.list-item-bottom a 
-{
+.list-item-bottom a {
     font-size: .75rem;
 }
 
 .district-population-b1 a {
-
     text-decoration: none;
-
 }
+
 .district-population-b2 a {
-
     text-decoration: none;
-
 }
 
 /* For Game Reset Page Image */
-.card{
 
-background-color: var(--main-page-body-color);
-color: wheat;
-
+.card {
+    background-color: var(--main-page-body-color);
+    color: wheat;
 }
 
-
-
-
-.district-data ,h3
-{
-border-radius: 10px;
-border:4px double;
-
-font-size: 1rem;
-/* background-color:rgb(238, 198, 119); */
-background-color: rgb(216, 205, 123);
-color: var(--main-bg-color);
-
-box-shadow: 3px 3px var(--main-bg-color);
-text-shadow: 1px 1px rgb(245, 210, 10);
-
-margin-bottom: 10px;
+.district-data, h3 {
+    border-radius: 10px;
+    border: 4px double;
+    font-size: 1rem;
+    /* background-color:rgb(238, 198, 119); */
+    background-color: rgb(216, 205, 123);
+    color: var(--main-bg-color);
+    box-shadow: 3px 3px var(--main-bg-color);
+    text-shadow: 1px 1px rgb(245, 210, 10);
+    margin-bottom: 10px;
 }
-
 
 .district-page-action-button {
-
     background-color: orange;
     text-shadow: 3px 3px black;
-    
     /* margin-top: 10px;
     scroll-margin-bottom: 10px; */
-
 }
 
-.solutions{
-/* Solutins for issues position 1-5 */
-     
+.solutions {
+    /* Solutins for issues position 1-5 */
     background-color: wheat;
     color: var(--myRed);
-    
+}
+
+
+/* Testing Mode Stuff On/Off*/
+.hide-solutions{
+
+display:none;
 
 }
+ 
