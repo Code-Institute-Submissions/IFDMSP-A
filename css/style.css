@@ -492,8 +492,18 @@ margin-bottom: 10px;
 .district-page-action-button {
 
     background-color: orange;
+    text-shadow: 3px 3px black;
     
     /* margin-top: 10px;
     scroll-margin-bottom: 10px; */
+
+}
+
+#solutions{
+/* Solutins for issues position 1-5 */
+     
+    background-color: wheat;
+    color: var(--myRed);
+    
 
 }

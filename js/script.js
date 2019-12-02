@@ -944,13 +944,13 @@ function viewDistricts() {
         var TP = [] = dInfo.split('@');
 
         //Flatten Array so we can split it again
-        tpFlat =TP.join();
+        tpFlat = TP.join();
         // Split once again to access just the issues Questions/Issues only
         var QO = [] = tpFlat.split("#");
 
         // Flatten the Issues section so we can grab each issue
         issuesFlat = QO.join();
-        // Now turn each Issue into an array , so we can acces them by index
+        // Now turn each Issue into an array , so we can access them by index
         var ISS = [] = issuesFlat.split(",");
 
         // Get each line of an Issue ready to push to html page
@@ -960,8 +960,13 @@ function viewDistricts() {
         var l4 = ISS[3];
         var l5 = ISS[4];
 
+        var s1 = ISS[5];
+        var s2 = ISS[6];
+        var s3 = ISS[7];
+        var s4 = ISS[8];
+        var s5 = ISS[9];
 
-        console.log(dInfo);
+        // console.log(dInfo);
 
 
 
@@ -971,13 +976,22 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
 
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: "+districtNumber+" :"+countryDistricts[districtNumber]+"</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + districtNumber + " :" + countryDistricts[districtNumber] + "</p>";
 
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
+
+        outputDistrictHtml = outputDistrictHtml + "<p>-//-</p>";
+        
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s1 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s2 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s3 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s4 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s5 + "</p>";
+        
 
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
 
