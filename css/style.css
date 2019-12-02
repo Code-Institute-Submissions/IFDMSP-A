@@ -22,6 +22,8 @@ body {
     --pledge-value-bg-color: yellow;
     --pledge-value-fc-color: black;
     /* Main Foreground Color */
+
+    --myRed:#E0473A;
 }
 
 /* Burger Nav */
@@ -59,7 +61,7 @@ body {
 .title-block h1 {
     text-align: center;
     font-size: 3rem;
-    text-shadow: 3px 3px red;
+    text-shadow: 3px 3px var(--myRed);
 }
 
 /* Burger Stuff */
@@ -161,7 +163,7 @@ body {
 }
 
 .flashHandNow {
-    color: red;
+    color: var(--myRed);
 }
 
 #political-sway h1 {
@@ -192,7 +194,7 @@ div .ribbon h1 {
 /* Global Table Stuff */
 
 h2 {
-    border: 4px double red;
+    border: 4px double var(--myRed);
     color: white;
     margin-top: 5px;
     
@@ -288,7 +290,7 @@ table, th, td h3 {
 
 .dN {
     text-align: center;
-    color: red;
+    color:var(--myRed);
     background-color: yellow;
     border-radius: 5px;
     padding-left: 5px;
@@ -358,7 +360,7 @@ table, th, td h3 {
 /* Ribbon Color Classes for Political Parties */
 
 .make-ribbon-red h1 {
-    color: red;
+    color:var(--myRed);
 }
 
 .make-ribbon-blue h1 {
@@ -476,10 +478,12 @@ border-radius: 10px;
 border:4px double;
 
 font-size: 1rem;
-background-color:rgb(238, 198, 119);
+/* background-color:rgb(238, 198, 119); */
+background-color: rgb(216, 205, 123);
 color: var(--main-bg-color);
 
 box-shadow: 3px 3px var(--main-bg-color);
+text-shadow: 1px 1px rgb(245, 210, 10);
 
 margin-bottom: 10px;
 }
