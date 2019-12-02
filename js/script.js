@@ -439,102 +439,38 @@ var gameData = {
     "popularity rating": 0,
     "campaign running": false,
 };
-// ---------------------------------------//Functions//---------
-function thumbWheel(direction, pledgeNumber, value) {
-    if (direction == "d") {
-        // (DOWN)--- Decrement Stuff
-        //  Pledgenumber is used to reference each line of the manifesto...
-        switch (pledgeNumber) {
-            case 1:
-                if (manifesto["V1"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V1"] = manifesto["V1"] - value;
-                    // manifesto["PledgeAvailableTotalValue"] = manifesto["PledgeAvailableTotalValue"] + value;
-                }
-                break;
-            case 2:
-                if (manifesto["V2"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V2"] = manifesto["V2"] - value;
-                }
-                break;
-            case 3:
-                if (manifesto["V3"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V3"] = manifesto["V3"] - value;
-                }
-                break;
-            case 4:
-                if (manifesto["V4"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V4"] = manifesto["V4"] - value;
-                }
-                break;
-            case 5:
-                if (manifesto["V5"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V5"] = manifesto["V5"] - value;
-                }
-                break;
-            case 6:
-                if (manifesto["V6"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V6"] = manifesto["V6"] - value;
-                }
-                break;
-            case 7:
-                if (manifesto["V7"] > (0 - manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V7"] = manifesto["V7"] - value;
-                }
-                break;
-        }
-    }
-    if (direction == "u") {
-        // (UP) -- Increment Stuff
-        switch (pledgeNumber) {
-            case 1:
-                if (manifesto["V1"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V1"] = manifesto["V1"] + value;
-                }
-                break;
-            case 2:
-                if (manifesto["V2"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V2"] = manifesto["V2"] + value;
-                }
-                break;
-            case 3:
-                if (manifesto["V3"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V3"] = manifesto["V3"] + value;
-                }
-                break;
-            case 4:
-                if (manifesto["V4"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V4"] = manifesto["V4"] + value;
-                }
-                break;
-            case 5:
-                if (manifesto["V5"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V5"] = manifesto["V5"] + value;
-                }
-                break;
-            case 6:
-                if (manifesto["V6"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V6"] = manifesto["V6"] + value;
-                }
-                break;
-            case 7:
-                if (manifesto["V7"] < (0 + manifesto["PledgeAvailableTotalCapacity"])) {
-                    manifesto["V7"] = manifesto["V7"] + value;
-                }
-                break;
-        }
-    }
-    loadUpYourPledgePriorityPage();
-}
 
-function pledgePrioritizeControlls() {
-    loadUpYourPledgePriorityPage;
-    thumbWheel("u", 1, 0);
-}
+
+
+
+
+// ---------------------------------------//Functions//---------
+// -------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ######################################################
 // State Controller monitoring (Available buttons etc)
 function stateController() {
     // Call Pledge Priorotize Controlls Check
-    pledgePrioritizeControlls();
+   
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
         window.location.href = "global-economics.html";
@@ -547,6 +483,9 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
+
+
+
     // Check for double-clik to move to top of District Page
     // $('div ,p .colorTable').dblclick(function () {
     //     window.location.href = "country-districts.html";
@@ -566,7 +505,10 @@ function stateController() {
         return;
     }
 }
+
+
 // Change Ribbon Color when Candidate Selected
+// 
 function changeRibbonColour() {
     $('.ribbon').removeClass('make-ribbon-red');
     $('.ribbon').removeClass('make-ribbon-blue');
