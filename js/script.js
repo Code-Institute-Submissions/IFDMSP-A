@@ -692,7 +692,18 @@ function viewDistricts() {
         distWealth = (countUpIssues("W", aa, bb, cc, dd, ee));
         distEmployment = (countUpIssues("E", aa, bb, cc, dd, ee));
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
+
         console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":");
+
+
+
+
+
+
+
+
+
+
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
@@ -712,7 +723,43 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
+
+
+
         // Box DIV for graphics
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-6\">";
+
+        // CRIME
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar bg-danger role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>"
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        // HEALTH
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar bg-primary role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>"
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        // WEALTH
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar bg-info role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>"
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        // EMPLOYMENT
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar bg-warning role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>"
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        // SATISFACTION
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar bg-success role=\"progressbar\" style=\"width: 25%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>"
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+        // -------
+
+        outputDistrictHtml = outputDistrictHtml + "</div\">";
+        outputDistrictHtml = outputDistrictHtml + "</div\">";
+
         outputDistrictHtml = outputDistrictHtml + "<div id=\"graphic-stats-" + districtNumber + "\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
@@ -726,6 +773,14 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         $("#district-list").append(outputDistrictHtml);
         // console.log(unpackedInfo);
+
+
+        // Load Graphics
+        // 
+
+
+
+
     }
 }
 // Count UP Issues
@@ -776,6 +831,7 @@ function getRandom(limit) {
     rn = (Math.floor(Math.random() * limit)) + 1;
     return rn;
 }
+
 function CreateDistricts() {
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {

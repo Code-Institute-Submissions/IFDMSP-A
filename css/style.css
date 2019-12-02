@@ -444,7 +444,10 @@ color: yellow;
     box-shadow: 3px 3px var(--main-bg-color);
     text-shadow: 1px 1px rgb(245, 210, 10);
     margin-bottom: 10px;
+
 }
+
+ 
 
 .district-page-action-button {
     background-color: orange;
