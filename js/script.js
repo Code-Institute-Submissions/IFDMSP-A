@@ -935,10 +935,10 @@ function CreateDistricts() {
         }
 
         // All Variables Ready for use
-        // var DI = dID;
-        // var PRB = PRB;
-        // var dPop = dPop;
-        // var pAf = pAf;
+        var DI = dID;
+        var PRB = PRB;
+        var dPop = dPop;
+        var pAf = pAf;
 
         // Packed - StringOut to Save to SessionVariable
         var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
@@ -1001,7 +1001,7 @@ function WipeOutOldDistrictPledges() {
         sessionStorage.setItem(i + ":" + "PS:4", "-") | 0;
         sessionStorage.setItem(i + ":" + "PS:5", "-") | 0;
     }
-    alert("Previous Entries Erased!");
+    // alert("Previous Entries Erased!");
 }
 
 
