@@ -986,11 +986,11 @@ function viewDistricts() {
 
         outputDistrictHtml = outputDistrictHtml + "<p>-//-</p>";
         
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s1 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s2 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s3 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s4 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions\">" + s5 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"solutions\">" + s1 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"solutions\">" + s2 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"solutions\">" + s3 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"solutions\">" + s4 + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"solutions\">" + s5 + "</p>";
         
 
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
