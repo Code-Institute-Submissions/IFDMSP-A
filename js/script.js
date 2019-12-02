@@ -1,5 +1,6 @@
 // ------- DATA ----------- 
-
+// This variable is just to allow dev testing. When true it 
+// Shows the district solution answers.
 var testingMode = false;
 
 var cDO = [];
@@ -734,6 +735,11 @@ function grabThreeCountries() {
 function viewDistricts() {
     // alert("View Districts");
     // List out District Number 
+
+
+
+
+
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
         // Get pack district data
@@ -754,11 +760,30 @@ function viewDistricts() {
         var l3 = ISS[2];
         var l4 = ISS[3];
         var l5 = ISS[4];
+        // Get each line  Solution
         var s1 = ISS[5];
         var s2 = ISS[6];
         var s3 = ISS[7];
         var s4 = ISS[8];
         var s5 = ISS[9];
+
+        // Reset Variables to count up Issue Weighting
+        var issueWeightingTotal = 0;
+        var districtHealth = 0;
+        var districtCrime = 0;
+        var districtWealth = 0;
+        var districtEmplyment = 0;
+        var districtSatisfaction = 0;
+
+        // Get Issue type, by extracting first character of question
+        // var issueType = l1.join();
+        // var IT = issueType.slice(0, 1);
+        // alert(issueType);
+
+   
+
+
+
         // console.log(dInfo);
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
@@ -770,15 +795,15 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p>-//-</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up\"></span>\ District Main Concerns </p>";
 
-        outputDistrictHtml=outputDistrictHtml+"<div class=\"anw\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"anw\">";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"answers\">" + s3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
-        outputDistrictHtml=outputDistrictHtml+"</div>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
 
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active\" role=\"button\" aria-pressed=\"true\">Population</a>";
