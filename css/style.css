@@ -444,10 +444,7 @@ color: yellow;
     box-shadow: 3px 3px var(--main-bg-color);
     text-shadow: 1px 1px rgb(245, 210, 10);
     margin-bottom: 10px;
-
 }
-
- 
 
 .district-page-action-button {
     background-color: orange;
@@ -462,27 +459,25 @@ color: yellow;
     color: var(--myRed);
 }
 
-
 /* Testing Mode Stuff On/Off*/
-.hide-solutions{
 
-display:none;
-
+.hide-solutions {
+    display: none;
 }
- 
-.point-up{
 
+.point-up {
     margin-left: 10px;
     margin-right: 10px;
-
     font-size: 2rem;
-    color:var(--main-fc-color);
+    color: var(--main-fc-color);
     text-shadow: 2px 2px orange;
 }
 
+.un-addressed-issue-flasher {
+    color: black;
+}
 
-.un-addressed-issue-flasher{
+h3, .progress-bar{
 
-color:black;
-
+    color: var(--main-page-body-color);
 }
