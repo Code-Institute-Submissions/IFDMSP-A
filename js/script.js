@@ -714,6 +714,11 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber +"</span> : " + "<span class=\"hightlight-district-name\"> "+countryDistricts[districtNumber]+ " </span></p>";
+       
+       outputDistrictHtml=outputDistrictHtml+"<div class=\"tabloid\">";
+       outputDistrictHtml=outputDistrictHtml+"<span class=\"far fa-newspaper\"></span>"+" LOCAL PRESS READS! ";
+       outputDistrictHtml=outputDistrictHtml+"</div>";
+
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";

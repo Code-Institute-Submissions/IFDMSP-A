@@ -412,3 +412,25 @@ color: yellow;
     color: white;
     background-color:var(--myRed);
 }
+
+/* tabloid headline */
+.tabloid{
+
+    font-size: 2rem;
+
+    background-color: rgb(187, 218, 142);
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+    
+
+    padding-left: 5px;
+    padding-right: 5px;
+
+    /* display: inline; */
+
+   
+
+    color: var(--main-page-body-color);
+
+}
