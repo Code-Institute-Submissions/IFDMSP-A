@@ -732,27 +732,27 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger role=\"progressbar\" style=\"width: " + distCrime * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(C)RIME</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger role=\"progressbar\" style=\"width: " + distCrime * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(C)RIME: "+distCrime *25+"%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // HEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + distHealth * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(H)EALTH</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + distHealth * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(H)EALTH: "+distHealth *25+"%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // WEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + distWealth * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(W)EALTH</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + distWealth * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(W)EALTH:"+distWealth *25+"%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // EMPLOYMENT
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + distEmployment * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(E)MPLOYMENT</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + distEmployment * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(E)MPLOYMENT:"+distEmployment *25+"%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // SATISFACTION
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + distSatis * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(S)ATISFACTION</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + distSatis * 25 + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\">(S)ATISFACTION:"+distSatis *25+"%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // -------
