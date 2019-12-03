@@ -759,6 +759,8 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis / issueWeightingTotal) * 100 )+ "%\" aria-valuenow=\""+ ((distSatis / issueWeightingTotal) * 100 )+"\" aria-valuemin=\"0\" aria-valuemax=\"" + ((issueWeightingTotal/5)*100) +"\">(S)ATISFACTION:" + (distSatis) + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
+
+
         // -------
         outputDistrictHtml = outputDistrictHtml + "</html>";
 
