@@ -732,7 +732,7 @@ function viewDistricts() {
 
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-12\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-6\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
