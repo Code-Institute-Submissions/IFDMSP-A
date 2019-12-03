@@ -649,6 +649,7 @@ function viewDistricts() {
     // List out District Number 
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
+       
         // Reset Variables to count up Issue Weighting
         var issueWeightingTotal = 0;
         var distHealth = 0;
@@ -694,9 +695,9 @@ function viewDistricts() {
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
 
         // Get Total Sum Value
-        issueWeightingTotal=(distHealth+distWealth+distEmployment+distSatis);
+        issueWeightingTotal = (distCrime+ distHealth + distWealth + distEmployment + distSatis);
 
-        console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":");
+        console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":"+"@"+issueWeightingTotal);
 
 
 
@@ -735,27 +736,27 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger role=\"progressbar\" style=\"width: " + (distCrime *100 )/issueWeightingTotal + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\""+issueWeightingTotal+"\">(C)RIME: "+(distCrime) +"%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-danger  role=\"progressbar\" style=\"width: " + (( distCrime/ issueWeightingTotal) *100 ) + "%\" aria-valuenow=\""+ (( distCrime/ issueWeightingTotal) *100 ) +"\" aria-valuemin=\"0\" aria-valuemax=\"" + ((issueWeightingTotal/5)*100) + "\">(C)RIME: " + (distCrime) + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // HEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + (distHealth *100 )/issueWeightingTotal + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\""+issueWeightingTotal+"\">(H)EALTH: "+(distHealth)+"%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + ((distHealth /issueWeightingTotal) * 100) + "%\" aria-valuenow=\""+ ((distHealth /issueWeightingTotal) * 100) + "\" aria-valuemin=\"0\" aria-valuemax=\""+ ((issueWeightingTotal/5)*100) +"\">(H)EALTH: " + (distHealth) + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // WEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + (distWealth *100 )/issueWeightingTotal + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\""+issueWeightingTotal+"\">(W)EALTH:"+(distWealth)+"%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + ((distWealth / issueWeightingTotal) * 100) + "%\" aria-valuenow=\""+ ((distWealth / issueWeightingTotal) * 100) +"\" aria-valuemin=\"0\" aria-valuemax=\"" + ((issueWeightingTotal/5)*100) +"\">(W)EALTH:" + (distWealth) + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // EMPLOYMENT
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + (distEmployment *100)/issueWeightingTotal + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\""+issueWeightingTotal+"\">(E)MPLOYMENT:"+(distEmployment)+"%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + ((distEmployment / issueWeightingTotal) * 100) + "%\" aria-valuenow=\""+ ((distEmployment / issueWeightingTotal) * 100) +"\" aria-valuemin=\"0\" aria-valuemax=\"" + ((issueWeightingTotal/5)*100) +"\">(E)MPLOYMENT:" + (distEmployment) + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // SATISFACTION
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + (distSatis*100)/issueWeightingTotal + "%\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\""+issueWeightingTotal+"\">(S)ATISFACTION:"+(distSatis)+"%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis / issueWeightingTotal) * 100 )+ "%\" aria-valuenow=\""+ ((distSatis / issueWeightingTotal) * 100 )+"\" aria-valuemin=\"0\" aria-valuemax=\"" + ((issueWeightingTotal/5)*100) +"\">(S)ATISFACTION:" + (distSatis) + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // -------

@@ -476,8 +476,3 @@ color: yellow;
 .un-addressed-issue-flasher {
     color: black;
 }
-
-h3, .progress-bar{
-
-    color: var(--main-page-body-color);
-}
