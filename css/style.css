@@ -403,7 +403,6 @@ table, th, td h3 {
 /* .p-index{
 background-color: red;
 color: yellow;
-
 } */
 
 /* To be deleted- for test bottom bar */
@@ -477,9 +476,21 @@ color: yellow;
     color: black;
 }
 
-.progress-bar{
+/* Progress Bar on View Districts page */
 
+.progress-bar {
     color: var(--main-page-body-color);
 }
 
- 
+/* Highlight district name on district view page */
+
+.hightlight-district-name {
+    border: solid;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    color: var(--myRed);
+    border-color:var(--main-bg-color);
+    background-color: yellow;
+}
