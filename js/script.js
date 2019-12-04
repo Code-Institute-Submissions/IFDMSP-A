@@ -8,9 +8,11 @@ var flashState = true;
 var flashHandState = true;
 var globeShake = true;
 var cCp = 0;
+
 var noOfCountriesMax = 195;
 var noOfDistricts = 21;
 var noOfProblems = 20;
+
 var gDPMax = 10;
 var popMax = 10;
 var healthMax = 100;
@@ -645,7 +647,16 @@ function grabThreeCountries() {
 // Assemble View District Information
 // 
 function viewDistricts() {
-    // alert("View Districts");
+     
+//    alert(sessionStorage.getItem("D,0"));
+
+// Error Check if Data is created or not.
+// If not bounce to index page and request user reset game!
+if(sessionStorage.getItem("D,1") === null){
+    alert("Corrupt data! Please reset the game!");
+    location.href="index.html";
+}
+
     // List out District Number 
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
@@ -659,6 +670,12 @@ function viewDistricts() {
         var distSatis = 0;
         // Get pack district data
         var dInfo = sessionStorage.getItem("D," + districtNumber);
+
+
+
+
+
+
         // Break it into two to separate Issues gfrom List of people
         var TP = [] = dInfo.split('@');
         //Flatten Array so we can split it again
@@ -700,12 +717,7 @@ function viewDistricts() {
         console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":"+"@"+issueWeightingTotal);
 
 
-
-
-
-
-
-
+ 
 
 
         // Assemble HTM DYNAMICALLY
@@ -1039,3 +1051,37 @@ function flashUnaddressedIssue() {
         return;
     }
 }
+
+
+
+ 
+// Loadup Manifesto Page
+
+function loadUpManifestoPage(){
+
+
+    for (let i= 1; i< noOfProblems; i++)
+    {
+    
+        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h3><p>"+i+districtSolutions[i]+"<p></h3></div>");
+    
+    
+    }
+    
+}
+
+
+ 
+
+
+
+$(document).ready(function(){
+    $("p").click(function(){
+      $(this).hide();
+    });
+  });
+
+
+ 
+
+
