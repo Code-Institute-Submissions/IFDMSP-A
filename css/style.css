@@ -537,11 +537,17 @@ margin-right:5px;
 
 }
 
+/* Manifesto Page */
+/* Pledge Pool */
+#raw-manifesto ,h4{
 
-#raw-manifesto{
-
+    border-radius: 10px;
+    font-size: 2rem;
     color: yellow;
-    background: green;
+    background: rgb(145, 182, 145);
+
+    text-shadow:  3px 3px grey;
+    margin-bottom: 10px;
 
 }
 

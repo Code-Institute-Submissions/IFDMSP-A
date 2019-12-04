@@ -1067,21 +1067,37 @@ function loadUpManifestoPage(){
     
     
     }
+
+    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success\">MOVE ABOVE PLEDGES TO MANIFESTO(MAX-7)</button>");
+
     
 }
 
 
+
+
+// Move Visble Pledges to Manifesto
+// Max 7 Allowed
+function moveToManifesto(){
+
+alert("ping");
+
+}
  
 
 
-
+// Hide Pledges in pool
 $(document).ready(function(){
     $("p").click(function(){
-      $(this).hide();
+
+      $(this).toggle("slow", function(){hidePledge(); })
+
     });
   });
 
-
+function hidePledge(){
+    $(this).hide();
+}
  
 
 
