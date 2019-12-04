@@ -1075,13 +1075,13 @@ function createEmptyManifesto() {
 
 
 
-    if (sessionStorage.getItem("M,1") == "-,-") {
+    if (sessionStorage.getItem("M,1") == "-") {
         return;
     }
 
     for (let i = 1; i < 7; i++) {
         var blankManifestoKey = "M," + i;
-        var blankManifestoLine = "-,-";
+        var blankManifestoLine = "-";
         // Create it in memory
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
     }
@@ -1103,13 +1103,13 @@ function loadUpManifestoPage() {
 
     // Load Up - Pledges Pool
     for (let i = 1; i < noOfProblems; i++) {
-        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p class=\"keep-insideBSol\">" +"<span class=\"raw-pledge-index\">" + i + "</span>"+ districtSolutions[i] + "<p></h4></div>");
+        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item \"><h4><p class=\"keep-insideBSol\">" +"<span class=\"raw-pledge-index\">" + i + "</span>"+ districtSolutions[i] + "<p></h4></div>");
     }
     $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
 
     // Load Up -Manifesto
     for (let i = 1; i < 7; i++) {
-        $('#raw-manifesto-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p class=\"keep-insideBSol\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
+        $('#raw-manifesto-pool').append("<div class=\"raw-pledge-item \"><h4><p class=\"keep-insideBSol\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
     $('#raw-manifesto-pool').append("<button type=\"button\"   class=\"btn btn-primary w-100\">Save</button>");
 
@@ -1144,6 +1144,10 @@ function saveManifesto() {
 
 
 
+
+
+
+
 // Move Visble Pledges to Manifesto
 // Max 7 Allowed
 function moveToManifesto() {
@@ -1161,6 +1165,10 @@ function moveToManifesto() {
     }
 
 }
+
+
+
+
 
 
 
