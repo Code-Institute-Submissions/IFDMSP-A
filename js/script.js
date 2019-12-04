@@ -647,20 +647,20 @@ function grabThreeCountries() {
 // Assemble View District Information
 // 
 function viewDistricts() {
-     
-//    alert(sessionStorage.getItem("D,0"));
 
-// Error Check if Data is created or not.
-// If not bounce to index page and request user reset game!
-if(sessionStorage.getItem("D,1") === null){
-    alert("Corrupt data! Please reset the game!");
-    location.href="index.html";
-}
+    //    alert(sessionStorage.getItem("D,0"));
+
+    // Error Check if Data is created or not.
+    // If not bounce to index page and request user reset game!
+    if (sessionStorage.getItem("D,1") === null) {
+        alert("Corrupt data! Please reset the game!");
+        location.href = "index.html";
+    }
 
     // List out District Number 
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
-       
+
         // Reset Variables to count up Issue Weighting
         var issueWeightingTotal = 0;
         var distHealth = 0;
@@ -712,12 +712,12 @@ if(sessionStorage.getItem("D,1") === null){
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
 
         // Get Total Sum Value
-        issueWeightingTotal = (distCrime+ distHealth + distWealth + distEmployment + distSatis);
+        issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
 
-        console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":"+"@"+issueWeightingTotal);
+        console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":" + "@" + issueWeightingTotal);
 
 
- 
+
 
 
         // Assemble HTM DYNAMICALLY
@@ -725,11 +725,11 @@ if(sessionStorage.getItem("D,1") === null){
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber +"</span> : " + "<span class=\"hightlight-district-name\"> "+countryDistricts[districtNumber]+ " </span></p>";
-       
-       outputDistrictHtml=outputDistrictHtml+"<div class=\"tabloid\">";
-       outputDistrictHtml=outputDistrictHtml+"<span class=\"far fa-newspaper\"></span>"+" LOCAL PRESS READS! ";
-       outputDistrictHtml=outputDistrictHtml+"</div>";
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
+
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"tabloid\">";
+        outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " LOCAL PRESS READS! ";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
 
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
@@ -753,27 +753,27 @@ if(sessionStorage.getItem("D,1") === null){
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-danger   role=\"progressbar\" style=\"width: " + (( distCrime * 100) / issueWeightingTotal)  + "%\" aria-valuenow=\""+ (( distCrime * issueWeightingTotal) /100 ) +"\" aria-valuemin=\"0\" aria-valuemax=\"" + (( distCrime * issueWeightingTotal) /100 )+ "\">(C)RIME : " + (distCrime/issueWeightingTotal )*100 + "%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-danger   role=\"progressbar\" style=\"width: " + ((distCrime * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distCrime * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distCrime * issueWeightingTotal) / 100) + "\">(C)RIME : " + (distCrime / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // HEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + ((distHealth * 100)/ issueWeightingTotal)  + "%\" aria-valuenow=\""+ ((distHealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\""+ (( distHealth * issueWeightingTotal) /100 )+"\">(H)EALTH : " + (distHealth/issueWeightingTotal )*100 + "%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + ((distHealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distHealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distHealth * issueWeightingTotal) / 100) + "\">(H)EALTH : " + (distHealth / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // WEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + ((distWealth *100)/ issueWeightingTotal) + "%\" aria-valuenow=\""+ ((distWealth * issueWeightingTotal) / 100) +"\" aria-valuemin=\"0\" aria-valuemax=\"" + (( distWealth * issueWeightingTotal) /100 ) +"\">(W)EALTH :" + (distWealth/issueWeightingTotal )*100 + "%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + ((distWealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distWealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distWealth * issueWeightingTotal) / 100) + "\">(W)EALTH :" + (distWealth / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // EMPLOYMENT
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + ((distEmployment * 100)/issueWeightingTotal) + "%\" aria-valuenow=\""+ ((distEmployment * issueWeightingTotal) / 100) +"\" aria-valuemin=\"0\" aria-valuemax=\"" + (( distEmployment * issueWeightingTotal) /100 ) +"\">(E)MPLOYMENT :" + (distEmployment/issueWeightingTotal )*100 + "%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + ((distEmployment * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\">(E)MPLOYMENT :" + (distEmployment / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         // SATISFACTION
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis * 100)/issueWeightingTotal)+ "%\" aria-valuenow=\""+ ((distSatis * issueWeightingTotal) / 100 )+"\" aria-valuemin=\"0\" aria-valuemax=\"" + (( distSatis * issueWeightingTotal) /100 ) +"\">(S)ATISFACTION :" + (distSatis/issueWeightingTotal )*100 + "%</div>"
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distSatis * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distSatis * issueWeightingTotal) / 100) + "\">(S)ATISFACTION :" + (distSatis / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
 
@@ -1021,6 +1021,7 @@ function setupGame() {
     // Create Districts
     // Wipe Away Old Pledges
     CreateDistricts();
+    createEmptyManifesto();
     WipeOutOldDistrictPledges();
 }
 // }
@@ -1053,51 +1054,103 @@ function flashUnaddressedIssue() {
 }
 
 
+// Create Empty Manifesto
+// This is the Manifest your Politician will use
+// In the game..
+// M,x -,-   ; where x=1-7 & - = manifesto, -=Priority value (L/M/H)
+function createEmptyManifesto() {
 
- 
-// Loadup Manifesto Page
-
-function loadUpManifestoPage(){
-
-
-    for (let i= 1; i< noOfProblems; i++)
-    {
-    
-        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h3><p>"+i+districtSolutions[i]+"<p></h3></div>");
-    
-    
+    if (sessionStorage.getItem("M,1") == "-,-") {
+        return;
     }
 
-    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success\">MOVE ABOVE PLEDGES TO MANIFESTO(MAX-7)</button>");
+    for (let i = 1; i < 7; i++) {
+        var blankManifestoKey = "M," + i;
+        var blankManifestoLine = "-,-";
+        // Create it in memory
+        sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
 
-    
+    }
+    alert("Blank Manifesto Created!");
 }
 
+
+
+
+// Loadup Manifesto Page
+function loadUpManifestoPage() {
+
+
+    // Load Up - Pledges Pool
+    for (let i = 1; i < noOfProblems; i++) {
+        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p>" + i + districtSolutions[i] + "<p></h4></div>");
+    }
+    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success\">Grab Pledges</button>");
+
+    // Load Up -Manifesto
+    for (let i = 1; i < 7; i++) {
+        $('#raw-manifesto-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p>" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
+    }
+    $('#raw-manifesto-pool').append("<button type=\"button\"   class=\"btn btn-primary\">Save</button>");
+
+}
+
+
+
+// Save Current Manifesto
+function saveManifesto() {
+
+    for (let i = 1; i < 7; i++) {
+        if (sessionStorage.getItem("M," + i) === "-,-") {
+            alert("You require 7 pledges for your Manifesto ")
+            return;
+        }
+
+    }
+    //  Save Manifesto
+    for (let i = 1; i < 7; i++) {
+        var blankManifestoKey = "M," + i;
+        console.log(blankManifestoKey);
+        
+        // Create it in memory
+        sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
+
+    }
+    alert("Manifesto Saved!");
+
+}
 
 
 
 // Move Visble Pledges to Manifesto
 // Max 7 Allowed
-function moveToManifesto(){
+function moveToManifesto() {
 
-alert("ping");
+    alert("ping");
+
+    let count = 7;
+    let manifesto = [];
+
+
+
+
+
 
 }
- 
+
 
 
 // Hide Pledges in pool
-$(document).ready(function(){
-    $("p").click(function(){
+$(document).ready(function () {
+    $("p").click(function () {
 
-      $(this).toggle("slow", function(){hidePledge(); })
+        $(this).toggle("slow", function () {
+            hidePledge();
+        })
 
     });
-  });
+});
 
-function hidePledge(){
+function hidePledge() {
     $(this).hide();
 }
- 
-
-

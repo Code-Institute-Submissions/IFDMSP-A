@@ -518,36 +518,47 @@ color: yellow;
     color: var(--main-page-body-color);
 }
 
-
 /* Create Manifesto Page */
+
 /* Pledges section */
-#raw-pledge-pool h3{
 
-font-size: 2rem;
-
-background-color: wheat;
-border-radius: 10px;
-
-/* border: 0px  solid; */
-
-color: var(--main-page-body-color);
-margin-bottom: 20px;
-margin-left:5px;
-margin-right:5px;
-
-}
+/* #raw-pledge-pool h3 {
+    font-size: 2rem;
+    background-color: wheat;
+    border-radius: 10px;
+     
+    color: var(--main-page-body-color);
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+} */
 
 /* Manifesto Page */
+
 /* Pledge Pool */
-#raw-manifesto ,h4{
 
+#raw-pledge-pool ,h4 {
     border-radius: 10px;
-    font-size: 2rem;
-    color: yellow;
-    background: rgb(145, 182, 145);
+    border: 1px dashed;
+    font-size: 1rem;
 
-    text-shadow:  3px 3px grey;
+    color: var(--main-page-body-color);
+    background-color: rgb(177, 207, 177);
+    text-shadow: 1px 1px white;
+    
     margin-bottom: 10px;
-
 }
 
+/* manifesto */
+#raw-manifesto ,h4 {
+    border-radius: 10px;
+    border: 1px solid;
+    font-size: 1rem;
+    
+    color: var(--main-page-body-color);
+    background-color: pink;
+    text-shadow: 1px 1px white;
+
+    box-shadow: 2px 2px black;
+    margin-bottom: 10px;
+}
