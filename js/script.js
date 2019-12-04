@@ -1090,7 +1090,7 @@ function loadUpManifestoPage() {
 
     // Load Up - Pledges Pool
     for (let i = 1; i < noOfProblems; i++) {
-        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p class=\"keep-insideBSol\">" + i + districtSolutions[i] + "<p></h4></div>");
+        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p class=\"keep-insideBSol\">" +"<span class=\"raw-pledge-index\">" + i + "</span>"+ districtSolutions[i] + "<p></h4></div>");
     }
     $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
 

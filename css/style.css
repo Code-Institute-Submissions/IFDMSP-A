@@ -547,6 +547,25 @@ color: yellow;
     margin-bottom: 10px;
 }
 
+#raw-pledge-item, p {
+    margin: 5px 5px 5px 5px;
+}
+
+
+/* raw pledge index numbers */
+.raw-pledge-index {
+    color: white;
+    border-color: white;
+    background-color: var(--myRed);
+
+    text-shadow:1px 1px 1px black;
+
+    border: 1px solid;
+    border-radius: 50%;
+
+    padding: 5px 5px 5px 5px;
+}
+
 /* manifesto */
 
 #raw-manifesto, h4 {
