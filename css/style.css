@@ -518,6 +518,16 @@ color: yellow;
     color: var(--main-page-body-color);
 }
 
+/* UK-MAP image */
+.map-uk, img {
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+    margin-bottom: 5px;
+
+    
+}
+
 /* Create Manifesto Page */
 
 /* Pledges section */
@@ -551,18 +561,15 @@ color: yellow;
     margin: 5px 5px 5px 5px;
 }
 
-
 /* raw pledge index numbers */
+
 .raw-pledge-index {
     color: white;
     border-color: white;
     background-color: var(--myRed);
-
-    text-shadow:1px 1px 1px black;
-
+    text-shadow: 1px 1px 1px black;
     border: 1px solid;
     border-radius: 50%;
-
     padding: 5px 5px 5px 5px;
 }
 

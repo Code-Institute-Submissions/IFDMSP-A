@@ -727,8 +727,21 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
 
+        // Tabloid Banner
         outputDistrictHtml = outputDistrictHtml + "<div class=\"tabloid\">";
-        outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " LOCAL PRESS READS! ";
+        outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!! ";
+
+
+        // UK MAP IMAGE
+        outputDistrictHtml=outputDistrictHtml+"<div class=\"row\">";
+        outputDistrictHtml=outputDistrictHtml+"<div class=\"col-12 map-uk\">";
+
+        outputDistrictHtml=outputDistrictHtml+"<img src=\"images/map-uk.jpg\">";
+        
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
