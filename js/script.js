@@ -1060,6 +1060,8 @@ function flashUnaddressedIssue() {
 // M,x -,-   ; where x=1-7 & - = manifesto, -=Priority value (L/M/H)
 function createEmptyManifesto() {
 
+
+
     if (sessionStorage.getItem("M,1") == "-,-") {
         return;
     }
@@ -1069,7 +1071,6 @@ function createEmptyManifesto() {
         var blankManifestoLine = "-,-";
         // Create it in memory
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
-
     }
     alert("Blank Manifesto Created!");
 }
@@ -1077,21 +1078,27 @@ function createEmptyManifesto() {
 
 
 
+// Reset Manifesto
+function resetManifesto() {
+    createEmptyManifesto();
+    window.location = "create-manifesto.html";
+}
+
+
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
 
-
     // Load Up - Pledges Pool
     for (let i = 1; i < noOfProblems; i++) {
-        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p>" + i + districtSolutions[i] + "<p></h4></div>");
+        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p class=\"keep-insideBSol\">" + i + districtSolutions[i] + "<p></h4></div>");
     }
-    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success\">Grab Pledges</button>");
+    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
 
     // Load Up -Manifesto
     for (let i = 1; i < 7; i++) {
-        $('#raw-manifesto-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p>" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
+        $('#raw-manifesto-pool').append("<div class=\"raw-pledge-item keep-insideBSol\"><h4><p class=\"keep-insideBSol\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
-    $('#raw-manifesto-pool').append("<button type=\"button\"   class=\"btn btn-primary\">Save</button>");
+    $('#raw-manifesto-pool').append("<button type=\"button\"   class=\"btn btn-primary w-100\">Save</button>");
 
 }
 
@@ -1107,6 +1114,8 @@ function saveManifesto() {
         }
 
     }
+
+
     //  Save Manifesto to sessionStorage
     for (let i = 1; i < 7; i++) {
         var blankManifestoKey = "M," + i;
@@ -1131,6 +1140,12 @@ function moveToManifesto() {
     let count = 7;
     let manifesto = [];
 
+    if ($('#raw-pledge-pool p').attr('style', "display:inline-block")) {
+
+        // manifesto = [].push('UUU');
+        count--;
+        console.log(count);
+    }
 
 }
 

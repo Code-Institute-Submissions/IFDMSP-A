@@ -537,28 +537,25 @@ color: yellow;
 
 /* Pledge Pool */
 
-#raw-pledge-pool ,h4 {
+#raw-pledge-pool, h4 {
     border-radius: 10px;
     border: 1px dashed;
     font-size: 1rem;
-
     color: var(--main-page-body-color);
-    background-color: rgb(177, 207, 177);
+    background-color: rgb(107, 124, 107);
     text-shadow: 1px 1px white;
-    
     margin-bottom: 10px;
 }
 
 /* manifesto */
-#raw-manifesto ,h4 {
+
+#raw-manifesto, h4 {
     border-radius: 10px;
     border: 1px solid;
     font-size: 1rem;
-    
     color: var(--main-page-body-color);
-    background-color: pink;
+    background-color: wheat;
     text-shadow: 1px 1px white;
-
     box-shadow: 2px 2px black;
     margin-bottom: 10px;
 }
