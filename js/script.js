@@ -1107,11 +1107,11 @@ function saveManifesto() {
         }
 
     }
-    //  Save Manifesto
+    //  Save Manifesto to sessionStorage
     for (let i = 1; i < 7; i++) {
         var blankManifestoKey = "M," + i;
         console.log(blankManifestoKey);
-        
+
         // Create it in memory
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
 
@@ -1132,17 +1132,13 @@ function moveToManifesto() {
     let manifesto = [];
 
 
-
-
-
-
 }
 
 
 
 // Hide Pledges in pool
 $(document).ready(function () {
-    $("p").click(function () {
+    $("#raw-pledge-pool p").click(function () {
 
         $(this).toggle("slow", function () {
             hidePledge();
