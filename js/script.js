@@ -733,11 +733,11 @@ function viewDistricts() {
 
 
         // UK MAP IMAGE
-        outputDistrictHtml=outputDistrictHtml+"<div class=\"row\">";
-        outputDistrictHtml=outputDistrictHtml+"<div class=\"col-12 map-uk\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-12 map-uk\">";
 
-        outputDistrictHtml=outputDistrictHtml+"<img src=\"images/map-uk.jpg\">";
-        
+        outputDistrictHtml = outputDistrictHtml + "<img src=\"images/map-uk.jpg\">";
+
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
@@ -1073,8 +1073,6 @@ function flashUnaddressedIssue() {
 // M,x -,-   ; where x=1-7 & - = manifesto, -=Priority value (L/M/H)
 function createEmptyManifesto() {
 
-
-
     if (sessionStorage.getItem("M,1") == "-") {
         return;
     }
@@ -1101,9 +1099,13 @@ function resetManifesto() {
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
 
+
+    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
+
+
     // Load Up - Pledges Pool
     for (let i = 1; i < noOfProblems; i++) {
-        $('#raw-pledge-pool').append("<div class=\"raw-pledge-item \"><h4><p class=\"keep-insideBSol\">" +"<span class=\"raw-pledge-index\">" + i + "</span>"+ districtSolutions[i] + "<p></h4></div>");
+        $('#raw-pledge-pool').append("<div id=\"raw-pledge-item-" + i + " \"><h4><p class=\"keep-insideBSol\">" + "<span class=\"raw-pledge-index\">" + i + "</span>" + districtSolutions[i] + "<p></h4></div>");
     }
     $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
 
@@ -1152,19 +1154,55 @@ function saveManifesto() {
 // Max 7 Allowed
 function moveToManifesto() {
 
-    alert("ping");
+    // alert("ping");
 
-    let count = 7;
+    var myPledgeCount = 0;
     let manifesto = [];
 
-    if ($('#raw-pledge-pool p').attr('style', "display:inline-block")) {
 
-        // manifesto = [].push('UUU');
-        count--;
-        console.log(count);
+
+    for (let i = 0; i < noOfProblems; i++) {
+
+        var testString = "#raw-pledge-item-" + i + "";
+
+        
+        var result = $(testString).attr('style');
+
+
+        console.log(result);
+
+        // if(result !== undefined){
+        // console.log(i + "," + result);
+        // }
+
     }
 
+
+    // for (let i = 0; i < noOfProblems; i++) {
+
+    //     var testString='#raw-pledge-item-'+i+' h4 p';
+
+    //     var result = $(testString).attr("style")
+
+    //     console.log(i + "," + result);
+    //     if (result != "display:none;") {
+    //         myPledgeCount++;
+    //     }
+
+    // }
+
+    // console.log(myPledgeCount);
+    // // alert((!$('#raw-pledge-item p').attr('style')));
+
+    //  each.($('#raw-pledge-item p').attr('style') == true) {
+
+    //     // manifesto = [].push('UUU');
+    //     count--;
+    //     console.log(count);
+    // }
+
 }
+
 
 
 
@@ -1176,9 +1214,16 @@ function moveToManifesto() {
 $(document).ready(function () {
     $("#raw-pledge-pool p").click(function () {
 
-        $(this).toggle("slow", function () {
+        // $(this).toggle("slow", function () {
+        //     hidePledge();
+        // })
+
+        $(this).hide(function () {
+
             hidePledge();
         })
+
+
 
     });
 });
