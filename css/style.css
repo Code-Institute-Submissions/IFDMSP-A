@@ -585,3 +585,11 @@ color: yellow;
     box-shadow: 2px 2px black;
     margin-bottom: 10px;
 }
+
+.selected-from-pledge-pool{
+
+background-color:var(--myRed);
+color: white;
+text-shadow: 2px 2px black;
+border-radius: 10px;
+}
