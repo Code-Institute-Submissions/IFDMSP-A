@@ -1069,7 +1069,7 @@ function loadUpManifestoPage() {
 
 // Save Current Manifesto
 function saveManifesto() {
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i < 8; i++) {
         // Ensure there are 7 pledges within manifesto
         if (sessionStorage.getItem("M," + i) === "-") {
             alert("You require -7- pledges for your Manifesto ")
@@ -1116,7 +1116,7 @@ $(document).ready(function () {
         $('.raw-manifesto-item-' + pcount + ' h4 p').first('p').text(content);
  
         sessionStorage.setItem("M,"+pcount,content);
-        
+
     });
 });
 // Deselect All Pledges
