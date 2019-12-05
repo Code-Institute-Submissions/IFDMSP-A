@@ -1091,7 +1091,7 @@ $(document).ready(function () {
         var content = $(this).text()
         $('.raw-manifesto-item-' + pcount + ' h4 p').first('p').text(content);
         sessionStorage.setItem("M," + pcount, content);
-        $(this).hide();
+        $(this).hide("slow");
     });
  
 
