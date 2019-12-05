@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -110,13 +112,23 @@
                 </div>
                 <!-- Button to generate Stats -->
                 <div class="row">
-                    <div class="col-6 text-center">
+                    <div class="col-4 text-center">
                         <div id="genbutton">
                             <a href="global-economics.html" class="btn btn-primary btn-lg " tabindex="-1" role="button"
                                 aria-disabled="true">Refresh </a>
                         </div>
                     </div>
-                    <div class="col-6 gen-districts">
+
+                    <div class="col-4">
+                        <h2>
+                            <div id="country-ticker">
+
+                            </div>
+                        </h2>>
+                    </div>
+
+
+                    <div class="col-4 gen-districts">
                         <div id="genbutton">
                             <a href="country-districts.html" class="btn btn-success btn-lg" tabindex="-1" role="button"
                                 aria-disabled="true">Districts ></a>
@@ -192,4 +204,5 @@
         })
     </script>
 </body>
+
 </html>

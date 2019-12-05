@@ -603,6 +603,10 @@ function populateTable() {
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
+    
+        // SHow country count on the page
+        $('#country-ticker').text(cCp+1);
+    
     }
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
