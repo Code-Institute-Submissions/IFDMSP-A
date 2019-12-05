@@ -1087,7 +1087,11 @@ function saveManifesto() {
         blankManifestoLine = $('.raw-manifesto-item-' + i + ' h4 p').first('p').text();
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
     }
+
+    // Confirm Save and jumpt to Districts Screen
     alert("Manifesto Saved!");
+
+    window.location="country-districts.html";
 }
 
 
