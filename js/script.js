@@ -8,11 +8,9 @@ var flashState = true;
 var flashHandState = true;
 var globeShake = true;
 var cCp = 0;
-
 var noOfCountriesMax = 195;
 var noOfDistricts = 21;
 var noOfProblems = 20;
-
 var gDPMax = 10;
 var popMax = 10;
 var healthMax = 100;
@@ -641,26 +639,19 @@ function grabThreeCountries() {
     // Acknowledge 3 Random coutries have been found. No need to repeat
     threeCountriesSelected = true;
 }
-
-
-
 // Assemble View District Information
 // 
 function viewDistricts() {
-
     //    alert(sessionStorage.getItem("D,0"));
-
     // Error Check if Data is created or not.
     // If not bounce to index page and request user reset game!
     if (sessionStorage.getItem("D,1") === null) {
         alert("Corrupt data! Please reset the game!");
         location.href = "index.html";
     }
-
     // List out District Number 
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
-
         // Reset Variables to count up Issue Weighting
         var issueWeightingTotal = 0;
         var distHealth = 0;
@@ -670,12 +661,6 @@ function viewDistricts() {
         var distSatis = 0;
         // Get pack district data
         var dInfo = sessionStorage.getItem("D," + districtNumber);
-
-
-
-
-
-
         // Break it into two to separate Issues gfrom List of people
         var TP = [] = dInfo.split('@');
         //Flatten Array so we can split it again
@@ -710,40 +695,25 @@ function viewDistricts() {
         distWealth = (countUpIssues("W", aa, bb, cc, dd, ee));
         distEmployment = (countUpIssues("E", aa, bb, cc, dd, ee));
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
-
         // Get Total Sum Value
         issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
-
         console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":" + "@" + issueWeightingTotal);
-
-
-
-
-
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
-
         // Tabloid Banner
         outputDistrictHtml = outputDistrictHtml + "<div class=\"tabloid\">";
         outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!! ";
-
-
         // UK MAP IMAGE
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"col-12 map-uk\">";
-
         outputDistrictHtml = outputDistrictHtml + "<img src=\"images/map-uk.jpg\">";
-
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
-
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
@@ -757,9 +727,6 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
-
-
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"col-8\">";
@@ -768,35 +735,26 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-danger   role=\"progressbar\" style=\"width: " + ((distCrime * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distCrime * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distCrime * issueWeightingTotal) / 100) + "\">(C)RIME : " + (distCrime / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
         // HEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + ((distHealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distHealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distHealth * issueWeightingTotal) / 100) + "\">(H)EALTH : " + (distHealth / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
         // WEALTH
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + ((distWealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distWealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distWealth * issueWeightingTotal) / 100) + "\">(W)EALTH :" + (distWealth / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
         // EMPLOYMENT
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + ((distEmployment * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\">(E)MPLOYMENT :" + (distEmployment / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
         // SATISFACTION
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distSatis * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distSatis * issueWeightingTotal) / 100) + "\">(S)ATISFACTION :" + (distSatis / issueWeightingTotal) * 100 + "%</div>"
         outputDistrictHtml = outputDistrictHtml + "</div>";
-
-
-
         // -------
         outputDistrictHtml = outputDistrictHtml + "</html>";
-
         outputDistrictHtml = outputDistrictHtml + "</div\">";
         outputDistrictHtml = outputDistrictHtml + "</div\">";
-
         outputDistrictHtml = outputDistrictHtml + "<div id=\"graphic-stats-" + districtNumber + "\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
@@ -810,14 +768,8 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         $("#district-list").append(outputDistrictHtml);
         // console.log(unpackedInfo);
-
-
         // Load Graphics
         // 
-
-
-
-
     }
 }
 // Count UP Issues
@@ -848,17 +800,10 @@ function countUpIssues(issue, i1, i2, i3, i4, i5) {
     // console.log(issueTotal);
     return issueTotal;
 }
-
-
-
 // Strip Trim Characters
 function myTrim(x) {
     return x.replace(/^\s+|\s+$/gm, ' ');
 }
-
-
-
-
 // ////////////////////////////////
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
@@ -1051,6 +996,8 @@ function WipeOutOldDistrictPledges() {
     }
     // alert("Previous Entries Erased!");
 }
+
+
 // Flash Unaddressed Issue in Country Districts
 // Entry call = country-district.html
 function flashUnaddressedIssue() {
@@ -1066,17 +1013,14 @@ function flashUnaddressedIssue() {
     }
 }
 
-
 // Create Empty Manifesto
 // This is the Manifest your Politician will use
 // In the game..
 // M,x -,-   ; where x=1-7 & - = manifesto, -=Priority value (L/M/H)
 function createEmptyManifesto() {
-
     if (sessionStorage.getItem("M,1") == "-") {
         return;
     }
-
     for (let i = 1; i < 7; i++) {
         var blankManifestoKey = "M," + i;
         var blankManifestoLine = "-";
@@ -1085,85 +1029,51 @@ function createEmptyManifesto() {
     }
     alert("Blank Manifesto Created!");
 }
-
-
-
-
 // Reset Manifesto
 function resetManifesto() {
     createEmptyManifesto();
     window.location = "create-manifesto.html";
 }
 
-
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
-
-
-    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
-
-
+    // $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
     // Load Up - Pledges Pool
-    for (let i = 1; i < noOfProblems; i++) {
-        $('#raw-pledge-pool').append("<div id=\"raw-pledge-item-" + i + " \"><h4><p class=\"keep-insideBSol\">" + "<span class=\"raw-pledge-index\">" + i + "</span>" + districtSolutions[i] + "<p></h4></div>");
+    for (let i = 1; i < noOfProblems + 1; i++) {
+        $('#raw-pledge-pool').append("<div id=\"raw-pledge-item-" + i + "\"><h4><p class=\"keep-insideBSol\">" + "<span class=\"raw-pledge-index\">" + i + "</span>" + districtSolutions[i] + "<p></h4></div>");
     }
-    $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
 
     // Load Up -Manifesto
-    for (let i = 1; i < 7; i++) {
-        $('#raw-manifesto-pool').append("<div class=\"raw-pledge-item \"><h4><p class=\"keep-insideBSol\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
+    for (let i = 1; i < 8; i++) {
+        $('#raw-manifesto-pool').append("<div class=\"raw-manifesto-item-" + i + "\"><h4><p class=\"keep-insideBSol\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
+
+    // Add Save Button
     $('#raw-manifesto-pool').append("<button type=\"button\"   class=\"btn btn-primary w-100\">Save</button>");
 
+    // Clear Selections
+    $('p').removeClass('selected-from-pledge-pool');
 }
 
 
 
 // Save Current Manifesto
 function saveManifesto() {
-
     for (let i = 1; i < 7; i++) {
         if (sessionStorage.getItem("M," + i) === "-,-") {
             alert("You require 7 pledges for your Manifesto ")
             return;
         }
-
     }
-
 
     //  Save Manifesto to sessionStorage
     for (let i = 1; i < 7; i++) {
         var blankManifestoKey = "M," + i;
         console.log(blankManifestoKey);
-
         // Create it in memory
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
-
     }
     alert("Manifesto Saved!");
-
-}
-
-
-
-
-
-
-
-// Move Visble Pledges to Manifesto
-// Max 7 Allowed
-function moveToManifesto() {
-
-    // alert("ping");
-
-    var myPledgeCount = 0;
-    let manifesto = [];
-    for (let i = 0; i < noOfProblems; i++) {
-
-
-    }
-
-
 }
 
 
@@ -1173,24 +1083,36 @@ function moveToManifesto() {
 
 
 
-// Hide Pledges in pool
 
+
+
+// Hightlight  Pledges in pool
 var pcount = 0;
 $(document).ready(function () {
     $("#raw-pledge-pool p").click(function () {
-
-
-        $(this).addClass("selected-from-pledge-pool");
-        pcount++;
-        if (pcount > 7) {
-            pcount = 0;
+        // Tranfer selected pledges to Manifesto on 7 pledges
+        // Selected
+        if (pcount == 7) {
             window.location.href = "create-manifesto.html";
         }
+        // Highlight Selected raw Pledge & Increase Pledge Count
+        $(this).first().addClass("selected-from-pledge-pool");
+        pcount++;
 
+        // 
+        var content = $(this).text()
+        //    alert(content);
+        // 
+        $('.raw-manifesto-item-' + pcount + ' h4 p').first('p').text(content);
 
+        // if (pcount > 6) {
+        //     pcount = 0;
+        //     window.location.href = "create-manifesto.html";
+        // }
     });
 });
-
-// function hidePledge() {
-//     $(this).hide();
-// }
+// Deselect All Pledges
+function deselectAllPledges() {
+    $('p').removeClass('selected-from-pledge-pool');
+    return;
+}
