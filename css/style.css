@@ -584,6 +584,7 @@ color: yellow;
 
     background-color: white;
     color: var(--main-bg-color);
+    padding:5px 5px 5px 5px;
 
 }
 /* Make Selected Pledges RED */

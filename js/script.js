@@ -1049,6 +1049,7 @@ function loadUpManifestoPage() {
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
+
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1059,7 +1060,7 @@ function saveManifesto() {
         }
     }
     //  Save Manifesto list to "sessionStorage"
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i < 8; i++) {
         var blankManifestoKey = "M," + i;
         // console.log(blankManifestoKey);
         // Create session it in sessionStoragememory
@@ -1068,6 +1069,11 @@ function saveManifesto() {
     }
     alert("Manifesto Saved!");
 }
+
+
+
+
+
 // Hightlight  Pledges in pool
 
 $(document).ready(function () {
@@ -1075,6 +1081,7 @@ $(document).ready(function () {
         // Tranfer selected pledges to Manifesto on 7 pledges
         // Selected
         if (pcount === 7) {
+
             window.location.href = "create-manifesto.html";
         }
         // Highlight Selected raw Pledge & Increase Pledge Count
@@ -1084,8 +1091,12 @@ $(document).ready(function () {
         var content = $(this).text()
         $('.raw-manifesto-item-' + pcount + ' h4 p').first('p').text(content);
         sessionStorage.setItem("M," + pcount, content);
+        $(this).hide();
     });
+ 
+
 });
+
 // Deselect All Pledges
 function deselectAllPledges() {
     $('p').removeClass('selected-from-pledge-pool');
