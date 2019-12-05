@@ -1038,11 +1038,11 @@ function resetManifesto() {
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
     for (let i = 1; i < noOfProblems + 1; i++) {
-        $('#raw-pledge-pool').append("<div id=\"raw-pledge-item-" + i + "\"><h4><p class=\"keep-insideBSol\">" + "<span class=\"raw-pledge-index\">" + i + "</span>" + districtSolutions[i] + "<p></h4></div>");
+        $('#raw-pledge-pool').append("<div id=\"raw-pledge-item-" + i + "\"><h4><p class=\"keep-insideBSol \">" + "<span class=\"raw-pledge-index\">" + i + "</span>" + districtSolutions[i] + "<p></h4></div>");
     }
     // Load Up -Manifesto
     for (let i = 1; i < 8; i++) {
-        $('#raw-manifesto-pool').append("<div class=\"raw-manifesto-item-" + i + "\"><h4><p class=\"keep-insideBSol\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
+        $('#raw-manifesto-pool').append("<div class=\"raw-manifesto-item-" + i + "\"><h4><p class=\"keep-insideBSol pledge-plank\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
     // Add Save Button
     $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-primary w-100 manifesto-save-button\">Save</button>");

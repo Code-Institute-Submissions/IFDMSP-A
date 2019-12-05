@@ -565,6 +565,8 @@ color: yellow;
     padding: 2px 5px 2px 5px;
 }
 
+ 
+
 /* manifesto page */
 
 #raw-manifesto, h4 {
@@ -578,6 +580,13 @@ color: yellow;
     margin-bottom: 10px;
 }
 
+/* Make manifesto pledges white backing */
+.pledge-plank{
+
+    background-color: white;
+    color: var(--main-bg-color);
+
+}
 /* Make Selected Pledges RED */
 .selected-from-pledge-pool {
     background-color: var(--myRed);
