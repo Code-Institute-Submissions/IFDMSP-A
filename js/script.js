@@ -1000,6 +1000,10 @@ function WipeOutOldDistrictPledges() {
     }
     // alert("Previous Entries Erased!");
 }
+
+
+
+
 // Flash Unaddressed Issue in Country Districts
 // Entry call = country-district.html
 function flashUnaddressedIssue() {
@@ -1014,6 +1018,9 @@ function flashUnaddressedIssue() {
         return;
     }
 }
+
+
+
 // Create Empty Manifesto
 // This is the Manifest your Politician will use
 // In the game..
@@ -1030,11 +1037,18 @@ function createEmptyManifesto() {
     }
     alert("Blank Manifesto Created!");
 }
+
+ 
+
+
+
 // Reset Manifesto
 function resetManifesto() {
     createEmptyManifesto();
     window.location = "create-manifesto.html";
 }
+
+
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
     for (let i = 1; i < noOfProblems + 1; i++) {
@@ -1045,10 +1059,12 @@ function loadUpManifestoPage() {
         $('#raw-manifesto-pool').append("<div class=\"raw-manifesto-item-" + i + "\"><h4><p class=\"keep-insideBSol pledge-plank\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
     // Add Save Button
-    $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-primary w-100 manifesto-save-button\">Save</button>");
+    $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-success  w-100 manifesto-save-button\">Save</button>");
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
+
+
 
 // Save Current Manifesto
 function saveManifesto() {
@@ -1077,6 +1093,7 @@ function saveManifesto() {
 // Hightlight  Pledges in pool
 
 $(document).ready(function () {
+
     $("#raw-pledge-pool p").click(function () {
         // Tranfer selected pledges to Manifesto on 7 pledges
         // Selected
@@ -1084,6 +1101,15 @@ $(document).ready(function () {
 
             window.location.href = "create-manifesto.html";
         }
+
+        // Reset <anifesto if too many picked
+        if (pcount === 7) {
+            createEmptyManifesto();
+            window.location = "create-manifesto.html";
+        }
+
+
+
         // Highlight Selected raw Pledge & Increase Pledge Count
         $(this).first().addClass("selected-from-pledge-pool");
         pcount++;
@@ -1093,7 +1119,7 @@ $(document).ready(function () {
         sessionStorage.setItem("M," + pcount, content);
         $(this).hide("slow");
     });
- 
+
 
 });
 
