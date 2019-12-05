@@ -1037,8 +1037,7 @@ function resetManifesto() {
 
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
-    // $('#raw-pledge-pool').append("<button type=\"button\"  onclick=\"moveToManifesto()\"   class=\"btn btn-success w-100\">Grab Pledges</button>");
-    // Load Up - Pledges Pool
+    
     for (let i = 1; i < noOfProblems + 1; i++) {
         $('#raw-pledge-pool').append("<div id=\"raw-pledge-item-" + i + "\"><h4><p class=\"keep-insideBSol\">" + "<span class=\"raw-pledge-index\">" + i + "</span>" + districtSolutions[i] + "<p></h4></div>");
     }
