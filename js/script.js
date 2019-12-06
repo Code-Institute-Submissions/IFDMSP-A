@@ -1162,11 +1162,11 @@ function loadUpPledgePriorityPage() {
     // var pbuttons = "<div col-6>";
     pbuttons = pbuttons + "<div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">";
     pbuttons = pbuttons + "<label class=\"btn btn-secondary active\">";
-    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option1\" checked> Active </label>";
+    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option1\" checked> L </label>";
     pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
-    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option2\"> Radio</label>";
+    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option2\"> M</label>";
     pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
-    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option3\"> Radio</label>";
+    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option3\"> H</label>";
     pbuttons = pbuttons + "</div>";
     // pbuttons=pbuttons+"</div>";
 
