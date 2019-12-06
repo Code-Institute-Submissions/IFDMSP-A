@@ -768,8 +768,8 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 district-buttons-fmt\" role=\"button\" aria-pressed=\"true\">View Population</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100 district-buttons-fmt\" role=\"button\" aria-pressed=\"true\">View Pledge-Priority</a>"; /*@@@*/
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\" role=\"button\" aria-pressed=\"true\">View Population</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" role=\"button\" aria-pressed=\"true\">View Pledge-Priority</a>"; /*@@@*/
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
@@ -1063,7 +1063,7 @@ function loadUpManifestoPage() {
         $('#raw-manifesto-pool').append("<div class=\"raw-manifesto-item-" + i + "\"><h4><p class=\"keep-insideBSol pledge-plank\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
     // Add Save Button
-    $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-success  w-100 manifesto-save-button\">Save</button>");
+    $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-success  w-100 manifesto-save-button general-buttons-fmt\">Save</button>");
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
