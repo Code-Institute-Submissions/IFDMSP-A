@@ -647,3 +647,10 @@ color: yellow;
     background-color: var(--myRed);
     color: black;
 }
+
+.dpanel:hover {
+
+    border-radius: 10px;
+    background-color: var(--myRed);
+    color:orange;
+}

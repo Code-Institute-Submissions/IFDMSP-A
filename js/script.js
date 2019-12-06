@@ -769,7 +769,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active keep-insideBSol w-100\" role=\"button\" aria-pressed=\"true\">Population</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100\" role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100\" role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
@@ -1172,7 +1172,7 @@ function loadUpPledgePriorityPage() {
 
 
 
-    for (let i = 1; i < 7; i++) 
+    for (let i = 1; i < 8; i++) 
     {
         $('#manifesto-pledges').append('<div id="manifestio-pledge-'+i+'\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
 
@@ -1208,9 +1208,12 @@ $(document).ready(function(){
 $('#manifesto-pledge-item ,.mfi').click(function()
 {
 
-    alert($(this).text());
+    // alert($(this).text());
 
-    $('this').parent('div ,.mfi').addClass('highlight-manifesto-psel');
+
+$('this').parent('.mfi').first().addClass('highlight-manifesto-psel');
+
+    // $('this').parent('div ,.mfi').addClass('highlight-manifesto-psel');
 
  
 })    
@@ -1220,3 +1223,12 @@ $('#manifesto-pledge-item ,.mfi').click(function()
 
 
 })
+
+
+
+// Create Priority values for district
+function createDistrictPriority(){
+
+
+
+}
