@@ -622,6 +622,8 @@ color: yellow;
     border-radius: 10px;
     /* text-shadow: 1px 1px grey; */
     padding: 10px 10px 10px 10px;
+
+    min-height: 100px;
 }
 
 #pledge-priority h2 {
@@ -632,4 +634,16 @@ color: yellow;
 #base-plate h2 {
     background-color: rgb(223, 189, 128);
     color: var(--main-bg-color);
+}
+
+.pb{
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 80px;
+}
+
+.highlight-manifesto-psel{
+    background-color: var(--myRed);
+    color: black;
 }

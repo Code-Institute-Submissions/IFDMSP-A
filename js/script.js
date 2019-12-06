@@ -1160,7 +1160,7 @@ function loadUpPledgePriorityPage() {
 
     var pbuttons="";
     // var pbuttons = "<div col-6>";
-    pbuttons = pbuttons + "<div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">";
+    pbuttons = pbuttons + "<div class=\"btn-group btn-group-toggle pb\" data-toggle=\"buttons\">";
     pbuttons = pbuttons + "<label class=\"btn btn-secondary active\">";
     pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option1\" checked> L </label>";
     pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
@@ -1174,14 +1174,20 @@ function loadUpPledgePriorityPage() {
 
     for (let i = 1; i < 7; i++) 
     {
-        $('#manifesto-pledges').append('<h2>' + sessionStorage.getItem('M,' + i) + '</h2>');
+        $('#manifesto-pledges').append('<div id="manifestio-pledge-'+i+'\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
 
-        $('#pledge-priority').append('<h2>' + pbuttons + '</h2>');
+        $('#pledge-priority').append('<div id="button-array-'+i+'\"><h2>' + pbuttons + '</h2></div>');
     }
 
 
 
 }
+
+
+
+
+
+
 
 
 // Commit priority to specific district
@@ -1195,3 +1201,22 @@ function resetPriority() {
 
 
 }
+
+
+$(document).ready(function(){
+
+$('#manifesto-pledge-item ,.mfi').click(function()
+{
+
+    alert($(this).text());
+
+    $('this').parent('div ,.mfi').addClass('highlight-manifesto-psel');
+
+ 
+})    
+
+
+
+
+
+})
