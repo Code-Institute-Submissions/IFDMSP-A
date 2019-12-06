@@ -622,12 +622,11 @@ color: yellow;
     border-radius: 10px;
     /* text-shadow: 1px 1px grey; */
     padding: 10px 10px 10px 10px;
-
     min-height: 100px;
 }
 
 #pledge-priority h2 {
-    background-color: rgb(164, 177, 144);
+    background-color: wheat;
     color: var(--main-bg-color);
 }
 
@@ -636,21 +635,27 @@ color: yellow;
     color: var(--main-bg-color);
 }
 
-.pb{
-
+.pb {
     margin-top: 10px;
     margin-bottom: 10px;
     min-height: 80px;
 }
 
-.highlight-manifesto-psel{
+.district-buttons-fmt {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 10px;
+    text-shadow: 1px 1px rgb(156, 148, 148);
+}
+
+.highlight-manifesto-psel {
     background-color: var(--myRed);
     color: black;
 }
 
 .dpanel:hover {
-
     border-radius: 10px;
     background-color: var(--myRed);
-    color:orange;
+    color: orange;
 }

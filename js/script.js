@@ -768,8 +768,8 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-primary btn-lg active keep-insideBSol w-100\" role=\"button\" aria-pressed=\"true\">Population</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100\" role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 district-buttons-fmt\" role=\"button\" aria-pressed=\"true\">View Population</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100 district-buttons-fmt\" role=\"button\" aria-pressed=\"true\">View Pledge-Priority</a>"; /*@@@*/
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
@@ -1230,5 +1230,13 @@ $('this').parent('.mfi').first().addClass('highlight-manifesto-psel');
 function createDistrictPriority(){
 
 
+
+}
+
+
+
+function backToDistrictView(){
+ 
+    window.location.href="country-districts.html";
 
 }
