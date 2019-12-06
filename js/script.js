@@ -448,7 +448,7 @@ var gameData = {
 // ######################################################
 // State Controller monitoring (Available buttons etc)
 function stateController() {
-    // Call Pledge Priorotize Controlls Check
+
     // Check for double clik to move to top of Global Econnomy page
     $('table').dblclick(function () {
         window.location.href = "global-economics.html";
@@ -603,10 +603,10 @@ function populateTable() {
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
-    
+
         // SHow country count on the page
-        $('#country-ticker').text(cCp+1);
-    
+        $('#country-ticker').text(cCp + 1);
+
     }
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
@@ -1042,7 +1042,7 @@ function createEmptyManifesto() {
     alert("Blank Manifesto Created!");
 }
 
- 
+
 
 
 
@@ -1091,7 +1091,7 @@ function saveManifesto() {
     // Confirm Save and jumpt to Districts Screen
     alert("Manifesto Saved!");
 
-    window.location="country-districts.html";
+    window.location = "country-districts.html";
 }
 
 
@@ -1135,4 +1135,63 @@ $(document).ready(function () {
 function deselectAllPledges() {
     $('p').removeClass('selected-from-pledge-pool');
     return;
+}
+
+
+
+// PLEDGEPRIORITY PAGE
+
+function loadUpPledgePriorityPage() {
+
+    {
+        /* <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" checked> Active
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2"> Radio
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> Radio
+          </label>
+        </div>
+         */
+    }
+
+    var pbuttons="";
+    // var pbuttons = "<div col-6>";
+    pbuttons = pbuttons + "<div class=\"btn-group btn-group-toggle\" data-toggle=\"buttons\">";
+    pbuttons = pbuttons + "<label class=\"btn btn-secondary active\">";
+    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option1\" checked> Active </label>";
+    pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
+    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option2\"> Radio</label>";
+    pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
+    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option3\"> Radio</label>";
+    pbuttons = pbuttons + "</div>";
+    // pbuttons=pbuttons+"</div>";
+
+
+
+    for (let i = 1; i < 7; i++) 
+    {
+        $('#manifesto-pledges').append('<h2>' + sessionStorage.getItem('M,' + i) + '</h2>');
+
+        $('#pledge-priority').append('<h2>' + pbuttons + '</h2>');
+    }
+
+
+
+}
+
+
+// Commit priority to specific district
+function commitPriorityToDistrict() {
+
+
+}
+
+// Reset Prioritt to L
+function resetPriority() {
+
+
 }

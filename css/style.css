@@ -565,9 +565,8 @@ color: yellow;
     padding: 2px 5px 2px 5px;
 }
 
- 
-
 /* manifesto page */
+
 #raw-manifesto, h4 {
     border-radius: 10px;
     border: 1px solid;
@@ -580,16 +579,16 @@ color: yellow;
 }
 
 /* Make manifesto pledges white backing */
-.pledge-plank{
 
+.pledge-plank {
     background-color: white;
     color: var(--main-bg-color);
-    padding:5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
     border-radius: 10px;
-    
-
 }
+
 /* Make Selected Pledges RED */
+
 .selected-from-pledge-pool {
     background-color: var(--myRed);
     color: white;
@@ -598,6 +597,7 @@ color: yellow;
 }
 
 /* Manifesto Istructions box */
+
 .manifesto-instructions h1 {
     font-size: 1.5rem;
     background-color: wheat;
@@ -607,10 +607,29 @@ color: yellow;
 }
 
 /* Save Button on Manifesto Creation Page */
+
 .manifesto-save-button {
     margin-top: 10px;
     margin-bottom: 10px;
-
     box-shadow: black;
-    
+}
+
+/* PLEDGE PRIORITY PAGE */
+
+#manifesto-pledges h2 {
+    background-color: white;
+    color: var(--main-bg-color);
+    border-radius: 10px;
+    /* text-shadow: 1px 1px grey; */
+    padding: 10px 10px 10px 10px;
+}
+
+#pledge-priority h2 {
+    background-color: rgb(164, 177, 144);
+    color: var(--main-bg-color);
+}
+
+#base-plate h2 {
+    background-color: rgb(223, 189, 128);
+    color: var(--main-bg-color);
 }
