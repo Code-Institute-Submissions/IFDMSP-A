@@ -1158,7 +1158,7 @@ function loadUpPledgePriorityPage() {
          */
     }
 
-    var pbuttons="";
+    var pbuttons = "";
     // var pbuttons = "<div col-6>";
     pbuttons = pbuttons + "<div class=\"btn-group btn-group-toggle pb\" data-toggle=\"buttons\">";
     pbuttons = pbuttons + "<label class=\"btn btn-secondary active\">";
@@ -1172,11 +1172,10 @@ function loadUpPledgePriorityPage() {
 
 
 
-    for (let i = 1; i < 8; i++) 
-    {
-        $('#manifesto-pledges').append('<div id="manifestio-pledge-'+i+'\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
+    for (let i = 1; i < 8; i++) {
+        $('#manifesto-pledges').append('<div id="manifestio-pledge-' + i + '\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
 
-        $('#pledge-priority').append('<div id="button-array-'+i+'\"><h2>' + pbuttons + '</h2></div>');
+        $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + pbuttons + '</h2></div>');
     }
 
 
@@ -1203,20 +1202,19 @@ function resetPriority() {
 }
 
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-$('#manifesto-pledge-item ,.mfi').click(function()
-{
+    $('#manifesto-pledge-item ,.mfi').click(function () {
 
-    // alert($(this).text());
+        // alert($(this).text());
 
 
-$('this').parent('.mfi').first().addClass('highlight-manifesto-psel');
+        $('this').parent('.mfi').first().addClass('highlight-manifesto-psel');
 
-    // $('this').parent('div ,.mfi').addClass('highlight-manifesto-psel');
+        // $('this').parent('div ,.mfi').addClass('highlight-manifesto-psel');
 
- 
-})    
+
+    })
 
 
 
@@ -1227,16 +1225,18 @@ $('this').parent('.mfi').first().addClass('highlight-manifesto-psel');
 
 
 // Create Priority values for district
-function createDistrictPriority(){
+function createDistrictPriority() {
+
+    alert("Create District Priority!");
 
 
 
 }
 
 
+// Go Back To District View
+function backToDistrictView() {
 
-function backToDistrictView(){
- 
-    window.location.href="country-districts.html";
+    window.location.href = "country-districts.html";
 
 }
