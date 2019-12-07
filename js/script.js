@@ -819,6 +819,7 @@ function getRandom(limit) {
     rn = (Math.floor(Math.random() * limit)) + 1;
     return rn;
 }
+
 function CreateDistricts() {
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
@@ -1255,11 +1256,17 @@ function loadUpPledgePriorityPage() {
         // Build buttons on page right-hand side
         // Add the pledge line
         for (let i = 1; i < 8; i++) {
-            $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
-            // Add a line of buttons
-            $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + pbuttons + '</h2></div>');
+
+            var pdetailHlt="<span class=\"highlight-district-number\">"+i+"</span>";
+            $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' +pdetailHlt+ sessionStorage.getItem('M,' + i) + '</h2></div>');
+            
+            var PriorityButtonNumberHlt="<span class=\"highlight-district-number\">"+i+"</span>";
+            $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + PriorityButtonNumberHlt + ":" + pbuttons + '</h2></div>');
         }
     }
+
+
+
     // Manifesto Pledge Priotorization
     // Get Selcted Manifesto Pledge
     $(document).ready(function () {
@@ -1299,6 +1306,8 @@ function loadUpPledgePriorityPage() {
             }
         })
     })
+
+
     // Remove Highlight from the button array on
     // View Pledge Priority Page
     function removeButtonArrayHighlight() {
@@ -1310,17 +1319,13 @@ function loadUpPledgePriorityPage() {
         $('#button-array-6 button').removeClass('highlight-pbutt');
         $('#button-array-7 button').removeClass('highlight-pbutt');
     }
-    // Create Priority values for district
-    function createDistrictPriority() {
-        var mfestop1 = [];
-        for (let i = 0; i < 8; i++)
-            var result = $('option1').attr('name');
-        console.log(result);
-        // alert("District Manifesto Priority - Commited!");
-        // window.location.href = "country-districts.html";
-    }
-    // Go Back To District View
-    function backToDistrictView() {
-        window.location.href = "country-districts.html";
-    }
+}
+ 
+
+
+
+function backToDistrictView() {
+// Go back to View Districts Page
+   window.location.href="country-districts.html";
+
 }

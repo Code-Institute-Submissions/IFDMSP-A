@@ -650,14 +650,15 @@ color: yellow;
     text-shadow: 1px 1px rgb(156, 148, 148);
 }
 
+
 .priority-buttons-format div {
-    /* background-color: rgb(139, 45, 45); */
-    /* border-radius:10px;
+    background-color:var(--main-page-body-color); 
+    border-radius:10px;
     
     margin-bottom: 5px;
     margin-top: 5px;
     margin-left: 2px;
-    margin-right: auto; */
+    margin-right: auto; 
 }
 
 .highlight-manifesto-psel h2 {
