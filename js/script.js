@@ -816,6 +816,7 @@ function getRandom(limit) {
     rn = (Math.floor(Math.random() * limit)) + 1;
     return rn;
 }
+
 function CreateDistricts() {
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
@@ -1096,98 +1097,113 @@ function deselectAllPledges() {
     $('p').removeClass('selected-from-pledge-pool');
     return;
 }
+
+
+
+
+
+
 // PLEDGEPRIORITY PAGE
 function loadUpPledgePriorityPage() {
     {
-        /* <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="options" id="option1" checked> Active
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option2"> Radio
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="options" id="option3"> Radio
-          </label>
-        </div>
-         */
-    }
-    var pbuttons = "";
-    pbuttons = pbuttons + "<div class=\"btn-group btn-group-toggle priority-buttons-format\" data-toggle=\"buttons\">";
-    pbuttons = pbuttons + "<label class=\"btn btn-secondary active\">";
-    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option1\" checked>L</label>";
-    pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
-    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option2\"> M</label>";
-    pbuttons = pbuttons + "<label class=\"btn btn-secondary\">";
-    pbuttons = pbuttons + "<input type=\"radio\" name=\"options\" id=\"option3\"> H</label>";
-    pbuttons = pbuttons + "</div>";
-    // Build buttons on page right-hand side
-    for (let i = 1; i < 8; i++) {
-        $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
-        $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + pbuttons + '</h2></div>');
-    }
-}
+        var pbuttons = "";
+        pbuttons = pbuttons + "<div class=\"row\">";
+        pbuttons = pbuttons + "<div class=\"col-12 priority-buttons-format\">";
+        // 
+        pbuttons = pbuttons + "<div class=\"row=\">"
+        pbuttons = pbuttons + "<div class=\"col-12\">";
+        pbuttons = pbuttons + "<button type=\"button\" class=\"btn btn-primary btn-sm\">L</button>";
+        pbuttons = pbuttons + "<button type=\"button\" class=\"btn btn-warning btn-sm\">M</button>";
+        pbuttons = pbuttons + "<button type=\"button\" class=\"btn btn-info btn-sm\">H</button>";
+        pbuttons = pbuttons + "</div>";
+        pbuttons = pbuttons + "</div>";
+        // 
+        pbuttons = pbuttons + "</div>";
+        pbuttons = pbuttons + "</div>";
 
-
-
-
-// Manifesto Pledge Priotorization
-// Get Selcted Manifesto Pledge
-$(document).ready(function () {
-    $('#manifesto-pledge-item ,.mfi').click(function () {
-        removeButtonArrayHighlight();
-        var result = $(this).attr('id');
-        switch (result) {
-            case 'manifesto-pledge-1':
-                $('#button-array-1  h2').addClass('bg-dark');
-                break;
-            case 'manifesto-pledge-2':
-                $('#button-array-2  h2').addClass('bg-dark');
-                break;
-            case 'manifesto-pledge-3':
-                $('#button-array-3  h2').addClass('bg-dark');
-                break;
-            case 'manifesto-pledge-4':
-                $('#button-array-4  h2').addClass('bg-dark');
-                break;
-            case 'manifesto-pledge-5':
-                $('#button-array-5  h2').addClass('bg-dark');
-                break;
-            case 'manifesto-pledge-6':
-                $('#button-array-6  h2').addClass('bg-dark');
-                break;
-            case 'manifesto-pledge-7':
-                $('#button-array-7  h2').addClass('bg-dark');
-                break;
+        // Build buttons on page right-hand side
+        // Add the pledge line
+        for (let i = 1; i < 8; i++) {
+            $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
+           
+            // Add a line of buttons
+            $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + pbuttons + '</h2></div>');
         }
-        // $('this').addClass('highlight-manifesto-psel');
-        // $('this').parent('div ,.mfi').addClass('highlight-manifesto-psel');
+
+    }
+
+
+
+
+    // Manifesto Pledge Priotorization
+    // Get Selcted Manifesto Pledge
+    $(document).ready(function () {
+        $('#manifesto-pledge-item ,.mfi').click(function () {
+
+            removeButtonArrayHighlight();
+
+            var result = $(this).attr('id');
+            // alert(result);
+
+            switch (result) {
+
+                case 'manifesto-pledge-1':
+
+                    $('#button-array-1 button').addClass('highlight-pbutt');
+                    // var pressed = $(this).children('').attr("class")
+                    // alert(pressed);
+
+                    break;
+
+
+
+                case 'manifesto-pledge-2':
+                    $('#button-array-2  button').addClass('highlight-pbutt');
+                    break;
+                case 'manifesto-pledge-3':
+                    $('#button-array-3  button').addClass('highlight-pbutt');
+                    break;
+                case 'manifesto-pledge-4':
+                    $('#button-array-4  button').addClass('highlight-pbutt');
+                    break;
+                case 'manifesto-pledge-5':
+                    $('#button-array-5  button').addClass('highlight-pbutt');
+                    break;
+                case 'manifesto-pledge-6':
+                    $('#button-array-6  button').addClass('highlight-pbutt');
+                    break;
+                case 'manifesto-pledge-7':
+                    $('#button-array-7  button').addClass('highlight-pbutt');
+                    break;
+            }
+        })
     })
-})
-// Remove Highlight from the button array on
-// View Pledge Priority Page
-function removeButtonArrayHighlight() {
-    $('#button-array-1  h2').removeClass('bg-dark');
-    $('#button-array-2  h2').removeClass('bg-dark');
-    $('#button-array-3  h2').removeClass('bg-dark');
-    $('#button-array-4  h2').removeClass('bg-dark');
-    $('#button-array-5  h2').removeClass('bg-dark');
-    $('#button-array-6  h2').removeClass('bg-dark');
-    $('#button-array-7  h2').removeClass('bg-dark');
-}
+
+
+    // Remove Highlight from the button array on
+    // View Pledge Priority Page
+    function removeButtonArrayHighlight() {
+        $('#button-array-1 button').removeClass('highlight-pbutt');
+        $('#button-array-2 button').removeClass('highlight-pbutt');
+        $('#button-array-3 button').removeClass('highlight-pbutt');
+        $('#button-array-4 button').removeClass('highlight-pbutt');
+        $('#button-array-5 button').removeClass('highlight-pbutt');
+        $('#button-array-6 button').removeClass('highlight-pbutt');
+        $('#button-array-7 button').removeClass('highlight-pbutt');
+    }
 
 
 
-// Create Priority values for district
-function createDistrictPriority() {
-    var mfestop1 = [];
-    for (let i = 0; i < 8; i++)
-        var result = $('option1').attr('name');
-    console.log(result);
-    // alert("District Manifesto Priority - Commited!");
-    // window.location.href = "country-districts.html";
-}
-// Go Back To District View
-function backToDistrictView() {
-    window.location.href = "country-districts.html";
-}
+    // Create Priority values for district
+    function createDistrictPriority() {
+        var mfestop1 = [];
+        for (let i = 0; i < 8; i++)
+            var result = $('option1').attr('name');
+        console.log(result);
+        // alert("District Manifesto Priority - Commited!");
+        // window.location.href = "country-districts.html";
+    }
+    // Go Back To District View
+    function backToDistrictView() {
+        window.location.href = "country-districts.html";
+    }}
