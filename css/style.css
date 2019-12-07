@@ -533,10 +533,27 @@ color: yellow;
 
     text-shadow: 1px 1px rgb(156, 148, 148);
 }
+
+.priority-buttons-format{
+
+
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: auto;
+  
+ 
+}
+
+
+
+
 .highlight-manifesto-psel {
     background-color: var(--myRed);
     color: black;
 }
+
+
 .dpanel:hover {
     border-radius: 10px;
     background-color: var(--myRed);
