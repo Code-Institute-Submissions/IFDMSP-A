@@ -1,6 +1,9 @@
 // ------- DATA ----------- 
 // This variable is just to allow dev testing. When true it 
 // Shows the district solution answers.
+// Priority Button Line & Value
+var pblineValue = []; // Priority button line
+var pbl = 0;
 var testingMode = false;
 var unAddressedIssueFlashState = true;
 var cDO = [];
@@ -458,7 +461,7 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
-    // Check for double-clik to move to top of District Page
+    // Check for double-click to move to top of District Page
     // $('div ,p .colorTable').dblclick(function () {
     //     window.location.href = "country-districts.html";
     // });
@@ -816,7 +819,6 @@ function getRandom(limit) {
     rn = (Math.floor(Math.random() * limit)) + 1;
     return rn;
 }
-
 function CreateDistricts() {
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
@@ -1100,7 +1102,137 @@ function deselectAllPledges() {
 
 
 
+// SET  BUTTON VALUES
+// Iterate through Priority Button Rows & Find what priory was pushed
+// Set sessionStorage Accordingly
 
+function setBv(bp) {
+    // Check Line Values
+    switch (pbl) {
+        // Check P buttons Line 1
+        case 1:
+            if (bp == 1) {
+                pblineValue[1] = "L";
+                sessionStorage.setItem("PBL1", [pblineValue[1]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[1] = "M";
+                sessionStorage.setItem("PBL1", [pblineValue[1]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[1] = "H";
+                sessionStorage.setItem("PBL1", [pblineValue[1]]);
+                break;
+            }
+            break;
+            // Check P Buttons L2
+        case 2:
+            if (bp == 1) {
+                pblineValue[2] = "L";
+                sessionStorage.setItem("PBL2", [pblineValue[2]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[2] = "M";
+                sessionStorage.setItem("PBL2", [pblineValue[2]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[2] = "H";
+                sessionStorage.setItem("PBL2", [pblineValue[2]]);
+                break;
+            }
+            break;
+            // Check P Buttons L3
+        case 3:
+            if (bp == 1) {
+                pblineValue[3] = "L";
+                sessionStorage.setItem("PBL3", [pblineValue[3]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[3] = "M";
+                sessionStorage.setItem("PBL3", [pblineValue[3]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[3] = "H";
+                sessionStorage.setItem("PBL3", [pblineValue[3]]);
+                break;
+            }
+            break;
+        case 4:
+            if (bp == 1) {
+                pblineValue[4] = "L";
+                sessionStorage.setItem("PBL4", [pblineValue[4]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[4] = "M";
+                sessionStorage.setItem("PBL4", [pblineValue[4]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[4] = "H";
+                sessionStorage.setItem("PBL4", [pblineValue[4]]);
+                break;
+            }
+            break;
+        case 5:
+            if (bp == 1) {
+                pblineValue[5] = "L";
+                sessionStorage.setItem("PBL5", [pblineValue[5]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[5] = "M";
+                sessionStorage.setItem("PBL5", [pblineValue[5]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[5] = "H";
+                sessionStorage.setItem("PBL5", [pblineValue[5]]);
+                break;
+            }
+            break;
+        case 6:
+            if (bp == 1) {
+                pblineValue[6] = "L";
+                sessionStorage.setItem("PBL6", [pblineValue[6]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[6] = "M";
+                sessionStorage.setItem("PBL6", [pblineValue[6]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[6] = "H";
+                sessionStorage.setItem("PBL6", [pblineValue[6]]);
+                break;
+            }
+            break;
+        case 7:
+            if (bp == 1) {
+                pblineValue[7] = "L";
+                sessionStorage.setItem("PBL7", [pblineValue[7]]);
+                break;
+            }
+            if (bp == 2) {
+                pblineValue[7] = "M";
+                sessionStorage.setItem("PBL7", [pblineValue[7]]);
+                break;
+            }
+            if (bp == 3) {
+                pblineValue[7] = "H";
+                sessionStorage.setItem("PBL7", [pblineValue[7]]);
+                break;
+            }
+            break;
+    }
+}
 
 
 // PLEDGEPRIORITY PAGE
@@ -1112,74 +1244,61 @@ function loadUpPledgePriorityPage() {
         // 
         pbuttons = pbuttons + "<div class=\"row=\">"
         pbuttons = pbuttons + "<div class=\"col-12\">";
-        pbuttons = pbuttons + "<button type=\"button\" class=\"btn btn-primary btn-sm\">L</button>";
-        pbuttons = pbuttons + "<button type=\"button\" class=\"btn btn-warning btn-sm\">M</button>";
-        pbuttons = pbuttons + "<button type=\"button\" class=\"btn btn-info btn-sm\">H</button>";
+        pbuttons = pbuttons + "<button type=\"button\" onclick=\"setBv(1)\" class=\"btn btn-primary btn-sm\">L</button>";
+        pbuttons = pbuttons + "<button type=\"button\" onclick=\"setBv(2)\" class=\"btn btn-warning btn-sm\">M</button>";
+        pbuttons = pbuttons + "<button type=\"button\" onclick=\"setBv(3)\" class=\"btn btn-info btn-sm\">H</button>";
         pbuttons = pbuttons + "</div>";
         pbuttons = pbuttons + "</div>";
         // 
         pbuttons = pbuttons + "</div>";
         pbuttons = pbuttons + "</div>";
-
         // Build buttons on page right-hand side
         // Add the pledge line
         for (let i = 1; i < 8; i++) {
             $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' + sessionStorage.getItem('M,' + i) + '</h2></div>');
-           
             // Add a line of buttons
             $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + pbuttons + '</h2></div>');
         }
-
     }
-
-
-
-
     // Manifesto Pledge Priotorization
     // Get Selcted Manifesto Pledge
     $(document).ready(function () {
         $('#manifesto-pledge-item ,.mfi').click(function () {
-
             removeButtonArrayHighlight();
-
             var result = $(this).attr('id');
             // alert(result);
-
             switch (result) {
-
                 case 'manifesto-pledge-1':
-
                     $('#button-array-1 button').addClass('highlight-pbutt');
-                    // var pressed = $(this).children('').attr("class")
-                    // alert(pressed);
-
+                    pbl = 1;
                     break;
-
-
-
                 case 'manifesto-pledge-2':
                     $('#button-array-2  button').addClass('highlight-pbutt');
+                    pbl = 2;
                     break;
                 case 'manifesto-pledge-3':
                     $('#button-array-3  button').addClass('highlight-pbutt');
+                    pbl = 3;
                     break;
                 case 'manifesto-pledge-4':
                     $('#button-array-4  button').addClass('highlight-pbutt');
+                    pbl = 4;
                     break;
                 case 'manifesto-pledge-5':
                     $('#button-array-5  button').addClass('highlight-pbutt');
+                    pbl = 5;
                     break;
                 case 'manifesto-pledge-6':
                     $('#button-array-6  button').addClass('highlight-pbutt');
+                    pbl = 6;
                     break;
                 case 'manifesto-pledge-7':
                     $('#button-array-7  button').addClass('highlight-pbutt');
+                    pbl = 7;
                     break;
             }
         })
     })
-
-
     // Remove Highlight from the button array on
     // View Pledge Priority Page
     function removeButtonArrayHighlight() {
@@ -1191,9 +1310,6 @@ function loadUpPledgePriorityPage() {
         $('#button-array-6 button').removeClass('highlight-pbutt');
         $('#button-array-7 button').removeClass('highlight-pbutt');
     }
-
-
-
     // Create Priority values for district
     function createDistrictPriority() {
         var mfestop1 = [];
@@ -1206,4 +1322,5 @@ function loadUpPledgePriorityPage() {
     // Go Back To District View
     function backToDistrictView() {
         window.location.href = "country-districts.html";
-    }}
+    }
+}
