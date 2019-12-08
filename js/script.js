@@ -785,8 +785,8 @@ function viewDistricts() {
         // outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\" role=\"button\" aria-pressed=\"true\">Population</a>";
         // outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onmouseclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
 
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPopulation()\"   role=\"button\" aria-pressed=\"true\">Population</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPopulation()\"   role=\"button\" aria-pressed=\"true\">Populus</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
 
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
@@ -802,24 +802,51 @@ function viewDistricts() {
 }
 
 
-// Save Current ristrict on Button Press
-// to go to pledge prioroty page
+
+
+// Save Current district on Button Press
+// to go to "pledge prioroty page"
 function saveCurrentDistrict() {
 
+    $('div .district-buttons-box').click(function () {
+        var result=$(this).closest('.district-buttons-box').attr("id");
+        sessionStorage.setItem("CD",result);
 
-
+    })
+ 
     window.location.href = "pledge-priority.html";
 
 }
 
-// View Population in district
-function viewPopulation(){
 
 
 
+// Save Current District
+// View "Population" in district
+function viewPopulation() {
 
-    window.location.href="generate-populus";
+    $('div .district-buttons-box').click(function () {
+        var result=$(this).closest('.district-buttons-box').attr("id");
+        sessionStorage.setItem("CD",result);
+
+    })
+
+    window.location.href = "generate-populus.html";
 }
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
 
 
 
