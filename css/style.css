@@ -700,7 +700,7 @@ color: yellow;
     padding-top: 2px;
 
     border: 1px solid;
-    background-color: burlywood;
+    background-color: pink;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 2px 2px 2px rgb(253, 0, 0);
 }

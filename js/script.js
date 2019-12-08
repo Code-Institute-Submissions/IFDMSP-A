@@ -920,18 +920,7 @@ function showCurrentDistrict() {
 
 
 
-
-// function showCurrentPromotion()
-// {
-// // Show Prometed Pledge Values in District
-
-// var promotedPledgesString = "ZZZ-TOP";
-// $('#promoted-pledges p').text(promotedPledgesString);
-
-// }
-
-
-
+ 
 
 // Count UP Issues
 // i1-5 = question number 1st charcater, 
@@ -965,6 +954,9 @@ function countUpIssues(issue, i1, i2, i3, i4, i5) {
 function myTrim(x) {
     return x.replace(/^\s+|\s+$/gm, ' ');
 }
+
+
+
 // ////////////////////////////////
 // MAIN GAME ENGINE & LOGIC      //
 // ////////////////////////////////
@@ -1171,6 +1163,13 @@ function resetGame(runProcess) {
 
 
 
+
+
+
+
+
+
+
 // Main Setup Game Setup Routine
 // This routine will set up basic structures
 // Entry call - Index.html - Reset Game 
@@ -1181,6 +1180,9 @@ function setupGame() {
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
 }
+
+
+
 
 
 
@@ -1280,7 +1282,7 @@ function saveManifesto() {
     //  Save Manifesto list to "sessionStorage"
     for (let i = 1; i < 8; i++) {
         var blankManifestoKey = "M," + i;
-        // console.log(blankManifestoKey);
+   
         // Create session it in sessionStoragememory
         blankManifestoLine = $('.raw-manifesto-item-' + i + ' h4 p').first('p').text();
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
@@ -1338,16 +1340,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[1] = "L";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
+                $("#button-array-1").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[1] = "M";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
+                $("#button-array-1").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[1] = "H";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
+                $("#button-array-1").hide();
                 break;
             }
             break;
@@ -1356,16 +1361,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[2] = "L";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
+                $("#button-array-2").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[2] = "M";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
+                $("#button-array-2").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[2] = "H";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
+                $("#button-array-2").hide();
                 break;
             }
             break;
@@ -1374,16 +1382,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[3] = "L";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
+                $("#button-array-3").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[3] = "M";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
+                $("#button-array-3").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[3] = "H";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
+                $("#button-array-3").hide();
                 break;
             }
             break;
@@ -1391,16 +1402,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[4] = "L";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
+                $("#button-array-4").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[4] = "M";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
+                $("#button-array-4").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[4] = "H";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
+                $("#button-array-4").hide();
                 break;
             }
             break;
@@ -1408,16 +1422,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[5] = "L";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
+                $("#button-array-5").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[5] = "M";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
+                $("#button-array-5").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[5] = "H";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
+                $("#button-array-5").hide();
                 break;
             }
             break;
@@ -1425,16 +1442,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[6] = "L";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
+                $("#button-array-6").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[6] = "M";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
+                $("#button-array-6").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[6] = "H";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
+                $("#button-array-6").hide();
                 break;
             }
             break;
@@ -1442,16 +1462,19 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[7] = "L";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
+                $("#button-array-7").hide();
                 break;
             }
             if (bp == 2) {
                 pblineValue[7] = "M";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
+                $("#button-array-7").hide();
                 break;
             }
             if (bp == 3) {
                 pblineValue[7] = "H";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
+                $("#button-array-7").hide();
                 break;
             }
             break;
