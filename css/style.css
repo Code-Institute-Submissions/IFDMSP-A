@@ -691,7 +691,7 @@ color: yellow;
 }
 
 .promo-circle {
-    font-size: 1rem;
+    font-size: 1.25rem;
     border-radius: 10px;
     
     padding-left: 2px;
@@ -702,5 +702,5 @@ color: yellow;
     border: 1px solid;
     background-color: pink;
     color: white;
-    text-shadow: 2px 2px 2px rgb(253, 0, 0);
+    text-shadow: 4px 4px 4px rgb(253, 0, 0);
 }
