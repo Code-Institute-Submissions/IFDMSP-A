@@ -650,15 +650,13 @@ color: yellow;
     text-shadow: 1px 1px rgb(156, 148, 148);
 }
 
-
 .priority-buttons-format div {
-    background-color:var(--main-page-body-color); 
-    border-radius:10px;
-    
+    background-color: var(--main-page-body-color);
+    border-radius: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
     margin-left: 2px;
-    margin-right: auto; 
+    margin-right: auto;
 }
 
 .highlight-manifesto-psel h2 {
@@ -672,19 +670,37 @@ color: yellow;
     color: orange;
 }
 
-.highlight-pbutt{
-
+.highlight-pbutt {
     background-color: var(--myRed);
     color: black;
 }
 
-
-#current-district{
-/* On pledge Promotion page. The current District Name  */
+#current-district {
+    /* On pledge Promotion page. The current District Name  */
     border-radius: 10px;
     padding: 2px 5px 5px 2px;
     background-color: wheat;
     color: var(--myRed);
     text-shadow: 1px 1px 1px blue;
+}
 
+#promoted-pledges p {
+    font-size: 1rem;
+    background-color: yellow;
+    color: black;
+}
+
+.promo-circle {
+    font-size: 1rem;
+    border-radius: 10px;
+    
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-top: 2px;
+
+    border: 1px solid;
+    background-color: burlywood;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 }

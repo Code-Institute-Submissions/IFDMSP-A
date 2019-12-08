@@ -68,7 +68,7 @@ function loadUpYourPledgePriorityPage() {
     // Loadup Total Pledge Value Units Available
     $("#PTV").text(manifesto["PledgeAvailableTotalValue"]);
 
- 
+
 }
 
 
@@ -733,6 +733,42 @@ function viewDistricts() {
         // Tabloid Banner
         outputDistrictHtml = outputDistrictHtml + "<div class=\"tabloid\">";
         outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!! ";
+
+        // <!-- Promoted Manifesto Pledges -->
+
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"promoted-pledges\" class=\"col-12\">";
+        outputDistrictHtml = outputDistrictHtml + "<p>";
+        outputDistrictHtml = outputDistrictHtml + "";
+        outputDistrictHtml = outputDistrictHtml + "MANIFESTO - PROMOTED :";
+
+        var encloseFront = "<span class=\"promo-circle\">";
+        var encloseEnd = "</span\">";
+
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",1") + ":" + encloseEnd;
+        
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",2") + ":" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",3") + ":" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",4") + ":" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",5") + ":" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",6") + ":" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",7") + ":" + encloseEnd;
+
+
+
+
+
+
+
+
+
+
+        outputDistrictHtml = outputDistrictHtml + "</p>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
+
+
         // UK MAP IMAGE
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"col-12 map-uk\">";
@@ -740,6 +776,8 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
+
+
         outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
@@ -817,37 +855,37 @@ function viewDistricts() {
 function saveCurrentDistrict() {
 
     $('div .district-buttons-box').click(function () {
-        var result=$(this).closest('.district-buttons-box').attr("id");
-        sessionStorage.setItem("CD",result);
+        var result = $(this).closest('.district-buttons-box').attr("id");
+        sessionStorage.setItem("CD", result);
 
     })
- 
+
     window.location.href = "pledge-priority.html";
 }
 
 
 
 
-function createDistrictPriority(){
-// Create Distric Priority 
+function createDistrictPriority() {
+    // Create Distric Priority 
 
-// Save District Promoted Pledges From Pledge Priority
-// Buttons
-var cdn =sessionStorage.getItem("CD");
+    // Save District Promoted Pledges From Pledge Priority
+    // Buttons Values
+    var cdn = sessionStorage.getItem("CD");
 
-sessionStorage.setItem("DMP,"+cdn+",1",sessionStorage.getItem("PBL1"));
-sessionStorage.setItem("DMP,"+cdn+",2",sessionStorage.getItem("PBL2"));
-sessionStorage.setItem("DMP,"+cdn+",3",sessionStorage.getItem("PBL3"));
-sessionStorage.setItem("DMP,"+cdn+",4",sessionStorage.getItem("PBL4"));
-sessionStorage.setItem("DMP,"+cdn+",5",sessionStorage.getItem("PBL5"));
-sessionStorage.setItem("DMP,"+cdn+",6",sessionStorage.getItem("PBL6"));
-sessionStorage.setItem("DMP,"+cdn+",7",sessionStorage.getItem("PBL7"));
+    sessionStorage.setItem("DMP," + cdn + ",1", sessionStorage.getItem("PBL1"));
+    sessionStorage.setItem("DMP," + cdn + ",2", sessionStorage.getItem("PBL2"));
+    sessionStorage.setItem("DMP," + cdn + ",3", sessionStorage.getItem("PBL3"));
+    sessionStorage.setItem("DMP," + cdn + ",4", sessionStorage.getItem("PBL4"));
+    sessionStorage.setItem("DMP," + cdn + ",5", sessionStorage.getItem("PBL5"));
+    sessionStorage.setItem("DMP," + cdn + ",6", sessionStorage.getItem("PBL6"));
+    sessionStorage.setItem("DMP," + cdn + ",7", sessionStorage.getItem("PBL7"));
 
-// 
+    // 
 
-var cdn = countryDistricts[sessionStorage.getItem("CD")];
-alert("Your Pledges have now been \"PROMOTED\" to "+cdn+" District!")
-window.location.href="country-districts.html";
+    var cdn = countryDistricts[sessionStorage.getItem("CD")];
+    alert("Your Pledges have now been \"PROMOTED\" to " + cdn + " District!")
+    window.location.href = "country-districts.html";
 }
 
 
@@ -863,8 +901,8 @@ window.location.href="country-districts.html";
 function viewPopulation() {
 
     $('div .district-buttons-box').click(function () {
-        var result=$(this).closest('.district-buttons-box').attr("id");
-        sessionStorage.setItem("CD",result);
+        var result = $(this).closest('.district-buttons-box').attr("id");
+        sessionStorage.setItem("CD", result);
 
     })
 
@@ -873,13 +911,24 @@ function viewPopulation() {
 
 
 
-function showCurrentDistrict(){
-       // Show current district number
-       var cdn = sessionStorage.getItem("CD");
-       $("#current-district ,p").text("District ~"+cdn+"~ "+countryDistricts[cdn]);
+function showCurrentDistrict() {
+    // Show current district number
+    var cdn = sessionStorage.getItem("CD");
+    $("#current-district ,p").text("District ~" + cdn + "~ " + countryDistricts[cdn]);
 }
 
 
+
+
+
+// function showCurrentPromotion()
+// {
+// // Show Prometed Pledge Values in District
+
+// var promotedPledgesString = "ZZZ-TOP";
+// $('#promoted-pledges p').text(promotedPledgesString);
+
+// }
 
 
 
@@ -1090,6 +1139,34 @@ function resetGame(runProcess) {
         // Set Reset Flag To show Game has been Reset;
         localStorage.setItem("newGame", "1");
     }
+
+
+    // Rest Pledge priority from pledge priority page to Low (L)
+    // Including in all districts
+    pblineValue[1] = "L";
+    pblineValue[2] = "L";
+    pblineValue[3] = "L";
+    pblineValue[4] = "L";
+    pblineValue[5] = "L";
+    pblineValue[6] = "L";
+    pblineValue[7] = "L";
+
+    for(let i=1;i<noOfDistricts;i++){
+        // reset array to low
+        sessionStorage.setItem("PBL"+i,"L");
+        // reset all district priority setting to Low
+        sessionStorage.setItem("DMP,"+i+",1","L");
+        sessionStorage.setItem("DMP,"+i+",2","L");
+        sessionStorage.setItem("DMP,"+i+",3","L");
+        sessionStorage.setItem("DMP,"+i+",4","L");
+        sessionStorage.setItem("DMP,"+i+",5","L");
+        sessionStorage.setItem("DMP,"+i+",6","L");
+        sessionStorage.setItem("DMP,"+i+",7","L");
+    }
+
+    // sessionStorage.setItem()
+    // sessionStorage.setItem("PBL1", [pblineValue[1]]);
+
 }
 
 
@@ -1427,15 +1504,15 @@ function loadUpPledgePriorityPage() {
                     break;
                 case 'manifesto-pledge-2':
                     $('#button-array-2  button').addClass('highlight-pbutt');
-                    pbl = 2;// Button Array Line 2
+                    pbl = 2; // Button Array Line 2
                     break;
                 case 'manifesto-pledge-3':
                     $('#button-array-3  button').addClass('highlight-pbutt');
-                    pbl = 3;// Button Array Line 3
+                    pbl = 3; // Button Array Line 3
                     break;
                 case 'manifesto-pledge-4':
                     $('#button-array-4  button').addClass('highlight-pbutt');
-                    pbl = 4;// Button Array Line 4
+                    pbl = 4; // Button Array Line 4
                     break;
                 case 'manifesto-pledge-5':
                     $('#button-array-5  button').addClass('highlight-pbutt');
