@@ -677,3 +677,14 @@ color: yellow;
     background-color: var(--myRed);
     color: black;
 }
+
+
+#current-district{
+/* On pledge Promotion page. The current District Name  */
+    border-radius: 10px;
+    padding: 2px 5px 5px 2px;
+    background-color: wheat;
+    color: var(--myRed);
+    text-shadow: 1px 1px 1px blue;
+
+}

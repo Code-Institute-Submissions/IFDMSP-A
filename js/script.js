@@ -67,7 +67,12 @@ function loadUpYourPledgePriorityPage() {
     $("#pledge-value-7 h3").text(manifesto["V7"]);
     // Loadup Total Pledge Value Units Available
     $("#PTV").text(manifesto["PledgeAvailableTotalValue"]);
+
+ 
 }
+
+
+
 // Problems in districts
 var districtProblems = {
     // Questions		
@@ -655,8 +660,11 @@ function grabThreeCountries() {
     // Acknowledge 3 Random coutries have been found. No need to repeat
     threeCountriesSelected = true;
 }
+
+
+
+
 // Assemble View District Information
-// 
 function viewDistricts() {
     //    alert(sessionStorage.getItem("D,0"));
     // Error Check if Data is created or not.
@@ -815,8 +823,37 @@ function saveCurrentDistrict() {
     })
  
     window.location.href = "pledge-priority.html";
-
 }
+
+
+
+
+function createDistrictPriority(){
+// Create Distric Priority 
+
+// Save District Promoted Pledges From Pledge Priority
+// Buttons
+var cdn =sessionStorage.getItem("CD");
+
+sessionStorage.setItem("DMP,"+cdn+",1",sessionStorage.getItem("PBL1"));
+sessionStorage.setItem("DMP,"+cdn+",2",sessionStorage.getItem("PBL2"));
+sessionStorage.setItem("DMP,"+cdn+",3",sessionStorage.getItem("PBL3"));
+sessionStorage.setItem("DMP,"+cdn+",4",sessionStorage.getItem("PBL4"));
+sessionStorage.setItem("DMP,"+cdn+",5",sessionStorage.getItem("PBL5"));
+sessionStorage.setItem("DMP,"+cdn+",6",sessionStorage.getItem("PBL6"));
+sessionStorage.setItem("DMP,"+cdn+",7",sessionStorage.getItem("PBL7"));
+
+// 
+
+var cdn = countryDistricts[sessionStorage.getItem("CD")];
+alert("Your Pledges have now been \"PROMOTED\" to "+cdn+" District!")
+window.location.href="country-districts.html";
+}
+
+
+
+
+
 
 
 
@@ -836,18 +873,11 @@ function viewPopulation() {
 
 
 
-
-
-
- 
-
-
-
-
-
-
-
-
+function showCurrentDistrict(){
+       // Show current district number
+       var cdn = sessionStorage.getItem("CD");
+       $("#current-district ,p").text("District ~"+cdn+"~ "+countryDistricts[cdn]);
+}
 
 
 
@@ -1393,31 +1423,31 @@ function loadUpPledgePriorityPage() {
             switch (result) {
                 case 'manifesto-pledge-1':
                     $('#button-array-1 button').addClass('highlight-pbutt');
-                    pbl = 1;
+                    pbl = 1; // Button Array Line 1
                     break;
                 case 'manifesto-pledge-2':
                     $('#button-array-2  button').addClass('highlight-pbutt');
-                    pbl = 2;
+                    pbl = 2;// Button Array Line 2
                     break;
                 case 'manifesto-pledge-3':
                     $('#button-array-3  button').addClass('highlight-pbutt');
-                    pbl = 3;
+                    pbl = 3;// Button Array Line 3
                     break;
                 case 'manifesto-pledge-4':
                     $('#button-array-4  button').addClass('highlight-pbutt');
-                    pbl = 4;
+                    pbl = 4;// Button Array Line 4
                     break;
                 case 'manifesto-pledge-5':
                     $('#button-array-5  button').addClass('highlight-pbutt');
-                    pbl = 5;
+                    pbl = 5; // Button Array Line 5
                     break;
                 case 'manifesto-pledge-6':
                     $('#button-array-6  button').addClass('highlight-pbutt');
-                    pbl = 6;
+                    pbl = 6; // Button Array Line 6
                     break;
                 case 'manifesto-pledge-7':
                     $('#button-array-7  button').addClass('highlight-pbutt');
-                    pbl = 7;
+                    pbl = 7; // Button Array Line 7
                     break;
             }
         })
