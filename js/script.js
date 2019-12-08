@@ -1385,19 +1385,22 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[1] = "L";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
-                $("#button-array-1").hide();
+                $("#button-array-1").hide("slow");
+                $("#manifesto-pledge-1").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[1] = "M";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
-                $("#button-array-1").hide();
+                $("#button-array-1").hide("slow");
+                $("#manifesto-pledge-1").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[1] = "H";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
-                $("#button-array-1").hide();
+                $("#button-array-1").hide("slow");
+                $("#manifesto-pledge-1").hide("slow");
                 break;
             }
             break;
@@ -1406,19 +1409,22 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[2] = "L";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
-                $("#button-array-2").hide();
+                $("#button-array-2").hide("slow");
+                $("#manifesto-pledge-2").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[2] = "M";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
-                $("#button-array-2").hide();
+                $("#button-array-2").hide("slow");
+                $("#manifesto-pledge-2").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[2] = "H";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
-                $("#button-array-2").hide();
+                $("#button-array-2").hide("slow");
+                $("#manifesto-pledge-2").hide("slow");
                 break;
             }
             break;
@@ -1427,19 +1433,22 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[3] = "L";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
-                $("#button-array-3").hide();
+                $("#button-array-3").hide("slow");
+                $("#manifesto-pledge-3").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[3] = "M";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
-                $("#button-array-3").hide();
+                $("#button-array-3").hide("slow");
+                $("#manifesto-pledge-3").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[3] = "H";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
-                $("#button-array-3").hide();
+                $("#button-array-3").hide("slow");
+                $("#manifesto-pledge-3").hide("slow");
                 break;
             }
             break;
@@ -1447,19 +1456,22 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[4] = "L";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
-                $("#button-array-4").hide();
+                $("#button-array-4").hide("slow");
+                $("#manifesto-pledge-4").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[4] = "M";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
-                $("#button-array-4").hide();
+                $("#button-array-4").hide("slow");
+                $("#manifesto-pledge-4").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[4] = "H";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
-                $("#button-array-4").hide();
+                $("#button-array-4").hide("slow");
+                $("#manifesto-pledge-4").hide("slow");
                 break;
             }
             break;
@@ -1467,19 +1479,22 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[5] = "L";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
-                $("#button-array-5").hide();
+                $("#button-array-5").hide("slow");
+                $("#manifesto-pledge-5").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[5] = "M";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
-                $("#button-array-5").hide();
+                $("#button-array-5").hide("slow");
+                $("#manifesto-pledge-5").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[5] = "H";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
-                $("#button-array-5").hide();
+                $("#button-array-5").hide("slow");
+                $("#manifesto-pledge-5").hide("slow");
                 break;
             }
             break;
@@ -1487,19 +1502,22 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[6] = "L";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
-                $("#button-array-6").hide();
+                $("#button-array-6").hide("slow");
+                $("#manifesto-pledge-6").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[6] = "M";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
-                $("#button-array-6").hide();
+                $("#button-array-6").hide("slow");
+                $("#manifesto-pledge-6").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[6] = "H";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
-                $("#button-array-6").hide();
+                $("#button-array-6").hide("slow");
+                $("#manifesto-pledge-6").hide("slow");
                 break;
             }
             break;
@@ -1507,24 +1525,28 @@ function setBv(bp) {
             if (bp == 1) {
                 pblineValue[7] = "L";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
-                $("#button-array-7").hide();
+                $("#button-array-7").hide("slow");
+                $("#manifesto-pledge-7").hide("slow");
                 break;
             }
             if (bp == 2) {
                 pblineValue[7] = "M";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
-                $("#button-array-7").hide();
+                $("#button-array-7").hide("slow");
+                $("#manifesto-pledge-7").hide("slow");
                 break;
             }
             if (bp == 3) {
                 pblineValue[7] = "H";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
-                $("#button-array-7").hide();
+                $("#button-array-7").hide("slow");
+                $("#manifesto-pledge-7").hide("slow");
                 break;
             }
             break;
     }
 }
+
 
 
 // PLEDGEPRIORITY PAGE
@@ -1558,9 +1580,11 @@ function loadUpPledgePriorityPage() {
 
 
 
-    // Manifesto Pledge Priotorization
-    // Get Selcted Manifesto Pledge
+
     $(document).ready(function () {
+        // Manifesto Pledge Priotorization
+        // Get Selcted Manifesto Pledge
+
         $('#manifesto-pledge-item ,.mfi').click(function () {
             removeButtonArrayHighlight();
             var result = $(this).attr('id');
