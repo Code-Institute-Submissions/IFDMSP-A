@@ -454,6 +454,9 @@ function stateController() {
         window.location.href = "global-economics.html";
         return;
     });
+
+
+
     // Country Districts Page
     // Double tap to Reload Page.. I.e Navigate to top
     // // Refreshed
@@ -461,6 +464,13 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
+
+
+
+
+
+
+
     // Check for double-click to move to top of District Page
     // $('div ,p .colorTable').dblclick(function () {
     //     window.location.href = "country-districts.html";
@@ -703,7 +713,9 @@ function viewDistricts() {
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
         // Get Total Sum Value
         issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
-        console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":" + "@" + issueWeightingTotal);
+
+        // console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":" + "@" + issueWeightingTotal);
+
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
@@ -766,8 +778,18 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "<p></p>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\" role=\"button\" aria-pressed=\"true\">Population</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\" class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
+
+        var dn = "<span id=\"" + districtNumber + "\"></span>";
+
+        outputDistrictHtml = outputDistrictHtml + "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
+        // outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\" role=\"button\" aria-pressed=\"true\">Population</a>";
+        // outputDistrictHtml = outputDistrictHtml + "<a href=\"pledge-priority.html\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onmouseclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
+
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"generate-populus.html\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPopulation()\"   role=\"button\" aria-pressed=\"true\">Population</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\">Pledge-Priority</a>"; /*@@@*/
+
+        outputDistrictHtml = outputDistrictHtml + "</div>";
+
         outputDistrictHtml = outputDistrictHtml + "</div>";
         outputDistrictHtml = outputDistrictHtml + "</h3>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
@@ -778,6 +800,33 @@ function viewDistricts() {
         // 
     }
 }
+
+
+// Save Current ristrict on Button Press
+// to go to pledge prioroty page
+function saveCurrentDistrict() {
+
+
+
+    window.location.href = "pledge-priority.html";
+
+}
+
+// View Population in district
+function viewPopulation(){
+
+
+
+
+    window.location.href="generate-populus";
+}
+
+
+
+
+
+
+
 // Count UP Issues
 // i1-5 = question number 1st charcater, 
 // Issue = character looking for..ie issue type 
@@ -955,6 +1004,10 @@ function CreateDistricts() {
         // console.log(DI + "/" + LO);
     }
 }
+
+
+
+
 // Set Flag to Reset The Game
 // All Game data will be lost!!!!
 // The Go Back to main Page
@@ -963,6 +1016,9 @@ function clearGameData() {
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
 }
+
+
+
 // This routine checks a flag to see if a request has been issued
 // To reset the Game. If so it calls the  setupGame routine
 // Then it resets the flag , so its not repeated again
@@ -978,6 +1034,9 @@ function resetGame(runProcess) {
         localStorage.setItem("newGame", "1");
     }
 }
+
+
+
 // Main Setup Game Setup Routine
 // This routine will set up basic structures
 // Entry call - Index.html - Reset Game 
@@ -988,6 +1047,10 @@ function setupGame() {
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
 }
+
+
+
+
 // }
 // Wipe Out Old Dsitrict Pledges Made.
 // Ready for new Game
@@ -1002,6 +1065,10 @@ function WipeOutOldDistrictPledges() {
     }
     // alert("Previous Entries Erased!");
 }
+
+
+
+
 // Flash Unaddressed Issue in Country Districts
 // Entry call = country-district.html
 function flashUnaddressedIssue() {
@@ -1016,6 +1083,10 @@ function flashUnaddressedIssue() {
         return;
     }
 }
+
+
+
+
 // Create Empty Manifesto
 // This is the Manifest your Politician will use
 // In the game..
@@ -1032,11 +1103,19 @@ function createEmptyManifesto() {
     }
     alert("Blank Manifesto Created!");
 }
+
+
+
+
 // Reset Manifesto
 function resetManifesto() {
     createEmptyManifesto();
     window.location = "create-manifesto.html";
 }
+
+
+
+
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
     for (let i = 1; i < noOfProblems + 1; i++) {
@@ -1051,6 +1130,10 @@ function loadUpManifestoPage() {
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
+
+
+
+
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1072,6 +1155,9 @@ function saveManifesto() {
     alert("Manifesto Saved!");
     window.location = "country-districts.html";
 }
+
+
+
 // Hightlight  Pledges in pool
 $(document).ready(function () {
     $("#raw-pledge-pool p").click(function () {
@@ -1095,6 +1181,9 @@ $(document).ready(function () {
         $(this).hide("slow");
     });
 });
+
+
+
 // Deselect All Pledges
 function deselectAllPledges() {
     $('p').removeClass('selected-from-pledge-pool');
@@ -1257,10 +1346,10 @@ function loadUpPledgePriorityPage() {
         // Add the pledge line
         for (let i = 1; i < 8; i++) {
 
-            var pdetailHlt="<span class=\"highlight-district-number\">"+i+"</span>";
-            $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' +pdetailHlt+ sessionStorage.getItem('M,' + i) + '</h2></div>');
-            
-            var PriorityButtonNumberHlt="<span class=\"highlight-district-number\">"+i+"</span>";
+            var pdetailHlt = "<span class=\"highlight-district-number\">" + i + "</span>";
+            $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' + pdetailHlt + sessionStorage.getItem('M,' + i) + '</h2></div>');
+
+            var PriorityButtonNumberHlt = "<span class=\"highlight-district-number\">" + i + "</span>";
             $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + PriorityButtonNumberHlt + ":" + pbuttons + '</h2></div>');
         }
     }
@@ -1320,12 +1409,12 @@ function loadUpPledgePriorityPage() {
         $('#button-array-7 button').removeClass('highlight-pbutt');
     }
 }
- 
+
 
 
 
 function backToDistrictView() {
-// Go back to View Districts Page
-   window.location.href="country-districts.html";
+    // Go back to View Districts Page
+    window.location.href = "country-districts.html";
 
 }
