@@ -685,7 +685,16 @@ color: yellow;
 }
 
 #promoted-pledges p {
+
+    border-radius: 10px;
     font-size: 1rem;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+
     background-color: yellow;
     color: black;
 }
