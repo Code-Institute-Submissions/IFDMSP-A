@@ -931,7 +931,6 @@ function viewPop() {
 
     window.location.href = "generate-populus.html";
 
-
 }
 
 
@@ -942,43 +941,117 @@ function loadUpPopulation() {
     // POPULATION TABLE 
     // Create Table & LOad Up Population of District
     // Get district
+
+    // <!-- Attach after table this -->
+    // <div class="row">
+    //     <div class="col-12">
+    //         <ul class="pop-tab-list">
+    //             <h2>
+    //                 <li class="pop-idx">
+    //                     1
+    //                 </li>
+    //                 <li class="pop-name">
+    //                     peter.A. smith
+    //                 </li>
+    //                 <li class="pop-cnc">
+    //                     crime
+    //                 </li>
+    //                 <li class="pop-tprty">
+    //                     labour
+    //                 </li>
+    //                 <li class="pop-swing">
+    //                     50%
+    //                 </li>
+    //             </h2>
+    //         </ul>
+    //     </div>
+    // </div>
+
+
     var cd = sessionStorage.getItem("CD");
-    // alert(cd);
-
     var tableLineout = "";
-
-    var tableLineout = tableLineout + "<table>";
-    var tableLineout = tableLineout + "<thead>";
-    var tableLineout = tableLineout + "<td>People</td>";
-    var tableLineout = tableLineout + "";
-    var tableLineout = tableLineout + "";
-    var tableLineout = tableLineout + "";
-    var tableLineout = tableLineout + "</thead>";
-    var tableLineout = tableLineout + "";
-
-    var LO = "";
-
-    LO = "<table class=\"table-format\" style=\"100%\" >    <tr><th><h2>NAMES</h2></th>  <th><h2>MAIN-CONCERN</h2></th>  <th><h2>TRADITIONAL-PARTY</h2></th>   <th><h2>SWING@<h2></th> </tr>"
+    var currentDistrict = sessionStorage.getItem("CD");
+    var districtChunck = [] = sessionStorage.getItem("D," + currentDistrict);
+    const pinfoStart = peopleArray = districtChunck.indexOf('@');
+    const dataEnd = peopleArray = districtChunck.indexOf('~');
 
 
-    $("#populus-table").append(LO);
+    var popData = districtChunck.slice(pinfoStart, dataEnd);
 
 
 
-    for (let i = 0; i < 5; i++) {
+    var peopleList = "";
+    peopleList = popData.split('^');
 
 
 
 
-        LO = "<tr class=\"table-format\"><td><h2>Peter.A.Bourne</h2></td>  <td><h2>Crime</h2></td>  <td><h2>Labour</h2></td> <td><h2>50%</h2></td> </tr>"
+    for (let u = 1; u < peopleList.length; u++) {
 
-        $("#populus-table").append(LO);
+        console.log(peopleList[u]);
 
     }
 
 
-    LO = "</table>";
-    $("#populus-table").append(LO);
+
+    // console.log(popData);
+
+
+    // var peopleArray = districtChunck.split('@');
+    console.log(pinfoStart + ":" + dataEnd);
+
+
+
+
+    // SPIT OUT PEOPLE
+    for (let i = 1; i < 5; i++) {
+
+        // var tableLineout = tableLineout + "";
+        // var tableLineout = tableLineout + "";
+
+        var tableLineout = tableLineout + "<div class=\"row\">";
+        var tableLineout = tableLineout + "";
+        var tableLineout = tableLineout + "<div class=\"col-12   keep-insideBSol\">";
+
+        // --//
+        var tableLineout = tableLineout + "<ul class=\"pop-tab-list\">";
+
+        var tableLineout = tableLineout + "<h2>";
+        var tableLineout = tableLineout + "<li class=\"pop-idx\">";
+        var tableLineout = tableLineout + "IDX";
+        var tableLineout = tableLineout + "</li>";
+        var tableLineout = tableLineout + "";
+        var tableLineout = tableLineout + "<li class=\"pop-name\">";
+        var tableLineout = tableLineout + "Peter A Smith";
+        var tableLineout = tableLineout + "</li>";
+        var tableLineout = tableLineout + "";
+        var tableLineout = tableLineout + "<li class=\"pop-cnc\">";
+        var tableLineout = tableLineout + "Crime";
+        var tableLineout = tableLineout + "</li>";
+        var tableLineout = tableLineout + "";
+        var tableLineout = tableLineout + "<li class=\"pop-tprty\">";
+        var tableLineout = tableLineout + "labour";
+        var tableLineout = tableLineout + "</li>";
+        var tableLineout = tableLineout + "";
+        var tableLineout = tableLineout + "<li class=\"pop-swing\">";
+        var tableLineout = tableLineout + "50%";
+        var tableLineout = tableLineout + "</li>";
+        var tableLineout = tableLineout + "</h2>";
+
+        var tableLineout = tableLineout + "</ul>";
+
+        // --//
+        var tableLineout = tableLineout + "</div>";
+        var tableLineout = tableLineout + "</div>";
+
+
+
+        $("#populus-table").append(tableLineout);
+
+    }
+
+
+
 
 
 }
@@ -1179,8 +1252,12 @@ function CreateDistricts() {
             // TipOver amount of concerns politican sucessfully addreses
             // To swing my Vote
             var tiPOver = getRandom(5);
-            people = people + "[" + i + "/" + pConcern + "/" + PersonName + "/" + tiPOver + "/" + pAf + "]";
+
+            people = people + "^" + i + "/" + pConcern + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
         }
+
+        // End Cap the Peopledata Chunk with a "~"
+        people = people + "~";
         // All Variables Ready for use
         var DI = dID;
         var PRB = PRB;
@@ -1709,12 +1786,6 @@ function backToDistrictView() {
 function viewPopulation() {
     // View Population
     // Show Population per district
-
-
-
-
-
-
 
 
 

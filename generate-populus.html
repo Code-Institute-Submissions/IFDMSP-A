@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -97,19 +95,34 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <!-- Create populous -->
+        <div id="populus-table" class="col-12"></div>
+
+
+        <!-- Attach after table this
         <div class="row">
- 
-            <div id="populus-table" class="col-12">
-
+            <div class="col-12">
+                <ul class="pop-tab-list">
+                    <h2>
+                        <li class="pop-idx">
+                            1
+                        </li>
+                        <li class="pop-name">
+                            peter.A. smith
+                        </li>
+                        <li class="pop-cnc">
+                            crime
+                        </li>
+                        <li class="pop-tprty">
+                            labour
+                        </li>
+                        <li class="pop-swing">
+                            50%
+                        </li>
+                    </h2>
+                </ul>
             </div>
-        </div>
-
-
+        </div> -->
 
 
 
@@ -168,14 +181,9 @@
                 stateController();
             }, 10)
         })
-
-
         $(document).ready(function () {
-
             loadUpPopulation();
-
         })
     </script>
 </body>
-
 </html>

@@ -718,15 +718,15 @@ color: yellow;
 }
 
 
-.table-format h2{
+/* .list-format h2{
 
-    font-size: 1rem;
+    font-size: .75rem;
     background-color: wheat;
     color: black;
 
     width:100%;
     border:  1px solid red;
-}
+} */
 
 
 .plno{
@@ -736,3 +736,36 @@ color: yellow;
     color: wheat;
     text-shadow: 1px 1px black;
 }
+
+
+
+
+
+
+.pop-tab-list{
+
+    background-color:var(--main-bg-color);
+    color: wheat;
+    text-shadow: blue;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.pop-tab-list li {
+
+    align-content: center;
+
+    font-size: .70rem;
+
+    display: inline;
+    border:1px solid var(--main-page-body-color);
+
+    margin-left: 0px;
+
+    padding-left:2px;
+    padding-right:2px;
+ 
+}
+ 
