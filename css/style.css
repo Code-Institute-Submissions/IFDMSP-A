@@ -693,16 +693,19 @@ color: yellow;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    
 
     background-color: yellow;
     color: black;
 }
 
+
 .promo-circle {
     font-size: 1.25rem;
     border-radius: 10px;
     
+    margin-top:5px;
+    margin-bottom: 5px;
+
     padding-left: 2px;
     padding-right: 2px;
     padding-top: 2px;
@@ -712,4 +715,14 @@ color: yellow;
     background-color: pink;
     color: white;
     text-shadow: 4px 4px 4px rgb(253, 0, 0);
+}
+
+
+.table-format h2{
+
+    font-size: .75rem;
+    background-color: wheat;
+    color: black;
+
+    width:100%;
 }

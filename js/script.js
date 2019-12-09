@@ -863,7 +863,7 @@ function viewDistricts() {
 
         outputDistrictHtml = outputDistrictHtml + "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
 
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPopulation()\"   role=\"button\" aria-pressed=\"true\">Populus</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Populus</a>";
         outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
 
         outputDistrictHtml = outputDistrictHtml + "</div>";
@@ -918,14 +918,11 @@ function createDistrictPriority() {
 
 
 
-
-
-
-
-
-function viewPopulation() {
+function viewPop() {
+    //  ////////////////////////////////////////////
+    // View Population
     // Save Current District
-    // View "Population" in district
+    // Then Jumpto View "Population" in district
     $('div .district-buttons-box').click(function () {
         var result = $(this).closest('.district-buttons-box').attr("id");
         sessionStorage.setItem("CD", result);
@@ -933,7 +930,59 @@ function viewPopulation() {
     })
 
     window.location.href = "generate-populus.html";
+
+
 }
+
+
+
+
+
+function loadUpPopulation() {
+    // Create Table & LOad Up Population of District
+    // Get district
+    var cd = sessionStorage.getItem("CD");
+    // alert(cd);
+
+    var tableLineout = "";
+
+    var tableLineout = tableLineout + "<table>";
+    var tableLineout = tableLineout + "<thead>";
+    var tableLineout = tableLineout + "<td>People</td>";
+    var tableLineout = tableLineout + "";
+    var tableLineout = tableLineout + "";
+    var tableLineout = tableLineout + "";
+    var tableLineout = tableLineout + "</thead>";
+    var tableLineout = tableLineout + "";
+
+    var LO = "";
+
+    LO = "<table class=\"table-format\" >    <tr><th><h2>NAMES</h2></th>  <th><h2>MAIN-CONCERN</h2></th>  <th><h2>TRADITIONAL-PARTY</h2></th>   <th><h2>SWING@<h2></th> </tr>"
+
+
+    $("#populus-table").append(LO);
+
+
+
+    for (let i = 0; i < 5; i++) {
+
+
+
+
+        LO = "<tr class=\"table-format\"><td><h2>Peter.A.Bourne</h2></td>  <td><h2>Crime</h2></td>  <td><h2>Labour</h2></td> <td><h2>50%</h2></td> </tr>"
+
+        $("#populus-table").append(LO);
+
+    }
+
+
+    LO = "</table>";
+    $("#populus-table").append(LO);
+
+
+}
+
+
 
 
 
@@ -941,6 +990,7 @@ function viewPopulation() {
 
 function showCurrentDistrict() {
     // Show current district number
+    // Inside Pledge Priority page
     var cdn = sessionStorage.getItem("CD");
     $("#current-district ,p").text("District ~" + cdn + "~ " + countryDistricts[cdn]);
 }
@@ -990,8 +1040,13 @@ function myTrim(x) {
 
 
 
+
+
+
+
+
 // ////////////////////////////////
-// MAIN GAME ENGINE & LOGIC      //
+// MAIN GAME ENGINE FUNCTIONS & LOGIC      //
 // ////////////////////////////////
 
 
@@ -1623,9 +1678,11 @@ function loadUpPledgePriorityPage() {
     })
 
 
-    // Remove Highlight from the button array on
-    // View Pledge Priority Page
+
     function removeButtonArrayHighlight() {
+        // Remove Highlight from the button array on
+        // View Pledge Priority Page
+
         $('#button-array-1 button').removeClass('highlight-pbutt');
         $('#button-array-2 button').removeClass('highlight-pbutt');
         $('#button-array-3 button').removeClass('highlight-pbutt');
@@ -1642,5 +1699,22 @@ function loadUpPledgePriorityPage() {
 function backToDistrictView() {
     // Go back to View Districts Page
     window.location.href = "country-districts.html";
+
+}
+
+
+
+
+function viewPopulation() {
+    // View Population
+    // Show Population per district
+
+
+
+
+
+
+
+
 
 }
