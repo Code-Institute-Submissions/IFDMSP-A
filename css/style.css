@@ -720,9 +720,19 @@ color: yellow;
 
 .table-format h2{
 
-    font-size: .75rem;
+    font-size: 1rem;
     background-color: wheat;
     color: black;
 
     width:100%;
+    border:  1px solid red;
+}
+
+
+.plno{
+    /* Manifesto promoted pledge priority coins on View Districs Page */
+    border-radius: 50%;
+    background-color:rgb(226, 172, 181);
+    color: wheat;
+    text-shadow: 1px 1px black;
 }

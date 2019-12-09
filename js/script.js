@@ -776,7 +776,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
         // Tabloid Banner
         outputDistrictHtml = outputDistrictHtml + "<div class=\"tabloid\">";
-        outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!! ";
+        outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!";
 
         // <!-- Promoted Manifesto Pledges -->
 
@@ -784,19 +784,19 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<div id=\"promoted-pledges\" class=\"col-12\">";
         outputDistrictHtml = outputDistrictHtml + "<p>";
         outputDistrictHtml = outputDistrictHtml + "";
-        outputDistrictHtml = outputDistrictHtml + "MANIFESTO - PROMOTED :";
+        outputDistrictHtml = outputDistrictHtml + "MANIFESTO - PROMOTED PRIORITY :";
 
         var encloseFront = "<span class=\"promo-circle\">";
         var encloseEnd = "</span\">";
 
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",1") + "" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",1") + "<span class=\"plno\">=P1</span>" + encloseEnd;
 
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",2") + "" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",3") + "" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",4") + "" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",5") + "" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",6") + "" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",7") + "" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",2") + "<span class=\"plno\">=P2</span>" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",3") + "<span class=\"plno\">=P3</span>" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",4") + "<span class=\"plno\">=P4</span>" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",5") + "<span class=\"plno\">=P5</span>" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",6") + "<span class=\"plno\">=P6</span>" + encloseEnd;
+        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",7") + "<span class=\"plno\">=P7</span>" + encloseEnd;
 
 
         outputDistrictHtml = outputDistrictHtml + "</p>";
@@ -939,6 +939,7 @@ function viewPop() {
 
 
 function loadUpPopulation() {
+    // POPULATION TABLE 
     // Create Table & LOad Up Population of District
     // Get district
     var cd = sessionStorage.getItem("CD");
@@ -957,7 +958,7 @@ function loadUpPopulation() {
 
     var LO = "";
 
-    LO = "<table class=\"table-format\" >    <tr><th><h2>NAMES</h2></th>  <th><h2>MAIN-CONCERN</h2></th>  <th><h2>TRADITIONAL-PARTY</h2></th>   <th><h2>SWING@<h2></th> </tr>"
+    LO = "<table class=\"table-format\" style=\"100%\" >    <tr><th><h2>NAMES</h2></th>  <th><h2>MAIN-CONCERN</h2></th>  <th><h2>TRADITIONAL-PARTY</h2></th>   <th><h2>SWING@<h2></th> </tr>"
 
 
     $("#populus-table").append(LO);
