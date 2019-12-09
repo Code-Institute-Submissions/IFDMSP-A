@@ -988,7 +988,9 @@ function loadUpPopulation() {
 
     for (let u = 1; u < peopleList.length; u++) {
 
-        console.log(peopleList[u]);
+        // console.log(peopleList[u]);
+
+        $('#populus-table').append("<h2>"+peopleList[u]+"</h2>");
 
     }
 
