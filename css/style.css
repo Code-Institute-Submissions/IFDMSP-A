@@ -740,9 +740,9 @@ color: yellow;
 
 
 .people-list-format h2{
-font-size: .50rem;
-
-
+font-size: 1rem;
+color: wheat;
+text-shadow:grey;
 }
 
 
