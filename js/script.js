@@ -968,8 +968,6 @@ function loadUpPopulation() {
     peopleList = popData.split('^');
 
 
-
-
     for (let u = 1; u < peopleList.length; u++) {
 
         // console.log(peopleList[u]);
@@ -1047,6 +1045,12 @@ function loadUpPopulation() {
         //  console.log(PA[1]);
 
         $("#populus-table").append(peopleOutputLine);
+
+
+        // Save to session Memory Current People data Pre-Election
+        var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
+        sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u+":",pdat +"~");
+
 
     }
 
@@ -1284,7 +1288,7 @@ function CreateDistricts() {
             var initial = [initials[getRandom(20)]];
             var surName = [sNames[getRandom(29)]];
 
-             
+
 
 
             var PersonName = fName + "." + initial + "." + surName;
