@@ -1132,10 +1132,9 @@ function myTrim(x) {
 
 function getRandom(limit) {
     // Create Random Number
-
-    do{
-    rn = (Math.floor(Math.random() * limit)) + 1;
-    } while (rn == 0);
+    do {
+        rn = (Math.floor(Math.random() * limit)) + 1;
+    } while (rn === 0 || isNaN(rn))
 
     return rn;
 }
@@ -1280,9 +1279,13 @@ function CreateDistricts() {
             }
 
             // Make Random Name Combination
-            var fName = [fNames[getRandom(30)]];
-            var initial = [initials[getRandom(21)]];
-            var surName = [sNames[getRandom(30)]];
+            // Not 1 less to ensure no illegal item
+            var fName = [fNames[getRandom(29)]];
+            var initial = [initials[getRandom(20)]];
+            var surName = [sNames[getRandom(29)]];
+
+             
+
 
             var PersonName = fName + "." + initial + "." + surName;
 
