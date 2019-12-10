@@ -355,6 +355,36 @@ table, th, td h3 {
     color: grey
 }
 
+
+/* Ribbon Color Classes for Political Parties */
+
+.make-people-red {
+    background-color: var(--myRed);
+}
+
+.make-people-blue {
+    background-color: blue;
+}
+
+.make-people-yellow {
+    background-color: rgb(247, 247, 9);
+}
+
+.make-people-green {
+    background-color: green;
+}
+
+.make-people-grey {
+    background-color: grey
+}
+
+
+
+
+
+
+
+
 /* Pledge Priority Page  */
 
 #pledge-priority {
@@ -740,9 +770,9 @@ color: yellow;
 
 
 .people-list-format h2{
-font-size: 1rem;
-color: wheat;
-text-shadow:grey;
+font-size: .75rem;
+color:  rgb(199, 182, 150);
+text-shadow:black;
 }
 
 

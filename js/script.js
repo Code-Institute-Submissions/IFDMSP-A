@@ -2,6 +2,9 @@
 // This variable is just to allow dev testing. When true it 
 // Shows the district solution answers.
 // Priority Button Line & Value
+
+var numberOfPriorityHighAvilable = 2; // Number of times allowed to select High on priority page
+
 var pblineValue = []; // Priority button line
 var pbl = 0;
 var testingMode = false;
@@ -899,7 +902,6 @@ function saveCurrentDistrict() {
     $('div .district-buttons-box').click(function () {
         var result = $(this).closest('.district-buttons-box').attr("id");
         sessionStorage.setItem("CD", result);
-
     })
     window.location.href = "pledge-priority.html";
 }
@@ -942,7 +944,6 @@ function viewPop() {
     })
 
     window.location.href = "generate-populus.html";
-
 }
 
 
@@ -958,7 +959,6 @@ function loadUpPopulation() {
     var districtChunck = [] = sessionStorage.getItem("D," + currentDistrict);
     const pinfoStart = peopleArray = districtChunck.indexOf('@');
     const dataEnd = peopleArray = districtChunck.indexOf('~');
-
 
     var popData = districtChunck.slice(pinfoStart, dataEnd);
 
@@ -984,7 +984,7 @@ function loadUpPopulation() {
 
         // Person Index
         peopleOutputLine = peopleOutputLine + "<div id=" + u + "  class=\"row no-gutters\">";
- 
+
 
         // Person Concern
         peopleOutputLine = peopleOutputLine + "";
@@ -1022,7 +1022,22 @@ function loadUpPopulation() {
         // Party Affiliation
         peopleOutputLine = peopleOutputLine + "";
         peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding\">";
-        peopleOutputLine = peopleOutputLine + "<h2>";
+        // peopleOutputLine = peopleOutputLine + "<h2>";
+
+        // Change Color to reflect party affiliation
+        if (PA[4] === "Labour") {
+            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-red\">";
+        }
+        if (PA[4] === "Conservative") {
+            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-blue\">";
+        }
+        if (PA[4] === "Lib-Dem") {
+            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-yellow\">";
+        }
+        if (PA[4] === "Green") {
+            peopleOutputLine=peopleOutputLine+"<h2 class=\"make-people-green\">";
+        }
+
         peopleOutputLine = peopleOutputLine + PA[4];
         peopleOutputLine = peopleOutputLine + "</h2>";
         peopleOutputLine = peopleOutputLine + "</div>";
@@ -1120,7 +1135,9 @@ function myTrim(x) {
 
 function getRandom(limit) {
     // Create Random Number
-    rn = (Math.floor(Math.random() * limit)) + 1;
+    do {
+        rn = (Math.floor(Math.random() * limit)) + 1;
+    } while (rn == 0);
     return rn;
 }
 
@@ -1130,6 +1147,8 @@ function CreateDistricts() {
     for (var i = 1; i < noOfDistricts; i++) {
         // create district ID
         dID = "D" + "," + i;
+
+
         // Create Random Problems & Solutions For Every Area
         // PROB1
         var rnum = getRandom(noOfProblems);
@@ -1190,6 +1209,16 @@ function CreateDistricts() {
                 18: "Michelle",
                 19: "Donald",
                 20: "Gregg",
+                21: "Paul",
+                22: "Jessica",
+                23: "Patricia",
+                24: "Corey",
+                25: "Maxine",
+                26: "Margaret",
+                27: "Elliot",
+                28: "Francis",
+                29: "Steven",
+                30: "Stuart",
             }
             var initials = {
                 // Initials Pool
@@ -1212,6 +1241,8 @@ function CreateDistricts() {
                 18: "Q",
                 19: "R",
                 20: "S",
+                21: "T",
+
             }
             var sNames = {
                 // Surnames Pool
@@ -1235,11 +1266,21 @@ function CreateDistricts() {
                 18: "Cambridge",
                 19: "Henry",
                 20: "O'mally",
+                21: "Ellison",
+                22: "Dupont",
+                23: "Moore",
+                24: "Bell",
+                25: "Sommers",
+                26: "Knight",
+                27: "Austin",
+                28: "Bridges",
+                29: "Bourne",
+                30: "Otis",
             }
             // Make Random Name Combination
-            var fName = [fNames[getRandom(20)]];
-            var initial = [initials[getRandom(20)]];;
-            var surName = [sNames[getRandom(20)]];;
+            var fName = [fNames[getRandom(fNames.length)]];
+            var initial = [initials[getRandom(initials.length)]];;
+            var surName = [sNames[getRandom(sNames.length)]];;
             var PersonName = fName + "." + initial + "." + surName;
             // Persons Main Concern
             var pConcern = getRandom(4);
