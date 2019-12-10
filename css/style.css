@@ -352,7 +352,7 @@ table, th, td h3 {
 }
 
 .make-ribbon-grey h1 {
-    color: grey
+    color: grey;
 }
 
 
@@ -371,11 +371,11 @@ table, th, td h3 {
 }
 
 .make-people-green {
-    background-color: green;
+    background-color: rgb(40, 153, 40);
 }
 
 .make-people-grey {
-    background-color: grey
+    background-color: grey;
 }
 
 
@@ -771,8 +771,8 @@ color: yellow;
 
 .people-list-format h2{
 font-size: .75rem;
-color:  rgb(199, 182, 150);
-text-shadow:black;
+color: rgb(230, 215, 187);
+text-shadow: 1px 1px black;
 }
 
 

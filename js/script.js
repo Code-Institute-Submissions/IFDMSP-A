@@ -986,7 +986,7 @@ function loadUpPopulation() {
         peopleOutputLine = peopleOutputLine + "<div id=" + u + "  class=\"row no-gutters\">";
 
 
-        // Person Concern
+        // Persons Concern
         peopleOutputLine = peopleOutputLine + "";
         peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding\">";
         peopleOutputLine = peopleOutputLine + "<h2>";
@@ -994,7 +994,6 @@ function loadUpPopulation() {
         peopleOutputLine = peopleOutputLine + "</h2>";
         peopleOutputLine = peopleOutputLine + "</div>";
 
-        // Person Name
         peopleOutputLine = peopleOutputLine + "";
         peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
         peopleOutputLine = peopleOutputLine + "<h2>";
@@ -1010,8 +1009,7 @@ function loadUpPopulation() {
         peopleOutputLine = peopleOutputLine + "</h2>";
         peopleOutputLine = peopleOutputLine + "</div>";
 
-
-        // Party Afiliation
+        //  Person Name
         peopleOutputLine = peopleOutputLine + "";
         peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
         peopleOutputLine = peopleOutputLine + "<h2>";
@@ -1021,7 +1019,7 @@ function loadUpPopulation() {
 
         // Party Affiliation
         peopleOutputLine = peopleOutputLine + "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding\">";
+        peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding\">";
         // peopleOutputLine = peopleOutputLine + "<h2>";
 
         // Change Color to reflect party affiliation
@@ -1035,14 +1033,13 @@ function loadUpPopulation() {
             peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-yellow\">";
         }
         if (PA[4] === "Green") {
-            peopleOutputLine=peopleOutputLine+"<h2 class=\"make-people-green\">";
+            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-green\">";
         }
 
         peopleOutputLine = peopleOutputLine + PA[4];
         peopleOutputLine = peopleOutputLine + "</h2>";
         peopleOutputLine = peopleOutputLine + "</div>";
 
-        colorPerson();
 
         peopleOutputLine = peopleOutputLine + "</div>";
         peopleOutputLine = peopleOutputLine + "</div>";
@@ -1135,9 +1132,10 @@ function myTrim(x) {
 
 function getRandom(limit) {
     // Create Random Number
-    do {
-        rn = (Math.floor(Math.random() * limit)) + 1;
-    } while (rn == 0);
+
+    rn = (Math.floor(Math.random() * limit)) + 1;
+
+
     return rn;
 }
 
@@ -1175,6 +1173,7 @@ function CreateDistricts() {
         var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
         // Generate Population Count in District
         var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 100;
+
         // Create people for District
         var people = "[";
         for (let i = 1; i < dPop; i++) {
@@ -1186,6 +1185,7 @@ function CreateDistricts() {
                 3: "Lib-Dem",
                 4: "Green",
             }
+
             var pAf = partyNames[partyAffiliantNumber];
             // Setup Name Pools
             var fNames = {
@@ -1277,11 +1277,15 @@ function CreateDistricts() {
                 29: "Bourne",
                 30: "Otis",
             }
+
             // Make Random Name Combination
-            var fName = [fNames[getRandom(fNames.length)]];
-            var initial = [initials[getRandom(initials.length)]];;
-            var surName = [sNames[getRandom(sNames.length)]];;
+            var fName = [fNames[getRandom(30)]];
+            var initial = [initials[getRandom(21)]];
+            var surName = [sNames[getRandom(30)]];
+
             var PersonName = fName + "." + initial + "." + surName;
+
+
             // Persons Main Concern
             var pConcern = getRandom(4);
             // TipOver amount of concerns politican sucessfully addreses
