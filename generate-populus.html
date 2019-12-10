@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -95,6 +97,10 @@
                 </div>
             </div>
         </div>
+
+
+        <a href="#top-page"></a>
+
         <!-- Create populous -->
         <div id="populus-table" class="col-12"></div>
 
@@ -185,5 +191,17 @@
             loadUpPopulation();
         })
     </script>
+
+
+    <script>
+        $('body').dblclick(function () {
+
+            window.location.href = "top-page";
+
+        })
+    </script>
+
+
 </body>
+
 </html>

@@ -739,9 +739,14 @@ color: yellow;
 
 
 
+.people-list-format h2{
+font-size: .50rem;
 
 
+}
 
+
+/* 
 .pop-tab-list{
 
     background-color:var(--main-bg-color);
@@ -751,9 +756,9 @@ color: yellow;
     margin-left: auto;
     margin-right: auto;
 
-}
+} */
 
-.pop-tab-list li {
+/* .pop-tab-list li {
 
     align-content: center;
 
@@ -767,5 +772,5 @@ color: yellow;
     padding-left:2px;
     padding-right:2px;
  
-}
+} */
  

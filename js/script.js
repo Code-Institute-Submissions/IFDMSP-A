@@ -499,6 +499,18 @@ function stateController() {
     });
 
 
+
+
+    // $('div #populus-table').dblclick(function () {
+    //     alert("pop");
+    //     window.location.href = "generate-populus.html";
+    //     return;
+    // });
+
+
+
+
+
     // Check if to display "jump to Global Econmy" Button
     // After Party has been selected
     var picked = sessionStorage.getItem("myPolitician");
@@ -939,34 +951,6 @@ function viewPop() {
 
 function loadUpPopulation() {
     // POPULATION TABLE 
-    // Create Table & LOad Up Population of District
-    // Get district
-
-    // <!-- Attach after table this -->
-    // <div class="row">
-    //     <div class="col-12">
-    //         <ul class="pop-tab-list">
-    //             <h2>
-    //                 <li class="pop-idx">
-    //                     1
-    //                 </li>
-    //                 <li class="pop-name">
-    //                     peter.A. smith
-    //                 </li>
-    //                 <li class="pop-cnc">
-    //                     crime
-    //                 </li>
-    //                 <li class="pop-tprty">
-    //                     labour
-    //                 </li>
-    //                 <li class="pop-swing">
-    //                     50%
-    //                 </li>
-    //             </h2>
-    //         </ul>
-    //     </div>
-    // </div>
-
 
     var cd = sessionStorage.getItem("CD");
     var tableLineout = "";
@@ -990,71 +974,74 @@ function loadUpPopulation() {
 
         // console.log(peopleList[u]);
 
-        $('#populus-table').append("<h2>"+peopleList[u]+"</h2>");
+        var PA = [];
+
+        PA = (peopleList[u].split("/"))
+
+
+        var peopleOutputLine = "";
+        peopleOutputLine = peopleOutputLine + "<div class=\"people-list-format\">";
+
+        // Person Index
+        peopleOutputLine = peopleOutputLine + "<div id=" + u + "  class=\"row no-gutters\">";
+ 
+
+        // Person Concern
+        peopleOutputLine = peopleOutputLine + "";
+        peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding\">";
+        peopleOutputLine = peopleOutputLine + "<h2>";
+        peopleOutputLine = peopleOutputLine + PA[0];
+        peopleOutputLine = peopleOutputLine + "</h2>";
+        peopleOutputLine = peopleOutputLine + "</div>";
+
+        // Person Name
+        peopleOutputLine = peopleOutputLine + "";
+        peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
+        peopleOutputLine = peopleOutputLine + "<h2>";
+        peopleOutputLine = peopleOutputLine + PA[1];
+        peopleOutputLine = peopleOutputLine + "</h2>";
+        peopleOutputLine = peopleOutputLine + "</div>";
+
+        // Person Swing
+        peopleOutputLine = peopleOutputLine + "";
+        peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding\">";
+        peopleOutputLine = peopleOutputLine + "<h2>";
+        peopleOutputLine = peopleOutputLine + PA[2];
+        peopleOutputLine = peopleOutputLine + "</h2>";
+        peopleOutputLine = peopleOutputLine + "</div>";
+
+
+        // Party Afiliation
+        peopleOutputLine = peopleOutputLine + "";
+        peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
+        peopleOutputLine = peopleOutputLine + "<h2>";
+        peopleOutputLine = peopleOutputLine + PA[3];
+        peopleOutputLine = peopleOutputLine + "</h2>";
+        peopleOutputLine = peopleOutputLine + "</div>";
+
+        // Party Affiliation
+        peopleOutputLine = peopleOutputLine + "";
+        peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding\">";
+        peopleOutputLine = peopleOutputLine + "<h2>";
+        peopleOutputLine = peopleOutputLine + PA[4];
+        peopleOutputLine = peopleOutputLine + "</h2>";
+        peopleOutputLine = peopleOutputLine + "</div>";
+
+        colorPerson();
+
+        peopleOutputLine = peopleOutputLine + "</div>";
+        peopleOutputLine = peopleOutputLine + "</div>";
+
+        //  console.log(PA[1]);
+
+        $("#populus-table").append(peopleOutputLine);
 
     }
-
-
 
     // console.log(popData);
 
-
     // var peopleArray = districtChunck.split('@');
     console.log(pinfoStart + ":" + dataEnd);
-
-
-
-
-    // SPIT OUT PEOPLE
-    for (let i = 1; i < 5; i++) {
-
-        // var tableLineout = tableLineout + "";
-        // var tableLineout = tableLineout + "";
-
-        var tableLineout = tableLineout + "<div class=\"row\">";
-        var tableLineout = tableLineout + "";
-        var tableLineout = tableLineout + "<div class=\"col-12   keep-insideBSol\">";
-
-        // --//
-        var tableLineout = tableLineout + "<ul class=\"pop-tab-list\">";
-
-        var tableLineout = tableLineout + "<h2>";
-        var tableLineout = tableLineout + "<li class=\"pop-idx\">";
-        var tableLineout = tableLineout + "IDX";
-        var tableLineout = tableLineout + "</li>";
-        var tableLineout = tableLineout + "";
-        var tableLineout = tableLineout + "<li class=\"pop-name\">";
-        var tableLineout = tableLineout + "Peter A Smith";
-        var tableLineout = tableLineout + "</li>";
-        var tableLineout = tableLineout + "";
-        var tableLineout = tableLineout + "<li class=\"pop-cnc\">";
-        var tableLineout = tableLineout + "Crime";
-        var tableLineout = tableLineout + "</li>";
-        var tableLineout = tableLineout + "";
-        var tableLineout = tableLineout + "<li class=\"pop-tprty\">";
-        var tableLineout = tableLineout + "labour";
-        var tableLineout = tableLineout + "</li>";
-        var tableLineout = tableLineout + "";
-        var tableLineout = tableLineout + "<li class=\"pop-swing\">";
-        var tableLineout = tableLineout + "50%";
-        var tableLineout = tableLineout + "</li>";
-        var tableLineout = tableLineout + "</h2>";
-
-        var tableLineout = tableLineout + "</ul>";
-
-        // --//
-        var tableLineout = tableLineout + "</div>";
-        var tableLineout = tableLineout + "</div>";
-
-
-
-        $("#populus-table").append(tableLineout);
-
-    }
-
-
-
-
 
 }
 
@@ -1073,6 +1060,11 @@ function showCurrentDistrict() {
 
 
 
+function colorPerson() {
+    // Color Person Line
+
+
+}
 
 
 
