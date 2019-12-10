@@ -1133,8 +1133,9 @@ function myTrim(x) {
 function getRandom(limit) {
     // Create Random Number
 
+    do{
     rn = (Math.floor(Math.random() * limit)) + 1;
-
+    } while (rn == 0);
 
     return rn;
 }
