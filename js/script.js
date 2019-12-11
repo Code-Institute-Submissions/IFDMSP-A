@@ -1873,10 +1873,8 @@ function setBv(bp) {
 
 function showHighPledgesRemaining() {
     // Show amount of High Pledges Available
- 
-        $('#nohp').text(numberOfPriorityHighAvilable);
-    
-    
+    $('#nohp').text(numberOfPriorityHighAvilable);
+
 }
 
 

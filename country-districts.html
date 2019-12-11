@@ -108,14 +108,19 @@
         </div>
 
 
-        <!-- Promoted Manifesto Pledges
+
+        <!-- Create Manifesto Button -->
+        <!-- This button is auto-hidden by code once you have sucessfully created -->
+        <!-- a manifesto -->
         <div class="row">
             <div class="col-12">
-                <div id="promoted-pledges">
-                    <p></p>
+                <div id="create-manifesto-button" class=" w-100 c-m-b-a text-center">
+                        <a href="create-manifesto.html" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Create Manifesto if ready</a>
                 </div>
             </div>
-        </div> -->
+        </div>
+
+
 
         <!-- Where district data wil be pinned -->
         <div id="district-list">
@@ -251,11 +256,11 @@
         </script>
 
 
-        <!-- <script>
-            $(document).ready(function () {
-                showCurrentPromotion();
-            })
-        </script> -->
+        <script>
+            if (sessionStorage.getItem('create-manifesto-page-authorised') === "false") {
+                $('#create-manifesto-button').addClass('remove-c-m-b-a');
+            }
+        </script>
 
 
 </body>
