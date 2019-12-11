@@ -22,6 +22,15 @@ body {
     --pledge-value-fc-color: black;
     /* Main Foreground Color */
     --myRed: #E0473A;
+
+
+    
+    /* Party Colours */
+    --party-labour: red;
+    --party-conservative: blue;
+    --party-lib-dem: yellow;
+    --party-green: green;
+    --party-unknown:grey;
 }
 
 /* Burger Nav */
@@ -336,52 +345,47 @@ table, th, td h3 {
 /* Ribbon Color Classes for Political Parties */
 
 .make-ribbon-red h1 {
-    color: var(--myRed);
+    color: var(--party-labour);
 }
 
 .make-ribbon-blue h1 {
-    color: blue;
+    color: var(--party-conservative);
 }
 
 .make-ribbon-yellow h1 {
-    color: yellow;
+    color:var(--party-lib-dem);
 }
 
 .make-ribbon-green h1 {
-    color: greenyellow;
+    color: var(--party-green);
 }
 
 .make-ribbon-grey h1 {
-    color: grey;
-}
+    color: var(--party-unknown);
 
+}
 
 /* Ribbon Color Classes for Political Parties */
 
 .make-people-red {
-    background-color: var(--myRed);
+    background-color: var(--party-labour);
 }
 
 .make-people-blue {
-    background-color: blue;
+    background-color: var(--party-conservative);
 }
 
 .make-people-yellow {
-    background-color: rgb(247, 247, 9);
+    background-color: var(--party-lib-dem);
 }
 
 .make-people-green {
-    background-color: rgb(40, 153, 40);
+    background-color: var(--party-green);
 }
 
 .make-people-grey {
-    background-color: grey;
+    background-color: var(--party-unknown);
 }
-
-
-
-
-
 
 
 
@@ -715,38 +719,30 @@ color: yellow;
 }
 
 #promoted-pledges p {
-
     border-radius: 10px;
     font-size: 1rem;
-
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-
     background-color: yellow;
     color: black;
 }
 
-
 .promo-circle {
     font-size: 1.25rem;
     border-radius: 10px;
-    
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 5px;
-
     padding-left: 2px;
     padding-right: 2px;
     padding-top: 2px;
     padding-top: 2px;
-
     border: 1px solid;
     background-color: pink;
     color: white;
     text-shadow: 4px 4px 4px rgb(253, 0, 0);
 }
-
 
 /* .list-format h2{
 
@@ -758,23 +754,19 @@ color: yellow;
     border:  1px solid red;
 } */
 
-
-.plno{
+.plno {
     /* Manifesto promoted pledge priority coins on View Districs Page */
     border-radius: 50%;
-    background-color:rgb(226, 172, 181);
+    background-color: rgb(226, 172, 181);
     color: wheat;
     text-shadow: 1px 1px black;
 }
 
-
-
-.people-list-format h2{
-font-size: .75rem;
-color: rgb(230, 215, 187);
-text-shadow: 1px 1px black;
+.people-list-format h2 {
+    font-size: .75rem;
+    color: rgb(230, 215, 187);
+    text-shadow: 1px 1px black;
 }
-
 
 /* 
 .pop-tab-list{
@@ -803,4 +795,3 @@ text-shadow: 1px 1px black;
     padding-right:2px;
  
 } */
- 
