@@ -1472,18 +1472,18 @@ function setupGame() {
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
 
-    // SETUP GAME SESSION VARIABLES
+    // SETUP GAME SESSION VARIABLES AT START
     // ###########################################
     // ###########################################
     sessionStorage.setItem("global-economy-page-authorised", true);
     sessionStorage.setItem("view-populus-page-authorised", true);
     sessionStorage.setItem("pledge-priority-page-authorised", true);
-
+    sessionStorage.setItem("generate-populus-page-authorised",true);
+    sessionStorage.setItem("country-districts-page-authorised",true);
     sessionStorage.setItem("create-manifesto-page-authorised", true);
-
     sessionStorage.setItem("election-day-active-authorised", false);
     sessionStorage.setItem("campaign-mode-active-authorised", true);
-
+    
     sessionStorage.setItem("election-day-game-active-authorised", true);
 }
 

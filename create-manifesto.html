@@ -208,6 +208,14 @@
 
 
     <script>
+        // QUIT CREATE MANIFESTO PAGE IF NOT ALLOWED
+        if (sessionStorage.getItem("create-manifesto-page-authorised") === "false") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+
+    <script>
         // Check for allowed Manifesto Creation. Exit to District Page if Not
         // var result = sessionStorage.getItem("create-manifesto-page-authorised")
         loadUpManifestoPage();
@@ -217,6 +225,10 @@
             window.location.href = "country-districts.html";
         }
     </script>
+
+
+
+
 
 
 </body>

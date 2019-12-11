@@ -215,6 +215,15 @@
                 stateController();
             }, 10)
         })
+
+
+
+        // QUIT ECONOMY PAGE IF NOT ALLOWED
+        if(sessionStorage.getItem("global-economy-page-authorised") === "false"){
+            window.location.href="index.html";
+        }
+
+
     </script>
 </body>
 
