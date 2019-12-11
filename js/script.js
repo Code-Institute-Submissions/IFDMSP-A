@@ -1009,7 +1009,7 @@ function loadUpPopulation() {
     // 
     peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
     peopleOutputLine = peopleOutputLine + "<h2>";
-    peopleOutputLine = peopleOutputLine + "ALLIEGENCE";
+    peopleOutputLine = peopleOutputLine + "SUPPORTS";
     peopleOutputLine = peopleOutputLine + "</h2>";
     peopleOutputLine = peopleOutputLine + "</div>";
 
