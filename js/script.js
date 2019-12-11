@@ -1047,9 +1047,9 @@ function loadUpPopulation() {
         $("#populus-table").append(peopleOutputLine);
 
 
-        // Save to session Memory Current People data Pre-Election
+        // Save to session Memory Current People data Pre-Election TO BE USED IN ELECTION ENGINE*******
         var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
-        sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u+":",pdat +"~");
+        sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u + ":", pdat + "~");
 
 
     }
@@ -1396,6 +1396,19 @@ function setupGame() {
     CreateDistricts();
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
+
+    // SETUP GAME SESSION VARIABLES
+
+    sessionStorage.setItem("global-economy-page-authorised",true);
+    sessionStorage.setItem("view-populus-page-authorised",true);
+    sessionStorage.setItem("pledge-priority-page-authorised",true);
+    sessionStorage.setItem("create-manifesto-page-authorised",true);
+
+   
+    sessionStorage.setItem("election-day-active-authorised",false);
+    sessionStorage.setItem("campaign-mode-active-authorised",false);
+    
+    sessionStorage.setItem("election-day-game-active-authorised",true);
 }
 
 
