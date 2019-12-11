@@ -998,14 +998,12 @@ function loadUpPopulation() {
     peopleOutputLine = peopleOutputLine + "NAME:";
     peopleOutputLine = peopleOutputLine + "</h2>";
     peopleOutputLine = peopleOutputLine + "</div>";
-
     // 
     peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
     peopleOutputLine = peopleOutputLine + "<h2>";
     peopleOutputLine = peopleOutputLine + "CV";
     peopleOutputLine = peopleOutputLine + "</h2>";
     peopleOutputLine = peopleOutputLine + "</div>";
-
     // 
     peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
     peopleOutputLine = peopleOutputLine + "<h2>";
@@ -1013,17 +1011,14 @@ function loadUpPopulation() {
     peopleOutputLine = peopleOutputLine + "</h2>";
     peopleOutputLine = peopleOutputLine + "</div>";
 
-
-
     peopleOutputLine = peopleOutputLine + "</div>";
-
 
     $("#populus-table").append(peopleOutputLine);
 
 
 
     // ====//
-
+    // CREATE LIST OF RESIDENTS 
     for (let u = 1; u < peopleList.length; u++) {
 
         var PA = [];
@@ -1348,12 +1343,38 @@ function CreateDistricts() {
 
 
             // Persons Main Concern
+            var pConcernString = "";
             var pConcern = getRandom(4);
+            switch (pConcern) {
+
+                case 0:
+                    pConcernString = "-";
+                    break;
+
+                case 1:
+                    pConcernString = "C";
+                    break;
+
+                case 2:
+                    pConcernString = "W";
+                    break;
+
+                case 3:
+                    pConcernString = "H";
+                    break;
+                case 4:
+                    pConcernString = "S";
+                    break;
+
+            }
+
+
+
             // TipOver amount of concerns politican sucessfully addreses
             // To swing my Vote
             var tiPOver = getRandom(5);
 
-            people = people + "^" + i + "/" + pConcern + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
+            people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
         }
 
         // End Cap the Peopledata Chunk with a "~"
