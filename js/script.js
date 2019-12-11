@@ -624,6 +624,8 @@ function flasher() {
         $('.flashIt').removeClass('flashNow');
         return
     }
+
+
 }
 
 
@@ -1369,7 +1371,6 @@ function CreateDistricts() {
             }
 
 
-
             // TipOver amount of concerns politican sucessfully addreses
             // To swing my Vote
             var tiPOver = getRandom(5);
@@ -1472,13 +1473,13 @@ function setupGame() {
     WipeOutOldDistrictPledges();
 
     // SETUP GAME SESSION VARIABLES
-
+    // ###########################################
+    // ###########################################
     sessionStorage.setItem("global-economy-page-authorised", true);
     sessionStorage.setItem("view-populus-page-authorised", true);
     sessionStorage.setItem("pledge-priority-page-authorised", true);
 
     sessionStorage.setItem("create-manifesto-page-authorised", true);
-
 
     sessionStorage.setItem("election-day-active-authorised", false);
     sessionStorage.setItem("campaign-mode-active-authorised", true);
@@ -1651,7 +1652,13 @@ function setBv(bp) {
     // Set sessionStorage Accordingly
     // Check Line Values
 
+    // use  - numberOfPriorityHighAvilable to netermine HighPriority available
+
+
     switch (pbl) {
+
+
+
         // Check P buttons Line 1
         case 1:
             if (bp == 1) {
@@ -1668,11 +1675,16 @@ function setBv(bp) {
                 $("#manifesto-pledge-1").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[1] = "H";
                 sessionStorage.setItem("PBL1", [pblineValue[1]]);
                 $("#button-array-1").hide("slow");
                 $("#manifesto-pledge-1").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
@@ -1692,11 +1704,16 @@ function setBv(bp) {
                 $("#manifesto-pledge-2").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[2] = "H";
                 sessionStorage.setItem("PBL2", [pblineValue[2]]);
                 $("#button-array-2").hide("slow");
                 $("#manifesto-pledge-2").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
@@ -1716,11 +1733,16 @@ function setBv(bp) {
                 $("#manifesto-pledge-3").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[3] = "H";
                 sessionStorage.setItem("PBL3", [pblineValue[3]]);
                 $("#button-array-3").hide("slow");
                 $("#manifesto-pledge-3").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
@@ -1739,11 +1761,16 @@ function setBv(bp) {
                 $("#manifesto-pledge-4").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[4] = "H";
                 sessionStorage.setItem("PBL4", [pblineValue[4]]);
                 $("#button-array-4").hide("slow");
                 $("#manifesto-pledge-4").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
@@ -1762,11 +1789,16 @@ function setBv(bp) {
                 $("#manifesto-pledge-5").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[5] = "H";
                 sessionStorage.setItem("PBL5", [pblineValue[5]]);
                 $("#button-array-5").hide("slow");
                 $("#manifesto-pledge-5").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
@@ -1785,11 +1817,16 @@ function setBv(bp) {
                 $("#manifesto-pledge-6").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[6] = "H";
                 sessionStorage.setItem("PBL6", [pblineValue[6]]);
                 $("#button-array-6").hide("slow");
                 $("#manifesto-pledge-6").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
@@ -1808,16 +1845,33 @@ function setBv(bp) {
                 $("#manifesto-pledge-7").hide("slow");
                 break;
             }
-            if (bp == 3) {
+            if (bp == 3 && numberOfPriorityHighAvilable > 0) {
                 pblineValue[7] = "H";
                 sessionStorage.setItem("PBL7", [pblineValue[7]]);
                 $("#button-array-7").hide("slow");
                 $("#manifesto-pledge-7").hide("slow");
+
+                // Decrement remaining High Pledges available count
+                if (numberOfPriorityHighAvilable > 0) {
+                    numberOfPriorityHighAvilable--;
+                }
                 break;
             }
             break;
     }
 }
+
+
+
+function showHighPledgesRemaining() {
+    // Show amount of High Pledges Available
+ 
+        $('#nohp').text(numberOfPriorityHighAvilable);
+    
+    
+}
+
+
 
 
 
@@ -1861,6 +1915,12 @@ function loadUpPledgePriorityPage() {
             removeButtonArrayHighlight();
             var result = $(this).attr('id');
             // alert(result);
+
+
+            // Show number of "High" Pledges remaining
+            showHighPledgesRemaining();
+
+
             switch (result) {
                 case 'manifesto-pledge-1':
                     $('#button-array-1 button').addClass('highlight-pbutt');

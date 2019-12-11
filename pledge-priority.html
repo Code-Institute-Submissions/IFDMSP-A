@@ -128,6 +128,16 @@
                 </div>
 
 
+                <!-- Number of High Priority Pushes Available -->
+                <div class="row no-gutters">
+                    <div class="col-12 nopadding number-of-high-pledges d-flex w-100">
+                        <h2>
+                            <div id="nohp">H</div>
+                        </h2>
+                    </div>
+                </div>
+
+
                 <div class="row">
 
                     <div class="col-12">
@@ -149,10 +159,9 @@
 
                             <div id="pledge-priority" class="col-6 w-100 keep-insideBSol">
                                 <h2>
-                                    PRIORITY L/M/H
+                                    L=Low M=Med H=High
                                 </h2>
                             </div>
-
 
                         </div>
 
@@ -170,7 +179,7 @@
                         <h2>
                             <button type="button" class="btn btn-success btn-lg general-buttons-fmt"
                                 onclick="createDistrictPriority()">Save priorty for District</button>
-                                
+
                             <button type="button" class="btn btn-primary btn-lg general-buttons-fmt"
                                 onclick="backToDistrictView()">Back to Districts</button>
                         </h2>
@@ -268,14 +277,11 @@
         })
 
         loadUpPledgePriorityPage();
-
-
-
     </script>
 
-<script>
-showCurrentDistrict();
-</script>
+    <script>
+        showCurrentDistrict();
+    </script>
 
 
 </body>
