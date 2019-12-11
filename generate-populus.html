@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -98,15 +96,19 @@
             </div>
         </div>
 
+        <!-- Back to View Districts Page -->
+        <div class="row">
+            <div class="col-12">
+                <div id="create-manifesto-button" class=" w-100 c-m-b-a text-center">
+                    <a href="country-districts.html" class="btn btn-success btn-lg active" role="button"
+                        aria-pressed="true">Back to Districts View</a>
+                </div>
+            </div>
+        </div>
 
-        <a href="#top-page"></a>
-
+       
         <!-- Create populous -->
         <div id="populus-table" class="col-12"></div>
-
-
-
-
         <!-- Footer -->
         <div class="row">
             <div class="col-12 text-center">
@@ -165,8 +167,6 @@
             loadUpPopulation();
         })
     </script>
-
-
     <script>
         $('body').dblclick(function () {
             // Double clicl/tap population table to reload
@@ -174,8 +174,5 @@
             window.location.href = "generate-populus.html";
         })
     </script>
-
-
 </body>
-
 </html>
