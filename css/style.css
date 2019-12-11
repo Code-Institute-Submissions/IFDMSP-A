@@ -560,9 +560,9 @@ color: yellow;
 
 /* UK-MAP image */
 
-.map-uk, img {
+.map-uk img{
     border-radius: 10px;
-    width: 80px;
+    width: 100px;
     height: auto;
     margin-bottom: 5px;
 }
@@ -805,9 +805,19 @@ color: yellow;
 }
 
 /* Hide the create manifesto button from page once completed */
-
 /* So it does not show on page refresh */
-
 .remove-c-m-b-a {
     display: none;
+}
+
+/* UK MAAP BIG */
+.map-big ,img{
+width: 100%;
+height: Auto;
+border-radius: 10px;
+margin-bottom: 10px;
+
+.highlight-sign {
+    background-blend-mode: var(--myRed);
+
 }
