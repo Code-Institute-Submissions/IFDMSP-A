@@ -673,6 +673,9 @@ function populateTable() {
         var num = (Math.random() * popMax);
         cPop = num.toFixed(roundDownDigit)
     } while (cPop < 1);
+
+
+
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
@@ -971,13 +974,59 @@ function loadUpPopulation() {
     var peopleList = "";
     peopleList = popData.split('^');
 
+    // ################
+    // LAYOUT TITLES
+    var peopleOutputLine = "";
+    peopleOutputLine = peopleOutputLine + "<div class=\"row no-gutters\">";
+
+    peopleOutputLine = peopleOutputLine + "";
+    // 
+    peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine = peopleOutputLine + "<h2>";
+    peopleOutputLine = peopleOutputLine + "ROLL:";
+    peopleOutputLine = peopleOutputLine + "</h2>";
+    peopleOutputLine = peopleOutputLine + "</div>";
+    // 
+    peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine = peopleOutputLine + "<h2>";
+    peopleOutputLine = peopleOutputLine + "MI:";
+    peopleOutputLine = peopleOutputLine + "</h2>";
+    peopleOutputLine = peopleOutputLine + "</div>";
+    // 
+    peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine = peopleOutputLine + "<h2>";
+    peopleOutputLine = peopleOutputLine + "NAME:";
+    peopleOutputLine = peopleOutputLine + "</h2>";
+    peopleOutputLine = peopleOutputLine + "</div>";
+
+    // 
+    peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine = peopleOutputLine + "<h2>";
+    peopleOutputLine = peopleOutputLine + "CV";
+    peopleOutputLine = peopleOutputLine + "</h2>";
+    peopleOutputLine = peopleOutputLine + "</div>";
+
+    // 
+    peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine = peopleOutputLine + "<h2>";
+    peopleOutputLine = peopleOutputLine + "ALLIEGENCE";
+    peopleOutputLine = peopleOutputLine + "</h2>";
+    peopleOutputLine = peopleOutputLine + "</div>";
+
+
+
+    peopleOutputLine = peopleOutputLine + "</div>";
+
+
+    $("#populus-table").append(peopleOutputLine);
+
+
+
+    // ====//
 
     for (let u = 1; u < peopleList.length; u++) {
 
-        // console.log(peopleList[u]);
-
         var PA = [];
-
         PA = (peopleList[u].split("/"))
 
 
@@ -1530,7 +1579,7 @@ function saveManifesto() {
     alert("Manifesto Saved!");
 
     // Turn OFF Allow Creation Now as Creation is allowed only once per Election
-    sessionStorage.setItem("create-manifesto-page-authorised", false );
+    sessionStorage.setItem("create-manifesto-page-authorised", false);
 
     window.location = "country-districts.html";
 }
