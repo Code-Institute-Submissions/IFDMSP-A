@@ -1,6 +1,7 @@
 body {
     /* SETUP VARIABLES */
-    --main-page-body-color: #202936;
+    /* --main-page-body-color: #202936; */
+    --main-page-body-color: #144B96;
     background-color: var(--main-page-body-color);
     font-family: "Calistoga", "sans-serif";
     --main-bg-color: rgb(37, 37, 107);
@@ -20,17 +21,24 @@ body {
     --pledge-controller-fc-color: black;
     --pledge-value-bg-color: yellow;
     --pledge-value-fc-color: black;
+
+
+
     /* Main Foreground Color */
     --myRed: #E0473A;
-
-
-    
     /* Party Colours */
     --party-labour: red;
     --party-conservative: blue;
     --party-lib-dem: yellow;
     --party-green: green;
-    --party-unknown:grey;
+    --party-unknown: grey;
+    /* NewsFlash Bar */
+    --news-flash-bar: rgb(109, 182, 109);
+    /* District Background */
+    --district-background: rgb(122, 199, 122);
+    --district-list-backing: rgb(71, 71, 88);
+
+    --promoted-pledge-backstrip:rgb(231, 231, 146);
 }
 
 /* Burger Nav */
@@ -259,9 +267,10 @@ table, th, td h3 {
 #district-list {
     width: 100%;
     min-height: 100px;
-    background-color: var(--main-bg-color);
+    background-color: var(--district-list-backing);
     padding: 5px 5px 5px 5px;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 /* plank boards hiolding each distric information */
@@ -353,7 +362,7 @@ table, th, td h3 {
 }
 
 .make-ribbon-yellow h1 {
-    color:var(--party-lib-dem);
+    color: var(--party-lib-dem);
 }
 
 .make-ribbon-green h1 {
@@ -362,7 +371,6 @@ table, th, td h3 {
 
 .make-ribbon-grey h1 {
     color: var(--party-unknown);
-
 }
 
 /* Ribbon Color Classes for Political Parties */
@@ -386,8 +394,6 @@ table, th, td h3 {
 .make-people-grey {
     background-color: var(--party-unknown);
 }
-
-
 
 /* Pledge Priority Page  */
 
@@ -472,7 +478,7 @@ color: yellow;
     border: 4px double;
     font-size: 1rem;
     /* background-color:rgb(238, 198, 119); */
-    background-color: rgb(216, 205, 123);
+    background-color: var(--district-background);
     color: var(--main-bg-color);
     box-shadow: 3px 3px var(--main-bg-color);
     text-shadow: 1px 1px rgb(245, 210, 10);
@@ -513,7 +519,7 @@ color: yellow;
 /* Progress Bar on View Districts page */
 
 .progress-bar {
-    color: var(--main-page-body-color);
+    color: var(--main-page-body-color) ;
 }
 
 /* Highlight district name on district view page */
@@ -541,9 +547,11 @@ color: yellow;
 
 /* tabloid headline */
 
+/* NEWSFLASH BAR */
+
 .tabloid {
     font-size: 2rem;
-    background-color: rgb(187, 218, 142);
+    background-color: var(--news-flash-bar);
     border-radius: 10px;
     margin-bottom: 10px;
     padding-left: 5px;
@@ -556,9 +564,10 @@ color: yellow;
 
 .map-uk, img {
     border-radius: 10px;
-    width: 100px;
+    width: 80px;
     height: auto;
     margin-bottom: 5px;
+ 
 }
 
 /* Create Manifesto Page - seperate between button and panel */
@@ -725,12 +734,12 @@ color: yellow;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: yellow;
+    background-color: var(--promoted-pledge-backstrip);
     color: black;
 }
 
 .promo-circle {
-    font-size: 1.25rem;
+    font-size: .70rem;
     border-radius: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
