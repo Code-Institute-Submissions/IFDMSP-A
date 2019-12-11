@@ -525,7 +525,7 @@ function stateController() {
         $('#g-gen-button').addClass('global-ecom-button-hide');
         return;
     }
-    
+
     if (picked !== null) {
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
@@ -1411,7 +1411,7 @@ function setupGame() {
 
 
     sessionStorage.setItem("election-day-active-authorised", false);
-    sessionStorage.setItem("campaign-mode-active-authorised", false);
+    sessionStorage.setItem("campaign-mode-active-authorised", true);
 
     sessionStorage.setItem("election-day-game-active-authorised", true);
 }
@@ -1529,8 +1529,8 @@ function saveManifesto() {
     // Confirm Save and jumpt to Districts Screen
     alert("Manifesto Saved!");
 
-    // Turn of Allow Creation Now as Creation is allowed only once per Election
-    sessionStorage.setItem("create-manifesto-page-authorised", false);
+    // Turn OFF Allow Creation Now as Creation is allowed only once per Election
+    sessionStorage.setItem("create-manifesto-page-authorised", false );
 
     window.location = "country-districts.html";
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -185,17 +187,24 @@
                 stateController();
             }, 10)
         })
+    </script>
 
+
+
+
+    <script>
         // Check for allowed Manifesto Creation. Exit to District Page if Not
         // var result = sessionStorage.getItem("create-manifesto-page-authorised")
+        loadUpManifestoPage();
 
-        if (sessionStorage.getItem("create-manifesto-page-authorised" === true) )
-        {
+        if (sessionStorage.getItem("create-manifesto-page-authorised") === "false") {
             alert("Sorry - You can create a manifesto ONCE per election process");
             window.location.href = "country-districts.html";
         }
 
-        loadUpManifestoPage();
     </script>
+
+
 </body>
+
 </html>
