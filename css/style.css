@@ -1,7 +1,8 @@
 body {
     /* SETUP VARIABLES */
     /* --main-page-body-color: #202936; */
-    --main-page-body-color: rgb(15, 45, 88);
+    --main-page-body-color:#144B96;
+
     background-color: var(--main-page-body-color);
     font-family: "Calistoga", "sans-serif";
     --main-bg-color: rgb(37, 37, 107);
@@ -791,6 +792,10 @@ color: yellow;
 /* Label above No of High Pledges left on pledge priority page */
 
 #number-of-high-pledges-instructions h3 {
+
+    margin-left: auto;
+    margin-right:auto;
+
     margin-top: 10px;
     font-size: 1rem;
     background-color: var(--myRed);
