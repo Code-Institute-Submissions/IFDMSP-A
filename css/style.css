@@ -290,7 +290,7 @@ table, th, td h3 {
 .dN {
     text-align: center;
     color: var(--myRed);
-    background-color: yellow;
+    background-color: rgb(214, 214, 6);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
@@ -528,7 +528,8 @@ color: yellow;
     padding-right: 5px;
     color: var(--myRed);
     border-color: var(--main-bg-color);
-    background-color: yellow;
+    background-color: rgb(216, 216, 13);
+    text-shadow: 1px 1px black;
 }
 
 /* Highlight district Number on district View Page */

@@ -130,7 +130,7 @@
 
                 <!-- Number of High Priority Pushes Available -->
                 <div class="row no-gutters">
-                    <div id="number-of-high-pledges-instructions" class="col-12 nopadding  d-flex w-100" >
+                    <div id="number-of-high-pledges-instructions" class="col-12 nopadding  d-flex w-100">
                         <h3>
                             <div>Available 'High-priority' for pledges per district: </div>
                         </h3>
@@ -290,6 +290,15 @@
     <script>
         showCurrentDistrict();
     </script>
+
+
+    <script>
+        if (sessionStorage.getItem("create-manifesto-page-authorised") === "true") {
+            alert("You need a Manifesto, before you can do this......redirecting!");
+            window.location.href = "create-manifesto.html";
+        }
+    </script>
+
 
 
 </body>
