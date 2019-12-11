@@ -1684,7 +1684,9 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
+
                 break;
             }
             break;
@@ -1713,6 +1715,7 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
                 break;
             }
@@ -1742,6 +1745,7 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
                 break;
             }
@@ -1770,6 +1774,7 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
                 break;
             }
@@ -1798,6 +1803,7 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
                 break;
             }
@@ -1826,6 +1832,7 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
                 break;
             }
@@ -1854,6 +1861,7 @@ function setBv(bp) {
                 // Decrement remaining High Pledges available count
                 if (numberOfPriorityHighAvilable > 0) {
                     numberOfPriorityHighAvilable--;
+                    showHighPledgesRemaining();
                 }
                 break;
             }
