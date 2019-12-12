@@ -2123,7 +2123,7 @@ function processElection() {
 
     function getTotalPeopleInDistrict(dn) {
         // //////////////////////////////////
-        // GET DISTRICT POP TOTAL
+        // GET TOTAL RESIDENTS IN BOROUGH
         // Get The Volume of people in a district
         // dn = district number to get pop volume for
         // var packeddata = [];
@@ -2137,17 +2137,49 @@ function processElection() {
     }
 
 
+
+    function getTotalConservativesInDistrict(dn, party) {
+        // ////////////////////////////////// 
+    
+        var packedData
+        packedData = sessionStorage.getItem("D," + dn);
+        var splitData = packedData.split("@");
+
+        var members = splitData[1];
+        var individualPeople = members.split("^");
+
+        var tally = 0; // restet tally count
+        for (let i = 1; i < individualPeople.length; i++) {
+            var unpackedPerson = individualPeople[i].split("/");
+
+            // Keep this as remider of each data
+            // console.log(unpackedPerson[0]); // id number
+            // console.log(unpackedPerson[1]); // issue of concern
+            // console.log(unpackedPerson[2]); // name
+            // console.log(unpackedPerson[3]); // convertion threshold
+            // console.log(unpackedPerson[4]); // current party allaiance
+
+            // count up tally
+            switch (party) 
+            {
+                case unpackedPerson[4]:
+                    tally++;
+                    break;
+            }
+        }
+        return tally; // return total  found
+    }
+
+
+
+
+
+
+
+
     // // Test get Pop Total in district n
     // alert(getTotalPeopleInDistrict(4));
-
-
-
-
-
-
-
-
-
+    alert(getTotalConservativesInDistrict(1, "Lib-Dem"));
 
 
 
@@ -2158,7 +2190,7 @@ function processElection() {
 
     // *** SORT PEOPLE DETAILS OUT ***
 
-    // GET TOTAL RESIDENTS IN BOROUGH
+
 
     // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
 
