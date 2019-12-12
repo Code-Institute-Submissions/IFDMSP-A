@@ -2036,79 +2036,7 @@ function showMarquee(message, mw) {
 
 function processElection() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function publishLine() {
-
-        // <!-- Separating Line -->
-        // <div class="row no-gutters">
-        //     <div id="results-stats" class="col-12">
-        //         <h2>
-        //             <!-- // -->
-        //             <div class="row no-gutters">
-        //                 <div class="col-2 nopadding">
-        //                     <h2>
-        //                         DI
-        //                     </h2>
-        //                 </div>
-        //                 <!-- // -->
-        //                 <div class="col-4 nopadding">
-        //                     <h2>
-        //                         NME
-        //                     </h2>
-        //                 </div>
-        //                 <div class="col-2 nopadding">
-        //                     <h2>
-        //                         CON
-        //                     </h2>
-        //                 </div>
-        //                 <div class="col-1 nopadding">
-        //                     <h2>
-        //                         LAB
-        //                     </h2>
-        //                 </div>
-        //                 <div class="col-1 nopadding">
-        //                     <h2>
-        //                         LBD
-        //                     </h2>
-        //                 </div>
-        //                 <div class="col-1 nopadding">
-        //                     <h2>
-        //                         GRN
-        //                     </h2>
-        //                 </div>
-        //                 <div class="col-1 nopadding">
-        //                     <h2>
-        //                         HLD
-        //                     </h2>
-        //                 </div>
-
-        //                 <div id="insert-stats"></div>
-
-        //             </div>
-
-        //             <!-- // -->
-
-        //         </h2>
-
-        //     </div>
-        // </div>
+    function publishLine(repd, con, lab, libd, grn, hld) {
 
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
@@ -2120,47 +2048,46 @@ function processElection() {
 
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "DI";
+        preStatsResultLineOut = preStatsResultLineOut + repd;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-        
+
         preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-4 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "NME";
+        preStatsResultLineOut = preStatsResultLineOut + countryDistricts[repd];
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "CON";
+        preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "LAB";
+        preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "LBD";
+        preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "GRN";
+        preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "HLD";
+        preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-
 
         preStatsResultLineOut = preStatsResultLineOut + "<div id=\"insert-stats\"></div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2173,13 +2100,7 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "";
         preStatsResultLineOut = preStatsResultLineOut + "";
 
-
-
-
-
-
-
-
+        // Publish line item to webpage
         $('#insert-stats-content').append(preStatsResultLineOut);
 
     }
@@ -2223,8 +2144,9 @@ function processElection() {
     // GET SUBTOTAL COUNT FOR EACH ISSUE 
 
 
+    var reportingDistrict = 1;
 
-    publishLine();
+    publishLine(reportingDistrict);
 
 
 
