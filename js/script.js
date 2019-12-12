@@ -2138,16 +2138,16 @@ function processElection() {
 
 
 
-    function getTotalConservativesInDistrict(dn, party) {
+    function getPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
-    
+        // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
+        // dn = district number to check
+        // party = party to check totals for..
         var packedData
         packedData = sessionStorage.getItem("D," + dn);
         var splitData = packedData.split("@");
-
         var members = splitData[1];
         var individualPeople = members.split("^");
-
         var tally = 0; // restet tally count
         for (let i = 1; i < individualPeople.length; i++) {
             var unpackedPerson = individualPeople[i].split("/");
@@ -2160,8 +2160,7 @@ function processElection() {
             // console.log(unpackedPerson[4]); // current party allaiance
 
             // count up tally
-            switch (party) 
-            {
+            switch (party) {
                 case unpackedPerson[4]:
                     tally++;
                     break;
@@ -2192,7 +2191,7 @@ function processElection() {
 
 
 
-    // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
+
 
     // GET SUBTOTAL COUNT FOR EACH ISSUE 
 
