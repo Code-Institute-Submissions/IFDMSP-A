@@ -842,7 +842,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ Issues</p>";
+        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ Canvass Rept</p>";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"anw\">";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
@@ -1127,11 +1127,11 @@ function showCurrentDistrict() {
 
 
 
-function colorPerson() {
-    // Color Person Line
+// function colorPerson() {
+//     // Color Person Line
 
 
-}
+// }
 
 
 
