@@ -802,7 +802,9 @@ color: yellow;
 }
 
 /* Hide the create manifesto button from page once completed */
+
 /* So it does not show on page refresh */
+
 .remove-c-m-b-a {
     display: none;
 }
@@ -820,16 +822,36 @@ color: yellow;
     background-blend-mode: var(--myRed);
 }
 
-.profile-shot {
-    width: 200px;
-    height:auto;
+
+
+
+.profile-shot   {
+    width: 100px;
+    height: auto;
     border-radius: 10px;
+    
+}
+
+#marquee {
+    font-size: 1rem;
+    background-color: black;
+    /* color: limegreen; */
 }
 
 
-#marquee {
+/* Results page Table backgrounds */
+#results-stats  {
+    margin-top: 10px;
+    font-size: .75rem;
+    color: wheat;
+    /* border:1px solid red; */
+}
 
-    font-size: 1rem;
-    background-color: black;
-    color: limegreen;
+
+/* Stats Output */
+.stats-output ,h2{
+
+font-size: .75rem;
+
+
 }

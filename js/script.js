@@ -1998,23 +1998,20 @@ function backToDistrictView() {
 // }
 
 
-
-
-
 var marquee = {
     "message1": "Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom"
 }
 
 // Message Ticker Marquee
 function showMarquee(message, mw) {
-    messageOut = message.slice(messagePosition, (messagePosition + 35))
+    messageOut = message.slice(messagePosition, (messagePosition + 100))
     // embedd message section in html page
     $('#marquee h2').text(messageOut);
 
     // advance position of ticker message
     if (messagePosition < (marquee.message1.length) - mw) {
         messagePosition++;
-        if (messagePosition > (marquee.message1.length) - (mw+1)){
+        if (messagePosition > (marquee.message1.length) - (mw + 1)) {
             messagePosition = 1;
         }
     }
@@ -2022,3 +2019,305 @@ function showMarquee(message, mw) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+//  //////////////////////////////////////////////////////////////////////////
+// ELECTION ENGINE
+// //////////////////////////////////////////////////////////////////////////
+
+function processElection() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function publishLine() {
+
+        // <!-- Separating Line -->
+        // <div class="row no-gutters">
+        //     <div id="results-stats" class="col-12">
+        //         <h2>
+        //             <!-- // -->
+        //             <div class="row no-gutters">
+        //                 <div class="col-2 nopadding">
+        //                     <h2>
+        //                         DI
+        //                     </h2>
+        //                 </div>
+        //                 <!-- // -->
+        //                 <div class="col-4 nopadding">
+        //                     <h2>
+        //                         NME
+        //                     </h2>
+        //                 </div>
+        //                 <div class="col-2 nopadding">
+        //                     <h2>
+        //                         CON
+        //                     </h2>
+        //                 </div>
+        //                 <div class="col-1 nopadding">
+        //                     <h2>
+        //                         LAB
+        //                     </h2>
+        //                 </div>
+        //                 <div class="col-1 nopadding">
+        //                     <h2>
+        //                         LBD
+        //                     </h2>
+        //                 </div>
+        //                 <div class="col-1 nopadding">
+        //                     <h2>
+        //                         GRN
+        //                     </h2>
+        //                 </div>
+        //                 <div class="col-1 nopadding">
+        //                     <h2>
+        //                         HLD
+        //                     </h2>
+        //                 </div>
+
+        //                 <div id="insert-stats"></div>
+
+        //             </div>
+
+        //             <!-- // -->
+
+        //         </h2>
+
+        //     </div>
+        // </div>
+
+        var preStatsResultLineOut = "";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
+        preStatsResultLineOut = preStatsResultLineOut + " <div id=\"results-stats\" class=\"col-12\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+
+        preStatsResultLineOut = preStatsResultLineOut + " <!-- // -->";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "DI";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        
+        preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-4 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "NME";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "CON";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "LAB";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "LBD";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "GRN";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "HLD";
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+
+        preStatsResultLineOut = preStatsResultLineOut + "<div id=\"insert-stats\"></div>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+
+        preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
+
+        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+
+
+
+
+
+
+
+
+        $('#insert-stats-content').append(preStatsResultLineOut);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // *** SORT PEOPLE DETAILS OUT ***
+
+
+
+    // GET TOTAL RESIDENTS IN BOROUGH
+
+
+
+    // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
+    conSubtotal = 45;
+    labourSubtotal = 23;
+    libDemSubtotal = 54;
+    greenSubtotal = 22;
+    strongHold = "Conservative";
+
+
+    // GET SUBTOTAL COUNT FOR EACH ISSUE 
+
+
+
+    publishLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // alert("POP");
+    // var lpos = 1;
+    // do {
+
+    //     // alert("pop");
+    //     var preStatsResultLineOut = "";
+
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
+
+    //     // District ID
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-3 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + lpos;
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+    //     // District Name
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-6 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + countryDistricts[lpos];
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+    //     // Conservative Subtotal
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + conSubtotal;
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+    //     // Labour Subtotal
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + labourSubtotal;
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+    //     // Lib-Dem Subtotal
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + libDemSubtotal;
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+    //     // Green Subtotal
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + greenSubtotal;
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+    //     // Strong Hold 
+    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
+    //     preStatsResultLineOut = preStatsResultLineOut + strongHold;
+    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
+    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+
+
+
+
+
+
+
+
+
+
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+    //     preStatsResultLineOut = preStatsResultLineOut + "";
+
+    //     $('#insert-stats').append(preStatsResultLineOut);
+
+    //     lpos++;
+
+    // } while (lpos < noOfDistricts);
+
+
+}
