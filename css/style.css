@@ -1,8 +1,7 @@
 body {
     /* SETUP VARIABLES */
     /* --main-page-body-color: #202936; */
-    --main-page-body-color:#144B96;
-
+    --main-page-body-color: #144B96;
     background-color: var(--main-page-body-color);
     font-family: "Calistoga", "sans-serif";
     --main-bg-color: rgb(37, 37, 107);
@@ -27,7 +26,7 @@ body {
     /* Party Colours */
     --party-labour: red;
     --party-conservative: blue;
-    --party-lib-dem: yellow;
+    --party-lib-dem: rgb(211, 211, 42);
     --party-green: green;
     --party-unknown: grey;
     /* NewsFlash Bar */
@@ -560,7 +559,7 @@ color: yellow;
 
 /* UK-MAP image */
 
-.map-uk img{
+.map-uk img {
     border-radius: 10px;
     width: 100px;
     height: auto;
@@ -793,10 +792,8 @@ color: yellow;
 /* Label above No of High Pledges left on pledge priority page */
 
 #number-of-high-pledges-instructions h3 {
-
     margin-left: auto;
-    margin-right:auto;
-
+    margin-right: auto;
     margin-top: 10px;
     font-size: 1rem;
     background-color: var(--myRed);
@@ -811,13 +808,28 @@ color: yellow;
 }
 
 /* UK MAAP BIG */
-.map-big ,img{
-width: 60%;
-height: Auto;
-border-radius: 10px;
-margin-bottom: 10px;
+
+.map-big, img {
+    width: 60%;
+    height: Auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 
 .highlight-sign {
     background-blend-mode: var(--myRed);
+}
 
+.profile-shot {
+    width: 200px;
+    height:auto;
+    border-radius: 10px;
+}
+
+
+#marquee {
+
+    font-size: 1rem;
+    background-color: black;
+    color: limegreen;
 }

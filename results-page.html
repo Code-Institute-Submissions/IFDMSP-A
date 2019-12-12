@@ -59,9 +59,6 @@
                 </div>
             </div>
         </div>
-
-
-
         <!-- Navbar Normal -->
         <div class="row no-gutters">
             <div class="d-none d-md-inline">
@@ -98,31 +95,33 @@
                 <div class="title-block main-title">
                     <h1>ELECTION RESULTS</h1>
                 </div>
-                <div class="fantasy-sub-heading">
-                    <!-- <h1>Press the button below, to generate <span class="highLight">fantasy</span> global economy
-                        statistics</h1> -->
-                    <!-- <div class="globeicon">
-                        <span class="fas fa-globe-americas"></span>
-                    </div> -->
+                <!-- Marquee -->
+                <div class="row">
+                    <div class="col-12">
+                        <div id="marquee">
+                            <h2>
+                            </h2>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <!-- Reporter -->
+                <div class="row">
+                    <div id="reporter-politician" class="col-6  profile-shot">
+                        <h3>Vicky Morse [BBC]</h3>
+                        <img src="images/vicky-morse.png" />
+                    </div>
+                    <!-- My Politician -->
+                    <div id="my-politician" class="col-6 profile-shot">
+                        <h3>Paul Moss - Stats Analyst</h3>
+                        <img src="images/paul-moss.png" />
+                    </div>
+                </div>
+                <!-- Separating Line -->
+                <div class="row">
+                    <div class="col-12">
+                        <h3></h3>
+                    </div>
+                </div>
                 <!-- Footer -->
                 <section>
                     <div class="footer">
@@ -176,11 +175,6 @@
             }, 10)
         })
     </script>
-
-
-
-
-
     <!-- FINAL RESULTS DAY -->
     <!-- LOCKOUT ALL OTHER PAGES -->
     <script>
@@ -188,18 +182,20 @@
         sessionStorage.setItem("view-populus-page-authorised", false);
         sessionStorage.setItem("pledge-priority-page-authorised", false);
         sessionStorage.setItem("create-manifesto-page-authorised", false);
-        sessionStorage.setItem("country-districts-page-authorised",false);
-        sessionStorage.setItem("generate-populus-page-authorised",false);
-
+        sessionStorage.setItem("country-districts-page-authorised", false);
+        sessionStorage.setItem("generate-populus-page-authorised", false);
         sessionStorage.setItem("election-day-active-authorised", true);
         sessionStorage.setItem("campaign-mode-active-authorised", true);
-
         sessionStorage.setItem("election-day-game-active-authorised", true);
     </script>
-
-
-
-
 </body>
+<script>
+    // Run Marquee Clock
+    $(document).ready(function () {
+        setInterval(function () {
+            showMarquee(marquee.message1, 10); // Ticker Marquee
+        }, 100)
+    })
+</script>
 
 </html>

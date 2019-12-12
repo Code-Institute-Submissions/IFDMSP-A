@@ -31,8 +31,9 @@ var pcount = 0;
 var worldEconomy = [];
 var threeCountriesSelected = false;
 
-
-
+// Marque Variables
+var messagePosition = 1; //Message data
+var mw = 10; //Message Width
 
 
 // ------------------------------------------------ 
@@ -1478,12 +1479,12 @@ function setupGame() {
     sessionStorage.setItem("global-economy-page-authorised", true);
     sessionStorage.setItem("view-populus-page-authorised", true);
     sessionStorage.setItem("pledge-priority-page-authorised", true);
-    sessionStorage.setItem("generate-populus-page-authorised",true);
-    sessionStorage.setItem("country-districts-page-authorised",true);
+    sessionStorage.setItem("generate-populus-page-authorised", true);
+    sessionStorage.setItem("country-districts-page-authorised", true);
     sessionStorage.setItem("create-manifesto-page-authorised", true);
     sessionStorage.setItem("election-day-active-authorised", false);
     sessionStorage.setItem("campaign-mode-active-authorised", true);
-    
+
     sessionStorage.setItem("election-day-game-active-authorised", true);
 }
 
@@ -1988,10 +1989,36 @@ function backToDistrictView() {
 
 
 
-function viewPopulation() {
-    // View Population
-    // Show Population per district
+// function viewPopulation() {
+//     // View Population
+//     // Show Population per district
 
 
 
+// }
+
+
+
+
+
+var marquee = {
+    "message1": "Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom"
 }
+
+// Message Ticker Marquee
+function showMarquee(message, mw) {
+    messageOut = message.slice(messagePosition, (messagePosition + 35))
+    // embedd message section in html page
+    $('#marquee h2').text(messageOut);
+
+    // advance position of ticker message
+    if (messagePosition < (marquee.message1.length) - mw) {
+        messagePosition++;
+        if (messagePosition > (marquee.message1.length) - (mw+1)){
+            messagePosition = 1;
+        }
+    }
+}
+
+
+
