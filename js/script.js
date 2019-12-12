@@ -2035,6 +2035,12 @@ function showMarquee(message, mw) {
 // //////////////////////////////////////////////////////////////////////////
 
 function processElection() {
+    // repd = district to report on
+    // con = conservative info
+    // lab = labour info
+    // libd = liberal Democrats info
+    // grn = green info
+    // hld = stronghold party
 
     function publishLine(repd, con, lab, libd, grn, hld) {
 
@@ -2052,6 +2058,7 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+        // District Name
         preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-4 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
@@ -2059,41 +2066,45 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+        // CON info
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+        // LAB Info
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+        // LIB-DEM
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+        // GREEN
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+        // STRONGHOLD
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+
         preStatsResultLineOut = preStatsResultLineOut + "<div id=\"insert-stats\"></div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-
         preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
-
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2108,6 +2119,26 @@ function processElection() {
 
 
 
+
+
+    function getTotalPeopleInDistrict(dn) {
+        // //////////////////////////////////
+        // GET DISTRICT POP TOTAL
+        // Get The Volume of people in a district
+        // dn = district number to get pop volume for
+        // var packeddata = [];
+        var packedData
+        packedData = sessionStorage.getItem("D," + dn);
+        var splitData = packedData.split("@");
+        var getPop = splitData[0];
+        var pop = getPop.split("#");
+
+        return pop[2]; // Return total population volume
+    }
+
+
+    // // Test get Pop Total in district n
+    // alert(getTotalPeopleInDistrict(4));
 
 
 
@@ -2127,13 +2158,17 @@ function processElection() {
 
     // *** SORT PEOPLE DETAILS OUT ***
 
-
-
     // GET TOTAL RESIDENTS IN BOROUGH
 
-
-
     // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
+
+    // GET SUBTOTAL COUNT FOR EACH ISSUE 
+
+
+
+
+    // Dummy Data.. Delete This once true code written
+    reportingDistrict = 1;
     conSubtotal = 45;
     labourSubtotal = 23;
     libDemSubtotal = 54;
@@ -2141,83 +2176,23 @@ function processElection() {
     strongHold = "Conservative";
 
 
-    // GET SUBTOTAL COUNT FOR EACH ISSUE 
+    publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
 
 
-    var reportingDistrict = 1;
+    // 
+    // var reportingDistrict = 1;
 
-    publishLine(reportingDistrict);
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // alert("POP");
-    // var lpos = 1;
     // do {
+    //     // conSubtotal = 45;
+    //     // labourSubtotal = 23;
+    //     // libDemSubtotal = 54;
+    //     // greenSubtotal = 22;
+    //     // strongHold = "Conservative";
 
-    //     // alert("pop");
-    //     var preStatsResultLineOut = "";
+    //     publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
+    //     reportingDistrict++;
 
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
-
-    //     // District ID
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-3 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + lpos;
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-
-    //     // District Name
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-6 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + countryDistricts[lpos];
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-
-    //     // Conservative Subtotal
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + conSubtotal;
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-
-    //     // Labour Subtotal
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + labourSubtotal;
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-
-    //     // Lib-Dem Subtotal
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + libDemSubtotal;
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-
-    //     // Green Subtotal
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + greenSubtotal;
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-
-    //     // Strong Hold 
-    //     preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 stats-output nopadding keep-insideBSol\">";
-    //     preStatsResultLineOut = preStatsResultLineOut + strongHold;
-    //     preStatsResultLineOut = preStatsResultLineOut + "</div>";
-    //     preStatsResultLineOut = preStatsResultLineOut + "</h2>";
+    // } while (reportingDistrict < noOfDistricts);
 
 
 
@@ -2225,21 +2200,6 @@ function processElection() {
 
 
 
-
-
-
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-    //     preStatsResultLineOut = preStatsResultLineOut + "";
-
-    //     $('#insert-stats').append(preStatsResultLineOut);
-
-    //     lpos++;
-
-    // } while (lpos < noOfDistricts);
 
 
 }
