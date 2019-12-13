@@ -2120,7 +2120,7 @@ function processElection() {
 
         // STRONGHOLD
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"\">";
         preStatsResultLineOut = preStatsResultLineOut + "---";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2140,6 +2140,9 @@ function processElection() {
         $('#insert-stats-content').append(preStatsResultLineOut);
 
     }
+
+
+
 
 
 
@@ -2198,38 +2201,22 @@ function processElection() {
 
 
 
-
-
-
-
-    // // Test get Pop Total in district n
-    // alert(getTotalPeopleInDistrict(4));
-    // alert(getPartyMembersCountInDistrict(1, "Labour"));
-
-
-
-
-
-
-
-
-
-
-
-
-    // *** SORT PEOPLE DETAILS OUT ***
-    // Dummy Data.. Delete This once true code written
-    reportingDistrict = 1;
-    conSubtotal = 45;
-    labourSubtotal = 23;
-    libDemSubtotal = 54;
-    greenSubtotal = 22;
-    strongHold = "Conservative";
-
  
 
 
-    
+
+
+
+
+
+
+
+
+
+
+     
+  // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
+
     // Reset Grand Total Votes
     // Before Election Count Up
     partyGT.Conservative = 0;
@@ -2237,17 +2224,10 @@ function processElection() {
     partyGT.LibDem = 0;
     partyGT.Green = 0;
 
-
-    // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
     var reportingDistrict = 1;
 
     do {
-        // conSubtotal = 45;
-        // labourSubtotal = 23;
-        // libDemSubtotal = 54;
-        // greenSubtotal = 22;
-        // strongHold = "Conservative";
-
+ 
         // publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
          publishLine(reportingDistrict, 0, 0, 0, 0, 0);
         
