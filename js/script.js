@@ -2132,7 +2132,7 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-        
+
         preStatsResultLineOut = preStatsResultLineOut + "";
         preStatsResultLineOut = preStatsResultLineOut + "";
 
@@ -2248,8 +2248,8 @@ function processElection() {
         // greenSubtotal = 22;
         // strongHold = "Conservative";
 
-        publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
-        
+        // publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
+         publishLine(reportingDistrict, 0, 0, 0, 0, 0);
         
         reportingDistrict++;
 
