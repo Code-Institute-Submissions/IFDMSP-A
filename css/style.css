@@ -719,3 +719,11 @@ color: yellow;
 #working-cog ,h1{
     text-shadow: 2px 2px grey;
 }
+
+
+
+#pre-election-stats {
+
+border: 2px double wheat;
+margin-bottom: 10px;
+}

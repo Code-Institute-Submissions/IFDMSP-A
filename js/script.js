@@ -1,12 +1,12 @@
 // ------- DATA ----------- 
 
- 
+
 
 // District Hold Total
-var conservativeDistrictHoldTotal=0;
-var labourDistrictHoldTotal=0;
-var libDemDistricttHoldTotal=0;
-var GreenDistrictHoldTotal=0;
+var conservativeDistrictHoldTotal = 0;
+var labourDistrictHoldTotal = 0;
+var libDemDistricttHoldTotal = 0;
+var GreenDistrictHoldTotal = 0;
 
 
 
@@ -2159,6 +2159,27 @@ function processElection() {
         // Publish line item to webpage
         $('#insert-stats-content').append(preStatsResultLineOut);
 
+
+
+        // SPIT OUT PARTY WITH THE MOST DISTRICT CONTROL
+        // --//
+        // ////////////////////////////////////////////
+        // /////////////////////////////////////////////
+
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut = preStatsResultLineOut + "";
+
+
+
+
     }
 
 
@@ -2291,7 +2312,7 @@ function processElection() {
 
         if (pty === "Lib-Dem") {
             // Add another district to Conservatives
-           libDemDistricttHoldTotal++;
+            libDemDistricttHoldTotal++;
             return;
         }
 
@@ -2327,7 +2348,7 @@ function processElection() {
 
 
 
-    console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal+ " Green:" + GreenDistrictHoldTotal);
+    console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
 
     alert("PRE-ELECTION STATS PUBLISHED")
 
@@ -2400,5 +2421,3 @@ function postProcessElection() {
 
     alert("POST ELECTION RESULT!")
 }
-
-
