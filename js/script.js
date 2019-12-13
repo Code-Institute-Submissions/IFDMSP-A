@@ -1,8 +1,7 @@
 // ------- DATA ----------- 
-// This variable is just to allow dev testing. When true it 
-// Shows the district solution answers.
-// Priority Button Line & Value
-
+ 
+ 
+// 
 var numberOfPriorityHighAvilable = 2; // Number of times allowed to select High on priority page
 
 var pblineValue = []; // Priority button line
@@ -2071,10 +2070,6 @@ function processElection() {
         var topParty;
         var topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
 
-        // console.log(topParty[0]);
-
-
-
 
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
@@ -2126,10 +2121,6 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + GreenVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-
-
-
-
 
         // STRONGHOLD
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
@@ -2206,11 +2197,6 @@ function processElection() {
             topPartyValue = pval4;
             topPartyName = party4Name;
         }
-
-
-        // console.log(topPartyName + ":" + topPartyValue);
-
-
 
         return [topPartyName, topPartyValue];
     }
