@@ -2066,6 +2066,7 @@ function processElection() {
         partyGT.LibDem = partyGT.LibDem + LibDemVotes;
         partyGT.Green = partyGT.Green + GreenVotes;
 
+        var topParty = getTopRankParty();
 
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
@@ -2118,17 +2119,23 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
+
+
+
+
         // STRONGHOLD
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"\">";
+
         preStatsResultLineOut = preStatsResultLineOut + "---";
+
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
 
         preStatsResultLineOut = preStatsResultLineOut + "<div id=\"insert-stats\"></div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-        preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
+        // preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2140,6 +2147,24 @@ function processElection() {
         $('#insert-stats-content').append(preStatsResultLineOut);
 
     }
+
+
+
+
+
+    function getTopRankParty(party1,pval,party2,pval2,party3,pval3,party4,pval4) {
+        // GET TOP RANK PARTY
+        
+
+
+
+
+
+
+    }
+
+
+
 
 
     function getTotalPeopleInDistrict(dn) {
