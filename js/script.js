@@ -2066,7 +2066,15 @@ function processElection() {
         partyGT.LibDem = partyGT.LibDem + LibDemVotes;
         partyGT.Green = partyGT.Green + GreenVotes;
 
-        var topParty = getTopRankParty();
+
+        // function getTopRankParty(party1, pval, party2, pval2, party3, pval3, party4, pval4) 
+        var topParty;
+        var topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
+
+        // console.log(topParty[0]);
+
+
+
 
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
@@ -2076,7 +2084,7 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + " <!-- // -->";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
 
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + repd;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
@@ -2084,14 +2092,14 @@ function processElection() {
 
         // District Name
         preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-4 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-4 keep-insideBSol nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + countryDistricts[repd];
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // CON info
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + ConVotes;
 
@@ -2099,21 +2107,21 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // LAB Info
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + LabVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // LIB-DEM
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + LibDemVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // GREEN
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
         preStatsResultLineOut = preStatsResultLineOut + GreenVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
@@ -2124,10 +2132,10 @@ function processElection() {
 
 
         // STRONGHOLD
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
+        preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"strng-hld\">";
 
-        preStatsResultLineOut = preStatsResultLineOut + "---";
+        preStatsResultLineOut = preStatsResultLineOut + topParty[0].slice(0,3);
 
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2152,15 +2160,41 @@ function processElection() {
 
 
 
-    function getTopRankParty(party1,pval,party2,pval2,party3,pval3,party4,pval4) {
+    function getTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET TOP RANK PARTY
-        
+        // Check through Parties supplied and find which is top in
+        // Set submitted
+        // This will allow you to find top party in district
+
+        var topPartyValue = 0;
+        var topPartyName = "";
+
+        if (pval1 > topPartyValue) {
+            topPartyValue = pval1;
+            topPartyName = party1Name;
+        }
+
+        if (pval2 > topPartyValue) {
+            topPartyValue = pval2;
+            topPartyName = party2Name;
+        }
+
+        if (pval3 > topPartyValue) {
+            topPartyValue = pval3;
+            topPartyName = party3Name;
+        }
+
+        if (pval4 > topPartyValue) {
+            topPartyValue = pval4;
+            topPartyName = party4Name;
+        }
+
+
+        // console.log(topPartyName + ":" + topPartyValue);
 
 
 
-
-
-
+        return [topPartyName, topPartyValue];
     }
 
 
