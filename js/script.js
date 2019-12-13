@@ -2133,13 +2133,14 @@ function processElection() {
 
         // STRONGHOLD
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"strng-hld\">";
 
-        preStatsResultLineOut = preStatsResultLineOut + topParty[0].slice(0,3);
+        // Get Stronghold Colour
+        strngHoldColor = getStrongHoldColor(topParty[0]);
+        preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"" + strngHoldColor + "\">";
+        preStatsResultLineOut = preStatsResultLineOut + topParty[0].slice(0, 3);// publish stronghold party in District
 
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
-
 
         preStatsResultLineOut = preStatsResultLineOut + "<div id=\"insert-stats\"></div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2157,7 +2158,24 @@ function processElection() {
     }
 
 
-
+    function getStrongHoldColor(tp) {
+        // GET STRONG HOLD COLOUR
+        // tp = stronghold  party name
+        var strngHoldColor = "make-people-grey"; //make Default color Grey.. No clear Winner
+        if (tp === "Conservative") {
+            var strngHoldColor = "make-people-blue";
+        }
+        if (tp === "Labour") {
+            var strngHoldColor = "make-people-red";
+        }
+        if (tp === "Lib-Dem") {
+            var strngHoldColor = "make-people-yellow";
+        }
+        if (tp === "Green") {
+            var strngHoldColor = "make-people-green";
+        }
+        return strngHoldColor;
+    }
 
 
     function getTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
