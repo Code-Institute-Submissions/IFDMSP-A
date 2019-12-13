@@ -36,6 +36,15 @@ var messagePosition = 1; //Message data
 var mw = 10; //Message Width
 
 
+var partyGT = {
+    // GRAND TOTAL RESULTS FOR PARTIES
+    "Conservative": 0,
+    "Labour": 0,
+    "LibDem": 0,
+    "Green": 0,
+}
+
+
 // ------------------------------------------------ 
 var manifesto = {
     // Your Politicions Manifesto
@@ -2031,10 +2040,11 @@ function showMarquee(message, mw) {
 
 
 //  //////////////////////////////////////////////////////////////////////////
-// ELECTION ENGINE
+// PRE - ELECTION ENGINE
 // //////////////////////////////////////////////////////////////////////////
 
 function processElection() {
+
     // repd = district to report on
     // con = conservative info
     // lab = labour info
@@ -2043,6 +2053,19 @@ function processElection() {
     // hld = stronghold party
 
     function publishLine(repd, con, lab, libd, grn, hld) {
+
+        // Get Vote Supports per party in each district
+        var ConVotes = getPartyMembersCountInDistrict(repd, "Conservative");
+        var LabVotes = getPartyMembersCountInDistrict(repd, "Labour");
+        var LibDemVotes = getPartyMembersCountInDistrict(repd, "Lib-Dem");
+        var GreenVotes = getPartyMembersCountInDistrict(repd, "Green");
+
+        // Running Total Votes Accross ALL Dristricts
+        partyGT.Conservative = partyGT.Conservative + ConVotes;
+        partyGT.Labour = partyGT.Labour + LabVotes;
+        partyGT.LibDem = partyGT.LibDem+LibDemVotes;
+        partyGT.Green=partyGT.Green+GreenVotes;
+
 
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
@@ -2069,28 +2092,29 @@ function processElection() {
         // CON info
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "---";
+        preStatsResultLineOut = preStatsResultLineOut + ConVotes;
+
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // LAB Info
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "---";
+        preStatsResultLineOut = preStatsResultLineOut + LabVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // LIB-DEM
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "---";
+        preStatsResultLineOut = preStatsResultLineOut + LibDemVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
         // GREEN
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 nopadding\">";
         preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "---";
+        preStatsResultLineOut = preStatsResultLineOut + GreenVotes;
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
 
@@ -2108,6 +2132,7 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        
         preStatsResultLineOut = preStatsResultLineOut + "";
         preStatsResultLineOut = preStatsResultLineOut + "";
 
@@ -2148,6 +2173,7 @@ function processElection() {
         var splitData = packedData.split("@");
         var members = splitData[1];
         var individualPeople = members.split("^");
+
         var tally = 0; // restet tally count
         for (let i = 1; i < individualPeople.length; i++) {
             var unpackedPerson = individualPeople[i].split("/");
@@ -2178,7 +2204,11 @@ function processElection() {
 
     // // Test get Pop Total in district n
     // alert(getTotalPeopleInDistrict(4));
-    alert(getTotalConservativesInDistrict(1, "Lib-Dem"));
+    // alert(getPartyMembersCountInDistrict(1, "Labour"));
+
+
+
+
 
 
 
@@ -2188,16 +2218,6 @@ function processElection() {
 
 
     // *** SORT PEOPLE DETAILS OUT ***
-
-
-
-
-
-    // GET SUBTOTAL COUNT FOR EACH ISSUE 
-
-
-
-
     // Dummy Data.. Delete This once true code written
     reportingDistrict = 1;
     conSubtotal = 45;
@@ -2206,24 +2226,34 @@ function processElection() {
     greenSubtotal = 22;
     strongHold = "Conservative";
 
+ 
 
-    publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
+
+    
+    // Reset Grand Total Votes
+    // Before Election Count Up
+    partyGT.Conservative = 0;
+    partyGT.Labour = 0;
+    partyGT.LibDem = 0;
+    partyGT.Green = 0;
 
 
-    // 
-    // var reportingDistrict = 1;
+    // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
+    var reportingDistrict = 1;
 
-    // do {
-    //     // conSubtotal = 45;
-    //     // labourSubtotal = 23;
-    //     // libDemSubtotal = 54;
-    //     // greenSubtotal = 22;
-    //     // strongHold = "Conservative";
+    do {
+        // conSubtotal = 45;
+        // labourSubtotal = 23;
+        // libDemSubtotal = 54;
+        // greenSubtotal = 22;
+        // strongHold = "Conservative";
 
-    //     publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
-    //     reportingDistrict++;
+        publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
+        
+        
+        reportingDistrict++;
 
-    // } while (reportingDistrict < noOfDistricts);
+    } while (reportingDistrict < noOfDistricts);
 
 
 
