@@ -699,10 +699,8 @@ color: yellow;
     margin-bottom: 10px;
 }
 
-
 /* Animation for Cog Wheel */
 /* On results page */
-
 @keyframes rotate-cog {
     from {
         transform: rotate(0deg);
@@ -717,4 +715,7 @@ color: yellow;
     animation-name: rotate-cog;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+}
+#working-cog ,h1{
+    text-shadow: 2px 2px grey;
 }
