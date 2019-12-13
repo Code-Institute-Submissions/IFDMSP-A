@@ -1,7 +1,5 @@
 // ------- DATA ----------- 
- 
- 
-// 
+
 var numberOfPriorityHighAvilable = 2; // Number of times allowed to select High on priority page
 
 var pblineValue = []; // Priority button line
