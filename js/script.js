@@ -2166,6 +2166,13 @@ function processElection() {
         // ////////////////////////////////////////////
         // /////////////////////////////////////////////
 
+
+        var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistricttHoldTotal + GreenDistrictHoldTotal)) * 100;
+
+        $('#con-td').html("<h2>"+"CONS: "+ tdcon + "%" + "</h2>");
+
+
+
         preStatsResultLineOut = preStatsResultLineOut + "";
         preStatsResultLineOut = preStatsResultLineOut + "";
         preStatsResultLineOut = preStatsResultLineOut + "";

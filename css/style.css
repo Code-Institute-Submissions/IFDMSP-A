@@ -727,3 +727,22 @@ color: yellow;
 border: 2px double wheat;
 margin-bottom: 10px;
 }
+
+
+
+
+
+
+
+/* STATS BOX PARTY WITH MOST DISTRICTS*/
+#container-box{
+
+border:solid;
+
+background-color: bisque;
+margin-bottom: 10px;
+
+min-height: 200px;
+width: 100%;
+}
+ 
