@@ -2142,13 +2142,6 @@ function processElection() {
     }
 
 
-
-
-
-
-
-
-
     function getTotalPeopleInDistrict(dn) {
         // //////////////////////////////////
         // GET TOTAL RESIDENTS IN BOROUGH
@@ -2203,18 +2196,6 @@ function processElection() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
 
     // Reset Grand Total Votes
@@ -2237,13 +2218,47 @@ function processElection() {
 
 
 
-
-
-
-
-
+    alert("PRE-ELECTION STATS PUBLISHED")
 
 }
+
+
+
+
+
+//  //////////////////////////////////////////////////////////////////////////
+// CAMPAIGN - ELECTION ENGINE
+// //////////////////////////////////////////////////////////////////////////
+
+function campaignStratergyImplementation() {
+
+
+
+
+
+
+
+
+
+
+
+
+    alert("CAMPAIGN IMPLEMENTED!")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  //////////////////////////////////////////////////////////////////////////
 // POST - ELECTION ENGINE
@@ -2258,5 +2273,5 @@ function postProcessElection() {
 
 
 
-    alert("YIPEEE!!")
+    alert("POST ELECTION RESULT!")
 }
