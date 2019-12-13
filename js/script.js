@@ -858,7 +858,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-8\">";
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">";//%%%
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
@@ -894,8 +894,8 @@ function viewDistricts() {
 
         outputDistrictHtml = outputDistrictHtml + "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
 
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Populus</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\" class=\"btn btn-warning btn-sm active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Residents</a>";
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-sm active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
 
         outputDistrictHtml = outputDistrictHtml + "</div>";
 

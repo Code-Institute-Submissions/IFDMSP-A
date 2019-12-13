@@ -539,6 +539,7 @@ color: yellow;
     padding-left: 5px;
     padding-right: 5px;
     color: white;
+    text-shadow: 2px 2px black;
     background-color: var(--myRed);
 }
 
@@ -822,14 +823,10 @@ color: yellow;
     background-blend-mode: var(--myRed);
 }
 
-
-
-
-.profile-shot   {
+.profile-shot {
     width: 100px;
     height: auto;
     border-radius: 10px;
-    
 }
 
 #marquee {
@@ -838,8 +835,8 @@ color: yellow;
     /* color: limegreen; */
 }
 
-
 /* Results page Table backgrounds */
+
 #results-stats {
     margin-top: 10px;
     font-size: .50rem;
@@ -847,17 +844,42 @@ color: yellow;
     /* border:1px solid red; */
 }
 
-
 /* Stats Output */
-.stats-output ,h2{
 
-font-size: .75rem;
+.stats-output, h2 {
+    font-size: .75rem;
+}
 
+#results-button, .btn {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+/* The element to apply the animation to */
+
+@keyframes rotate-cog {
+
+    from {
+        /* transform: rotate (0deg); */
+        width: 50px;
+    }
+    to 
+    {
+        /* transform: rotate(180deg); */
+        width: 300px;
+    }
 
 }
 
-#results-button  ,.btn {
-
-    margin-bottom: 10px;
-
+.working-cog 
+{
+    animation-name: rotate-cog;
+    animation-timing-function: ease-in-out;
+    animation-duration: 500s;
 }
