@@ -2063,8 +2063,8 @@ function processElection() {
         // Running Total Votes Accross ALL Dristricts
         partyGT.Conservative = partyGT.Conservative + ConVotes;
         partyGT.Labour = partyGT.Labour + LabVotes;
-        partyGT.LibDem = partyGT.LibDem+LibDemVotes;
-        partyGT.Green=partyGT.Green+GreenVotes;
+        partyGT.LibDem = partyGT.LibDem + LibDemVotes;
+        partyGT.Green = partyGT.Green + GreenVotes;
 
 
         var preStatsResultLineOut = "";
@@ -2201,7 +2201,6 @@ function processElection() {
 
 
 
- 
 
 
 
@@ -2214,8 +2213,9 @@ function processElection() {
 
 
 
-     
-  // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
+
+
+    // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
 
     // Reset Grand Total Votes
     // Before Election Count Up
@@ -2227,10 +2227,10 @@ function processElection() {
     var reportingDistrict = 1;
 
     do {
- 
+
         // publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
-         publishLine(reportingDistrict, 0, 0, 0, 0, 0);
-        
+        publishLine(reportingDistrict, 0, 0, 0, 0, 0);
+
         reportingDistrict++;
 
     } while (reportingDistrict < noOfDistricts);
@@ -2243,4 +2243,20 @@ function processElection() {
 
 
 
+}
+
+//  //////////////////////////////////////////////////////////////////////////
+// POST - ELECTION ENGINE
+// //////////////////////////////////////////////////////////////////////////
+
+function postProcessElection() {
+
+
+
+
+
+
+
+
+    alert("YIPEEE!!")
 }
