@@ -1,5 +1,15 @@
 // ------- DATA ----------- 
 
+ 
+
+// District Hold Total
+var conservativeDistrictHoldTotal=0;
+var labourDistrictHoldTotal=0;
+var libDemDistricttHoldTotal=0;
+var GreenDistrictHoldTotal=0;
+
+
+
 var numberOfPriorityHighAvilable = 2; // Number of times allowed to select High on priority page
 
 var pblineValue = []; // Priority button line
@@ -858,7 +868,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">";//%%%
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">"; //%%%
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
@@ -2123,10 +2133,15 @@ function processElection() {
         // STRONGHOLD
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
 
+
+        // ***************
         // Get Stronghold Colour
         strngHoldColor = getStrongHoldColor(topParty[0]);
         preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"" + strngHoldColor + "\">";
-        preStatsResultLineOut = preStatsResultLineOut + topParty[0].slice(0, 3);// publish stronghold party in District
+        preStatsResultLineOut = preStatsResultLineOut + topParty[0].slice(0, 3); // publish stronghold party in District
+        // Record District Hold Count for Each Party
+        DistrictTotalControl(topParty[0]);
+        // **************
 
         preStatsResultLineOut = preStatsResultLineOut + "</h2>";
         preStatsResultLineOut = preStatsResultLineOut + "</div>";
@@ -2257,6 +2272,41 @@ function processElection() {
 
 
 
+    function DistrictTotalControl(pty) {
+        // ////////////////////////////   
+        // Get Overall District Control
+        // ///////////////////////////
+
+        if (pty === "Conservative") {
+            // Add another district to Conservatives
+            conservativeDistrictHoldTotal++;
+            return;
+        }
+
+        if (pty === "Labour") {
+            // Add another district to Conservatives
+            labourDistrictHoldTotal++;
+            return;
+        }
+
+        if (pty === "Lib-Dem") {
+            // Add another district to Conservatives
+           libDemDistricttHoldTotal++;
+            return;
+        }
+
+        if (pty === "Green") {
+            // Add another district to Conservatives
+            GreenDistrictHoldTotal++;
+            return;
+        }
+
+        // console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal+ " Green:" + GreenDistrictHoldTotal);
+
+    }
+
+
+
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
 
     // Reset Grand Total Votes
@@ -2269,19 +2319,33 @@ function processElection() {
     var reportingDistrict = 1;
 
     do {
-
         // publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
         publishLine(reportingDistrict, 0, 0, 0, 0, 0);
-
         reportingDistrict++;
-
     } while (reportingDistrict < noOfDistricts);
 
 
 
+
+    console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal+ " Green:" + GreenDistrictHoldTotal);
+
     alert("PRE-ELECTION STATS PUBLISHED")
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2336,3 +2400,5 @@ function postProcessElection() {
 
     alert("POST ELECTION RESULT!")
 }
+
+
