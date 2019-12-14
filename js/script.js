@@ -5,8 +5,8 @@
 // District Hold Total
 var conservativeDistrictHoldTotal = 0;
 var labourDistrictHoldTotal = 0;
-var libDemDistricttHoldTotal = 0;
-var GreenDistrictHoldTotal = 0;
+var libDemDistrictHoldTotal = 0;
+var greenDistrictHoldTotal = 0;
 
 
 
@@ -2166,10 +2166,21 @@ function processElection() {
         // ////////////////////////////////////////////
         // /////////////////////////////////////////////
 
+        $('reporter-domparty-img').html("<h1><img src=\"images/vicky-morse.png\" /></h1>");
 
-        var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistricttHoldTotal + GreenDistrictHoldTotal)) * 100;
 
-        $('#con-td').html("<h2>"+"CONS: "+ tdcon + "%" + "</h2>");
+
+        var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
+        var domminatPartymessage = "";
+
+        // domminatPartymessage = domminatPartymessage + "<img src=\"images/vicky-morse.png\" />";
+
+        domminatPartymessage = domminatPartymessage + "<h2>The last party with a winning majority was </h2>";
+        domminatPartymessage = domminatPartymessage + "";
+
+
+
+        // $('#con-dom-mess').html("<h1>" + domminatPartymessage + "</h1>");
 
 
 
@@ -2277,14 +2288,12 @@ function processElection() {
         var tally = 0; // restet tally count
         for (let i = 1; i < individualPeople.length; i++) {
             var unpackedPerson = individualPeople[i].split("/");
-
             // Keep this as remider of each data
             // console.log(unpackedPerson[0]); // id number
             // console.log(unpackedPerson[1]); // issue of concern
             // console.log(unpackedPerson[2]); // name
             // console.log(unpackedPerson[3]); // convertion threshold
             // console.log(unpackedPerson[4]); // current party allaiance
-
             // count up tally
             switch (party) {
                 case unpackedPerson[4]:
@@ -2319,13 +2328,13 @@ function processElection() {
 
         if (pty === "Lib-Dem") {
             // Add another district to Conservatives
-            libDemDistricttHoldTotal++;
+            libDemDistrictHoldTotal++;
             return;
         }
 
         if (pty === "Green") {
             // Add another district to Conservatives
-            GreenDistrictHoldTotal++;
+            greenDistrictHoldTotal++;
             return;
         }
 
@@ -2333,10 +2342,7 @@ function processElection() {
 
     }
 
-
-
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
-
     // Reset Grand Total Votes
     // Before Election Count Up
     partyGT.Conservative = 0;
@@ -2350,15 +2356,20 @@ function processElection() {
         // publishLine(reportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
         publishLine(reportingDistrict, 0, 0, 0, 0, 0);
         reportingDistrict++;
-    } while (reportingDistrict < noOfDistricts);
+    }   while (reportingDistrict < noOfDistricts);
+
+    // console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
+    // var tDom = "Con: " + conservativeDistrictHoldTotal + " Lab: " + labourDistrictHoldTotal + " Lib-Dem: " + libDemDistrictHoldTotal + " Green: " + GreenDistrictHoldTotal;
 
 
+    $('#last-winning-party').append("<p>The Conservative party held:" +"<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span> districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Labour party held:" +"<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span> districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Liberal-Democrat party held:" +"<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span> districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Green party held:" +"<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span> districts at the last election.</p>");
+ 
 
 
-    console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
-
-    alert("PRE-ELECTION STATS PUBLISHED")
-
+    // alert("PRE-ELECTION STATS PUBLISHED")
 }
 
 

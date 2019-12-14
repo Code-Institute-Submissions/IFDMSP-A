@@ -735,10 +735,8 @@ margin-bottom: 10px;
 
 
 /* STATS BOX PARTY WITH MOST DISTRICTS*/
-#container-box{
-
+#container-box {
 border:solid;
-
 background-color: bisque;
 margin-bottom: 10px;
 
@@ -746,3 +744,55 @@ min-height: 200px;
 width: 100%;
 }
  
+
+
+
+
+#reporter-domparty-img ,h4{
+
+    width: 100%;
+    height: auto;
+}
+
+
+#last-winning-party ,h4 {
+
+color: black
+
+
+}
+
+.circle-dtot{
+
+    border-radius: 50%;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-size: 2rem;
+    background-color: var(--myRed);
+    color: wheat;
+}
+/* Conservative Dom Message */
+
+/* #con-dom-img{
+
+width:33%;
+height:auto;
+} */
+
+
+/* #con-dom-mess ,img { 
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+} */
+
+/* #con-dom-mess ,img ,h3{
+
+    color :var(--main-bg-color);
+
+} */
