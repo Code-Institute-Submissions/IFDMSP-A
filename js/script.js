@@ -972,7 +972,7 @@ function loadUpPopulation() {
     }
     // console.log(popData);
     // var peopleArray = districtChunck.split('@');
-    console.log(pinfoStart + ":" + dataEnd);
+    // console.log(pinfoStart + ":" + dataEnd);
 }
 
 function showCurrentDistrict() {
@@ -2026,7 +2026,7 @@ function processElection() {
 
     
 
-    // alert("PRE-ELECTION STATS PUBLISHED")
+    alert("PRE-ELECTION STATS PUBLISHED")
 }
 
 

@@ -775,9 +775,10 @@ color: yellow;
     text-shadow: 1px 1px black;
 }
 
-/* Number of High Pledges avaoilable in Pledge priority page */
 
 .number-of-high-pledges h2 {
+    /* Number of High Pledges avaoilable in Pledge priority page */
+
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
@@ -790,9 +791,9 @@ color: yellow;
     text-shadow: 2px 2px black;
 }
 
+#number-of-high-pledges-instructions h3 {
 /* Label above No of High Pledges left on pledge priority page */
 
-#number-of-high-pledges-instructions h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -829,9 +830,9 @@ color: yellow;
     border-radius: 10px;
 }
 
-#marquee {
-    font-size: 1rem;
-    background-color: black;
+#marquee ,h2{
+    font-size: 2rem;
+   
     /* color: limegreen; */
 }
 
