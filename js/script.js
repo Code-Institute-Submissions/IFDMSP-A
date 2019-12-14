@@ -1779,8 +1779,12 @@ function processElection() {
         partyGT.LibDem = partyGT.LibDem + LibDemVotes;
         partyGT.Green = partyGT.Green + GreenVotes;
         // function getTopRankParty(party1, pval, party2, pval2, party3, pval3, party4, pval4) 
+        
+        // Get The top party in district
         var topParty;
         var topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
+        
+        // Build Output HTML in String
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
         preStatsResultLineOut = preStatsResultLineOut + " <div id=\"results-stats\" class=\"col-12\">";
@@ -2092,15 +2096,70 @@ function processElection() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  //////////////////////////////////////////////////////////////////////////
 // CAMPAIGN - ELECTION ENGINE (2)
 // //////////////////////////////////////////////////////////////////////////
 function campaignStratergyImplementation() {
     alert("CAMPAIGN IMPLEMENTED!")
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  //////////////////////////////////////////////////////////////////////////
 // POST - ELECTION ENGINE (3)
 // //////////////////////////////////////////////////////////////////////////
 function postProcessElection() {
-    alert("POST ELECTION RESULT!")
+
+ 
 }
