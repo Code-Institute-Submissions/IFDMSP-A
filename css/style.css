@@ -36,20 +36,26 @@ body {
     --district-list-backing: rgb(71, 71, 88);
     --promoted-pledge-backstrip: rgb(231, 231, 146);
 }
+
 /* Burger Nav */
+
 .nav-item {
     margin-right: 10px;
     color: var(--main-fc-color);
     font-size: 1.5rem;
 }
+
 .dropdown-item {
     color: var(--main-bg-color);
 }
+
 .point-hand {
     color: var(--main-fc-color);
     font-size: 2rem;
 }
+
 /* Title-block */
+
 .title-block {
     color: var(--main-fc-color);
     background-color: var(--main-bg-color);
@@ -58,71 +64,89 @@ body {
     margin-top: 10px;
     border-radius: 10px;
 }
+
 .title-block p {
     text-align: center;
 }
+
 .title-block h1 {
     text-align: center;
     font-size: 3rem;
     text-shadow: 3px 3px var(--myRed);
 }
+
 /* Burger Stuff */
+
 .burger ul, li {
     margin: 0px;
     text-decoration: none;
     list-style: none;
 }
+
 /* Main Content */
+
 .globe-icon {
     text-align: center;
     /* color: var(--main-fc-color); */
     color: white;
     font-size: 12rem;
 }
+
 /* Font Awsome Images */
+
 .font-awsome {
     font-size: 2rem;
     color: var(--main-fc-color);
     margin-left: 10px;
     margin-right: 10px;
 }
+
 /* Footer stuff */
+
 .footer {
     margin-top: 10px;
     text-align: center;
     bottom: 0px;
     color: var(--main-fc-color);
 }
+
 .main-title {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
+
 .subtitle-1, h1 {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
+
 .subtitle-2, h1 {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
+
 .subtitle-3, h1 {
     border-radius: 10px;
     background-color: black;
     color: var(--main-fc-color);
 }
+
 /* Candidate images on front page */
+
 .candidates img {
     border: solid 2px var(--main-fc-color);
     border-radius: 50%;
     width: 100px;
     height: auto;
 }
+
 .candidates img:hover {
     width: 105px;
 }
+
 .candidates h1 {
     margin-top: 5px;
     text-align: center;
@@ -131,6 +155,7 @@ body {
     padding-right: 5px;
     border-radius: 10px;
 }
+
 .advert {
     color: var(--main-fc-color);
     background-color: var(--advert-bg-color);
@@ -140,50 +165,75 @@ body {
     margin-right: auto;
     border-radius: 10px;
 }
+
 /* Index page advert */
+
 p, .adv-text {
+    text-align: left;
     color: wheat;
     text-shadow: 1px 1px grey;
 }
+
+p, .adv-text, ou, li {
+    display: block;
+    text-align: left;
+    color: wheat;
+    text-shadow: 1px 1px blue;
+}
+
+
+
+
 /* Make Things Flash */
+
 .flashNow {
     color: orange;
     background-color: black;
 }
+
 .flashHandNow {
     color: var(--myRed);
 }
+
 #political-sway h1 {
     color: white;
     background-color: black;
 }
+
 div .ribbon h1 {
     margin-top: 20px;
     /* color: red; */
     font-size: 4rem;
 }
+
 /* Generate World Stats Button */
+
 #genbutton {
     margin-top: 5px;
     margin-bottom: 10px;
 }
+
 /* Global Table Stuff */
+
 h2 {
     border: 4px double var(--myRed);
     color: white;
     margin-top: 5px;
     font-size: 1rem;
 }
+
 table, th, td h3 {
     width: 100%;
     border: 1px double var(--main-bg-color);
     font-size: 1rem;
 }
+
 .colorTable h3 {
     background-color: rgb(201, 122, 139);
     color: black;
     border: none;
 }
+
 .highLight {
     border-radius: 10px;
     padding-left: 5px;
@@ -193,33 +243,41 @@ table, th, td h3 {
     background-color: rgb(233, 233, 156);
     color: black;
 }
+
 .highLight2 h3 {
     background-color: orange;
     color: black;
     text-shadow: 2px 2px yellow;
 }
+
 .fantasy-sub-heading h1 {
     font-size: 2rem;
     padding: 5px;
 }
+
 .readThis {
     text-justify: newspaper;
     font-size: 1rem;
     color: var(--main-bg-color);
     background-color: var(--main-fc-color);
 }
+
 .globe-icon {
     font-size: 6rem;
     color: var(--plank-bg-color);
     text-shadow: 4px 4px black;
 }
+
 /* Jump to Global Economy Button on START page */
+
 .global-ecom-button-show {
     display: inline-block;
 }
+
 .global-ecom-button-hide {
     display: none;
 }
+
 #district-list {
     width: 100%;
     min-height: 100px;
@@ -228,7 +286,9 @@ table, th, td h3 {
     margin-bottom: 10px;
     border-radius: 10px;
 }
+
 /* plank boards hiolding each distric information */
+
 .plank h1 {
     padding: 5px;
     width: 100%;
@@ -238,10 +298,12 @@ table, th, td h3 {
     font-size: 1.5rem;
     box-shadow: 5px 6px black;
 }
+
 .plank h1:hover {
     background-color: var(--stats-bg-color);
     text-decoration: none;
 }
+
 .dN {
     text-align: center;
     color: var(--myRed);
@@ -251,6 +313,7 @@ table, th, td h3 {
     padding-right: 5px;
     text-shadow: 2px 2px black;
 }
+
 .stats {
     /* Statisicts information setting */
     display: inline;
@@ -262,8 +325,11 @@ table, th, td h3 {
     background-color: var(--stats-bg-color);
     text-shadow: 2px 2px var(--main-fc-color);
 }
+
 /* District Stuff */
+
 /* Buttons on district page */
+
 .district-population-b1 h1 {
     text-decoration: none;
     padding-left: 10px;
@@ -272,6 +338,7 @@ table, th, td h3 {
     color: var(--main-fc-color);
     text-shadow: 1px 1px black;
 }
+
 .district-population-b2 h1 {
     text-decoration: none;
     padding-left: 10px;
@@ -280,12 +347,16 @@ table, th, td h3 {
     color: var(--main-fc-color);
     text-shadow: 1px 1px black;
 }
+
 .button-icons {
     color: rgb(194, 183, 161);
     font-size: 4rem;
 }
+
 /* Code from Stackoverflow - Philip Feldmann */
+
 /* Keep text from overspilling out of columns */
+
 .keep-insideBSol {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
@@ -293,44 +364,59 @@ table, th, td h3 {
     hyphens: auto;
     word-wrap: break-word;
 }
+
 /* Ribbon Color Classes for Political Parties */
+
 .make-ribbon-red h1 {
     color: var(--party-labour);
 }
+
 .make-ribbon-blue h1 {
     color: var(--party-conservative);
 }
+
 .make-ribbon-yellow h1 {
     color: var(--party-lib-dem);
 }
+
 .make-ribbon-green h1 {
     color: var(--party-green);
 }
+
 .make-ribbon-grey h1 {
     color: var(--party-unknown);
 }
+
 /* Ribbon Color Classes for Political Parties */
+
 .make-people-red {
     background-color: var(--party-labour);
 }
+
 .make-people-blue {
     background-color: var(--party-conservative);
 }
+
 .make-people-yellow {
     background-color: var(--party-lib-dem);
 }
+
 .make-people-green {
     background-color: var(--party-green);
 }
+
 .make-people-grey {
     background-color: var(--party-unknown);
 }
+
 /* Pledge Priority Page  */
+
 #pledge-priority {
     border-radius: 10px;
     background-color: var(--main-page-body-color);
     color: var(--main-fc-color);
 }
+
 .pledge-content h3 {
     /* border-radius: 10px; */
     font-size: 1rem;
@@ -339,6 +425,7 @@ table, th, td h3 {
     text-shadow: 1px 1px yellow;
     padding: 10px;
 }
+
 .pledge-controller h3 button {
     /* border-radius: 10px; */
     font-size: 1rem;
@@ -346,16 +433,19 @@ table, th, td h3 {
     color: var(--pledge-controller-fc-color);
     padding: 5px;
 }
+
 #pledge-value h3 {
     /* border-radius: 10px; */
     font-size: 1rem;
     background-color: var(--pledge-value-bg-color);
     color: var(--pledge-value-fc-color);
 }
+
 .pledge-title-bar {
     background-color: orange;
     color: white;
 }
+
 #PTV {
     /* border-radius: 10px; */
     text-align: center;
@@ -363,31 +453,40 @@ table, th, td h3 {
     background-color: orange;
     margin-bottom: 10px;
 }
+
 /* .p-index{
 background-color: red;
 color: yellow;
 } */
+
 /* To be deleted- for test bottom bar */
+
 .list-item-bottom {
     font-size: 1rem;
     display: inline-block;
     text-decoration: none;
     color: white;
 }
+
 .list-item-bottom a {
     font-size: .75rem;
 }
+
 .district-population-b1 a {
     text-decoration: none;
 }
+
 .district-population-b2 a {
     text-decoration: none;
 }
+
 /* For Game Reset Page Image */
+
 .card {
     background-color: var(--main-page-body-color);
     color: wheat;
 }
+
 .district-data, h3 {
     border-radius: 10px;
     border: 4px double;
@@ -399,21 +498,26 @@ color: yellow;
     text-shadow: 1px 1px rgb(245, 210, 10);
     margin-bottom: 10px;
 }
+
 .district-page-action-button {
     background-color: orange;
     text-shadow: 3px 3px black;
     /* margin-top: 10px;
     scroll-margin-bottom: 10px; */
 }
+
 .solutions {
     /* Solutins for issues position 1-5 */
     background-color: wheat;
     color: var(--myRed);
 }
+
 /* Testing Mode Stuff On/Off*/
+
 .hide-solutions {
     display: none;
 }
+
 .point-up {
     margin-left: 10px;
     margin-right: 10px;
@@ -421,14 +525,19 @@ color: yellow;
     color: var(--main-fc-color);
     text-shadow: 2px 2px orange;
 }
+
 .un-addressed-issue-flasher {
     color: black;
 }
+
 /* Progress Bar on View Districts page */
+
 .progress-bar {
     color: var(--main-page-body-color);
 }
+
 /* Highlight district name on district view page */
+
 .hightlight-district-name {
     border: solid;
     border-radius: 10px;
@@ -439,7 +548,9 @@ color: yellow;
     background-color: rgb(216, 216, 13);
     text-shadow: 1px 1px black;
 }
+
 /* Highlight district Number on district View Page */
+
 .highlight-district-number {
     border: solid;
     border-radius: 10px;
@@ -449,8 +560,11 @@ color: yellow;
     text-shadow: 2px 2px black;
     background-color: var(--myRed);
 }
+
 /* tabloid headline */
+
 /* NEWSFLASH BAR */
+
 .tabloid {
     font-size: 2rem;
     background-color: var(--news-flash-bar);
@@ -461,21 +575,28 @@ color: yellow;
     /* display: inline; */
     color: var(--main-page-body-color);
 }
+
 /* UK-MAP image */
+
 .map-uk img {
     border-radius: 10px;
     width: 100px;
     height: auto;
     margin-bottom: 5px;
 }
+
 /* Create Manifesto Page - seperate between button and panel */
+
 #raw-manifesto-pool {
     margin-top: 10px;
 }
+
 #raw-pledge-pool {
     margin-top: 10px;
 }
+
 /* Pledge Pool */
+
 #raw-pledge-pool, h4 {
     border-radius: 10px;
     border: 1px dashed;
@@ -485,10 +606,13 @@ color: yellow;
     text-shadow: 1px 1px white;
     margin-bottom: 10px;
 }
+
 #raw-pledge-item, p {
     margin: 5px 5px 5px 5px;
 }
+
 /* raw pledge index numbers */
+
 .raw-pledge-index {
     color: white;
     border-color: white;
@@ -498,7 +622,9 @@ color: yellow;
     border-radius: 50%;
     padding: 2px 5px 2px 5px;
 }
+
 /* manifesto page */
+
 #raw-manifesto, h4 {
     border-radius: 10px;
     border: 1px solid;
@@ -509,21 +635,27 @@ color: yellow;
     box-shadow: 2px 2px black;
     margin-bottom: 10px;
 }
+
 /* Make manifesto pledges white backing */
+
 .pledge-plank {
     background-color: white;
     color: var(--main-bg-color);
     padding: 5px 5px 5px 5px;
     border-radius: 10px;
 }
+
 /* Make Selected Pledges RED */
+
 .selected-from-pledge-pool {
     background-color: var(--myRed);
     color: white;
     text-shadow: 2px 2px black;
     border-radius: 10px;
 }
+
 /* Manifesto Istructions box */
+
 .manifesto-instructions h1 {
     font-size: 1.5rem;
     background-color: wheat;
@@ -531,13 +663,17 @@ color: yellow;
     text-shadow: 1px 1px white;
     padding: 5px 5px 5px 5px;
 }
+
 /* Save Button on Manifesto Creation Page */
+
 .manifesto-save-button {
     margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: black;
 }
+
 /* PLEDGE PRIORITY PAGE */
+
 #manifesto-pledges h2 {
     background-color: white;
     color: var(--main-bg-color);
@@ -546,19 +682,23 @@ color: yellow;
     padding: 10px 10px 10px 10px;
     min-height: 100px;
 }
+
 #pledge-priority h2 {
     background-color: wheat;
     color: var(--main-bg-color);
 }
+
 #base-plate h2 {
     background-color: rgb(223, 189, 128);
     color: var(--main-bg-color);
 }
+
 /* .pb {
     margin-top: 10px;
     margin-bottom: 10px;
     min-height: 80px;
 } */
+
 .general-buttons-fmt {
     margin-bottom: 2px;
     margin-top: 2px;
@@ -568,6 +708,7 @@ color: yellow;
     border: 2px solid;
     text-shadow: 1px 1px rgb(156, 148, 148);
 }
+
 .priority-buttons-format div {
     background-color: var(--main-page-body-color);
     border-radius: 10px;
@@ -576,7 +717,9 @@ color: yellow;
     margin-left: 2px;
     margin-right: auto;
 }
+
 /* Back To Districts View Button */
+
 .back-to-districts-view {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -584,19 +727,23 @@ color: yellow;
     border-radius: 10px;
     padding: 4px;
 }
+
 .highlight-manifesto-psel h2 {
     background-color: var(--myRed);
     color: black;
 }
+
 .dpanel:hover {
     border-radius: 10px;
     background-color: var(--myRed);
     color: orange;
 }
+
 .highlight-pbutt {
     background-color: var(--myRed);
     color: black;
 }
+
 #current-district {
     /* On pledge Promotion page. The current District Name  */
     border-radius: 10px;
@@ -605,6 +752,7 @@ color: yellow;
     color: var(--myRed);
     text-shadow: 1px 1px 1px blue;
 }
+
 #promoted-pledges p {
     border-radius: 10px;
     font-size: 1rem;
@@ -615,6 +763,7 @@ color: yellow;
     background-color: var(--promoted-pledge-backstrip);
     color: black;
 }
+
 .promo-circle {
     font-size: .70rem;
     border-radius: 10px;
@@ -629,6 +778,7 @@ color: yellow;
     color: yellow;
     text-shadow: 4px 4px 4px rgb(253, 0, 0);
 }
+
 .plno {
     /* Manifesto promoted pledge priority coins on View Districs Page */
     border-radius: 50%;
@@ -636,11 +786,13 @@ color: yellow;
     color: wheat;
     text-shadow: 1px 1px black;
 }
+
 .people-list-format h2 {
     font-size: .75rem;
     color: rgb(230, 215, 187);
     text-shadow: 1px 1px black;
 }
+
 .number-of-high-pledges h2 {
     /* Number of High Pledges avaoilable in Pledge priority page */
     margin-left: auto;
@@ -654,6 +806,7 @@ color: yellow;
     border: 4px solid white;
     text-shadow: 2px 2px black;
 }
+
 #number-of-high-pledges-instructions h3 {
     /* Label above No of High Pledges left on pledge priority page */
     margin-left: auto;
@@ -664,46 +817,62 @@ color: yellow;
     color: wheat;
     text-shadow: 1px 1px black;
 }
+
 /* Hide the create manifesto button from page once completed */
+
 /* So it does not show on page refresh */
+
 .remove-c-m-b-a {
     display: none;
 }
+
 /* UK MAAP BIG */
+
 .map-big, img {
     width: 60%;
     height: Auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
 .highlight-sign {
     background-blend-mode: var(--myRed);
 }
+
 .profile-shot {
     width: 100px;
     height: auto;
     border-radius: 10px;
 }
+
 #marquee, h2 {
     font-size: 2rem;
     /* color: limegreen; */
 }
+
 /* Results page Table backgrounds */
+
 #results-stats {
     margin-top: 10px;
     font-size: .50rem;
     color: wheat;
     /* border:1px solid red; */
 }
+
 /* Stats Output */
+
 .stats-output, h2 {
     font-size: .75rem;
 }
+
 #results-button, .btn {
     margin-bottom: 10px;
 }
+
 /* Animation for Cog Wheel */
+
 /* On results page */
+
 @keyframes rotate-cog {
     from {
         transform: rotate(0deg);
@@ -712,19 +881,24 @@ color: yellow;
         transform: rotate(3600deg);
     }
 }
+
 #working-cog, .fa-cog {
     animation-name: rotate-cog;
     animation-duration: 4s;
     animation-iteration-count: infinite;
 }
+
 #working-cog, h1 {
     text-shadow: 2px 2px grey;
 }
+
 #pre-election-stats {
     border: 2px double wheat;
     margin-bottom: 10px;
 }
+
 /* STATS BOX PARTY WITH MOST DISTRICTS*/
+
 #container-box {
     border: solid;
     background-color: bisque;
@@ -732,17 +906,21 @@ color: yellow;
     min-height: 400px;
     width: 100%;
 }
+
 /* Reportet Image */
+
 #reporter-domparty-img, h4 {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: auto;
 }
+
 #last-winning-party, p {
     color: black;
     margin-bottom: 20px;
 }
+
 .circle-dtot {
     border-radius: 50%;
     padding-left: 10px;
@@ -751,6 +929,7 @@ color: yellow;
     background-color: var(--myRed);
     color: wheat;
 }
+
 .sqr-dtot {
     /* Highlight winning party  */
     border-radius: 10px;
@@ -763,4 +942,4 @@ color: yellow;
     padding-bottom: 10px;
     box-shadow: 4px 4px grey;
 }
- 
+
