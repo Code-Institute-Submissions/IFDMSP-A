@@ -1032,8 +1032,17 @@ function CreateDistricts() {
     // Generate Districts  
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
-        // create district ID
+
+        // create district ID... initial preelection
         dID = "D" + "," + i;
+
+        // create district ID... for action
+        eID = "E" + "," + i;
+
+        // create district ID... for results
+        rID = "R" + "," + i;
+
+
         // Create Random Problems & Solutions For Every Area
         // PROB1
         var rnum = getRandom(noOfProblems);
@@ -1192,18 +1201,33 @@ function CreateDistricts() {
             var tiPOver = getRandom(5);
             people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
         }
+
+
         // End Cap the Peopledata Chunk with a "~"
         people = people + "~";
         // All Variables Ready for use
         var DI = dID;
+        var EI = eID;
+        var RI = rID;
+
+        // The line of content of each district
         var PRB = PRB;
         var dPop = dPop;
         var pAf = pAf;
+
+
         // Packed - StringOut to Save to SessionVariable
         var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
-        sessionStorage.setItem(DI, LO);
-        // Tetspoint - can be deleted
-        // console.log(DI + "/" + LO);
+        sessionStorage.setItem(DI, LO); //PRE-ELECTION DATA
+        sessionStorage.setItem(EI, LO); //CHANGES ELECTION DATA
+        sessionStorage.setItem(RI, LO); //POST-ELECTION DATA
+        // // 
+
+
+        // Tetspoint Console output of generated data- can be deleted
+        console.log(DI + "/" + LO);
+        console.log(EI + "/" + LO);
+        console.log(RI + "/" + LO);
     }
 }
 
@@ -1699,8 +1723,6 @@ function backToDistrictView() {
 var marquee = {
     "message1": "Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom"
 }
-
-
 // Message Ticker Marquee
 function showMarquee(message, mw) {
     messageOut = message.slice(messagePosition, (messagePosition + 100))
@@ -1714,6 +1736,23 @@ function showMarquee(message, mw) {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1806,12 +1845,6 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "";
         // Publish line item to webpage
         $('#insert-stats-content').append(preStatsResultLineOut);
-
-
-
-
-
-
         // SPIT OUT PARTY WITH THE MOST DISTRICT CONTROL
         // ////////////////////////////////////////////
         // /////////////////////////////////////////////
@@ -1834,8 +1867,6 @@ function processElection() {
         preStatsResultLineOut = preStatsResultLineOut + "";
     }
 
-
-
     function getStrongHoldColor(tp) {
         // GET STRONG HOLD COLOUR
         // tp = stronghold  party name
@@ -1854,8 +1885,6 @@ function processElection() {
         }
         return strngHoldColor;
     }
-
-
 
     function getTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET TOP RANK PARTY
@@ -1883,8 +1912,6 @@ function processElection() {
         return [topPartyName, topPartyValue];
     }
 
-
-
     function getWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET WINNING RPARTY
         // Check through Parties supplied and find which is top in
@@ -1892,9 +1919,7 @@ function processElection() {
         // This will allow you to find top party in district
         var winPartyValue = 0;
         var winPartyName = "";
-
-        var hungMessage="** HUNG PARLIMENT! **"
-
+        var hungMessage = "** HUNG PARLIMENT! **"
         if (pval1 > winPartyValue) {
             winPartyValue = pval1;
             winPartyName = party1Name;
@@ -1911,89 +1936,65 @@ function processElection() {
             winPartyValue = pval4;
             winPartyName = party4Name;
         }
-
         // 
-
         if (winPartyName === party1Name) {
             switch (winPartyValue) {
                 case pval2:
                     winPartyName = hungMessage;
                     break;
-
                 case pval3:
                     winPartyName = hungMessage;
                     break;
-
                 case pval4:
                     winPartyName = hungMessage;
                     break;
-
             }
         }
-
         // 
-
         if (winPartyName === party2Name) {
             switch (winPartyValue) {
                 case pval1:
                     winPartyName = hungMessage;
                     break;
-
                 case pval3:
                     winPartyName = hungMessage;
                     break;
-
                 case pval4:
                     winPartyName = hungMessage;
                     break;
-
             }
         }
-
         // 
-
         if (winPartyName === party3Name) {
             switch (winPartyValue) {
                 case pval1:
                     winPartyName = hungMessage;
                     break;
-
                 case pval2:
                     winPartyName = hungMessage;
                     break;
-
                 case pval4:
                     winPartyName = hungMessage;
                     break;
-
             }
         }
-
         // 
-
         if (winPartyName === party4Name) {
             switch (winPartyValue) {
                 case pval1:
                     winPartyName = hungMessage;
                     break;
-
                 case pval2:
                     winPartyName = hungMessage;
                     break;
-
                 case pval3:
                     winPartyName = hungMessage;
                     break;
-
             }
         }
-// 
-
-
+        // 
         return [winPartyName, winPartyValue];
     }
-
-
 
     function getTotalPeopleInDistrict(dn) {
         // //////////////////////////////////
@@ -2008,7 +2009,6 @@ function processElection() {
         var pop = getPop.split("#");
         return pop[2]; // Return total population volume
     }
-
 
     function getPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
@@ -2039,7 +2039,6 @@ function processElection() {
         return tally; // return total  found
     }
 
-
     function DistrictTotalControl(pty) {
         // ////////////////////////////   
         // Get Overall District Control
@@ -2067,8 +2066,6 @@ function processElection() {
             return;
         }
     }
-
-
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
     // Reset Grand Total Votes
     // Before Election Count Up
@@ -2082,36 +2079,17 @@ function processElection() {
         publishLine(reportingDistrict, 0, 0, 0, 0, 0);
         reportingDistrict++;
     } while (reportingDistrict < noOfDistricts);
-
-
-
     $('#reporter-domparty-img').append("<img src=\"images/vicky-morse.png\"/>");
-
     // console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
     // var tDom = "Con: " + conservativeDistrictHoldTotal + " Lab: " + labourDistrictHoldTotal + " Lib-Dem: " + libDemDistrictHoldTotal + " Green: " + GreenDistrictHoldTotal;
     $('#last-winning-party').append("<p>The Conservative party secured a majority of " + "<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span> districts at the last election.</p>");
     $('#last-winning-party').append("<p>The Labour party secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span> districts at the last election.</p>");
     $('#last-winning-party').append("<p>The Liberal-Democrat party secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span> districts at the last election.</p>");
     $('#last-winning-party').append("<p>The Green party secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span> districts at the last election.</p>");
-
-
-
     var winningPartyName = getWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
-
-
-
-
-    $('#last-winning-party').append( "<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
-
-
-
-
+    $('#last-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
     alert("PRE-ELECTION STATS PUBLISHED")
 }
-
-
-
-
 
 
 //  //////////////////////////////////////////////////////////////////////////
