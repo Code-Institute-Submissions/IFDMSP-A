@@ -2101,7 +2101,7 @@ function processElection() {
 
 
 
-    $('#last-winning-party').append( "<span class=\"sqr-dtot c-name\" > The last parlimet was a   " + winningPartyName[0] + " affair!</span>");
+    $('#last-winning-party').append( "<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
 
 
 
