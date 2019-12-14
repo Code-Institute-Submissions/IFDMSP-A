@@ -1893,6 +1893,8 @@ function processElection() {
         var winPartyValue = 0;
         var winPartyName = "";
 
+        var hungMessage="** HUNG PARLIMENT! **"
+
         if (pval1 > winPartyValue) {
             winPartyValue = pval1;
             winPartyName = party1Name;
@@ -1909,6 +1911,84 @@ function processElection() {
             winPartyValue = pval4;
             winPartyName = party4Name;
         }
+
+        // 
+
+        if (winPartyName === party1Name) {
+            switch (winPartyValue) {
+                case pval2:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval3:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval4:
+                    winPartyName = hungMessage;
+                    break;
+
+            }
+        }
+
+        // 
+
+        if (winPartyName === party2Name) {
+            switch (winPartyValue) {
+                case pval1:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval3:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval4:
+                    winPartyName = hungMessage;
+                    break;
+
+            }
+        }
+
+        // 
+
+        if (winPartyName === party3Name) {
+            switch (winPartyValue) {
+                case pval1:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval2:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval4:
+                    winPartyName = hungMessage;
+                    break;
+
+            }
+        }
+
+        // 
+
+        if (winPartyName === party4Name) {
+            switch (winPartyValue) {
+                case pval1:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval2:
+                    winPartyName = hungMessage;
+                    break;
+
+                case pval3:
+                    winPartyName = hungMessage;
+                    break;
+
+            }
+        }
+// 
+
 
         return [winPartyName, winPartyValue];
     }
@@ -2009,22 +2089,22 @@ function processElection() {
 
     // console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
     // var tDom = "Con: " + conservativeDistrictHoldTotal + " Lab: " + labourDistrictHoldTotal + " Lib-Dem: " + libDemDistrictHoldTotal + " Green: " + GreenDistrictHoldTotal;
-    $('#last-winning-party').append("<p>The Conservative party held:" + "<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span> Districts at the last election.</p>");
-    $('#last-winning-party').append("<p>The Labour party held:" + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span> Districts at the last election.</p>");
-    $('#last-winning-party').append("<p>The Liberal-Democrat party held:" + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span> Districts at the last election.</p>");
-    $('#last-winning-party').append("<p>The Green party held:" + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span> Districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Conservative party secured a majority of " + "<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span> districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Labour party secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span> districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Liberal-Democrat party secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span> districts at the last election.</p>");
+    $('#last-winning-party').append("<p>The Green party secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span> districts at the last election.</p>");
 
 
 
     var winningPartyName = getWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
-    
-    
-    
-    
-    $('#last-winning-party').append("<p>" + "<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "<p></p></span>  won the last election.</p><P>They managed to hold "+winningPartyName[1]+" Districts!");
 
 
-    
+
+
+    $('#last-winning-party').append( "<span class=\"sqr-dtot c-name\" > The last parlimet was a   " + winningPartyName[0] + " affair!</span>");
+
+
+
 
     alert("PRE-ELECTION STATS PUBLISHED")
 }
