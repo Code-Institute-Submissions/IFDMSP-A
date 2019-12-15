@@ -2265,6 +2265,18 @@ function processElection() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+//  //////////////////////////////////////////////////////////////////////////
+//  //////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////////////////////////
 // CAMPAIGN - ELECTION ENGINE (2)
 // //////////////////////////////////////////////////////////////////////////
@@ -2286,11 +2298,14 @@ function campaignStratergyImplementation() {
                 var specificPerson = individuals[x].split("/"); //Line of Person Data
                 // console.log(specificPerson);
 
-
+                // @@@@@@@@@@@@@@@@@@@'
+                // @@@@@@@@@@@@@@@@@@@
                 // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
                 var personIssueID = specificPerson[1]; // Issue ID
                 var PersonName = specificPerson[2]; // Persons Name
                 var PersonCV = specificPerson[3]; // Persons Conversion Threshold
+
+
 
                 //GET SAVED PLEDGES IN DISTRICT & STORE IN A "SAVEDPLEDGES" VAR
                 var savedDPledges = [];
@@ -2302,11 +2317,36 @@ function campaignStratergyImplementation() {
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 5));
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 6));
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
+             
+                //GET MANIFESTO
+                var partyManifesto = [];
+                partyManifesto.push("-");
+                partyManifesto.push(sessionStorage.getItem("M,1"));
+                partyManifesto.push(sessionStorage.getItem("M,2"));
+                partyManifesto.push(sessionStorage.getItem("M,3"));
+                partyManifesto.push(sessionStorage.getItem("M,4"));
+                partyManifesto.push(sessionStorage.getItem("M,5"));
+                partyManifesto.push(sessionStorage.getItem("M,6"));
+                partyManifesto.push(sessionStorage.getItem("M,7"));
+
+
+                // ======
+
+
+               
 
 
 
 
 
+
+
+
+
+
+                // =====
+                // Logout to check Variables
+                // To be removed....
                 console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
 
                 console.log(savedDPledges[1] + ":");
@@ -2317,15 +2357,21 @@ function campaignStratergyImplementation() {
                 console.log(savedDPledges[6] + ":");
                 console.log(savedDPledges[7] + ":");
 
-            }
+                console.log(partyManifesto[1]);
+                console.log(partyManifesto[2]);
+                console.log(partyManifesto[3]);
+                console.log(partyManifesto[4]);
+                console.log(partyManifesto[5]);
+                console.log(partyManifesto[6]);
+                console.log(partyManifesto[7]);
 
+
+            }
 
         } catch {
             return;
 
         }
-
-
 
     }
 
@@ -2339,21 +2385,15 @@ function campaignStratergyImplementation() {
         var packedData;
         packedData = sessionStorage.getItem("E," + id);
 
-
         if (packedData != null) {
-
             var splitData = packedData.split("@");
             var members = splitData[1];
             return members;
-
-
         }
 
         // var splitData = packedData.split("@");
         // var members = splitData[1];
         // return members;
-
-
     }
 
 
@@ -2369,7 +2409,6 @@ function campaignStratergyImplementation() {
         packedData.push("-");
         packedData = sessionStorage.getItem("E," + dn);
 
-
         // var splitData = packedData.split("@");
         if (packedData != null) {
             var splitData = packedData.split("@");
@@ -2384,9 +2423,6 @@ function campaignStratergyImplementation() {
         // var getPop = splitData[0];
         // var pop = getPop.split("#");
         // return pop[2]; // Return total population volume
-
-
-
 
     }
 
