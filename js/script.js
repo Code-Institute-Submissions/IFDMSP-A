@@ -549,6 +549,7 @@ function changeRibbonColour() {
             return;
     }
 }
+
 $(document).ready(function () {
     // Get & Save  Political candidate & Party Affiliation
     // 
@@ -568,12 +569,12 @@ function flasher() {
     // Flash Title!!
     // alert(flashState);
     if (flashState === true) {
-        flashState = false;
+        flashState === false;
         $('.flashIt').addClass('flashNow');
         return;
     }
     if (flashState === false) {
-        flashState = true;
+        flashState === true;
         $('.flashIt').removeClass('flashNow');
         return
     }
@@ -581,13 +582,12 @@ function flasher() {
 
 function flashHand() {
     // Flash HAND !!
-    // alert(flashState);
     // sway = political sway .e party
     var sway = $('#political-sway h1').text();
     if (flashHandState === true) {
         flashHandState = false;
         $('.point-hand').addClass('flashHandNow');
-        if (sway == "") {
+        if (sway === "") {
             $('.c-name').addClass('flashHandNow');
         }
         return;
@@ -595,7 +595,7 @@ function flashHand() {
     if (flashHandState === false) {
         flashHandState = true;
         $('.point-hand').removeClass('flashHandNow');
-        if (sway == "") {
+        if (sway === "") {
             $('.c-name').removeClass('flashHandNow');
         }
         return
@@ -834,6 +834,10 @@ function saveCurrentDistrict() {
     window.location.href = "pledge-priority.html";
 }
 
+
+
+
+
 function createDistrictPriority() {
     // Create Distric Priority 
     // Save District Promoted Pledges From Pledge Priority
@@ -849,8 +853,13 @@ function createDistrictPriority() {
     // 
     var cdn = countryDistricts[sessionStorage.getItem("CD")];
     alert("Your Pledges have now been \"PROMOTED\" to " + cdn + " District!")
-    window.location.href = "country-districts.html";
+    window.location.href = "country-districts.html"; // Reload Page
 }
+
+
+
+
+
 
 function viewPop() {
     //  ////////////////////////////////////////////
@@ -976,10 +985,10 @@ function loadUpPopulation() {
         var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
         sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u + ":", pdat + "~");
     }
-    // console.log(popData);
-    // var peopleArray = districtChunck.split('@');
-    // console.log(pinfoStart + ":" + dataEnd);
 }
+
+
+
 
 function showCurrentDistrict() {
     // Show current district number
@@ -987,9 +996,11 @@ function showCurrentDistrict() {
     var cdn = sessionStorage.getItem("CD");
     $("#current-district ,p").text("District ~" + cdn + "~ " + countryDistricts[cdn]);
 }
-// function colorPerson() {
-//     // Color Person Line
-// }
+
+
+
+
+
 function countUpIssues(issue, i1, i2, i3, i4, i5) {
     // Count UP Issues
     // i1-5 = question number 1st charcater, 
@@ -1019,34 +1030,51 @@ function countUpIssues(issue, i1, i2, i3, i4, i5) {
     return issueTotal;
 }
 
+
+
+
+
+// STRIP ILLEGAL CHAR NOT WANTED
 function myTrim(x) {
     // Strip Trim Characters
     return x.replace(/^\s+|\s+$/gm, ' ');
 }
+
+
+
+
+
+
+
+
 // ////////////////////////////////
 // MAIN GAME ENGINE FUNCTIONS & LOGIC      //
 // ////////////////////////////////
 function getRandom(limit) {
-    // Create Random Number
+    // Create Random Number up to limit
     do {
         rn = (Math.floor(Math.random() * limit)) + 1;
     } while (rn === 0 || isNaN(rn))
     return rn;
 }
 
+
+
+
 function CreateDistricts() {
     // Generate Districts  
     // Create District & Population
     for (var i = 1; i < noOfDistricts; i++) {
 
-        // create district ID... initial preelection
-        dID = "D" + "," + i;
 
+
+        // create district ID... initial pre-election
+        dID = "D" + "," + i;
         // create district ID... for action
         eID = "E" + "," + i;
-
         // create district ID... for results
         rID = "R" + "," + i;
+
 
 
         // Create Random Problems & Solutions For Every Area
@@ -1077,6 +1105,7 @@ function CreateDistricts() {
         var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 100;
         // Create people for District
         var people = "[";
+
         for (let i = 1; i < dPop; i++) {
             // Generate Initial Party Affiliation
             var partyAffiliantNumber = (Math.floor(Math.random() * 4)) + 1;
@@ -1176,7 +1205,9 @@ function CreateDistricts() {
                 29: "Bourne",
                 30: "Otis",
             }
-            // Make Random Name Combination
+
+
+            // Generate Random Name Combination for a person
             // Not 1 less to ensure no illegal item
             var fName = [fNames[getRandom(29)]];
             var initial = [initials[getRandom(20)]];
@@ -1202,16 +1233,23 @@ function CreateDistricts() {
                     pConcernString = "S";
                     break;
             }
+
+
             // TipOver amount of concerns politican sucessfully addreses
-            // To swing my Vote
+            // To swing my Vote. Iie PERSON CONVERSION THRESHHOLD!!
             var tiPOver = getRandom(5);
+
+
             people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
         }
 
 
-        // End Cap the Peopledata Chunk with a "~"
+        // MARK END OF PEOPLE DATA CHUNK WITH "~"
         people = people + "~";
+
+
         // All Variables Ready for use
+        // REPLICATED DATA IN 3 AREAS  ... PRE / ACTION / POST   ELECTION
         var DI = dID;
         var EI = eID;
         var RI = rID;
@@ -1225,15 +1263,15 @@ function CreateDistricts() {
         // Packed - StringOut to Save to SessionVariable
         var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
         sessionStorage.setItem(DI, LO); //PRE-ELECTION DATA
-        sessionStorage.setItem(EI, LO); //CHANGES ELECTION DATA
+        sessionStorage.setItem(EI, LO); //CHANGES ELECTION DATA  ** MAKE CHANGES HERE
         sessionStorage.setItem(RI, LO); //POST-ELECTION DATA
         // // 
 
 
         // Tetspoint Console output of generated data- can be deleted
-        console.log(DI + "/" + LO);
-        console.log(EI + "/" + LO);
-        console.log(RI + "/" + LO);
+        // console.log(DI + "/" + LO);
+        // console.log(EI + "/" + LO);
+        // console.log(RI + "/" + LO);
     }
 }
 
@@ -1245,6 +1283,9 @@ function clearGameData() {
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
 }
+
+
+
 
 function resetGame(runProcess) {
     // This routine checks a flag to see if a request has been issued
@@ -1260,8 +1301,9 @@ function resetGame(runProcess) {
         // Set Reset Flag To show Game has been Reset;
         localStorage.setItem("newGame", "1");
     }
-    // Rest Pledge priority from pledge priority page to Low (L)
-    // Including in all districts
+
+
+    // RESET ALL YOUR PLEDGES TO LOW(L) BY DEFAULT
     pblineValue[1] = "L";
     pblineValue[2] = "L";
     pblineValue[3] = "L";
@@ -1269,10 +1311,12 @@ function resetGame(runProcess) {
     pblineValue[5] = "L";
     pblineValue[6] = "L";
     pblineValue[7] = "L";
+
     for (let i = 1; i < noOfDistricts; i++) {
-        // reset array to low
-        sessionStorage.setItem("PBL" + i, "L");
-        // reset all district priority setting to Low
+        // RESET ALL DISTRICT PLEDGES TO LOW AT START
+        sessionStorage.setItem("PBL" + i, "L"); // Variable Key
+
+        // Variable Value
         sessionStorage.setItem("DMP," + i + ",1", "L");
         sessionStorage.setItem("DMP," + i + ",2", "L");
         sessionStorage.setItem("DMP," + i + ",3", "L");
@@ -1281,9 +1325,10 @@ function resetGame(runProcess) {
         sessionStorage.setItem("DMP," + i + ",6", "L");
         sessionStorage.setItem("DMP," + i + ",7", "L");
     }
-    // sessionStorage.setItem()
-    // sessionStorage.setItem("PBL1", [pblineValue[1]]);
 }
+
+
+
 
 function setupGame() {
     // Main Setup Game Setup Routine
@@ -1294,6 +1339,8 @@ function setupGame() {
     CreateDistricts();
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
+
+
     // SETUP GAME SESSION VARIABLES AT START
     // ###########################################
     // ###########################################
@@ -1306,11 +1353,11 @@ function setupGame() {
     sessionStorage.setItem("election-day-active-authorised", false);
     sessionStorage.setItem("campaign-mode-active-authorised", true);
     sessionStorage.setItem("election-day-game-active-authorised", true);
+
 }
 
 function WipeOutOldDistrictPledges() {
-    // Wipe Out Old Dsitrict Pledges Made.
-    // Ready for new Game
+    // Wipe Out Old Dsitrict Pledges Made, Ready for new Game
     // NOTE: ** Access with "sessionStorage.getItem(Dn:PS:sn(1-5)""
     for (let i = 1; i < noOfDistricts; i++) {
         sessionStorage.setItem(i + ":" + "PS:1", "-");
@@ -1319,12 +1366,17 @@ function WipeOutOldDistrictPledges() {
         sessionStorage.setItem(i + ":" + "PS:4", "-");
         sessionStorage.setItem(i + ":" + "PS:5", "-");
     }
-    // alert("Previous Entries Erased!");
+    alert("Previous pledge entries erased!");
 }
+
+
+
+
 
 function flashUnaddressedIssue() {
     // Flash Unaddressed Issue in Country Districts
     // Entry call = country-district.html
+
     if (unAddressedIssueFlashState == true) {
         $('.far').addClass('un-addressed-issue-flasher');
         unAddressedIssueFlashState = false;
@@ -1336,6 +1388,11 @@ function flashUnaddressedIssue() {
         return;
     }
 }
+
+
+
+
+
 
 function createEmptyManifesto() {
     // Create Empty Manifesto
@@ -1354,11 +1411,16 @@ function createEmptyManifesto() {
     alert("Blank Manifesto Created!");
 }
 
+
+
 function resetManifesto() {
     // Reset Manifesto
     createEmptyManifesto();
     window.location = "create-manifesto.html";
 }
+
+
+
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
     for (let i = 1; i < noOfProblems + 1; i++) {
@@ -1373,6 +1435,9 @@ function loadUpManifestoPage() {
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
+
+
+
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1382,7 +1447,6 @@ function saveManifesto() {
             return;
         }
     }
-
 
     //  Save Manifesto list to "sessionStorage"
     for (let i = 1; i < 8; i++) {
@@ -1398,8 +1462,14 @@ function saveManifesto() {
     sessionStorage.setItem("create-manifesto-page-authorised", false);
     window.location = "country-districts.html";
 }
-// Hightlight  Pledges in raw pledge pool
+
+
+
+
+
 $(document).ready(function () {
+    // Hightlight  Pledges in raw pledge pool
+
     $("#raw-pledge-pool p").click(function () {
         // Tranfer selected pledges to Manifesto on 7 pledges
         // Selected
@@ -1421,11 +1491,16 @@ $(document).ready(function () {
         $(this).hide("slow");
     });
 });
-// Deselect All Pledges
+
+
+
+
 function deselectAllPledges() {
+    // Deselect All Pledges
     $('p').removeClass('selected-from-pledge-pool');
     return;
 }
+
 
 function setBv(bp) {
     // SET  BUTTON VALUES
@@ -1636,12 +1711,20 @@ function setBv(bp) {
     }
 }
 
+
+
+
 function showHighPledgesRemaining() {
+    // /////////////////////////////////////
     // Show amount of High Pledges Available
     $('#nohp').text(numberOfPriorityHighAvilable);
 }
-// PLEDGEPRIORITY PAGE
+
+
+
+
 function loadUpPledgePriorityPage() {
+    // PLEDGEPRIORITY PAGE
     {
         var pbuttons = "";
         pbuttons = pbuttons + "<div class=\"row\">";
@@ -1657,6 +1740,7 @@ function loadUpPledgePriorityPage() {
         // 
         pbuttons = pbuttons + "</div>";
         pbuttons = pbuttons + "</div>";
+
         // Build buttons on page right-hand side
         // Add the pledge line
         for (let i = 1; i < 8; i++) {
@@ -1666,9 +1750,13 @@ function loadUpPledgePriorityPage() {
             $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + PriorityButtonNumberHlt + ":" + pbuttons + '</h2></div>');
         }
     }
+
+
+
     $(document).ready(function () {
         // Manifesto Pledge Priotorization
         // Get Selcted Manifesto Pledge
+
         $('#manifesto-pledge-item ,.mfi').click(function () {
             removeButtonArrayHighlight();
             var result = $(this).attr('id');
@@ -1721,17 +1809,23 @@ function loadUpPledgePriorityPage() {
     }
 }
 
+
+
 function backToDistrictView() {
     // Go back to View Districts Page
-    window.location.href = "country-districts.html";
+    window.location.href = "country-districts.html"; // Jump to district view!
 }
-// function viewPopulation() {
-//     // View Population
-//     // Show Population per district
-// }
+
+
+
+
+
 var marquee = {
-    "message1": "Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom"
+    "message1": " **** Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom ***"
 }
+
+
+
 // Message Ticker Marquee
 function showMarquee(message, mw) {
     messageOut = message.slice(messagePosition, (messagePosition + 100))
@@ -2134,33 +2228,62 @@ function processElection() {
 function campaignStratergyImplementation() {
     alert("CAMPAIGN IMPLEMENTED!")
 
-
     // ITERATE THROUGH DISTRICTS
 
     for (let i = 1; 1 < noOfDistricts; i++) {
+
         // Get Total Headcount in district
         var peopleHeadCount = getTotalPeopleInDistrict(i);
-        // Break data into individual people /line
+
+        // GET CHUNK DAT OF ALL PEOPLE IN DISTRICT (i)
         var individuals = getPeopleChunkBlock(i).split('^');
         // Iterate through people.
         for (let x = 1; x < peopleHeadCount; x++) {
 
-            var specificPerson = individuals[x].split("/");//Line of Person Data
+            // GET A SINGLE LINE OF PERSON DATA
+            var specificPerson = individuals[x].split("/"); //Line of Person Data
+            // console.log(specificPerson);
 
-            var personIssueID = specificPerson[1];// Issue ID
-            var PersonName = specificPerson[2];// Persons Name
+
+            // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
+            var personIssueID = specificPerson[1]; // Issue ID
+            var PersonName = specificPerson[2]; // Persons Name
             var PersonCV = specificPerson[3]; // Persons Conversion Threshold
 
-            console.log(personIssueID + ":" + PersonName + ":" + PersonCV)
+            //GET SAVED PLEDGES IN DISTRICT & STORE IN A "SAVEDPLEDGES" VAR
+            var savedDPledges = [];
+            savedDPledges.push("-");// Filler to alow 7 as not counting from zero
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 1));
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 2));
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 3));
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 4));
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 5));
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 6));
+            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
+
+
+            console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
+
+
+            console.log(savedDPledges[1] + ":");
+            console.log(savedDPledges[2] + ":");
+            console.log(savedDPledges[3] + ":");
+            console.log(savedDPledges[4] + ":");
+            console.log(savedDPledges[5] + ":");
+            console.log(savedDPledges[6] + ":");
+            console.log(savedDPledges[7] + ":");
+
         }
     }
 
 
 
 
+
+
     function getPeopleChunkBlock(id) {
         // Get persons line of data
-        var packedData
+        var packedData;
         packedData = sessionStorage.getItem("E," + id);
         var splitData = packedData.split("@");
         var members = splitData[1];
@@ -2175,8 +2298,9 @@ function campaignStratergyImplementation() {
         // Get The Volume of people in a district
         // dn = district number to get pop volume for
         // var packeddata = [];
-        var packedData
+        var packedData;
         packedData = sessionStorage.getItem("E," + dn);
+
         var splitData = packedData.split("@");
 
         var getPop = splitData[0];
