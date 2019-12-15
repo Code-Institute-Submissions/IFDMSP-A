@@ -2231,49 +2231,57 @@ function campaignStratergyImplementation() {
     // ITERATE THROUGH DISTRICTS
 
     for (let i = 1; 1 < noOfDistricts; i++) {
+        var peopleHeadCount = getTotalPeopleInDistrict(i); // Get Total Headcount in district
 
-        // Get Total Headcount in district
-        var peopleHeadCount = getTotalPeopleInDistrict(i);
+        try {
 
-        // GET CHUNK DAT OF ALL PEOPLE IN DISTRICT (i)
-        var individuals = getPeopleChunkBlock(i).split('^');
-        // Iterate through people.
-        for (let x = 1; x < peopleHeadCount; x++) {
+            var individuals = getPeopleChunkBlock(i).split('^'); // GET CHUNK DATA OF ALL PEOPLE IN DISTRICT (i)
 
-            // GET A SINGLE LINE OF PERSON DATA
-            var specificPerson = individuals[x].split("/"); //Line of Person Data
-            // console.log(specificPerson);
-
-
-            // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
-            var personIssueID = specificPerson[1]; // Issue ID
-            var PersonName = specificPerson[2]; // Persons Name
-            var PersonCV = specificPerson[3]; // Persons Conversion Threshold
-
-            //GET SAVED PLEDGES IN DISTRICT & STORE IN A "SAVEDPLEDGES" VAR
-            var savedDPledges = [];
-            savedDPledges.push("-");// Filler to alow 7 as not counting from zero
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 1));
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 2));
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 3));
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 4));
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 5));
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 6));
-            savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
+            for (let x = 1; x < peopleHeadCount; x++) {
+                // Iterate through people.
+                // GET A SINGLE LINE OF PERSON DATA
+                var specificPerson = individuals[x].split("/"); //Line of Person Data
+                // console.log(specificPerson);
 
 
-            console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
+                // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
+                var personIssueID = specificPerson[1]; // Issue ID
+                var PersonName = specificPerson[2]; // Persons Name
+                var PersonCV = specificPerson[3]; // Persons Conversion Threshold
+
+                //GET SAVED PLEDGES IN DISTRICT & STORE IN A "SAVEDPLEDGES" VAR
+                var savedDPledges = [];
+                savedDPledges.push("-"); // Filler to alow 7 as not counting from zero
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 1));
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 2));
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 3));
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 4));
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 5));
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 6));
+                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
 
 
-            console.log(savedDPledges[1] + ":");
-            console.log(savedDPledges[2] + ":");
-            console.log(savedDPledges[3] + ":");
-            console.log(savedDPledges[4] + ":");
-            console.log(savedDPledges[5] + ":");
-            console.log(savedDPledges[6] + ":");
-            console.log(savedDPledges[7] + ":");
+                console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
 
+
+                console.log(savedDPledges[1] + ":");
+                console.log(savedDPledges[2] + ":");
+                console.log(savedDPledges[3] + ":");
+                console.log(savedDPledges[4] + ":");
+                console.log(savedDPledges[5] + ":");
+                console.log(savedDPledges[6] + ":");
+                console.log(savedDPledges[7] + ":");
+
+            }
+
+
+        } catch {
+            return;
+            
         }
+
+
+
     }
 
 
@@ -2285,9 +2293,22 @@ function campaignStratergyImplementation() {
         // Get persons line of data
         var packedData;
         packedData = sessionStorage.getItem("E," + id);
-        var splitData = packedData.split("@");
-        var members = splitData[1];
-        return members;
+
+
+        if (packedData != null) {
+
+            var splitData = packedData.split("@");
+            var members = splitData[1];
+            return members;
+
+
+        }
+
+        // var splitData = packedData.split("@");
+        // var members = splitData[1];
+        // return members;
+
+
     }
 
 
@@ -2298,14 +2319,30 @@ function campaignStratergyImplementation() {
         // Get The Volume of people in a district
         // dn = district number to get pop volume for
         // var packeddata = [];
-        var packedData;
+
+        var packedData = [];
+        packedData.push("-");
         packedData = sessionStorage.getItem("E," + dn);
 
-        var splitData = packedData.split("@");
 
-        var getPop = splitData[0];
-        var pop = getPop.split("#");
-        return pop[2]; // Return total population volume
+        // var splitData = packedData.split("@");
+        if (packedData != null) {
+            var splitData = packedData.split("@");
+
+            var getPop = splitData[0];
+            var pop = getPop.split("#");
+            return pop[2]; // Return total population volume
+
+        }
+
+
+        // var getPop = splitData[0];
+        // var pop = getPop.split("#");
+        // return pop[2]; // Return total population volume
+
+
+
+
     }
 
 
