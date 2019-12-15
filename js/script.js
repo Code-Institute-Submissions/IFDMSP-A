@@ -833,9 +833,7 @@ function saveCurrentDistrict() {
     // to go to "pledge prioroty page"
     $('div .district-buttons-box').click(function () {
         var result = $(this).closest('.district-buttons-box').attr("id");
-
         sessionStorage.setItem("CD", result);
-
     })
     window.location.href = "pledge-priority.html";
 }
@@ -853,7 +851,6 @@ function clearPledgePriorityButtonValuesDefault() {
     sessionStorage.setItem("PBL5", "L");
     sessionStorage.setItem("PBL6", "L");
     sessionStorage.setItem("PBL7", "L");
-
 }
 
 
