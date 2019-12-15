@@ -603,6 +603,7 @@ function flashHand() {
 }
 
 function populateTable() {
+    // //////////////////////////////////////////
     // Populate ECONOMY TABLE
     // Reset World Economy Stats
     // Also eliminate values of 0
@@ -621,16 +622,21 @@ function populateTable() {
         var num = (Math.random() * popMax);
         cPop = num.toFixed(roundDownDigit)
     } while (cPop < 1);
+
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
         // SHow country count on the page
         $('#country-ticker').text(cCp + 1);
     }
+
+
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
     sessionStorage.setItem(cCp, cstrng);
     $('td').addClass('colorTable');
+
+
     // Grab Three Random Countries for weighting data in district generation
     if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
         grabThreeCountries();
@@ -774,7 +780,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "</div>";
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">"; //%%%
+        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         // CRIME
         outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
@@ -1376,6 +1382,8 @@ function saveManifesto() {
             return;
         }
     }
+
+
     //  Save Manifesto list to "sessionStorage"
     for (let i = 1; i < 8; i++) {
         var blankManifestoKey = "M," + i;
@@ -1383,6 +1391,7 @@ function saveManifesto() {
         blankManifestoLine = $('.raw-manifesto-item-' + i + ' h4 p').first('p').text();
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
     }
+
     // Confirm Save and jumpt to Districts Screen
     alert("Manifesto Saved!");
     // Turn OFF Allow Creation Now as Creation is allowed only once per Election
@@ -1779,11 +1788,11 @@ function processElection() {
         partyGT.LibDem = partyGT.LibDem + LibDemVotes;
         partyGT.Green = partyGT.Green + GreenVotes;
         // function getTopRankParty(party1, pval, party2, pval2, party3, pval3, party4, pval4) 
-        
+
         // Get The top party in district
         var topParty;
         var topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
-        
+
         // Build Output HTML in String
         var preStatsResultLineOut = "";
         preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
@@ -2126,6 +2135,74 @@ function campaignStratergyImplementation() {
     alert("CAMPAIGN IMPLEMENTED!")
 
 
+    // ITERATE THROUGH DISTRICTS
+
+    for (let i = 1; 1 < noOfDistricts; i++) {
+        // Get Total Headcount in district
+        var peopleHeadCount = getTotalPeopleInDistrict(i);
+        // Break data into individual people /line
+        var individuals = getPeopleChunkBlock(i).split('^');
+        // Iterate through people.
+        for (let x = 1; x < peopleHeadCount; x++) {
+
+            var specificPerson = individuals[x].split("/");//Line of Person Data
+
+            var personIssueID = specificPerson[1];// Issue ID
+            var PersonName = specificPerson[2];// Persons Name
+            var PersonCV = specificPerson[3]; // Persons Conversion Threshold
+
+            console.log(personIssueID + ":" + PersonName + ":" + PersonCV)
+        }
+    }
+
+
+
+
+    function getPeopleChunkBlock(id) {
+        // Get persons line of data
+        var packedData
+        packedData = sessionStorage.getItem("E," + id);
+        var splitData = packedData.split("@");
+        var members = splitData[1];
+        return members;
+    }
+
+
+
+    function getTotalPeopleInDistrict(dn) {
+        // //////////////////////////////////
+        // GET TOTAL RESIDENTS IN BOROUGH
+        // Get The Volume of people in a district
+        // dn = district number to get pop volume for
+        // var packeddata = [];
+        var packedData
+        packedData = sessionStorage.getItem("E," + dn);
+        var splitData = packedData.split("@");
+
+        var getPop = splitData[0];
+        var pop = getPop.split("#");
+        return pop[2]; // Return total population volume
+    }
+
+
+
+    // ITTERATE THROUGH PEOPLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
@@ -2161,5 +2238,5 @@ function campaignStratergyImplementation() {
 // //////////////////////////////////////////////////////////////////////////
 function postProcessElection() {
 
- 
+
 }
