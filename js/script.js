@@ -626,15 +626,19 @@ function populateTable() {
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
-        // SHow country count on the page
+        // Show country count on the page
         $('#country-ticker').text(cCp + 1);
     }
 
 
     var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
-    sessionStorage.setItem(cCp, cstrng);
-    $('td').addClass('colorTable');
+    try {
+        sessionStorage.setItem(cCp, cstrng);
+        $('td').addClass('colorTable');
+    } catch {
+        return;
+    }
 
 
     // Grab Three Random Countries for weighting data in district generation
@@ -829,7 +833,9 @@ function saveCurrentDistrict() {
     // to go to "pledge prioroty page"
     $('div .district-buttons-box').click(function () {
         var result = $(this).closest('.district-buttons-box').attr("id");
+
         sessionStorage.setItem("CD", result);
+
     })
     window.location.href = "pledge-priority.html";
 }
@@ -838,10 +844,37 @@ function saveCurrentDistrict() {
 
 
 
+function clearPledgePriorityButtonValuesDefault() {
+    // Reset the Pledge Priorities to Default Value in sessionStorage Memory
+    sessionStorage.setItem("PBL1", "L");
+    sessionStorage.setItem("PBL2", "L");
+    sessionStorage.setItem("PBL3", "L");
+    sessionStorage.setItem("PBL4", "L");
+    sessionStorage.setItem("PBL5", "L");
+    sessionStorage.setItem("PBL6", "L");
+    sessionStorage.setItem("PBL7", "L");
+
+}
+
+
 function createDistrictPriority() {
     // Create Distric Priority 
+
+    // RESET ALL TO LOW PRIORITY AS DEFAULT
+
+    var cdn = sessionStorage.getItem("CD");
+    sessionStorage.setItem("DMP," + cdn + ",1", "L");
+    sessionStorage.setItem("DMP," + cdn + ",2", "L");
+    sessionStorage.setItem("DMP," + cdn + ",3", "L");
+    sessionStorage.setItem("DMP," + cdn + ",4", "L");
+    sessionStorage.setItem("DMP," + cdn + ",5", "L");
+    sessionStorage.setItem("DMP," + cdn + ",6", "L");
+    sessionStorage.setItem("DMP," + cdn + ",7", "L");
+    // 
+
     // Save District Promoted Pledges From Pledge Priority
     // Buttons Values
+
     var cdn = sessionStorage.getItem("CD");
     sessionStorage.setItem("DMP," + cdn + ",1", sessionStorage.getItem("PBL1"));
     sessionStorage.setItem("DMP," + cdn + ",2", sessionStorage.getItem("PBL2"));
@@ -852,6 +885,7 @@ function createDistrictPriority() {
     sessionStorage.setItem("DMP," + cdn + ",7", sessionStorage.getItem("PBL7"));
     // 
     var cdn = countryDistricts[sessionStorage.getItem("CD")];
+
     alert("Your Pledges have now been \"PROMOTED\" to " + cdn + " District!")
     window.location.href = "country-districts.html"; // Reload Page
 }
@@ -1324,6 +1358,7 @@ function resetGame(runProcess) {
         sessionStorage.setItem("DMP," + i + ",5", "L");
         sessionStorage.setItem("DMP," + i + ",6", "L");
         sessionStorage.setItem("DMP," + i + ",7", "L");
+
     }
 }
 
@@ -1438,6 +1473,12 @@ function loadUpManifestoPage() {
 
 
 
+
+
+
+
+
+
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1462,6 +1503,11 @@ function saveManifesto() {
     sessionStorage.setItem("create-manifesto-page-authorised", false);
     window.location = "country-districts.html";
 }
+
+
+
+
+
 
 
 
@@ -2261,8 +2307,10 @@ function campaignStratergyImplementation() {
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
 
 
-                console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
 
+
+
+                console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
 
                 console.log(savedDPledges[1] + ":");
                 console.log(savedDPledges[2] + ":");
@@ -2277,7 +2325,7 @@ function campaignStratergyImplementation() {
 
         } catch {
             return;
-            
+
         }
 
 
