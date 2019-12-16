@@ -2389,6 +2389,15 @@ function campaignStratergyImplementation() {
                 if (trigger === 1) {
                     console.log("FOUND HIT!");
 
+
+                    // == //
+
+
+                    
+
+                    // == //
+
+
                     console.log(MAPSOL[1]);
                     console.log(MAPSOL[2]);
                     console.log(MAPSOL[3]);
