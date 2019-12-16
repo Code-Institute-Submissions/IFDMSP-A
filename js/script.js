@@ -2331,46 +2331,129 @@ function campaignStratergyImplementation() {
 
 
                 // GET MANIFESTO SOLUTION TOKEN
+                var MSR = [];
+                var MS = [];
                 var MAPSOL = [];
                 var mSol = [];
                 mSol.push("-");
                 MAPSOL.push("-");
+                MS.push("-");
+
 
                 // 1
-                var temp = partyManifesto[1];
+                  var temp = partyManifesto[1];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[1][0]);
+
+                // var temp = partyManifesto[1];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[1][0]);
+                
+                // MSR.push(MAPSOL[1]);
+                // MS.push(MSR[0][2]);
+
+
                 // 2
                 var temp = partyManifesto[2];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[2][0]);
+
+                // var temp = partyManifesto[2];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[2][0]);
+
+                // MSR.push(MAPSOL[1]);
+                // MS.push(MSR[0][2]);
+
+
+
                 // 3
                 var temp = partyManifesto[3];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[3][0]);
+
+                // var temp = partyManifesto[3];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[3][0]);
+                
+                // MSR.push(MAPSOL[3]);
+                // MS.push(MSR[0][2]);
+
+
+
                 // 4
                 var temp = partyManifesto[4];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[4][0]);
+
+                // var temp = partyManifesto[4];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[4][0]);
+
+                // MSR.push(MAPSOL[1]);
+                // MS.push(MSR[0][2]);
+
+
                 // 5
                 var temp = partyManifesto[5];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[5][0]);
+
+                // var temp = partyManifesto[5];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[5][0]);
+
+                // MSR.push(MAPSOL[1]);
+                // MS.push(MSR[0][2]);
+
+
+
                 // 6
                 var temp = partyManifesto[6];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[6][0]);
+
+                // var temp = partyManifesto[6];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[6][0]);
+
+                // MSR.push(MAPSOL[1]);
+                // MS.push(MSR[0][2]);
+
+
+
+
                 // 7
                 var temp = partyManifesto[7];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[7][0]);
+
+                // var temp = partyManifesto[7];
+                // mSol.push(temp.split("*"));
+                // MAPSOL.push(mSol[7][0]);
+
+                // MSR.push(MAPSOL[1]);
+                // MS.push(MSR[0][2]);
 
 
 
                 // ======
 
                 // console.log(mSol[1][0]);
-                console.log(MAPSOL[1]);
+                // console.log(MAPSOL[1]);
+
+                // console.log(MAPSOL[1]);
+                // console.log(MSR[0][2]);
+
+                // console.log(MS[1]);
+                // console.log(MS[2]);
+                // console.log(MS[3]);
+                // console.log(MS[4]);
+                // console.log(MS[5]);
+                // console.log(MS[6]);
+                // console.log(MS[7]);
+          
+
                 console.log(MAPSOL[2]);
                 console.log(MAPSOL[3]);
                 console.log(MAPSOL[4]);
