@@ -15,7 +15,9 @@ var flashHandState = true;
 var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
-var noOfDistricts = 21; // Number of districts in pool to canvass in game
+
+var noOfDistricts = 3; // Number of districts in pool to canvass in game &&&#
+
 var noOfProblems = 20; // Number of problems in pool to choose from
 var gDPMax = 10;
 var popMax = 10;
@@ -2216,6 +2218,9 @@ function processElection() {
             return;
         }
     }
+
+
+
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
     // Reset Grand Total Votes
     // Before Election Count Up
@@ -2249,32 +2254,6 @@ function processElection() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //  //////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////////////////////////
@@ -2289,8 +2268,9 @@ function campaignStratergyImplementation() {
         var peopleHeadCount = getTotalPeopleInDistrict(i); // Get Total Headcount in district
 
         try {
-
             var individuals = getPeopleChunkBlock(i).split('^'); // GET CHUNK DATA OF ALL PEOPLE IN DISTRICT (i)
+
+
 
             for (let x = 1; x < peopleHeadCount; x++) {
                 // Iterate through people.
@@ -2304,6 +2284,7 @@ function campaignStratergyImplementation() {
                 var personIssueID = specificPerson[1]; // Issue ID
                 var PersonName = specificPerson[2]; // Persons Name
                 var PersonCV = specificPerson[3]; // Persons Conversion Threshold
+
 
 
 
@@ -2341,7 +2322,7 @@ function campaignStratergyImplementation() {
 
 
                 // 1
-                  var temp = partyManifesto[1];
+                var temp = partyManifesto[1];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[1][0]);
 
@@ -2354,17 +2335,17 @@ function campaignStratergyImplementation() {
                 var temp = partyManifesto[3];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[3][0]);
- 
+
                 // 4
                 var temp = partyManifesto[4];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[4][0]);
- 
+
                 // 5
                 var temp = partyManifesto[5];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[5][0]);
- 
+
                 // 6
                 var temp = partyManifesto[6];
                 mSol.push(temp.split("*"));
@@ -2374,84 +2355,120 @@ function campaignStratergyImplementation() {
                 var temp = partyManifesto[7];
                 mSol.push(temp.split("*"));
                 MAPSOL.push(mSol[7][0]);
- 
-
 
                 // ======
 
-                // console.log(mSol[1][0]);
-                // console.log(MAPSOL[1]);
-
-                // console.log(MAPSOL[1]);
-                // console.log(MSR[0][2]);
-
-                // console.log(MS[1]);
-                // console.log(MS[2]);
-                // console.log(MS[3]);
-                // console.log(MS[4]);
-                // console.log(MS[5]);
-                // console.log(MS[6]);
-                // console.log(MS[7]);
-          
-                console.log(MAPSOL[1]);
-                console.log(MAPSOL[2]);
-                console.log(MAPSOL[3]);
-                console.log(MAPSOL[4]);
-                console.log(MAPSOL[5]);
-                console.log(MAPSOL[6]);
-                console.log(MAPSOL[7]);
-                console.log("*******");
 
 
 
 
+                // ITERATE THROUGH RESIDENTS AND SEE IF THEIR "ISSUE-ID" IS IN THE MANIFESTO"
+
+                console.log("D" + i + "+:" + personIssueID + ":" + PersonName + ":" + PersonCV);
 
 
+                var cleansol = MAPSOL.toString();
+                var CS = cleansol.trim();
+                CS = CS.split(",");
+                var MSOLFLAG = CS[1].slice(2, 3);
+                MSOFLAG = MSOLFLAG.toUpperCase();
+                personIssueID = personIssueID.toUpperCase();
+
+                // console.log(MSOLFLAG);
 
 
+                var trigger = 0; // Reset Trigger of matched Issue vs Manifesto Content
+                for (let q = 1; q <= 7; q++) {
+
+                    if (personIssueID === MSOFLAG) {
+                        trigger = 1; //Found Match
+                    }
+                }
 
 
+                if (trigger === 1) {
+                    console.log("FOUND HIT!");
 
+                    console.log(MAPSOL[1]);
+                    console.log(MAPSOL[2]);
+                    console.log(MAPSOL[3]);
+                    console.log(MAPSOL[4]);
+                    console.log(MAPSOL[5]);
+                    console.log(MAPSOL[6]);
+                    console.log(MAPSOL[7]);
+                    console.log("*******");
 
-
-
-
-
-                // =====
-                // Logout to check Variables
-                // To be removed....
-
-                console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
-
-                // console.log(savedDPledges[1] + ":");
-                // console.log(savedDPledges[2] + ":");
-                // console.log(savedDPledges[3] + ":");
-                // console.log(savedDPledges[4] + ":");
-                // console.log(savedDPledges[5] + ":");
-                // console.log(savedDPledges[6] + ":");
-                // console.log(savedDPledges[7] + ":");
-
-                // console.log(partyManifesto[1]);
-                // console.log(partyManifesto[2]);
-                // console.log(partyManifesto[3]);
-                // console.log(partyManifesto[4]);
-                // console.log(partyManifesto[5]);
-                // console.log(partyManifesto[6]);
-                // console.log(partyManifesto[7]);
-
+                    trigger = 0;
+                }
 
             }
 
-        } catch {
+
+
+            // console.log(mSol[1][0]);
+            // console.log(MAPSOL[1]);
+
+            // console.log(MAPSOL[1]);
+            // console.log(MSR[0][2]);
+
+            // console.log(MS[1]);
+            // console.log(MS[2]);
+            // console.log(MS[3]);
+            // console.log(MS[4]);
+            // console.log(MS[5]);
+            // console.log(MS[6]);
+            // console.log(MS[7]);
+
+
+
+
+            //@@@@@@@@@@@@@@@@@@@@@@@
+            // console.log(MAPSOL[1]);
+            // console.log(MAPSOL[2]);
+            // console.log(MAPSOL[3]);
+            // console.log(MAPSOL[4]);
+            // console.log(MAPSOL[5]);
+            // console.log(MAPSOL[6]);
+            // console.log(MAPSOL[7]);
+            // console.log("*******");
+
+
+
+
+
+
+            // =====
+            // Logout to check Variables
+            // To be removed....
+
+            // console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
+
+            // console.log(savedDPledges[1] + ":");
+            // console.log(savedDPledges[2] + ":");
+            // console.log(savedDPledges[3] + ":");
+            // console.log(savedDPledges[4] + ":");
+            // console.log(savedDPledges[5] + ":");
+            // console.log(savedDPledges[6] + ":");
+            // console.log(savedDPledges[7] + ":");
+
+            // console.log(partyManifesto[1]);
+            // console.log(partyManifesto[2]);
+            // console.log(partyManifesto[3]);
+            // console.log(partyManifesto[4]);
+            // console.log(partyManifesto[5]);
+            // console.log(partyManifesto[6]);
+            // console.log(partyManifesto[7]);
+
+
+        } catch
+
+        {
+
             return;
 
         }
 
     }
-
-
-
-
 
 
     function getPeopleChunkBlock(id) {
@@ -2469,7 +2486,6 @@ function campaignStratergyImplementation() {
         // var members = splitData[1];
         // return members;
     }
-
 
 
     function getTotalPeopleInDistrict(dn) {
@@ -2502,7 +2518,11 @@ function campaignStratergyImplementation() {
 
 
 
-    // ITTERATE THROUGH PEOPLE
+
+    //  //////////////////////////////////////////////////////////////////////////
+    // POST - ELECTION ENGINE (3)
+    // //////////////////////////////////////////////////////////////////////////
+    function postProcessElection() {
 
 
 
@@ -2513,46 +2533,6 @@ function campaignStratergyImplementation() {
 
 
 
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  //////////////////////////////////////////////////////////////////////////
-// POST - ELECTION ENGINE (3)
-// //////////////////////////////////////////////////////////////////////////
-function postProcessElection() {
-
+    }
 
 }
