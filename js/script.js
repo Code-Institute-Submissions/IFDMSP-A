@@ -2317,8 +2317,8 @@ function campaignStratergyImplementation() {
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 5));
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 6));
                 savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
-             
-                //GET MANIFESTO
+
+                //GET POLITICIAN  MANIFESTO
                 var partyManifesto = [];
                 partyManifesto.push("-");
                 partyManifesto.push(sessionStorage.getItem("M,1"));
@@ -2330,10 +2330,69 @@ function campaignStratergyImplementation() {
                 partyManifesto.push(sessionStorage.getItem("M,7"));
 
 
+
+                // GET MANIFESTO SOLUTION TOKEN
+
+                var MAPSOL = [];
+                var mSol = [];
+                mSol.push("-");
+                MAPSOL.push("-");
+
+                // 1
+                var temp = partyManifesto[1];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[1][0]);
+                // 2
+                var temp = partyManifesto[2];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[2][0]);
+                // 3
+                var temp = partyManifesto[3];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[3][0]);
+                // 4
+                var temp = partyManifesto[4];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[4][0]);
+                // 5
+                var temp = partyManifesto[5];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[5][0]);
+                // 6
+                var temp = partyManifesto[6];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[6][0]);
+                // 7
+                var temp = partyManifesto[7];
+                mSol.push(temp.split("*"));
+                MAPSOL.push(mSol[7][0]);
+
+
+
                 // ======
 
+                // console.log(mSol[1][0]);
+                console.log(MAPSOL[1]);
 
-               
+                console.log(MAPSOL[2]);
+
+                console.log(MAPSOL[3]);
+
+                console.log(MAPSOL[4]);
+
+                console.log(MAPSOL[5]);
+
+                console.log(MAPSOL[6]);
+
+                console.log(MAPSOL[7]);
+
+                console.log("*******");
+
+
+
+
+
+
 
 
 
@@ -2347,23 +2406,24 @@ function campaignStratergyImplementation() {
                 // =====
                 // Logout to check Variables
                 // To be removed....
-                console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
 
-                console.log(savedDPledges[1] + ":");
-                console.log(savedDPledges[2] + ":");
-                console.log(savedDPledges[3] + ":");
-                console.log(savedDPledges[4] + ":");
-                console.log(savedDPledges[5] + ":");
-                console.log(savedDPledges[6] + ":");
-                console.log(savedDPledges[7] + ":");
+                // console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
 
-                console.log(partyManifesto[1]);
-                console.log(partyManifesto[2]);
-                console.log(partyManifesto[3]);
-                console.log(partyManifesto[4]);
-                console.log(partyManifesto[5]);
-                console.log(partyManifesto[6]);
-                console.log(partyManifesto[7]);
+                // console.log(savedDPledges[1] + ":");
+                // console.log(savedDPledges[2] + ":");
+                // console.log(savedDPledges[3] + ":");
+                // console.log(savedDPledges[4] + ":");
+                // console.log(savedDPledges[5] + ":");
+                // console.log(savedDPledges[6] + ":");
+                // console.log(savedDPledges[7] + ":");
+
+                // console.log(partyManifesto[1]);
+                // console.log(partyManifesto[2]);
+                // console.log(partyManifesto[3]);
+                // console.log(partyManifesto[4]);
+                // console.log(partyManifesto[5]);
+                // console.log(partyManifesto[6]);
+                // console.log(partyManifesto[7]);
 
 
             }
