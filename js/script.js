@@ -2330,9 +2330,7 @@ function campaignStratergyImplementation() {
                 partyManifesto.push(sessionStorage.getItem("M,7"));
 
 
-
                 // GET MANIFESTO SOLUTION TOKEN
-
                 var MAPSOL = [];
                 var mSol = [];
                 mSol.push("-");
@@ -2373,19 +2371,12 @@ function campaignStratergyImplementation() {
 
                 // console.log(mSol[1][0]);
                 console.log(MAPSOL[1]);
-
                 console.log(MAPSOL[2]);
-
                 console.log(MAPSOL[3]);
-
                 console.log(MAPSOL[4]);
-
                 console.log(MAPSOL[5]);
-
                 console.log(MAPSOL[6]);
-
                 console.log(MAPSOL[7]);
-
                 console.log("*******");
 
 
