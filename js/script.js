@@ -2422,14 +2422,6 @@ function postProcessElection() {
 
 
 
-
-
-
-
-
-
-
-
     }
 
     function postGetStrongHoldColor(tp) {
@@ -2581,7 +2573,7 @@ function postProcessElection() {
         // dn = district number to check
         // party = party to check totals for..
         var packedData
-        packedData = sessionStorage.getItem("D," + dn);
+        packedData = sessionStorage.getItem("E," + dn); // <--- Changed from D to E
         var splitData = packedData.split("@");
         var members = splitData[1];
         var individualPeople = members.split("^");
