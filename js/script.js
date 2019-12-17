@@ -2260,351 +2260,23 @@ function processElection() {
 // CAMPAIGN - ELECTION ENGINE (2)
 // //////////////////////////////////////////////////////////////////////////
 function campaignStratergyImplementation() {
-    alert("CAMPAIGN IMPLEMENTED!")
+    alert("CAMPAIGN ALGORITHM IMPLEMENTED!");
 
-    // SETUP VARIABLES FOR MODIFIED OUTPUT
-    var endOfHeaderChunk = "";
-    var ElectionDataToBeChanged = "";
-    var getHeaderChunck = "";
-    var startOfPeopleDataChunk = "";
-    var getPeopleDataChunk = "";
+    
 
-    // ITERATE THROUGH DISTRICTS
 
-    for (let i = 1; 1 < noOfDistricts; i++) {
-        var peopleHeadCount = getTotalPeopleInDistrict(i); // Get Total Headcount in district
 
 
-        var newPeopleDataLine = ""; // New line of data for each person
 
 
 
-        try {
-            var individuals = getPeopleChunkBlock(i).split('^'); // GET CHUNK DATA OF ALL PEOPLE IN DISTRICT (i)
 
 
-            for (let x = 1; x < peopleHeadCount; x++) {
-                // Iterate through people.
-                // GET A SINGLE LINE OF PERSON DATA
-                var specificPerson = individuals[x].split("/"); //Line of Person Data
-                // console.log(specificPerson);
 
-                // @@@@@@@@@@@@@@@@@@@'
-                // @@@@@@@@@@@@@@@@@@@
-                // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
-                var personIDX = x; // Index numbeer of person
-                var personIssueID = specificPerson[1]; // Issue ID
-                var PersonName = specificPerson[2]; // Persons Name
-                var PersonCV = specificPerson[3]; // Persons Conversion Threshold
-                var supports = specificPerson[4]; // Persons supports party
 
 
 
 
-
-                //GET SAVED PLEDGES IN DISTRICT & STORE IN A "SAVEDPLEDGES" VAR
-                var savedDPledges = [];
-                savedDPledges.push("-"); // Filler to alow 7 as not counting from zero
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 1));
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 2));
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 3));
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 4));
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 5));
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 6));
-                savedDPledges.push(sessionStorage.getItem("DMP," + i + "," + 7));
-
-                //GET POLITICIAN  MANIFESTO
-                var partyManifesto = [];
-                partyManifesto.push("-");
-                partyManifesto.push(sessionStorage.getItem("M,1"));
-                partyManifesto.push(sessionStorage.getItem("M,2"));
-                partyManifesto.push(sessionStorage.getItem("M,3"));
-                partyManifesto.push(sessionStorage.getItem("M,4"));
-                partyManifesto.push(sessionStorage.getItem("M,5"));
-                partyManifesto.push(sessionStorage.getItem("M,6"));
-                partyManifesto.push(sessionStorage.getItem("M,7"));
-
-
-                // GET MANIFESTO SOLUTION TOKEN
-                var MSR = [];
-                var MS = [];
-                var MAPSOL = [];
-                var mSol = [];
-                mSol.push("-");
-                MAPSOL.push("-");
-                // MS.push("-");
-
-
-                // 1
-                var temp = partyManifesto[1];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[1][0]);
-
-                // 2
-                var temp = partyManifesto[2];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[2][0]);
-
-                // 3
-                var temp = partyManifesto[3];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[3][0]);
-
-                // 4
-                var temp = partyManifesto[4];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[4][0]);
-
-                // 5
-                var temp = partyManifesto[5];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[5][0]);
-
-                // 6
-                var temp = partyManifesto[6];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[6][0]);
-
-                // 7
-                var temp = partyManifesto[7];
-                mSol.push(temp.split("*"));
-                MAPSOL.push(mSol[7][0]);
-
-                // ======
-
-
-
-
-                // ITERATE THROUGH RESIDENTS AND SEE IF THEIR "ISSUE-ID" IS IN THE MANIFESTO"
-                // var manifestoPos = []; // Index of th e-panifesto pledge line thats matched
-
-                console.log("D" + i + "+:" + personIssueID + ":" + PersonName + ":" + PersonCV); // verbose text line ..delete afterwards
-
-
-                var cleansol = MAPSOL.toString();
-                var CS = cleansol.trim();
-                CS = CS.split(",");
-                var MSOLFLAG = CS[1].slice(2, 3);
-                MSOFLAG = MSOLFLAG.toUpperCase();
-                personIssueID = personIssueID.toUpperCase();
-
-
-                var trigger = 0; // Reset Trigger of matched Issue vs Manifesto Content
-                for (let q = 1; q <= 7; q++) {
-
-                    if (personIssueID === MSOFLAG) {
-                        trigger = 1; //Found Match
-
-                        sessionStorage.setItem("tempMPN", q);
-
-                    }
-                }
-
-
-                if (trigger === 1) {
-                    console.log("FOUND HIT!");
-
-                    // = ** = //
-
-
-
-
-
-
-
-
-                    // MODIFY PERSON DETAILS HERE
-                    // people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
-
-                    // @@@@@@@@@@@@@@@@@@@'
-                    // @@@@@@@@@@@@@@@@@@@
-                    // // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
-                    // var personIDX = x; // Index numbeer of person
-                    // var personIssueID = specificPerson[1]; // Issue ID
-                    // var PersonName = specificPerson[2]; // Persons Name
-                    // var PersonCV = specificPerson[3]; // Persons Conversion Threshold
-                    // var supports = specificPerson[4]; // Persons supports party
-
-
-
-
-                    newPeople = "";
-                    newPConcernString = "-";
-                    newPersonName = PersonName;
-                    newtiPOver = 0;
-                    newpAf = sessionStorage.getItem("myParty");
-
-                    // console.log("newpAF"); // change to your party
-
-
-
-
-
-                    // if (sessionStorage.getItem("DMP," + i + "," + sessionStorage.getItem(tempMPN) === "H")) {
-
-                        // newPeople = "";
-                        // newPConcernString = "-";
-                        // newPersonName = PersonName;
-                        // newtiPOver = 0;
-                        // newpAf = sessionStorage.getItem("myParty");
-
-
-                        // REMOVE ISSUE + SWING TO PERSON TO YOUR PARTY HERE...
-                        newPeople = "^" + personIDX + "/" + newPConcernString + "/" + newPersonName + "/" + newtiPOver + "/" + newpAf + "^";
-
-
-                        var npdl = newPeople = "^" + personIDX + "/" + newPConcernString + "/" + newPersonName + "/" + newtiPOver + "/" + newpAf + "^";
-
-                        newPeopleDataLine = newPeopleDataLine + npdl; //build with party conversion
-
-                    // }
-
-
-
-
-
-                    // ELSE REDUCE BY L-M random Value
-
-
-
-
-
-
-
-
-
-
-                    // = ** = //
-
-                    // console.log(MAPSOL[1]);
-                    // console.log(MAPSOL[2]);
-                    // console.log(MAPSOL[3]);
-                    // console.log(MAPSOL[4]);
-                    // console.log(MAPSOL[5]);
-                    // console.log(MAPSOL[6]);
-                    // console.log(MAPSOL[7]);
-                    // console.log("*******");
-
-                    trigger = 0; // zero trigger
-
-                }
-
-
-
-
-                // GRAB E-COPY POPULATION HEADER SECTION
-                ElectionDataToBeChanged = sessionStorage.getItem("E," + i); // grab pre-election data COPY for modification
-                endOfHeaderChunk = ElectionDataToBeChanged.indexOf("@");
-                getHeaderChunck = ElectionDataToBeChanged.slice(1, endOfHeaderChunk);
-
-                // GRAB E-COPY OF POPULATION DATA CHUNK
-                startOfPeopleDataChunk = ElectionDataToBeChanged.indexOf("[");
-                getPeopleDataChunk = ElectionDataToBeChanged.slice(startOfPeopleDataChunk, ElectionDataToBeChanged.length);
-
-                // VERBOSE TEST OUTPUT..TBD@#@
-                // console.log(getHeaderChunck); // verbose checking header section ...TBD
-                // console.log("++++++"); //verbose TBD
-                // console.log(getPeopleDataChunk);
-
-
-
-                // CREATE NE DATALINE FOR RESIDENTS AFTER MOD!
-
-                // var newPRB = ""; // problem
-                // var newdPop = ""; //population
-                // var newpAf = ""; //population answers fix
-                // var newSOL = "";
-
-
-                // var newLO = newPRB + "#" + newSOL + "#" + newdPop + "#" + newpAf + "#" + "@" + newPeople;
-
-
-
-
-                // console.log(newPeopleDataLine);
-
-
-
-            }
-
-
-
-            // console.log(mSol[1][0]);
-            // console.log(MAPSOL[1]);
-
-            // console.log(MAPSOL[1]);
-            // console.log(MSR[0][2]);
-
-            // console.log(MS[1]);
-            // console.log(MS[2]);
-            // console.log(MS[3]);
-            // console.log(MS[4]);
-            // console.log(MS[5]);
-            // console.log(MS[6]);
-            // console.log(MS[7]);
-
-
-
-
-            //@@@@@@@@@@@@@@@@@@@@@@@
-            // console.log(MAPSOL[1]);
-            // console.log(MAPSOL[2]);
-            // console.log(MAPSOL[3]);
-            // console.log(MAPSOL[4]);
-            // console.log(MAPSOL[5]);
-            // console.log(MAPSOL[6]);
-            // console.log(MAPSOL[7]);
-            // console.log("*******");
-
-
-
-
-
-
-            // =====
-            // Logout to check Variables
-            // To be removed....
-
-            // console.log(personIssueID + ":" + PersonName + ":" + PersonCV);
-
-            // console.log(savedDPledges[1] + ":");
-            // console.log(savedDPledges[2] + ":");
-            // console.log(savedDPledges[3] + ":");
-            // console.log(savedDPledges[4] + ":");
-            // console.log(savedDPledges[5] + ":");
-            // console.log(savedDPledges[6] + ":");
-            // console.log(savedDPledges[7] + ":");
-
-            // console.log(partyManifesto[1]);
-            // console.log(partyManifesto[2]);
-            // console.log(partyManifesto[3]);
-            // console.log(partyManifesto[4]);
-            // console.log(partyManifesto[5]);
-            // console.log(partyManifesto[6]);
-            // console.log(partyManifesto[7]);
-
-
-        } catch
-
-        {
-
-            return;
-
-        }
-
-
-
-
-
-
-
-
-        // kkk
-
-        var header = getHeaderChunck;
-        var populus = "@" + "[" + newPeopleDataLine + "~";
-
-        console.log(header + populus);
 
 
 
@@ -2613,50 +2285,19 @@ function campaignStratergyImplementation() {
     }
 
 
-    function getPeopleChunkBlock(id) {
-        // Get persons line of data
-        var packedData;
-        packedData = sessionStorage.getItem("E," + id);
-
-        if (packedData != null) {
-            var splitData = packedData.split("@");
-            var members = splitData[1];
-            return members;
-        }
-
-        // var splitData = packedData.split("@");
-        // var members = splitData[1];
-        // return members;
-    }
 
 
-    function getTotalPeopleInDistrict(dn) {
-        // //////////////////////////////////
-        // GET TOTAL RESIDENTS IN BOROUGH
-        // Get The Volume of people in a district
-        // dn = district number to get pop volume for
-        // var packeddata = [];
-
-        var packedData = [];
-        packedData.push("-");
-        packedData = sessionStorage.getItem("E," + dn);
-
-        // var splitData = packedData.split("@");
-        if (packedData != null) {
-            var splitData = packedData.split("@");
-
-            var getPop = splitData[0];
-            var pop = getPop.split("#");
-            return pop[2]; // Return total population volume
-
-        }
 
 
-        // var getPop = splitData[0];
-        // var pop = getPop.split("#");
-        // return pop[2]; // Return total population volume
 
-    }
+
+
+
+
+
+
+
+
 
 
 
@@ -2669,6 +2310,11 @@ function campaignStratergyImplementation() {
 
 
 
+   alert("POST- ELECTION RESULTS SHOWN!");
+
+    // Iterate through all districts & show all populus in districts
+    // Show all populus from updataed populus tanble
+
 
 
 
@@ -2677,4 +2323,5 @@ function campaignStratergyImplementation() {
 
     }
 
-}
+
+

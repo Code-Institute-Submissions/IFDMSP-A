@@ -139,6 +139,7 @@
                 <div id="politician">
                 </div>
             </div>
+
             <!-- </div> -->
             <!-- Political Sway Chosen -->
             <!-- <div class="row"> -->
@@ -147,6 +148,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Advert Sound-byte! -->
         <div class="row">
             <div class="col text-center">
@@ -187,6 +189,10 @@
                     onclick="resetGame()" aria-pressed="true">New Game</a>
             </div>
         </div>
+
+
+
+
         <!-- Footer -->
         <section>
             <div class="footer">
@@ -205,6 +211,7 @@
                 </ul>
             </div>
         </section>
+        
         <!-- End of container -->
     </div>
     <!--Load Bootstrap Javscript components  -->
@@ -213,22 +220,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script>
-        var gState = localStorage.getItem("newGame");
-        if (gState != "1") {
-            resetGame();
-        }
+
+
+
+        $('document').ready(function () {
+            // Set Game State for  reset
+            var gState = localStorage.getItem("newGame");
+            if (gState != "1") {
+                resetGame();
+            }
+        })
+
+
         // Run Flasher for Title Bar
         $(document).ready(function () {
             setInterval(function () {
                 flasher();
             }, 500)
         })
+
         // Run Flashing Hand
         $(document).ready(function () {
             setInterval(function () {
                 flashHand();
             }, 10)
         })
+
         // Run State Controller
         $(document).ready(function () {
             setInterval(function () {
