@@ -2651,7 +2651,7 @@ function postProcessElection() {
     } while (postReportingDistrict < noOfDistricts);
 
 
-    $('#post-election-reporter-domparty-img').append("<img src=\"images/vicky-morse.png\"/>");
+    $('#post-election-reporter-domparty-img').append("<img src=\"images/paul-moss.png\"/>");
     // console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
     // var tDom = "Con: " + conservativeDistrictHoldTotal + " Lab: " + labourDistrictHoldTotal + " Lib-Dem: " + libDemDistrictHoldTotal + " Green: " + GreenDistrictHoldTotal;
     $('#post-election-winning-party').append("<p>The Conservative party secured a majority of " + "<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span> districts at the last election.</p>");
