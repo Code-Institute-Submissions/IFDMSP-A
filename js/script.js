@@ -16,7 +16,7 @@ var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
 
-var noOfDistricts = 3; // Number of districts in pool to canvass in game &&&#
+var noOfDistricts = 5; // Number of districts in pool to canvass in game &&&#
 
 var noOfProblems = 20; // Number of problems in pool to choose from
 var gDPMax = 10;
@@ -2262,14 +2262,25 @@ function processElection() {
 function campaignStratergyImplementation() {
     alert("CAMPAIGN IMPLEMENTED!")
 
+    // SETUP VARIABLES FOR MODIFIED OUTPUT
+    var endOfHeaderChunk = "";
+    var ElectionDataToBeChanged = "";
+    var getHeaderChunck = "";
+    var startOfPeopleDataChunk = "";
+    var getPeopleDataChunk = "";
+
     // ITERATE THROUGH DISTRICTS
 
     for (let i = 1; 1 < noOfDistricts; i++) {
         var peopleHeadCount = getTotalPeopleInDistrict(i); // Get Total Headcount in district
 
+
+        var newPeopleDataLine = ""; // New line of data for each person
+
+
+
         try {
             var individuals = getPeopleChunkBlock(i).split('^'); // GET CHUNK DATA OF ALL PEOPLE IN DISTRICT (i)
-
 
 
             for (let x = 1; x < peopleHeadCount; x++) {
@@ -2281,9 +2292,12 @@ function campaignStratergyImplementation() {
                 // @@@@@@@@@@@@@@@@@@@'
                 // @@@@@@@@@@@@@@@@@@@
                 // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
+                var personIDX = x; // Index numbeer of person
                 var personIssueID = specificPerson[1]; // Issue ID
                 var PersonName = specificPerson[2]; // Persons Name
                 var PersonCV = specificPerson[3]; // Persons Conversion Threshold
+                var supports = specificPerson[4]; // Persons supports party
+
 
 
 
@@ -2361,10 +2375,10 @@ function campaignStratergyImplementation() {
 
 
 
-
                 // ITERATE THROUGH RESIDENTS AND SEE IF THEIR "ISSUE-ID" IS IN THE MANIFESTO"
+                // var manifestoPos = []; // Index of th e-panifesto pledge line thats matched
 
-                console.log("D" + i + "+:" + personIssueID + ":" + PersonName + ":" + PersonCV);
+                console.log("D" + i + "+:" + personIssueID + ":" + PersonName + ":" + PersonCV); // verbose text line ..delete afterwards
 
 
                 var cleansol = MAPSOL.toString();
@@ -2374,14 +2388,15 @@ function campaignStratergyImplementation() {
                 MSOFLAG = MSOLFLAG.toUpperCase();
                 personIssueID = personIssueID.toUpperCase();
 
-                // console.log(MSOLFLAG);
-
 
                 var trigger = 0; // Reset Trigger of matched Issue vs Manifesto Content
                 for (let q = 1; q <= 7; q++) {
 
                     if (personIssueID === MSOFLAG) {
                         trigger = 1; //Found Match
+
+                        sessionStorage.setItem("tempMPN", q);
+
                     }
                 }
 
@@ -2389,26 +2404,126 @@ function campaignStratergyImplementation() {
                 if (trigger === 1) {
                     console.log("FOUND HIT!");
 
-
-                    // == //
-
-
-                    
-
-                    // == //
+                    // = ** = //
 
 
-                    console.log(MAPSOL[1]);
-                    console.log(MAPSOL[2]);
-                    console.log(MAPSOL[3]);
-                    console.log(MAPSOL[4]);
-                    console.log(MAPSOL[5]);
-                    console.log(MAPSOL[6]);
-                    console.log(MAPSOL[7]);
-                    console.log("*******");
 
-                    trigger = 0;
+
+
+
+
+
+                    // MODIFY PERSON DETAILS HERE
+                    // people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
+
+                    // @@@@@@@@@@@@@@@@@@@'
+                    // @@@@@@@@@@@@@@@@@@@
+                    // // GET INDIVIDUAL PERSON DATA & STORE IN APPROPRIATE VARIABLES
+                    // var personIDX = x; // Index numbeer of person
+                    // var personIssueID = specificPerson[1]; // Issue ID
+                    // var PersonName = specificPerson[2]; // Persons Name
+                    // var PersonCV = specificPerson[3]; // Persons Conversion Threshold
+                    // var supports = specificPerson[4]; // Persons supports party
+
+
+
+
+                    newPeople = "";
+                    newPConcernString = "-";
+                    newPersonName = PersonName;
+                    newtiPOver = 0;
+                    newpAf = sessionStorage.getItem("myParty");
+
+                    // console.log("newpAF"); // change to your party
+
+
+
+
+
+                    // if (sessionStorage.getItem("DMP," + i + "," + sessionStorage.getItem(tempMPN) === "H")) {
+
+                        // newPeople = "";
+                        // newPConcernString = "-";
+                        // newPersonName = PersonName;
+                        // newtiPOver = 0;
+                        // newpAf = sessionStorage.getItem("myParty");
+
+
+                        // REMOVE ISSUE + SWING TO PERSON TO YOUR PARTY HERE...
+                        newPeople = "^" + personIDX + "/" + newPConcernString + "/" + newPersonName + "/" + newtiPOver + "/" + newpAf + "^";
+
+
+                        var npdl = newPeople = "^" + personIDX + "/" + newPConcernString + "/" + newPersonName + "/" + newtiPOver + "/" + newpAf + "^";
+
+                        newPeopleDataLine = newPeopleDataLine + npdl; //build with party conversion
+
+                    // }
+
+
+
+
+
+                    // ELSE REDUCE BY L-M random Value
+
+
+
+
+
+
+
+
+
+
+                    // = ** = //
+
+                    // console.log(MAPSOL[1]);
+                    // console.log(MAPSOL[2]);
+                    // console.log(MAPSOL[3]);
+                    // console.log(MAPSOL[4]);
+                    // console.log(MAPSOL[5]);
+                    // console.log(MAPSOL[6]);
+                    // console.log(MAPSOL[7]);
+                    // console.log("*******");
+
+                    trigger = 0; // zero trigger
+
                 }
+
+
+
+
+                // GRAB E-COPY POPULATION HEADER SECTION
+                ElectionDataToBeChanged = sessionStorage.getItem("E," + i); // grab pre-election data COPY for modification
+                endOfHeaderChunk = ElectionDataToBeChanged.indexOf("@");
+                getHeaderChunck = ElectionDataToBeChanged.slice(1, endOfHeaderChunk);
+
+                // GRAB E-COPY OF POPULATION DATA CHUNK
+                startOfPeopleDataChunk = ElectionDataToBeChanged.indexOf("[");
+                getPeopleDataChunk = ElectionDataToBeChanged.slice(startOfPeopleDataChunk, ElectionDataToBeChanged.length);
+
+                // VERBOSE TEST OUTPUT..TBD@#@
+                // console.log(getHeaderChunck); // verbose checking header section ...TBD
+                // console.log("++++++"); //verbose TBD
+                // console.log(getPeopleDataChunk);
+
+
+
+                // CREATE NE DATALINE FOR RESIDENTS AFTER MOD!
+
+                // var newPRB = ""; // problem
+                // var newdPop = ""; //population
+                // var newpAf = ""; //population answers fix
+                // var newSOL = "";
+
+
+                // var newLO = newPRB + "#" + newSOL + "#" + newdPop + "#" + newpAf + "#" + "@" + newPeople;
+
+
+
+
+                // console.log(newPeopleDataLine);
+
+
 
             }
 
@@ -2476,6 +2591,24 @@ function campaignStratergyImplementation() {
             return;
 
         }
+
+
+
+
+
+
+
+
+        // kkk
+
+        var header = getHeaderChunck;
+        var populus = "@" + "[" + newPeopleDataLine + "~";
+
+        console.log(header + populus);
+
+
+
+
 
     }
 
