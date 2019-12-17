@@ -2316,8 +2316,13 @@ function campaignStratergyImplementation() {
     // Show all populus from updataed populus tanble
 
 
+    // instert data here on html pahe--->#post-election-final-results-stats
 
 
+
+
+
+    
 
 
 
