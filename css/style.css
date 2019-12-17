@@ -5,7 +5,7 @@ body {
     background-color: var(--main-page-body-color);
     font-family: "Calistoga", "sans-serif";
 
-    
+
     --main-bg-color: rgb(37, 37, 107);
     /* Main background color */
     --main-fc-color: wheat;
@@ -738,10 +738,13 @@ color: yellow;
 }
 /* STATS BOX PARTY WITH MOST DISTRICTS*/
 #container-box {
+
+    border-radius: 10px;
+    
     border: solid;
     background-color: bisque;
     margin-bottom: 20px;
-    min-height: 400px;
+    min-height: 600px;
     width: 100%;
 }
 /* Reportet Image */
@@ -774,4 +777,18 @@ color: yellow;
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: 4px 4px grey;
+}
+
+
+
+
+#post-election-container-box{
+
+    border-radius: 10px;
+background-color: orange;
+border: solid;
+margin-bottom: 20px;
+min-height: 600px;
+width: 100%;
+
 }
