@@ -1,5 +1,7 @@
 // ------- DATA ----------- 
-// District Hold Total
+var  reductionValue=0; // amount to remove from persons conversion value .. to nulifiy to 0.
+var  personConversionValueMax=5; // persons conversion value max.
+
 var conservativeDistrictHoldTotal = 0;
 var labourDistrictHoldTotal = 0;
 var libDemDistrictHoldTotal = 0;
@@ -478,11 +480,7 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
-    // $('div #populus-table').dblclick(function () {
-    //     alert("pop");
-    //     window.location.href = "generate-populus.html";
-    //     return;
-    // });
+    
     // Check if to display "jump to Global Econmy" Button
     // After Party has been selected
     var picked = sessionStorage.getItem("myPolitician");
@@ -1014,6 +1012,7 @@ function loadUpPopulation() {
         peopleOutputLine = peopleOutputLine + "</div>";
         //  console.log(PA[1]);
         $("#populus-table").append(peopleOutputLine);
+
         // Save to session Memory Current People data Pre-Election TO BE USED IN ELECTION ENGINE*******
         var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
         sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u + ":", pdat + "~");
@@ -1131,6 +1130,7 @@ function CreateDistricts() {
         var rnum = getRandom(noOfProblems);
         var dpe = districtProblems[rnum];
         var spe = districtSolutions[rnum];
+
         // Create Problem and Solution as a Packed String
         var PRB = dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
         var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
@@ -1270,7 +1270,8 @@ function CreateDistricts() {
 
             // TipOver amount of concerns politican sucessfully addreses
             // To swing my Vote. Iie PERSON CONVERSION THRESHHOLD!!
-            var tiPOver = getRandom(5);
+            // PERSONS CV!
+            var tiPOver = getRandom(personConversionValueMax);
 
 
             people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
