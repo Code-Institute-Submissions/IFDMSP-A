@@ -1,6 +1,7 @@
 // ------- DATA ----------- 
-var  reductionValue=0; // amount to remove from persons conversion value .. to nulifiy to 0.
-var  personConversionValueMax=5; // persons conversion value max.
+var electionEngineUnpackedPerson;
+var reductionValue = 0; // amount to remove from persons conversion value .. to nulifiy to 0.
+var personConversionValueMax = 5; // persons conversion value max.
 
 var conservativeDistrictHoldTotal = 0;
 var labourDistrictHoldTotal = 0;
@@ -480,7 +481,7 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
-    
+
     // Check if to display "jump to Global Econmy" Button
     // After Party has been selected
     var picked = sessionStorage.getItem("myPolitician");
@@ -2264,10 +2265,93 @@ function campaignStratergyImplementation() {
     alert("CAMPAIGN ALGORITHM IMPLEMENTED!");
 
 
+    // SETUP ITTERATION THROUGH AL DISTRICTS
+    for (let currentDistrictCount = 1; currentDistrictCount < noOfDistricts; currentDistrictCount++) {
+
+
+        // GET RESIDENTS
+        noOfResidents = electionEngineGetMembersCountInDistrict(currentDistrictCount);
+
+        for (let residentCount = 1; residentCount < noOfResidents; residentCount++) {
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+            console.log(electionEngineUnpackedPerson[residentCount]); // Verbose Testpoint TBD
+
+
+
+
+
+
+        }
+
+        console.log("DISTRICT *** " + currentDistrictCount+" ***");
+        // Advace to NExt district
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    function electionEngineGetMembersCountInDistrict(dn) {
+        // ////////////////////////////////// 
+        // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
+        // dn = district number to check
+
+        var packedData
+        packedData = sessionStorage.getItem("E," + dn);
+        var splitData = packedData.split("@");
+
+        var members = splitData[1];
+        var individualPeople = members.split("^");
+
+        electionEngineUnpackedPerson = members.split("^");
+
+        // for (let i = 1; i < individualPeople.length; i++) {
+        //     individualPeople = individualPeople[i].split("/");
+        //     // Keep this as remider of each data
+        //     // console.log(unpackedPerson[0]); // id number
+        //     // console.log(unpackedPerson[1]); // issue of concern
+        //     // console.log(unpackedPerson[2]); // name
+        //     // console.log(unpackedPerson[3]); // convertion threshold
+        //     // console.log(unpackedPerson[4]); // current party allaiance
+        //     // count up tally
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+        return individualPeople.length; // return total  found
+    }
 
 
 
@@ -2302,12 +2386,16 @@ function campaignStratergyImplementation() {
 
 
 
+
+
+
+
 //  //////////////////////////////////////////////////////////////////////////
 // POST - ELECTION ENGINE (3)
 // //////////////////////////////////////////////////////////////////////////
 function postProcessElection() {
 
-    alert("PRE-ELECTION STATS PUBLISHED");
+    alert("POST-ELECTION STATS PUBLISHED");
 
 
     // repd = district to report on
@@ -2627,8 +2715,8 @@ function postProcessElection() {
 
 
 
-   
-    // WORKOUT SUPPORT VOTES FOR EACH DISTRICT
+    // ///////////////////////////////////////////////////
+    // WORKOUT SUPPORT VOTES FOR EACH DISTRICT POST ELECTION
     // Reset Grand Total Votes
     // Before Election Count Up
     partyGT.Conservative = 0;
@@ -2653,7 +2741,6 @@ function postProcessElection() {
     $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span></p>");
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
-
 
 
 }
