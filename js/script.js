@@ -1,6 +1,6 @@
 // ------- DATA ----------- 
 var electionEngineUnpackedPerson;
-var reductionValue = 0; // amount to remove from persons conversion value .. to nulifiy to 0.
+// var reductionValue = 0; // amount to remove from persons conversion value .. to nulifiy to 0.
 var personConversionValueMax = 5; // persons conversion value max.
 
 var conservativeDistrictHoldTotal = 0;
@@ -2275,6 +2275,87 @@ function campaignStratergyImplementation() {
         for (let residentCount = 1; residentCount < noOfResidents; residentCount++) {
 
 
+            // RESET RV
+            var reductionValue = 0; // Value to be subtracted from persons conversion value (personCV)
+
+            // SPLIT PERSON DATA INTO COMPONENTS. 
+            var personComponents = electionEngineUnpackedPerson[residentCount].split("/"); // break up person data into components
+
+            // PUT PERSON COMPONENTS INTO INDIVIDUAL VARS
+
+            var personIdx = personComponents[0];
+            var personIssueID = personComponents[1];
+            var personName = personComponents[2];
+            var pesronCv = personComponents[3];
+            var personParty = personComponents[4];
+
+
+            // GET SAVED PLEDGES
+            var savedPledges = [];
+            savedPledges.push("-");
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 1));
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 2));
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 3));
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 4));
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 5));
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 6));
+            savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 7));
+
+            // GET POLITICIAN MANIFESTO ; This contains the full manifesto string... not just the letters "CHW... etc"
+            var partyManifesto = [];
+            partyManifesto.push("-");
+            partyManifesto.push(sessionStorage.getItem("M,1"));
+            partyManifesto.push(sessionStorage.getItem("M,2"));
+            partyManifesto.push(sessionStorage.getItem("M,3"));
+            partyManifesto.push(sessionStorage.getItem("M,4"));
+            partyManifesto.push(sessionStorage.getItem("M,5"));
+            partyManifesto.push(sessionStorage.getItem("M,6"));
+            partyManifesto.push(sessionStorage.getItem("M,7"));
+
+
+            // GET THE MANIFESTO DIGITS
+
+            var mDigit = [];
+            mDigit.push("-")
+
+            var MR = [];
+
+            var partyManifestoResponse = [];
+            partyManifestoResponse.push("-");
+
+            MR.push("-");
+            var tempM = "";
+            var splitIntoTwoHalfs = "";
+
+
+// GET MANIFESTO RESPONSE TOKENS /LINE & PLACE ib
+            for (let y = 1; y <= 7; y++) {
+                var splitIt = [];
+                var splitIntoTwoHalfs = ""; // reset data so not to grow exponentially
+
+                var temp = partyManifesto[y];
+                splitIt.push(temp.split("*"));
+                var mLine = splitIt[0];
+                mDigit.push(mLine[0]);
+                var mItem = mLine[0];
+                mItem = mItem.trim();
+                var MR = mItem.slice(-1);
+                partyManifestoResponse.push(MR);
+            }
+
+
+
+
+
+            // ////////////////
+            // CONVERSION ENGINE
+            // ///////////////
+
+
+
+
+
+
 
 
 
@@ -2288,6 +2369,21 @@ function campaignStratergyImplementation() {
 
 
             console.log(electionEngineUnpackedPerson[residentCount]); // Verbose Testpoint TBD
+            // console.log(personIdx);
+            // console.log(personIssueID);
+            // console.log(personName);
+            // console.log(pesronCv);
+            // console.log(personParty);
+            // console.log("***********");
+
+            // for (let i = 1; i < 7; i++) {
+            //     console.log(mDigit[i]);
+            // }
+            // // console.log(mDigit[1]);
+            // console.log(mDigit[2]);
+
+            // console.log("***********");
+
 
 
 
@@ -2296,7 +2392,7 @@ function campaignStratergyImplementation() {
 
         }
 
-        console.log("DISTRICT *** " + currentDistrictCount+" ***");
+        console.log("DISTRICT *** " + currentDistrictCount + " ***");
         // Advace to NExt district
 
 
@@ -2313,6 +2409,13 @@ function campaignStratergyImplementation() {
 
 
     }
+
+
+
+
+
+
+
 
     function electionEngineGetMembersCountInDistrict(dn) {
         // ////////////////////////////////// 
@@ -2498,17 +2601,6 @@ function postProcessElection() {
         domminatPartymessage = domminatPartymessage + "";
         // $('#con-dom-mess').html("<h1>" + domminatPartymessage + "</h1>");
         postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-
-
 
 
     }
