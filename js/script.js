@@ -2286,7 +2286,7 @@ function campaignStratergyImplementation() {
             var personIdx = personComponents[0];
             var personIssueID = personComponents[1];
             var personName = personComponents[2];
-            var pesronCv = personComponents[3];
+            var personCv = personComponents[3];
             var personParty = personComponents[4];
 
 
@@ -2314,22 +2314,19 @@ function campaignStratergyImplementation() {
 
 
             // GET THE MANIFESTO DIGITS
-
             var mDigit = [];
             mDigit.push("-")
-
             var MR = [];
-
             var partyManifestoResponse = [];
             partyManifestoResponse.push("-");
-
             MR.push("-");
             var tempM = "";
             var splitIntoTwoHalfs = "";
 
 
-// GET MANIFESTO RESPONSE TOKENS /LINE & PLACE ib
+            // GET MANIFESTO RESPONSE TOKENS /LINE & PLACE   
             for (let y = 1; y <= 7; y++) {
+                // partyManifesto[1-7]  = Party Manifesto Pledge response Token
                 var splitIt = [];
                 var splitIntoTwoHalfs = ""; // reset data so not to grow exponentially
 
@@ -2341,24 +2338,86 @@ function campaignStratergyImplementation() {
                 mItem = mItem.trim();
                 var MR = mItem.slice(-1);
                 partyManifestoResponse.push(MR);
+
+
+                // console.log(partyManifestoResponse[y]); //verbose - TBD
+
             }
 
 
 
 
 
-            // ////////////////
+
+
+
+
+
+            // //////////////////////////////////
             // CONVERSION ENGINE
-            // ///////////////
+            // //////////////////////////////////
+
+
+            // Check if Persons Issue Concern is addresed in Your Party Manifesto
+            var hitFlag = 0;
+            for (let icount = 1; icount <= 7; icount++) {
+
+                console.log(personIssueID + ":" + partyManifestoResponse[icount]); // Verbose Test Point-TBD
+
+
+                if (personIssueID === partyManifestoResponse[icount]) {
+                    hitFlag = 1; //match found
+
+                    if (savedPledges[icount] === "H") {
+                        reductionValue = personConversionValueMax; // Place maximum Conversion value
+                        console.log("*H-RV!");//Verbose-TestPoint -TBD
+                    }
+
+                    if (savedPledges[icount] === "M") {
+                        reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
+                        console.log("M-RV!");//Verbose-TestPoint -TBD
+                    }
+
+                    if (savedPledges[icount] === "L") {
+                        reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
+                        console.log("L-RV!");//Verbose-TestPoint -TBD
+                    }
 
 
 
 
 
+                    // console.log("BEEP!");// Verbose Test Point-TBD
+                }
+            }
+
+
+            // EXIT IF PID IS NOT IN MANIFESTO BAG
+            if (hitFlag === 0) {
+                return; // Break Out  
+            }
+
+
+            // PID IS IN MANIFESTO BAG ?
+            if (hitFlag === 1) {
+
+                personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
+
+
+                // CONVERT PERSON BASED ON UPDATED CV VALUE
+                // ////////////////////////////////////////
+
+                if (personCv <=0){
+                    personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
+                }
+
+            }
 
 
 
 
+
+            var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty + "^"
 
 
 
@@ -2369,23 +2428,14 @@ function campaignStratergyImplementation() {
 
 
             console.log(electionEngineUnpackedPerson[residentCount]); // Verbose Testpoint TBD
+            console.log(updatedPerson);
+            
             // console.log(personIdx);
             // console.log(personIssueID);
             // console.log(personName);
             // console.log(pesronCv);
             // console.log(personParty);
             // console.log("***********");
-
-            // for (let i = 1; i < 7; i++) {
-            //     console.log(mDigit[i]);
-            // }
-            // // console.log(mDigit[1]);
-            // console.log(mDigit[2]);
-
-            // console.log("***********");
-
-
-
 
 
 
@@ -2409,6 +2459,11 @@ function campaignStratergyImplementation() {
 
 
     }
+
+
+
+
+
 
 
 
@@ -2444,27 +2499,8 @@ function campaignStratergyImplementation() {
         // }
 
 
-
-
-
-
-
-
-
-
-
         return individualPeople.length; // return total  found
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
