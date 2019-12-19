@@ -279,14 +279,37 @@
 
 
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="row no-gutters">
+
+
+                    <div class="col-6 keep-insideBSol nopadding">
                         <h4>
                             <ul>
-                                 <li><div id="conversions-election-container-box"></div></li>
+
+                                <li>
+                                    
+
+                                        <div id="conversions-election-container-box"></div>
+                                     
+
+                                </li>
+
                             </ul>
                         </h4>
                     </div>
+
+                    <!-- Image of Your Party Leader -->
+                    <div class="col-6 text-center nopadding keep-insideBSol">
+
+                        <ul>
+                            <li>
+                                <div id="my-party-leader"></div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+
                 </div>
 
 
@@ -315,7 +338,7 @@
 
 
 
-                <!-- POST ELECTION STATAS BUTTON -->
+                <!-- POST ELECTION STATS BUTTON -->
                 <div class="row">
                     <div id="results-button" class="col-12 results-buttons-fmt ">
                         <!-- <h3> -->
@@ -406,8 +429,8 @@
 
 
                 <!-- IMAGE OF REPORTER -->
-                <div class="row">
-                    <div class="col-12 ">
+                <div class="row no-gutters">
+                    <div class="col-12 nopadding">
                         <div id="post-election-reporter-domparty-img" class="col-6">
                             <!-- <h4></h4> -->
                         </div>
@@ -518,6 +541,17 @@
             }, 100)
         })
     </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            // Show Your Party Leader Image
+            insertMyPoliticianImage();
+        })
+    </script>
+
+
 
 </body>
 

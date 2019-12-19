@@ -945,16 +945,42 @@ color: yellow;
     box-shadow: 4px 4px grey;
 }
 
+/* Holds list of Converted People */
 #conversions-election-container-box {
-    font-size: 1rem;
+    font-size: .75rem;
     border-radius: 10px;
     overflow: scroll;
+    
   
     border: solid;
     margin-bottom: 20px;
-    min-height: 400px;
+   
+    min-height: 350px;
+    max-height: 400px;
+    
     width: 100%;
 }
+
+
+#post-election-reporter-domparty-img ,img{
+
+text-decoration: none;
+
+/* margin-left: auto;
+margin-right: auto;   */
+
+width: 100%;
+height: auto;
+border: 4px double var(--myRed);
+}
+
+#post-election-reporter-domparty-img ,h3{
+
+    text-align: center;
+    width: 100%;
+}
+
+
 
 #post-election-container-box {
     border-radius: 10px;

@@ -2428,7 +2428,7 @@ function campaignStratergyImplementation() {
                 // ////////////////////////////////////////
                 // /////////////////////////////////
                 // // GRAND TOTAL RESULTS FOR PARTIES
-               
+
 
                 if (personCv <= 0) {
                     personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
@@ -2439,29 +2439,29 @@ function campaignStratergyImplementation() {
                         // partyGT.Conservative++;
                         personParty = "Conservative";
                         console.log(personName + " is a New Convert!");
-                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
+                        $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Labour") {
                         // partyGT.Labour++;
                         personParty = "Labour";
                         console.log(personName + " is a New Convert!");
-                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
+                        $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Lib-Dem") {
                         // partyGT.LibDem++;
                         personParty = "Lib-Dem";
                         console.log(personName + " is a New Convert!");
-                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
+                        $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Green") {
                         // partyGT.Green++;
                         personParty = "Green";
                         console.log(personName + " is a New Convert!");
-                        
-                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
+
+                        $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
 
                     }
 
@@ -2889,6 +2889,8 @@ function postProcessElection() {
 
 
 
+ 
+
 
 
 
@@ -2934,5 +2936,41 @@ function postProcessElection() {
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
 
+
+}
+
+
+
+
+
+
+   // Load your Politicians image
+   function insertMyPoliticianImage() {
+    // alert("pop")//verbose-test-point-tbd
+
+    var mypol = sessionStorage.getItem("myParty");
+    switch (mypol) {
+        case "Conservative":
+            var myPImage = "cara-leyton.png";
+            var myPName = "Cara Leyton";
+            break;
+        case "Labour":
+            var myPImage = "chris-wells.png";
+            var myPName = "Chris Wells";
+            break;
+        case "Lib-Dem":
+            var myPImage = "christian-bell.png";
+            var myPName = "Christian Bell";
+            break;
+        case "Green":
+            var myPImage = "julie-greenwood.png";
+            var myPName = "Julie Greenwood";
+            break;
+    }
+
+    var picInsertString = "<img src=\"images"+"/"+ myPImage + "\"/>";
+picInsertString=picInsertString+"<h3>"+myPName+"- MP/"+sessionStorage.getItem("myParty")+"</h3>";
+
+    $('#my-party-leader').append(picInsertString);
 
 }
