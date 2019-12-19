@@ -2928,10 +2928,10 @@ function postProcessElection() {
     $('#post-election-reporter-domparty-img').append("<img src=\"images/paul-moss.png\"/>");
     // console.log("Con:" + conservativeDistrictHoldTotal + " Lab:" + labourDistrictHoldTotal + " Lib-Dem:" + libDemDistricttHoldTotal + " Green:" + GreenDistrictHoldTotal);
     // var tDom = "Con: " + conservativeDistrictHoldTotal + " Lab: " + labourDistrictHoldTotal + " Lib-Dem: " + libDemDistrictHoldTotal + " Green: " + GreenDistrictHoldTotal;
-    $('#post-election-winning-party').append("<p>The Conservative party has secured a majority of " + "<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span></p>");
-    $('#post-election-winning-party').append("<p>The Labour party has secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span></p>");
-    $('#post-election-winning-party').append("<p>The Liberal-Democrat party has secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span></p>");
-    $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span></p>");
+    $('#post-election-winning-party').append("<p>The Conservative party has secured a majority of " + "<span class=\"circle-dtot\" >" + conservativeDistrictHoldTotal + "</span>districts!</p>");
+    $('#post-election-winning-party').append("<p>The Labour party has secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span>districts!</p>");
+    $('#post-election-winning-party').append("<p>The Liberal-Democrat party has secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span>districts!</p>");
+    $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span>districts!</p>");
 
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
