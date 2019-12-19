@@ -1,6 +1,6 @@
 // ------- DATA ----------- 
-var updatedPeopleArray = []; // new updated people array post election engine modificationb
-updatedPeopleArray.push("-");// fill element zero with blank
+var updatedPeoplePackedList = []; // new updated people array post election engine modificationb
+updatedPeoplePackedList.push("-"); // fill element zero with blank
 
 
 
@@ -24,7 +24,7 @@ var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
 
-var noOfDistricts = 5; // Number of districts in pool to canvass in game &&&#
+var noOfDistricts = 6; // Number of districts in pool to canvass in game &&&#
 
 var noOfProblems = 20; // Number of problems in pool to choose from
 var gDPMax = 10;
@@ -2279,12 +2279,12 @@ function processElection() {
 function campaignStratergyImplementation() {
     alert("CAMPAIGN ALGORITHM IMPLEMENTED!");
 
-  
-   
 
-
-
-
+    partyGT.Conservative = 0;
+    partyGT.Labour = 0;
+    partyGT.LibDem = 0;
+    partyGT.Green = 0;
+    var reportingDistrict = 1;
 
 
 
@@ -2293,8 +2293,10 @@ function campaignStratergyImplementation() {
     // SETUP ITTERATION THROUGH AL DISTRICTS
     for (let currentDistrictCount = 1; currentDistrictCount < noOfDistricts; currentDistrictCount++) {
 
-        updatedPeopleArray = [];
-        updatedPeopleArray.push("-");
+        // updatedPeoplePackedList = [];
+        updatedPeoplePackedList = "";
+
+        // updatedPeoplePackedList.push("-");//@@
 
 
 
@@ -2420,13 +2422,48 @@ function campaignStratergyImplementation() {
             // PID IS IN MANIFESTO BAG ?
             if (hitFlag === 1) {
 
-                personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
+                personCv = (personCv - reductionValue); // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
 
                 // CONVERT PERSON BASED ON UPDATED CV VALUE
                 // ////////////////////////////////////////
+                // /////////////////////////////////
+                // // GRAND TOTAL RESULTS FOR PARTIES
+               
 
                 if (personCv <= 0) {
                     personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
+
+                    // DAMASCUS CONVERSION MET!!!
+
+                    if (sessionStorage.getItem("myParty") === "Conservative") {
+                        // partyGT.Conservative++;
+                        personParty = "Conservative";
+                        console.log(personName + " is a New Convert!");
+                        
+                    }
+
+                    if (sessionStorage.getItem("myParty") === "Labour") {
+                        // partyGT.Labour++;
+                        personParty = "Labour";
+                        console.log(personName + " is a New Convert!");
+                         
+                    }
+
+                    if (sessionStorage.getItem("myParty") === "Lib-Dem") {
+                        // partyGT.LibDem++;
+                        personParty = "Lib-Dem";
+                        console.log(personName + " is a New Convert!");
+                        
+                    }
+
+                    if (sessionStorage.getItem("myParty") === "Green") {
+                        // partyGT.Green++;
+                        personParty = "Green";
+                        console.log(personName + " is a New Convert!");
+                         
+                    }
+
+
                 }
 
             }
@@ -2441,97 +2478,40 @@ function campaignStratergyImplementation() {
 
 
             // CONSTRUCT UPDATED PERSON DATA!!!!
-            var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty + "^"
+            var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
 
-            updatedPeopleArray.push(updatedPerson);
+            updatedPeoplePackedList = updatedPeoplePackedList + updatedPerson;
 
-            // updatedPeopleArray = updatedPeopleArray+updatedPerson;
-
-            console.log(updatedPeopleArray[residentCount]);
-
-
-            // console.log(electionEngineUnpackedPerson[residentCount]); // Verbose Testpoint TBD
-            // console.log(updatedPerson);
-
-            // console.log(personIdx);
-            // console.log(personIssueID);
-            // console.log(personName);
-            // console.log(pesronCv);
-            // console.log(personParty);
-            // console.log("***********");
+            // console.log(updatedPeoplePackedList);
 
         }
 
-        // console.log("DISTRICT *** " + currentDistrictCount + " ***");
-        // Advace to NExt district
 
-
-
-
-        //  /////////////// ######  ////////////
-        // UPDATE PEOPLE ARRAY HERE
-
+        // UPDATE POPULUS CONTENT HERE
         updatePeopleChunk(currentDistrictCount);
-
 
     }
 
 
 
-
-
-
-
-
-
-
-
-    // UPDATE PEOPLE CHUNK!
-
-
+    // UPDATE PEOPLE CHUNK
     function updatePeopleChunk(currentDistrictCount) {
         var UPD = [];
         var districToUpdate = sessionStorage.getItem("E," + currentDistrictCount);
 
-        alert("KABOOM!");
-
         var packedData
         packedData = sessionStorage.getItem("E," + currentDistrictCount);
         var splitData = packedData.split("@");
-        var members = splitData[1];//people data
 
-        var updatedMembers = updatedPeopleArray;
+        var members = splitData[1]; //people data
 
+        var updatedMembers = updatedPeoplePackedList;
 
-
-        // alert(splitData[1]);
-
-
-
-
-
-
-        // updatedMembers.concat("[" + updatedPeopleArray+"~"); // Update people
-
-
-        UPD = ("@["+splitData[0]+updatedMembers+"~");
-
-        alert(UPD);
+        UPD = (splitData[0] + "@[" + updatedMembers + "~");
 
         sessionStorage.setItem("E," + currentDistrictCount, UPD);
 
-
-
-
-
-
     }
-
-
-
-
-
-
 
 
     function electionEngineGetMembersCountInDistrict(dn) {
@@ -2557,17 +2537,6 @@ function campaignStratergyImplementation() {
         // }
         return individualPeople.length; // return total  found
     }
-
-
-
-    // ///////////////////////////////////////
-    // RUN ENGINE
-    // //////////////////////
-
-
-
-
-
 
 }
 
@@ -2608,20 +2577,21 @@ function postProcessElection() {
     // hld = stronghold party
     function postPublishLine(repd, con, lab, libd, grn, hld) {
         // Get Vote Supports per party in each district
-        var ConVotes = postGetPartyMembersCountInDistrict(repd, "Conservative");
-        var LabVotes = postGetPartyMembersCountInDistrict(repd, "Labour");
-        var LibDemVotes = postGetPartyMembersCountInDistrict(repd, "Lib-Dem");
-        var GreenVotes = postGetPartyMembersCountInDistrict(repd, "Green");
+        var postConVotes = postGetPartyMembersCountInDistrict(repd, "Conservative");
+        var postLabVotes = postGetPartyMembersCountInDistrict(repd, "Labour");
+        var postLibDemVotes = postGetPartyMembersCountInDistrict(repd, "Lib-Dem");
+        var postGreenVotes = postGetPartyMembersCountInDistrict(repd, "Green");
+
         // Running Total Votes Accross ALL Dristricts
-        partyGT.Conservative = partyGT.Conservative + ConVotes;
-        partyGT.Labour = partyGT.Labour + LabVotes;
-        partyGT.LibDem = partyGT.LibDem + LibDemVotes;
-        partyGT.Green = partyGT.Green + GreenVotes;
+        partyGT.Conservative = partyGT.Conservative + postConVotes;
+        partyGT.Labour = partyGT.Labour + postLabVotes;
+        partyGT.LibDem = partyGT.LibDem + postLibDemVotes;
+        partyGT.Green = partyGT.Green + postGreenVotes;
         // function getTopRankParty(party1, pval, party2, pval2, party3, pval3, party4, pval4) 
 
         // Get The top party in district
-        var topParty;
-        var topParty = postGetTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
+        var postTopParty;
+        var postTopParty = postGetTopRankParty("Conservative", postConVotes, "Labour", postLabVotes, "Lib-Dem", postLibDemVotes, "Green", postGreenVotes);
 
         // Build Output HTML in String
         var postStatsResultLineOut = "";
@@ -2639,42 +2609,42 @@ function postProcessElection() {
         postStatsResultLineOut = postStatsResultLineOut + "<!-- // -->";
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-4 keep-insideBSol nopadding\">";
         postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + countryDistricts[repd];
+        postStatsResultLineOut = postStatsResultLineOut + countryDistricts[repd] + " *";
         postStatsResultLineOut = postStatsResultLineOut + "</h2>";
         postStatsResultLineOut = postStatsResultLineOut + "</div>";
         // CON info
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
         postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + ConVotes;
+        postStatsResultLineOut = postStatsResultLineOut + postConVotes;
         postStatsResultLineOut = postStatsResultLineOut + "</h2>";
         postStatsResultLineOut = postStatsResultLineOut + "</div>";
         // LAB Info
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
         postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + LabVotes;
+        postStatsResultLineOut = postStatsResultLineOut + postLabVotes;
         postStatsResultLineOut = postStatsResultLineOut + "</h2>";
         postStatsResultLineOut = postStatsResultLineOut + "</div>";
         // LIB-DEM
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
         postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + LibDemVotes;
+        postStatsResultLineOut = postStatsResultLineOut + postLibDemVotes;
         postStatsResultLineOut = postStatsResultLineOut + "</h2>";
         postStatsResultLineOut = postStatsResultLineOut + "</div>";
         // GREEN
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
         postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + GreenVotes;
+        postStatsResultLineOut = postStatsResultLineOut + postGreenVotes;
         postStatsResultLineOut = postStatsResultLineOut + "</h2>";
         postStatsResultLineOut = postStatsResultLineOut + "</div>";
         // STRONGHOLD
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
         // ***************
         // Get Stronghold Colour
-        strngHoldColor = postGetStrongHoldColor(topParty[0]);
+        strngHoldColor = postGetStrongHoldColor(postTopParty[0]);
         postStatsResultLineOut = postStatsResultLineOut + "<h2 class=\"" + strngHoldColor + "\">";
-        postStatsResultLineOut = postStatsResultLineOut + topParty[0].slice(0, 3); // publish stronghold party in District
+        postStatsResultLineOut = postStatsResultLineOut + postTopParty[0].slice(0, 3); // publish stronghold party in District
         // Record District Hold Count for Each Party
-        postDistrictTotalControl(topParty[0]);
+        postDistrictTotalControl(postTopParty[0]);
         // **************
         postStatsResultLineOut = postStatsResultLineOut + "</h2>";
         postStatsResultLineOut = postStatsResultLineOut + "</div>";
@@ -2728,26 +2698,29 @@ function postProcessElection() {
         // Check through Parties supplied and find which is top in
         // Set submitted
         // This will allow you to find top party in district
-        var topPartyValue = 0;
-        var topPartyName = "";
-        if (pval1 > topPartyValue) {
-            topPartyValue = pval1;
-            topPartyName = party1Name;
+        var postTopPartyValue = 0;
+        var postTopPartyName = "";
+
+        if (pval1 > postTopPartyValue) {
+            postTopPartyValue = pval1;
+            postTopPartyName = party1Name;
         }
-        if (pval2 > topPartyValue) {
-            topPartyValue = pval2;
-            topPartyName = party2Name;
+        if (pval2 > postTopPartyValue) {
+            postTopPartyValue = pval2;
+            postTopPartyName = party2Name;
         }
-        if (pval3 > topPartyValue) {
-            topPartyValue = pval3;
-            topPartyName = party3Name;
+        if (pval3 > postTopPartyValue) {
+            postTopPartyValue = pval3;
+            postTopPartyName = party3Name;
         }
-        if (pval4 > topPartyValue) {
+        if (pval4 > postTopPartyValue) {
             topPartyValue = pval4;
             topPartyName = party4Name;
         }
-        return [topPartyName, topPartyValue];
+        return [postTopPartyName, postTopPartyValue];
     }
+
+
 
     function postGetWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET WINNING RPARTY
@@ -2757,6 +2730,7 @@ function postProcessElection() {
         var winPartyValue = 0;
         var winPartyName = "";
         var hungMessage = "** HUNG PARLIMENT! **"
+
         if (pval1 > winPartyValue) {
             winPartyValue = pval1;
             winPartyName = party1Name;
@@ -2840,7 +2814,7 @@ function postProcessElection() {
         // dn = district number to get pop volume for
         // var packeddata = [];
         var packedData
-        packedData = sessionStorage.getItem("D," + dn);
+        packedData = sessionStorage.getItem("E," + dn);
         var splitData = packedData.split("@");
         var getPop = splitData[0];
         var pop = getPop.split("#");
@@ -2852,12 +2826,14 @@ function postProcessElection() {
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
         // dn = district number to check
         // party = party to check totals for..
-        var packedData
+        var packedData = "";
         packedData = sessionStorage.getItem("E," + dn); // <--- Changed from D to E
         var splitData = packedData.split("@");
         var members = splitData[1];
         var individualPeople = members.split("^");
         var tally = 0; // restet tally count
+
+        // ITERATE THROUGH POPULUS & TEST THEIR PARTY ALLEGIEANCE
         for (let i = 1; i < individualPeople.length; i++) {
             var unpackedPerson = individualPeople[i].split("/");
             // Keep this as remider of each data
@@ -2867,12 +2843,16 @@ function postProcessElection() {
             // console.log(unpackedPerson[3]); // convertion threshold
             // console.log(unpackedPerson[4]); // current party allaiance
             // count up tally
+
+            // test for party allegienc and increment if so!
             switch (party) {
                 case unpackedPerson[4]:
-                    tally++;
+                    tally++; // add one to party Support
                     break;
             }
         }
+
+        // alert(party+":"+tally);
         return tally; // return total  found
     }
 
@@ -2906,6 +2886,13 @@ function postProcessElection() {
 
 
 
+
+
+
+
+
+
+
     // ///////////////////////////////////////////////////
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT POST ELECTION
     // Reset Grand Total Votes
@@ -2915,11 +2902,22 @@ function postProcessElection() {
     partyGT.LibDem = 0;
     partyGT.Green = 0;
 
+
+    // RESET DISTRICT HOLD TOTAL TO ZERO
+    conservativeDistrictHoldTotal = 0;
+    labourDistrictHoldTotal = 0;
+    libDemDistrictHoldTotal = 0;
+    greenDistrictHoldTotal = 0;
+
+
+
+
     var postReportingDistrict = 1;
     do {
         // publishLine(postReportingDistrict, conSubtotal, labourSubtotal, libDemSubtotal, greenSubtotal, strongHold);
         postPublishLine(postReportingDistrict, 0, 0, 0, 0, 0);
         postReportingDistrict++;
+
     } while (postReportingDistrict < noOfDistricts);
 
 
@@ -2930,6 +2928,7 @@ function postProcessElection() {
     $('#post-election-winning-party').append("<p>The Labour party has secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span></p>");
     $('#post-election-winning-party').append("<p>The Liberal-Democrat party has secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span></p>");
     $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span></p>");
+
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
 
