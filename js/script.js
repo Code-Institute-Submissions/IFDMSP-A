@@ -1,4 +1,9 @@
 // ------- DATA ----------- 
+var updatedPeopleArray = []; // new updated people array post election engine modificationb
+updatedPeopleArray.push("-");// fill element zero with blank
+
+
+
 var electionEngineUnpackedPerson;
 // var reductionValue = 0; // amount to remove from persons conversion value .. to nulifiy to 0.
 var personConversionValueMax = 5; // persons conversion value max.
@@ -2256,6 +2261,16 @@ function processElection() {
 
 
 
+
+
+
+
+
+
+
+
+
+
 //  //////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////////////////////////
@@ -2264,9 +2279,25 @@ function processElection() {
 function campaignStratergyImplementation() {
     alert("CAMPAIGN ALGORITHM IMPLEMENTED!");
 
+  
+   
+
+
+
+
+
+
+
+
 
     // SETUP ITTERATION THROUGH AL DISTRICTS
     for (let currentDistrictCount = 1; currentDistrictCount < noOfDistricts; currentDistrictCount++) {
+
+        updatedPeopleArray = [];
+        updatedPeopleArray.push("-");
+
+
+
 
 
         // GET RESIDENTS
@@ -2345,14 +2376,6 @@ function campaignStratergyImplementation() {
             }
 
 
-
-
-
-
-
-
-
-
             // //////////////////////////////////
             // CONVERSION ENGINE
             // //////////////////////////////////
@@ -2362,7 +2385,7 @@ function campaignStratergyImplementation() {
             var hitFlag = 0;
             for (let icount = 1; icount <= 7; icount++) {
 
-                console.log(personIssueID + ":" + partyManifestoResponse[icount]); // Verbose Test Point-TBD
+                // console.log(personIssueID + ":" + partyManifestoResponse[icount]); // Verbose Test Point-TBD
 
 
                 if (personIssueID === partyManifestoResponse[icount]) {
@@ -2370,22 +2393,18 @@ function campaignStratergyImplementation() {
 
                     if (savedPledges[icount] === "H") {
                         reductionValue = personConversionValueMax; // Place maximum Conversion value
-                        console.log("*H-RV!");//Verbose-TestPoint -TBD
+                        // console.log("*H-RV!"); //Verbose-TestPoint -TBD
                     }
 
                     if (savedPledges[icount] === "M") {
                         reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
-                        console.log("M-RV!");//Verbose-TestPoint -TBD
+                        // console.log("M-RV!"); //Verbose-TestPoint -TBD
                     }
 
                     if (savedPledges[icount] === "L") {
                         reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
-                        console.log("L-RV!");//Verbose-TestPoint -TBD
+                        // console.log("L-RV!"); //Verbose-TestPoint -TBD
                     }
-
-
-
-
 
                     // console.log("BEEP!");// Verbose Test Point-TBD
                 }
@@ -2403,11 +2422,10 @@ function campaignStratergyImplementation() {
 
                 personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
 
-
                 // CONVERT PERSON BASED ON UPDATED CV VALUE
                 // ////////////////////////////////////////
 
-                if (personCv <=0){
+                if (personCv <= 0) {
                     personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
                 }
 
@@ -2417,19 +2435,24 @@ function campaignStratergyImplementation() {
 
 
 
+
+
+
+
+
+            // CONSTRUCT UPDATED PERSON DATA!!!!
             var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty + "^"
 
+            updatedPeopleArray.push(updatedPerson);
+
+            // updatedPeopleArray = updatedPeopleArray+updatedPerson;
+
+            console.log(updatedPeopleArray[residentCount]);
 
 
+            // console.log(electionEngineUnpackedPerson[residentCount]); // Verbose Testpoint TBD
+            // console.log(updatedPerson);
 
-
-
-
-
-
-            console.log(electionEngineUnpackedPerson[residentCount]); // Verbose Testpoint TBD
-            console.log(updatedPerson);
-            
             // console.log(personIdx);
             // console.log(personIssueID);
             // console.log(personName);
@@ -2437,25 +2460,18 @@ function campaignStratergyImplementation() {
             // console.log(personParty);
             // console.log("***********");
 
-
-
-
         }
 
-        console.log("DISTRICT *** " + currentDistrictCount + " ***");
+        // console.log("DISTRICT *** " + currentDistrictCount + " ***");
         // Advace to NExt district
 
 
 
 
+        //  /////////////// ######  ////////////
+        // UPDATE PEOPLE ARRAY HERE
 
-
-
-
-
-
-
-
+        updatePeopleChunk(currentDistrictCount);
 
 
     }
@@ -2464,6 +2480,52 @@ function campaignStratergyImplementation() {
 
 
 
+
+
+
+
+
+
+    // UPDATE PEOPLE CHUNK!
+
+
+    function updatePeopleChunk(currentDistrictCount) {
+        var UPD = [];
+        var districToUpdate = sessionStorage.getItem("E," + currentDistrictCount);
+
+        alert("KABOOM!");
+
+        var packedData
+        packedData = sessionStorage.getItem("E," + currentDistrictCount);
+        var splitData = packedData.split("@");
+        var members = splitData[1];//people data
+
+        var updatedMembers = updatedPeopleArray;
+
+
+
+        // alert(splitData[1]);
+
+
+
+
+
+
+        // updatedMembers.concat("[" + updatedPeopleArray+"~"); // Update people
+
+
+        UPD = ("@["+splitData[0]+updatedMembers+"~");
+
+        alert(UPD);
+
+        sessionStorage.setItem("E," + currentDistrictCount, UPD);
+
+
+
+
+
+
+    }
 
 
 
@@ -2476,14 +2538,11 @@ function campaignStratergyImplementation() {
         // ////////////////////////////////// 
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
         // dn = district number to check
-
         var packedData
         packedData = sessionStorage.getItem("E," + dn);
         var splitData = packedData.split("@");
-
         var members = splitData[1];
         var individualPeople = members.split("^");
-
         electionEngineUnpackedPerson = members.split("^");
 
         // for (let i = 1; i < individualPeople.length; i++) {
@@ -2495,12 +2554,16 @@ function campaignStratergyImplementation() {
         //     // console.log(unpackedPerson[3]); // convertion threshold
         //     // console.log(unpackedPerson[4]); // current party allaiance
         //     // count up tally
-
         // }
-
-
         return individualPeople.length; // return total  found
     }
+
+
+
+    // ///////////////////////////////////////
+    // RUN ENGINE
+    // //////////////////////
+
 
 
 
