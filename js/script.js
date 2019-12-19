@@ -24,7 +24,7 @@ var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
 
-var noOfDistricts = 6; // Number of districts in pool to canvass in game &&&#
+var noOfDistricts = 21; // Number of districts in pool to canvass in game &&&#
 
 var noOfProblems = 20; // Number of problems in pool to choose from
 var gDPMax = 10;
@@ -2439,28 +2439,30 @@ function campaignStratergyImplementation() {
                         // partyGT.Conservative++;
                         personParty = "Conservative";
                         console.log(personName + " is a New Convert!");
-                        
+                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Labour") {
                         // partyGT.Labour++;
                         personParty = "Labour";
                         console.log(personName + " is a New Convert!");
-                         
+                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Lib-Dem") {
                         // partyGT.LibDem++;
                         personParty = "Lib-Dem";
                         console.log(personName + " is a New Convert!");
-                        
+                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Green") {
                         // partyGT.Green++;
                         personParty = "Green";
                         console.log(personName + " is a New Convert!");
-                         
+                        
+                        $('#conversions-election-container-box').append("<li>"+countryDistricts[currentDistrictCount]+"-"+personName+": is a new Convert!"+"</li>");
+
                     }
 
 
