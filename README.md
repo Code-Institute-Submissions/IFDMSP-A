@@ -19,6 +19,8 @@ Interactive Frontend Development Milestone Project
 
 [2. Stratergy](#Stratergy)
 
+[2.a Technologies Used](#Technologies-Used)
+
 [3. Scope](#Scope)
 
 [4. Structure](#Structure)
@@ -151,6 +153,34 @@ stories can vary dependant on how intricate you wish to present the specificatio
 |Owner|Application/Game|To give the public a feeling of the political arena in a fun way|
 |Developer|Test Template|So I can catch Errors During Further Developement|
 
+># Technologies-Used
+
+To create the web application I employed various Software Tools.
+
+|Technology Used|Version|Reason for Use|Manufacturers-site-link|
+|:--------------|:------|:-------------|:----------------------|
+|HTML|5|Markup Language used to create the webpage in accord with the internet technologies|The latest HTML standard| integrated within many web-browsers
+|CSS|3|To style the website|The latest CSS standard Integrated within HTML|
+|Bootstrap4|4.3.1 *|Toolkit to help develop the website|https://getbootstrap.com|
+|jquery|3.3.1|Integrated as support to Bootstrap file via CDN|https://code.jquery.com/jquery-3.3.1.slim.min.js|
+|popper|1.14.7|Integrated as support to Bootstrap file via CDN|https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.|
+|Javascript|4.3.1|Integrated as support to Bootstrap file via CDN|https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js|
+|Just color picker|5.2.0|Grab color images from screen pixels|https://annystudio.com|
+|Affinity Photo - software|1.7.3|Image manipulation|https://affinity.serif.com/en-gb/photo/|
+|VS-Studio|1.38.1|Microsoft - IDE used to design the website|https://visualstudio.microsoft.com|
+|Monosnap|3.62|Screen Grabber & Recorder- used to convert video clip of entity face repeat - ( Apple App Store)|https://monosnap.com|
+|Chrome Browser|Version 77.0.3865.90 (Official Build) (64-bit)|To test website using Chrome-Tools|https://www.google.co.uk/chrome/?brand=CHBD&gclid=EAIaIQobChMI38eKkIuG5QIViaztCh2jWg5DEAAYASAAEgL6hfD_BwE&gclsrc=aw.ds|
+|Git|2.23.0|Version Control|https://git-scm.com|
+|Git-Hub|2.23.0|Git Cloud Repository Storage Facility|https://github.com|
+|TinyJpg|n/a|Image compression/ Size reduction|https://tinyjpg.com/|
+|Colormind|n/a|Used to get appropriate colors for site|http://colormind.io/image/|
+|HTML online Validator|n/a|Code Validation - To Validate the HTML code|https://validator.w3.org/#validate_by_input|
+|CSS online Validator|n/a|Code Validation - To Validate the CSS code|https://jigsaw.w3.org/css-validator/#validate_by_input|
+|Balsmiq|3|Wireframe-Mockup Software|https://balsamiq.com/wireframes/|
+|CSS - Autoprefixer|n/a|Autoprefix CSS files for browser compatibility|https://autoprefixer.github.io/|
+|Fontawsome|5.11.2|Icon supply for website|https://fontawesome.com/|
+|Googlefonts|n/a|provide access to font family ("Exo")|https://fonts.google.com|
+|MAMP|5.3|Webserver integrated package|https://www.mamp.info/en/|
 
 ># SCOPE
 
@@ -267,16 +297,24 @@ Below are features that I expect to be integrated into the application.
 
 ># Testing
 
+
 ># Deployment
 
-Currently my Application is on GitHub Pages . However the software files can be hosted on a production server
+Clone the Git-hub site
+To clone the repository (repo) simply
+
+Install Git 2.23.0 on your local drive, and ensure it is working.
+
+From my git-hub, copy the clone link found by clicking on the button below
+
+Currently my application is hosted on GitHub Pages . However the software files can be hosted on a production server
 
 Production Hosting
 The file structure of the project is in a standard tree flow format.
 
 Once your hosting site has been purchased and setup
-Copy the contents of the IFDMSP-A into the root\public\ of the website host plan
-delete the SUPPORT folder to remove the support files of this read  me.
+Copy the contents of the IFDMSP-A folder into the root\public\ of the website host plan
+delete the "SUPPORT" folder to remove the support files of this read  me.
 
 Any hidden file/s & .gitignore can also be deleted
 Ensure the correct rights are placed on your file structure especially read and execute only on key files.
@@ -331,7 +369,7 @@ Most of the code was in Javascript, and not much Bootstrap was used. Where I nee
 
 I would like however to acknowledge Philip Feldman for the code snippet from Stack-Overflow site. As it was very useful.
 
-> #
+>
 /* Code from Stackoverflow - Philip Feldmann */
 /* Keep text from overspilling out of columns */
 .keep-insideBSol
