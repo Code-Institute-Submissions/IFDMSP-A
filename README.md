@@ -67,6 +67,7 @@ I will utilize common off-the-shelf technologies (COTS), that is web-technologie
 * JavaScript
 * Google-fonts
 * Font-awsome
+* Jasmine Test Tool
 
 For testing I will use the Jasmine tool for some elements. But because I will be working in Rapid Application Design (RAD) mode, my first go to testing support tool will be ‘google developer tools’.
 
@@ -95,3 +96,59 @@ Also, I believe in setting break/test points in the code, to view variables outp
 * I will avoid the use of any real politician names, to avoid any legally libellous situations
 
 * Finally, and most importantly the product is a game and not a simulation
+
+> Following are user stories to support the development:
+
+## User Stories
+
+## C) - Structure
+
+The data required for the game will be primarily integrated into the JavaScript file, as opposed to the html file. 
+
+This will allow a somewhat more centralized data structure in the absence of a database.
+
+There are a few important data elements that will be included, from the obvious to the not so obvious. Some of these are....
+
+* Countries (indirectly related for data generation)
+* Districts (fantasy Not accurate)
+* Political Parties
+* Politician data
+* People (residents) of districts & there supporting data
+* Score-data
+
+Table 1.1
+
+| Data | Content | Purpose |
+|------|---------|---------|
+| 1 | Global Countries Data | Used as part of an algorithm to generate values in code |
+| 2 | Districts |Districts filled with residents to canvas for votes |
+| 3 | Political Parties | Conservative / Labour / Lib-Dem / Green party |
+| 4 | Politicians Data | Holds the data representing the politicians for the political partties|
+| 5 | Populus Data | The data of trthe people in the various districts |
+| 6 | Score Data | This refers to district relevant  data |
+| 7 | Issues & Response Data | The data of randomly genarated issues affecting the district & appropriate solution options|
+| 8 | Images | Images of politicians head-shots|
+
+> Features
+
+Below are features that I expect to be integrated into the application.
+
+| Feature | Purpose |
+|:---------|:--------|
+| Navigation Menu | To navigate through sections of the game|
+| Politician selector| Allows the player to select a politician representing a one of four political parties|
+| New Game button | Allows user to reset the game, through a reset screen |
+| Global Economy | Feature that generates Three factors for 195 countries. These factors are used as control numbers and used within the game as part of a control algorithm|
+| View District Feature | Allows the user to look at any of the districts and gauge its specific issues. The user will spend much of their time here assessing the different elements that are key to progressing in the game|
+| View population | Feature allows user to list the residents of the districts. They will be able to then determine the state of mind of the individual resident, prior to making decisions that will determine if they will successfully convert the said resident|
+| Create Manifesto | Feature allows the user to create the political manifesto of their party from 25 pledges in 5 areas concern “Crime, Health, Wealth, Employment, Social Satisfaction”|
+| Pledge Priority Status Bar | Shows the priorities assigned to each pledge in your manifesto / area|
+| Canvass Report | Provides a guide to the social momentum in the area. This information is not to be wholly trusted, but used as a guide, in as-much as polls are in real elections. The truth is they can be wrong. For this reason, the user should open each district and review the populous data |
+| Residents button | Allows user to view a list of residents in a particular district|
+| Pledges button | Allows users to view the party manifesto and prioritize the pledges as wished |
+| Newsflash | Provides snapshot of issues in district |
+| Visual Status of District | Allows user to see a quick snapshot of issues. Again, this is not to be relied upon, as it was taken from the canvass report information |
+| Results page | Provides three bits of information on the pressing respective buttons |
+| Pre-Election Stats |(A)-Current state of political support in the various districts |
+| Implement Stratergy |(B)-On applying your manifest, pledges and priorities, the people converted to your party during the election|
+| Post-Election Stats |(C)-The political changes in support within the various districts after the election process |
