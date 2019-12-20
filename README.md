@@ -45,7 +45,7 @@ Interactive Frontend Development Milestone Project
 
 [15. Acknowledgements](#Acknowledgements)
 
-## Project-Mandate!
+># Project-Mandate!
 BBC London has approached me for a website-based game.
 
 * They wish for something that will tap into the current zeitgeist of the political process occurring as of late 2019, namely Brexit. Because Brexit is quite decisive and polarising, they have stated that they want the game to merely focus on the political process of voting and avoid the real political topic of the EU exit referendum.
@@ -58,7 +58,7 @@ BBC London has approached me for a website-based game.
 
 * Also, they have said not to worry too much about performance, for if the game is selected for production, they will redesign with appropriate technologies conducive to large scale public consumption, similar to many other similar endeavours of which they are experienced in. They simply want to see a working prototype quickly.
 
-> # #UX
+># #UX
 
 Within the following section I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five stage design principles used in my working style, namely
 
@@ -70,7 +70,7 @@ Within the following section I will describe various elements and thoughts that 
 
 In addition, I may include rough sketches. They may not be born into the final game but are included for completeness. The code was created quickly and leaves room for optimisation I am sure. However, my focus was getting a working prototype available for review.
 
-> ## Strategy
+># Strategy
 
 Following discussions with the BBC, I have decided to produce a game for them with the following characteristics.  
 
@@ -120,10 +120,9 @@ Also, I believe in setting break/test points in the code, to view variables outp
 ## User Stories
 
 Following are some 'User Stories' to support the development. These are not necessarialy complete, as user
-storied can vary dependant on how intricate you wish to present the specification.However this is suuficient
-to progress the developement.
+stories can vary dependant on how intricate you wish to present the specification.However this level of clarity is sufficient to progress the developement.
 
-## Three parties are involved with the application on deployment. 
+## Three parties will be involved with the application on deployment
 
 * The BBC (Owner)
 * The User (Members of the public accessing the application through the internet)
@@ -131,7 +130,7 @@ to progress the developement.
 
 | As a | I wish for a | So that |
 |------|--------------|---------|
-| User |A Navigation Menu|I can navigate around the software|
+|User |A Navigation Menu|I can navigate around the software|
 |User |Politician Selector|So that I can select the party I wish to represent|
 |User |New Game Button|So that I can reset the game at will|
 |User |Global Economy Button|The game can generate Algorithm to play the game|
@@ -152,7 +151,7 @@ to progress the developement.
 |Developer|Test Template|So I can catch Errors During Further Developement|
 
 
-> # SCOPE
+># SCOPE
 
  The scope of the project will therefore be:
 
@@ -194,7 +193,7 @@ Of importance in this work,  is the project "tripple constraint" placed on the p
 
 * Any other items/feature not explicitly stated above
 
-> # Structure
+># Structure
 
 The data required for the game will be primarily integrated into the JavaScript file, as opposed to the html file. 
 
@@ -247,3 +246,32 @@ Below are features that I expect to be integrated into the application.
 | Pre-Election Stats |(A)-Current state of political support in the various districts |
 | Implement Stratergy |(B)-On applying your manifest, pledges and priorities, the people converted to your party during the election|
 | Post-Election Stats |(C)-The political changes in support within the various districts after the election process |
+
+
+># Skeleton
+
+
+
+
+># Surface
+
+
+
+># Features
+
+># Existing-Features
+
+
+># Features-Left-to-Implement
+
+># Testing
+
+># Deployment
+
+># Credits
+
+
+># Media
+
+
+># Acknowledgements
