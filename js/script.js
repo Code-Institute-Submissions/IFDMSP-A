@@ -658,8 +658,8 @@ function populateTable() {
     if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
         grabThreeCountries();
 
-        controlNumb = (sessionStorage.getItem("c1").length+sessionStorage.getItem("c2").length) * sessionStorage.getItem("c3").length;
-        console.log("+:"+controlNumb);
+        controlNumb = (sessionStorage.getItem("c1").length + sessionStorage.getItem("c2").length) * sessionStorage.getItem("c3").length;
+        console.log("+:" + controlNumb);
     }
 }
 
@@ -754,13 +754,13 @@ function viewDistricts() {
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
         // Get Total Sum Value
         issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
-        
+
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
-        outputDistrictHtml=outputDistrictHtml+"<a href=\"id=\""+districtNumber+"\"></a>" // Jump back to page point tag;
+        outputDistrictHtml = outputDistrictHtml + "<a href=\"id=\"" + districtNumber + "\"></a>" // Jump back to page point tag;
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-       
-       
+
+
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
@@ -806,7 +806,7 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
 
-       
+
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">";
@@ -909,7 +909,7 @@ function createDistrictPriority() {
     var cdn = countryDistricts[sessionStorage.getItem("CD")];
 
     alert("Your Pledges have now been \"PROMOTED\" to " + cdn + " District!")
-    window.location.href = "country-districts.html#"+sessionStorage.getItem("CD"); // Reload Page
+    window.location.href = "country-districts.html#" + sessionStorage.getItem("CD"); // Reload Page
 }
 
 
@@ -1109,17 +1109,17 @@ function myTrim(x) {
 // ////////////////////////////////
 function getRandom(limit) {
     // Create Random Number up to limit
-    
-var mLoop=100;
 
-if ( controlNumb != null ){
-    mloop=controlNumb;
-}
+    // var mLoop=100;
+
+    // if ( controlNumb != null ){
+    //     mloop=controlNumb;
+    // }
 
     do {
-        for(let i=0;i<controlNumb;i++){
+        // for(let i=0;i<controlNumb;i++){
         rn = (Math.floor(Math.random() * limit)) + 1;
-        }
+        // }
 
     } while (rn === 0 || isNaN(rn))
 
@@ -1322,7 +1322,7 @@ function CreateDistricts() {
         // REPLICATED DATA IN 3 AREAS  ... PRE / ACTION / POST   ELECTION
         var DI = dID;
         var EI = eID;
-        var RI = rID;
+        // var RI = rID;
 
         // The line of content of each district
         var PRB = PRB;
@@ -1334,9 +1334,9 @@ function CreateDistricts() {
         var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
         sessionStorage.setItem(DI, LO); //PRE-ELECTION DATA
         sessionStorage.setItem(EI, LO); //CHANGES ELECTION DATA  ** MAKE CHANGES HERE
-        sessionStorage.setItem(RI, LO); //POST-ELECTION DATA
+        // sessionStorage.setItem(RI, LO); //POST-ELECTION DATA
         // // 
- 
+
     }
 }
 
@@ -1890,7 +1890,7 @@ function loadUpPledgePriorityPage() {
 
 function backToDistrictView() {
     // Go back to View Districts Page
-    window.location.href = "country-districts.html#"+sessionStorage.getItem("CD"); // Jump to district view!
+    window.location.href = "country-districts.html#" + sessionStorage.getItem("CD"); // Jump to district view!
 }
 
 
@@ -2403,11 +2403,13 @@ function campaignStratergyImplementation() {
             }
 
 
+
+
+
+
             // //////////////////////////////////
             // CONVERSION ENGINE
             // //////////////////////////////////
-
-
             // Check if Persons Issue Concern is addresed in Your Party Manifesto
             var hitFlag = 0;
             for (let icount = 1; icount <= 7; icount++) {
@@ -2433,7 +2435,7 @@ function campaignStratergyImplementation() {
                         // console.log("L-RV!"); //Verbose-TestPoint -TBD
                     }
 
-                    // console.log("BEEP!");// Verbose Test Point-TBD
+
                 }
             }
 
@@ -2459,30 +2461,30 @@ function campaignStratergyImplementation() {
                     personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
 
                     // DAMASCUS CONVERSION MET!!!
-
+                    // FLIP PERSONS SUPPORT TO YOUR PARTY
                     if (sessionStorage.getItem("myParty") === "Conservative") {
-                        // partyGT.Conservative++;
+
                         personParty = "Conservative";
                         console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Labour") {
-                        // partyGT.Labour++;
+
                         personParty = "Labour";
                         console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Lib-Dem") {
-                        // partyGT.LibDem++;
+
                         personParty = "Lib-Dem";
                         console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
                     }
 
                     if (sessionStorage.getItem("myParty") === "Green") {
-                        // partyGT.Green++;
+
                         personParty = "Green";
                         console.log(personName + " is a New Convert!");
 
@@ -2914,7 +2916,7 @@ function postProcessElection() {
 
 
 
- 
+
 
 
 
@@ -2969,10 +2971,8 @@ function postProcessElection() {
 
 
 
-   // Load your Politicians image
-   function insertMyPoliticianImage() {
-    // alert("pop")//verbose-test-point-tbd
-
+// Load your Politicians image
+function insertMyPoliticianImage() {
     var mypol = sessionStorage.getItem("myParty");
     switch (mypol) {
         case "Conservative":
@@ -2993,15 +2993,15 @@ function postProcessElection() {
             break;
     }
 
-    var picInsertString = "<img src=\"images"+"/"+ myPImage + "\"/>";
-picInsertString=picInsertString+"<h3>"+myPName+"- MP/"+sessionStorage.getItem("myParty")+"</h3>";
+    var picInsertString = "<img src=\"images" + "/" + myPImage + "\"/>";
+    picInsertString = picInsertString + "<h3>" + myPName + "- MP/" + sessionStorage.getItem("myParty") + "</h3>";
 
     $('#my-party-leader').append(picInsertString);
 
 }
 
 
-function backFromPopulusView(){
-// Jump back to location on district page view where you left it
-    window.location.href="country-districts.html#"+sessionStorage.getItem("CD");
+function backFromPopulusView() {
+    // Jump back to location on district page view where you left it
+    window.location.href = "country-districts.html#" + sessionStorage.getItem("CD");
 }
