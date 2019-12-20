@@ -10,7 +10,7 @@ Interactive Frontend Development Milestone Project
 
 ![game screen image](/support/ef-front-page-500.png)
 
-> Requirement (hypothetical)
+> Disclaimer: The following Requirement (hypothetical)!
 
 BBC London has approached my company for a website-based game.
 
@@ -24,7 +24,7 @@ BBC London has approached my company for a website-based game.
 
 * Also, they have said not to worry too much about performance, for if the game is selected for production, they will redesign with appropriate technologies conducive to large scale public consumption, similar to many other similar endeavours of which they are experienced in. They simply want to see a working prototype quickly.
 
-## 1 - UX
+> # UX
 
 Within the following section I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five stage design principles used in my working style, namely
 
@@ -36,8 +36,7 @@ Within the following section I will describe various elements and thoughts that 
 
 In addition, I may include rough sketches. They may not be born into the final game but are included for completeness. The code was created quickly and leaves room for optimisation I am sure. However, my focus was getting a working prototype available for review.
 
-
-a) - Strategy
+> ## Strategy
 
 Following discussions with the BBC, I have decided to produce a game for them with the following characteristics.  
 
@@ -57,7 +56,7 @@ Following discussions with the BBC, I have decided to produce a game for them wi
 
 * As stated, this is a very simplified game, and should be approached as fantasy like, rather than an outright simulation.
 
-## Initial Thoughts
+## My Initial Thoughts
 
 I will utilize common off-the-shelf technologies (COTS), that is web-technologies to prototype the game.
 
@@ -73,9 +72,48 @@ For testing I will use the Jasmine tool for some elements. But because I will be
 
 Also, I believe in setting break/test points in the code, to view variables outputs. i.e. console. Logs. I find this quicker. However, when most functions are working, I will structure a jasmine test template for automated testing, for future modifications.
 
-> The scope of the project will therefore be:
 
-1. Create a web-based game, to allow members of the public to get a feel for a juncture in the political process, specifically the run for Premiership.
+> Following are user stories to support the development:
+
+## User Stories
+
+Following are some 'User Stories' to support the development. These are not necessarialy complete, as user
+storied can vary dependant on how intricate you wish to present the specification.However this is suuficient
+to progress the developement.
+
+## Three parties are involved with the application on deployment. 
+
+* The BBC (Owner)
+* The User (Members of the public accessing the application through the internet)
+* Developer (Those responsible for enhancing or upgrading the applications features)
+
+| As a | I wish for a | So that |
+|------|--------------|---------|
+| User |A Navigation Menu|I can navigate around the software|
+|User |Politician Selector|So that I can select the party I wish to represent|
+|User |New Game Button|So that I can reset the game at will|
+|User |Global Economy Button|The game can generate Algorithm to play the game|
+|User |View District Feature|So I can view District Information|
+|User |View Population Feature|So I can view the population data inside the districts|
+|User |Create Manifesto Feature|So I Can Create my  Party Manifesto|
+|User |Pledge Prioritize Status Bar|So I can see at a quick glace how I prioritized my pledges in each district|
+|User |Canvass Report|So I can se a rough indicate of the district issues|
+|User |Residents Button|So I can view the resident details within a district|
+|User|Pledges Button|So I can prioritize the pledges in my manifesto for the different districts|
+|User|Newsflash snapshot|So I can see a snapshot of the district issues|
+|User|Visual Status of District|So I can see a snapshot of the district information in a graphic form|
+|User|Results Page|So I can see status reflecting political status before/conversions/after the election|
+|User|Current political state button|So I can see the current political sway in the overall districts|
+|User|Implementation Strategy Button|So I can see any conversion, as a result of my strategy|
+|User|Post Election State|So I can view the changes of my electioneering in the various states|
+|Owner|Application/Game|To give the public a feeling of the political arena in a fun way|
+|Developer|Test Template|So I can catch Errors During Further Developement|
+
+> # SCOPE
+
+ The scope of the project will therefore be:
+
+1. Create a web-based game, to allow members of the public to get a feel for some part of the political process, specifically the run for Prime Minister.
 
 2. The game is a fantasy and not a simulation. Accuracy is not of concern. I.e. districts, population, issue will not be effectively rendered here.
 
@@ -87,6 +125,8 @@ Also, I believe in setting break/test points in the code, to view variables outp
 
 >|
 
+In summary,
+
 * I will not be concerned with optimisation and performance as stated by the BBC, as they require a working prototype as quickly as possible, as they are soliciting other ideas simultaneously. 
 
 * If my game is selected it will be re-written with performance in mind, as the BBC is a global brand and has distributed server platforms serving many people.
@@ -97,11 +137,13 @@ Also, I believe in setting break/test points in the code, to view variables outp
 
 * Finally, and most importantly the product is a game and not a simulation
 
-> Following are user stories to support the development:
+Of importance in this work,  is the project "tripple constraint" placed on the project by the BBC
 
-## User Stories
+1. Cost - 1
+2. Schedule - 2
+3. Quality - 3
 
-## C) - Structure
+> # Structure
 
 The data required for the game will be primarily integrated into the JavaScript file, as opposed to the html file. 
 
@@ -130,6 +172,8 @@ Table 1.1
 | 8 | Images | Images of politicians head-shots|
 
 > Features
+
+For the application to be of any use, it will require features. Verbose feature are essentialy ones input and out put for communicating with the application ina way. Some features are obvious and generalistic such as navigation. Others are more specific to each piece of software and need. Below are features I have determined that I will need for the application to function as needed.
 
 Below are features that I expect to be integrated into the application.
 
