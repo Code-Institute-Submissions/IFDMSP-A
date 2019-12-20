@@ -4,15 +4,49 @@ Interactive Frontend Development Milestone Project
 
 [https://cofoeducistudent.github.io/IFDMSP-A/]('https://cofoeducistudent.github.io/IFDMSP-A/')
 
-# ** ELECTION FEVER **
+># ** ELECTION FEVER **
 
 ## Milestone2 Project (MSP2)
 
 ![game screen image](/support/ef-front-page-500.png)
 
 > Disclaimer: The following Requirement (hypothetical)!
+> # INDEX PAGE
 
-BBC London has approached my company for a website-based game.
+[UK](#UX)
+
+[1. Project Mandate](#Project-Mandate)
+
+[2. Stratergy](#Stratergy)
+
+[3. Scope](#Scope)
+
+[4. Structure](#Structure)
+
+[5. Skeleton](#Skeleton)
+
+[6. Surface](#Surface)
+
+[7. Features](#Features)
+
+[8. Existing Features](#Existing-Features)
+
+[9. Features Left to Implement](#Features-Left-to-Implement)
+
+[10. Testing](#Testing)
+
+[11. Deployment](#Deployment)
+
+[12. Credits](#Credits)
+
+[13. Content](#Content)
+
+[14. Media](#Media)
+
+[15. Acknowledgements](#Acknowledgements)
+
+## Project-Mandate!
+BBC London has approached me for a website-based game.
 
 * They wish for something that will tap into the current zeitgeist of the political process occurring as of late 2019, namely Brexit. Because Brexit is quite decisive and polarising, they have stated that they want the game to merely focus on the political process of voting and avoid the real political topic of the EU exit referendum.
 
@@ -24,7 +58,7 @@ BBC London has approached my company for a website-based game.
 
 * Also, they have said not to worry too much about performance, for if the game is selected for production, they will redesign with appropriate technologies conducive to large scale public consumption, similar to many other similar endeavours of which they are experienced in. They simply want to see a working prototype quickly.
 
-> # UX
+> # #UX
 
 Within the following section I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five stage design principles used in my working style, namely
 
@@ -55,6 +89,14 @@ Following discussions with the BBC, I have decided to produce a game for them wi
 * The party with the most majority of district ownership will win the election. Thus, making you the next UK Prime minster. 
 
 * As stated, this is a very simplified game, and should be approached as fantasy like, rather than an outright simulation.
+
+## External User Goal
+BBC patrons would appreciate a small game that would allow them to partake in a small way a venture the electorial environment, and perhaps through it have a small but impoved understanding of the challenges faced by the political class.
+
+## Site Owner Goal
+BBC wish to provide some fun interactive experince for its patrons in that tey can join in the elctorial process and
+experience what its like to be a political representative in a small way. Its not supposed to be an accurate simulation rather a fun experience taking the edge of the 2019 EU/Brexit furoar.
+
 
 ## My Initial Thoughts
 
@@ -97,7 +139,7 @@ to progress the developement.
 |User |View Population Feature|So I can view the population data inside the districts|
 |User |Create Manifesto Feature|So I Can Create my  Party Manifesto|
 |User |Pledge Prioritize Status Bar|So I can see at a quick glace how I prioritized my pledges in each district|
-|User |Canvass Report|So I can se a rough indicate of the district issues|
+|User |Canvass Report|So I can see a rough indicator of the district issues|
 |User |Residents Button|So I can view the resident details within a district|
 |User|Pledges Button|So I can prioritize the pledges in my manifesto for the different districts|
 |User|Newsflash snapshot|So I can see a snapshot of the district issues|
@@ -108,6 +150,7 @@ to progress the developement.
 |User|Post Election State|So I can view the changes of my electioneering in the various states|
 |Owner|Application/Game|To give the public a feeling of the political arena in a fun way|
 |Developer|Test Template|So I can catch Errors During Further Developement|
+
 
 > # SCOPE
 
@@ -143,6 +186,14 @@ Of importance in this work,  is the project "tripple constraint" placed on the p
 2. Schedule - 2
 3. Quality - 3
 
+## Outside of scope
+
+* Performance improvements, especially with regards to technology
+* Any other features not already specified
+* Realistic accuracy of data (as this is a fun fantasy game)
+
+* Any other items/feature not explicitly stated above
+
 > # Structure
 
 The data required for the game will be primarily integrated into the JavaScript file, as opposed to the html file. 
@@ -171,7 +222,7 @@ Table 1.1
 | 7 | Issues & Response Data | The data of randomly genarated issues affecting the district & appropriate solution options|
 | 8 | Images | Images of politicians head-shots|
 
-> Features
+> # Features
 
 For the application to be of any use, it will require features. Verbose feature are essentialy ones input and out put for communicating with the application ina way. Some features are obvious and generalistic such as navigation. Others are more specific to each piece of software and need. Below are features I have determined that I will need for the application to function as needed.
 
