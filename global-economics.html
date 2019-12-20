@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -105,7 +103,6 @@
                         itresting, albeit
                         fantasy formulaic element to the your elections. Enjoy, and don't take it too seriously.
                     </h2>
-
                     <!-- Country Tick Count -->
                     <div class="col-12    keep-insideBSol">
                         <h1>
@@ -113,8 +110,6 @@
                             <div id="country-ticker"></div>
                         </h1>
                     </div>
-
-
                     <!-- Globe Icon -->
                     <div class="globe-icon">
                         <span class="fas fa-globe-americas"></span>
@@ -122,8 +117,6 @@
                 </div>
                 <!-- Button to generate Stats -->
                 <div class="row">
-
-
                     <div class="col-6 ">
                         <div id="genbutton">
                             <a href="global-economics.html"
@@ -131,13 +124,6 @@
                                 role="button" aria-disabled="true">Refresh</a>
                         </div>
                     </div>
-
-                    <!-- <div class="col-2    keep-insideBSol">
-                            <h2>
-                                <div id="country-ticker"></div>
-                            </h2>
-                        </div> -->
-
                     <div class="col-6  ">
                         <div id="genbutton">
                             <a href="country-districts.html"
@@ -145,20 +131,18 @@
                                 role="button" aria-disabled="true">Districts</a>
                         </div>
                     </div>
-
-
                 </div>
                 <!-- Table section -->
                 <div class="row">
                     <div class="col-12 text-center">
                         <h2>
                             <table id="global-table">
-                                <th>
+                                <!-- <th> -->
                                     <tr>Country / </tr>
                                     <tr>GDP -(B) / </tr>
                                     <tr>Health -(%) / </tr>
                                     <tr>Population -(M) / </tr>
-                                </th>
+                                <!-- </th> -->
                             </table>
                         </h2>
                     </div>
@@ -215,16 +199,10 @@
                 stateController();
             }, 10)
         })
-
-
-
         // QUIT ECONOMY PAGE IF NOT ALLOWED
         if(sessionStorage.getItem("global-economy-page-authorised") === "false"){
             window.location.href="index.html";
         }
-
-
     </script>
 </body>
-
 </html>

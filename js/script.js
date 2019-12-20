@@ -1,4 +1,5 @@
 // ------- DATA ----------- 
+var controlNumb = 1;
 var updatedPeoplePackedList = []; // new updated people array post election engine modificationb
 updatedPeoplePackedList.push("-"); // fill element zero with blank
 
@@ -503,6 +504,9 @@ function stateController() {
     }
 }
 
+
+
+
 function changeRibbonColour() {
     // Change Ribbon Color when Candidate Selected
     // 
@@ -574,6 +578,9 @@ $(document).ready(function () {
 function flasher() {
     // Flash Title!!
     // alert(flashState);
+
+
+
     if (flashState === true) {
         flashState === false;
         $('.flashIt').addClass('flashNow');
@@ -650,6 +657,9 @@ function populateTable() {
     // Grab Three Random Countries for weighting data in district generation
     if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
         grabThreeCountries();
+
+        controlNumb = (sessionStorage.getItem("c1").length+sessionStorage.getItem("c2").length) * sessionStorage.getItem("c3").length;
+        console.log("+:"+controlNumb);
     }
 }
 
@@ -683,13 +693,17 @@ function grabThreeCountries() {
     threeCountriesSelected = true;
 }
 
+
+
+
+
 function viewDistricts() {
     // Assemble View District Information
     // alert(sessionStorage.getItem("D,0"));
     // Error Check if Data is created or not.
     // If not bounce to index page and request user reset game!
     if (sessionStorage.getItem("D,1") === null) {
-        alert("Corrupt data! Please reset the game!");
+        alert("Corrupt data! This can be caused by simultaneous session conflict. Ensure only one session is active. Please reset the game!");
         location.href = "index.html";
     }
     // List out District Number 
@@ -744,6 +758,8 @@ function viewDistricts() {
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
+       
+        outputDistrictHtml=outputDistrictHtml+"<a href=\"id=\""+districtNumber+"\"></a>";
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
@@ -890,7 +906,7 @@ function createDistrictPriority() {
     var cdn = countryDistricts[sessionStorage.getItem("CD")];
 
     alert("Your Pledges have now been \"PROMOTED\" to " + cdn + " District!")
-    window.location.href = "country-districts.html"; // Reload Page
+    window.location.href = "country-districts.html#"+sessionStorage.getItem("CD"); // Reload Page
 }
 
 
@@ -1090,9 +1106,20 @@ function myTrim(x) {
 // ////////////////////////////////
 function getRandom(limit) {
     // Create Random Number up to limit
+    
+
+
+
     do {
+ 
+
         rn = (Math.floor(Math.random() * limit)) + 1;
+        
+
+
     } while (rn === 0 || isNaN(rn))
+
+
     return rn;
 }
 
@@ -1865,7 +1892,7 @@ function loadUpPledgePriorityPage() {
 
 function backToDistrictView() {
     // Go back to View Districts Page
-    window.location.href = "country-districts.html"; // Jump to district view!
+    window.location.href = "country-districts.html#"+sessionStorage.getItem("CD"); // Jump to district view!
 }
 
 
@@ -2568,7 +2595,7 @@ function campaignStratergyImplementation() {
 // //////////////////////////////////////////////////////////////////////////
 function postProcessElection() {
 
-    alert("POST-ELECTION STATS PUBLISHED");
+    alert("POST - ELECTION STATS PUBLISHED");
 
 
     // repd = district to report on
@@ -2973,4 +3000,10 @@ picInsertString=picInsertString+"<h3>"+myPName+"- MP/"+sessionStorage.getItem("m
 
     $('#my-party-leader').append(picInsertString);
 
+}
+
+
+function backFromPopulusView(){
+// Jump back to location on district page view where you left it
+    window.location.href="country-districts.html#"+sessionStorage.getItem("CD");
 }
