@@ -2423,16 +2423,19 @@ function campaignStratergyImplementation() {
                     if (savedPledges[icount] === "H") {
                         reductionValue = personConversionValueMax; // Place maximum Conversion value
                         // console.log("*H-RV!"); //Verbose-TestPoint -TBD
+                      
                     }
 
                     if (savedPledges[icount] === "M") {
                         reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
                         // console.log("M-RV!"); //Verbose-TestPoint -TBD
+                        
                     }
 
                     if (savedPledges[icount] === "L") {
                         reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
                         // console.log("L-RV!"); //Verbose-TestPoint -TBD
+                      
                     }
 
 
@@ -2458,7 +2461,7 @@ function campaignStratergyImplementation() {
 
 
                 if (personCv <= 0) {
-                    personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
+                    // personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
 
                     // DAMASCUS CONVERSION MET!!!
                     // FLIP PERSONS SUPPORT TO YOUR PARTY
