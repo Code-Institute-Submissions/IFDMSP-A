@@ -2421,21 +2421,32 @@ function campaignStratergyImplementation() {
                     hitFlag = 1; //match found
 
                     if (savedPledges[icount] === "H") {
-                        reductionValue = personConversionValueMax; // Place maximum Conversion value
+
+                        if ((controlNumb*getRandom(personConversionValueMax)%2) === 0){
+                            reductionValue = personConversionValueMax; // Place maximum Conversion value
+                            // console.log("*H-RV!"); //Verbose-TestPoint -TBD
+                          
+                        }
+
+                        // reductionValue = personConversionValueMax; // Place maximum Conversion value
                         // console.log("*H-RV!"); //Verbose-TestPoint -TBD
                       
                     }
 
                     if (savedPledges[icount] === "M") {
+
+                        if ((controlNumb*getRandom(personConversionValueMax)%2) === 0){
                         reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
                         // console.log("M-RV!"); //Verbose-TestPoint -TBD
-                        
+                        }
                     }
 
                     if (savedPledges[icount] === "L") {
+
+                        if ((controlNumb *getRandom(personConversionValueMax)%2) === 0){
                         reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
                         // console.log("L-RV!"); //Verbose-TestPoint -TBD
-                      
+                        }
                     }
 
 
@@ -2460,7 +2471,7 @@ function campaignStratergyImplementation() {
                 // // GRAND TOTAL RESULTS FOR PARTIES
 
 
-                if (personCv <= 0) {
+                if (personCv <=0 ) {
                     // personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
 
                     // DAMASCUS CONVERSION MET!!!
@@ -2497,6 +2508,15 @@ function campaignStratergyImplementation() {
 
 
                 }
+
+
+
+
+
+
+
+
+
 
             }
 
