@@ -470,7 +470,7 @@ var gameData = {
     "popularity rating": 0,
     "campaign running": false,
 };
-// ---------------------------------------//Functions//
+// -------------- -//Functions//
 // ####################################################
 // ####################################################
 function stateController() {
@@ -754,12 +754,13 @@ function viewDistricts() {
         distSatis = (countUpIssues("S", aa, bb, cc, dd, ee));
         // Get Total Sum Value
         issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
-        // console.log(distCrime + ":" + distHealth + ":" + distWealth + ":" + distEmployment + ":" + distSatis + ":" + "@" + issueWeightingTotal);
+        
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
+        outputDistrictHtml=outputDistrictHtml+"<a href=\"id=\""+districtNumber+"\"></a>" // Jump back to page point tag;
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
        
-        outputDistrictHtml=outputDistrictHtml+"<a href=\"id=\""+districtNumber+"\"></a>";
+       
         outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml = outputDistrictHtml + "<h3>";
         outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
@@ -804,6 +805,8 @@ function viewDistricts() {
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
         outputDistrictHtml = outputDistrictHtml + "</div>";
+
+       
         // Box DIV for PROGRESS BARS
         outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
         outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">";
@@ -1107,18 +1110,18 @@ function myTrim(x) {
 function getRandom(limit) {
     // Create Random Number up to limit
     
+var mLoop=100;
 
-
+if ( controlNumb != null ){
+    mloop=controlNumb;
+}
 
     do {
- 
-
+        for(let i=0;i<controlNumb;i++){
         rn = (Math.floor(Math.random() * limit)) + 1;
-        
-
+        }
 
     } while (rn === 0 || isNaN(rn))
-
 
     return rn;
 }
@@ -1333,12 +1336,7 @@ function CreateDistricts() {
         sessionStorage.setItem(EI, LO); //CHANGES ELECTION DATA  ** MAKE CHANGES HERE
         sessionStorage.setItem(RI, LO); //POST-ELECTION DATA
         // // 
-
-
-        // Tetspoint Console output of generated data- can be deleted
-        // console.log(DI + "/" + LO);
-        // console.log(EI + "/" + LO);
-        // console.log(RI + "/" + LO);
+ 
     }
 }
 
