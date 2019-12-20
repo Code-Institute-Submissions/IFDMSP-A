@@ -36,3 +36,38 @@ Within the following section I will describe various elements and thoughts that 
 
 In addition, I may include rough sketches. They may not be born into the final game but are included for completeness. The code was created quickly and leaves room for optimisation I am sure. However, my focus was getting a working prototype available for review.
 
+
+a) - Strategy
+
+Following discussions with the BBC, I have decided to produce a game for them with the following characteristics.  
+
+> The Game in a Nutshell!
+
+* The game will be a simplified pastiche of the events of a political run for the office of prime minister, as the player will assume the role of an already established UK parliamentarian (MP).
+
+* Therefore, the game will focus on the ‘General Election’, not the challenge of local ‘bi-elections’.
+
+* Your job as the leader of your chosen political party shall be to offer advice to the local representative in the districts with regards to promoting your party’s overall manifesto within the electoral districts.
+
+* Once you have carried out the rounds of campaigning (promoting your manifesto pledges in this instance) you can move on to the Election day and see how your party fared. 
+
+* The party with the largest majority of public support within a district, gains control of the district.
+
+* The party with the most majority of district ownership will win the election. Thus, making you the next UK Prime minster. 
+
+* As stated, this is a very simplified game, and should be approached as fantasy like, rather than an outright simulation.
+
+## Initial Thoughts
+
+I will utilize common off-the-shelf technologies (COTS), that is web-technologies to prototype the game.
+
+* HTML
+* jQuery
+* CSS
+* JavaScript
+* Google-fonts
+* Font-awsome
+
+For testing I will use the Jasmine tool for some elements. But because I will be working in Rapid Application Design (RAD) mode, my first go to testing support tool will be ‘google developer tools’.
+
+Also, I believe in setting break/test points in the code, to view variables outputs. i.e. console. Logs. I find this quicker. However, when most functions are working, I will structure a jasmine test template for automated testing, for future modifications.
