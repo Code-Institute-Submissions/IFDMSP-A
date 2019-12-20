@@ -71,3 +71,27 @@ I will utilize common off-the-shelf technologies (COTS), that is web-technologie
 For testing I will use the Jasmine tool for some elements. But because I will be working in Rapid Application Design (RAD) mode, my first go to testing support tool will be ‘google developer tools’.
 
 Also, I believe in setting break/test points in the code, to view variables outputs. i.e. console. Logs. I find this quicker. However, when most functions are working, I will structure a jasmine test template for automated testing, for future modifications.
+
+> The scope of the project will therefore be:
+
+1. Create a web-based game, to allow members of the public to get a feel for a juncture in the political process, specifically the run for Premiership.
+
+2. The game is a fantasy and not a simulation. Accuracy is not of concern. I.e. districts, population, issue will not be effectively rendered here.
+
+3. The player will assume the role of an MP
+4. The player will create and have responsibility for creating a political manifesto
+5. The player will promote said manifesto
+6. The player will enter a “General Election”
+7. The player will see the results of their political strategy.
+
+>|
+
+* I will not be concerned with optimisation and performance as stated by the BBC, as they require a working prototype as quickly as possible, as they are soliciting other ideas simultaneously. 
+
+* If my game is selected it will be re-written with performance in mind, as the BBC is a global brand and has distributed server platforms serving many people.
+
+* Although there are many facets potentially to such a game, my game will be simplified
+
+* I will avoid the use of any real politician names, to avoid any legally libellous situations
+
+* Finally, and most importantly the product is a game and not a simulation
