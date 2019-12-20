@@ -9,7 +9,8 @@ Interactive Frontend Development Milestone Project
 ## Milestone2 Project (MSP2)
 
 ![game screen image](/support/ef-front-page-500.png)
-Requirement (hypothetical)
+
+> Requirement (hypothetical)
 
 BBC London has approached my company for a website-based game.
 
