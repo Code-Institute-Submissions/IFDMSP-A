@@ -254,9 +254,9 @@ Table 1.1
 
 > # Features
 
-For the application to be of any use, it will require features. Verbose feature are essentialy ones input and out put for communicating with the application ina way. Some features are obvious and generalistic such as navigation. Others are more specific to each piece of software and need. Below are features I have determined that I will need for the application to function as needed.
+For any application to be of use, it requires features. Verbose features are essentialy become input and output points for communicating with the application. In a way, some features are obvious and generalistic, such as navigation. Others are more specific to the software.
 
-Below are features that I expect to be integrated into the application.
+Below are features I need for the application to function as needed. I expect them to be integrated into the application for the application to function and complete the requirements.
 
 | Feature | Purpose |
 |:---------|:--------|
