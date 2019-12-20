@@ -161,7 +161,7 @@ To create the web application I employed various Software Tools.
 |:--------------|:------|:-------------|:----------------------|
 |HTML|5|Markup Language used to create the webpage in accord with the internet technologies|The latest HTML standard| integrated within many web-browsers
 |CSS|3|To style the website|The latest CSS standard Integrated within HTML|
-|Bootstrap4|4.3.1 *|Toolkit to help develop the website|https://getbootstrap.com|
+|Bootstrap4|4.1.3 *|Toolkit to help develop the website|https://getbootstrap.com|
 |jquery|3.3.1|Integrated as support to Bootstrap file via CDN|https://code.jquery.com/jquery-3.3.1.slim.min.js|
 |popper|1.14.7|Integrated as support to Bootstrap file via CDN|https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.|
 |Javascript|4.3.1|Integrated as support to Bootstrap file via CDN|https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js|
@@ -252,9 +252,34 @@ Table 1.1
 | 7 | Issues & Response Data | The data of randomly genarated issues affecting the district & appropriate solution options|
 | 8 | Images | Images of politicians head-shots|
 
-> # Features
 
-For any application to be of use, it requires features. Verbose features are essentialy become input and output points for communicating with the application. In a way, some features are obvious and generalistic, such as navigation. Others are more specific to the software.
+
+># Skeleton
+
+
+
+
+># Surface
+
+## Color Scheme
+
+* Because the application is supposed to be a game. I scoured retro gamming on google to asses typical color schemes. A lot of retro fun games had bright primary colours woven into its fabric. This was mainly due to limitation of graphics cards in early computer systems. However such colors were put to good use and calm colours were used for main spacial areas, and bright colours for stand out elemets.
+
+* Blue and green used mainly for calm.
+* Red was used frequently for danger.
+* Lastly, lots of flashng was used to denote action or activity. A quick visit to arcade machine would confirm this.
+
+* I have decided to employ this approach to the game
+
+![map of england image](support/s-snapshot-image9.png)
+
+## Aesthetics
+
+I opted to use rounded borders for much of the layout. The curves promotes a softer visual aesthetic. My thinking here is that the game is supposed to be fun. I didnt wish straight edges as they frequently are related to logic and order and mathematically accurate things. My understanding is that the BBC wish their patrons(members of the public) to use the application. Amd they come from a wide variety of backgrounds. It is possible to alienate people from not even attempting to use the application, as they may beleive it too logical and boring. Therefore a soft curved appeal with bright 'gamey' colours should appeal accross the board. Indeed the blue colur used I matched to 'Sonic the Hedgehog blue - by Sega"
+
+
+># Features
+For any application to be of use, it requires features. Verbose features are essentialy input and output points for communicating with the application. In a way, some features are obvious and generalistic, such as navigation. Others are more specific to the software.
 
 Below are features I need for the application to function as needed. I expect them to be integrated into the application for the application to function and complete the requirements.
 
@@ -278,22 +303,17 @@ Below are features I need for the application to function as needed. I expect th
 | Implement Stratergy |(B)-On applying your manifest, pledges and priorities, the people converted to your party during the election|
 | Post-Election Stats |(C)-The political changes in support within the various districts after the election process |
 
-
-># Skeleton
-
-
-
-
-># Surface
-
-
-
-># Features
+> Note: I have not placed any social media ICONS on the application. My resasoning is that the application is expected to be hosted on the BBC website. Also the application was commisioned by them. Therefore the BBC do not apprciate links that may distract or move people off-site. E\ven if to another location owned by them. It disrupts reader/user flow,and there is a risk of loosing engagement.
 
 ># Existing-Features
 
+* All as stated above
 
 ># Features-Left-to-Implement
+
+* None: The BBC have specified that their objective is to create a prototype. However they have paced constraints on the project. These are schedule and cost. For this reason the features are locked to what I have specified above. Anything else is outside of scope.
+
+* It is expected that prior to deploying the application in production , the application may be rewritten for performance optimisation.
 
 ># Testing
 
