@@ -17,7 +17,7 @@ Interactive Frontend Development Milestone Project
 
 [1. Project Mandate](#Project-Mandate)
 
-[2. Strategy](#Stratergy)
+[2. Strategy](#Strategy)
 
 [2.a Technologies Used](#Technologies-Used)
 
