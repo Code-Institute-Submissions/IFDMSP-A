@@ -1256,7 +1256,7 @@ function resetGame(runProcess) {
     // Then it resets the flag , so its not repeated again
     // Until requested
 
-  
+
 
 
 
@@ -1989,19 +1989,19 @@ function processElection() {
         return [winPartyName, winPartyValue];
     }
 
-    function getTotalPeopleInDistrict(dn) {
-        // //////////////////////////////////
-        // GET TOTAL RESIDENTS IN BOROUGH
-        // Get The Volume of people in a district
-        // dn = district number to get pop volume for
-        // var packeddata = [];
-        var packedData
-        packedData = sessionStorage.getItem("D," + dn);
-        var splitData = packedData.split("@");
-        var getPop = splitData[0];
-        var pop = getPop.split("#");
-        return pop[2]; // Return total population volume
-    }
+    // function getTotalPeopleInDistrict(dn) {
+    //     // //////////////////////////////////
+    //     // GET TOTAL RESIDENTS IN BOROUGH
+    //     // Get The Volume of people in a district
+    //     // dn = district number to get pop volume for
+    //     // var packeddata = [];
+    //     var packedData
+    //     packedData = sessionStorage.getItem("D," + dn);
+    //     var splitData = packedData.split("@");
+    //     var getPop = splitData[0];
+    //     var pop = getPop.split("#");
+    //     return pop[2]; // Return total population volume
+    // }
 
     function getPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
@@ -2097,9 +2097,14 @@ function campaignStratergyImplementation() {
     var reportingDistrict = 1;
     // SETUP ITTERATION THROUGH AL DISTRICTS
     for (let currentDistrictCount = 1; currentDistrictCount < noOfDistricts; currentDistrictCount++) {
-        // updatedPeoplePackedList = [];
+
         updatedPeoplePackedList = "";
-        // updatedPeoplePackedList.push("-");//@@
+
+
+
+
+
+
         // GET RESIDENTS
         noOfResidents = electionEngineGetMembersCountInDistrict(currentDistrictCount);
         for (let residentCount = 1; residentCount < noOfResidents; residentCount++) {
@@ -2107,12 +2112,15 @@ function campaignStratergyImplementation() {
             var reductionValue = 0; // Value to be subtracted from persons conversion value (personCV)
             // SPLIT PERSON DATA INTO COMPONENTS. 
             var personComponents = electionEngineUnpackedPerson[residentCount].split("/"); // break up person data into components
+
             // PUT PERSON COMPONENTS INTO INDIVIDUAL VARS
             var personIdx = personComponents[0];
             var personIssueID = personComponents[1];
             var personName = personComponents[2];
             var personCv = personComponents[3];
             var personParty = personComponents[4];
+
+
             // GET SAVED PLEDGES
             var savedPledges = [];
             savedPledges.push("-");
@@ -2123,6 +2131,8 @@ function campaignStratergyImplementation() {
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 5));
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 6));
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 7));
+
+
             // GET POLITICIAN MANIFESTO ; This contains the full manifesto string... not just the letters "CHW... etc"
             var partyManifesto = [];
             partyManifesto.push("-");
@@ -2133,6 +2143,8 @@ function campaignStratergyImplementation() {
             partyManifesto.push(sessionStorage.getItem("M,5"));
             partyManifesto.push(sessionStorage.getItem("M,6"));
             partyManifesto.push(sessionStorage.getItem("M,7"));
+
+
             // GET THE MANIFESTO DIGITS
             var mDigit = [];
             mDigit.push("-")
@@ -2142,6 +2154,8 @@ function campaignStratergyImplementation() {
             MR.push("-");
             var tempM = "";
             var splitIntoTwoHalfs = "";
+
+
             // GET MANIFESTO RESPONSE TOKENS /LINE & PLACE   
             for (let y = 1; y <= 7; y++) {
                 // partyManifesto[1-7]  = Party Manifesto Pledge response Token
@@ -2157,74 +2171,152 @@ function campaignStratergyImplementation() {
                 partyManifestoResponse.push(MR);
                 // console.log(partyManifestoResponse[y]); //verbose - TBD
             }
+
+
+
             // //////////////////////////////////
             // CONVERSION ENGINE
             // //////////////////////////////////
             // Check if Persons Issue Concern is addresed in Your Party Manifesto
             var hitFlag = 0;
+
+
+
+
+
             for (let icount = 1; icount <= 7; icount++) {
                 if (personIssueID === partyManifestoResponse[icount]) {
+
+
                     hitFlag = 1; //match found
+
+
+
+
+
                     if (savedPledges[icount] === "H") {
                         if ((controlNumb * getRandom(personConversionValueMax) % 2) === 0) {
                             reductionValue = personConversionValueMax; // Place maximum Conversion value
                         }
                     }
+
+
                     if (savedPledges[icount] === "M") {
                         if ((controlNumb * getRandom(personConversionValueMax) % 2) === 0) {
+
                             reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
+
                         }
                     }
+
+
+
                     if (savedPledges[icount] === "L") {
                         if ((controlNumb * getRandom(personConversionValueMax) % 2) === 0) {
+
                             reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
+
                         }
                     }
                 }
             }
-            // EXIT IF PID IS NOT IN MANIFESTO BAG
+
+
+
+
             if (hitFlag === 0) {
+                // EXIT - ISSUE NOT ADDRESSED IN MANIFESTO
+
                 return; // Break Out  
             }
-            // PID IS IN MANIFESTO BAG ?
+
+
+
+
+
             if (hitFlag === 1) {
-                personCv = (personCv - reductionValue); // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
-                // CONVERT PERSON BASED ON UPDATED CV VALUE
-                // // GRAND TOTAL RESULTS FOR PARTIES
-                if (personCv <= 0) {
-                    // personParty = sessionStorage.getItem("myParty"); // BINGO!!  RESIDENT  IS NOW SUPPORTS YOUR PARTY
+                // YES - ISSUE IS IN MANIFESTO
+
+                personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
+
+
+                if ((personCv) >= -2 && (personCv) <= 1) {
+
                     // DAMASCUS CONVERSION MET!!!
                     // FLIP PERSONS SUPPORT TO YOUR PARTY
-                    if (sessionStorage.getItem("myParty") === "Conservative") {
+
+                    var PTY = sessionStorage.getItem("myParty");
+                    PTY = PTY.toUpperCase();
+
+                    console.log("YOUR PARTY:" + PTY);
+
+
+
+                    if (PTY === "CONSERVATIVE") {
                         personParty = "Conservative";
                         console.log(personName + " is a New Convert!");
+
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
+
                     }
-                    if (sessionStorage.getItem("myParty") === "Labour") {
+
+
+
+                    if (PTY === "LABOUR") {
                         personParty = "Labour";
                         console.log(personName + " is a New Convert!");
+
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
+
                     }
-                    if (sessionStorage.getItem("myParty") === "Lib-Dem") {
+
+
+                    if (PTY === "LIB-DEM") {
                         personParty = "Lib-Dem";
                         console.log(personName + " is a New Convert!");
+
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
+
                     }
-                    if (sessionStorage.getItem("myParty") === "Green") {
+
+
+                    if (PTY === "GREEN") {
                         personParty = "Green";
                         console.log(personName + " is a New Convert!");
+
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
+
                     }
                 }
+
+
+                // hitFlag = 0;
+                // residentCount++;
+
+
             }
             // CONSTRUCT UPDATED PERSON DATA!!!!
             var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
             updatedPeoplePackedList = updatedPeoplePackedList + updatedPerson;
-            // console.log(updatedPeoplePackedList);
+
+
+
+            
+            // &&
+            console.log("[" + residentCount + ":" + personCv + ":" + reductionValue + "]");
+        
+        
+        
         }
+
         // UPDATE POPULUS CONTENT HERE
         updatePeopleChunk(currentDistrictCount);
     }
+
+
+
+
+
     // UPDATE PEOPLE CHUNK
     function updatePeopleChunk(currentDistrictCount) {
         var UPD = [];
@@ -2634,8 +2726,3 @@ function backFromPopulusView() {
     // Jump back to location on district page view where you left it
     window.location.href = "country-districts.html#" + sessionStorage.getItem("CD");
 }
-
-
-
-
-
