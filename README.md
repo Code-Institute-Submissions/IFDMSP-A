@@ -62,6 +62,8 @@ BBC London has approached me for a website-based game.
 
 * Also, they have said not to worry too much about performance, for if the game is selected for production, they will redesign with appropriate technologies conducive to large scale public consumption, similar to many other similar endeavors of which they are experienced in. They simply want to see a working prototype quickly.
 
+-Fin
+
 ># #UX
 
 Within the following section I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five stage design principles used in my working style, namely
@@ -269,7 +271,7 @@ Before proceeding to build the application , I rendered some mockups. These did 
 
 ># Surface
 
-## Color Scheme
+## Colour Scheme
 
 * Because the application is supposed to be a game. I scoured retro gaming on google to asses typical color schemes. A lot of retro fun games had bright primary colors woven into its fabric. This was mainly due to limitation of graphics cards in early computer systems. However such colors were put to good use and calm colors were used for main spacial areas, and bright colors for stand out elements.
 
@@ -294,19 +296,19 @@ Below are features I need for the application to function as needed. I expect th
 | Feature | Purpose |
 |:---------|:--------|
 | Navigation Menu | To navigate through sections of the game|
-| Politician selector| Allows the player to select a politician representing a one of four political parties|
-| New Game button | Allows user to reset the game, through a reset screen |
+| Politician/Party Selector| Allows the player to select a politician representing a one of four political parties|
+| New Game Button | Allows user to reset the game, through a reset screen |
 | Global Economy | Feature that generates Three factors for 195 countries. These factors are used as control numbers and used within the game as part of a control algorithm|
 | View District Feature | Allows the user to look at any of the districts and gauge its specific issues. The user will spend much of their time here assessing the different elements that are key to progressing in the game|
-| View population | Feature allows user to list the residents of the districts. They will be able to then determine the state of mind of the individual resident, prior to making decisions that will determine if they will successfully convert the said resident|
+| View Population | Feature allows user to list the residents of the districts. They will be able to then determine the state of mind of the individual resident, prior to making decisions that will determine if they will successfully convert the said resident|
 | Create Manifesto | Feature allows the user to create the political manifesto of their party from 25 pledges in 5 areas concern “Crime, Health, Wealth, Employment, Social Satisfaction”|
 | Pledge Priority Status Bar | Shows the priorities assigned to each pledge in your manifesto / area|
 | Canvass Report | Provides a guide to the social momentum in the area. This information is not to be wholly trusted, but used as a guide, in as-much as polls are in real elections. The truth is they can be wrong. For this reason, the user should open each district and review the populous data |
-| Residents button | Allows user to view a list of residents in a particular district|
-| Pledges button | Allows users to view the party manifesto and prioritize the pledges as wished |
+| Residents Button | Allows user to view a list of residents in a particular district|
+| Pledges Button | Allows users to view the party manifesto and prioritize the pledges as wished |
 | Newsflash | Provides snapshot of issues in district |
 | Visual Status of District | Allows user to see a quick snapshot of issues. Again, this is not to be relied upon, as it was taken from the canvass report information |
-| Results page | Provides three bits of information on the pressing respective buttons |
+| Results Page | Provides three bits of information on the pressing respective buttons |
 | Pre-Election Stats |(A)-Current state of political support in the various districts |
 | Implement Strategy |(B)-On applying your manifest, pledges and priorities, the people converted to your party during the election|
 | Post-Election Stats |(C)-The political changes in support within the various districts after the election process |
@@ -324,6 +326,13 @@ Below are features I need for the application to function as needed. I expect th
 
 ># Testing
 
+### Much of my testing was carried out during development.
+
+* I used the "google-dev-tools" to view elements and variables
+
+* I also placed verbose console.log at various code points, to verify values
+
+### I have also created a "Jasmine" test-script for production cycle future changes 
 
 ># Deployment
 
@@ -449,18 +458,47 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 >## 2. SELECT POLITICIAN
 
+* This will align you to a party, also setting your party ribbon colour
+
 >## 3. CREATE GLOBAL ECONOMY
 
+* This will process 195 countries, randomly selects 3 from which it will derive value used in the election engine algorithm.
+
 >## 4. REVIEW DISTRICTS
+
+* Spend most of your time here!
+* Do not take the presented data as totally accurate , they come from media polls (which we know in the fog of politics, can be frequently inaccurate). Rather view the "Residents" information directly to decide on your pledge approach.
+
+* Create your "MANIFESTO" From 25 Available Pledges in 5 categories
+
+* Enter "Pledges" screen & prioritize your pledges.
  
 >## 5. CREATE MANIFESTO
 
+* You must select 7 Pledges to create your manifesto.
+
 >## 6. PRIORITIZE PLEDGES
+
+* Prioritize your pledges per district.
+* Options are L = Low focus /  M = Med focus /  H = High focus
+* Note: Only two ('H') are available for use in each district. These essentially are your major focus and drive on a particular pledge message to the residents. Choose wisely!)
 
 >## 7. ENTER CAMPAIGN
 
+* Warning: Once you pass this stage you cannot go back and make any changes to your campaign!
+
 >## 8. VIEW RESULTS
 
+* On this page press the 3 buttons in sequence to view
+
+1. The political state before election day
+2. The effect of your political campaign
+3. The changes post election day
+
 >## TROUBLESHOOTING
+
+*On occasion you may receive one of the following error messages below and sent to the main screen. Or you cannot progress to the "global-economy" or "Districts" page?  Please press the "NEW GAME" button and reset data to resolve.
+
+### This is caused by session-data conflict , when the application detects partial data resident from a previous execution of the game
 
 ># END
