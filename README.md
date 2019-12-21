@@ -127,7 +127,7 @@ Also, I believe in setting break/test points in the code, to view variables outp
 Following are some 'User Stories' to support the development. These are not necessarily complete, as user
 stories can vary dependent on how intricate you wish to present the specification.However this level of clarity is sufficient to progress the development.
 
-## Three parties will be involved with the application on deployment
+## Three primary stakeholders will be involved with the application on deployment
 
 * The BBC (Owner)
 * The User (Members of the public accessing the application through the internet)
@@ -264,10 +264,13 @@ Before proceeding to build the application , I rendered some mockups. These did 
 ![Mockup1-2](support/Mockup1-2.png)
 ![Mockup1-3](support/Mockup1-3.png)
 ![Mockup1-4](support/Mockup1-4.png)
+
+>## Note: The population view had a major revision later, as I decided it would be better if the player could see individual people names. Giving the player a somewhat more realistic view of the electioneering process.
+
 ![Mockup1-5](support/Mockup1-5.png)
+
 ![Mockup1-6](support/Mockup1-6.png)
 ![Mockup1-7](support/Mockup1-7.png)
-
 
 ># Surface
 
