@@ -253,7 +253,16 @@ Table 1.1
 
 ># Skeleton
 
+Before proceeding to build the application , I rendered some mockups. These did change slightly as development progressed. Most of the changes were realized as part of testing the app and realizing some additive was required
 
+![Main Page](support/Mockup-1.png)
+![Global Economics](support/Mockup1-1.png)
+![Mockup1-2](support/Mockup1-2.png)
+![Mockup1-3](support/Mockup1-3.png)
+![Mockup1-4](support/Mockup1-4.png)
+![Mockup1-5](support/Mockup1-5.png)
+![Mockup1-6](support/Mockup1-6.png)
+![Mockup1-7](support/Mockup1-7.png)
 
 
 ># Surface
