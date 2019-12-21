@@ -2,7 +2,7 @@
 
 Interactive Frontend Development Milestone Project
 
-[https://cofoeducistudent.github.io/IFDMSP-A/]('https://cofoeducistudent.github.io/IFDMSP-A/')
+[https://cofoeducistudent.github.io/IFDMSP-A/](https://cofoeducistudent.github.io/IFDMSP-A/)
 
 ># ** ELECTION FEVER **
 
