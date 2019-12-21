@@ -13,7 +13,7 @@ Interactive Frontend Development Milestone Project
 > Disclaimer: The following Requirement (hypothetical)!
 > # INDEX PAGE
 
-[UK](#UX)
+[UX](#UX)
 
 [1. Project Mandate](#Project-Mandate)
 
@@ -46,6 +46,8 @@ Interactive Frontend Development Milestone Project
 [14. Media](#Media)
 
 [15. Acknowledgements](#Acknowledgements)
+
+[16. Game Instructions](#Game-Instructions)
 
 ># Project-Mandate!
 BBC London has approached me for a website-based game.
@@ -216,7 +218,7 @@ Of importance in this work,  is the project "triple constraint" placed on the pr
 ## Outside of scope
 
 * Performance improvements, especially with regards to technology
-* Any other features not already specified
+
 * Realistic accuracy of data (as this is a fun fantasy game)
 
 * Any other items/feature not explicitly stated above
@@ -439,5 +441,28 @@ Royalty free to use
 
 * Disclaimer:
 The characters and scenarios represented in this game are purely fantasy and for fun. No level of accuracy in relation to districts and economy are been implied by the information in this game. As stated above the project mandate was fictitious for the purpose of my MSP2, and not affiliated to the BBC organization in anyway.
+
+>+++++++++++++++++++++++++
+># Game - Play Instructions
+
+>+++++++++++++++++++++++++
+
+>## 1. LAUNCH GAME
+
+>## 2. SELECT POLITICIAN
+
+>## 3. CREATE GLOBAL ECONOMY
+
+>## 4. REVIEW DISTRICTS
+ 
+>## 5. CREATE MANIFESTO
+
+>## 6. PRIORITIZE PLEDGES
+
+>## 7. ENTER CAMPAIGN
+
+>## 8. VIEW RESULTS
+
+>## TROUBLESHOOTING
 
 ># END
