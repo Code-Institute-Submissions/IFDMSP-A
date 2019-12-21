@@ -442,11 +442,9 @@ Royalty free to use
 * Disclaimer:
 The characters and scenarios represented in this game are purely fantasy and for fun. No level of accuracy in relation to districts and economy are been implied by the information in this game. As stated above the project mandate was fictitious for the purpose of my MSP2, and not affiliated to the BBC organization in anyway.
 
->+++++++++++++++++++++++++
-># Game - Play Instructions
-
->+++++++++++++++++++++++++
-
+#+++++++++++++++++++++++++++++
+># Game Instructions
+ 
 >## 1. LAUNCH GAME
 
 >## 2. SELECT POLITICIAN
