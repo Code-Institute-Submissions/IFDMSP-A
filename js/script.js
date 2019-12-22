@@ -2107,11 +2107,22 @@ function campaignStratergyImplementation() {
 
         // GET RESIDENTS
         noOfResidents = electionEngineGetMembersCountInDistrict(currentDistrictCount);
+
+        var convertedPeopleTotal = 0; // No of people converted this run!!
+
         for (let residentCount = 1; residentCount < noOfResidents; residentCount++) {
             // RESET RV
             var reductionValue = 0; // Value to be subtracted from persons conversion value (personCV)
             // SPLIT PERSON DATA INTO COMPONENTS. 
             var personComponents = electionEngineUnpackedPerson[residentCount].split("/"); // break up person data into components
+
+
+
+
+
+
+
+
 
             // PUT PERSON COMPONENTS INTO INDIVIDUAL VARS
             var personIdx = personComponents[0];
@@ -2178,45 +2189,42 @@ function campaignStratergyImplementation() {
             // CONVERSION ENGINE
             // //////////////////////////////////
             // Check if Persons Issue Concern is addresed in Your Party Manifesto
-            var hitFlag = 0;
+
+
+            var hitFlag = 0; // RESET HIT!!
 
 
 
 
 
             for (let icount = 1; icount <= 7; icount++) {
-                if (personIssueID === partyManifestoResponse[icount]) {
 
+                var doIt = (getRandom(residentCount) % 2);
+                console.log(doIt);
+
+
+
+
+
+
+                if ((personIssueID === partyManifestoResponse[icount]) && (doIt === 0)) {
 
                     hitFlag = 1; //match found
 
 
-
-
-
                     if (savedPledges[icount] === "H") {
-                        if ((controlNumb * getRandom(personConversionValueMax) % 2) === 0) {
-                            reductionValue = personConversionValueMax; // Place maximum Conversion value
-                        }
+                        reductionValue = personConversionValueMax; // Place maximum Conversion value
                     }
 
 
                     if (savedPledges[icount] === "M") {
-                        if ((controlNumb * getRandom(personConversionValueMax) % 2) === 0) {
-
-                            reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
-
-                        }
+                        reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
                     }
 
 
 
                     if (savedPledges[icount] === "L") {
-                        if ((controlNumb * getRandom(personConversionValueMax) % 2) === 0) {
-
-                            reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
-
-                        }
+                        reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
                     }
                 }
             }
@@ -2224,26 +2232,27 @@ function campaignStratergyImplementation() {
 
 
 
-            if (hitFlag === 0) {
-                // EXIT - ISSUE NOT ADDRESSED IN MANIFESTO
-
-                return; // Break Out  
-            }
-
-
-
-
-
             if (hitFlag === 1) {
                 // YES - ISSUE IS IN MANIFESTO
+
+
+
+
+
 
                 personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
 
 
-                if ((personCv) >= -2 && (personCv) <= 1) {
+                if (personCv < 1) {
 
                     // DAMASCUS CONVERSION MET!!!
                     // FLIP PERSONS SUPPORT TO YOUR PARTY
+
+                    convertedPeopleTotal++; // Converted this person to your Party
+
+
+
+
 
                     var PTY = sessionStorage.getItem("myParty");
                     PTY = PTY.toUpperCase();
@@ -2290,10 +2299,6 @@ function campaignStratergyImplementation() {
                 }
 
 
-                // hitFlag = 0;
-                // residentCount++;
-
-
             }
             // CONSTRUCT UPDATED PERSON DATA!!!!
             var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
@@ -2301,16 +2306,21 @@ function campaignStratergyImplementation() {
 
 
 
-            
+
             // &&
-            console.log("[" + residentCount + ":" + personCv + ":" + reductionValue + "]");
-        
-        
-        
+
+
         }
 
         // UPDATE POPULUS CONTENT HERE
+        // alert("Converted From:" + countryDistricts[currentDistrictCount] + ":" + convertedPeopleTotal);
+
+        $('#conversions').append("<h2><li>" + "Total Movement: " + countryDistricts[currentDistrictCount] + ":" + convertedPeopleTotal) + "</li></h2>";
+        convertedPeopleTotal = 0;
+
         updatePeopleChunk(currentDistrictCount);
+
+
     }
 
 
@@ -2353,6 +2363,48 @@ function campaignStratergyImplementation() {
         return individualPeople.length; // return total  found
     }
 }
+
+
+
+
+function countryInfluence() {
+    // /////////////////////
+    // Country Influence
+    // 
+    var cHitFlag = 0;
+
+    var C1 = sessionStorage.getItem("c1");
+    var C2 = sessionStorage.getItem("c2");
+    var C3 = sessionStorage.getItem("c3");
+
+
+    if (C1.length > C2) {
+        cHitFlag = 1;
+        console.log("CHITFLG:" + cHitFlag); // Verbose test point tbd
+        return cHitFlag;
+    }
+
+
+    if (C2.lenght > C3) {
+        cHitFlag = 2;
+        console.log("CHITFLG:" + cHitFlag); // Verbose test point tbd
+        return cHitFlag;
+    }
+
+    if (C3.lenght > C1) {
+        cHitFlag = 3;
+        console.log("CHITFLG:" + cHitFlag); // Verbose test point tbd
+        return cHitFlag;
+    }
+
+
+}
+
+
+
+
+
+
 //  //////////////////////////////////////////////////////////////////////////
 // POST - ELECTION ENGINE (3)
 // //////////////////////////////////////////////////////////////////////////
