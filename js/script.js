@@ -2237,16 +2237,14 @@ function campaignStratergyImplementation() {
 
 
 
-
-
-
                 personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
 
 
-                if (personCv < 1) {
+              
 
-                    // DAMASCUS CONVERSION MET!!!
-                    // FLIP PERSONS SUPPORT TO YOUR PARTY
+                if (personCv < 1) {
+                    // YES - PERSONAL CV IS IN CORRECT LIMITS FOR CONVERSION
+
 
                     convertedPeopleTotal++; // Converted this person to your Party
 
@@ -2296,10 +2294,26 @@ function campaignStratergyImplementation() {
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
 
                     }
+
+
+
+
+                } else {
+
+                    var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
+
                 }
 
 
+
+
+
+
+
+
+
             }
+
             // CONSTRUCT UPDATED PERSON DATA!!!!
             var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
             updatedPeoplePackedList = updatedPeoplePackedList + updatedPerson;
