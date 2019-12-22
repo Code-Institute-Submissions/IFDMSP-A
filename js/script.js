@@ -2199,35 +2199,51 @@ function campaignStratergyImplementation() {
 
             for (let icount = 1; icount <= 7; icount++) {
 
-                var doIt = (getRandom(residentCount) % 2);
-                console.log(doIt);
+                if ((personIssueID === partyManifestoResponse[icount])) {
 
 
 
 
-
-
-                if ((personIssueID === partyManifestoResponse[icount]) && (doIt === 0)) {
-
-                    hitFlag = 1; //match found
-
+                    reductionValue = 1;
 
                     if (savedPledges[icount] === "H") {
+
+                        hitFlag = 1; //match found
+
                         reductionValue = personConversionValueMax; // Place maximum Conversion value
+
                     }
 
 
                     if (savedPledges[icount] === "M") {
-                        reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
+
+                        hitFlag = 1; //match found
+
+                        for (let x = 0; x < countryInfluence; x++) {
+                            reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
+                        }
+
                     }
 
 
 
                     if (savedPledges[icount] === "L") {
-                        reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
+
+                        hitFlag = 1; //match found
+
+                        for (let x = 0; x < countryInfluence; x++) {
+                            reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
+                        }
+
                     }
+
+
+                    reductionvalue = politicalCompetition(sessionStorage.getItem("myParty"), reductionValue);
+
                 }
             }
+
+
 
 
 
@@ -2235,21 +2251,13 @@ function campaignStratergyImplementation() {
             if (hitFlag === 1) {
                 // YES - ISSUE IS IN MANIFESTO
 
-
-
                 personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
 
-
-              
-
-                if (personCv < 1) {
+                if (personCv < 0) {
                     // YES - PERSONAL CV IS IN CORRECT LIMITS FOR CONVERSION
 
 
                     convertedPeopleTotal++; // Converted this person to your Party
-
-
-
 
 
                     var PTY = sessionStorage.getItem("myParty");
@@ -2296,11 +2304,6 @@ function campaignStratergyImplementation() {
                     }
 
 
-
-
-                } else {
-
-                    var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
 
                 }
 
@@ -2381,37 +2384,72 @@ function campaignStratergyImplementation() {
 
 
 
+function politicalCompetition(cpty, redv) {
+    // Political Compotition from other parties
+
+    var cmpNv = getRandom(5);
+
+    if (cmpNv === 1) {
+        var cmpName = "Conservative";
+    }
+    if (cmpNv === 2) {
+        var cmpName = "Labour";
+    }
+    if (cmpNv === 3) {
+        var cmpName = "Lib-Dem";
+    }
+    if (cmpNv === 4) {
+        var cmpName = "Green";
+    }
+    if (cmpNv === 5) {
+        var cmpName = "None";
+    }
+
+
+    if (cmpName === cpty) {
+        // var rvetv = (countryInfluence * cpty.lenght)%2;
+        return redv; // Return Value Unaffected....Good!!
+    }
+
+    if (cmpName != cpty) {
+
+        if (getRandom(personConversionValueMax) != 2) {
+
+            var rvetv = 0;
+
+        }
+
+        return rvetv; // Stop Conversion, removing reduction value
+    }
+
+}
+
+
+
+
+
+
+
 function countryInfluence() {
     // /////////////////////
     // Country Influence
-    // 
     var cHitFlag = 0;
 
     var C1 = sessionStorage.getItem("c1");
     var C2 = sessionStorage.getItem("c2");
     var C3 = sessionStorage.getItem("c3");
 
-
     if (C1.length > C2) {
-        cHitFlag = 1;
-        console.log("CHITFLG:" + cHitFlag); // Verbose test point tbd
-        return cHitFlag;
+        cHitFlag = C1;
     }
-
-
     if (C2.lenght > C3) {
-        cHitFlag = 2;
-        console.log("CHITFLG:" + cHitFlag); // Verbose test point tbd
-        return cHitFlag;
+        cHitFlag = C2;
     }
-
     if (C3.lenght > C1) {
-        cHitFlag = 3;
-        console.log("CHITFLG:" + cHitFlag); // Verbose test point tbd
-        return cHitFlag;
+        cHitFlag = C3;
     }
 
-
+    return cHitFlag;
 }
 
 
