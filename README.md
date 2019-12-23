@@ -335,7 +335,12 @@ Below are features I need for the application to function as needed. I expect th
 
 * I also placed verbose console.log at various code points, to verify values
 
-### I have also created a "Jasmine" test-script for production cycle future changes 
+### I have also created a "Jasmine" test-script for production cycle future changes
+
+> Note: The jasmine test script should be redacted from the file set  before production deployment as it can pose a risk to unwanted tinkering and hacking
+* The files have been commented out on the INDEX,HTML however as it is expected that changes may be made , when testing with the BBC.
+
+* Also as a remark, I have only included a random number generator test as an example. As stated above most of the RAD development test was done with GDT & Console Logs. Therefore Jasmine is only included in this project for future dev challenges
 
 ># Deployment
 
@@ -386,6 +391,10 @@ In addition Images within the Images Directory
 * map-uk.jpg
 * paul-moss.png
 * vicky-morse,png
+
+> In addition "PLEASE REMOVE THE JASMINE SUPPORT FILES IN THE 'JS' DIRECTORY"
+
+* Failure to do this will expose the application to unwarranted intrusion and perhaps hacking.
 
 ** Note **: The support folder holds the images to support this README.md. It is not required on a live site. Therefore it can be deleted on a production deployment. Also delete the .gitignore.
 
@@ -472,13 +481,13 @@ The characters and scenarios represented in this game are purely fantasy and for
 * Spend most of your time here!
 * Do not take the presented data as totally accurate , they come from media polls (which we know in the fog of politics, can be frequently inaccurate). Rather view the "Residents" information directly to decide on your pledge approach.
 
-* Create your "MANIFESTO" From 25 Available Pledges in 5 categories
+* Create your "MANIFESTO" From (25) Available Pledges in 5 categories
 
 * Enter "Pledges" screen & prioritize your pledges.
  
 >## 5. CREATE MANIFESTO
 
-* You must select 7 Pledges to create your manifesto.
+* You must select (7) Pledges to create your manifesto.
 
 >## 6. PRIORITIZE PLEDGES
 
@@ -492,7 +501,7 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 >## 8. VIEW RESULTS
 
-* On this page press the 3 buttons in sequence to view
+* On this page press the (3) buttons in sequence to view
 
 1. The political state before election day
 2. The effect of your political campaign
@@ -529,6 +538,5 @@ The characters and scenarios represented in this game are purely fantasy and for
 * "District View" to - jump to top of screen
 * "Residents View" - to jump to top of screen
 * "Results Page" - to jump to top of screen
-
 
 ># END
