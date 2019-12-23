@@ -2851,3 +2851,14 @@ function backFromPopulusView() {
     // Jump back to location on district page view where you left it
     window.location.href = "country-districts.html#" + sessionStorage.getItem("CD");
 }
+
+
+
+function restartGame(){
+// RESTART GAME ..JUMP TO MAIN START PAGE
+
+
+
+alert("Thankyou for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
+window.location.href="index.html";
+}
