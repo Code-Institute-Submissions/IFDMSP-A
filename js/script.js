@@ -20,7 +20,7 @@ var flashHandState = true;
 var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
-var noOfDistricts = 21; // Number of districts in pool to canvass in game &&&#
+var noOfDistricts = 26; // Number of districts in pool to canvass in game &&&#
 var noOfProblems = 20; // Number of problems in pool to choose from
 var gDPMax = 10;
 var popMax = 10;
@@ -2857,8 +2857,6 @@ function backFromPopulusView() {
 function restartGame(){
 // RESTART GAME ..JUMP TO MAIN START PAGE
 
-
-
-alert("Thankyou for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
+alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
 window.location.href="index.html";
 }

@@ -504,4 +504,31 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 ### This is caused by session-data conflict , when the application detects partial data resident from a previous execution of the game
 
+>## TIPS
+
+> * The game has some random elements that impact the algorithm. Therefore it is not certain that by elimination, or addressing of all issue in a district ,every resident will comply and swing to support your party. This is also the case in real life, as there are strategic, opportunist and generally flaky personas in any democracy. With this in mind the best way to assure your parties outright victory is to canvass and promote your pledges in as many districts as possible.
+
+> * There are (25) Districts to canvass. Take the presented data on the "Districts View" with a pinch of salt. In the fog of war and politics, information can not always be assumed as reliable. View the population data to gain a better understanding of your residents and their whims. Each resident has specific characteristics and issues. There can be any volume of residents, from  a coupe of hundred in a district to a few thousand. However each resident has the following information about the,
+
+># Priorities
+
+* Use your pledge priorities carefully.
+* Initially scan all district contents to determine which pledges to include in you manifesto
+* when promoting in each district, first quickly scan the residents view and rough guess the most common issue or bug-bear of the residents. Then use your 2 high pledges('H') on the most significant. After than the ('M') in that order and so on.
+
+* Remember even if you do not promote your manifesto , you will still have the trickle effect. That is, voters moving from one party to another under their own volition. It is possible for a party to be totally wiped out from the main party list.
+
+* -Roll Number. (Their vote number, which is also their head count)
+* -Issue ID .... (what's bugging them)
+* -Name.
+* -Conversion Value. (This is the amount of effort needed to swing their allegiance. this is addressed by pledge priority.. but also by the individuals volition)
+* -Party.. (This is their current party a allegiance)
+
+># Double Tap/Click Screen
+
+* "District View" to - jump to top of screen
+* "Residents View" - to jump to top of screen
+* "Results Page" - to jump to top of screen
+
+
 ># END
