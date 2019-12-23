@@ -91,53 +91,65 @@ function loadUpYourPledgePriorityPage() {
 // Problems in districts
 var districtProblems = {
     // Questions		
-    1: "	H	*	Waiting list  too long in A&E	",
-    2: "	H	*	Prescriptions are too Expensive	",
-    3: "	H	*	Serious Flu Outbreak	",
-    4: "	H	*	Medical Equipment in dire state	",
-    5: "	H	*	Overworked Doctors complaining of stress	",
-    6: "	C	*	Increase in street-crime	",
-    7: "	C	*	Increase of pick-pockets in Area	",
-    8: "	C	*	Increase of drug & sales use in the area	",
-    9: "	C	*	Violent assaults in the area are on the increase	",
-    10: "	C	*	Unruly gang behaviour in the parks	",
-    11: "	C	*	Street Drunks on the increase	",
-    12: "	W	*	Cost of living on the increase	",
-    13: "	E	*	Employment on the rise in the area	",
-    14: "	E	*	Teen unemployment on the increase	",
-    15: "	E	*	Unemployment benefit too small and ineffective	",
-    16: "	W	*	Living wage poor	",
-    17: "	H	*	Rise in clinical depression	",
-    18: "	S	*	Lots of people report unhappiness with their Job	",
-    19: "	C	*	Terrorist activity on the rise	",
-    20: "	W	*	Transport Cost sky-rocketing	",
-    21: "	E	*	Child cost too high & mothers unable to work	",
+    1: "    H   *   LONG QUEUES IN A&E",
+    2: "    H   *   PRESCRIPTION COSTS TOO HIGH!",
+    3: "    H   *   MAJOR FLU-OUTBREAK",
+    4: "    H   *   MEDICAL EQUIPMENT DECREPIT!",
+    5: "    H   *   DOCTORS OVERWORKED & STRESSED!",
+    6: "    C   *   STREET CRIME INCREASED!",
+    7: "    C   *   STREET PICK-POCKETING INFLUX",
+    8: "    C   *   NARCOTICS  SALES & USE  IN DISTRICT",
+    9: "    C   *   VIOLENT ASSAULTS ON THE RISE!",
+    10: "    C   *   GANG ACTIVITY IN PUBLIC SPACES",
+    11: "    C   *   ANTI-SOCIAL DRUNKEN BEHAVIOR ON THE RISE",
+    12: "    W   *   COST OF LIVING SPIRALLING",
+    13: "    E   *   EMPLOYMENT IN DISTRICT V-HIGH",
+    14: "    E   *   TEEN EMPLOYMENT ON THE RISE",
+    15: "    E   *   UNEMPLOYMENT BENEFIT TOO SMALL & INEFFECTIVE!",
+    16: "    W   *   POOR LIVING WAGES",
+    17: "    H   *   RISE IN DEPRESSION",
+    18: "    S   *   DISSATISFACTION & SOCIAL UNREST",
+    19: "    C   *   TERRORISM ON THE RISE",
+    20: "    W   *   ROCKETING - FUEL & TRANSPORT COSTS",
+    21: "    E   *   CHILD CARE COST TOO HIGH!",
 };
 
 var districtSolutions = {
     // Solutions		
-    1: "	H	*	We promise we shall Invest 55 Million in the Health Service	",
-    2: "	H	*	We Promise 50% Prescriptions discounts for all	",
-    3: "	H	*	We shall import as a matter of Urgency 100k of Tami-Flu	",
-    4: "	H	*	Invest more in Technical Support Staff for our Hospitals	",
-    5: "	H	*	Invest in Hiring 2000 More Doctors & Medical Practitioners over 5years	",
-    6: "	C	*	We shall recruit 2000 more PCO's within 2years	",
-    7: "	C	*	Harsher sentences for street crime	",
-    8: "	C	*	Increase in 'stop and search' In the area	",
-    9: "	C	*	We pledge to Place more physical police presence on the street	",
-    10: "	C	*	We will introduce more ASBO's across the board	",
-    11: "	C	*	We will introduce limit of alcohol sales to categories of people	",
-    12: "	W	*	We pledge to increase personal allowance per person by 3.5%	",
-    13: "	E	*	We will lower business rates to incentivize businesses	",
-    14: "	E	*	We will introduce financial incentives for companies offering apprenticeships	",
-    15: "	E	*	We will raise  standard unemployment benefit by 2.50 per week	",
-    16: "	W	*	We will raise allowance for Married Couples	",
-    17: "	H	*	Pledge to invest in psychiatric medical treatments	",
-    18: "	S	*	Will introduce benefits for companies that provide training for their employees	",
-    19: "	C	*	Increase in armed police to be made	",
-    20: "	W	*	Force freeze on fare rises for net 5 years	",
-    21: "	E	*	Extra support for child care to be offered	",
+    1: "    H   *   £100-MILLION HEALTH SERVICE INVESTMENT",
+    2: "    H   *   50% PRESCRIPTION DISCOUNT FOR ALL",
+    3: "    H   *   100K FLU-VACCINES TO BE BOUGHT",
+    4: "    H   *   MAJOR INVESTMENT IN TECH-SUPPORT & STAFF",
+    5: "    H   *   RECRUIT  40000 DOCTORS & HEALTH CARE  STAFF IN 2YRS",
+    6: "    C   *   RECRUIT 20'000 PCO's NEXT 2YRS",
+    7: "    C   *   HARSHER SENTENCES FOR STREET CRIME",
+    8: "    C   *   INTENSIFY STOP & SEARCH DISTRICT-WIDE",
+    9: "    C   *   INCREASE PHYSICAL POLICE PRESENCE ON STREET",
+    10: "    C   *   INCREASE USE OF ASBO's IN DISTRICT",
+    11: "    C   *   LIMIT OF ALCOHOL SALES TO PEOPLE WITHOUT ID",
+    12: "    W   *   PERSONAL ALLOWANCE INCREASE 3.5% ABOVE INFLATION ",
+    13: "    E   *   LOW BUSINESS RATE MORATORIUM FOR FOR 3YRS",
+    14: "    E   *   FINANCIAL BENEFITS FOR BUSINESSES OFFERING APPRENTICESHIPS",
+    15: "    E   *   RAISE OF UNEMPLOYMENT BENEFIT £2.70 PER WK",
+    16: "    W   *   MARRIED-COUPLE ALLOWANCE TO RISE BY £750 PER YEAR",
+    17: "    H   *   INVESTMENT OF £30-MILLION IN MENTAL HEALTH SERVICES",
+    18: "    S   *   FINANCIAL INCENTIVES FOR COMPANIES INVESTING IN STAFF TRAINING",
+    19: "    C   *   INCREASE IN ARMED POLICE RESPONSE",
+    20: "    W   *   TRANSPORT FARE-FREEZE FOR 5 YEARS",
+    21: "    E   *   CHILD SUPPORT  & CARE SUBSIDY INCREASE",
 };
+
+
+
+
+
+
+
+
+
+
+
+
 var District = {
     // Districts Object representation
     // d-populus ; How many people in district
@@ -711,6 +723,7 @@ function viewDistricts() {
         var l3 = ISS[2];
         var l4 = ISS[3];
         var l5 = ISS[4];
+       
         // Get each line  Solution
         var s1 = ISS[5];
         var s2 = ISS[6];
@@ -718,11 +731,20 @@ function viewDistricts() {
         var s4 = ISS[8];
         var s5 = ISS[9];
         // Get 1st Character of Issue, to determine class of issue
-        var aa = l1.slice(0, 2).trim();
-        var bb = l2.slice(0, 2).trim();
-        var cc = l3.slice(0, 2).trim();
-        var dd = l4.slice(0, 2).trim();
-        var ee = l5.slice(0, 2).trim();
+        // var aa = l1.slice(0, 2).trim();
+        // var bb = l2.slice(0, 2).trim();
+        // var cc = l3.slice(0, 2).trim();
+        // var dd = l4.slice(0, 2).trim();
+        // var ee = l5.slice(0, 2).trim();
+        var aa = l1.slice(0, 5).trim();
+        var bb = l2.slice(0, 5).trim();
+        var cc = l3.slice(0, 5).trim();
+        var dd = l4.slice(0, 5).trim();
+        var ee = l5.slice(0, 5).trim();
+
+
+        console.log("l1"+l1+"="+aa+":"+bb+":"+cc+":"+dd+":"+ee);//VerboseTestPoint TBD********%%%%
+
         // Place Values of Issue Volumes in appropriate Variables
         distCrime = (countUpIssues("C", aa, bb, cc, dd, ee));
         distHealth = (countUpIssues("H", aa, bb, cc, dd, ee));
@@ -824,6 +846,13 @@ function viewDistricts() {
         $("#district-list").append(outputDistrictHtml);
     }
 }
+
+
+
+
+
+
+
 
 function saveCurrentDistrict() {
     // Save Current district on Button Press
@@ -2555,10 +2584,10 @@ function postProcessElection() {
         $('post-election-reporter-domparty-img').html("<h1><img src=\"images/vicky-morse.png\" /></h1>");
         var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
         var domminatPartymessage = "";
-        
+
         domminatPartymessage = domminatPartymessage + "<h2>The last party with a winning majority was </h2>";
         domminatPartymessage = domminatPartymessage + "";
-       
+
         postStatsResultLineOut = postStatsResultLineOut + "";
     }
 
@@ -2748,9 +2777,9 @@ function postProcessElection() {
             // console.log(unpackedPerson[4]); // current party allaiance
             // count up tally
             // test for party allegienc and increment if so!
-            
+
             switch (party) {
-                
+
                 case unpackedPerson[4]:
                     tally++; // add one to party Support
                     break;
@@ -2815,7 +2844,7 @@ function postProcessElection() {
     $('#post-election-winning-party').append("<p>The Labour party has secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span>districts!</p>");
     $('#post-election-winning-party').append("<p>The Liberal-Democrat party has secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span>districts!</p>");
     $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span>districts!</p>");
-    
+
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
 }
@@ -2855,9 +2884,9 @@ function backFromPopulusView() {
 
 
 
-function restartGame(){
-// RESTART GAME ..JUMP TO MAIN START PAGE
+function restartGame() {
+    // RESTART GAME ..JUMP TO MAIN START PAGE
 
-alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
-window.location.href="index.html";
+    alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
+    window.location.href = "index.html";
 }
