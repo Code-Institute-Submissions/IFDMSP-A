@@ -113,6 +113,7 @@ var districtProblems = {
     20: "	W	*	Transport Cost sky-rocketing	",
     21: "	E	*	Child cost too high & mothers unable to work	",
 };
+
 var districtSolutions = {
     // Solutions		
     1: "	H	*	We promise we shall Invest 55 Million in the Health Service	",

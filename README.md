@@ -10,7 +10,7 @@ Interactive Frontend Development Milestone Project
 
 ![game screen image](/support/ef-front-page-500.png)
 
-> Disclaimer: The following Requirement (hypothetical)!
+> Disclaimer: The following Requirement is (hypothetical)!
 > # INDEX PAGE
 
 [UX](#UX)
