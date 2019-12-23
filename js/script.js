@@ -2530,8 +2530,8 @@ function postProcessElection() {
         postStatsResultLineOut = postStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
         // ***************
         // Get Stronghold Colour
-        strngHoldColor = postGetStrongHoldColor(postTopParty[0]);
-        postStatsResultLineOut = postStatsResultLineOut + "<h2 class=\"" + strngHoldColor + "\">";
+        postStrngHoldColor = postGetStrongHoldColor(postTopParty[0]);
+        postStatsResultLineOut = postStatsResultLineOut + "<h2 class=\"" + postStrngHoldColor + "\">";
         postStatsResultLineOut = postStatsResultLineOut + postTopParty[0].slice(0, 3); // publish stronghold party in District
         // Record District Hold Count for Each Party
         postDistrictTotalControl(postTopParty[0]);
@@ -2554,10 +2554,10 @@ function postProcessElection() {
         $('post-election-reporter-domparty-img').html("<h1><img src=\"images/vicky-morse.png\" /></h1>");
         var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
         var domminatPartymessage = "";
-        // domminatPartymessage = domminatPartymessage + "<img src=\"images/vicky-morse.png\" />";
+        
         domminatPartymessage = domminatPartymessage + "<h2>The last party with a winning majority was </h2>";
         domminatPartymessage = domminatPartymessage + "";
-        // $('#con-dom-mess').html("<h1>" + domminatPartymessage + "</h1>");
+       
         postStatsResultLineOut = postStatsResultLineOut + "";
     }
 
@@ -2565,6 +2565,7 @@ function postProcessElection() {
         // GET STRONG HOLD COLOUR
         // tp = stronghold  party name
         var strngHoldColor = "make-people-grey"; //make Default color Grey.. No clear Winner
+
         if (tp === "Conservative") {
             var strngHoldColor = "make-people-blue";
         }
@@ -2577,8 +2578,12 @@ function postProcessElection() {
         if (tp === "Green") {
             var strngHoldColor = "make-people-green";
         }
+
         return strngHoldColor;
     }
+
+
+
 
     function postGetTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET TOP RANK PARTY
@@ -2587,6 +2592,7 @@ function postProcessElection() {
         // This will allow you to find top party in district
         var postTopPartyValue = 0;
         var postTopPartyName = "";
+
         if (pval1 > postTopPartyValue) {
             postTopPartyValue = pval1;
             postTopPartyName = party1Name;
@@ -2600,11 +2606,15 @@ function postProcessElection() {
             postTopPartyName = party3Name;
         }
         if (pval4 > postTopPartyValue) {
-            topPartyValue = pval4;
-            topPartyName = party4Name;
+            postTopPartyValue = pval4;
+            postTopPartyName = party4Name;
         }
         return [postTopPartyName, postTopPartyValue];
     }
+
+
+
+
 
     function postGetWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET WINNING RPARTY
@@ -2614,14 +2624,18 @@ function postProcessElection() {
         var winPartyValue = 0;
         var winPartyName = "";
         var hungMessage = "** HUNG PARLIMENT! **"
+
+
         if (pval1 > winPartyValue) {
             winPartyValue = pval1;
             winPartyName = party1Name;
         }
+
         if (pval2 > winPartyValue) {
             winPartyValue = pval2;
             winPartyName = party2Name;
         }
+
         if (pval3 > winPartyValue) {
             winPartyValue = pval3;
             winPartyName = party3Name;
@@ -2631,6 +2645,7 @@ function postProcessElection() {
             winPartyName = party4Name;
         }
         // 
+
         if (winPartyName === party1Name) {
             switch (winPartyValue) {
                 case pval2:
@@ -2732,7 +2747,9 @@ function postProcessElection() {
             // console.log(unpackedPerson[4]); // current party allaiance
             // count up tally
             // test for party allegienc and increment if so!
+            
             switch (party) {
+                
                 case unpackedPerson[4]:
                     tally++; // add one to party Support
                     break;
@@ -2768,6 +2785,8 @@ function postProcessElection() {
             return;
         }
     }
+
+
     // ///////////////////////////////////////////////////
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT POST ELECTION
     // Reset Grand Total Votes
@@ -2776,6 +2795,7 @@ function postProcessElection() {
     partyGT.Labour = 0;
     partyGT.LibDem = 0;
     partyGT.Green = 0;
+
     // RESET DISTRICT HOLD TOTAL TO ZERO
     conservativeDistrictHoldTotal = 0;
     labourDistrictHoldTotal = 0;
@@ -2794,6 +2814,7 @@ function postProcessElection() {
     $('#post-election-winning-party').append("<p>The Labour party has secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span>districts!</p>");
     $('#post-election-winning-party').append("<p>The Liberal-Democrat party has secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span>districts!</p>");
     $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span>districts!</p>");
+    
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
 }
