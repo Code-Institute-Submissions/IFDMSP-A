@@ -1,5 +1,4 @@
 // ------- DATA ----------- 
-
 var sHelpMaximum = 3;
 var controlNumb = 1;
 var updatedPeoplePackedList = []; // new updated people array post election engine modificationb
@@ -115,7 +114,6 @@ var districtProblems = {
     20: "    W   *   ROCKETING - FUEL & TRANSPORT COSTS",
     21: "    E   *   CHILD CARE COST TOO HIGH!",
 };
-
 var districtSolutions = {
     // Solutions		
     1: "    H   *   £100-MILLION HEALTH SERVICE INVESTMENT",
@@ -140,18 +138,6 @@ var districtSolutions = {
     20: "    W   *   TRANSPORT FARE-FREEZE FOR 5 YEARS",
     21: "    E   *   CHILD SUPPORT  & CARE SUBSIDY INCREASE",
 };
-
-
-
-
-
-
-
-
-
-
-
-
 var District = {
     // Districts Object representation
     // d-populus ; How many people in district
@@ -654,7 +640,7 @@ function populateTable() {
     if (threeCountriesSelected === false && cCp == noOfCountriesMax) {
         grabThreeCountries();
         controlNumb = (sessionStorage.getItem("c1").length + sessionStorage.getItem("c2").length) * sessionStorage.getItem("c3").length;
-        console.log("+:" + controlNumb);
+        // console.log("+:" + controlNumb);
     }
 }
 
@@ -719,37 +705,30 @@ function viewDistricts() {
         issuesFlat = QO.join();
         // Now turn each Issue into an array , so we can access them by index
         var ISS = [] = issuesFlat.split(",");
-
         // Get each line of an Issue ready to push to html page
         var l1 = ISS[0];
         var l2 = ISS[1];
         var l3 = ISS[2];
         var l4 = ISS[3];
         var l5 = ISS[4];
-
         // Get each line  Solution
         var s1 = ISS[5];
         var s2 = ISS[6];
         var s3 = ISS[7];
         var s4 = ISS[8];
         var s5 = ISS[9];
-
         // Get 1st Character of Issue, to determine class of issue
         // var aa = l1.slice(0, 2).trim();
         // var bb = l2.slice(0, 2).trim();
         // var cc = l3.slice(0, 2).trim();
         // var dd = l4.slice(0, 2).trim();
         // var ee = l5.slice(0, 2).trim();
-
         var aa = l1.slice(0, 5).trim();
         var bb = l2.slice(0, 5).trim();
         var cc = l3.slice(0, 5).trim();
         var dd = l4.slice(0, 5).trim();
         var ee = l5.slice(0, 5).trim();
-
-
-        console.log("l1" + l1 + "=" + aa + ":" + bb + ":" + cc + ":" + dd + ":" + ee); //VerboseTestPoint TBD********%%%%
-
+        // console.log("l1" + l1 + "=" + aa + ":" + bb + ":" + cc + ":" + dd + ":" + ee); //VerboseTestPoint TBD********%%%%
         // Place Values of Issue Volumes in appropriate Variables
         distCrime = (countUpIssues("C", aa, bb, cc, dd, ee));
         distHealth = (countUpIssues("H", aa, bb, cc, dd, ee));
@@ -760,104 +739,97 @@ function viewDistricts() {
         issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
         // Assemble HTM DYNAMICALLY
         var outputDistrictHtml = "";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"id=\"" + districtNumber + "\"></a>" // Jump back to page point tag;
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
-        outputDistrictHtml = outputDistrictHtml + "<h3>";
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
+        outputDistrictHtml += "<a href=\"id=\"" + districtNumber + "\"></a>" // Jump back to page point tag;
+        outputDistrictHtml += "<div class=\"row\">";
+        outputDistrictHtml += "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
+        outputDistrictHtml += "<h3>";
+        outputDistrictHtml += "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
         // Tabloid Banner
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"tabloid\">";
-        outputDistrictHtml = outputDistrictHtml + "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!";
+        outputDistrictHtml += "<div class=\"tabloid\">";
+        outputDistrictHtml += "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!";
         // <!-- Promoted Manifesto Pledges -->
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"promoted-pledges\" class=\"col-12\">";
-        outputDistrictHtml = outputDistrictHtml + "<p>";
-        outputDistrictHtml = outputDistrictHtml + "";
-        outputDistrictHtml = outputDistrictHtml + "MANIFESTO - PROMOTED PRIORITY :";
+        outputDistrictHtml += "<div class=\"row\">";
+        outputDistrictHtml += "<div id=\"promoted-pledges\" class=\"col-12\">";
+        outputDistrictHtml += "<p>";
+        outputDistrictHtml += "";
+        outputDistrictHtml += "MANIFESTO - PROMOTED PRIORITY :";
         var encloseFront = "<span class=\"promo-circle\">";
         var encloseEnd = "</span\">";
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",1") + "<span class=\"plno\">=P1</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",2") + "<span class=\"plno\">=P2</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",3") + "<span class=\"plno\">=P3</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",4") + "<span class=\"plno\">=P4</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",5") + "<span class=\"plno\">=P5</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",6") + "<span class=\"plno\">=P6</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",7") + "<span class=\"plno\">=P7</span>" + encloseEnd;
-        outputDistrictHtml = outputDistrictHtml + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",1") + "<span class=\"plno\">=P1</span>" + encloseEnd;
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",2") + "<span class=\"plno\">=P2</span>" + encloseEnd;
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",3") + "<span class=\"plno\">=P3</span>" + encloseEnd;
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",4") + "<span class=\"plno\">=P4</span>" + encloseEnd;
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",5") + "<span class=\"plno\">=P5</span>" + encloseEnd;
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",6") + "<span class=\"plno\">=P6</span>" + encloseEnd;
+        outputDistrictHtml += encloseFront + sessionStorage.getItem("DMP," + districtNumber + ",7") + "<span class=\"plno\">=P7</span>" + encloseEnd;
+        outputDistrictHtml += "</p>";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "</div>";
         // UK MAP IMAGE
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-12 map-uk\">";
-        outputDistrictHtml = outputDistrictHtml + "<img src=\"images/map-uk.jpg\">";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "<p>" + l1 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p>" + l2 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p>" + l3 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p>" + l4 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p>" + l5 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ Canvass Rept</p>";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"anw\">";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions3\" class=\"answers\">" + s3 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div class=\"row\">";
+        outputDistrictHtml += "<div class=\"col-12 map-uk\">";
+        outputDistrictHtml += "<img src=\"images/map-uk.jpg\">";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "<p>" + l1 + "</p>";
+        outputDistrictHtml += "<p>" + l2 + "</p>";
+        outputDistrictHtml += "<p>" + l3 + "</p>";
+        outputDistrictHtml += "<p>" + l4 + "</p>";
+        outputDistrictHtml += "<p>" + l5 + "</p>";
+        outputDistrictHtml += "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ Canvass Rept</p>";
+        outputDistrictHtml += "<div class=\"anw\">";
+        outputDistrictHtml += "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
+        outputDistrictHtml += "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
+        outputDistrictHtml += "<p id=\"solutions3\" class=\"answers\">" + s3 + "</p>";
+        outputDistrictHtml += "<p id=\"solutions4\" class=\"answers\">" + s4 + "</p>";
+        outputDistrictHtml += "<p id=\"solutions5\" class=\"answers\">" + s5 + "</p>";
+        outputDistrictHtml += "</div>";
         // Box DIV for PROGRESS BARS
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"row\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"col-11\">";
-        outputDistrictHtml = outputDistrictHtml + "<h3>";
+        outputDistrictHtml += "<div class=\"row\">";
+        outputDistrictHtml += "<div class=\"col-11\">";
+        outputDistrictHtml += "<h3>";
         // CRIME
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-danger   role=\"progressbar\" style=\"width: " + ((distCrime * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distCrime * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distCrime * issueWeightingTotal) / 100) + "\">(C)RIME : " + (distCrime / issueWeightingTotal) * 100 + "%</div>"
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div class=\"progress\">";
+        outputDistrictHtml += "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-danger   role=\"progressbar\" style=\"width: " + ((distCrime * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distCrime * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distCrime * issueWeightingTotal) / 100) + "\">(C)RIME : " + (distCrime / issueWeightingTotal) * 100 + "%</div>"
+        outputDistrictHtml += "</div>";
         // HEALTH
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + ((distHealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distHealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distHealth * issueWeightingTotal) / 100) + "\">(H)EALTH : " + (distHealth / issueWeightingTotal) * 100 + "%</div>"
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div class=\"progress\">";
+        outputDistrictHtml += "<div class=\"progress-bar  progress-bar-striped progress-bar-animated bg-primary role=\"progressbar\" style=\"width: " + ((distHealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distHealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distHealth * issueWeightingTotal) / 100) + "\">(H)EALTH : " + (distHealth / issueWeightingTotal) * 100 + "%</div>"
+        outputDistrictHtml += "</div>";
         // WEALTH
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + ((distWealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distWealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distWealth * issueWeightingTotal) / 100) + "\">(W)EALTH :" + (distWealth / issueWeightingTotal) * 100 + "%</div>"
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div class=\"progress\">";
+        outputDistrictHtml += "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-info role=\"progressbar\" style=\"width: " + ((distWealth * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distWealth * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distWealth * issueWeightingTotal) / 100) + "\">(W)EALTH :" + (distWealth / issueWeightingTotal) * 100 + "%</div>"
+        outputDistrictHtml += "</div>";
         // EMPLOYMENT
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + ((distEmployment * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\">(E)MPLOYMENT :" + (distEmployment / issueWeightingTotal) * 100 + "%</div>"
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div class=\"progress\">";
+        outputDistrictHtml += "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-warning role=\"progressbar\" style=\"width: " + ((distEmployment * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distEmployment * issueWeightingTotal) / 100) + "\">(E)MPLOYMENT :" + (distEmployment / issueWeightingTotal) * 100 + "%</div>"
+        outputDistrictHtml += "</div>";
         // SATISFACTION
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress\">";
-        outputDistrictHtml = outputDistrictHtml + "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distSatis * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distSatis * issueWeightingTotal) / 100) + "\">(S)ATISFACTION :" + (distSatis / issueWeightingTotal) * 100 + "%</div>"
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div class=\"progress\">";
+        outputDistrictHtml += "<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-success role=\"progressbar\" style=\"width: " + ((distSatis * 100) / issueWeightingTotal) + "%\" aria-valuenow=\"" + ((distSatis * issueWeightingTotal) / 100) + "\" aria-valuemin=\"0\" aria-valuemax=\"" + ((distSatis * issueWeightingTotal) / 100) + "\">(S)ATISFACTION :" + (distSatis / issueWeightingTotal) * 100 + "%</div>"
+        outputDistrictHtml += "</div>";
         // -------
-        outputDistrictHtml = outputDistrictHtml + "</html>";
-        outputDistrictHtml = outputDistrictHtml + "</div\">";
-        outputDistrictHtml = outputDistrictHtml + "</div\">";
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"graphic-stats-" + districtNumber + "\">";
-        outputDistrictHtml = outputDistrictHtml + "<h3>";
-        outputDistrictHtml = outputDistrictHtml + "</h3>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "<p></p>";
+        outputDistrictHtml += "</html>";
+        outputDistrictHtml += "</div\">";
+        outputDistrictHtml += "</div\">";
+        outputDistrictHtml += "<div id=\"graphic-stats-" + districtNumber + "\">";
+        outputDistrictHtml += "<h3>";
+        outputDistrictHtml += "</h3>";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "<p></p>";
         var dn = "<span id=\"" + districtNumber + "\"></span>";
-        outputDistrictHtml = outputDistrictHtml + "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\" class=\"btn btn-warning btn-sm active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Residents</a>";
-        outputDistrictHtml = outputDistrictHtml + "<a href=\"#\"  class=\"btn btn-success btn-sm active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "</h3>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
-        outputDistrictHtml = outputDistrictHtml + "</div>";
+        outputDistrictHtml += "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
+        outputDistrictHtml += "<a href=\"#\" class=\"btn btn-warning btn-sm active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Residents</a>";
+        outputDistrictHtml += "<a href=\"#\"  class=\"btn btn-success btn-sm active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "</h3>";
+        outputDistrictHtml += "</div>";
+        outputDistrictHtml += "</div>";
         $("#district-list").append(outputDistrictHtml);
     }
 }
-
-
-
-
-
-
-
 
 function saveCurrentDistrict() {
     // Save Current district on Button Press
@@ -922,13 +894,10 @@ function viewPop() {
 
 function loadUpPopulation() {
     // POPULATION TABLE 
-
     if (sessionStorage.getItem("sHelp") < 1) {
         // Remove BStatistician Help Button If Help Not Available
         $('#statistician-help-button').hide();
     }
-
-
     var cd = sessionStorage.getItem("CD");
     var tableLineout = "";
     var currentDistrict = sessionStorage.getItem("CD");
@@ -941,122 +910,108 @@ function loadUpPopulation() {
     // ################
     // LAYOUT TITLES
     var peopleOutputLine = "";
-    peopleOutputLine = peopleOutputLine + "<div class=\"row no-gutters\">";
-    peopleOutputLine = peopleOutputLine + "";
+    peopleOutputLine += "<div class=\"row no-gutters\">";
+    peopleOutputLine += "";
     // 
-    peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding people-list-format\">";
-    peopleOutputLine = peopleOutputLine + "<h2>";
-    peopleOutputLine = peopleOutputLine + "ROLL:";
-    peopleOutputLine = peopleOutputLine + "</h2>";
-    peopleOutputLine = peopleOutputLine + "</div>";
+    peopleOutputLine += "<div class=\"col-2  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine += "<h2>";
+    peopleOutputLine += "ROLL:";
+    peopleOutputLine += "</h2>";
+    peopleOutputLine += "</div>";
     // 
-    peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
-    peopleOutputLine = peopleOutputLine + "<h2>";
-    peopleOutputLine = peopleOutputLine + "MI:";
-    peopleOutputLine = peopleOutputLine + "</h2>";
-    peopleOutputLine = peopleOutputLine + "</div>";
+    peopleOutputLine += "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine += "<h2>";
+    peopleOutputLine += "MI:";
+    peopleOutputLine += "</h2>";
+    peopleOutputLine += "</div>";
     // 
-    peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
-    peopleOutputLine = peopleOutputLine + "<h2>";
-    peopleOutputLine = peopleOutputLine + "NAME:";
-    peopleOutputLine = peopleOutputLine + "</h2>";
-    peopleOutputLine = peopleOutputLine + "</div>";
+    peopleOutputLine += "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine += "<h2>";
+    peopleOutputLine += "NAME:";
+    peopleOutputLine += "</h2>";
+    peopleOutputLine += "</div>";
     // 
-    peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
-    peopleOutputLine = peopleOutputLine + "<h2>";
-    peopleOutputLine = peopleOutputLine + "CV";
-    peopleOutputLine = peopleOutputLine + "</h2>";
-    peopleOutputLine = peopleOutputLine + "</div>";
+    peopleOutputLine += "<div class=\"col-1  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine += "<h2>";
+    peopleOutputLine += "CV";
+    peopleOutputLine += "</h2>";
+    peopleOutputLine += "</div>";
     // 
-    peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
-    peopleOutputLine = peopleOutputLine + "<h2>";
-    peopleOutputLine = peopleOutputLine + "SUPPORTS";
-    peopleOutputLine = peopleOutputLine + "</h2>";
-    peopleOutputLine = peopleOutputLine + "</div>";
-    peopleOutputLine = peopleOutputLine + "</div>";
+    peopleOutputLine += "<div class=\"col-4  keep-insideBSol nopadding people-list-format\">";
+    peopleOutputLine += "<h2>";
+    peopleOutputLine += "SUPPORTS";
+    peopleOutputLine += "</h2>";
+    peopleOutputLine += "</div>";
+    peopleOutputLine += "</div>";
     $("#populus-table").append(peopleOutputLine);
     // ====//
-
-
-
-
-
-
-
-
-
     // CREATE LIST OF RESIDENTS 
     // Update Accuracy Count of Issues!!
     updateCanvassReportAccuracy(1, "X"); // Reset All ISsue Count Values
-
     for (let u = 1; u < peopleList.length; u++) {
         var PA = [];
         PA = (peopleList[u].split("/"))
         var peopleOutputLine = "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"people-list-format\">";
+        peopleOutputLine += "<div class=\"people-list-format\">";
         // Person Index
-        peopleOutputLine = peopleOutputLine + "<div id=" + u + "  class=\"row no-gutters\">";
+        peopleOutputLine += "<div id=" + u + "  class=\"row no-gutters\">";
         // Persons Concern
-        peopleOutputLine = peopleOutputLine + "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"col-2  keep-insideBSol nopadding\">";
-        peopleOutputLine = peopleOutputLine + "<h2>";
-        peopleOutputLine = peopleOutputLine + PA[0];
-        peopleOutputLine = peopleOutputLine + "</h2>";
-        peopleOutputLine = peopleOutputLine + "</div>";
-        peopleOutputLine = peopleOutputLine + "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
-        peopleOutputLine = peopleOutputLine + "<h2>";
-        peopleOutputLine = peopleOutputLine + PA[1];
-
+        peopleOutputLine += "";
+        peopleOutputLine += "<div class=\"col-2  keep-insideBSol nopadding\">";
+        peopleOutputLine += "<h2>";
+        peopleOutputLine += PA[0];
+        peopleOutputLine += "</h2>";
+        peopleOutputLine += "</div>";
+        peopleOutputLine += "";
+        peopleOutputLine += "<div class=\"col-1  keep-insideBSol nopadding\">";
+        peopleOutputLine += "<h2>";
+        peopleOutputLine += PA[1];
         updateCanvassReportAccuracy(0, PA[1]); // Increase Count of Issue....
-
-        peopleOutputLine = peopleOutputLine + "</h2>";
-        peopleOutputLine = peopleOutputLine + "</div>";
+        peopleOutputLine += "</h2>";
+        peopleOutputLine += "</div>";
         // Person Swing
-        peopleOutputLine = peopleOutputLine + "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding\">";
-        peopleOutputLine = peopleOutputLine + "<h2>";
-        peopleOutputLine = peopleOutputLine + PA[2];
-        peopleOutputLine = peopleOutputLine + "</h2>";
-        peopleOutputLine = peopleOutputLine + "</div>";
+        peopleOutputLine += "";
+        peopleOutputLine += "<div class=\"col-4  keep-insideBSol nopadding\">";
+        peopleOutputLine += "<h2>";
+        peopleOutputLine += PA[2];
+        peopleOutputLine += "</h2>";
+        peopleOutputLine += "</div>";
         //  Person Name
-        peopleOutputLine = peopleOutputLine + "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
-        peopleOutputLine = peopleOutputLine + "<h2>";
-        peopleOutputLine = peopleOutputLine + PA[3];
-        peopleOutputLine = peopleOutputLine + "</h2>";
-        peopleOutputLine = peopleOutputLine + "</div>";
+        peopleOutputLine += "";
+        peopleOutputLine += "<div class=\"col-1  keep-insideBSol nopadding\">";
+        peopleOutputLine += "<h2>";
+        peopleOutputLine += PA[3];
+        peopleOutputLine += "</h2>";
+        peopleOutputLine += "</div>";
         // Party Affiliation
-        peopleOutputLine = peopleOutputLine + "";
-        peopleOutputLine = peopleOutputLine + "<div class=\"col-4  keep-insideBSol nopadding\">";
+        peopleOutputLine += "";
+        peopleOutputLine += "<div class=\"col-4  keep-insideBSol nopadding\">";
         // peopleOutputLine = peopleOutputLine + "<h2>";
         // Change Color to reflect party affiliation
         if (PA[4] === "Labour") {
-            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-red\">";
+            peopleOutputLine += "<h2 class=\"make-people-red\">";
         }
         if (PA[4] === "Conservative") {
-            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-blue\">";
+            peopleOutputLine += "<h2 class=\"make-people-blue\">";
         }
         if (PA[4] === "Lib-Dem") {
-            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-yellow\">";
+            peopleOutputLine += "<h2 class=\"make-people-yellow\">";
         }
         if (PA[4] === "Green") {
-            peopleOutputLine = peopleOutputLine + "<h2 class=\"make-people-green\">";
+            peopleOutputLine += "<h2 class=\"make-people-green\">";
         }
-        peopleOutputLine = peopleOutputLine + PA[4];
-        peopleOutputLine = peopleOutputLine + "</h2>";
-        peopleOutputLine = peopleOutputLine + "</div>";
-        peopleOutputLine = peopleOutputLine + "</div>";
-        peopleOutputLine = peopleOutputLine + "</div>";
+        peopleOutputLine += PA[4];
+        peopleOutputLine += "</h2>";
+        peopleOutputLine += "</div>";
+        peopleOutputLine += "</div>";
+        peopleOutputLine += "</div>";
         //  console.log(PA[1]);
         $("#populus-table").append(peopleOutputLine);
         // Save to session Memory Current People data Pre-Election TO BE USED IN ELECTION ENGINE*******
         var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
         sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u + ":", pdat + "~");
     }
-
 }
-
 
 function showCurrentDistrict() {
     // Show current district number
@@ -1317,18 +1272,12 @@ function resetGame(runProcess) {
     // To reset the Game. If so it calls the  setupGame routine
     // Then it resets the flag , so its not repeated again
     // Until requested
-
-
-
-
-
     if (localStorage.getItem("newGame") === "1") {
         // Do not Reset again
         return;
     } else {
         // Main Code Here...
         setupGame();
-
         // Set Reset Flag To show Game has been Reset;
         localStorage.setItem("newGame", "1");
     }
@@ -1360,16 +1309,12 @@ function setupGame() {
     // Entry call - Index.html - Reset Game 
     // Create Districts
     // Wipe Away Old Pledges
-
     sessionStorage.setItem("sHelp", sHelpMaximum); // Reset Stats Help
-
-
     CreateDistricts();
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
-
     // SETUP GAME SESSION VARIABLES AT START
-    // ###########################################
+
     // ###########################################
     sessionStorage.setItem("global-economy-page-authorised", true);
     sessionStorage.setItem("view-populus-page-authorised", true);
@@ -1446,8 +1391,6 @@ function loadUpManifestoPage() {
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
-
-
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1502,10 +1445,6 @@ function deselectAllPledges() {
 
 function setBv(bp) {
     // SET  BUTTON VALUES
-    // Iterate through Priority Button Rows & Find what priory was pushed
-    // Set sessionStorage Accordingly
-    // Check Line Values
-    // use  - numberOfPriorityHighAvilable to netermine HighPriority available
     switch (pbl) {
         // Check P buttons Line 1
         case 1:
@@ -1710,7 +1649,6 @@ function setBv(bp) {
 }
 
 function showHighPledgesRemaining() {
-    // /////////////////////////////////////
     // Show amount of High Pledges Available
     $('#nohp').text(numberOfPriorityHighAvilable);
 }
@@ -1719,19 +1657,19 @@ function loadUpPledgePriorityPage() {
     // PLEDGEPRIORITY PAGE
     {
         var pbuttons = "";
-        pbuttons = pbuttons + "<div class=\"row\">";
-        pbuttons = pbuttons + "<div class=\"col-12 priority-buttons-format\">";
+        pbuttons += "<div class=\"row\">";
+        pbuttons += "<div class=\"col-12 priority-buttons-format\">";
         // 
-        pbuttons = pbuttons + "<div class=\"row=\">"
-        pbuttons = pbuttons + "<div class=\"col-12\">";
-        pbuttons = pbuttons + "<button type=\"button\" onclick=\"setBv(1)\" class=\"btn btn-primary btn-sm\">L</button>";
-        pbuttons = pbuttons + "<button type=\"button\" onclick=\"setBv(2)\" class=\"btn btn-warning btn-sm\">M</button>";
-        pbuttons = pbuttons + "<button type=\"button\" onclick=\"setBv(3)\" class=\"btn btn-info btn-sm\">H</button>";
-        pbuttons = pbuttons + "</div>";
-        pbuttons = pbuttons + "</div>";
+        pbuttons += "<div class=\"row=\">"
+        pbuttons += "<div class=\"col-12\">";
+        pbuttons += "<button type=\"button\" onclick=\"setBv(1)\" class=\"btn btn-primary btn-sm\">L</button>";
+        pbuttons += "<button type=\"button\" onclick=\"setBv(2)\" class=\"btn btn-warning btn-sm\">M</button>";
+        pbuttons += "<button type=\"button\" onclick=\"setBv(3)\" class=\"btn btn-info btn-sm\">H</button>";
+        pbuttons += "</div>";
+        pbuttons += +"</div>";
         // 
-        pbuttons = pbuttons + "</div>";
-        pbuttons = pbuttons + "</div>";
+        pbuttons += "</div>";
+        pbuttons += "</div>";
         // Build buttons on page right-hand side
         // Add the pledge line
         for (let i = 1; i < 8; i++) {
@@ -1843,89 +1781,76 @@ function processElection() {
         var topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
         // Build Output HTML in String
         var preStatsResultLineOut = "";
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
-        preStatsResultLineOut = preStatsResultLineOut + " <div id=\"results-stats\" class=\"col-12\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + " <!-- // -->";
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"row no-gutters\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + repd;
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "<div class=\"row no-gutters\">";
+        preStatsResultLineOut += " <div id=\"results-stats\" class=\"col-12\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += " <!-- // -->";
+        preStatsResultLineOut += "<div class=\"row no-gutters\">";
+        preStatsResultLineOut += "<div class=\"col-2 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += repd;
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
         // District Name
-        preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-4 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + countryDistricts[repd];
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "<!-- // -->";
+        preStatsResultLineOut += "<div class=\"col-4 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += countryDistricts[repd];
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
         // CON info
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + ConVotes;
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "<div class=\"col-2 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += ConVotes;
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
         // LAB Info
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + LabVotes;
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "<div class=\"col-1 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += LabVotes;
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
         // LIB-DEM
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + LibDemVotes;
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "<div class=\"col-1 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += LibDemVotes;
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
         // GREEN
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
-        preStatsResultLineOut = preStatsResultLineOut + "<h2>";
-        preStatsResultLineOut = preStatsResultLineOut + GreenVotes;
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "<div class=\"col-1 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<h2>";
+        preStatsResultLineOut += GreenVotes;
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
         // STRONGHOLD
-        preStatsResultLineOut = preStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
+        preStatsResultLineOut += "<div class=\col-1 keep-insideBSol nopadding\">";
         // ***************
         // Get Stronghold Colour
         strngHoldColor = getStrongHoldColor(topParty[0]);
-        preStatsResultLineOut = preStatsResultLineOut + "<h2 class=\"" + strngHoldColor + "\">";
-        preStatsResultLineOut = preStatsResultLineOut + topParty[0].slice(0, 3); // publish stronghold party in District
+        preStatsResultLineOut += "<h2 class=\"" + strngHoldColor + "\">";
+        preStatsResultLineOut += topParty[0].slice(0, 3); // publish stronghold party in District
         // Record District Hold Count for Each Party
         DistrictTotalControl(topParty[0]);
         // **************
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
-        preStatsResultLineOut = preStatsResultLineOut + "<div id=\"insert-stats\"></div>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
+        preStatsResultLineOut += "<div id=\"insert-stats\"></div>";
+        preStatsResultLineOut += "</div>";
         // preStatsResultLineOut = preStatsResultLineOut + "<!-- // -->";
-        preStatsResultLineOut = preStatsResultLineOut + "</h2>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
-        preStatsResultLineOut = preStatsResultLineOut + "</div>";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
+        preStatsResultLineOut += "</h2>";
+        preStatsResultLineOut += "</div>";
+        preStatsResultLineOut += "</div>";
+
         // Publish line item to webpage
         $('#insert-stats-content').append(preStatsResultLineOut);
         // SPIT OUT PARTY WITH THE MOST DISTRICT CONTROL
-        // ////////////////////////////////////////////
-        // /////////////////////////////////////////////
         $('reporter-domparty-img').html("<h1><img src=\"images/vicky-morse.png\" /></h1>");
         var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
         var domminatPartymessage = "";
-        // domminatPartymessage = domminatPartymessage + "<img src=\"images/vicky-morse.png\" />";
-        domminatPartymessage = domminatPartymessage + "<h2>The last party with a winning majority was </h2>";
-        domminatPartymessage = domminatPartymessage + "";
-        // $('#con-dom-mess').html("<h1>" + domminatPartymessage + "</h1>");
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
-        preStatsResultLineOut = preStatsResultLineOut + "";
+
+        domminatPartymessage += "<h2>The last party with a winning majority was </h2>";
+        domminatPartymessage += "";
+
     }
 
     function getStrongHoldColor(tp) {
@@ -2056,7 +1981,6 @@ function processElection() {
         // 
         return [winPartyName, winPartyValue];
     }
-
     // function getTotalPeopleInDistrict(dn) {
     //     // //////////////////////////////////
     //     // GET TOTAL RESIDENTS IN BOROUGH
@@ -2070,7 +1994,6 @@ function processElection() {
     //     var pop = getPop.split("#");
     //     return pop[2]; // Return total population volume
     // }
-
     function getPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
@@ -2151,8 +2074,7 @@ function processElection() {
     $('#last-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
     alert("PRE-ELECTION STATS PUBLISHED")
 }
-//  //////////////////////////////////////////////////////////////////////////
-//  //////////////////////////////////////////////////////////////////////////
+
 //  //////////////////////////////////////////////////////////////////////////
 // CAMPAIGN - ELECTION ENGINE (2)
 // //////////////////////////////////////////////////////////////////////////
@@ -2165,41 +2087,21 @@ function campaignStratergyImplementation() {
     var reportingDistrict = 1;
     // SETUP ITTERATION THROUGH AL DISTRICTS
     for (let currentDistrictCount = 1; currentDistrictCount < noOfDistricts; currentDistrictCount++) {
-
         updatedPeoplePackedList = "";
-
-
-
-
-
-
         // GET RESIDENTS
         noOfResidents = electionEngineGetMembersCountInDistrict(currentDistrictCount);
-
         var convertedPeopleTotal = 0; // No of people converted this run!!
-
         for (let residentCount = 1; residentCount < noOfResidents; residentCount++) {
             // RESET RV
             var reductionValue = 0; // Value to be subtracted from persons conversion value (personCV)
             // SPLIT PERSON DATA INTO COMPONENTS. 
             var personComponents = electionEngineUnpackedPerson[residentCount].split("/"); // break up person data into components
-
-
-
-
-
-
-
-
-
             // PUT PERSON COMPONENTS INTO INDIVIDUAL VARS
             var personIdx = personComponents[0];
             var personIssueID = personComponents[1];
             var personName = personComponents[2];
             var personCv = personComponents[3];
             var personParty = personComponents[4];
-
-
             // GET SAVED PLEDGES
             var savedPledges = [];
             savedPledges.push("-");
@@ -2210,8 +2112,6 @@ function campaignStratergyImplementation() {
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 5));
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 6));
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 7));
-
-
             // GET POLITICIAN MANIFESTO ; This contains the full manifesto string... not just the letters "CHW... etc"
             var partyManifesto = [];
             partyManifesto.push("-");
@@ -2222,8 +2122,6 @@ function campaignStratergyImplementation() {
             partyManifesto.push(sessionStorage.getItem("M,5"));
             partyManifesto.push(sessionStorage.getItem("M,6"));
             partyManifesto.push(sessionStorage.getItem("M,7"));
-
-
             // GET THE MANIFESTO DIGITS
             var mDigit = [];
             mDigit.push("-")
@@ -2233,8 +2131,6 @@ function campaignStratergyImplementation() {
             MR.push("-");
             var tempM = "";
             var splitIntoTwoHalfs = "";
-
-
             // GET MANIFESTO RESPONSE TOKENS /LINE & PLACE   
             for (let y = 1; y <= 7; y++) {
                 // partyManifesto[1-7]  = Party Manifesto Pledge response Token
@@ -2250,168 +2146,74 @@ function campaignStratergyImplementation() {
                 partyManifestoResponse.push(MR);
                 // console.log(partyManifestoResponse[y]); //verbose - TBD
             }
-
-
-
             // //////////////////////////////////
             // CONVERSION ENGINE
             // //////////////////////////////////
             // Check if Persons Issue Concern is addresed in Your Party Manifesto
-
-
             var hitFlag = 0; // RESET HIT!!
-
-
-
-
-
             for (let icount = 1; icount <= 7; icount++) {
-
                 if ((personIssueID === partyManifestoResponse[icount])) {
-
-
-
-
                     reductionValue = 1;
-
                     if (savedPledges[icount] === "H") {
-
                         hitFlag = 1; //match found
-
                         reductionValue = personConversionValueMax; // Place maximum Conversion value
-
                     }
-
-
                     if (savedPledges[icount] === "M") {
-
                         hitFlag = 1; //match found
-
                         for (let x = 0; x < countryInfluence; x++) {
                             reductionValue = getRandom(personConversionValueMax); // Place maximum Conversion value
                         }
-
                     }
-
-
-
                     if (savedPledges[icount] === "L") {
-
                         hitFlag = 1; //match found
-
                         for (let x = 0; x < countryInfluence; x++) {
                             reductionValue = getRandom((personConversionValueMax / 2)); // Place maximum Conversion value
                         }
-
                     }
-
-
                     reductionvalue = politicalCompetition(sessionStorage.getItem("myParty"), reductionValue);
-
                 }
             }
-
-
-
-
-
-
             if (hitFlag === 1) {
                 // YES - ISSUE IS IN MANIFESTO
-
                 personCv = personCv - reductionValue; // REDUCE OR WIPE OUT PERSONS CV  TO ZERO
-
                 if (personCv < 0) {
                     // YES - PERSONAL CV IS IN CORRECT LIMITS FOR CONVERSION
-
-
                     convertedPeopleTotal++; // Converted this person to your Party
-
-
                     var PTY = sessionStorage.getItem("myParty");
                     PTY = PTY.toUpperCase();
-
-                    console.log("YOUR PARTY:" + PTY);
-
-
-
+                    // console.log("YOUR PARTY:" + PTY);
                     if (PTY === "CONSERVATIVE") {
                         personParty = "Conservative";
-                        console.log(personName + " is a New Convert!");
-
+                        // console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
-
                     }
-
-
-
                     if (PTY === "LABOUR") {
                         personParty = "Labour";
-                        console.log(personName + " is a New Convert!");
-
+                        // console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
-
                     }
-
-
                     if (PTY === "LIB-DEM") {
                         personParty = "Lib-Dem";
-                        console.log(personName + " is a New Convert!");
-
+                        // console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
-
                     }
-
-
                     if (PTY === "GREEN") {
                         personParty = "Green";
-                        console.log(personName + " is a New Convert!");
-
+                        // console.log(personName + " is a New Convert!");
                         $('#conversions-election-container-box').append("<li>" + countryDistricts[currentDistrictCount] + "-" + personName + ": is a new Convert!" + "</li>");
-
                     }
-
-
-
                 }
-
-
-
-
-
-
-
-
-
             }
-
             // CONSTRUCT UPDATED PERSON DATA!!!!
             var updatedPerson = "^" + personIdx + "/" + personIssueID + "/" + personName + "/" + personCv + "/" + personParty
             updatedPeoplePackedList = updatedPeoplePackedList + updatedPerson;
-
-
-
-
-            // &&
-
-
         }
-
         // UPDATE POPULUS CONTENT HERE
         // alert("Converted From:" + countryDistricts[currentDistrictCount] + ":" + convertedPeopleTotal);
-
         $('#conversions').append("<h2><li>" + "Total Movement: " + countryDistricts[currentDistrictCount] + ":" + convertedPeopleTotal) + "</li></h2>";
         convertedPeopleTotal = 0;
-
         updatePeopleChunk(currentDistrictCount);
-
-
     }
-
-
-
-
-
     // UPDATE PEOPLE CHUNK
     function updatePeopleChunk(currentDistrictCount) {
         var UPD = [];
@@ -2449,14 +2251,9 @@ function campaignStratergyImplementation() {
     }
 }
 
-
-
-
 function politicalCompetition(cpty, redv) {
     // Political Compotition from other parties
-
     var cmpNv = getRandom(5);
-
     if (cmpNv === 1) {
         var cmpName = "Conservative";
     }
@@ -2472,41 +2269,25 @@ function politicalCompetition(cpty, redv) {
     if (cmpNv === 5) {
         var cmpName = "None";
     }
-
-
     if (cmpName === cpty) {
         // var rvetv = (countryInfluence * cpty.lenght)%2;
         return redv; // Return Value Unaffected....Good!!
     }
-
     if (cmpName != cpty) {
-
         if (getRandom(personConversionValueMax) != 2) {
-
             var rvetv = 0;
-
         }
-
         return rvetv; // Stop Conversion, removing reduction value
     }
-
 }
-
-
-
-
-
-
 
 function countryInfluence() {
     // /////////////////////
     // Country Influence
     var cHitFlag = 0;
-
     var C1 = sessionStorage.getItem("c1");
     var C2 = sessionStorage.getItem("c2");
     var C3 = sessionStorage.getItem("c3");
-
     if (C1.length > C2) {
         cHitFlag = C1;
     }
@@ -2516,15 +2297,8 @@ function countryInfluence() {
     if (C3.lenght > C1) {
         cHitFlag = C3;
     }
-
     return cHitFlag;
 }
-
-
-
-
-
-
 //  //////////////////////////////////////////////////////////////////////////
 // POST - ELECTION ENGINE (3)
 // //////////////////////////////////////////////////////////////////////////
@@ -2553,67 +2327,65 @@ function postProcessElection() {
         var postTopParty = postGetTopRankParty("Conservative", postConVotes, "Labour", postLabVotes, "Lib-Dem", postLibDemVotes, "Green", postGreenVotes);
         // Build Output HTML in String
         var postStatsResultLineOut = "";
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"row no-gutters\">";
-        postStatsResultLineOut = postStatsResultLineOut + " <div id=\"results-stats\" class=\"col-12\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + " <!-- // -->";
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"row no-gutters\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + repd;
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "<div class=\"row no-gutters\">";
+        postStatsResultLineOut += " <div id=\"results-stats\" class=\"col-12\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += " <!-- // -->";
+        postStatsResultLineOut += "<div class=\"row no-gutters\">";
+        postStatsResultLineOut += "<div class=\"col-2 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += repd;
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
         // District Name
-        postStatsResultLineOut = postStatsResultLineOut + "<!-- // -->";
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-4 keep-insideBSol nopadding\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + countryDistricts[repd] + " *";
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "<!-- // -->";
+        postStatsResultLineOut += "<div class=\"col-4 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += countryDistricts[repd] + " *";
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
         // CON info
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-2 keep-insideBSol nopadding\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + postConVotes;
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "<div class=\"col-2 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += postConVotes;
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
         // LAB Info
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + postLabVotes;
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "<div class=\"col-1 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += postLabVotes;
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
         // LIB-DEM
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + postLibDemVotes;
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "<div class=\"col-1 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += postLibDemVotes;
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
         // GREEN
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\"col-1 keep-insideBSol nopadding\">";
-        postStatsResultLineOut = postStatsResultLineOut + "<h2>";
-        postStatsResultLineOut = postStatsResultLineOut + postGreenVotes;
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "<div class=\"col-1 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<h2>";
+        postStatsResultLineOut += postGreenVotes;
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
         // STRONGHOLD
-        postStatsResultLineOut = postStatsResultLineOut + "<div class=\col-1 keep-insideBSol nopadding\">";
+        postStatsResultLineOut += "<div class=\col-1 keep-insideBSol nopadding\">";
         // ***************
         // Get Stronghold Colour
         postStrngHoldColor = postGetStrongHoldColor(postTopParty[0]);
-        postStatsResultLineOut = postStatsResultLineOut + "<h2 class=\"" + postStrngHoldColor + "\">";
-        postStatsResultLineOut = postStatsResultLineOut + postTopParty[0].slice(0, 3); // publish stronghold party in District
+        postStatsResultLineOut += "<h2 class=\"" + postStrngHoldColor + "\">";
+        postStatsResultLineOut += postTopParty[0].slice(0, 3); // publish stronghold party in District
         // Record District Hold Count for Each Party
         postDistrictTotalControl(postTopParty[0]);
         // **************
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
-        postStatsResultLineOut = postStatsResultLineOut + "<div id=\"insert-stats\"></div>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
+        postStatsResultLineOut += "<div id=\"insert-stats\"></div>";
+        postStatsResultLineOut += "</div>";
         // postStatsResultLineOut = postStatsResultLineOut + "<!-- // -->";
-        postStatsResultLineOut = postStatsResultLineOut + "</h2>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
-        postStatsResultLineOut = postStatsResultLineOut + "</div>";
-        postStatsResultLineOut = postStatsResultLineOut + "";
-        postStatsResultLineOut = postStatsResultLineOut + "";
+        postStatsResultLineOut += "</h2>";
+        postStatsResultLineOut += "</div>";
+        postStatsResultLineOut += "</div>";
         // Publish line item to webpage
         $('#post-election-final-results-stats').append(postStatsResultLineOut);
         // SPIT OUT PARTY WITH THE MOST DISTRICT CONTROL
@@ -2622,18 +2394,13 @@ function postProcessElection() {
         $('post-election-reporter-domparty-img').html("<h1><img src=\"images/vicky-morse.png\" /></h1>");
         var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
         var domminatPartymessage = "";
-
-        domminatPartymessage = domminatPartymessage + "<h2>The last party with a winning majority was </h2>";
-        domminatPartymessage = domminatPartymessage + "";
-
-        postStatsResultLineOut = postStatsResultLineOut + "";
+        domminatPartymessage += "<h2>The last party with a winning majority was </h2>";
     }
 
     function postGetStrongHoldColor(tp) {
         // GET STRONG HOLD COLOUR
         // tp = stronghold  party name
         var strngHoldColor = "make-people-grey"; //make Default color Grey.. No clear Winner
-
         if (tp === "Conservative") {
             var strngHoldColor = "make-people-blue";
         }
@@ -2646,12 +2413,8 @@ function postProcessElection() {
         if (tp === "Green") {
             var strngHoldColor = "make-people-green";
         }
-
         return strngHoldColor;
     }
-
-
-
 
     function postGetTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET TOP RANK PARTY
@@ -2660,7 +2423,6 @@ function postProcessElection() {
         // This will allow you to find top party in district
         var postTopPartyValue = 0;
         var postTopPartyName = "";
-
         if (pval1 > postTopPartyValue) {
             postTopPartyValue = pval1;
             postTopPartyName = party1Name;
@@ -2680,10 +2442,6 @@ function postProcessElection() {
         return [postTopPartyName, postTopPartyValue];
     }
 
-
-
-
-
     function postGetWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET WINNING RPARTY
         // Check through Parties supplied and find which is top in
@@ -2692,18 +2450,14 @@ function postProcessElection() {
         var winPartyValue = 0;
         var winPartyName = "";
         var hungMessage = "** HUNG PARLIMENT! **"
-
-
         if (pval1 > winPartyValue) {
             winPartyValue = pval1;
             winPartyName = party1Name;
         }
-
         if (pval2 > winPartyValue) {
             winPartyValue = pval2;
             winPartyName = party2Name;
         }
-
         if (pval3 > winPartyValue) {
             winPartyValue = pval3;
             winPartyName = party3Name;
@@ -2713,7 +2467,6 @@ function postProcessElection() {
             winPartyName = party4Name;
         }
         // 
-
         if (winPartyName === party1Name) {
             switch (winPartyValue) {
                 case pval2:
@@ -2785,14 +2538,6 @@ function postProcessElection() {
     //     var pop = getPop.split("#");
     //     return pop[2]; // Return total population volume
     // }
-
-
-
-
-
-
-
-
     function postGetPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
@@ -2815,9 +2560,7 @@ function postProcessElection() {
             // console.log(unpackedPerson[4]); // current party allaiance
             // count up tally
             // test for party allegienc and increment if so!
-
             switch (party) {
-
                 case unpackedPerson[4]:
                     tally++; // add one to party Support
                     break;
@@ -2853,8 +2596,6 @@ function postProcessElection() {
             return;
         }
     }
-
-
     // ///////////////////////////////////////////////////
     // WORKOUT SUPPORT VOTES FOR EACH DISTRICT POST ELECTION
     // Reset Grand Total Votes
@@ -2863,7 +2604,6 @@ function postProcessElection() {
     partyGT.Labour = 0;
     partyGT.LibDem = 0;
     partyGT.Green = 0;
-
     // RESET DISTRICT HOLD TOTAL TO ZERO
     conservativeDistrictHoldTotal = 0;
     labourDistrictHoldTotal = 0;
@@ -2882,13 +2622,9 @@ function postProcessElection() {
     $('#post-election-winning-party').append("<p>The Labour party has secured a majority of " + "<span class=\"circle-dtot\" >" + labourDistrictHoldTotal + "</span>districts!</p>");
     $('#post-election-winning-party').append("<p>The Liberal-Democrat party has secured a majority of " + "<span class=\"circle-dtot\" >" + libDemDistrictHoldTotal + "</span>districts!</p>");
     $('#post-election-winning-party').append("<p>The Green party has secured a majority of " + "<span class=\"circle-dtot\" >" + greenDistrictHoldTotal + "</span>districts!</p>");
-
     var winningPartyName = postGetWinningParty("Conservative", conservativeDistrictHoldTotal, "Labour", labourDistrictHoldTotal, "Lib-Dem", libDemDistrictHoldTotal, "Green", greenDistrictHoldTotal);
     $('#post-election-winning-party').append("<span class=\"sqr-dtot c-name\" >" + winningPartyName[0] + "</span>");
 }
-
-
-
 // Load your Politicians image
 function insertMyPoliticianImage() {
     var mypol = sessionStorage.getItem("myParty");
@@ -2920,30 +2656,20 @@ function backFromPopulusView() {
     window.location.href = "country-districts.html#" + sessionStorage.getItem("CD");
 }
 
-
-
 function restartGame() {
     // RESTART GAME ..JUMP TO MAIN START PAGE
-
     alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
     window.location.href = "index.html";
 }
 
-
-
-
-
-
 function updateCanvassReportAccuracy(resetnow, issue) {
     //  Accuracy Count up if Count Pass Available
     // Accuracy Coutup
-
-    if (sessionStorage.getItem("sHelp") < 0 ) {
+    if (sessionStorage.getItem("sHelp") < 0) {
         //  Is Accuracy count tokens available? NO = Exit
         alert("Sorry out of count-up free pass");
-return;
+        return;
     }
-
     if (resetnow === 1) {
         //Reset All count Values & Exit
         sessionStorage.setItem("cCount", 0); // reset Crime Count
@@ -2952,10 +2678,7 @@ return;
         sessionStorage.setItem("eCount", 0); // employment Count
         sessionStorage.setItem("sCount", 0); // employment sCount
     }
-
-
     switch (issue) {
-
         case "C":
             var count = sessionStorage.getItem("cCount");
             count++;
@@ -2981,36 +2704,19 @@ return;
             count++;
             sessionStorage.setItem("sCount", count);
             break;
-
     }
-
-
 }
 
-
-
-
-
-
-
 function showAccuracyReport() {
-
-
-   
-
     if (sessionStorage.getItem("sHelp") < 1) {
         $("#stats-help-button").hide();
         return;
     }
-
     if (sessionStorage.getItem("sHelp") > 0) {
         alert("(C)rime:" + sessionStorage.getItem("cCount") + " (H)ealth:" + sessionStorage.getItem("hCount") + " (W)ealth:" + sessionStorage.getItem("wCount") + " (E)mployment:" + sessionStorage.getItem("eCount") + " (S)atisfaction:" + sessionStorage.getItem("sCount"));
-
         temp = sessionStorage.getItem("sHelp");
         temp--;
         sessionStorage.setItem("sHelp", temp); // Save depreciated content  
-
-         alert("Remaining Helps:  "+sessionStorage.getItem("sHelp"));
+        alert("Remaining Helps:  " + sessionStorage.getItem("sHelp"));
     }
-
 }

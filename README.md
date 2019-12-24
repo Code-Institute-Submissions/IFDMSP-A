@@ -519,6 +519,10 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 > * There are (25) Districts to canvass. Take the presented data on the "Districts View" with a pinch of salt. In the fog of war and politics, information can not always be assumed as reliable. View the population data to gain a better understanding of your residents and their whims. Each resident has specific characteristics and issues. There can be any volume of residents, from  a coupe of hundred in a district to a few thousand. However each resident has the following information about the,
 
+> ### On every game you will have the assistance of an analyst/statistician, who will help you during your canvassing. However they can only assist you on (3) occasions. A button "Stats Help" will be visible in the "Residents view page" when this this help is available.
+
+* For this reason it is important to scan over each district and get an idea of the size of the population in each. Once you  create your manifesto you cannot change it. In addition by spotting the districts with the largest populous the assistance from the analyst will pay of better. The analyst provides you with the exact "issue count" in each district. this obviously helps you appropriate the correct priority to issues.
+
 > Note: If  you wish to see what would happen with the same data iteratively, simply double tap the "Results screen" and re-run the process. The system will run its algorithm against the last data set used. It's destructive. This means it continually modifies that last data results, feeding it into its input. You cannot go back and make any changes to your political strategy, rather you simply watch the iteration
 
 However if you wish for a new game then of course you can press "Restart Game" button.
