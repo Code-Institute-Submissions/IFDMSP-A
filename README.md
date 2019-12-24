@@ -519,6 +519,10 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 > * There are (25) Districts to canvass. Take the presented data on the "Districts View" with a pinch of salt. In the fog of war and politics, information can not always be assumed as reliable. View the population data to gain a better understanding of your residents and their whims. Each resident has specific characteristics and issues. There can be any volume of residents, from  a coupe of hundred in a district to a few thousand. However each resident has the following information about the,
 
+> Note: If  you wish to see what would happen with the same data iteratively, simply double tap the "Results screen" and re-run the process. The system will run its algorithm against the last data set used. It's destructive. This means it continually modifies that last data results, feeding it into its input. You cannot go back and make any changes to your political strategy, rather you simply watch the iteration
+
+However if you wish for a new game then of course you can press "Restart Game" button.
+
 ># Priorities
 
 * Use your pledge priorities carefully.

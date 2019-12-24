@@ -1,4 +1,6 @@
 // ------- DATA ----------- 
+
+var sHelpMaximum = 3;
 var controlNumb = 1;
 var updatedPeoplePackedList = []; // new updated people array post election engine modificationb
 updatedPeoplePackedList.push("-"); // fill element zero with blank
@@ -717,25 +719,28 @@ function viewDistricts() {
         issuesFlat = QO.join();
         // Now turn each Issue into an array , so we can access them by index
         var ISS = [] = issuesFlat.split(",");
+
         // Get each line of an Issue ready to push to html page
         var l1 = ISS[0];
         var l2 = ISS[1];
         var l3 = ISS[2];
         var l4 = ISS[3];
         var l5 = ISS[4];
-       
+
         // Get each line  Solution
         var s1 = ISS[5];
         var s2 = ISS[6];
         var s3 = ISS[7];
         var s4 = ISS[8];
         var s5 = ISS[9];
+
         // Get 1st Character of Issue, to determine class of issue
         // var aa = l1.slice(0, 2).trim();
         // var bb = l2.slice(0, 2).trim();
         // var cc = l3.slice(0, 2).trim();
         // var dd = l4.slice(0, 2).trim();
         // var ee = l5.slice(0, 2).trim();
+
         var aa = l1.slice(0, 5).trim();
         var bb = l2.slice(0, 5).trim();
         var cc = l3.slice(0, 5).trim();
@@ -743,7 +748,7 @@ function viewDistricts() {
         var ee = l5.slice(0, 5).trim();
 
 
-        console.log("l1"+l1+"="+aa+":"+bb+":"+cc+":"+dd+":"+ee);//VerboseTestPoint TBD********%%%%
+        console.log("l1" + l1 + "=" + aa + ":" + bb + ":" + cc + ":" + dd + ":" + ee); //VerboseTestPoint TBD********%%%%
 
         // Place Values of Issue Volumes in appropriate Variables
         distCrime = (countUpIssues("C", aa, bb, cc, dd, ee));
@@ -917,6 +922,13 @@ function viewPop() {
 
 function loadUpPopulation() {
     // POPULATION TABLE 
+
+    if (sessionStorage.getItem("sHelp") < 1) {
+        // Remove BStatistician Help Button If Help Not Available
+        $('#statistician-help-button').hide();
+    }
+
+
     var cd = sessionStorage.getItem("CD");
     var tableLineout = "";
     var currentDistrict = sessionStorage.getItem("CD");
@@ -964,7 +976,19 @@ function loadUpPopulation() {
     peopleOutputLine = peopleOutputLine + "</div>";
     $("#populus-table").append(peopleOutputLine);
     // ====//
+
+
+
+
+
+
+
+
+
     // CREATE LIST OF RESIDENTS 
+    // Update Accuracy Count of Issues!!
+    updateCanvassReportAccuracy(1, "X"); // Reset All ISsue Count Values
+
     for (let u = 1; u < peopleList.length; u++) {
         var PA = [];
         PA = (peopleList[u].split("/"))
@@ -983,6 +1007,9 @@ function loadUpPopulation() {
         peopleOutputLine = peopleOutputLine + "<div class=\"col-1  keep-insideBSol nopadding\">";
         peopleOutputLine = peopleOutputLine + "<h2>";
         peopleOutputLine = peopleOutputLine + PA[1];
+
+        updateCanvassReportAccuracy(0, PA[1]); // Increase Count of Issue....
+
         peopleOutputLine = peopleOutputLine + "</h2>";
         peopleOutputLine = peopleOutputLine + "</div>";
         // Person Swing
@@ -1027,7 +1054,9 @@ function loadUpPopulation() {
         var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
         sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u + ":", pdat + "~");
     }
+
 }
+
 
 function showCurrentDistrict() {
     // Show current district number
@@ -1227,7 +1256,7 @@ function CreateDistricts() {
             var PersonName = fName + "." + initial + "." + surName;
             // Persons Main Concern
             var pConcernString = "";
-            var pConcern = getRandom(4);
+            var pConcern = getRandom(5);
             switch (pConcern) {
                 case 0:
                     pConcernString = "-";
@@ -1242,6 +1271,9 @@ function CreateDistricts() {
                     pConcernString = "H";
                     break;
                 case 4:
+                    pConcernString = "E";
+                    break;
+                case 5:
                     pConcernString = "S";
                     break;
             }
@@ -1296,6 +1328,7 @@ function resetGame(runProcess) {
     } else {
         // Main Code Here...
         setupGame();
+
         // Set Reset Flag To show Game has been Reset;
         localStorage.setItem("newGame", "1");
     }
@@ -1327,9 +1360,14 @@ function setupGame() {
     // Entry call - Index.html - Reset Game 
     // Create Districts
     // Wipe Away Old Pledges
+
+    sessionStorage.setItem("sHelp", sHelpMaximum); // Reset Stats Help
+
+
     CreateDistricts();
     createEmptyManifesto();
     WipeOutOldDistrictPledges();
+
     // SETUP GAME SESSION VARIABLES AT START
     // ###########################################
     // ###########################################
@@ -2889,4 +2927,90 @@ function restartGame() {
 
     alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
     window.location.href = "index.html";
+}
+
+
+
+
+
+
+function updateCanvassReportAccuracy(resetnow, issue) {
+    //  Accuracy Count up if Count Pass Available
+    // Accuracy Coutup
+
+    if (sessionStorage.getItem("sHelp") < 0 ) {
+        //  Is Accuracy count tokens available? NO = Exit
+        alert("Sorry out of count-up free pass");
+return;
+    }
+
+    if (resetnow === 1) {
+        //Reset All count Values & Exit
+        sessionStorage.setItem("cCount", 0); // reset Crime Count
+        sessionStorage.setItem("hCount", 0); // reset health Count
+        sessionStorage.setItem("wCount", 0); // wealth Count
+        sessionStorage.setItem("eCount", 0); // employment Count
+        sessionStorage.setItem("sCount", 0); // employment sCount
+    }
+
+
+    switch (issue) {
+
+        case "C":
+            var count = sessionStorage.getItem("cCount");
+            count++;
+            sessionStorage.setItem("cCount", count);
+            break;
+        case "H":
+            var count = sessionStorage.getItem("hCount");
+            count++;
+            sessionStorage.setItem("hCount", count);
+            break;
+        case "W":
+            var count = sessionStorage.getItem("wCount");
+            count++;
+            sessionStorage.setItem("wCount", count);
+            break;
+        case "E":
+            var count = sessionStorage.getItem("eCount");
+            count++;
+            sessionStorage.setItem("eCount", count);
+            break;
+        case "S":
+            var count = sessionStorage.getItem("sCount");
+            count++;
+            sessionStorage.setItem("sCount", count);
+            break;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+function showAccuracyReport() {
+
+
+   
+
+    if (sessionStorage.getItem("sHelp") < 1) {
+        $("#stats-help-button").hide();
+        return;
+    }
+
+    if (sessionStorage.getItem("sHelp") > 0) {
+        alert("(C)rime:" + sessionStorage.getItem("cCount") + " (H)ealth:" + sessionStorage.getItem("hCount") + " (W)ealth:" + sessionStorage.getItem("wCount") + " (E)mployment:" + sessionStorage.getItem("eCount") + " (S)atisfaction:" + sessionStorage.getItem("sCount"));
+
+        temp = sessionStorage.getItem("sHelp");
+        temp--;
+        sessionStorage.setItem("sHelp", temp); // Save depreciated content  
+
+         alert("Remaining Helps:  "+sessionStorage.getItem("sHelp"));
+    }
+
 }

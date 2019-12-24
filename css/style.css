@@ -3,7 +3,7 @@
 body {
     /* SETUP VARIABLES */
     /* --main-page-body-color: #202936; */
-    --main-page-body-color: #144B96;
+    --main-page-body-color: rgb(14, 49, 105);
     background-color: var(--main-page-body-color);
     font-family: "Calistoga", "sans-serif";
     --main-bg-color: rgb(37, 37, 107);
@@ -26,10 +26,10 @@ body {
     /* Main Foreground Color */
     --myRed: #E0473A;
     /* Party Colours */
-    --party-labour: rgb(161, 16, 16);
-    --party-conservative: rgb(15, 15, 163);
-    --party-lib-dem: rgb(202, 202, 40);
-    --party-green: rgb(5, 145, 5);
+    --party-labour: rgb(206, 12, 12);
+    --party-conservative: rgb(12, 12, 201);
+    --party-lib-dem: rgb(226, 226, 13);
+    --party-green: rgb(10, 180, 10);
     --party-unknown: grey;
     /* NewsFlash Bar */
     --news-flash-bar: rgb(109, 182, 109);
