@@ -1426,8 +1426,10 @@ $(document).ready(function () {
             createEmptyManifesto();
             window.location = "create-manifesto.html";
         }
+
         // Highlight Selected raw Pledge & Increase Pledge Count
         $(this).first().addClass("selected-from-pledge-pool");
+        
         pcount++;
         // 
         var content = $(this).text()
@@ -1662,11 +1664,12 @@ function loadUpPledgePriorityPage() {
         // 
         pbuttons += "<div class=\"row=\">"
         pbuttons += "<div class=\"col-12\">";
+        
         pbuttons += "<button type=\"button\" onclick=\"setBv(1)\" class=\"btn btn-primary btn-sm\">L</button>";
         pbuttons += "<button type=\"button\" onclick=\"setBv(2)\" class=\"btn btn-warning btn-sm\">M</button>";
         pbuttons += "<button type=\"button\" onclick=\"setBv(3)\" class=\"btn btn-info btn-sm\">H</button>";
         pbuttons += "</div>";
-        pbuttons += +"</div>";
+        pbuttons += "</div>";
         // 
         pbuttons += "</div>";
         pbuttons += "</div>";
@@ -1679,6 +1682,9 @@ function loadUpPledgePriorityPage() {
             $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + PriorityButtonNumberHlt + ":" + pbuttons + '</h2></div>');
         }
     }
+
+
+
     $(document).ready(function () {
         // Manifesto Pledge Priotorization
         // Get Selcted Manifesto Pledge
