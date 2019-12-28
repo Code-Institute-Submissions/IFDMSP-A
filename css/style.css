@@ -60,7 +60,6 @@ body {
     --party-conservative: rgb(20, 20, 170);
     --party-lib-dem: rgb(173, 173, 24);
     --party-green: rgb(9, 128, 9);
-    
     --party-unknown: grey;
     --district-view-background-colour: rgb(92, 109, 92);
     --district-view-tabloid-background: rgb(73, 92, 73);
@@ -337,24 +336,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5rem;
-
+    text-align: left;
     text-shadow: 2px 2px var(--grey-shadow-color);
- 
-}
-
-#global-table>h2 {
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
-}
-
-#global-table>tr {
-    color: var(--flash-colour);
-    background-color: var(--main-page-body-color);
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
 }
 
 .highLight2 {
@@ -370,6 +353,11 @@ body {
     font-size: .75rem;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
+}
+
+.tabloid>.fas {
+    color: var(--title-color);
+    text-shadow: 1px 1px var(--flash-colour);
 }
 
 .dpanel>h3>p {
@@ -417,13 +405,14 @@ body {
 }
 
 .progress {
+    margin-top: 2px;
     background-color: var(--title-color);
     color: var(--main-page-body-color);
-    border-radius: 10px;
+    box-shadow: 4px 4px var(--grey-shadow-color);
 }
 
 .progress>.progress-bar-striped {
-    border-radius: 10px;
+    border-radius: 2px;
     color: var(--main-page-text-color);
     border: 2px solid var(--grey-shadow-color);
 }
@@ -433,14 +422,13 @@ body {
     background-color: var(--district-view-tabloid-background);
     margin-bottom: 10px;
     padding: 10px 10px 10px 10px;
-    
 }
 
-.people-list-format h2{
-font-size: .75rem;
+.people-list-format h2 {
+    font-size: .75rem;
     color: var(--main-page-text-color);
     border: 1px solid var(--flash-colour);
-    text-shadow:2px 2px var(--grey-shadow-color);
+    text-shadow: 2px 2px var(--grey-shadow-color);
 }
 
 .highlight-pbutt {
@@ -467,11 +455,9 @@ font-size: .75rem;
     text-shadow: 2px 2px black;
 } */
 
-.tabloid >.fas >.fa-newspaper {
-
+.tabloid>.fas>.fa-newspaper {
     background-color: var(--grey-shadow-color);
 }
-
 
 /* Highlight district name on district view page */
 
@@ -486,7 +472,6 @@ font-size: .75rem;
     text-shadow: 1px 1px black;
 }
 
-
 /* Highlight district Number on district View Page */
 
 .highlight-district-number {
@@ -499,16 +484,54 @@ font-size: .75rem;
     background-color: var(--myRed);
 }
 
-
-
 /* Manifesto Instructions box */
 
-.manifesto-instructions >h2 {
-
+.manifesto-instructions>h2 {
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: wheat;
     color: var(--main-bg-color);
     text-shadow: 1px 1px white;
     padding: 5px 5px 5px 5px;
 }
+
+.stats-header {
+    margin-top: 10px;
+    color: white;
+}
+
+/* MANIFEST PLEDGE PAGE */
+
+#raw-pledge-pool {
+    color: var(--main-page-text-color);
+    font-size: 1rem;
+}
+
+#raw-pledge-pool h4 {
+    font-size: .75rem;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    background-color: black;
+    text-shadow: 2px 2px var(--grey-shadow-color);
+    box-shadow: 3px 3px var(--grey-shadow-color);
+}
+
+#raw-manifesto-pool {
+    color: var(--main-page-text-color);
+    font-size: 1rem;
+}
+
+#raw-manifesto-pool h4 {
+    font-size: .75rem;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    color: black;
+    background-color: var(--main-page-text-color);
+    text-shadow: 1px 1px var(--grey-shadow-color);
+    box-shadow: 2px 2px var(--grey-shadow-color);
+}
+
+/* #raw-pledge-pool >p >span {
+    color: var(--main-page-text-color);
+    font-size: 1rem;
+} */
