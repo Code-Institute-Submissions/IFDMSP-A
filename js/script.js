@@ -1,4 +1,10 @@
 // ------- DATA ----------- 
+
+
+
+
+
+// -------
 var sHelpMaximum = 3;
 var controlNumb = 1;
 var updatedPeoplePackedList = []; // new updated people array post election engine modificationb
@@ -468,6 +474,39 @@ var gameData = {
 // -------------- -//Functions//
 // ####################################################
 // ####################################################
+
+
+
+// Menu Items List
+function setUpMenus() {
+    var menuItems = ['Instructions', 'Start', 'Economy', 'Districts', 'Residents', 'Manifesto', "Campaign"];
+    var menuLinks = ['instructions.html', 'index.html', 'global-economics.html', 'country-districts.html', 'generate-populus.html', 'create-manifesto.html', 'campaign.html'];
+    var menuFontAwesome = ['<span class="fas fa-book-open">', '<span class="fas fa-sync-alt"></span>', '<span class="fas fa-globe"></span>', '<span class="fas fa-map"></span>', '<span class="fas fa-users"></span>', '<span class="fas fa-scroll">', '<span class="fas fa-running"></span>']
+
+
+    // place in session memory
+    // for (let i = 0; i < menuItems.length; i++) {
+    //     sessionStorage.setItem("menuItems," + i, "" + menuItems[i] + "");
+    // }
+
+
+    for (let x = 0; x < menuItems.length; x++) {
+
+        // var outHtmlString = "<h5><li><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></li></h5>";
+        // var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">"  + menuItems[x] + "</a></li>";
+       
+        var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">" + menuItems[x] + "</a></li>";
+ 
+        $("#burger-menu-items").append(outHtmlString);
+        $("#standard-menu-items").append(outHtmlString);
+
+    }
+
+}
+
+
+
+
 function stateController() {
     // State Controller monitoring (Available buttons etc)
     // Check for double-click to move to top of Global Economy page
@@ -565,20 +604,20 @@ $(document).ready(function () {
     })
 });
 
-function flasher() {
-    // Flash Title!!
-    // alert(flashState);
-    if (flashState === true) {
-        flashState === false;
-        $('.flashIt').addClass('flashNow');
-        return;
-    }
-    if (flashState === false) {
-        flashState === true;
-        $('.flashIt').removeClass('flashNow');
-        return
-    }
-}
+// function flasher() {
+//     // Flash Title!!
+//     // alert(flashState);
+//     if (flashState === true) {
+//         flashState === false;
+//         $('.flashIt').addClass('flashNow');
+//         return;
+//     }
+//     if (flashState === false) {
+//         flashState === true;
+//         $('.flashIt').removeClass('flashNow');
+//         return
+//     }
+// }
 
 function flashHand() {
     // Flash HAND !!
@@ -661,6 +700,7 @@ function grabThreeCountries() {
     var first = c1.toString();
     var second = c2.toString();
     var third = c3.toString();
+
     if (cCp == noOfCountriesMax) {
         $("#" + first).children('td ,h3').first().addClass('highLight2');
         $("#" + second).children('td ,h3').first().addClass('highLight2');
@@ -746,7 +786,7 @@ function viewDistricts() {
         outputDistrictHtml += "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
         // Tabloid Banner
         outputDistrictHtml += "<div class=\"tabloid\">";
-        outputDistrictHtml += "<span class=\"far fa-newspaper\"></span>" + " NEWS FLASH!!";
+        outputDistrictHtml += "<span class=\"fas fa-newspaper\"></span>" + " NEWS FLASH!!";
         // <!-- Promoted Manifesto Pledges -->
         outputDistrictHtml += "<div class=\"row\">";
         outputDistrictHtml += "<div id=\"promoted-pledges\" class=\"col-12\">";
@@ -777,7 +817,7 @@ function viewDistricts() {
         outputDistrictHtml += "<p>" + l3 + "</p>";
         outputDistrictHtml += "<p>" + l4 + "</p>";
         outputDistrictHtml += "<p>" + l5 + "</p>";
-        outputDistrictHtml += "<p class=\"point-up\"><span class=\"far fa-hand-point-up \"></span>\ Canvass Rept</p>";
+        outputDistrictHtml += "<p class=\"point-up\"><span class=\"fas fa-hand-point-up \"></span>\ Canvass Rept</p>";
         outputDistrictHtml += "<div class=\"anw\">";
         outputDistrictHtml += "<p id=\"solutions1\" class=\"answers\">" + s1 + "</p>";
         outputDistrictHtml += "<p id=\"solutions2\" class=\"answers\">" + s2 + "</p>";
@@ -1076,6 +1116,7 @@ function CreateDistricts() {
         eID = "E" + "," + i;
         // create district ID... for results
         rID = "R" + "," + i;
+
         // Create Random Problems & Solutions For Every Area
         // PROB1
         var rnum = getRandom(noOfProblems);
@@ -1097,11 +1138,14 @@ function CreateDistricts() {
         var rnum = getRandom(noOfProblems);
         var dpe = districtProblems[rnum];
         var spe = districtSolutions[rnum];
+
         // Create Problem and Solution as a Packed String
         var PRB = dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
         var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
+
         // Generate Population Count in District
         var dPop = ((Math.floor(Math.random() * noOfDistricts)) + 1) * 100;
+
         // Create people for District
         var people = "[";
         for (let i = 1; i < dPop; i++) {
@@ -1209,9 +1253,15 @@ function CreateDistricts() {
             var initial = [initials[getRandom(20)]];
             var surName = [sNames[getRandom(29)]];
             var PersonName = fName + "." + initial + "." + surName;
-            // Persons Main Concern
+
+
+
+            // Persons Main Concern  *******##### MAIN-CONCERNS
             var pConcernString = "";
-            var pConcern = getRandom(5);
+            var pConcernRN = getRandom(5);
+
+            pConcern = globalTrendImpact(pConcernRN); // Get global influence &*&
+
             switch (pConcern) {
                 case 0:
                     pConcernString = "-";
@@ -1429,7 +1479,7 @@ $(document).ready(function () {
 
         // Highlight Selected raw Pledge & Increase Pledge Count
         $(this).first().addClass("selected-from-pledge-pool");
-        
+
         pcount++;
         // 
         var content = $(this).text()
@@ -1664,7 +1714,7 @@ function loadUpPledgePriorityPage() {
         // 
         pbuttons += "<div class=\"row=\">"
         pbuttons += "<div class=\"col-12\">";
-        
+
         pbuttons += "<button type=\"button\" onclick=\"setBv(1)\" class=\"btn btn-primary btn-sm\">L</button>";
         pbuttons += "<button type=\"button\" onclick=\"setBv(2)\" class=\"btn btn-warning btn-sm\">M</button>";
         pbuttons += "<button type=\"button\" onclick=\"setBv(3)\" class=\"btn btn-info btn-sm\">H</button>";
@@ -2726,3 +2776,114 @@ function showAccuracyReport() {
         alert("Remaining Helps:  " + sessionStorage.getItem("sHelp"));
     }
 }
+
+
+function didYourPartyWin() {
+    if (sessionStorage.getItem("myParty") === winPartyName) {
+
+        window.location.href = "winner-page.html";
+
+        var winP = sessionStorage.getItem("winingP");
+        var winN = sessionStorage.getItem("winingP");
+
+        var temp1 = "<img src=\"" + winP + "\"/>";
+        var temp2 = "<h2>" + winN + "</h2>";
+        $("#your-party").append(temp1);
+        $("#your-party").append(temp2);
+
+    }
+}
+
+
+function getPartyImage() {
+    // Get Your Party Politician Immage
+    party = sessionStorage.getItem("myParty");
+
+    var fn = "";
+    var nm = "";
+
+    switch (party) {
+
+        case 'Conservative':
+            fn = "cara-leyton.png";
+            nm = "Cara Leyton";
+            break;
+
+        case 'Labour':
+            fn = "chris-wells.png";
+            nm = "Chris-Wells";
+            break;
+
+        case 'Lib-Dem':
+            fn = "christian-bell.png";
+            nm = "Christian Bell";
+            break;
+
+        case 'Green':
+            fn = "julie-greenwood.png";
+            nm = "Julie Greenwood"
+            break;
+    }
+
+    sessionStorage.setItem("winingP", fn);
+    sessionStorage.setItem("winingN", nm);
+    return fn; // Return filename
+}
+
+
+
+
+
+function globalTrendImpact(cnumb) {
+    // GLOBAL IMPACT ON ISSUES
+    var topup = 60;
+    var dc = sessionStorage.getItem("decCount");
+    if (dc === null || dc === undefined) {
+        dc = topup;
+        sessionStorage.setItem("decCount", topup);
+    }
+
+
+
+    dc--;
+    if (dc < 1) {
+        dc = topup;
+
+    }
+
+    var rnumb = cnumb;
+
+    sessionStorage.setItem("decCount", dc);
+
+    var today = new Date();
+    var h = today.getHours;
+    var m = today.getMinutes;
+    var s = today.getSeconds;
+
+    if ((s >= 0 && s <= 15) && cnumb === 1) {
+        rnumb = 1;
+        return rnumb;
+    }
+
+    if ((s >= 20 && s <= 30) && cnumb === 2) {
+        rnumb = 2;
+        return rnumb;
+    }
+
+    if ((s >= 35 && s <= 45) && cnumb === 3) {
+        rnumb = 3;
+        return rnumb;
+    }
+
+    if ((s >= 50 && s <= 59) && cnumb === 4) {
+        rnumb = 4;
+        return rnumb;
+    }
+
+    return rnumb;
+}
+
+
+
+// console.log(cnumb);
+// console.log(sessionStorage.getItem("c1") + ":" + sessionStorage.getItem("c2") + ":" + sessionStorage.getItem("c3"));

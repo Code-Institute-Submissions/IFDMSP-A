@@ -15,19 +15,17 @@
     <!-- Load Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
 
-
-
-
-
+ 
     <!-- Load Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+
 </head>
 
 <body>
     <div class="container-fluid">
-        <!-- Main Container -->
-        <!-- Burgur Menu -->
+       
+        <!-- Burger Menu -->
         <div class="row burger">
             <div class="col-12  d-md-none nopadding ">
                 <div class="pos-f-t ">
@@ -38,71 +36,41 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="point-hand">
-                            <span class="far fa-hand-point-left"></span>
+                            <span class="fas fa-hand-point-left"></span>
                         </div>
                     </nav>
+
+
                     <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-blue p-2 ">
-                            <ul>
-                                <li><a class="nav-item" href="index.html"><span class="fas fa-sync-alt"></span> A -
-                                        START HERE</a>
-                                </li>
-                                <li><a class="nav-item" href="global-economics.html"><span class="fas fa-globe"></span>
-                                        B1-Global Economy</a>
-                                </li>
-                                <li><a class="nav-item" href="country-districts.html"><span class="fas fa-map"></span>
-                                        B2-View District</a></li>
-                                <li><a class="nav-item" href="generate-populus.html"><span class="fas fa-users"></span>
-                                            B3-Population</a></li>
-                                <li><a class="nav-item" href="create-manifesto.html"><span class="fas fa-scroll"></span>
-                                        B4-Manifesto</a></li>
-                                <li><a class="nav-item" href="campaign.html"><span class="fas fa-running"></span>C -
-                                        CAMPAIGN</a></li>
+                            <ul id="burger-menu-items">
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
+
+
         <!-- Navbar Normal -->
         <div class="row no-gutters">
+
             <div class="d-none d-md-inline">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">A - START HERE</a>
-                    </li>
-                    <div class="point-hand">
-                        <span class="far fa-hand-point-left"></span>
-                    </div>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">B - Setup Game</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="global-economics.html"> <span class="fas fa-globe"></span> 1
-                                - Global Economy</a>
-                            <a class="dropdown-item" href="country-districts.html"> <span class="fas fa-map"></span> 2 -
-                                View District</a>
-                            <a class="dropdown-item" href="generate-populus.html"><span class="fas fa-users"></span> 3
-                                    - Population</a>
-                            <a class="dropdown-item" href="create-manifesto.html"><span class="fas fa-scroll"></span> 4
-                                - Manifesto</a>
-                        </div>
-                    <li class="nav-item">
-                        <a class="nav-link" href="campaign.html">C - CAMPAIGN </a>
-                    </li>
-                    </li>
+                <ul id="standard-menu-items">
                 </ul>
             </div>
-        </div>
 
+        </div>
 
 
 
         <!-- Title Bar -->
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-12 text-center">
                 <div class="title-block main-title">
-                    <h1 class="flashIt">VIEW DISTRICTS</h1>
+                    <h1 class="flashNow">VIEW DISTRICTS</h1>
                 </div>
             </div>
         </div>
@@ -110,8 +78,8 @@
 
 
         <!-- Create Manifesto Button -->
-        <!-- This button is auto-hidden by code once you have sucessfully created -->
-        <!-- a manifesto -->
+        <!-- This button is auto-hidden by code once you have successfully created a manifesto-->
+       
         <div class="row">
             <div class="col-12">
                 <div id="create-manifesto-button" class=" w-100 c-m-b-a text-center">
@@ -180,7 +148,13 @@
 
 
         <script>
-         
+            $(document).ready(function () {
+                setUpMenus();
+            })
+        </script>
+
+
+        <script>
             if (testingMode == false) {
                 $(".answers").addClass("hide-solutions");
 

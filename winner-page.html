@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
@@ -87,12 +89,57 @@
                 </ul>
             </div>
         </div>
+
+
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
                 <div class="title-block main-title">
                     <h1>ELECTION WINNER</h1>
                 </div>
+
+
+                <div class=row>
+
+                    <div class="col-12">
+
+                        <div id="your-party">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- GOTO MAIN PAGE TO RESTART AGAIN -->
+                <div class="row">
+                    <div id="results-button" class="col-12 results-buttons-fmt ">
+                        <!-- <h3> -->
+                        <a href="#" class="btn btn-primary btn-lg " w-100 role="button" onclick="restartGame()"
+                            aria-pressed="true">RESTART GAME!
+                        </a>
+                        <!-- </h3> -->
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <!-- Footer -->
                 <section>
                     <div class="footer">
@@ -145,6 +192,12 @@
                 stateController();
             }, 10)
         })
+
+
+ 
+
+
     </script>
 </body>
+
 </html>
