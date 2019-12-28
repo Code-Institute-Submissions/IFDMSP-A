@@ -544,3 +544,10 @@ body {
     background-color:var(--flash-colour);
     color: black;
 }
+/* Hide the create manifesto button from page once completed */
+
+/* So it does not show on page refresh */
+
+.remove-c-m-b-a {
+    display: none;
+}
