@@ -541,13 +541,52 @@ body {
 } */
 
 .highlight-pbutt {
-    background-color:var(--flash-colour);
+    background-color: var(--flash-colour);
     color: black;
 }
+
+.highlight-district-number {
+    color: var(--flash-colour);
+    background-color: yellow;
+}
+
 /* Hide the create manifesto button from page once completed */
 
 /* So it does not show on page refresh */
 
 .remove-c-m-b-a {
     display: none;
+}
+
+#number-of-high-pledges-instructions>h3 {
+    color: var(--main-page-text-color);
+}
+
+#manifesto-pledges {
+    color: var(--main-page-text-color);
+    background-color: black;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 2px 2px var(--grey-shadow-color);
+}
+
+#manifesto-pledges>h2 {
+    font-size: 1rem;
+}
+
+.mfi>h2 {
+    font-size: 1rem;
+}
+
+#pledge-priority {
+    border-radius: 10px;
+    background-color: var(--main-page-text-color);
+    font-size: 1rem;
+}
+
+#pledge-priority >h2 {
+   color: white;
+   text-shadow: 2px 2px  var(--grey-shadow-color);
+   font-size: 1.5rem;
 }
