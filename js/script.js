@@ -1422,11 +1422,15 @@ function createEmptyManifesto() {
     alert("Blank Manifesto Created!");
 }
 
+
+
 function resetManifesto() {
     // Reset Manifesto
     createEmptyManifesto();
     window.location = "create-manifesto.html";
 }
+
+
 // Loadup Manifesto Page
 function loadUpManifestoPage() {
     for (let i = 1; i < noOfProblems + 1; i++) {
@@ -1437,10 +1441,13 @@ function loadUpManifestoPage() {
         $('#raw-manifesto-pool').append("<div class=\"raw-manifesto-item-" + i + "\"><h4><p class=\"keep-insideBSol pledge-plank\">" + i + ": " + sessionStorage.getItem("M," + [i]) + "<p></h4></div>");
     }
     // Add Save Button
-    $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-success  w-100 manifesto-save-button general-buttons-fmt\">Save</button>");
+    $('#raw-manifesto-pool').append("<button type=\"button\"  onclick='saveManifesto()' class=\"btn btn-success   manifesto-save-button general-buttons-fmt\">Save</button>");
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
+
+
+
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1463,6 +1470,8 @@ function saveManifesto() {
     sessionStorage.setItem("create-manifesto-page-authorised", false);
     window.location = "country-districts.html";
 }
+
+
 $(document).ready(function () {
     // Hightlight  Pledges in raw pledge pool
     $("#raw-pledge-pool p").click(function () {
@@ -1488,6 +1497,8 @@ $(document).ready(function () {
         $(this).hide("slow");
     });
 });
+
+
 
 function deselectAllPledges() {
     // Deselect All Pledges
@@ -1740,7 +1751,7 @@ function loadUpPledgePriorityPage() {
         // Get Selcted Manifesto Pledge
         $('#manifesto-pledge-item ,.mfi').click(function () {
             removeButtonArrayHighlight();
-            var result = $(this).attr('id');
+            var result = $(this).attr('id');// get pledge ID clicked
             // alert(result);
             // Show number of "High" Pledges remaining
             showHighPledgesRemaining();

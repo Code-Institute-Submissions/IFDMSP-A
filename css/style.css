@@ -535,3 +535,12 @@ body {
     color: var(--main-page-text-color);
     font-size: 1rem;
 } */
+
+/* .un-addressed-issue-flasher {
+    color: black;
+} */
+
+.highlight-pbutt {
+    background-color:var(--flash-colour);
+    color: black;
+}
