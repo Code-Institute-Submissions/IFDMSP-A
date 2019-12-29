@@ -22,7 +22,7 @@
 <body>
     <div class="container-fluid">
         <!-- Main Container -->
-        <!-- Burgur Menu -->
+        <!-- Burger Menu -->
         <div class="row burger">
             <div class="col-12  d-md-none nopadding ">
                 <div class="pos-f-t ">
@@ -33,62 +33,22 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="point-hand">
-                            <span class="far fa-hand-point-left"></span>
+                            <span class="fas fa-hand-point-left"></span>
                         </div>
                     </nav>
+
+
                     <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-blue p-2 ">
-                            <ul>
-                                <li><a class="nav-item" href="index.html"><span class="fas fa-sync-alt"></span> A -
-                                        START HERE</a>
-                                </li>
-                                <li><a class="nav-item" href="global-economics.html"><span class="fas fa-globe"></span>
-                                        B1-Global Economy</a>
-                                </li>
-                                <li><a class="nav-item" href="country-districts.html"><span class="fas fa-map"></span>
-                                        B2-View District</a></li>
-                                <li><a class="nav-item" href="generate-populus.html"><span class="fas fa-users"></span>
-                                            B3-Population</a></li>
-                                <li><a class="nav-item" href="create-manifesto.html"><span class="fas fa-scroll"></span>
-                                        B4-Manifesto</a></li>
-                                <li><a class="nav-item" href="campaign.html"><span class="fas fa-running"></span>C -
-                                        CAMPAIGN</a></li>
+                            <ul id="burger-menu-items">
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- Navbar Normal -->
-        <div class="row no-gutters">
-            <div class="d-none d-md-inline">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">A - START HERE</a>
-                    </li>
-                    <div class="point-hand">
-                        <span class="far fa-hand-point-left"></span>
-                    </div>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">B - Setup Game</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="global-economics.html"> <span class="fas fa-globe"></span> 1
-                                - Global Economy</a>
-                            <a class="dropdown-item" href="country-districts.html"> <span class="fas fa-map"></span> 2 -
-                                View District</a>
-                            <a class="dropdown-item" href="generate-populus.html"><span class="fas fa-users"></span> 3
-                                    - Population</a>
-                            <a class="dropdown-item" href="create-manifesto.html"><span class="fas fa-scroll"></span> 4
-                                - Manifesto</a>
-                        </div>
-                    <li class="nav-item">
-                        <a class="nav-link" href="campaign.html">C - CAMPAIGN </a>
-                    </li>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
@@ -110,14 +70,14 @@
 
                 <!-- Reporter -->
                 <div class="row">
-                    <div id="reporter-politician" class="col-6  profile-shot">
+                    <div id="reporter" class="col-6  profile-shot">
                         <h3>Vicky Morse [BBC] -Presenter
                             <img src="images/vicky-morse.png" />
                         </h3>
                     </div>
                     <!-- My Politician -->
                     <div id="my-politician" class="col-6 profile-shot">
-                        <h3>Paul Moss - INDIE Stats Analyst
+                        <h3>Paul Moss - Stats Analyst
                             <img src="images/paul-moss.png" />
                         </h3>
                     </div>
@@ -135,6 +95,7 @@
                         <h3></h3>
                     </div>
                 </div>
+
                 <div class="row">
                     <div id="results-button" class="col-12 results-buttons-fmt ">
                         <!-- <h3> -->
@@ -147,17 +108,15 @@
 
                 <!-- Pre-Election Note -->
                 <div class="row">
-                    <div class="col-12">
+                    <div id="pre-election-title" class="col-12">
                         <h1>PRE-ELECTION STATS</h1>
                     </div>
                 </div>
-                <!-- Separating Line -->
-
 
 
 
                 <!-- TITLE BAR FOR STATS DATA -->
-                <div class="row no-gutters">
+                <div id="t-stats" class="row no-gutters">
                     <div id="results-stats" class="col-12 keep-insideBSol">
                         <h2>
                             <!-- // -->
@@ -267,12 +226,12 @@
 
 
 
-                <!-- Pre-Election Note -->
+
                 <div class="row">
-                    <div class="col-12">
+                    <div id="is-title" class="col-12">
                         <h1>
-                            <div id="\working-cog\"><span class="fas fa-cog c-name "></span></div> IMPLEMENT CAMPAIGN
-                            STRATERGY
+                            <div id="\working-cog\"><span class="fas fa-cog c-name "></span></div>
+                            IMPLEMENT CAMPAIGN STRATEGY
                         </h1>
                     </div>
                 </div>
@@ -285,7 +244,7 @@
 
                         <div id="conversions">
                             <ul>
-                         
+
                             </ul>
                         </div>
                     </div>
@@ -294,7 +253,6 @@
 
 
                 <div class="row no-gutters">
-
 
                     <div class="col-6 keep-insideBSol  nopadding">
                         <h4>
@@ -310,20 +268,14 @@
                         </h4>
                     </div>
 
-
-
-
                     <!-- Image of Your Party Leader -->
                     <div class="col-6 text-center nopadding keep-insideBSol">
-
                         <ul>
                             <li>
                                 <div id="my-party-leader"></div>
                             </li>
                         </ul>
-
                     </div>
-
 
                 </div>
 
@@ -368,7 +320,7 @@
                 <!-- Pre-Election Note -->
                 <div class="row">
                     <div class="col-12">
-                        <h1>POST-ELECTION STATS</h1>
+                        <h1>POST ELECTION STATS</h1>
                     </div>
                 </div>
 
@@ -469,16 +421,16 @@
 
 
 
-<!-- GOTO MAIN PAGE TO RESTART AGAIN -->
+                <!-- GOTO MAIN PAGE TO RESTART AGAIN -->
                 <div class="row">
-                        <div id="results-button" class="col-12 results-buttons-fmt ">
-                            <!-- <h3> -->
-                            <a href="#" class="btn btn-primary btn-lg " w-100 role="button"
-                                onclick="restartGame()" aria-pressed="true">RESTART GAME!
-                            </a>
-                            <!-- </h3> -->
-                        </div>
+                    <div id="results-button" class="col-12 results-buttons-fmt ">
+                        <!-- <h3> -->
+                        <a href="#" class="btn btn-primary btn-lg " w-100 role="button" onclick="restartGame()"
+                            aria-pressed="true">RESTART GAME!
+                        </a>
+                        <!-- </h3> -->
                     </div>
+                </div>
 
 
 
@@ -490,21 +442,22 @@
                 <!-- Footer -->
                 <section>
                     <div class="footer">
-                        <h6>Interactive Frontend Developement MSP2, (c) 2019 by Clement Ofoedu</h6>
+                        <h6>Interactive Frontend Development MSP2, (c) 2019 by Clement Ofoedu</h6>
+                        <!--  Note this  should be remove once game is completed -->
+                        <!-- For Testing Purposes Only -->
+                        <ul>
+                            <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
+                            <li class="list-item-bottom"><a href="global-economics.html">|Global Economy</a></li>
+                            <li class="list-item-bottom"><a href="country-districts.html">|Country District</a></li>
+                            <li class="list-item-bottom"><a href="generate-populus.html">|View Population</a></li>
+                            <li class="list-item-bottom"><a href="create-manifesto.html">|Create Manifesto</a></li>
+                            <li class="list-item-bottom"><a href="pledge-priority.html">|Prioritize Pledges</a></li>
+                            <li class="list-item-bottom"><a href="election-day.html">|Election Results</a></li>
+                            <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a></li>
+                        </ul>
                     </div>
-                    <!--  Note this  should be remove once game is completed -->
-                    <!-- For Testing Purposes Only -->
-                    <ul>
-                        <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
-                        <li class="list-item-bottom"><a href="global-economics.html">|Global Economy</a></li>
-                        <li class="list-item-bottom"><a href="country-districts.html">|Country District</a></li>
-                        <li class="list-item-bottom"><a href="generate-populus.html">|View Population</a></li>
-                        <li class="list-item-bottom"><a href="create-manifesto.html">|Create Manifesto</a></li>
-                        <li class="list-item-bottom"><a href="pledge-prioritize.html">|Prioritize Pledges</a></li>
-                        <li class="list-item-bottom"><a href="election-day.html">|Election Results</a></li>
-                        <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a></li>
-                    </ul>
                 </section>
+                <!-- End of container -->
             </div>
         </div>
     </div>
@@ -514,6 +467,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script>
+        $(document).ready(function () {
+            setUpMenus();
+        })
+
+
+
         $(document).ready(function () {
             //  Check a Party is selected or jump back to main screen
             //  Until a Political Party has been selected
