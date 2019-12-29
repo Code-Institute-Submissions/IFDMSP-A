@@ -251,8 +251,9 @@ body {
 
 #g-gen-button {
     padding-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -20px
+    /* margin-left: auto; */
+    /* margin-right: auto; */
 }
 
 #reset-game-button {
@@ -278,6 +279,11 @@ body {
 .fas {
     font-size: 2rem;
 }
+
+span >fas >fa-award{
+    font-size: 3rem;
+}
+
 
 .ribbon>h1>.fa-award {
     font-size: 3rem;
@@ -319,6 +325,11 @@ body {
     margin-bottom: 10px;
     background-color: black;
     font-size: 2rem;
+}
+
+
+.global-ecom-button-hide {
+    display: none;
 }
 
 /* GLOBAL ICON SPHERE */
@@ -614,9 +625,16 @@ body {
 
 }
 
-.general-buttons-fmt{
+/* .general-buttons-fmt {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    margin-left: 2px;
 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 4px;
+    border: 1px solid;
+    
+    text-shadow: 1px 1px rgb(156, 148, 148);
+} */
 
-}
+

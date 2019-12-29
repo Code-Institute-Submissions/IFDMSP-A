@@ -521,15 +521,23 @@ function stateController() {
         window.location.href = "country-districts.html";
         return;
     });
+
+
+
     // Check if to display "jump to Global Economy" Button
     // After Party has been selected
     var picked = sessionStorage.getItem("myPolitician");
-    if (picked === null) {
+
+
+    if ( picked === null) {
+    //    console.log("kkk"); 
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
         return;
     }
+
     if (picked !== null) {
+        
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
         changeRibbonColour();
@@ -1325,7 +1333,8 @@ function resetGame(runProcess) {
     if (localStorage.getItem("newGame") === "1") {
         // Do not Reset again
         return;
-    } else {
+    } 
+    else {
         // Main Code Here...
         setupGame();
         // Set Reset Flag To show Game has been Reset;
@@ -1339,6 +1348,7 @@ function resetGame(runProcess) {
     pblineValue[5] = "L";
     pblineValue[6] = "L";
     pblineValue[7] = "L";
+
     for (let i = 1; i < noOfDistricts; i++) {
         // RESET ALL DISTRICT PLEDGES TO LOW AT START
         sessionStorage.setItem("PBL" + i, "L"); // Variable Key
@@ -1369,6 +1379,7 @@ function setupGame() {
     sessionStorage.setItem("global-economy-page-authorised", true);
     sessionStorage.setItem("view-populus-page-authorised", true);
     sessionStorage.setItem("pledge-priority-page-authorised", true);
+
     sessionStorage.setItem("generate-populus-page-authorised", true);
     sessionStorage.setItem("country-districts-page-authorised", true);
     sessionStorage.setItem("create-manifesto-page-authorised", true);
