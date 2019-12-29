@@ -612,20 +612,20 @@ $(document).ready(function () {
     })
 });
 
-// function flasher() {
-//     // Flash Title!!
-//     // alert(flashState);
-//     if (flashState === true) {
-//         flashState === false;
-//         $('.flashIt').addClass('flashNow');
-//         return;
-//     }
-//     if (flashState === false) {
-//         flashState === true;
-//         $('.flashIt').removeClass('flashNow');
-//         return
-//     }
-// }
+function flasher() {
+    // Flash Title!!
+    // alert(flashState);
+    if (flashState === true) {
+        flashState === false;
+        $('.flashIt').addClass('flashNow');
+        return;
+    }
+    if (flashState === false) {
+        flashState === true;
+        $('.flashIt').removeClass('flashNow');
+        return
+    }
+}
 
 function flashHand() {
     // Flash HAND !!
