@@ -704,7 +704,7 @@ span>fas>fa-award {
 .card-body >p{
 
     color: var(--main-page-body-color);
-    
+
 }
 
 
@@ -799,4 +799,24 @@ span>fas>fa-award {
 
 #current-district {
     color: pink;
+}
+
+.instructions ,h5{
+
+    font-size: 1rem;
+    text-align: justify;
+    color: var(--main-page-text-color);
+}
+
+#instruction-insert >ul {
+    list-style: none;
+}
+
+#instruction-insert ,li {
+
+    list-style: none;
+margin-bottom: 10px;
+margin-top: 10px;
+text-align: justify;
+
 }

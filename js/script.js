@@ -494,9 +494,9 @@ function setUpMenus() {
 
         // var outHtmlString = "<h5><li><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></li></h5>";
         // var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">"  + menuItems[x] + "</a></li>";
-       
+
         var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">" + menuItems[x] + "</a></li>";
- 
+
         $("#burger-menu-items").append(outHtmlString);
         $("#standard-menu-items").append(outHtmlString);
 
@@ -529,15 +529,15 @@ function stateController() {
     var picked = sessionStorage.getItem("myPolitician");
 
 
-    if ( picked === null) {
-    //    console.log("kkk"); 
+    if (picked === null) {
+        //    console.log("kkk"); 
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
         return;
     }
 
     if (picked !== null) {
-        
+
         $('#g-gen-button').addClass('global-ecom-button-show');
         $('#g-gen-button').removeClass('global-ecom-button-hide');
         changeRibbonColour();
@@ -1333,8 +1333,7 @@ function resetGame(runProcess) {
     if (localStorage.getItem("newGame") === "1") {
         // Do not Reset again
         return;
-    } 
-    else {
+    } else {
         // Main Code Here...
         setupGame();
         // Set Reset Flag To show Game has been Reset;
@@ -1762,7 +1761,7 @@ function loadUpPledgePriorityPage() {
         // Get Selcted Manifesto Pledge
         $('#manifesto-pledge-item ,.mfi').click(function () {
             removeButtonArrayHighlight();
-            var result = $(this).attr('id');// get pledge ID clicked
+            var result = $(this).attr('id'); // get pledge ID clicked
             // alert(result);
             // Show number of "High" Pledges remaining
             showHighPledgesRemaining();
@@ -2907,5 +2906,67 @@ function globalTrendImpact(cnumb) {
 
 
 
-// console.log(cnumb);
-// console.log(sessionStorage.getItem("c1") + ":" + sessionStorage.getItem("c2") + ":" + sessionStorage.getItem("c3"));
+function loadUpInstructions() {
+
+
+    // LOADUP INSTRUCTIONS
+    var instructions = [
+        "\"ELECTION-FEVER\" is a strategy game. The objective is to win the general election for your chosen party, by promoting your manifesto in 25 districts, securing voters from each. ",
+
+"1. LAUNCH GAME",
+"2. SELECT POLITICIAN",
+"- This will align you to a party, also setting your party ribbon colour",
+"3. CREATE GLOBAL ECONOMY",
+"- This will process 195 countries, randomly selects 3 from which it will derive value used in the election engine algorithm.",
+"4. REVIEW DISTRICTS",
+"- Spend most of your time here!",
+"- Do not take the presented data as totally accurate , they come from media polls (which we know in the fog of politics, can be frequently inaccurate). Rather view the \"Residents\" information directly to decide on your pledge approach.",
+"- Create your \"MANIFESTO\" From (25) Available Pledges in 5 categories",
+"- Enter \"Pledges\" screen & prioritize your pledges.",
+
+"5. CREATE MANIFESTO",
+"- You must select (7) Pledges to create your manifesto.",
+
+"6. PRIORITIZE PLEDGES",
+"- Prioritize your pledges per district.",
+"- Options are L = Low focus /  M = Med focus /  H = High focus",
+"- Note: Only two ('H') are available for use in each district. These essentially are your major focus and drive on a particular pledge message to the residents. Choose wisely!)",
+
+"7. ENTER CAMPAIGN",
+"- Warning: Once you pass this stage you cannot go back and make any changes to your campaign!",
+
+"8. VIEW RESULTS",
+"- On this page press the (3) buttons in sequence to view",
+"1. The political state before election day",
+"2. The effect of your political campaign",
+"3. The changes post election day",
+
+
+        // "Start by selecting the party you wish represent. The ribbon will change to your party's color, and you will assume the name of the top politician for the party",
+        // "Press the \"CREATE ECONOMY\" button to progress",
+        // "The sytem will then move to the \"global-economy page\". It will process 195 countries , selecting 3 of which it will use its economic statistics to mix with the game algorithm",
+        // "Press the \"DISTRICTS\" button to move onto the districts view page. This is the page from which you will carry most of your analysis and campaign startergy",
+        // "Each district contains a number of residents, from a few hundred to a few thousands. And like all good residents, each have some charesteristics. These are [ROLL NUMBER],[MAIN-ISSUE OF CONCERN],[NAME],[CONVERSION VALUE],[PARTY SUPPORTED]",
+
+
+
+
+
+    ];
+
+
+
+    var outLineStringBookendStart = "<ul>";
+    var outLineStringBookendEnd = "</ul>";
+
+    $("#instruction-insert").append(outLineStringBookendStart);
+
+    for (let i = 0; i < instructions.length; i++) {
+        $("#instruction-insert").append("<li>" + instructions[i] + "</li>");
+    }
+
+    $("#instruction-insert").append(outLineStringBookendEnd);
+
+
+
+}
