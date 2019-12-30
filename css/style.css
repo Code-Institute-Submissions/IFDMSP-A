@@ -701,6 +701,14 @@ span>fas>fa-award {
   
 } */
 
+.card-body >p{
+
+    color: var(--main-page-body-color);
+    
+}
+
+
+
 #converts {
     background-color: var(--title-color);
     text-align: left;
