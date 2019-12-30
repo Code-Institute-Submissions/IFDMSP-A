@@ -20,17 +20,11 @@
 </head>
 
 <body>
-
     <div class="container-fluid">
-
-
-
-
         <!-- Burger Menu -->
         <div class="row burger">
             <div class="col-12  d-md-none nopadding ">
                 <div class="pos-f-t ">
-
                     <nav class="navbar navbar-dark bg-blue">
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
@@ -41,19 +35,15 @@
                             <span class="fas fa-hand-point-left"></span>
                         </div>
                     </nav>
-
                     <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-blue p-2 ">
                             <ul id="burger-menu-items">
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
         <!-- Navbar Normal -->
         <div class="row no-gutters">
             <div class="d-none d-md-inline">
@@ -61,17 +51,12 @@
                 </ul>
             </div>
         </div>
-
-
-
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
-
                 <div class="title-block main-title">
                     <h1>VIEW GLOBAL ECONOMY</h1>
                 </div>
-
                 <div class="global-economy-intro-message">
                     <h2 class="readThis .keep-insideBSol">
                         The system will pick at random 3
@@ -105,55 +90,27 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Table section
-                <div class="row">
-                    <div class="col-12 text-center stats-header">
-                            <table id="global-table"> 
-                                <h2>
-                                <tr>Country / </tr>
-                                <tr>GDP -(B) / </tr>
-                                <tr>Health -(%) / </tr>
-                                <tr>Population -(M) / </tr>
-                                </h2>
-                            </table>
-                    </div>
-                </div> -->
-
-
                 <!-- Table section -->
                 <div class="row">
                     <div class="col-12 text-center stats-header">
                         <table id="global-table">
-
                             <tr>Country / </tr>
                             <tr>GDP -(B) / </tr>
                             <tr>Health -(%) / </tr>
                             <tr>Population -(M) / </tr>
-
                         </table>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
                 <!-- Footer -->
                 <section>
                     <div class="footer">
                         <h6>Interactive Frontend Development MSP2, (c) 2019 by Clement Ofoedu</h6>
                     </div>
                 </section>
-                
             </div>
         </div>
     </div>
-    <!--Load Bootstrap Javscript components  -->
+    <!--Load Bootstrap Javascript components  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -163,39 +120,28 @@
         //  Until a Political Party has been selected
         $(document).ready(function () {
             setUpMenus();
-        })
-
-
-
-
-        var polState = sessionStorage.getItem("myPolitician");
-        if (polState == null) {
-            // alert(polState);
-            window.location.replace("index.html");
-        }
-        // Run Flasher for TitleBar
-        $(document).ready(function () {
+            var polState = sessionStorage.getItem("myPolitician");
+            if (polState == null) {
+                // alert(polState);
+                window.location.replace("index.html");
+            }
+            // Run Flasher for TitleBar
             setInterval(function () {
                 populateTable();
             }, 10)
-        })
-        // Run FlashingHand
-        $(document).ready(function () {
+            // Run FlashingHand
             setInterval(function () {
                 flashHand();
             }, 10)
-        })
-        // Run State Controller
-        $(document).ready(function () {
+            // Run State Controller
             setInterval(function () {
                 stateController();
             }, 10)
+            // QUIT ECONOMY PAGE IF NOT ALLOWED
+            if (sessionStorage.getItem("global-economy-page-authorised") === "false") {
+                window.location.href = "index.html";
+            }
         })
-        // QUIT ECONOMY PAGE IF NOT ALLOWED
-        if (sessionStorage.getItem("global-economy-page-authorised") === "false") {
-            window.location.href = "index.html";
-        }
     </script>
 </body>
-
 </html>
