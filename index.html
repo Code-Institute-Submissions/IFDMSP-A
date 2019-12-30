@@ -27,9 +27,11 @@
 <script type="text/javascript" src="js/gamespec.js"></script> -->
 </head>
 
+
+
+
 <body>
     <div class="container-fluid">
-        <!-- Main Container -->
         <!-- Burger Menu -->
         <div class="row burger">
             <div class="col-12  d-md-none nopadding ">
@@ -44,34 +46,22 @@
                             <span class="fas fa-hand-point-left"></span>
                         </div>
                     </nav>
-
-
                     <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-blue p-2 ">
                             <ul id="burger-menu-items">
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
-
         <!-- Navbar Normal -->
         <div class="row no-gutters">
-
             <div class="d-none d-md-inline">
                 <ul id="standard-menu-items">
                 </ul>
             </div>
         </div>
-
-
-
-
-
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
@@ -89,8 +79,6 @@
                 </div>
             </div>
         </div>
-
-
         <!-- Candidates images -->
         <div class="row">
             <div class="col candidates">
@@ -110,8 +98,6 @@
                 <h1 class="c-name">Julie Greenwood</h1>
             </div>
         </div>
-
-
         <!-- Spacer -->
         <div class="rpw">
             <div class="col text-center">
@@ -120,22 +106,18 @@
                 </div>
             </div>
         </div>
-
         <!-- Politician Name -->
         <div class="row">
             <div class="col-12 text-center">
                 <div id="politician">
                 </div>
             </div>
-            <!-- </div> -->
             <!-- Political Sway Chosen -->
-            <!-- <div class="row"> -->
             <div class="col-12 text-center">
                 <div id="political-sway">
                 </div>
             </div>
         </div>
-
         <!-- Advert Sound-byte! -->
         <div class="row">
             <div class="col text-center">
@@ -146,94 +128,53 @@
                         <li>Build your manifesto</li>
                         <li>Promote your pledges </li>
                         <li>Campaign to Win!</li>
-
-
-                        <!-- <div class="col-12" >
-                            <div id="g-gen-button ">
-                                <a href="global-economics.html"
-                                    class="btn btn-success btn-lg general-buttons-fmt d-flex w-100  adv-button-fmt " tabindex="-1"
-                                    role="button" aria-disabled="true">Create Economy</a>
-                            </div>
-                        </div> -->
-
-
-
                         <div class="col-12">
                             <div id="g-gen-button">
                                 <a href="global-economics.html" class="btn btn-warning btn-lg w-100 general-buttons-fmt"
                                     tabindex="-1" role="button" aria-disabled="true">Create Economy</a>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div id="reset-game-button" class="col-12 text-center">
                 <a href="reset-game.html" class="btn btn-info btn-lg w-100 active general-buttons-fmt" role="button"
                     onclick="resetGame()" aria-pressed="true">New Game</a>
             </div>
         </div>
-
         <!-- Footer -->
         <section>
             <div class="footer">
                 <h6>Interactive Frontend Development MSP2, (c) 2019 by Clement Ofoedu</h6>
-                <!--  Note this  should be remove once game is completed -->
-                <!-- For Testing Purposes Only -->
-                <ul>
-                    <li class="list-item-bottom"><a href="index.html">|Restart</a></li>
-                    <li class="list-item-bottom"><a href="global-economics.html">|Global Economy</a></li>
-                    <li class="list-item-bottom"><a href="country-districts.html">|Country District</a></li>
-                    <li class="list-item-bottom"><a href="generate-populus.html">|View Population</a></li>
-                    <li class="list-item-bottom"><a href="create-manifesto.html">|Create Manifesto</a></li>
-                    <li class="list-item-bottom"><a href="pledge-priority.html">|Prioritize Pledges</a></li>
-                    <li class="list-item-bottom"><a href="election-day.html">|Election Results</a></li>
-                    <li class="list-item-bottom"><a href="winner-page.html">|Winners Page|</a></li>
-                </ul>
             </div>
         </section>
-        <!-- End of container -->
     </div>
-    <!--Load Bootstrap Javscript components  -->
+    <!--Load Bootstrap Javascript components  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    
     <script>
         $(document).ready(function () {
-            setUpMenus();
-        })
-        $('document').ready(function () {
+            $(document).ready(function () {
+                setUpMenus();
+            })
             // Set Game State for  reset
             var gState = localStorage.getItem("newGame");
             if (gState != "1") {
                 resetGame();
             }
-        })
-        // Run Flasher for Title Bar
-        $(document).ready(function () {
+            // Run Flasher for Title Bar
             setInterval(function () {
                 // flasher();
             }, 500)
-        })
-        // Run Flashing Hand
-        $(document).ready(function () {
+            // Run Flashing Hand
             setInterval(function () {
                 flashHand();
             }, 10)
-        })
-        // Run State Controller
-        $(document).ready(function () {
+            // Run State Controller
             setInterval(function () {
                 stateController();
             }, 10)
