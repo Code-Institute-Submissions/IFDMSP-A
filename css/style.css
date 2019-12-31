@@ -493,12 +493,17 @@ span>fas>fa-award {
     margin-right: 10px;
 }
 
+
+
+
+
+
 /* Manifesto Instructions box */
 
-.manifesto-instructions ,h2 {
+.manifesto-instructions >h2 {
     border-radius: 10px;
     font-size: 1rem;
-    background-color: rgb(196, 181, 153);
+    background-color: wheat;
     color: var(--main-bg-color);
     text-shadow: 1px 1px white;
     padding: 5px 5px 5px 5px;
@@ -720,14 +725,22 @@ span>fas>fa-award {
     font-size: .75rem;
 }
 
-#converts, ul, li {
+
+ 
+
+
+#converts ,ul ,li {
     list-style: none;
     font-size: .75rem;
     text-align: left;
+
 }
+
+
 
 #conversions-election-container-box {
     background-color: var(--title-color);
+    margin-left:0px;
 }
 
 #my-party-leader, h3 {
@@ -735,6 +748,11 @@ span>fas>fa-award {
     color: pink;
     ;
 }
+
+#my-party-leader, img{
+    border-radius: 10px;
+}
+
 
 #post-election-final-results-stats, h1 {
     color: var(--title-color);
