@@ -233,7 +233,7 @@ body {
     background-color: var(--title-color);
     text-shadow: 1px 1px var(--grey-shadow-color);
     border-radius: 10px;
-    min-height:300px;
+    min-height: 300px;
     color: var(--main-page-text-color);
 }
 
@@ -394,11 +394,9 @@ span>fas>fa-award {
     text-shadow: 4px 4px var(--grey-shadow-color);
 }
 
-
-.map-big >img {
+.map-big>img {
     width: 16rem;
     height: Auto;
-
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -430,9 +428,9 @@ span>fas>fa-award {
     /* box-shadow: 1px 1px var(--grey-shadow-color); */
 }
 
-.progress ,.progress-bar-striped {
+.progress, .progress-bar-striped {
     border-radius: 2px;
-    color:var(--main-page-text-color);
+    color: var(--main-page-text-color);
     /* border: 2px solid var(--grey-shadow-color); */
 }
 
@@ -484,22 +482,23 @@ span>fas>fa-award {
 /* Highlight district Number on district View Page */
 
 .highlight-district-number {
-    border: solid;
+    border: none;
     border-radius: 10px;
-
     padding-left: 5px;
     padding-right: 5px;
     /* color: white; */
     /* text-shadow: 2px 2px black; */
     background-color:var(--district-view-tabloid-background);
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
 /* Manifesto Instructions box */
 
-.manifesto-instructions>h2 {
+.manifesto-instructions ,h2 {
     border-radius: 10px;
     font-size: 1rem;
-    background-color: wheat;
+    background-color: rgb(196, 181, 153);
     color: var(--main-bg-color);
     text-shadow: 1px 1px white;
     padding: 5px 5px 5px 5px;
@@ -550,8 +549,6 @@ span>fas>fa-award {
     color: black;
 }
 
-
-
 /* Hide the create manifesto button from page once completed */
 
 /* So it does not show on page refresh */
@@ -578,17 +575,21 @@ span>fas>fa-award {
 }
 
 .mfi>h2 {
-    font-size: .75rem;
+    font-size: 1rem;
+    border: solid;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
 }
 
 #pledge-priority {
+    border: none;
     border-radius: 10px;
     background-color: var(--title-color);
     font-size: 1rem;
 }
 
 #pledge-priority>h2 {
-    color: white;
+    /* color: white; */
     text-shadow: 2px 2px var(--grey-shadow-color);
     font-size: 1.5rem;
     margin-bottom: 10px;
@@ -597,7 +598,7 @@ span>fas>fa-award {
 #nohp {
     font-size: 2rem;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 10px;
     background-color: var(--main-page-text-color);
     color: var(--flash-colour);
     padding: 5px 15px 5px 15px;
@@ -605,8 +606,8 @@ span>fas>fa-award {
 }
 
 #nohp>h2 {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .number-of-high-pledges>h2 {
@@ -700,24 +701,18 @@ span>fas>fa-award {
   
 } */
 
-.card-body >p{
-
+.card-body>p {
     color: var(--main-page-body-color);
-
 }
-
-
 
 #converts {
     background-color: var(--title-color);
     text-align: left;
-
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     overflow-y: scroll;
     max-height: 400px;
-
     margin-bottom: 10px;
 }
 
@@ -792,37 +787,28 @@ span>fas>fa-award {
     text-shadow: 2px 2px grey;
 }
 
-
-
 #general-buttons-fmt {
     /* margin-top: 10px;
     margin-bottom: 10px; */
-
 }
-
-
-
 
 #current-district {
     color: pink;
 }
 
-.instructions ,h5{
-
+.instructions, h5 {
     font-size: 1rem;
     text-align: justify;
     color: var(--main-page-text-color);
 }
 
-#instruction-insert >ul {
+#instruction-insert>ul {
     list-style: none;
 }
 
-#instruction-insert ,li {
-
+#instruction-insert, li {
     list-style: none;
-margin-bottom: 10px;
-margin-top: 10px;
-text-align: justify;
-
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: justify;
 }
