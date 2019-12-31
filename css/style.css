@@ -395,7 +395,7 @@ span>fas>fa-award {
 }
 
 .map-big, img {
-    width: 60%;
+    width: 80%;
     height: Auto;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -423,15 +423,15 @@ span>fas>fa-award {
 
 .progress {
     margin-top: 2px;
-    background-color: var(--title-color);
+    background-color: var(--district-view-tabloid-background);
     color: var(--main-page-body-color);
-    box-shadow: 4px 4px var(--grey-shadow-color);
+    /* box-shadow: 1px 1px var(--grey-shadow-color); */
 }
 
-.progress>.progress-bar-striped {
+.progress ,.progress-bar-striped {
     border-radius: 2px;
-    color: var(--main-page-text-color);
-    border: 2px solid var(--grey-shadow-color);
+    color:var(--main-page-text-color);
+    /* border: 2px solid var(--grey-shadow-color); */
 }
 
 .tabloid {
@@ -484,11 +484,12 @@ span>fas>fa-award {
 .highlight-district-number {
     border: solid;
     border-radius: 10px;
+
     padding-left: 5px;
     padding-right: 5px;
-    color: white;
-    text-shadow: 2px 2px black;
-    background-color: var(--myRed);
+    /* color: white; */
+    /* text-shadow: 2px 2px black; */
+    background-color:var(--district-view-tabloid-background);
 }
 
 /* Manifesto Instructions box */
@@ -547,11 +548,7 @@ span>fas>fa-award {
     color: black;
 }
 
-.highlight-district-number {
-    margin-right: 10px;
-    color: var(--flash-colour);
-    background-color: yellow;
-}
+
 
 /* Hide the create manifesto button from page once completed */
 
@@ -793,9 +790,15 @@ span>fas>fa-award {
     text-shadow: 2px 2px grey;
 }
 
+
+
 #general-buttons-fmt {
-    margin-top: 10px;
+    /* margin-top: 10px; */
+
 }
+
+
+
 
 #current-district {
     color: pink;
