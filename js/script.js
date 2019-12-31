@@ -2750,7 +2750,12 @@ function backFromPopulusView() {
 function restartGame() {
     // RESTART GAME ..JUMP TO MAIN START PAGE
     alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
-    window.location.href = "index.html";
+    
+    localStorage.setItem("newGame", 0);
+    sessionStorage.clear("myParty");
+    window.location.assign("index.html")
+    
+     
 }
 
 function updateCanvassReportAccuracy(resetnow, issue) {
