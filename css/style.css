@@ -5,7 +5,8 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Calistoga", "sans-serif";
-    --main-page-body-color: #1E2A36;
+    /* --main-page-body-color: #1E2A36; */
+    --main-page-body-color: rgb(10, 26, 43);
     --main-page-text-color: wheat;
     --title-color: rgb(156, 37, 16);
     /*@*/
@@ -187,7 +188,6 @@ body {
 .advert {
     background-color: var(--title-color);
     text-shadow: 1px 1px var(--grey-shadow-color);
-    
     border-radius: 10px;
     min-height: 300px;
     color: var(--main-page-text-color);
@@ -640,7 +640,7 @@ span>fas>fa-award {
     margin-top: 10px;
 }
 
-#results-button-fmt{
+#results-button-fmt {
     margin-top: 10px;
 }
 

@@ -351,8 +351,8 @@
     <script>
         $(document).ready(function () {
             setUpMenus();
-        })
-        $(document).ready(function () {
+       
+        
             //  Check a Party is selected or jump back to main screen
             //  Until a Political Party has been selected
             var polState = sessionStorage.getItem("myPolitician");
@@ -360,28 +360,29 @@
                 // alert(polState);
                 window.location.replace("index.html");
             }
-        })
+        
         // Run Flasher for TitleBar
-        $(document).ready(function () {
+        
             setInterval(function () {
                 populateTable();
             }, 10)
-        })
+        
         // Run FlashingHand
-        $(document).ready(function () {
+      
             setInterval(function () {
                 flashHand();
             }, 10)
-        })
+        
         // Run State Controller
-        $(document).ready(function () {
+         
             setInterval(function () {
                 stateController();
             }, 10)
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
+
+
+    
+     
+      
             //   <!-- FINAL RESULTS DAY -->
             //     <!-- LOCKOUT ALL OTHER PAGES -->
             sessionStorage.setItem("global-economy-page-authorised", false);
@@ -393,27 +394,24 @@
             sessionStorage.setItem("election-day-active-authorised", true);
             sessionStorage.setItem("campaign-mode-active-authorised", true);
             sessionStorage.setItem("election-day-game-active-authorised", true);
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
+    
+     
+      
             // Set& Run Marquee Clock
             setInterval(function () {
                 showMarquee(marquee.message1, 10); // Ticker Marquee
             }, 100)
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
+    
+   
             // Show Your Party Leader Image
             insertMyPoliticianImage();
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
+    
+    
+       
             $(document).dblclick(function () {
                 window.location.href = "results-page.html";
             })
+            
         })
     </script>
 </body>

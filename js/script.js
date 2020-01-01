@@ -474,7 +474,7 @@ function setUpMenus() {
     // place in session memory
     // }
     for (let x = 0; x < menuItems.length; x++) {
-        var outHtmlString = "<li><button type=\"button\" class=\"btn btn-primary\"><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></button></li>"; // ?@
+        var outHtmlString = "<li><button type=\"button\" class=\"btn btn-dark\"><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></button></li>"; // ?@
         $("#burger-menu-items").append(outHtmlString);
         $("#standard-menu-items").append(outHtmlString);
     }
@@ -2561,7 +2561,7 @@ function backFromPopulusView() {
 }
 function restartGame() {
     // RESTART GAME ..JUMP TO MAIN START PAGE
-    alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
+    alert("Thank you for playing. You will be taken to the start-screen of the game. You may need to press \"new-game\" to play again! ,In the instance you arrived at the start screen while there was a previously uncompleted game")
     localStorage.setItem("newGame", 0);
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
