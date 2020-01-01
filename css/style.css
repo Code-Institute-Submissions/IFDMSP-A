@@ -5,7 +5,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Calistoga", "sans-serif";
-    /* --main-page-body-color: #1E2A36; */
+
     --main-page-body-color: rgb(10, 26, 43);
     --main-page-text-color: wheat;
     --title-color: rgb(156, 37, 16);

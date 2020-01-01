@@ -8,7 +8,7 @@ Interactive Frontend Development Milestone Project
 
 ## Milestone2 Project (MSP2)
 
-![game screen image](/support/ef-front-page-500.png)
+![game screen image](/support/front-page.jpeg)
 
 > Disclaimer: The following Requirement is (hypothetical)!
 > # INDEX PAGE
@@ -219,6 +219,12 @@ Of importance in this work,  is the project "triple constraint" placed on the pr
 
 ## Outside of scope
 
+There are some features that I considered integrating , however I decided due to schedule limitations it was not essential, also it may make the game more difficult for novice players. There is always a fine balance between making a game too hard and too easy for players. Based on the objective and empiric evidence as a game player, I believe its best to pursue the latter, else one looses the audience permanently.
+
+* The main extra feature would be to have the priority pledges have tiered amounts in each district  2 Highs, 2 Mediums , 2Lows etc. This means that the player would have to interrogate the resident data far more accurate to get the best value placement of the pledges.
+
+Also there are other potential consideration..
+
 * Performance improvements, especially with regards to technology
 
 * Realistic accuracy of data (as this is a fun fantasy game)
@@ -278,13 +284,13 @@ Before proceeding to build the application , I rendered some mockups. These did 
 
 * Because the application is supposed to be a game. I scoured retro gaming on google to asses typical color schemes. A lot of retro fun games had bright primary colors woven into its fabric. This was mainly due to limitation of graphics cards in early computer systems. However such colors were put to good use and calm colors were used for main spacial areas, and bright colors for stand out elements.
 
-* Blue and green used mainly for calm.
+* Dark Blue ,grey & Dark Red used mainly for standout but calm.
 * Red was used frequently for danger.
 * Lastly, lots of flashing was used to denote action or activity. A quick visit to arcade machine would confirm this.
 
 * I have decided to employ this approach to the game
 
-![map of England image](support/s-snapshot-image9.png)
+![map of England image](support/map-uk-unionjack-page.jpeg)
 
 ## Aesthetics
 
@@ -494,6 +500,8 @@ The characters and scenarios represented in this game are purely fantasy and for
 * Prioritize your pledges per district.
 * Options are L = Low focus /  M = Med focus /  H = High focus
 * Note: Only two ('H') are available for use in each district. These essentially are your major focus and drive on a particular pledge message to the residents. Choose wisely!)
+
+* When you prioritize your pledges in a district , you will notice a change to "yellow" of the district "Newsflash" text. This helps mark the fact that you have already worked on a district
 
 >## 7. ENTER CAMPAIGN
 
