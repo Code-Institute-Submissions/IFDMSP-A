@@ -1,54 +1,19 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
 
 body {
-    /* border: 0px;
-    margin: 0px;
-    padding: 0px; */
-    /* SETUP VARIABLES */
-    /* --main-page-body-color: #202936; */
-    /* --main-page-body-color: rgb(219, 215, 215); */
-    /* background-color: var(--main-page-body-color);
-    font-family: "Calistoga", "sans-serif"; */
-    /* Main background color */
-    /* --main-bg-color: white;
-    --main-fc-color: wheat;
-    --advert-bg-color: rgb(196, 69, 40);
-    --advert-fc-color: rgb(252, 250, 250);
-    /* Plank for Global Economy Page */
-    /* --plank-bg-color: rgb(185, 201, 223);
-    --plank-fc-color: rgb(85, 78, 64);
-    --stats-fc-color: black;
-    --stats-bg-color: rgb(241, 197, 114); */
-    /* Pledge Prioritization page */
-    /* --pledge-content-bg-color: wheat;
-    --pledge-content-fc-color: rgb(10, 10, 70);
-    --pledge-controller-bg-color: yellow;
-    --pledge-controller-fc-color: black;
-    --pledge-value-bg-color: yellow;
-    --pledge-value-fc-color: black; */
-    /* Main Foreground Color */
-    /* --myRed: #E0473A; */
-    /* Party Colours */
-    /* --party-labour: rgb(206, 12, 12);
-    --party-conservative: rgb(12, 12, 201);
-    --party-lib-dem: rgb(226, 226, 13);
-    --party-green: rgb(10, 180, 10);
-    --party-unknown: grey; */
-    /* NewsFlash Bar */
-    /* --news-flash-bar: rgb(109, 182, 109); */
-    /* District Background */
-    /* --district-background: rgb(122, 199, 122);
-    --district-list-backing: rgb(71, 71, 88);
-    --promoted-pledge-backstrip: rgb(231, 231, 146); */
+   
     /* ======================================================== */
     border: 0px;
     margin: 0px;
     padding: 0px;
     font-family: "Calistoga", "sans-serif";
-    --main-page-body-color: #202936;
+
+     --main-page-body-color: #1E2A36;
+    /* --main-page-body-color: #202936; */
     --main-page-text-color: wheat;
-    --title-color: #E88F2C;
-    --title-shadow-color: red;
+    --title-color:rgb(156, 37, 16); /*@*/
+    --title-shadow-color: rgb(129, 68, 68);
+
     --title-background-color: black;
     --subtitle-color: #E88F2C;
     --subtitle-shadow-color: red;
@@ -377,6 +342,15 @@ span>fas>fa-award {
 .tabloid {
     font-size: 1rem;
 }
+
+
+.pledgeMade{
+/* If pledge made in district change colour */
+    background-color: var(--flash-colour);
+    color: yellow;
+
+}
+
 
 .district-list>p {
     color: var(--flash-colour);

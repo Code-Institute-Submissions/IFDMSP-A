@@ -111,8 +111,8 @@ var districtProblems = {
     11: "    C   *   ANTI-SOCIAL BEHAVIOR RISE",
     12: "    W   *   COST OF LIVING SPIRALLING",
     13: "    E   *   UN-EMPLOYMENT RISING",
-    14: "    E   *   TEEN EMPLOYMENT RISE",
-    15: "    E   *   UNEMPLOYMENT SPPT INEFFECTIVE!",
+    14: "    E   *   TEEN UN-EMPLOYMENT RISE",
+    15: "    E   *   UNEMPLOYMENT SPT INEFFECTIVE!",
     16: "    W   *   POOR LIVING WAGES",
     17: "    H   *   RISE IN DEPRESSION",
     18: "    S   *   SOCIAL UNREST RISING",
@@ -495,7 +495,7 @@ function setUpMenus() {
         // var outHtmlString = "<h5><li><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></li></h5>";
         // var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">"  + menuItems[x] + "</a></li>";
 
-        var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">"+menuFontAwesome[x]  + menuItems[x] + "</a></li>";// ?@
+        var outHtmlString = "<li><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></li>"; // ?@
 
         $("#burger-menu-items").append(outHtmlString);
         $("#standard-menu-items").append(outHtmlString);
@@ -789,14 +789,31 @@ function viewDistricts() {
         var outputDistrictHtml = "";
         // outputDistrictHtml += "<a href=\"id=\"" + districtNumber + "\"></a>";// Jump back to page point tag;
 
-        outputDistrictHtml += "<div  id=\"" + districtNumber + "\">*</div>";// Jump back to page point tag; #BUGTEST?
+        outputDistrictHtml += "<div  id=\"" + districtNumber + "\">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</div>"; // Jump back to page point tag; #BUGTEST?
 
         outputDistrictHtml += "<div class=\"row\">";
         outputDistrictHtml += "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml += "<h3>";
         outputDistrictHtml += "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
+
+
+        // HIGHLIGHT DISTRICTS THAT HAVE HAD PLEDGES PRIORITIZED!!
+        var dp1 = sessionStorage.getItem("DMP," + districtNumber + ",1");
+        var dp2 = sessionStorage.getItem("DMP," + districtNumber + ",2");
+        var dp3 = sessionStorage.getItem("DMP," + districtNumber + ",3");
+        var dp4 = sessionStorage.getItem("DMP," + districtNumber + ",4");
+        var dp5 = sessionStorage.getItem("DMP," + districtNumber + ",5");
+        var dp6 = sessionStorage.getItem("DMP," + districtNumber + ",6");
+        var dp7 = sessionStorage.getItem("DMP," + districtNumber + ",7");
+        var dChanged = checkDistrictPledgeChanged(dp1, dp2, dp3, dp4, dp5, dp6, dp7); //*BUGCHECK
+        var hState = "";
+        if (dChanged === 1) {
+            hState = "pledgeMade";
+        }
+
         // Tabloid Banner
-        outputDistrictHtml += "<div class=\"tabloid\">";
+        outputDistrictHtml += "<div class=\"tabloid " + hState + "\">";
+
         outputDistrictHtml += "<span class=\"fas fa-newspaper\"></span>" + " NEWS FLASH!!";
         // <!-- Promoted Manifesto Pledges -->
         outputDistrictHtml += "<div class=\"row\">";
@@ -816,6 +833,13 @@ function viewDistricts() {
         outputDistrictHtml += "</p>";
         outputDistrictHtml += "</div>";
         outputDistrictHtml += "</div>";
+
+        // 
+
+
+
+
+
         // UK MAP IMAGE
         outputDistrictHtml += "<div class=\"row\">";
         outputDistrictHtml += "<div class=\"col-12 map-uk\">";
@@ -889,7 +913,7 @@ function saveCurrentDistrict() {
         var result = $(this).closest('.district-buttons-box').attr("id");
         sessionStorage.setItem("CD", result);
     })
-    window.location.href = "pledge-priority.html";// Got PLedge
+    window.location.href = "pledge-priority.html"; // Got PLedge
 }
 
 function clearPledgePriorityButtonValuesDefault() {
@@ -1817,12 +1841,12 @@ function loadUpPledgePriorityPage() {
 
 function backToDistrictView() {
 
-        // Go back to View Districts Page
-    
-        var dtag=sessionStorage.getItem("CD");
-        dtag=dtag.trim();
+    // Go back to View Districts Page
 
-        window.location.assign("country-districts.html#"+ dtag);// Jump to district view! BUGTEST
+    var dtag = sessionStorage.getItem("CD");
+    dtag = dtag.trim();
+
+    window.location.assign("country-districts.html#" + dtag); // Jump to district view! BUGTEST
 
 }
 
@@ -2750,12 +2774,12 @@ function backFromPopulusView() {
 function restartGame() {
     // RESTART GAME ..JUMP TO MAIN START PAGE
     alert("Thank you for playing. You will be taken to the start-screen of the game. Please press \"new-game\" to play again!")
-    
+
     localStorage.setItem("newGame", 0);
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
-    
-     
+
+
 }
 
 function updateCanvassReportAccuracy(resetnow, issue) {
@@ -2927,7 +2951,6 @@ function globalTrendImpact(cnumb) {
 
 function loadUpInstructions() {
 
-
     // LOADUP INSTRUCTIONS
     var instructions = [
         "\"ELECTION-FEVER\" is a strategy game. The objective is to win the general election for your chosen party, by promoting your manifesto in 25 districts, securing voters from each. ",
@@ -2980,4 +3003,45 @@ function loadUpInstructions() {
 
 
 
+}
+
+
+
+
+
+
+function checkDistrictPledgeChanged(p1, p2, p3, p4, p5, p6, p7) {
+    //    Return 1 if any of the district pledges is not 'L'
+    //    i.e if it has been modified
+    var tflag = 0;
+
+    if (p1 != "L") {
+        tflag = 1;
+    }
+    if (p2 != "L") {
+        tflag = 1;
+    }
+    if (p3 != "L") {
+        tflag = 1;
+    }
+    if (p4 != "L") {
+        tflag = 1;
+    }
+    if (p5 != "L") {
+        tflag = 1;
+    }
+    if (p6 != "L") {
+        tflag = 1;
+    }
+    if (p7 != "L") {
+        tflag = 1;
+    }
+
+
+    if (tflag === 1) {
+
+        return 1;
+    }
+
+    return 0;
 }
