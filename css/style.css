@@ -187,6 +187,7 @@ body {
 .advert {
     background-color: var(--title-color);
     text-shadow: 1px 1px var(--grey-shadow-color);
+    
     border-radius: 10px;
     min-height: 300px;
     color: var(--main-page-text-color);
@@ -194,7 +195,7 @@ body {
 
 .advert>ul li {
     font-size: 1.5rem;
-    /* list-style: none; */
+    list-style: disc;
     text-align: left;
     padding-top: 10px;
 }
