@@ -36,21 +36,15 @@
                             <span class="fas fa-hand-point-left"></span>
                         </div>
                     </nav>
-
-
                     <div class="collapse " id="navbarToggleExternalContent">
                         <div class="bg-blue p-2 ">
                             <ul id="burger-menu-items">
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
-
         <!-- Navbar Normal -->
         <div class="row">
             <div class="col-12">
@@ -62,10 +56,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <!-- Title Bar -->
         <div class="row">
             <div class="col-12 text-center">
@@ -82,8 +72,6 @@
                         process.
                         Choose carefully!</h2>
                 </div>
-
-
                 <!-- Back to View Districts Page -->
                 <!-- <div class="row">
                     <div class="col-12 back-to-districts-view  text-center">
@@ -93,8 +81,6 @@
                         </div>
                     </div>
                 </div> -->
-
-
                 <!-- Main -->
                 <div class="row no-gutters">
                     <div class="col-4">
@@ -103,7 +89,6 @@
                             aria-disabled="false">Clear
                         </a>
                     </div>
-
                     <div class="col-4 back-to-districts-view  text-center">
                         <div>
                             <a href="country-districts.html" class="btn btn-success btn-lg active" role="button"
@@ -111,13 +96,10 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="col-4">
                         <button type="button" onclick="resetManifesto()" class="btn btn-danger btn-lg ">Clear</button>
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="col-12">
                         <!-- Content -->
@@ -136,14 +118,12 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Footer -->
                 <section>
                     <div class="footer">
                         <h6>Interactive Frontend Development MSP2, (c) 2019 by Clement Ofoedu</h6>
                     </div>
                 </section>
-
             </div>
         </div>
     </div>
@@ -156,7 +136,6 @@
         $(document).ready(function () {
             setUpMenus();
         })
-
         //  Check a Party is selected or jump back to main screen
         //  Until a Political Party has been selected
         var polState = sessionStorage.getItem("myPolitician");
@@ -183,34 +162,21 @@
             }, 10)
         })
     </script>
-
-
-
-
     <script>
         // QUIT CREATE MANIFESTO PAGE IF NOT ALLOWED
         if (sessionStorage.getItem("create-manifesto-page-authorised") === "false") {
             window.location.href = "country-districts.html";
         }
     </script>
-
-
     <script>
         // Check for allowed Manifesto Creation. Exit to District Page if Not
         // var result = sessionStorage.getItem("create-manifesto-page-authorised")
         loadUpManifestoPage();
-
         if (sessionStorage.getItem("create-manifesto-page-authorised") === "false") {
             alert("Sorry - You can create a manifesto ONCE per election process");
             window.location.href = "country-districts.html";
         }
     </script>
-
-
-
-
-
-
 </body>
 
 </html>

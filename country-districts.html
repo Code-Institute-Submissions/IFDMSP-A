@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,20 +44,17 @@
                 </div>
             </div>
         </div>
-
-              <!-- Navbar Normal -->
-              <div class="row">
-                <div class="col-12">
-                    <div class="row no-gutters">
-                        <div class="d-none d-md-inline">
-                            <ul id="standard-menu-items">
-                            </ul>
-                        </div>
+        <!-- Navbar Normal -->
+        <div class="row">
+            <div class="col-12">
+                <div class="row no-gutters">
+                    <div class="d-none d-md-inline">
+                        <ul id="standard-menu-items">
+                        </ul>
                     </div>
                 </div>
             </div>
-    
-
+        </div>
         <!-- Title Bar -->
         <div class="row no-gutters">
             <div class="col-12 text-center">
@@ -65,11 +63,6 @@
                 </div>
             </div>
         </div>
-        
-
-
-
-
         <!-- Create Manifesto Button -->
         <!-- This button is auto-hidden by code once you have successfully created a manifesto-->
         <div class="row">
@@ -80,102 +73,66 @@
                 </div>
             </div>
         </div>
-
-
-
         <!-- Where district data wil be pinned -->
         <div id="district-list">
         </div>
-
-
-
-
-
-
-
         <!-- Footer -->
         <section>
             <div class="footer">
                 <h6>Interactive Frontend Development MSP2, (c) 2019 by Clement Ofoedu</h6>
             </div>
         </section>
-
         <!--Load Bootstrap Javascript components  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         <script>
             // $(document).ready(function () {
-
-
-
-                setUpMenus();
-                if (testingMode == false) {
-                    $(".answers").addClass("hide-solutions");
-                }
-
-
-                
-                //  Check a Party is selected or jump back to main screen
-                //  Until a Political Party has been selected
-                var polState = sessionStorage.getItem("myPolitician");
-                if (polState == null) {
-                    window.location.replace("index.html");
-                }
-
-
-                setInterval(function () {
-                    flasher();
-                    flashUnaddressedIssue();
-                }, 500)
-
-
-                setInterval(function () {
-                    flashHand();
-                }, 10)
-
-                // Run State Controller
-                setInterval(function () {
-                    stateController();
-                }, 10)
-
-                // Load up districts data
-                viewDistricts();
-
-                // Check Test Mode true
-                // Show Answers if false
-                if (testingMode === true) {
-                    $(".anw").removeClass("hide-solutions");
-                }
-
-
-
-                // Check Test Mode false
-                // Remove Answers
-                if (testingMode === false) {
-                    $(".anw").addClass("hide-solutions");
-                }
-
-
-                $('.dpanel').click(function () {
-                    var identification = $(this).parent("div ,.keep-insideBSol").attr("id");
-                })
-
-
-
-                if (sessionStorage.getItem('create-manifesto-page-authorised') === "false") {
-                    $('#create-manifesto-button').addClass('remove-c-m-b-a');
-                }
-
-                // QUIT VIEW DISTRICTS NOT ALLOWED
-                if (sessionStorage.getItem("country-districts-page-authorised") === "false") {
-                    window.location.href = "index.html";
-                }
-
-
-
-
+            setUpMenus();
+            if (testingMode == false) {
+                $(".answers").addClass("hide-solutions");
+            }
+            //  Check a Party is selected or jump back to main screen
+            //  Until a Political Party has been selected
+            var polState = sessionStorage.getItem("myPolitician");
+            if (polState == null) {
+                window.location.replace("index.html");
+            }
+            setInterval(function () {
+                flasher();
+                flashUnaddressedIssue();
+            }, 500)
+            setInterval(function () {
+                flashHand();
+            }, 10)
+            // Run State Controller
+            setInterval(function () {
+                stateController();
+            }, 10)
+            // Load up districts data
+            viewDistricts();
+            // Check Test Mode true
+            // Show Answers if false
+            if (testingMode === true) {
+                $(".anw").removeClass("hide-solutions");
+            }
+            // Check Test Mode false
+            // Remove Answers
+            if (testingMode === false) {
+                $(".anw").addClass("hide-solutions");
+            }
+            $('.dpanel').click(function () {
+                var identification = $(this).parent("div ,.keep-insideBSol").attr("id");
+            })
+            if (sessionStorage.getItem('create-manifesto-page-authorised') === "false") {
+                $('#create-manifesto-button').addClass('remove-c-m-b-a');
+            }
+            // QUIT VIEW DISTRICTS NOT ALLOWED
+            if (sessionStorage.getItem("country-districts-page-authorised") === "false") {
+                window.location.href = "index.html";
+            }
             // })
         </script>
 </body>
+
 </html>
