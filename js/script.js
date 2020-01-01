@@ -468,17 +468,17 @@ var gameData = {
 // ####################################################
 // Menu Items List
 function setUpMenus() {
-    var menuItems = ['Instructions', 'Start', 'Economy', 'Districts', 'Residents', 'Manifesto', "Campaign"];
-    var menuLinks = ['instructions.html', 'index.html', 'global-economics.html', 'country-districts.html', 'generate-populus.html', 'create-manifesto.html', 'campaign.html'];
-    var menuFontAwesome = ['<span class="fas fa-book-open">', '<span class="fas fa-sync-alt"></span>', '<span class="fas fa-globe"></span>', '<span class="fas fa-map"></span>', '<span class="fas fa-users"></span>', '<span class="fas fa-scroll">', '<span class="fas fa-running"></span>']
-    // place in session memory
-    // }
+    const menuItems = ['Instructions', 'Start', 'Economy', 'Districts', 'Residents', 'Manifesto', "Campaign"];
+    const menuLinks = ['instructions.html', 'index.html', 'global-economics.html', 'country-districts.html', 'generate-populus.html', 'create-manifesto.html', 'campaign.html'];
+    const menuFontAwesome = ['<span class="fas fa-book-open">', '<span class="fas fa-sync-alt"></span>', '<span class="fas fa-globe"></span>', '<span class="fas fa-map"></span>', '<span class="fas fa-users"></span>', '<span class="fas fa-scroll">', '<span class="fas fa-running"></span>']
+
     for (let x = 0; x < menuItems.length; x++) {
-        var outHtmlString = "<li><button type=\"button\" class=\"btn btn-dark\"><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></button></li>"; // ?@
+        let outHtmlString = "<li><button type=\"button\" class=\"btn btn-dark\"><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></button></li>"; // ?@
         $("#burger-menu-items").append(outHtmlString);
         $("#standard-menu-items").append(outHtmlString);
     }
 }
+
 function stateController() {
     // State Controller monitoring (Available buttons etc)
     // Check for double-click to move to top of Global Economy page
@@ -492,7 +492,7 @@ function stateController() {
         return;
     });
     // Check if to display "jump to Global Economy" Button After Party has been selected
-    var picked = sessionStorage.getItem("myPolitician");
+    let picked = sessionStorage.getItem("myPolitician");
     if (picked === null) {
         $('#g-gen-button').removeClass('global-ecom-button-show');
         $('#g-gen-button').addClass('global-ecom-button-hide');
@@ -505,6 +505,11 @@ function stateController() {
         return;
     }
 }
+
+
+
+
+
 function changeRibbonColour() {
     // Change Ribbon Color when Candidate Selected
     $('.ribbon').removeClass('make-ribbon-red');
@@ -512,7 +517,7 @@ function changeRibbonColour() {
     $('.ribbon').removeClass('make-ribbon-yellow');
     $('.ribbon').removeClass('make-ribbon-green');
     $('.ribbon').addClass('make-ribbon-grey');
-    var picked = sessionStorage.getItem("myParty");
+    let picked = sessionStorage.getItem("myParty");
     switch (picked) {
         // make Labour
         case 'Labour':
@@ -556,19 +561,25 @@ function changeRibbonColour() {
             return;
     }
 }
+
+
+
 $(document).ready(function () {
     // Get & Save  Political candidate & Party Affiliation
     // 
     $(".candidates").click(function () {
         // Save Politicians SELECTION
-        var mypolitician = $(this).children('h1').text();
+        let mypolitician = $(this).children('h1').text();
         $('#political-sway').html('<h1>' + candidates[mypolitician] + '</h1>')
         sessionStorage.setItem("myPolitician", mypolitician);
         // Save PARTY SELECTION
-        var myParty = $('#political-sway').text();
+        let myParty = $('#political-sway').text();
         sessionStorage.setItem("myParty", myParty);
     })
 });
+
+
+
 function flasher() {
     // Flash Title!!
     if (flashState === true) {
@@ -582,9 +593,11 @@ function flasher() {
         return
     }
 }
+
+
 function flashHand() {
     // Flash HAND !! .....sway = political sway i.e party
-    var sway = $('#political-sway h1').text();
+    let sway = $('#political-sway h1').text();
     if (flashHandState === true) {
         flashHandState = false;
         $('.point-hand').addClass('flashHandNow');
@@ -602,33 +615,38 @@ function flashHand() {
         return
     }
 }
+
+
+
 function populateTable() {
     // //////////////////////////////////////////
     // Populate ECONOMY TABLE
     // Reset World Economy Stats
     // Also eliminate values of 0
     var worldEconomy = [];
-    var num = 0;
+    let num = 0;
     cCp++;
     do {
-        var num = (Math.random() * gDPMax);
+        let num = (Math.random() * gDPMax);
         cGdp = num.toFixed(roundDownDigit);
     } while (cGdp < 1);
     do {
-        var num = (Math.random() * healthMax);
+        let num = (Math.random() * healthMax);
         cHealth = num.toFixed(roundDownDigit);
     } while (cHealth < 1);
     do {
-        var num = (Math.random() * popMax);
+        let num = (Math.random() * popMax);
         cPop = num.toFixed(roundDownDigit)
     } while (cPop < 1);
+
+
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
         // Show country count on the page
         $('#country-ticker').text(cCp + 1);
     }
-    var cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
+    let cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
     try {
         sessionStorage.setItem(cCp, cstrng);
@@ -643,10 +661,14 @@ function populateTable() {
         // console.log("+:" + controlNumb);
     }
 }
+
+
+
 function grabThreeCountries() {
     // Grab Three Countries for use for Generation of Weighting on District Starts
     var randomCountry = (Math.random() * noOfCountriesMax);
     c1 = randomCountry.toFixed(0);
+
     var randomCountry = (Math.random() * noOfCountriesMax);
     c2 = randomCountry.toFixed(0);
     var randomCountry = (Math.random() * noOfCountriesMax);
@@ -656,9 +678,9 @@ function grabThreeCountries() {
     var countName2 = $('#' + c2.toString()).text();
     var countName3 = $('#' + c3.toString()).text();
     // Get Table entry to Highlight & Add c-name class, to flash in unison with flashing hand
-    var first = c1.toString();
-    var second = c2.toString();
-    var third = c3.toString();
+    const first = c1.toString();
+    const second = c2.toString();
+    const third = c3.toString();
     if (cCp == noOfCountriesMax) {
         $("#" + first).children('td ,h3').first().addClass('highLight2');
         $("#" + second).children('td ,h3').first().addClass('highLight2');
@@ -670,6 +692,8 @@ function grabThreeCountries() {
     // Acknowledge 3 Random countries have been found. No need to repeat
     threeCountriesSelected = true;
 }
+
+
 function viewDistricts() {
     // Assemble View District Information
     // alert(sessionStorage.getItem("D,0"));
@@ -683,41 +707,43 @@ function viewDistricts() {
     var packedDistrictInfo = "";
     for (let districtNumber = 1; districtNumber < noOfDistricts; districtNumber++) {
         // Reset Variables to count up Issue Weighting
-        var issueWeightingTotal = 0;
-        var distHealth = 0;
-        var distCrime = 0;
-        var distWealth = 0;
-        var distEmployment = 0;
-        var distSatis = 0;
+        let issueWeightingTotal = 0;
+        let distHealth = 0;
+        let distCrime = 0;
+        let distWealth = 0;
+        let distEmployment = 0;
+        let distSatis = 0;
         // Get pack district data
-        var dInfo = sessionStorage.getItem("D," + districtNumber);
+        let dInfo = sessionStorage.getItem("D," + districtNumber);
         // Break it into two to separate Issues from List of people
-        var TP = [] = dInfo.split('@');
+        let TP = [] = dInfo.split('@');
         //Flatten Array so we can split it again
         tpFlat = TP.join();
         // Split once again to access just the issues Questions/Issues only
-        var QO = [] = tpFlat.split("#");
+        let QO = [] = tpFlat.split("#");
         // Flatten the Issues section so we can grab each issue
         issuesFlat = QO.join();
         // Now turn each Issue into an array , so we can access them by index
-        var ISS = [] = issuesFlat.split(",");
+        let ISS = [] = issuesFlat.split(",");
         // Get each line of an Issue ready to push to html page
-        var l1 = ISS[0];
-        var l2 = ISS[1];
-        var l3 = ISS[2];
-        var l4 = ISS[3];
-        var l5 = ISS[4];
+        let l1 = ISS[0];
+        let l2 = ISS[1];
+        let l3 = ISS[2];
+        let l4 = ISS[3];
+        let l5 = ISS[4];
         // Get each line  Solution
-        var s1 = ISS[5];
-        var s2 = ISS[6];
-        var s3 = ISS[7];
-        var s4 = ISS[8];
-        var s5 = ISS[9];
-        var aa = l1.slice(0, 5).trim();
-        var bb = l2.slice(0, 5).trim();
-        var cc = l3.slice(0, 5).trim();
-        var dd = l4.slice(0, 5).trim();
-        var ee = l5.slice(0, 5).trim();
+        let s1 = ISS[5];
+        let s2 = ISS[6];
+        let s3 = ISS[7];
+        let s4 = ISS[8];
+        let s5 = ISS[9];
+
+        let aa = l1.slice(0, 5).trim();
+        let bb = l2.slice(0, 5).trim();
+        let cc = l3.slice(0, 5).trim();
+        let dd = l4.slice(0, 5).trim();
+        let ee = l5.slice(0, 5).trim();
+
         // Place Values of Issue Volumes in appropriate Variables
         distCrime = (countUpIssues("C", aa, bb, cc, dd, ee));
         distHealth = (countUpIssues("H", aa, bb, cc, dd, ee));
@@ -727,22 +753,22 @@ function viewDistricts() {
         // Get Total Sum Value
         issueWeightingTotal = (distCrime + distHealth + distWealth + distEmployment + distSatis);
         // Assemble HTM DYNAMICALLY
-        var outputDistrictHtml = "";
+        let outputDistrictHtml = "";
         outputDistrictHtml += "<div  id=\"" + districtNumber + "\">* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *</div>"; // Jump back to page point tag; #BUGTEST?
         outputDistrictHtml += "<div class=\"row\">";
         outputDistrictHtml += "<div id=\"D:" + districtNumber + "\" class=\"col-12 keep-insideBSol dpanel\">";
         outputDistrictHtml += "<h3>";
         outputDistrictHtml += "<p class=\"highLight\">District: " + "<span class=\"highlight-district-number\"> " + districtNumber + "</span> : " + "<span class=\"hightlight-district-name\"> " + countryDistricts[districtNumber] + " </span></p>";
         // HIGHLIGHT DISTRICTS THAT HAVE HAD PLEDGES PRIORITIZED!!
-        var dp1 = sessionStorage.getItem("DMP," + districtNumber + ",1");
-        var dp2 = sessionStorage.getItem("DMP," + districtNumber + ",2");
-        var dp3 = sessionStorage.getItem("DMP," + districtNumber + ",3");
-        var dp4 = sessionStorage.getItem("DMP," + districtNumber + ",4");
-        var dp5 = sessionStorage.getItem("DMP," + districtNumber + ",5");
-        var dp6 = sessionStorage.getItem("DMP," + districtNumber + ",6");
-        var dp7 = sessionStorage.getItem("DMP," + districtNumber + ",7");
-        var dChanged = checkDistrictPledgeChanged(dp1, dp2, dp3, dp4, dp5, dp6, dp7); //*BUGCHECK
-        var hState = "";
+        let dp1 = sessionStorage.getItem("DMP," + districtNumber + ",1");
+        let dp2 = sessionStorage.getItem("DMP," + districtNumber + ",2");
+        let dp3 = sessionStorage.getItem("DMP," + districtNumber + ",3");
+        let dp4 = sessionStorage.getItem("DMP," + districtNumber + ",4");
+        let dp5 = sessionStorage.getItem("DMP," + districtNumber + ",5");
+        let dp6 = sessionStorage.getItem("DMP," + districtNumber + ",6");
+        let dp7 = sessionStorage.getItem("DMP," + districtNumber + ",7");
+        let dChanged = checkDistrictPledgeChanged(dp1, dp2, dp3, dp4, dp5, dp6, dp7); //*BUGCHECK
+        let hState = "";
         if (dChanged === 1) {
             hState = "pledgeMade";
         }
@@ -821,7 +847,9 @@ function viewDistricts() {
         outputDistrictHtml += "</h3>";
         outputDistrictHtml += "</div>";
         outputDistrictHtml += "<p></p>";
-        var dn = "<span id=\"" + districtNumber + "\"></span>";
+
+        let dn = "<span id=\"" + districtNumber + "\"></span>";
+
         outputDistrictHtml += "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
         outputDistrictHtml += "<a href=\"#\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Residents</a>";
         outputDistrictHtml += "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
@@ -833,14 +861,19 @@ function viewDistricts() {
         $("#district-list").append(outputDistrictHtml);
     }
 }
+
+
+
 function saveCurrentDistrict() {
     // Save Current district on Button Press to go to "pledge priority page"
     $('div .district-buttons-box').click(function () {
-        var result = $(this).closest('.district-buttons-box').attr("id");
+        let result = $(this).closest('.district-buttons-box').attr("id");
         sessionStorage.setItem("CD", result);
     })
     window.location.href = "pledge-priority.html"; // Got PLedge
 }
+
+
 function clearPledgePriorityButtonValuesDefault() {
     // Reset the Pledge Priorities to Default Value in sessionStorage Memory
     sessionStorage.setItem("PBL1", "L");
@@ -851,9 +884,10 @@ function clearPledgePriorityButtonValuesDefault() {
     sessionStorage.setItem("PBL6", "L");
     sessionStorage.setItem("PBL7", "L");
 }
+
 function createDistrictPriority() {
     // Create District Priority & RESET ALL TO LOW PRIORITY AS DEFAULT
-    var cdn = sessionStorage.getItem("CD");
+    let cdn = sessionStorage.getItem("CD");
     sessionStorage.setItem("DMP," + cdn + ",1", "L");
     sessionStorage.setItem("DMP," + cdn + ",2", "L");
     sessionStorage.setItem("DMP," + cdn + ",3", "L");
@@ -862,7 +896,7 @@ function createDistrictPriority() {
     sessionStorage.setItem("DMP," + cdn + ",6", "L");
     sessionStorage.setItem("DMP," + cdn + ",7", "L");
     // Save District Promoted Pledges From Pledge Priority Buttons Values
-    var cdn = sessionStorage.getItem("CD");
+    // let cdn = sessionStorage.getItem("CD");
     sessionStorage.setItem("DMP," + cdn + ",1", sessionStorage.getItem("PBL1"));
     sessionStorage.setItem("DMP," + cdn + ",2", sessionStorage.getItem("PBL2"));
     sessionStorage.setItem("DMP," + cdn + ",3", sessionStorage.getItem("PBL3"));
@@ -870,34 +904,39 @@ function createDistrictPriority() {
     sessionStorage.setItem("DMP," + cdn + ",5", sessionStorage.getItem("PBL5"));
     sessionStorage.setItem("DMP," + cdn + ",6", sessionStorage.getItem("PBL6"));
     sessionStorage.setItem("DMP," + cdn + ",7", sessionStorage.getItem("PBL7"));
-    var cdn = countryDistricts[sessionStorage.getItem("CD")];
-    alert("Your Pledges have now been \"PROMOTED\" to " + cdn + " District!");
+
+    let cdnme = countryDistricts[sessionStorage.getItem("CD")];
+    alert("Your Pledges have now been \"PROMOTED\" to " + cdnme + " District!");
     window.location.href = "country-districts.html#" + sessionStorage.getItem("CD"); // Reload Page
 }
+
+
 function viewPop() {
     $('div .district-buttons-box').click(function () {
-        var result = $(this).closest('.district-buttons-box').attr("id");
+        let result = $(this).closest('.district-buttons-box').attr("id");
         sessionStorage.setItem("CD", result);
     })
     window.location.href = "generate-populus.html";
 }
+
+
 function loadUpPopulation() {
     // POPULATION TABLE 
     if (sessionStorage.getItem("sHelp") < 1) {
         // Remove Statistician Help Button If Help Not Available
         $('#statistician-help-button').hide();
     }
-    var cd = sessionStorage.getItem("CD");
-    var tableLineout = "";
-    var currentDistrict = sessionStorage.getItem("CD");
-    var districtChunck = [] = sessionStorage.getItem("D," + currentDistrict);
+    let cd = sessionStorage.getItem("CD");
+    let tableLineout = "";
+    let currentDistrict = sessionStorage.getItem("CD");
+    let districtChunck = [] = sessionStorage.getItem("D," + currentDistrict);
     const pinfoStart = peopleArray = districtChunck.indexOf('@');
     const dataEnd = peopleArray = districtChunck.indexOf('~');
-    var popData = districtChunck.slice(pinfoStart, dataEnd);
-    var peopleList = "";
+    let popData = districtChunck.slice(pinfoStart, dataEnd);
+    let peopleList = "";
     peopleList = popData.split('^');
     // LAYOUT TITLES
-    var peopleOutputLine = "";
+    let peopleOutputLine = "";
     peopleOutputLine += "<div class=\"row no-gutters\">";
     peopleOutputLine += "";
     // 
@@ -937,9 +976,9 @@ function loadUpPopulation() {
     // Update Accuracy Count of Issues!!
     updateCanvassReportAccuracy(1, "X"); // Reset All ISsue Count Values
     for (let u = 1; u < peopleList.length; u++) {
-        var PA = [];
+        let PA = [];
         PA = (peopleList[u].split("/"))
-        var peopleOutputLine = "";
+        let peopleOutputLine = "";
         peopleOutputLine += "<div class=\"people-list-format\">";
         // Person Index
         peopleOutputLine += "<div id=" + u + "  class=\"row no-gutters\">";
@@ -995,20 +1034,25 @@ function loadUpPopulation() {
         //  console.log(PA[1]);
         $("#populus-table").append(peopleOutputLine);
         // Save to session Memory Current People data Pre-Election TO BE USED IN ELECTION ENGINE*******
-        var pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
+        let pdat = PA[0] + "," + PA[1] + "," + PA[2] + "," + PA[3] + "," + PA[4];
         sessionStorage.setItem("PED," + sessionStorage.getItem("CD") + "," + u + ":", pdat + "~");
     }
 }
+
+
+
 function showCurrentDistrict() {
     // Show current district number
     // Inside Pledge Priority page
-    var cdn = sessionStorage.getItem("CD");
+    let cdn = sessionStorage.getItem("CD");
     $("#current-district ,p").text("District ~" + cdn + "~ " + countryDistricts[cdn]);
 }
+
+
 function countUpIssues(issue, i1, i2, i3, i4, i5) {
     // Count UP Issues... i1-5 = question number 1st character, 
     // Issue = character looking for..ie issue type 
-    var issueTotal = 0;
+    let issueTotal = 0;
     switch (i1) {
         case issue:
             issueTotal++;
@@ -1031,6 +1075,8 @@ function countUpIssues(issue, i1, i2, i3, i4, i5) {
     }
     return issueTotal;
 }
+
+
 // STRIP ILLEGAL CHAR NOT WANTED
 function myTrim(x) {
     // Strip Trim Characters
@@ -1046,10 +1092,11 @@ function getRandom(limit) {
     } while (rn === 0 || isNaN(rn))
     return rn;
 }
+
 function CreateDistricts() {
     // Generate Districts  
     // Create District & Population
-    for (var i = 1; i < noOfDistricts; i++) {
+    for (let i = 1; i < noOfDistricts; i++) {
         // create district ID... initial pre-election
         dID = "D" + "," + i;
         // create district ID... for action
@@ -1058,25 +1105,25 @@ function CreateDistricts() {
         rID = "R" + "," + i;
         // Create Random Problems & Solutions For Every Area
         // PROB1
-        var rnum = getRandom(noOfProblems);
-        var dpa = districtProblems[rnum];
-        var spa = districtSolutions[rnum];
+        let rnum = getRandom(noOfProblems);
+        let dpa = districtProblems[rnum];
+        let spa = districtSolutions[rnum];
         // PROB2
-        var rnum = getRandom(noOfProblems);
-        var dpb = districtProblems[rnum];
-        var spb = districtSolutions[rnum];
+        rnum = getRandom(noOfProblems);
+        dpb = districtProblems[rnum];
+        spb = districtSolutions[rnum];
         // PROB3
-        var rnum = getRandom(noOfProblems);
-        var dpc = districtProblems[rnum];
-        var spc = districtSolutions[rnum];
+        rnum = getRandom(noOfProblems);
+        let dpc = districtProblems[rnum];
+        let spc = districtSolutions[rnum];
         // PROB4
-        var rnum = getRandom(noOfProblems);
-        var dpd = districtProblems[rnum];
-        var spd = districtSolutions[rnum];
+        rnum = getRandom(noOfProblems);
+        let dpd = districtProblems[rnum];
+        let spd = districtSolutions[rnum];
         // PROB5
-        var rnum = getRandom(noOfProblems);
-        var dpe = districtProblems[rnum];
-        var spe = districtSolutions[rnum];
+        rnum = getRandom(noOfProblems);
+        let dpe = districtProblems[rnum];
+        let spe = districtSolutions[rnum];
         // Create Problem and Solution as a Packed String
         var PRB = dpa + "," + dpb + "," + dpc + "," + dpd + "," + dpe;
         var SOL = spa + "," + spb + "," + spc + "," + spd + "," + spe;
@@ -1185,14 +1232,15 @@ function CreateDistricts() {
             }
             // Generate Random Name Combination for a person
             // Not 1 less to ensure no illegal item
-            var fName = [fNames[getRandom(29)]];
-            var initial = [initials[getRandom(20)]];
-            var surName = [sNames[getRandom(29)]];
-            var PersonName = fName + "." + initial + "." + surName;
+            let fName = [fNames[getRandom(29)]];
+            let initial = [initials[getRandom(20)]];
+            let surName = [sNames[getRandom(29)]];
+            let PersonName = fName + "." + initial + "." + surName;
             // Persons Main Concern  
-            var pConcernString = "";
-            var pConcernRN = getRandom(5);
-            pConcern = globalTrendImpact(pConcernRN); // Get global influence &*&
+            let pConcernString = "";
+            let pConcernRN = getRandom(5);
+            let pConcern = globalTrendImpact(pConcernRN); // Get global influence &*&
+
             switch (pConcern) {
                 case 0:
                     pConcernString = "-";
@@ -1216,25 +1264,26 @@ function CreateDistricts() {
             // TipOver amount of concerns politician successfully address
             // To swing my Vote. Iie PERSON CONVERSION THRESHOLD!!
             // PERSONS CV!
-            var tiPOver = getRandom(personConversionValueMax);
+            let tiPOver = getRandom(personConversionValueMax);
             people = people + "^" + i + "/" + pConcernString + "/" + PersonName + "/" + tiPOver + "/" + pAf + "";
         }
         // MARK END OF PEOPLE DATA CHUNK WITH "~"
         people = people + "~";
         // All Variables Ready for use
         // REPLICATED DATA IN 3 AREAS  ... PRE / ACTION / POST   ELECTION
-        var DI = dID;
-        var EI = eID;
+        let DI = dID;
+        let EI = eID;
         // The line of content of each district
         var PRB = PRB;
         var dPop = dPop;
         var pAf = pAf;
         // Packed - StringOut to Save to SessionVariable
-        var LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
+        let LO = PRB + '#' + SOL + '#' + dPop + "#" + pAf + "#" + "@" + people;
         sessionStorage.setItem(DI, LO); //PRE-ELECTION DATA
         sessionStorage.setItem(EI, LO); //CHANGES ELECTION DATA  ** MAKE CHANGES HERE
     }
 }
+
 function clearGameData() {
     // Set Flag to Reset The Game
     // All Game data will be lost!!!!
@@ -1243,6 +1292,7 @@ function clearGameData() {
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
 }
+
 function resetGame(runProcess) {
     // This routine checks a flag to see if a request has been issued
     // To reset the Game. If so it calls the  setupGame routine
@@ -1278,6 +1328,7 @@ function resetGame(runProcess) {
         sessionStorage.setItem("DMP," + i + ",7", "L");
     }
 }
+
 function setupGame() {
     // Main Setup Game Setup Routine
     // This routine will set up basic structures
@@ -1300,6 +1351,7 @@ function setupGame() {
     sessionStorage.setItem("campaign-mode-active-authorised", true);
     sessionStorage.setItem("election-day-game-active-authorised", true);
 }
+
 function WipeOutOldDistrictPledges() {
     // Wipe Out Old Dsitrict Pledges Made, Ready for new Game
     // NOTE: ** Access with "sessionStorage.getItem(Dn:PS:sn(1-5)""
@@ -1312,6 +1364,7 @@ function WipeOutOldDistrictPledges() {
     }
     alert("Previous pledge entries erased!");
 }
+
 function flashUnaddressedIssue() {
     // Flash Unaddressed Issue in Country Districts
     // Entry call = country-district.html
@@ -1326,6 +1379,7 @@ function flashUnaddressedIssue() {
         return;
     }
 }
+
 function createEmptyManifesto() {
     // Create Empty Manifesto
     // This is the Manifest your Politician will use
@@ -1335,13 +1389,14 @@ function createEmptyManifesto() {
         return;
     }
     for (let i = 1; i < 8; i++) {
-        var blankManifestoKey = "M," + i;
-        var blankManifestoLine = "-";
+        let blankManifestoKey = "M," + i;
+        let blankManifestoLine = "-";
         // Create it in memory
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
     }
     alert("Blank Manifesto Created!");
 }
+
 function resetManifesto() {
     // Reset Manifesto
     createEmptyManifesto();
@@ -1361,6 +1416,7 @@ function loadUpManifestoPage() {
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
+
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1372,7 +1428,7 @@ function saveManifesto() {
     }
     //  Save Manifesto list to "sessionStorage"
     for (let i = 1; i < 8; i++) {
-        var blankManifestoKey = "M," + i;
+        let blankManifestoKey = "M," + i;
         // Create session it in sessionStoragememory
         blankManifestoLine = $('.raw-manifesto-item-' + i + ' h4 p').first('p').text();
         sessionStorage.setItem(blankManifestoKey, blankManifestoLine);
@@ -1383,6 +1439,9 @@ function saveManifesto() {
     sessionStorage.setItem("create-manifesto-page-authorised", false);
     window.location = "country-districts.html";
 }
+
+
+
 $(document).ready(function () {
     // Hightlight  Pledges in raw pledge pool
     $("#raw-pledge-pool p").click(function () {
@@ -1406,11 +1465,18 @@ $(document).ready(function () {
         $(this).hide("slow");
     });
 });
+
+
+
+
 function deselectAllPledges() {
     // Deselect All Pledges
     $('p').removeClass('selected-from-pledge-pool');
     return;
 }
+
+
+
 function setBv(bp) {
     // SET  BUTTON VALUES
     switch (pbl) {
@@ -1615,14 +1681,16 @@ function setBv(bp) {
             break;
     }
 }
+
 function showHighPledgesRemaining() {
     // Show amount of High Pledges Available
     $('#nohp').text(numberOfPriorityHighAvilable);
 }
+
 function loadUpPledgePriorityPage() {
     // PLEDGEPRIORITY PAGE
     {
-        var pbuttons = "";
+        let pbuttons = "";
         pbuttons += "<div class=\"row\">";
         pbuttons += "<div class=\"col-12 priority-buttons-format\">";
         // 
@@ -1639,18 +1707,20 @@ function loadUpPledgePriorityPage() {
         // Build buttons on page right-hand side
         // Add the pledge line
         for (let i = 1; i < 8; i++) {
-            var pdetailHlt = "<span class=\"highlight-district-number\">" + i + "</span>";
+            let pdetailHlt = "<span class=\"highlight-district-number\">" + i + "</span>";
             $('#manifesto-pledges').append('<div id="manifesto-pledge-' + i + '\" class=\"mfi"><h2>' + pdetailHlt + sessionStorage.getItem('M,' + i) + '</h2></div>');
-            var PriorityButtonNumberHlt = "<span class=\"highlight-district-number\">" + i + "</span>";
+            let PriorityButtonNumberHlt = "<span class=\"highlight-district-number\">" + i + "</span>";
             $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + PriorityButtonNumberHlt + ":" + pbuttons + '</h2></div>');
         }
     }
+
+
     $(document).ready(function () {
         // Manifesto Pledge Priotorization
         // Get Selcted Manifesto Pledge
         $('#manifesto-pledge-item ,.mfi').click(function () {
             removeButtonArrayHighlight();
-            var result = $(this).attr('id'); // get pledge ID clicked
+            let result = $(this).attr('id'); // get pledge ID clicked
             // alert(result);
             // Show number of "High" Pledges remaining
             showHighPledgesRemaining();
@@ -1686,6 +1756,7 @@ function loadUpPledgePriorityPage() {
             }
         })
     })
+
     function removeButtonArrayHighlight() {
         // Remove Highlight from the button array on
         // View Pledge Priority Page
@@ -1698,15 +1769,21 @@ function loadUpPledgePriorityPage() {
         $('#button-array-7 button').removeClass('highlight-pbutt');
     }
 }
+
 function backToDistrictView() {
     // Go back to View Districts Page
-    var dtag = sessionStorage.getItem("CD");
+    let dtag = sessionStorage.getItem("CD");
     dtag = dtag.trim();
     window.location.assign("country-districts.html#" + dtag); // Jump to district view! BUGTEST
 }
-var marquee = {
+
+
+
+let marquee = {
     "message1": " **** Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom ***"
 }
+
+
 // Message Ticker Marquee
 function showMarquee(message, mw) {
     messageOut = message.slice(messagePosition, (messagePosition + 100))
@@ -1732,10 +1809,10 @@ function processElection() {
     // hld = stronghold party
     function publishLine(repd, con, lab, libd, grn, hld) {
         // Get Vote Supports per party in each district
-        var ConVotes = getPartyMembersCountInDistrict(repd, "Conservative");
-        var LabVotes = getPartyMembersCountInDistrict(repd, "Labour");
-        var LibDemVotes = getPartyMembersCountInDistrict(repd, "Lib-Dem");
-        var GreenVotes = getPartyMembersCountInDistrict(repd, "Green");
+        let ConVotes = getPartyMembersCountInDistrict(repd, "Conservative");
+        let LabVotes = getPartyMembersCountInDistrict(repd, "Labour");
+        let LibDemVotes = getPartyMembersCountInDistrict(repd, "Lib-Dem");
+        let GreenVotes = getPartyMembersCountInDistrict(repd, "Green");
         // Running Total Votes Accross ALL Dristricts
         partyGT.Conservative = partyGT.Conservative + ConVotes;
         partyGT.Labour = partyGT.Labour + LabVotes;
@@ -1743,10 +1820,10 @@ function processElection() {
         partyGT.Green = partyGT.Green + GreenVotes;
         // function getTopRankParty(party1, pval, party2, pval2, party3, pval3, party4, pval4) 
         // Get The top party in district
-        var topParty;
-        var topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
+        // let topParty;
+        let topParty = getTopRankParty("Conservative", ConVotes, "Labour", LabVotes, "Lib-Dem", LibDemVotes, "Green", GreenVotes);
         // Build Output HTML in String
-        var preStatsResultLineOut = "";
+        let preStatsResultLineOut = "";
         preStatsResultLineOut += "<div class=\"row no-gutters\">";
         preStatsResultLineOut += " <div id=\"results-stats\" class=\"col-12\">";
         preStatsResultLineOut += "<h2>";
@@ -1810,11 +1887,12 @@ function processElection() {
         $('#insert-stats-content').append(preStatsResultLineOut);
         // SPIT OUT PARTY WITH THE MOST DISTRICT CONTROL
         $('reporter-domparty-img').html("<h1><img src=\"images/vicky-morse.png\" /></h1>");
-        var tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
-        var domminatPartymessage = "";
+        let tdcon = (conservativeDistrictHoldTotal / (conservativeDistrictHoldTotal + labourDistrictHoldTotal + libDemDistrictHoldTotal + greenDistrictHoldTotal)) * 100;
+        let domminatPartymessage = "";
         domminatPartymessage += "<h2>The last party with a winning majority was </h2>";
         domminatPartymessage += "";
     }
+
     function getStrongHoldColor(tp) {
         // GET STRONG HOLD COLOUR
         // tp = stronghold  party name
@@ -1833,6 +1911,7 @@ function processElection() {
         }
         return strngHoldColor;
     }
+
     function getTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET TOP RANK PARTY
         // Check through Parties supplied and find which is top in
@@ -1858,14 +1937,15 @@ function processElection() {
         }
         return [topPartyName, topPartyValue];
     }
+
     function getWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET WINNING RPARTY
         // Check through Parties supplied and find which is top in
         // Set submitted
         // This will allow you to find top party in district
-        var winPartyValue = 0;
-        var winPartyName = "";
-        var hungMessage = "** HUNG PARLIMENT! **"
+        let winPartyValue = 0;
+        let winPartyName = "";
+        let hungMessage = "** HUNG PARLIMENT! **"
         if (pval1 > winPartyValue) {
             winPartyValue = pval1;
             winPartyName = party1Name;
@@ -1941,17 +2021,18 @@ function processElection() {
         // 
         return [winPartyName, winPartyValue];
     }
+
     function getPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
         // dn = district number to check
         // party = party to check totals for..
-        var packedData
+        let packedData
         packedData = sessionStorage.getItem("D," + dn);
-        var splitData = packedData.split("@");
-        var members = splitData[1];
-        var individualPeople = members.split("^");
-        var tally = 0; // restet tally count
+        let splitData = packedData.split("@");
+        let members = splitData[1];
+        let individualPeople = members.split("^");
+        let tally = 0; // restet tally count
         for (let i = 1; i < individualPeople.length; i++) {
             var unpackedPerson = individualPeople[i].split("/");
             // ** Keep this as remider of each data content **
@@ -1969,6 +2050,10 @@ function processElection() {
         }
         return tally; // return total  found
     }
+
+
+
+
     function DistrictTotalControl(pty) {
         // Get Overall District Control
         if (pty === "Conservative") {
@@ -2032,17 +2117,17 @@ function campaignStratergyImplementation() {
         var convertedPeopleTotal = 0; // No of people converted this run!!
         for (let residentCount = 1; residentCount < noOfResidents; residentCount++) {
             // RESET RV
-            var reductionValue = 0; // Value to be subtracted from persons conversion value (personCV)
+            let reductionValue = 0; // Value to be subtracted from persons conversion value (personCV)
             // SPLIT PERSON DATA INTO COMPONENTS. 
-            var personComponents = electionEngineUnpackedPerson[residentCount].split("/"); // break up person data into components
+            let personComponents = electionEngineUnpackedPerson[residentCount].split("/"); // break up person data into components
             // PUT PERSON COMPONENTS INTO INDIVIDUAL VARS
-            var personIdx = personComponents[0];
-            var personIssueID = personComponents[1];
-            var personName = personComponents[2];
-            var personCv = personComponents[3];
-            var personParty = personComponents[4];
+            let personIdx = personComponents[0];
+            let personIssueID = personComponents[1];
+            let personName = personComponents[2];
+            let personCv = personComponents[3];
+            let personParty = personComponents[4];
             // GET SAVED PLEDGES
-            var savedPledges = [];
+            let savedPledges = [];
             savedPledges.push("-");
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 1));
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 2));
@@ -2052,7 +2137,7 @@ function campaignStratergyImplementation() {
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 6));
             savedPledges.push(sessionStorage.getItem("DMP," + currentDistrictCount + "," + 7));
             // GET POLITICIAN MANIFESTO ; This contains the full manifesto string... not just the letters "CHW... etc"
-            var partyManifesto = [];
+            let partyManifesto = [];
             partyManifesto.push("-");
             partyManifesto.push(sessionStorage.getItem("M,1"));
             partyManifesto.push(sessionStorage.getItem("M,2"));
@@ -2089,7 +2174,7 @@ function campaignStratergyImplementation() {
             // CONVERSION ENGINE
             // //////////////////////////////////
             // Check if Persons Issue Concern is addresed in Your Party Manifesto
-            var hitFlag = 0; // RESET HIT!!
+            let hitFlag = 0; // RESET HIT!!
             for (let icount = 1; icount <= 7; icount++) {
                 if ((personIssueID === partyManifestoResponse[icount])) {
                     reductionValue = 1;
@@ -2147,27 +2232,31 @@ function campaignStratergyImplementation() {
         convertedPeopleTotal = 0;
         updatePeopleChunk(currentDistrictCount);
     }
+
+
+
     // UPDATE PEOPLE CHUNK
     function updatePeopleChunk(currentDistrictCount) {
-        var UPD = [];
-        var districToUpdate = sessionStorage.getItem("E," + currentDistrictCount);
-        var packedData
+        let UPD = [];
+        let districToUpdate = sessionStorage.getItem("E," + currentDistrictCount);
+        let packedData
         packedData = sessionStorage.getItem("E," + currentDistrictCount);
-        var splitData = packedData.split("@");
-        var members = splitData[1]; //people data
-        var updatedMembers = updatedPeoplePackedList;
+        let splitData = packedData.split("@");
+        let members = splitData[1]; //people data
+        let updatedMembers = updatedPeoplePackedList;
         UPD = (splitData[0] + "@[" + updatedMembers + "~");
         sessionStorage.setItem("E," + currentDistrictCount, UPD);
     }
+
     function electionEngineGetMembersCountInDistrict(dn) {
         // ////////////////////////////////// 
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
         // dn = district number to check
-        var packedData
+        let packedData
         packedData = sessionStorage.getItem("E," + dn);
-        var splitData = packedData.split("@");
-        var members = splitData[1];
-        var individualPeople = members.split("^");
+        let splitData = packedData.split("@");
+        let members = splitData[1];
+        let individualPeople = members.split("^");
         electionEngineUnpackedPerson = members.split("^");
         //     // *** Keep this as remider of each data ***
         //     // console.log(unpackedPerson[0]); // id number
@@ -2180,6 +2269,7 @@ function campaignStratergyImplementation() {
         return individualPeople.length; // return total  found
     }
 }
+
 function politicalCompetition(cpty, redv) {
     // Political Compotition from other parties
     var cmpNv = getRandom(5);
@@ -2208,13 +2298,14 @@ function politicalCompetition(cpty, redv) {
         return rvetv; // Stop Conversion, removing reduction value
     }
 }
+
 function countryInfluence() {
     // /////////////////////
     // Country Influence
-    var cHitFlag = 0;
-    var C1 = sessionStorage.getItem("c1");
-    var C2 = sessionStorage.getItem("c2");
-    var C3 = sessionStorage.getItem("c3");
+    let cHitFlag = 0;
+    let C1 = sessionStorage.getItem("c1");
+    let C2 = sessionStorage.getItem("c2");
+    let C3 = sessionStorage.getItem("c3");
     if (C1.length > C2) {
         cHitFlag = C1;
     }
@@ -2239,10 +2330,10 @@ function postProcessElection() {
     // hld = stronghold party
     function postPublishLine(repd, con, lab, libd, grn, hld) {
         // Get Vote Supports per party in each district
-        var postConVotes = postGetPartyMembersCountInDistrict(repd, "Conservative");
-        var postLabVotes = postGetPartyMembersCountInDistrict(repd, "Labour");
-        var postLibDemVotes = postGetPartyMembersCountInDistrict(repd, "Lib-Dem");
-        var postGreenVotes = postGetPartyMembersCountInDistrict(repd, "Green");
+        let postConVotes = postGetPartyMembersCountInDistrict(repd, "Conservative");
+        let postLabVotes = postGetPartyMembersCountInDistrict(repd, "Labour");
+        let postLibDemVotes = postGetPartyMembersCountInDistrict(repd, "Lib-Dem");
+        let postGreenVotes = postGetPartyMembersCountInDistrict(repd, "Green");
         // Running Total Votes Accross ALL Dristricts
         partyGT.Conservative = partyGT.Conservative + postConVotes;
         partyGT.Labour = partyGT.Labour + postLabVotes;
@@ -2253,7 +2344,7 @@ function postProcessElection() {
         var postTopParty;
         var postTopParty = postGetTopRankParty("Conservative", postConVotes, "Labour", postLabVotes, "Lib-Dem", postLibDemVotes, "Green", postGreenVotes);
         // Build Output HTML in String
-        var postStatsResultLineOut = "";
+        let postStatsResultLineOut = "";
         postStatsResultLineOut += "<div class=\"row no-gutters\">";
         postStatsResultLineOut += " <div id=\"results-stats\" class=\"col-12\">";
         postStatsResultLineOut += "<h2>";
@@ -2322,6 +2413,7 @@ function postProcessElection() {
         var domminatPartymessage = "";
         domminatPartymessage += "<h2>The last party with a winning majority was </h2>";
     }
+
     function postGetStrongHoldColor(tp) {
         // GET STRONG HOLD COLOUR
         // tp = stronghold  party name
@@ -2340,6 +2432,7 @@ function postProcessElection() {
         }
         return strngHoldColor;
     }
+
     function postGetTopRankParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET TOP RANK PARTY
         // Check through Parties supplied and find which is top in
@@ -2365,6 +2458,7 @@ function postProcessElection() {
         }
         return [postTopPartyName, postTopPartyValue];
     }
+
     function postGetWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
         // GET WINNING RPARTY
         // Check through Parties supplied and find which is top in
@@ -2448,6 +2542,7 @@ function postProcessElection() {
         // 
         return [winPartyName, winPartyValue];
     }
+
     function postGetPartyMembersCountInDistrict(dn, party) {
         // ////////////////////////////////// 
         // GET SUBTOTAL MEMBERS COUNT OF EACH PARTY
@@ -2478,6 +2573,7 @@ function postProcessElection() {
         }
         return tally; // return total  found
     }
+
     function postDistrictTotalControl(pty) {
         // Get Overall District Control
         //  This function takes a part and increments the running total
@@ -2555,10 +2651,12 @@ function insertMyPoliticianImage() {
     picInsertString = picInsertString + "<h3>" + myPName + "- MP/" + sessionStorage.getItem("myParty") + "</h3>";
     $('#my-party-leader').append(picInsertString);
 }
+
 function backFromPopulusView() {
     // Jump back to location on district page view where you left it
     window.location.href = "country-districts.html#" + sessionStorage.getItem("CD");
 }
+
 function restartGame() {
     // RESTART GAME ..JUMP TO MAIN START PAGE
     alert("Thank you for playing. You will be taken to the start-screen of the game. You may need to press \"new-game\" to play again! ,In the instance you arrived at the start screen while there was a previously uncompleted game")
@@ -2566,6 +2664,7 @@ function restartGame() {
     sessionStorage.clear("myParty");
     window.location.assign("index.html")
 }
+
 function updateCanvassReportAccuracy(resetnow, issue) {
     //  Accuracy Count up if Count Pass Available then "Accuracy Countup"
     if (sessionStorage.getItem("sHelp") < 0) {
@@ -2609,6 +2708,7 @@ function updateCanvassReportAccuracy(resetnow, issue) {
             break;
     }
 }
+
 function showAccuracyReport() {
     if (sessionStorage.getItem("sHelp") < 1) {
         $("#stats-help-button").hide();
@@ -2622,6 +2722,7 @@ function showAccuracyReport() {
         alert("Remaining Helps:  " + sessionStorage.getItem("sHelp"));
     }
 }
+
 function didYourPartyWin() {
     if (sessionStorage.getItem("myParty") === winPartyName) {
         window.location.href = "winner-page.html";
@@ -2633,6 +2734,7 @@ function didYourPartyWin() {
         $("#your-party").append(temp2);
     }
 }
+
 function getPartyImage() {
     // Get Your Party Politician Immage
     party = sessionStorage.getItem("myParty");
@@ -2660,6 +2762,7 @@ function getPartyImage() {
     sessionStorage.setItem("winingN", nm);
     return fn; // Return filename
 }
+
 function globalTrendImpact(cnumb) {
     // GLOBAL IMPACT ON ISSUES
     var topup = 60;
@@ -2696,6 +2799,7 @@ function globalTrendImpact(cnumb) {
     }
     return rnumb;
 }
+
 function loadUpInstructions() {
     // LOADUP INSTRUCTIONS
     var instructions = [
@@ -2732,6 +2836,7 @@ function loadUpInstructions() {
     }
     $("#instruction-insert").append(outLineStringBookendEnd);
 }
+
 function checkDistrictPledgeChanged(p1, p2, p3, p4, p5, p6, p7) {
     //    Return 1 if any of the district pledges is not 'L'
     //    i.e if it has been modified
