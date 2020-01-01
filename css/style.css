@@ -1,14 +1,14 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 body {
-    /* ======================================================== */
     border: 0px;
     margin: 0px;
     padding: 0px;
     font-family: "Calistoga", "sans-serif";
-     --main-page-body-color: #1E2A36;
-    /* --main-page-body-color: #202936; */
+    --main-page-body-color: #1E2A36;
     --main-page-text-color: wheat;
-    --title-color:rgb(156, 37, 16); /*@*/
+    --title-color: rgb(156, 37, 16);
+    /*@*/
     --title-shadow-color: rgb(129, 68, 68);
     --title-background-color: black;
     --subtitle-color: #E88F2C;
@@ -27,47 +27,57 @@ body {
     background-color: var(--main-page-body-color);
     --table-border-color: rgb(145, 20, 20);
 }
-/* //////////////////////////// */
-/* Ket Text Content Inside Div */
+
+/* Keep Text Content Inside Div */
+
 .keep-insideBSol {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
     word-wrap: break-word;
 }
+
 /* Title Stuff */
+
 .title-block {
     background-color: var(--title-background-color);
     color: var(--title-color);
     border-radius: 10px;
     text-shadow: 3px 3px var(--myRed);
 }
+
 .sub-title-1 {
     background-color: var(--subtitle-background-color);
     color: var(--subtitle-color);
     border-radius: 10px;
     text-shadow: 2px 2px var(--subtitle-shadow-color);
 }
+
 .sub-title-2 {
     background-color: var(--subtitle-background-color);
     color: var(--subtitle-color);
     border-radius: 10px;
     text-shadow: 2px 2px var(--subtitle-shadow-color);
 }
+
 .sub-title-3 {
     background-color: var(--subtitle-background-color);
     color: var(--subtitle-color);
     border-radius: 10px;
     text-shadow: 2px 2px var(--subtitle-shadow-color);
 }
+
 /* Candidate Image Formatting */
+
 .candidates>img {
     border: 2px solid var(--title-color);
 }
+
 .candidates>img {
     border-radius: 50%;
     width: 6rem;
 }
+
 .candidates>h1 {
     background-color: black;
     border-radius: 10px;
@@ -75,16 +85,20 @@ body {
     padding: 5px 5px 5px 5px;
     text-align: center;
 }
+
 .flashNow {
     color: orange;
     background-color: black;
     border-radius: 10px;
 }
+
 .flashHandNow {
     color: var(--flash-colour);
     text-shadow: 1px 1px yellow;
 }
+
 /* BURGER NAV STUFF */
+
 #burger-menu-items>li>a {
     font-size: 2rem;
     color: var(--main-page-text-color);
@@ -92,23 +106,26 @@ body {
     text-shadow: 2px 2px var(--flash-colour);
     list-style: none;
 }
+
 #burger-menu-items>li>a:hover {
     color: var(--flash-colour);
 }
+
 /* STANDARD MENU ITEMS */
+
 #standard-menu-items>li {
     font-size: 2rem;
     margin-right: 10px;
     display: inline;
-    /* text-decoration: none;
-    list-style: none; */
 }
+
 #standard-menu-items>li a {
     color: var(--main-page-text-color);
     text-decoration: none;
     list-style: none;
     text-shadow: 2px 2px var(--flash-colour);
 }
+
 #standard-menu-items>li>a:hover {
     color: var(--flash-colour);
     background-color: var(--grey-shadow-color);
@@ -116,43 +133,57 @@ body {
     padding-right: 10px;
     border-radius: 10px;
 }
+
 /* Ribbon Color Classes for Political Parties */
+
 .ribbon {
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 .make-ribbon-red h1 {
     color: var(--party-labour);
 }
+
 .make-ribbon-blue h1 {
     color: var(--party-conservative);
 }
+
 .make-ribbon-yellow h1 {
     color: var(--party-lib-dem);
 }
+
 .make-ribbon-green h1 {
     color: var(--party-green);
 }
+
 .make-ribbon-grey h1 {
     color: var(--party-unknown);
 }
-/* /////////////////////////////////////////// */
+
 /* Ribbon Color Classes for Political Parties */
+
 .make-people-red {
     background-color: var(--party-labour);
 }
+
 .make-people-blue {
     background-color: var(--party-conservative);
 }
+
 .make-people-yellow {
     background-color: var(--party-lib-dem);
 }
+
 .make-people-green {
     background-color: var(--party-green);
 }
+
 .make-people-grey {
     background-color: var(--party-unknown);
 }
+
 /* FRONT PAGE ADVERT STUFF */
+
 .advert {
     background-color: var(--title-color);
     text-shadow: 1px 1px var(--grey-shadow-color);
@@ -160,58 +191,75 @@ body {
     min-height: 300px;
     color: var(--main-page-text-color);
 }
+
 .advert>ul li {
     font-size: 1.5rem;
     /* list-style: none; */
     text-align: left;
     padding-top: 10px;
 }
+
 .advert>ul>li>a {
     font-size: 2rem;
     color: var(--main-page-text-color);
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 #g-gen-button {
     padding-top: 10px;
     margin-left: -20px
 }
+
 #reset-game-button {
     margin-top: 10px;
 }
+
 /* GLOBAL ECONOMY BUTTON STUFF */
+
 .global-ecom-button-show {
     display: inline-block;
 }
+
 .global-ecom-button-hide {
     display: none;
 }
+
 #political-sway>h1 {
     color: wheat;
 }
+
 /* FONT AWESOME ICONS */
+
 .fas {
     font-size: 2rem;
 }
+
 span>fas>fa-award {
     font-size: 3rem;
 }
+
 .ribbon>h1>.fa-award {
     font-size: 3rem;
 }
+
 /* FOOTER STUFF */
+
 .footer {
     margin-top: 10px;
     color: var(--main-page-text-color);
     text-shadow: 1px 1px var(--grey-shadow-color);
     text-align: center;
 }
+
 .footer>ul>li {
     /* text-align: center; */
     display: inline;
     list-style: none;
     text-decoration: none;
 }
+
 /* ADVICE MESSAGE ON GLOBAL ECONOMY PAGE */
+
 .global-economy-intro-message>h2 {
     border-radius: 10px;
     color: var(--title-color);
@@ -221,6 +269,7 @@ span>fas>fa-award {
     background-color: black;
     font-size: 2rem;
 }
+
 .global-economy-intro-message>div>h1 {
     border-radius: 10px;
     color: var(--flash-colour);
@@ -230,15 +279,20 @@ span>fas>fa-award {
     background-color: black;
     font-size: 2rem;
 }
+
 .global-ecom-button-hide {
     display: none;
 }
+
 /* GLOBAL ICON SPHERE */
+
 .globe-icon {
     color: var(--main-page-text-color);
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 /* GLOBAL TABLE */
+
 #global-table {
     color: var(--main-page-text-color);
     background-color: var(--main-page-body-color);
@@ -248,11 +302,13 @@ span>fas>fa-award {
     text-align: left;
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 .highLight2 {
     color: var(--flash-colour);
     background-color: var(--main-page-text-color);
     border-radius: 10px;
 }
+
 #district-list {
     background-color: var(--district-view-background-colour);
     color: var(--main-page-text-color);
@@ -261,83 +317,101 @@ span>fas>fa-award {
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
 }
+
 .tabloid>.fas {
     color: var(--title-color);
     text-shadow: 1px 1px var(--flash-colour);
 }
+
 .dpanel>h3>p {
     font-size: 1rem;
 }
+
 .tabloid {
     font-size: 1rem;
 }
-.pledgeMade{
-/* If pledge made in district change colour */
-  color: yellow;
-  text-shadow: 2px 2px black;
+
+.pledgeMade {
+    /* If pledge made in district change colour */
+    color: yellow;
+    text-shadow: 2px 2px black;
 }
+
 .district-list>p {
     color: var(--flash-colour);
     font-size: .50rem;
 }
+
 #create-manifesto-button {
     margin-bottom: 10px;
 }
+
 .map-uk>img {
     width: 25%;
     border-radius: 10px;
     margin-bottom: 10px;
     text-shadow: 4px 4px var(--grey-shadow-color);
 }
+
 .map-big>img {
     width: 16rem;
     height: Auto;
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
 #promoted-pledges>p:hover {
     font-size: 1.5rem;
     color: pink;
     text-shadow: 2px 2px var(--title-background-color);
 }
+
 .point-up>.fas {
     color: pink;
     font-size: 3rem;
 }
+
 .point-up>.far>span {
     font-size: 3rem;
 }
+
 .hide-solutions {
     /* HIDE SOLUTIONS */
     display: none;
 }
+
 .progress {
     margin-top: 2px;
     background-color: var(--district-view-tabloid-background);
     color: var(--main-page-body-color);
     /* box-shadow: 1px 1px var(--grey-shadow-color); */
 }
+
 .progress, .progress-bar-striped {
     border-radius: 2px;
     color: var(--main-page-text-color);
     /* border: 2px solid var(--grey-shadow-color); */
 }
+
 .tabloid {
     border-radius: 10px;
     background-color: var(--district-view-tabloid-background);
     margin-bottom: 10px;
     padding: 10px 10px 10px 10px;
 }
+
 .people-list-format h2 {
     font-size: .75rem;
     color: var(--main-page-text-color);
     border: 1px solid var(--flash-colour);
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 .highlight-pbutt {
     background-color: var(--flash-colour);
     color: black;
 }
+
 .circle-dtot {
     border-radius: 50%;
     padding-left: 10px;
@@ -346,10 +420,13 @@ span>fas>fa-award {
     background-color: var(--flash-colour);
     color: wheat;
 }
+
 .tabloid>.fas>.fa-newspaper {
     background-color: var(--grey-shadow-color);
 }
+
 /* Highlight district name on district view page */
+
 .hightlight-district-name {
     border: solid;
     border-radius: 10px;
@@ -360,20 +437,22 @@ span>fas>fa-award {
     background-color: var(--flash-colour);
     text-shadow: 1px 1px black;
 }
+
 /* Highlight district Number on district View Page */
+
 .highlight-district-number {
     border: none;
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    /* color: white; */
-    /* text-shadow: 2px 2px black; */
-    background-color:var(--district-view-tabloid-background);
+    background-color: var(--district-view-tabloid-background);
     font-size: 1rem;
     margin-right: 10px;
 }
+
 /* Manifesto Instructions box */
-.manifesto-instructions >h2 {
+
+.manifesto-instructions>h2 {
     border-radius: 10px;
     font-size: 1rem;
     background-color: wheat;
@@ -381,15 +460,19 @@ span>fas>fa-award {
     text-shadow: 1px 1px white;
     padding: 5px 5px 5px 5px;
 }
+
 .stats-header {
     margin-top: 10px;
     color: white;
 }
+
 /* MANIFEST PLEDGE PAGE */
+
 #raw-pledge-pool {
     color: var(--main-page-text-color);
     font-size: 1rem;
 }
+
 #raw-pledge-pool h4 {
     font-size: .75rem;
     border-radius: 10px;
@@ -397,12 +480,14 @@ span>fas>fa-award {
     background-color: black;
     text-shadow: 2px 2px var(--grey-shadow-color);
     -webkit-box-shadow: 3px 3px var(--grey-shadow-color);
-            box-shadow: 3px 3px var(--grey-shadow-color);
+    box-shadow: 3px 3px var(--grey-shadow-color);
 }
+
 #raw-manifesto-pool {
     color: var(--main-page-text-color);
     font-size: 1rem;
 }
+
 #raw-manifesto-pool h4 {
     font-size: .75rem;
     border-radius: 10px;
@@ -411,23 +496,30 @@ span>fas>fa-award {
     background-color: var(--main-page-text-color);
     text-shadow: 1px 1px var(--grey-shadow-color);
     -webkit-box-shadow: 2px 2px var(--grey-shadow-color);
-            box-shadow: 2px 2px var(--grey-shadow-color);
+    box-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 .pledge-plank {
     color: rgb(160, 105, 105);
 }
+
 .highlight-pbutt {
     background-color: var(--flash-colour);
     color: black;
 }
+
 /* Hide the create manifesto button from page once completed */
+
 /* So it does not show on page refresh */
+
 .remove-c-m-b-a {
     display: none;
 }
+
 #number-of-high-pledges-instructions>h3 {
     color: var(--main-page-text-color);
 }
+
 #manifesto-pledges {
     color: var(--main-page-text-color);
     background-color: black;
@@ -436,27 +528,31 @@ span>fas>fa-award {
     padding-bottom: 10px;
     text-shadow: 1px 1px var(--grey-shadow-color);
 }
+
 #manifesto-pledges>h2 {
     font-size: 1rem;
 }
+
 .mfi>h2 {
     font-size: 1rem;
     border: solid;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
 }
+
 #pledge-priority {
     border: none;
     border-radius: 10px;
     background-color: var(--title-color);
     font-size: 1rem;
 }
+
 #pledge-priority>h2 {
-    /* color: white; */
     text-shadow: 2px 2px var(--grey-shadow-color);
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
+
 #nohp {
     font-size: 2rem;
     text-align: center;
@@ -466,84 +562,95 @@ span>fas>fa-award {
     padding: 5px 15px 5px 15px;
     border: 4px solid var(--title-color);
 }
-#nohp>h2 {
-    /* margin-left: auto;
-    margin-right: auto; */
-}
+
 .number-of-high-pledges>h2 {
     margin-left: auto;
     margin-right: auto;
 }
+
 #reporter>h3 {
     font-size: 1rem;
     color: var(--main-page-text-color);
     margin-bottom: 10px;
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 #reporter>h3>img {
     margin-top: 10px;
     width: 100px;
     height: auto;
 }
+
 #my-politician>h3 {
     font-size: 1rem;
     color: var(--main-page-text-color);
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 #my-politician>h3>img {
     margin-top: 10px;
     width: 100px;
     height: auto;
 }
+
 #pre-election-title>h1 {
     color: var(--title-color);
     font-size: 2rem;
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 #t-stats>.keep-insideBSol {
     font-size: .5rem;
     color: pink;
 }
+
 #insert-stats-content {
     color: var(--main-page-text-color);
     font-size: 1rem;
     background: black;
 }
+
 #insert-stats-content>h2 {
     font-size: 2px;
 }
+
 #results-stats, keep-insideBSol, h2 {
     font-size: .60rem;
     border: 1px solid var(--table-border-color);
     text-shadow: 2px 2px var(--grey-shadow-color);
 }
+
 #last-wining-party, p {
     color: var(--main-page-text-color);
 }
+
 #reporter-domparty-img, img {
     width: 100px;
 }
+
 .sqr-dtot {
     background: yellow;
     border: 2px solid var(--flash-colour);
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
 }
+
 #results-button {
     margin-top: 10px;
 }
+
+#results-button-fmt{
+    margin-top: 10px;
+}
+
 #is-title {
     color: var(--subtitle-color);
 }
-/* #conversions> {
-    text-align: center;
-    list-style: none;
-    font-size: 1.5rem;
-    color: var(--main-page-text-color);
-} */
+
 .card-body>p {
     color: var(--main-page-body-color);
 }
+
 #converts {
     background-color: var(--title-color);
     text-align: left;
@@ -554,37 +661,48 @@ span>fas>fa-award {
     max-height: 400px;
     margin-bottom: 10px;
 }
+
 #converts, h4 {
     font-size: .75rem;
 }
-#converts ,ul ,li {
+
+#converts, ul, li {
     list-style: none;
     font-size: .75rem;
     text-align: left;
 }
+
 #conversions-election-container-box {
     background-color: var(--title-color);
-    margin-left:0px;
+    margin-left: 0px;
 }
+
 #my-party-leader, h3 {
     font-size: 1rem;
     color: pink;
     ;
 }
-#my-party-leader, img{
+
+#my-party-leader, img {
     border-radius: 10px;
 }
+
 #post-election-final-results-stats, h1 {
     color: var(--title-color);
 }
+
 #post-election-final-results-stats, h2 {
     color: var(--main-page-text-color);
 }
+
 #results-button {
     margin-top: 10px;
 }
+
 /* Animation for Cog Wheel */
+
 /* On results page */
+
 @-webkit-keyframes rotate-cog {
     from {
         -webkit-transform: rotate(0deg);
@@ -595,6 +713,7 @@ span>fas>fa-award {
         transform: rotate(3600deg);
     }
 }
+
 @keyframes rotate-cog {
     from {
         -webkit-transform: rotate(0deg);
@@ -605,6 +724,7 @@ span>fas>fa-award {
         transform: rotate(3600deg);
     }
 }
+
 #working-cog, .fa-cog {
     -webkit-animation-name: rotate-cog;
     animation-name: rotate-cog;
@@ -613,20 +733,25 @@ span>fas>fa-award {
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
 }
+
 #working-cog, h1 {
     text-shadow: 2px 2px grey;
 }
+
 #current-district {
     color: pink;
 }
+
 .instructions, h5 {
     font-size: 1rem;
     text-align: justify;
     color: var(--main-page-text-color);
 }
+
 #instruction-insert>ul {
     list-style: none;
 }
+
 #instruction-insert, li {
     list-style: none;
     margin-bottom: 10px;
