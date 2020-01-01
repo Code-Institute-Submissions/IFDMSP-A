@@ -346,9 +346,9 @@ span>fas>fa-award {
 
 .pledgeMade{
 /* If pledge made in district change colour */
-    background-color: var(--flash-colour);
-    color: yellow;
-
+  color: yellow;
+  text-shadow: 2px 2px black;
+   
 }
 
 
