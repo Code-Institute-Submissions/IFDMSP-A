@@ -56,17 +56,17 @@ BBC London has approached me for a website-based game.
 
 * Following a short meeting, I was given a small budget and asked to create a prototype of a potential game that would allow members of the public to try and understand what it feels like to be a politician during the electoral run. This they speculate would be interesting enough for a member of the public to give them a small, but somewhat limited taste of becoming one of the currently more disliked career opportunities in the public eye.
 
-* The BBC has said they are exploring other avenues for something of entertainment value to fulfill their current need, and therefore they simply require something to put to their director of entertainment body in 10-15 days for a concept test.
+* The BBC has said they are exploring other avenues for something of entertainment value to fulfil their current need, and therefore they simply require something to put to their director of entertainment body in 10-15 days for a concept test.
 
-* In addition, they have stated for legal reasons they do not wish that I utilize any names of real current politicians, as there are strict guidelines regarding the political process, and they wish to avoid anything that could be construed as potentially libelous.
+* In addition, they have stated for legal reasons they do not wish that I utilize any names of real current politicians, as there are strict guidelines regarding the political process, and they wish to avoid anything that could be construed as potentially libellous.
 
-* Also, they have said not to worry too much about performance, for if the game is selected for production, they will redesign with appropriate technologies conducive to large scale public consumption, similar to many other similar endeavors of which they are experienced in. They simply want to see a working prototype quickly.
+* Also, they have said not to worry too much about performance, for if the game is selected for production, they will redesign with appropriate technologies conducive to large scale public consumption, similar to many other similar endeavours of which they are experienced in. They simply want to see a working prototype quickly.
 
 -Fin
 
 ># #UX
 
-Within the following section I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five stage design principles used in my working style, namely
+Within the following section, I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five-stage design principles used in my working style, namely
 
 * Strategy
 * Scope
@@ -74,7 +74,7 @@ Within the following section I will describe various elements and thoughts that 
 * Skeleton
 * Surface
 
-In addition, I may include rough sketches. They may not be born into the final game but are included for completeness. The code was created quickly and leaves room for optimization I am sure. However, my focus was getting a working prototype available for review.
+Also, I may include rough sketches. They may not be born into the final game but are included for completeness. The code was created quickly and leaves room for optimization I am sure. However, my focus was on getting a working prototype available for review.
 
 ># Strategy
 
@@ -82,7 +82,7 @@ Following discussions with the BBC, I have decided to produce a game for them wi
 
 > The Game in a Nutshell!
 
-* The game will be a simplified pastiche of the events of a political run for the office of prime minister, as the player will assume the role of an already established UK parliamentarian (MP).
+* The game will be a simplified pastiche of the events of a political run for the office of the prime minister, as the player will assume the role of an already established UK parliamentarian (MP).
 
 * Therefore, the game will focus on the ‘General Election’, not the challenge of local ‘bi-elections’.
 
@@ -92,18 +92,18 @@ Following discussions with the BBC, I have decided to produce a game for them wi
 
 * Once you have carried out the rounds of campaigning (promoting your manifesto pledges in this instance) you can move on to the Election day and see how your party fared.
 
-* The party with the largest majority of public support within a district, gains control of the district.
+* The party with the largest majority of public support within a district gains control of the district.
 
 * The party with the most majority of district ownership will win the election. Thus, making you the next UK Prime minster.
 
-* As stated, this is a very simplified game, and should be approached as fantasy like, rather than an outright simulation.
+* As stated, this is a very simplified game and should be approached as fantasy-like, rather than an outright simulation.
 
 ## External User Goal
-BBC patrons would appreciate a small game that would allow them to partake in a small way a venture the electoral environment, and perhaps through it have a small but improved understanding of the challenges faced by the political class.
+BBC patrons would appreciate a small game that would allow them to partake in a small way a venture into the electoral environment, and perhaps through it have a small but improved understanding of the challenges faced by the political class.
 
 ## Site Owner Goal
 BBC wish to provide some fun interactive experience for its patrons in that they can join in the electoral process and
-experience what its like to be a political representative in a small way. Its not supposed to be an accurate simulation rather a fun experience taking the edge of the 2019 EU/Brexit furor.
+experience what its like to be a political representative in a small way. It's not supposed to be an accurate simulation rather a fun experience taking the edge of the 2019 EU/Brexit furore.
 
 ## My Initial Thoughts
 
@@ -118,49 +118,49 @@ I will utilize common off-the-shelf technologies (COTS), that is web-technologie
 * Font-awesome
 * Jasmine Test Tool
 
-For testing I will use the Jasmine tool for some elements. But because I will be working in Rapid Application Design (RAD) mode, my first go to testing support tool will be ‘google developer tools’.
+For testing, I will use the Jasmine tool for some elements. But because I will be working in Rapid Application Design (RAD) mode, my first go to testing support tool will be ‘google developer tools’.
 
 Also, I believe in setting break/test points in the code, to view variables outputs. i.e. console. Logs. I find this quicker. However, when most functions are working, I will structure a jasmine test template for automated testing, for future modifications.
 
 >### Octopi Input Paths
 
-One other aspect to mention here. Unlike the creation of straight-forward games, especially in sequential languages like C/C++ for desktops, I had to revise my approach because the game would be internet based.
+One other aspect to mention here. Unlike the creation of straight-forward games, especially in sequential languages like C/C++ for desktops, I had to revise my approach because the game would be internet-based.
 
-This means that where in a desktop approach it would be easy to constrain the navigation path of a player (i.e so they cannot see or progress through any other paths), the web is open, allowing players the possibility of messing with the game logic by jumping to pages in an unstructured manner.
+This means that wherein a desktop approach it would be easy to constrain the navigation path of a player (i.e so they cannot see or progress through any other paths), the web is open, allowing players the possibility of messing with the game logic by jumping to pages in an unstructured manner.
 
-For this reason I employed the use of "sessionStorage" to hold values. It is not a perfect solution, but without database authentication etc, this approach would do.
+For this reason, I employed the use of "sessionStorage" to hold values. It is not a perfect solution, but without database authentication etc, this approach would do.
 
-I didn't use localStorage, as multiple people could play on the same platform, causing data corruption. The beauty of using sessionStorage is that closing the session would delete all variables, allowing for a fresh game. It is however possible for a user to start a game and jump back to another point in an unauthorized manner. This also causes corruption.
+I didn't use localStorage, as multiple people could play on the same platform, causing data corruption. The beauty of using sessionStorage is that closing the session would delete all variables, allowing for a fresh game. It is, however, possible for a user to start a game and jump back to another point in an unauthorized manner. This also causes corruption.
 
-The game will highlight this if it senses such an action. I.e an unfinished game in play, and another started. The solution in this event would be to click on the "NEW GAME" button on the first page, forcing a wipeout of data!  Therefore the player should not panic.
+The game will highlight this if it senses such an action. I.e an unfinished game in play and another started. The solution in this event would be to click on the "NEW GAME" button on the first page, forcing a wipeout of data!  Therefore the player should not panic.
 
-Another reason for using session variables, is to have some kind of resilience to the data. The game generates a lot of data for districts and people. This data cannot be random or left to an open page. In the instance someone accidentally moves to another page accidentally code confusion can occur. Therefore using sessionStorage ensures the data remains as long as the page is not closed.
+Another reason for using session variables is to have some kind of resilience to the data. The game generates a lot of data for districts and people. This data cannot be random or left to an open page. In the instance, someone accidentally moves to another page code confusion can occur. Therefore using sessionStorage ensures the data remains as long as the page is not closed.
 
-Also, I also kept track of the game progress using session variables. For example, once the player moves to "CAMPAIGN" , they cannot go back and change any political strategy in the district.
+Also, I kept track of the game progress using session variables. For example, once the player moves to "CAMPAIGN", they cannot go back and change any political strategy in the district.
 
 > Following are user stories to support the development:
 
 ## User Stories
 
 Following are some 'User Stories' to support the development. These are not necessarily complete, as user
-stories can vary dependent on how intricate you wish to present the specification.However this level of clarity is sufficient to progress the development.
+stories can vary depending on how intricate you wish to present the specification. However, this level of clarity is sufficient to progress the development.
 
 ## Three primary stakeholders will be involved with the application on deployment
 
 * The BBC (Owner)
 * The User (Members of the public accessing the application through the internet)
-* Developer (Those responsible for enhancing or upgrading the applications features)
+* Developer (Those responsible for enhancing or upgrading the application's features)
 
 | As a | I wish for a | So that |
 |------|--------------|---------|
 |User |A Navigation Menu|I can navigate around the software|
 |User |Politician Selector|So that I can select the party I wish to represent|
 |User |New Game Button|So that I can reset the game at will|
-|User |Global Economy Button|The game can generate Algorithm to play the game|
+|User |Global Economy Button|The game can generate an Algorithm to play the game|
 |User |View District Feature|So I can view District Information|
 |User |View Population Feature|So I can view the population data inside the districts|
 |User |Create Manifesto Feature|So I Can Create my  Party Manifesto|
-|User |Pledge Prioritize Status Bar|So I can see at a quick glance how I prioritized my pledges in each district|
+|User |Pledge Prioritize Status Bar|So I can see at a glance how I prioritized my pledges in each district|
 |User |Canvass Report|So I can see a rough indicator of the district issues|
 |User |Residents Button|So I can view the resident details within a district|
 |User|Pledges Button|So I can prioritize the pledges in my manifesto for the different districts|
@@ -169,7 +169,7 @@ stories can vary dependent on how intricate you wish to present the specificatio
 |User|Results Page|So I can see status reflecting political status before/conversions/after the election|
 |User|Current political state button|So I can see the current political sway in the overall districts|
 |User|Implementation Strategy Button|So I can see any conversion, as a result of my strategy|
-|User|Post Election State|So I can view the changes of my electioneering in the various states|
+|User|Post Election Stats|So I can view the changes made by my electioneering in the various districts|
 |Owner|Application/Game|To give the public a feeling of the political arena in a fun way|
 |Developer|Test Template|So I can catch Errors During Further Development|
 
@@ -225,7 +225,7 @@ In summary,
 
 * Although there are many facets potentially to such a game, my game will be simplified
 
-* I will avoid the use of any real politician names, to avoid any legally libelous situations
+* I will avoid the use of any real politician names, to avoid any legally libellous situations
 
 * Finally, and most importantly the product is a game and not a simulation
 
@@ -237,29 +237,29 @@ Of importance in this work,  is the project "triple constraint" placed on the pr
 
 ## Outside of scope
 
-There are some features that I considered integrating , however I decided due to schedule limitations it was not essential, also it may make the game more difficult for novice players. There is always a fine balance between making a game too hard and too easy for players. Based on the objective and empiric evidence as a game player, I believe its best to pursue the latter, else one looses the audience permanently.
+There are some features that I considered integrating, however, I decided due to schedule limitations it was not essential, also it may make the game more difficult for novice players. There is always a fine balance between making a game too hard and too easy for players. Based on the objective and empiric evidence as a game player, I believe its best to pursue the latter, else one loses the audience permanently.
 
-* The main extra feature would be to have the priority pledges have tiered amounts in each district  2 Highs, 2 Mediums , 2Lows etc. This means that the player would have to interrogate the resident data far more accurate to get the best value placement of the pledges.
+* The main extra feature would be to have the priority pledges have tiered amounts in each district  2 Highs, 2 Mediums, 2Lows etc. This means that the player would have to interrogate the resident data far more accurate to get the best value placement of the pledges.
 
-Also there are other potential consideration..
+Also, there are other potential considerations..
 
 * Performance improvements, especially with regards to technology
 
 * Realistic accuracy of data (as this is a fun fantasy game)
 
-* Any other items/feature not explicitly stated above
+* Any other items/feature that was not explicitly stated above
 
-* Finally it is possible to create a differentiation between the parties and their challenges and behavior. This has been avoided as it would increase the volume of code, and from the BBC perspective they wish the player/user to experience the political drama ( as in election campaigning) rather than the precise intricacies between the parties like and dislikes
+* Finally, it is possible to create a differentiation between the parties and their challenges and behaviour. This has been avoided as it would increase the volume of code, and from the BBC perspective they wish the player/user to experience the political drama ( as in election campaigning) rather than the precise intricacies between the parties like and dislikes
 
 ># Structure
 
-The data required for the game will be primarily integrated into the JavaScript file, as opposed to the html file.
+The data required for the game will be primarily integrated into the JavaScript file, as opposed to the Html file.
 
 This will allow a somewhat more centralized data structure in the absence of a database.
 
-There are a few important data elements that will be included, from the obvious to the not so obvious. Some of these are....
+There are a few important data elements that will be included, from the obvious to the not so obvious. Some of these are...
 
-* Countries (indirectly related for data generation)
+* Countries (indirectly related, for the purpose data generation)
 * Districts (fantasy Not accurate)
 * Political Parties
 * Politician data
@@ -314,9 +314,9 @@ The game screen is constrained using Bootstrap using "mobile first" design princ
 
 ## Colour Scheme
 
-* Because the application is supposed to be a game. I scoured retro gaming on google to asses typical color schemes. A lot of retro fun games had bright primary colors woven into its fabric. This was mainly due to limitation of graphics cards in early computer systems. However such colors were put to good use and calm colors were used for main spacial areas, and bright colors for stand out elements.
+* Because the application is supposed to be a game. I scoured retro gaming on google to asses typical colour schemes. A lot of retro fun games had bright primary colors woven into its fabric. This was mainly due to the limitation of graphics cards in early computer systems. However such colours were put to good use and calm colours were used for main spacial areas and bright colours for stand out of some elements.
 
-* Dark Blue ,grey & Dark Red used mainly for standout but calm.
+* Dark Blue, Grey & Dark Red used mainly for standout but calm.
 * Red was used frequently for danger.
 * Lastly, lots of flashing was used to denote action or activity. A quick visit to an early arcade machine would confirm this approach.
 

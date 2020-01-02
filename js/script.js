@@ -2672,10 +2672,6 @@ function showAccuracyReport() {
     }
 }
 
-
-
-
-
 function getPartyImage() {
     // Get Your Party Politician Immage
     party = sessionStorage.getItem("myParty");
