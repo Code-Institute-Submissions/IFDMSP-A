@@ -328,7 +328,6 @@ The game screen is constrained using Bootstrap using "mobile first" design princ
 
 I opted to use rounded borders for much of the layout. The curves promotes a softer visual aesthetic. My thinking here is that the game is supposed to be fun. I didn't wish straight edges as they frequently are related to logic and order and mathematically accurate things. My understanding is that the BBC wish their patrons(members of the public) to use the application. And they come from a wide variety of backgrounds. It is possible to alienate people from not even attempting to use the application, as they may believe it too logical and boring. Therefore a soft curved appeal with bright 'gamey' colors should appeal across the board. Indeed the blue color used I matched to 'Sonic the Hedgehog blue - by Sega"
 
-
 ># Features
 For any application to be of use, it requires features. Verbose features are essentially input and output points for communicating with the application. In a way, some features are obvious and generalist, such as navigation. Others are more specific to the software.
 
@@ -471,7 +470,7 @@ I would like however to acknowledge Philip Feldman for the code snippet from Sta
 
 >
 /* Code from Stack-overflow - Philip Feldmann */
-/* Keep text from overspilling out of columns */
+/* Keep text from over-spilling out of columns */
 .keep-insideBSol
 {
     -moz-hyphens:auto;
