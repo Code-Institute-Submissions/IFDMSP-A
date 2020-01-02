@@ -471,7 +471,6 @@ function setUpMenus() {
     const menuItems = ['Instructions', 'Start', 'Economy', 'Districts', 'Residents', 'Manifesto', "Campaign"];
     const menuLinks = ['instructions.html', 'index.html', 'global-economics.html', 'country-districts.html', 'generate-populus.html', 'create-manifesto.html', 'campaign.html'];
     const menuFontAwesome = ['<span class="fas fa-book-open">', '<span class="fas fa-sync-alt"></span>', '<span class="fas fa-globe"></span>', '<span class="fas fa-map"></span>', '<span class="fas fa-users"></span>', '<span class="fas fa-scroll">', '<span class="fas fa-running"></span>']
-
     for (let x = 0; x < menuItems.length; x++) {
         let outHtmlString = "<li><button type=\"button\" class=\"btn btn-dark\"><a href=\"" + menuLinks[x] + "\">" + menuFontAwesome[x] + menuItems[x] + "</a></button></li>"; // ?@
         $("#burger-menu-items").append(outHtmlString);
@@ -505,10 +504,6 @@ function stateController() {
         return;
     }
 }
-
-
-
-
 
 function changeRibbonColour() {
     // Change Ribbon Color when Candidate Selected
@@ -561,9 +556,6 @@ function changeRibbonColour() {
             return;
     }
 }
-
-
-
 $(document).ready(function () {
     // Get & Save  Political candidate & Party Affiliation
     // 
@@ -578,8 +570,6 @@ $(document).ready(function () {
     })
 });
 
-
-
 function flasher() {
     // Flash Title!!
     if (flashState === true) {
@@ -593,7 +583,6 @@ function flasher() {
         return
     }
 }
-
 
 function flashHand() {
     // Flash HAND !! .....sway = political sway i.e party
@@ -616,8 +605,6 @@ function flashHand() {
     }
 }
 
-
-
 function populateTable() {
     // //////////////////////////////////////////
     // Populate ECONOMY TABLE
@@ -638,13 +625,11 @@ function populateTable() {
         let num = (Math.random() * popMax);
         cPop = num.toFixed(roundDownDigit)
     } while (cPop < 1);
-
-
     // Create row of Country Data
     if (cCp < noOfCountriesMax) {
         $('#global-table').append("<tr  id=\"" + cCp + "\"><td>" + "<h3>" + countries[cCp] + "#" + "</td><td>" + cGdp + "," + "</td><td>" + cHealth + "," + "</td><td>" + cPop + "</td>" + "</h3>" + "</tr>");
         // Show country count on the page
-        $('#country-ticker').text(cCp + 1);
+        $('#country-ticker').html("<h1>" + (cCp + 1) + "</h1>");
     }
     let cstrng = countries[cCp] + "," + cGdp + "," + cHealth + "," + cPop;
     //  Store Info in Session Memory
@@ -662,13 +647,10 @@ function populateTable() {
     }
 }
 
-
-
 function grabThreeCountries() {
     // Grab Three Countries for use for Generation of Weighting on District Starts
     var randomCountry = (Math.random() * noOfCountriesMax);
     c1 = randomCountry.toFixed(0);
-
     var randomCountry = (Math.random() * noOfCountriesMax);
     c2 = randomCountry.toFixed(0);
     var randomCountry = (Math.random() * noOfCountriesMax);
@@ -692,7 +674,6 @@ function grabThreeCountries() {
     // Acknowledge 3 Random countries have been found. No need to repeat
     threeCountriesSelected = true;
 }
-
 
 function viewDistricts() {
     // Assemble View District Information
@@ -737,13 +718,11 @@ function viewDistricts() {
         let s3 = ISS[7];
         let s4 = ISS[8];
         let s5 = ISS[9];
-
         let aa = l1.slice(0, 5).trim();
         let bb = l2.slice(0, 5).trim();
         let cc = l3.slice(0, 5).trim();
         let dd = l4.slice(0, 5).trim();
         let ee = l5.slice(0, 5).trim();
-
         // Place Values of Issue Volumes in appropriate Variables
         distCrime = (countUpIssues("C", aa, bb, cc, dd, ee));
         distHealth = (countUpIssues("H", aa, bb, cc, dd, ee));
@@ -847,9 +826,7 @@ function viewDistricts() {
         outputDistrictHtml += "</h3>";
         outputDistrictHtml += "</div>";
         outputDistrictHtml += "<p></p>";
-
         let dn = "<span id=\"" + districtNumber + "\"></span>";
-
         outputDistrictHtml += "<div id=\"" + districtNumber + "\" class=\"district-buttons-box\">";
         outputDistrictHtml += "<a href=\"#\" class=\"btn btn-warning btn-lg active keep-insideBSol w-100 general-buttons-fmt\"  onclick=\"viewPop()\"   role=\"button\" aria-pressed=\"true\">Residents</a>";
         outputDistrictHtml += "<a href=\"#\"  class=\"btn btn-success btn-lg active keep-insideBSol w-100 general-buttons-fmt\" onclick=\"saveCurrentDistrict()\"  role=\"button\" aria-pressed=\"true\"  id=" + districtNumber + " \>Pledges</a>"; /*@@@*/
@@ -862,8 +839,6 @@ function viewDistricts() {
     }
 }
 
-
-
 function saveCurrentDistrict() {
     // Save Current district on Button Press to go to "pledge priority page"
     $('div .district-buttons-box').click(function () {
@@ -872,7 +847,6 @@ function saveCurrentDistrict() {
     })
     window.location.href = "pledge-priority.html"; // Got PLedge
 }
-
 
 function clearPledgePriorityButtonValuesDefault() {
     // Reset the Pledge Priorities to Default Value in sessionStorage Memory
@@ -904,12 +878,10 @@ function createDistrictPriority() {
     sessionStorage.setItem("DMP," + cdn + ",5", sessionStorage.getItem("PBL5"));
     sessionStorage.setItem("DMP," + cdn + ",6", sessionStorage.getItem("PBL6"));
     sessionStorage.setItem("DMP," + cdn + ",7", sessionStorage.getItem("PBL7"));
-
     let cdnme = countryDistricts[sessionStorage.getItem("CD")];
     alert("Your Pledges have now been \"PROMOTED\" to " + cdnme + " District!");
     window.location.href = "country-districts.html#" + sessionStorage.getItem("CD"); // Reload Page
 }
-
 
 function viewPop() {
     $('div .district-buttons-box').click(function () {
@@ -918,7 +890,6 @@ function viewPop() {
     })
     window.location.href = "generate-populus.html";
 }
-
 
 function loadUpPopulation() {
     // POPULATION TABLE 
@@ -1039,15 +1010,12 @@ function loadUpPopulation() {
     }
 }
 
-
-
 function showCurrentDistrict() {
     // Show current district number
     // Inside Pledge Priority page
     let cdn = sessionStorage.getItem("CD");
     $("#current-district ,p").text("District ~" + cdn + "~ " + countryDistricts[cdn]);
 }
-
 
 function countUpIssues(issue, i1, i2, i3, i4, i5) {
     // Count UP Issues... i1-5 = question number 1st character, 
@@ -1075,8 +1043,6 @@ function countUpIssues(issue, i1, i2, i3, i4, i5) {
     }
     return issueTotal;
 }
-
-
 // STRIP ILLEGAL CHAR NOT WANTED
 function myTrim(x) {
     // Strip Trim Characters
@@ -1240,7 +1206,6 @@ function CreateDistricts() {
             let pConcernString = "";
             let pConcernRN = getRandom(5);
             let pConcern = globalTrendImpact(pConcernRN); // Get global influence &*&
-
             switch (pConcern) {
                 case 0:
                     pConcernString = "-";
@@ -1416,7 +1381,6 @@ function loadUpManifestoPage() {
     // Clear Selections
     $('p').removeClass('selected-from-pledge-pool');
 }
-
 // Save Current Manifesto
 function saveManifesto() {
     for (let i = 1; i < 8; i++) {
@@ -1439,9 +1403,6 @@ function saveManifesto() {
     sessionStorage.setItem("create-manifesto-page-authorised", false);
     window.location = "country-districts.html";
 }
-
-
-
 $(document).ready(function () {
     // Hightlight  Pledges in raw pledge pool
     $("#raw-pledge-pool p").click(function () {
@@ -1466,16 +1427,11 @@ $(document).ready(function () {
     });
 });
 
-
-
-
 function deselectAllPledges() {
     // Deselect All Pledges
     $('p').removeClass('selected-from-pledge-pool');
     return;
 }
-
-
 
 function setBv(bp) {
     // SET  BUTTON VALUES
@@ -1713,8 +1669,6 @@ function loadUpPledgePriorityPage() {
             $('#pledge-priority').append('<div id="button-array-' + i + '\"><h2>' + PriorityButtonNumberHlt + ":" + pbuttons + '</h2></div>');
         }
     }
-
-
     $(document).ready(function () {
         // Manifesto Pledge Priotorization
         // Get Selcted Manifesto Pledge
@@ -1776,14 +1730,9 @@ function backToDistrictView() {
     dtag = dtag.trim();
     window.location.assign("country-districts.html#" + dtag); // Jump to district view! BUGTEST
 }
-
-
-
 let marquee = {
     "message1": " **** Welcome to BBC-London. Today we are on the edge of our seats as we await the results of the general election. Indeed what party will succeed in producing a new prime-minster for the United Kingdom ***"
 }
-
-
 // Message Ticker Marquee
 function showMarquee(message, mw) {
     messageOut = message.slice(messagePosition, (messagePosition + 100))
@@ -2051,9 +2000,6 @@ function processElection() {
         return tally; // return total  found
     }
 
-
-
-
     function DistrictTotalControl(pty) {
         // Get Overall District Control
         if (pty === "Conservative") {
@@ -2232,9 +2178,6 @@ function campaignStratergyImplementation() {
         convertedPeopleTotal = 0;
         updatePeopleChunk(currentDistrictCount);
     }
-
-
-
     // UPDATE PEOPLE CHUNK
     function updatePeopleChunk(currentDistrictCount) {
         let UPD = [];

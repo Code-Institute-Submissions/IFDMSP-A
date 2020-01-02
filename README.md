@@ -260,7 +260,6 @@ Table 1.1
 | 8 | Images | Images of politicians head-shots|
 
 
-
 ># Skeleton
 
 Before proceeding to build the application , I rendered some mockups. These did change slightly as development progressed. Most of the changes were realized as part of testing the app and realizing some additive was required
@@ -357,7 +356,7 @@ Install Git 2.23.0 on your local drive, and ensure it is working.
 
 From my git-hub, copy the clone link found by clicking on the button below
 
-Currently my application is hosted on GitHub Pages . However the software files can be hosted on a production server
+Currently my application is hosted on GitHub Pages . However the software files can be hosted on a production server of your choice.
 
 Production Hosting
 The file structure of the project is in a standard tree flow format.
@@ -366,7 +365,7 @@ Once your hosting site has been purchased and setup
 Copy the contents of the IFDMSP-A folder into the root\public\ of the website host plan
 delete the "SUPPORT" folder to remove the support files of this read  me.
 
-Any hidden file/s & .gitignore can also be deleted
+Any hidden file/s & .gitignore can also be deleted and the electionfever.code-workspace, including this README>MD.
 Ensure the correct rights are placed on your file structure especially read and execute only on key files.
 
 Your admin should be able to help if you have an issue.
@@ -381,12 +380,12 @@ You should end up with the following files in \public directory.
 * generate-populous.html
 * global-economics.html
 * index.html
+* instructions.html
 * pledge-priority.html
 * README.md
 * reset-game.html
 * results-page.html
-* winner-page.html
-
+ 
 In addition Images within the Images Directory
 
 * cara-leyton.png
