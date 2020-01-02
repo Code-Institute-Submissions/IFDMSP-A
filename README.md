@@ -334,6 +334,20 @@ Below are features I need for the application to function as needed. I expect th
 
 ># Testing
 
+|Feature & Objective|Image|
+|:----|:----|
+|Launching the Game|![Launching The Game](support/launch-game.png)|
+|Create Game Data|![Create Game Data](support/create-game-data.png)|
+|Create Manifesto|![Create Manifesto](support/create-manifesto.png)|
+|Residents View & Stats Help|![Residents View & Stats Help](support/resident-view-stats-help.png)|
+|Pledge Priority|![Pledge Priority](support/pledge-priority.png)|
+|Campaign|![Campaign](support/campaign.png)|
+|Pre-Election Statistics|![Pre-Election Stats](support/pre-elction-stats)|
+|Implement Campaign Strategy|![Implement Campaign Strategy](support/implement-campaign.png)|
+|Post-Election Statistics|![Post-Election Stats](support/post-election-stats.png)|
+|End of Game|![End-Of-Game](support/end-game.png)|
+|New Game Button|![New Game Button](support/new-game-button.png)|
+
 ### Much of my testing was carried out during development.
 
 * I used the "google-dev-tools" to view elements and variables
@@ -445,7 +459,7 @@ To create face Avatar images
 list of countries got from
 [worldometers](https://www.worldometers.info/geography/alphabetical-list-of-countries/)
 
-A nice imahgge of the united kingdom. royalty free comm/personal
+A nice ima  ge of the united kingdom. royalty free comm/personal
 [map of uk]
 (https://publicdomainvectors.org/en/free-clipart/UK-and-Ireland/63389.html)
 
