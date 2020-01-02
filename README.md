@@ -88,6 +88,8 @@ Following discussions with the BBC, I have decided to produce a game for them wi
 
 * Your job as the leader of your chosen political party shall be to offer advice to the local representative in the districts with regards to promoting your party’s overall manifesto within the electoral districts.
 
+![The Political Parties](support/political-parties.png)
+
 * Once you have carried out the rounds of campaigning (promoting your manifesto pledges in this instance) you can move on to the Election day and see how your party fared.
 
 * The party with the largest majority of public support within a district, gains control of the district.
@@ -231,6 +233,8 @@ Also there are other potential consideration..
 
 * Any other items/feature not explicitly stated above
 
+* Finally it is possible to create a differentiation between the parties and their challenges and behavior. This has been avoided as it would increase the volume of code, and from the BBC perspective they wish the player/user to experience the political drama ( as in election campaigning) rather than the precise intricacies between the parties like and dislikes
+
 ># Structure
 
 The data required for the game will be primarily integrated into the JavaScript file, as opposed to the html file.
@@ -276,6 +280,9 @@ Before proceeding to build the application , I rendered some mockups. These did 
 
 ![Mockup1-6](support/Mockup1-6.png)
 ![Mockup1-7](support/Mockup1-7.png)
+
+>## Note: The Election Winner page was modified during coding, as I felt it would be better to present all the three statistics on one page, allowing the player to scroll up and down reviewing the changes after implementation their election strategy.
+
 
 ># Surface
 
