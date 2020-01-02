@@ -268,6 +268,8 @@ Table 1.1
 
 Before proceeding to build the application , I rendered some mockups. These did change slightly as development progressed. Most of the changes were realized as part of testing the app and realizing some additive was required
 
+* Also, it is worth a mention that I employed "Mobile-First" Design Principles here. (See Surface section for a mention)
+
 ![Main Page](support/Mockup-1.png)
 ![Global Economics](support/Mockup1-1.png)
 ![Mockup1-2](support/Mockup1-2.png)
@@ -281,10 +283,18 @@ Before proceeding to build the application , I rendered some mockups. These did 
 ![Mockup1-6](support/Mockup1-6.png)
 ![Mockup1-7](support/Mockup1-7.png)
 
->## Note: The Election Winner page was modified during coding, as I felt it would be better to present all the three statistics on one page, allowing the player to scroll up and down reviewing the changes after implementation their election strategy.
+>## Note: * The "Winner page" was modified during coding, as I felt it would be better to present all the three statistics on one page, allowing the player to scroll up and down reviewing the changes after implementation their election strategy.
 
 
 ># Surface
+
+The game screen is constrained using Bootstrap using "mobile first" design principles. Therefore it has two navigation guides. The burger bar , and standard nav bar.
+
+|type|image|
+|:---|:----|
+|Burger-Bar|![Burger-Bar](support/burger-bar.png)|
+|Standard-Bar|![Standard-Bar](support/standard-bar.png)|
+
 
 ## Colour Scheme
 
