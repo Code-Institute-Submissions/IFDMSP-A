@@ -122,6 +122,22 @@ For testing I will use the Jasmine tool for some elements. But because I will be
 
 Also, I believe in setting break/test points in the code, to view variables outputs. i.e. console. Logs. I find this quicker. However, when most functions are working, I will structure a jasmine test template for automated testing, for future modifications.
 
+>### Octopi Input Paths
+
+One other aspect to mention here. Unlike the creation of straight-forward games, especially in sequential languages like C/C++ for desktops, I had to revise my approach because the game would be internet based.
+
+This means that where in a desktop approach it would be easy to constrain the navigation path of a player (i.e so they cannot see or progress through any other paths), the web is open, allowing players the possibility of messing with the game logic by jumping to pages in an unstructured manner.
+
+For this reason I employed the use of "sessionStorage" to hold values. It is not a perfect solution, but without database authentication etc, this approach would do.
+
+I didn't use localStorage, as multiple people could play on the same platform, causing data corruption. The beauty of using sessionStorage is that closing the session would delete all variables, allowing for a fresh game. It is however possible for a user to start a game and jump back to another point in an unauthorized manner. This also causes corruption.
+
+The game will highlight this if it senses such an action. I.e an unfinished game in play, and another started. The solution in this event would be to click on the "NEW GAME" button on the first page, forcing a wipeout of data!  Therefore the player should not panic.
+
+Another reason for using session variables, is to have some kind of resilience to the data. The game generates a lot of data for districts and people. This data cannot be random or left to an open page. In the instance someone accidentally moves to another page accidentally code confusion can occur. Therefore using sessionStorage ensures the data remains as long as the page is not closed.
+
+Also, I also kept track of the game progress using session variables. For example, once the player moves to "CAMPAIGN" , they cannot go back and change any political strategy in the district.
+
 > Following are user stories to support the development:
 
 ## User Stories
@@ -302,7 +318,7 @@ The game screen is constrained using Bootstrap using "mobile first" design princ
 
 * Dark Blue ,grey & Dark Red used mainly for standout but calm.
 * Red was used frequently for danger.
-* Lastly, lots of flashing was used to denote action or activity. A quick visit to arcade machine would confirm this.
+* Lastly, lots of flashing was used to denote action or activity. A quick visit to an early arcade machine would confirm this approach.
 
 * I have decided to employ this approach to the game
 
