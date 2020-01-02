@@ -2260,6 +2260,12 @@ function countryInfluence() {
     }
     return cHitFlag;
 }
+
+
+
+
+
+
 //  //////////////////////////////////////////////////////////////////////////
 // POST - ELECTION ENGINE (3)
 // //////////////////////////////////////////////////////////////////////////
@@ -2666,17 +2672,9 @@ function showAccuracyReport() {
     }
 }
 
-function didYourPartyWin() {
-    if (sessionStorage.getItem("myParty") === winPartyName) {
-        window.location.href = "winner-page.html";
-        var winP = sessionStorage.getItem("winingP");
-        var winN = sessionStorage.getItem("winingP");
-        var temp1 = "<img src=\"" + winP + "\"/>";
-        var temp2 = "<h2>" + winN + "</h2>";
-        $("#your-party").append(temp1);
-        $("#your-party").append(temp2);
-    }
-}
+
+
+
 
 function getPartyImage() {
     // Get Your Party Politician Immage
