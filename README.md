@@ -182,8 +182,8 @@ To create the web application I employed various Software Tools.
 |HTML|5|Markup Language used to create the webpage in accord with the internet technologies|The latest HTML standard| integrated within many web-browsers
 |CSS|3|To style the website|The latest CSS standard Integrated within HTML|
 |Bootstrap4|4.1.3 *|Toolkit to help develop the website|https://getbootstrap.com|
-|jQuery|3.3.1|Integrated as support to Bootstrap file via CDN|https://code.jquery.com/jquery-3.3.1.slim.min.js|
-|popper|1.14.7|Integrated as support to Bootstrap file via CDN|https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.|
+|jQuery|3.4.1|Integrated as support to Bootstrap file via CDN|https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js|
+|popper|1.14.3|Integrated as support to Bootstrap file via CDN|https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.|
 |Javascript|4.3.1|Integrated as support to Bootstrap file via CDN|https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js|
 |Just color picker|5.2.0|Grab color images from screen pixels|https://annystudio.com|
 |Affinity Photo - software|1.7.3|Image manipulation|https://affinity.serif.com/en-gb/photo/|
@@ -195,7 +195,7 @@ To create the web application I employed various Software Tools.
 |TinyJpg|n/a|Image compression/ Size reduction|https://tinyjpg.com/|
 |HTML online Validator|n/a|Code Validation - To Validate the HTML code|https://validator.w3.org/#validate_by_input|
 |CSS online Validator|n/a|Code Validation - To Validate the CSS code|https://jigsaw.w3.org/css-validator/#validate_by_input|
-|Balsmiq|3|Wireframe-Mockup Software|https://balsamiq.com/wireframes/|
+|Balsamiq|3|Wireframe-Mockup Software|https://balsamiq.com/wireframes/|
 |CSS - Auto prefixer|n/a|Auto prefix CSS files for browser compatibility|https://autoprefixer.github.io/|
 |Fontawesome|5.11.2|Icon supply for website|https://fontawesome.com/|
 |Googlefonts|n/a|provide access to font family ("Exo")|https://fonts.google.com|
