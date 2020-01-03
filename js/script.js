@@ -18,7 +18,7 @@ var unAddressedIssueFlashState = true; // used for flashing hand pointing on dis
 var cDO = [];
 var flashState = true; // flash states
 var flashHandState = true;
-// var globeShake = true;
+
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
 var noOfDistricts = 26; // Number of districts in pool to canvass in game &&&#
