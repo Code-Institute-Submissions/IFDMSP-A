@@ -4,14 +4,15 @@ Interactive Frontend Development Milestone Project
 
 [https://cofoeducistudent.github.io/IFDMSP-A/](https://cofoeducistudent.github.io/IFDMSP-A/)
 
-># ** ELECTION FEVER **
+>## ** ELECTION FEVER **
 
 ## Milestone2 Project (MSP2)
 
 ![game screen image](/support/front-page.jpeg)
 
 > Disclaimer: The following Requirement is (hypothetical)!
-> # INDEX PAGE
+
+>## INDEX PAGE
 
 [UX](#UX)
 
@@ -49,7 +50,8 @@ Interactive Frontend Development Milestone Project
 
 [16. Game Instructions](#Game-Instructions)
 
-># Project-Mandate!
+>## Project-Mandate!
+
 BBC London has approached me for a website-based game.
 
 * They wish for something that will tap into the current zeitgeist of the political process occurring as of late 2019, namely Brexit. Because Brexit is quite decisive and polarizing, they have stated that they want the game to merely focus on the political process of voting and avoid the real political topic of the EU exit referendum.
@@ -64,7 +66,7 @@ BBC London has approached me for a website-based game.
 
 -Fin
 
-># #UX
+>## #UX
 
 Within the following section, I will describe various elements and thoughts that went into my design for the project. I will follow the tried and trusted five-stage design principles used in my working style, namely
 
@@ -76,7 +78,7 @@ Within the following section, I will describe various elements and thoughts that
 
 Also, I may include rough sketches. They may not be born into the final game but are included for completeness. The code was created quickly and leaves room for optimization I am sure. However, my focus was on getting a working prototype available for review.
 
-># Strategy
+>## Strategy
 
 Following discussions with the BBC, I have decided to produce a game for them with the following characteristics.  
 
@@ -99,9 +101,11 @@ Following discussions with the BBC, I have decided to produce a game for them wi
 * As stated, this is a very simplified game and should be approached as fantasy-like, rather than an outright simulation.
 
 ## External User Goal
+
 BBC patrons would appreciate a small game that would allow them to partake in a small way a venture into the electoral environment, and perhaps through it have a small but improved understanding of the challenges faced by the political class.
 
 ## Site Owner Goal
+
 BBC wish to provide some fun interactive experience for its patrons in that they can join in the electoral process and
 experience what its like to be a political representative in a small way. It's not supposed to be an accurate simulation rather a fun experience taking the edge of the 2019 EU/Brexit furore.
 
@@ -173,7 +177,7 @@ stories can vary depending on how intricate you wish to present the specificatio
 |Owner|Application/Game|To give the public a feeling of the political arena in a fun way|
 |Developer|Test Template|So I can catch Errors During Further Development|
 
-># Technologies-Used
+>## Technologies-Used
 
 To create the web application I employed various Software Tools.
 
@@ -201,7 +205,7 @@ To create the web application I employed various Software Tools.
 |Googlefonts|n/a|provide access to font family ("Exo")|https://fonts.google.com|
 |MAMP|5.3|Webserver integrated package|https://www.mamp.info/en/|
 
-># SCOPE
+>## SCOPE
 
  The scope of the project will therefore be:
 
@@ -251,7 +255,7 @@ Also, there are other potential considerations..
 
 * Finally, it is possible to create a differentiation between the parties and their challenges and behaviour. This has been avoided as it would increase the volume of code, and from the BBC perspective they wish the player/user to experience the political drama ( as in election campaigning) rather than the precise intricacies between the parties like and dislikes
 
-># Structure
+>## Structure
 
 The data required for the game will be primarily integrated into the JavaScript file, as opposed to the Html file.
 
@@ -303,8 +307,7 @@ Before proceeding to build the application , I rendered some mockups. These did 
 
 >## Note: * The look of the "Winners page" was modified during coding, as I felt it would be better to present all the three statistics on one page, allowing the player to scroll up and down reviewing the changes after implementation their election strategy. Hence I left things at the "Results Page".
 
-
-># Surface
+>## Surface
 
 The game screen is constrained using Bootstrap using "mobile first" design principles. Therefore it has two navigation guides. The burger bar , and standard nav bar.
 
@@ -330,7 +333,8 @@ The game screen is constrained using Bootstrap using "mobile first" design princ
 
 I opted to use rounded borders for much of the layout. The curves promote a softer visual aesthetic. My thinking here is that the game is supposed to be fun. I didn't wish straight edges as they frequently are related to logic and order and mathematically accurate things. My understanding is that the BBC wish their patrons(members of the public) to use the application. And they come from a wide variety of backgrounds. It is possible to alienate people from not even attempting to use the application, as they may believe it too logical and boring. Therefore soft curved facia, appeals with bright 'gamey' colours across the board.
 
-># Features
+>## Features
+
 For any application to be of use, it requires features. Verbose features are essentially input and output points for communicating with the application. In a way, some features are obvious and generalist, such as navigation. Others are more specific to the software.
 
 Below are features I need for the application to function as needed. I expect them to be integrated into the application for the application to function and complete the requirements.
@@ -356,17 +360,18 @@ Below are features I need for the application to function as needed. I expect th
 | Post-Election Stats |(C)-The political changes in support within the various districts after the election process |
 
 > Note: I have not placed any social media ICONS on the application. I reason that the application is expected to be hosted on the BBC website. Also, the application was commissioned by them. Therefore the BBC do not appreciate links that may distract or move people off-site. Even if to another location owned by them. It disrupts reader/user flow, and there is a risk of losing engagement.
-># Existing-Features
+
+>## Existing-Features
 
 * All as stated above
 
-># Features-Left-to-Implement
+>## Features-Left-to-Implement
 
 * None: The BBC have specified that their objective is to create a prototype. However they have paced constraints on the project. These are schedule and cost. For this reason the features are locked to what I have specified above. Anything else is outside of scope.
 
 * It is expected that before deploying the application in production , the application may be rewritten for performance optimization.
 
-># Testing
+>## Testing
 
 |Feature & Objective|Image|
 |:----|:----|
@@ -376,11 +381,21 @@ Below are features I need for the application to function as needed. I expect th
 |Residents View & Stats Help|![Residents View & Stats Help](support/resident-view-stats-help.png)|
 |Pledge Priority|![Pledge Priority](support/pledge-priority.png)|
 |Campaign|![Campaign](support/campaign.png)|
-|Pre-Election Statistics|![Pre-Election Stats](support/pre-elction-stats)|
+|Pre-Election Statistics|![Pre-Election Stats](support/pre-election-stats.png)|
 |Implement Campaign Strategy|![Implement Campaign Strategy](support/implement-campaign.png)|
 |Post-Election Statistics|![Post-Election Stats](support/post-election-stats.png)|
 |End of Game|![End-Of-Game](support/end-game.png)|
 |New Game Button|![New Game Button](support/new-game-button.png)|
+
+>## Browsers Tested Against
+
+|Browser|Version|Local|Online Github|
+|:------|:------|:----|:------------|
+|Safari|Version 13.0.4 (15608.4.9.1.3)|Yes|Yes|
+|Firefox|Version 71.0 (64Bit)|Yes|Yes|
+|Opera|Version:65.0.3467.78|Yes|Yes|
+
+* Working on an Apple Mac, I could not test IE. However as mitigation, I put the software through HTML testing and CSS prefix test
 
 ### Much of my testing was carried out during development.
 
@@ -391,13 +406,17 @@ Below are features I need for the application to function as needed. I expect th
 ### I have also created a "Jasmine" test-script for production cycle future changes
 
 > Note: The jasmine test script should be redacted from the file set  before production deployment as it can pose a risk to unwanted tinkering and hacking
+
 * The files have been commented out on the INDEX, HTML however as it is expected changes may be made, when testing with the BBC.
 
 * Also as a remark, I have only included a random number generator test as an example. As stated above most of the RAD development test was done with GDT & Console Logs. Therefore Jasmine is only included in this project for future dev challenges
 
-># Deployment
+* Finally. I noticed some inconsistency with the transfer of the ICONS from Fontawsome. This seemed to occur on any browser tested. After a refresh it would load. I could see nothing wrong with the code. However "Fontawesome" uses a server system, which takes hits dependent on locations and activity. I will suggest to the BBC that in production FA is not used but individual ICONS made and placed as files within the images directory. This will keep the data local and mitigate the delay perhaps. I have not chosen this strategy presently due to schedule and these changes fall under performance and optimization. For this reason I coded the way the menu is built using javascript, rather than direct Html. It then becomes a simple matter to change menu-names and also change the icons references from Fontawesome, to a internal link.
 
->#### Clone the Git-hub site
+>## Deployment
+
+>### Clone the Git-hub site
+
 To clone the repository (repo) simply
 
 Install Git 2.23.0 on your local drive, and ensure it is working.
@@ -412,7 +431,8 @@ From my git-hub, copy the clone link found by clicking on the button below
 
 Currently, my application is hosted on GitHub Pages. However, the software files can be hosted on a production server of your choice.
 
->#### Production Hosting
+>### Production Hosting
+
 The file structure of the project is in a standard tree flow format.
 
 Once your hosting site has been purchased and setup
@@ -470,7 +490,8 @@ CONS: Any internal code fixes can be controlled from the code distributors direc
 
 Note: Content-Delivery-Network(CDN) are there for a reason. The data is stored at various centres globally. Therefore someone in the USA for example, accessing the site will benefit from the support files been pulled from a more regional location, and not across the other side of the world perhaps, where the original was stored. This approach is what is used in cloud technology to offer greater resilience and performance.
 
-># Credits
+>## Credits
+
 I created all the code within this site. This is why its probably not as expertly done I'm sure
 most of the code was in Javascript, and not much Bootstrap was used. Where I needed help I used the help reads on W3schools web site. It wasn't easy, but I set myself this task so I could use javascript in anger. Which is the only way to learn.
 
@@ -488,7 +509,7 @@ I would like however to acknowledge Philip Feldman for the code snippet from Sta
     word-wrap:break-word;
  }
 
-># Media
+>## Media
 
 The picture images used in this game were generated by me using a public available website.
 They are in no way supposed to reflect any people living or otherwise.
@@ -523,6 +544,7 @@ Royalty free to use
 The characters and scenarios represented in this game are purely fantasy and for fun. No level of accuracy in relation to districts and economy are been implied by the information in this game. As stated above the project mandate was fictitious for the purpose of my MSP2, and not affiliated to the BBC organization in anyway.
 
 #+++++++++++++++++++++++++++++
+
 ># Game Instructions
  
 >## 1. LAUNCH GAME
@@ -588,7 +610,7 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 However, if you wish for a new game then ,of course, you can press "Restart Game" button.
 
-># Priorities
+>## Priorities
 
 * Use your pledge priorities carefully.
 * Initially scan all-district contents to determine which pledges to include in your manifesto
@@ -602,10 +624,10 @@ However, if you wish for a new game then ,of course, you can press "Restart Game
 * -Conversion Value. (This is the amount of effort needed to swing their allegiance. this is addressed by pledge priority.. but also by the individual's volition)
 * -Party.. (This is their party allegiance)
 
-># Double Tap/Click Screen
+>## Double Tap/Click Screen
 
 * "District View" to - jump to the top of the screen
 * "Residents View" - to jump to the top of the screen
 * "Results Page" - to jump to the top of the screen
 
-># END
+>## END
