@@ -326,7 +326,7 @@ The game screen is constrained using Bootstrap using "mobile first" design princ
 
 ## Aesthetics
 
-I opted to use rounded borders for much of the layout. The curves promotes a softer visual aesthetic. My thinking here is that the game is supposed to be fun. I didn't wish straight edges as they frequently are related to logic and order and mathematically accurate things. My understanding is that the BBC wish their patrons(members of the public) to use the application. And they come from a wide variety of backgrounds. It is possible to alienate people from not even attempting to use the application, as they may believe it too logical and boring. Therefore a soft curved appeal with bright 'gamey' colors should appeal across the board. Indeed the blue color used I matched to 'Sonic the Hedgehog blue - by Sega"
+I opted to use rounded borders for much of the layout. The curves promote a softer visual aesthetic. My thinking here is that the game is supposed to be fun. I didn't wish straight edges as they frequently are related to logic and order and mathematically accurate things. My understanding is that the BBC wish their patrons(members of the public) to use the application. And they come from a wide variety of backgrounds. It is possible to alienate people from not even attempting to use the application, as they may believe it too logical and boring. Therefore soft curved facia, appeals with bright 'gamey' colours across the board.
 
 ># Features
 For any application to be of use, it requires features. Verbose features are essentially input and output points for communicating with the application. In a way, some features are obvious and generalist, such as navigation. Others are more specific to the software.
@@ -336,24 +336,24 @@ Below are features I need for the application to function as needed. I expect th
 | Feature | Purpose |
 |:---------|:--------|
 | Navigation Menu | To navigate through sections of the game|
-| Politician/Party Selector| Allows the player to select a politician representing a one of four political parties|
-| New Game Button | Allows user to reset the game, through a reset screen |
+| Politician/Party Selector| Allows the player to select a politician representing one of four political parties|
+| New Game Button | Allows the user to reset the game, through a reset screen |
 | Global Economy | Feature that generates Three factors for 195 countries. These factors are used as control numbers and used within the game as part of a control algorithm|
 | View District Feature | Allows the user to look at any of the districts and gauge its specific issues. The user will spend much of their time here assessing the different elements that are key to progressing in the game|
 | View Population | Feature allows user to list the residents of the districts. They will be able to then determine the state of mind of the individual resident, prior to making decisions that will determine if they will successfully convert the said resident|
 | Create Manifesto | Feature allows the user to create the political manifesto of their party from 25 pledges in 5 areas concern “Crime, Health, Wealth, Employment, Social Satisfaction”|
-| Pledge Priority Status Bar | Shows the priorities assigned to each pledge in your manifesto / area|
+| Pledge Priority Status Bar | Shows the priorities assigned to each pledge in your manifesto/area|
 | Canvass Report | Provides a guide to the social momentum in the area. This information is not to be wholly trusted, but used as a guide, in as-much as polls are in real elections. The truth is they can be wrong. For this reason, the user should open each district and review the populous data |
-| Residents Button | Allows user to view a list of residents in a particular district|
+| Residents Button | Allows the user to view a list of residents in a particular district|
 | Pledges Button | Allows users to view the party manifesto and prioritize the pledges as wished |
-| Newsflash | Provides snapshot of issues in district |
-| Visual Status of District | Allows user to see a quick snapshot of issues. Again, this is not to be relied upon, as it was taken from the canvass report information |
+| Newsflash | Provides snapshot of issues in the district |
+| Visual Status of District | Allows the user to see a quick snapshot of issues. Again, this is not to be relied upon, as it was taken from the canvass report information |
 | Results Page | Provides three bits of information on the pressing respective buttons |
 | Pre-Election Stats |(A)-Current state of political support in the various districts |
 | Implement Strategy |(B)-On applying your manifest, pledges and priorities, the people converted to your party during the election|
 | Post-Election Stats |(C)-The political changes in support within the various districts after the election process |
 
-> Note: I have not placed any social media ICONS on the application. My reasoning is that the application is expected to be hosted on the BBC website. Also the application was commissioned by them. Therefore the BBC do not appreciate links that may distract or move people off-site. Even if to another location owned by them. It disrupts reader/user flow,and there is a risk of loosing engagement.
+> Note: I have not placed any social media ICONS on the application. I reason that the application is expected to be hosted on the BBC website. Also, the application was commissioned by them. Therefore the BBC do not appreciate links that may distract or move people off-site. Even if to another location owned by them. It disrupts reader/user flow, and there is a risk of losing engagement.
 ># Existing-Features
 
 * All as stated above
@@ -362,7 +362,7 @@ Below are features I need for the application to function as needed. I expect th
 
 * None: The BBC have specified that their objective is to create a prototype. However they have paced constraints on the project. These are schedule and cost. For this reason the features are locked to what I have specified above. Anything else is outside of scope.
 
-* It is expected that prior to deploying the application in production , the application may be rewritten for performance optimization.
+* It is expected that before deploying the application in production , the application may be rewritten for performance optimization.
 
 ># Testing
 
@@ -389,7 +389,7 @@ Below are features I need for the application to function as needed. I expect th
 ### I have also created a "Jasmine" test-script for production cycle future changes
 
 > Note: The jasmine test script should be redacted from the file set  before production deployment as it can pose a risk to unwanted tinkering and hacking
-* The files have been commented out on the INDEX,HTML however as it is expected that changes may be made , when testing with the BBC.
+* The files have been commented out on the INDEX, HTML however as it is expected changes may be made, when testing with the BBC.
 
 * Also as a remark, I have only included a random number generator test as an example. As stated above most of the RAD development test was done with GDT & Console Logs. Therefore Jasmine is only included in this project for future dev challenges
 
@@ -402,7 +402,7 @@ Install Git 2.23.0 on your local drive, and ensure it is working.
 
 From my git-hub, copy the clone link found by clicking on the button below
 
-Currently my application is hosted on GitHub Pages . However the software files can be hosted on a production server of your choice.
+Currently, my application is hosted on GitHub Pages. However, the software files can be hosted on a production server of your choice.
 
 Production Hosting
 The file structure of the project is in a standard tree flow format.
@@ -421,7 +421,7 @@ You should end up with the following files in \public directory.
 
 * campaign.html
 * country-district.html
-* create-manifesto,html
+* create-manifesto.html
 * election-day.html
 * generate-populous.html
 * global-economics.html
@@ -432,7 +432,7 @@ You should end up with the following files in \public directory.
 * reset-game.html
 * results-page.html
  
-In addition Images within the Images Directory
+Also Images within the Images Directory
 
 * cara-leyton.png
 * chris-wells.png
@@ -443,28 +443,28 @@ In addition Images within the Images Directory
 * paul-moss.png
 * vicky-morse,png
 
-> In addition "PLEASE REMOVE THE JASMINE SUPPORT FILES IN THE 'JS' DIRECTORY"
+> Also, "PLEASE REMOVE THE JASMINE SUPPORT FILES IN THE 'JS' DIRECTORY"
 
 * Failure to do this will expose the application to unwarranted intrusion and perhaps hacking.
 
-** Note **: The support folder holds the images to support this README.md. It is not required on a live site. Therefore it can be deleted on a production deployment. Also delete the .gitignore.
+** Note **: The support folder holds the images to support this README.md. It is not required on a live site. Therefore it can be deleted on a production deployment. Also, delete the .gitignore.
 
 CAVEAT:!!
-WARNING:Currently git-hub will only allow static sites to operate in their repositories. This means that form actions are blocked, and you will receive an error when using the contacts page. However if you clone the repo to your local machine running a web-server such as MAMP or XAMMP etc, or your own hosting plan, you will be able to see the validation form after submitting
+WARNING: Currently git-hub will only allow static sites to operate in their repositories. This means that form actions are blocked, and you will receive an error when using the contacts page. However, if you clone the repo to your local machine running a web-server such as MAMP or XAMMP etc, or your hosting plan, you will be able to see the validation form after submitting
 CDN vs Local Stored Data
-I built the site using CDN links. It is possible and may be preferred by some to download the source files for Bootstrap etc and internalize them within their file hosting service, however, my thoughts were as follows.
+I built the site using CDN links. It is possible and maybe preferred by some to download the source files for Bootstrap etc and internalize them within their file hosting service, however, my thoughts were as follows.
 
 PROS: You gain resilience by having all that you need to make your site function on your servers
 
 CONS: Your users will pull supporting reference files from your location.
 
-CONS: Any internal code fixes can be controlled from the code distributors directly.Changes, however, may require a version number change. In that situation, all you do is change the ref link numbers.
+CONS: Any internal code fixes can be controlled from the code distributors directly. Changes, however, may require a version number change. In that situation, all you do is change the ref link numbers.
 
-Note: Content-Delivery-Network(CDN) are there for a reason. The data is stored at various centers globally. Therefore someone in the USA for example, accessing the site will benefit from the support files been pulled from a more regional location, and not across the other side of the world perhaps, where the original was stored. This approach is what is used in cloud technology to offer greater resilience and performance.
+Note: Content-Delivery-Network(CDN) are there for a reason. The data is stored at various centres globally. Therefore someone in the USA for example, accessing the site will benefit from the support files been pulled from a more regional location, and not across the other side of the world perhaps, where the original was stored. This approach is what is used in cloud technology to offer greater resilience and performance.
 
 ># Credits
 I created all the code within this site. This is why its probably not as expertly done I'm sure
-Most of the code was in Javascript, and not much Bootstrap was used. Where I needed help I used the help reads on W3schools web site. It wasn't easy, but I set myself this task so I could use javascript in anger. Which is the only way to learn.
+most of the code was in Javascript, and not much Bootstrap was used. Where I needed help I used the help reads on W3schools web site. It wasn't easy, but I set myself this task so I could use javascript in anger. Which is the only way to learn.
 
 I would like however to acknowledge Philip Feldman for the code snippet from Stack-Overflow site. As it was very useful.
 
@@ -491,7 +491,7 @@ To create face Avatar images
 list of countries got from
 [worldometers](https://www.worldometers.info/geography/alphabetical-list-of-countries/)
 
-A nice ima  ge of the united kingdom. royalty free comm/personal
+A nice image of the united kingdom. royalty free comm/personal
 [map of uk]
 (https://publicdomainvectors.org/en/free-clipart/UK-and-Ireland/63389.html)
 
@@ -530,7 +530,7 @@ The characters and scenarios represented in this game are purely fantasy and for
 >## 4. REVIEW DISTRICTS
 
 * Spend most of your time here!
-* Do not take the presented data as totally accurate , they come from media polls (which we know in the fog of politics, can be frequently inaccurate). Rather view the "Residents" information directly to decide on your pledge approach.
+* Do not take the presented data as totally accurate, they come from media polls (which we know in the fog of politics, can be frequently inaccurate). Rather view the "Residents" information directly to decide on your pledge approach.
 
 * Create your "MANIFESTO" From (25) Available Pledges in 5 categories
 
@@ -546,7 +546,7 @@ The characters and scenarios represented in this game are purely fantasy and for
 * Options are L = Low focus /  M = Med focus /  H = High focus
 * Note: Only two ('H') are available for use in each district. These essentially are your major focus and drive on a particular pledge message to the residents. Choose wisely!)
 
-* When you prioritize your pledges in a district , you will notice a change to "yellow" of the district "Newsflash" text. This helps mark the fact that you have already worked on a district
+* When you prioritize your pledges in a district, you will notice a change to "yellow" of the district "Newsflash" text. This helps mark the fact that you have already worked on a district
 
 >## 7. ENTER CAMPAIGN
 
@@ -558,46 +558,46 @@ The characters and scenarios represented in this game are purely fantasy and for
 
 1. The political state before election day
 2. The effect of your political campaign
-3. The changes post election day
+3. The changes post-election day
 
 >## TROUBLESHOOTING
 
 *On occasion you may receive one of the following error messages below and sent to the main screen. Or you cannot progress to the "global-economy" or "Districts" page?  Please press the "NEW GAME" button and reset data to resolve.
 
-### This is caused by session-data conflict , when the application detects partial data resident from a previous execution of the game
+### This is caused by session-data conflict, when the application detects partial data resident from a previous execution of the game
 
 >## TIPS
 
-> * The game has some random elements that impact the algorithm. Therefore it is not certain that by elimination, or addressing of all issue in a district ,every resident will comply and swing to support your party. This is also the case in real life, as there are strategic, opportunist and generally flaky personas in any democracy. With this in mind the best way to assure your parties outright victory is to canvass and promote your pledges in as many districts as possible.
+> * The game has some random elements that impact the algorithm. Therefore it is not certain that by elimination, or addressing of all issue in a district, every resident will comply and swing to support your party. This is also the case in real life, as there are strategic, opportunist and generally flaky personas in any democracy. With this in mind, the best way to assure your parties outright victory is to canvass and promote your pledges in as many districts as possible.
 
-> * There are (25) Districts to canvass. Take the presented data on the "Districts View" with a pinch of salt. In the fog of war and politics, information can not always be assumed as reliable. View the population data to gain a better understanding of your residents and their whims. Each resident has specific characteristics and issues. There can be any volume of residents, from  a coupe of hundred in a district to a few thousand. However each resident has the following information about the,
+> * There are (25) Districts to canvass. Take the presented data on the "Districts View" with a pinch of salt. In the fog of war and politics, information can not always be assumed as reliable. View the population data to gain a better understanding of your residents and their whims. Each resident has specific characteristics and issues. There can be any volume of residents, from  a couple of hundred in a district to a few thousand. However, each resident has the following information about the,
 
-> ### On every game you will have the assistance of an analyst/statistician, who will help you during your canvassing. However they can only assist you on (3) occasions. A button "Stats Help" will be visible in the "Residents view page" when this this help is available.
+> ### On every game, you will have the assistance of an analyst/statistician, who will help you during your canvassing. However, they can only assist you on (3) occasions. A button "Stats Help" will be visible in the "Residents view page" when this help is available.
 
-* For this reason it is important to scan over each district and get an idea of the size of the population in each. Once you  create your manifesto you cannot change it. In addition by spotting the districts with the largest populous the assistance from the analyst will pay of better. The analyst provides you with the exact "issue count" in each district. this obviously helps you appropriate the correct priority to issues.
+* For this reason, it is important to scan over each district and get an idea of the size of the population in each. Once you  create your manifesto you cannot change it. Also, by spotting the districts with the largest populous the assistance from the analyst will pay-off better. The analyst provides you with the exact "issue count" in each district. this helps the player appropriate the correct priority to issues.
 
-> Note: If  you wish to see what would happen with the same data iteratively, simply double tap the "Results screen" and re-run the process. The system will run its algorithm against the last data set used. It's destructive. This means it continually modifies that last data results, feeding it into its input. You cannot go back and make any changes to your political strategy, rather you simply watch the iteration
+> Note: If  you wish to see what would happen with the same data iteratively, simply double-tap the "Results screen" and re-run the process. The system will run its algorithm against the last data set used. It's destructive. This means it continually modifies that last data results, feeding it into its input. You cannot go back and make any changes to your political strategy, rather you simply watch the iteration
 
-However if you wish for a new game then of course you can press "Restart Game" button.
+However, if you wish for a new game then ,of course, you can press "Restart Game" button.
 
 ># Priorities
 
 * Use your pledge priorities carefully.
-* Initially scan all district contents to determine which pledges to include in you manifesto
-* when promoting in each district, first quickly scan the residents view and rough guess the most common issue or bug-bear of the residents. Then use your 2 high pledges('H') on the most significant. After than the ('M') in that order and so on.
+* Initially scan all-district contents to determine which pledges to include in your manifesto
+* when promoting in each district, first quickly scan the residents view and rough guess the most common issue or bug-bear of the residents. Then use your 2 high pledges('H') on the most significant. After then the ('M') in that order and so on.
 
-* Remember even if you do not promote your manifesto , you will still have the trickle effect. That is, voters moving from one party to another under their own volition. It is possible for a party to be totally wiped out from the main party list.
+* Remember even if you do not promote your manifesto, you will still have the trickle effect. That is, voters, moving from one party to another under their own volition. A party can be wiped out from the main party list.
 
-* -Roll Number. (Their vote number, which is also their head count)
+* -Roll Number. (Their vote number, which is also their headcount)
 * -Issue ID .... (what's bugging them)
 * -Name.
-* -Conversion Value. (This is the amount of effort needed to swing their allegiance. this is addressed by pledge priority.. but also by the individuals volition)
-* -Party.. (This is their current party a allegiance)
+* -Conversion Value. (This is the amount of effort needed to swing their allegiance. this is addressed by pledge priority.. but also by the individual's volition)
+* -Party.. (This is their party allegiance)
 
 ># Double Tap/Click Screen
 
-* "District View" to - jump to top of screen
-* "Residents View" - to jump to top of screen
-* "Results Page" - to jump to top of screen
+* "District View" to - jump to the top of the screen
+* "Residents View" - to jump to the top of the screen
+* "Results Page" - to jump to the top of the screen
 
 ># END
