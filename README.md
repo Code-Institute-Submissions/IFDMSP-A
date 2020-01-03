@@ -408,6 +408,8 @@ From my git-hub, copy the clone link found by clicking on the button below
 
 * Because the program uses html, css, javascript (which are supported within standard browsers), you should be able to run it by navigating to the directory the cloned files reside in and launching the "index.html" file as in the usual manner.
 
+![Directory Files](support/directory-files.png)
+
 Currently, my application is hosted on GitHub Pages. However, the software files can be hosted on a production server of your choice.
 
 >#### Production Hosting
