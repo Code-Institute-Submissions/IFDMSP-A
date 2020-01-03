@@ -18,17 +18,20 @@ var unAddressedIssueFlashState = true; // used for flashing hand pointing on dis
 var cDO = [];
 var flashState = true; // flash states
 var flashHandState = true;
-var globeShake = true;
+// var globeShake = true;
 var cCp = 0;
 var noOfCountriesMax = 195; // Number of countries to pool through to get 3 significant trading partners 
 var noOfDistricts = 26; // Number of districts in pool to canvass in game &&&#
 var noOfProblems = 20; // Number of problems in pool to choose from
-var gDPMax = 10;
-var popMax = 10;
-var healthMax = 100;
-var cGdp = 0;
-var cPop = 0;
-var cHealth = 0;
+
+var gDPMax = 10;// country GPD upper ceiling
+var popMax = 10;// population max upper ceiling
+var healthMax = 100;// health max upper ceiling
+
+var cGdp = 0;// country GDP
+var cPop = 0;//country population
+var cHealth = 0;// country health
+
 var roundDownDigit = 0;
 var pledgeDisplacement = 10;
 // No of pledges selected
@@ -1197,7 +1200,7 @@ function CreateDistricts() {
                 30: "Otis",
             }
             // Generate Random Name Combination for a person
-            // Not 1 less to ensure no illegal item
+         
             let fName = [fNames[getRandom(29)]];
             let initial = [initials[getRandom(20)]];
             let surName = [sNames[getRandom(29)]];
@@ -1888,7 +1891,7 @@ function processElection() {
     }
 
     function getWinningParty(party1Name, pval1, party2Name, pval2, party3Name, pval3, party4Name, pval4) {
-        // GET WINNING RPARTY
+        // GET WINNING PARTY
         // Check through Parties supplied and find which is top in
         // Set submitted
         // This will allow you to find top party in district
@@ -2244,7 +2247,7 @@ function politicalCompetition(cpty, redv) {
 
 function countryInfluence() {
     // /////////////////////
-    // Country Influence
+    // workout Country Influence
     let cHitFlag = 0;
     let C1 = sessionStorage.getItem("c1");
     let C2 = sessionStorage.getItem("c2");
