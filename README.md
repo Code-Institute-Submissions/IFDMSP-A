@@ -397,16 +397,20 @@ Below are features I need for the application to function as needed. I expect th
 
 ># Deployment
 
-Clone the Git-hub site
+>#### Clone the Git-hub site
 To clone the repository (repo) simply
 
 Install Git 2.23.0 on your local drive, and ensure it is working.
 
 From my git-hub, copy the clone link found by clicking on the button below
 
+![Clone Link](support/clone-link.png)
+
+* Because the program uses html, css, javascript (which are supported within standard browsers), you should be able to run it by navigating to the directory the cloned files reside in and launching the "index.html" file as in the usual manner.
+
 Currently, my application is hosted on GitHub Pages. However, the software files can be hosted on a production server of your choice.
 
-Production Hosting
+>#### Production Hosting
 The file structure of the project is in a standard tree flow format.
 
 Once your hosting site has been purchased and setup
