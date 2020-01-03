@@ -284,6 +284,8 @@ Table 1.1
 
 Before proceeding to build the application , I rendered some mockups. These did change slightly as development progressed. Most of the changes were realized as part of testing the app and realizing some additive was required
 
+![Game Overview](support/game-structure.png)
+
 * Also, it is worth a mention that I employed "Mobile-First" Design Principles here. (See Surface section for a mention)
 
 ![Main Page](support/Mockup-1.png)
