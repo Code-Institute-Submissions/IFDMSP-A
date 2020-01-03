@@ -630,4 +630,19 @@ However, if you wish for a new game then ,of course, you can press "Restart Game
 * "Residents View" - to jump to the top of the screen
 * "Results Page" - to jump to the top of the screen
 
+># AFTER THOUGHTS
+
+The game functions as intended, and although I acknowledge this, I can see room for improvement with a larger budget and the assistance of a graphic artist.
+
+* Better graphics and animation may make the game more enticing. I.e 
+* Animated graphics Icons, representing the issue types per district perhaps?
+* Animated cut scenes between pages
+* Sound effects such as  from crowds, boos and cheers.
+
+* More granular detail for issues, and responses being more precise (increasing the difficulty)
+
+* multiplayer option allowing competition between friends
+
+* Resolution type variance dependent on chosen party.
+
 >## END
