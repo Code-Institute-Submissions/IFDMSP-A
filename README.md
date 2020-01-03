@@ -301,7 +301,7 @@ Before proceeding to build the application , I rendered some mockups. These did 
 ![Mockup1-6](support/Mockup1-6.png)
 ![Mockup1-7](support/Mockup1-7.png)
 
->## Note: * The "Winner page" was modified during coding, as I felt it would be better to present all the three statistics on one page, allowing the player to scroll up and down reviewing the changes after implementation their election strategy.
+>## Note: * The look of the "Winners page" was modified during coding, as I felt it would be better to present all the three statistics on one page, allowing the player to scroll up and down reviewing the changes after implementation their election strategy. Hence I left things at the "Results Page".
 
 
 ># Surface
